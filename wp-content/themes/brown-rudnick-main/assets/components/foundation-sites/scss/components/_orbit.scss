@@ -52,7 +52,7 @@ $orbit-control-zindex: 10 !default;
 
 /// Adds styles for the outer Orbit wrapper. These styles are used on the `.orbit` class.
 @mixin orbit-wrapper {
-  position: relative;
+  position: relative;  
 }
 
 /// Adds styles for the inner Orbit slide container. These styles are used on the `.orbit-container` class.

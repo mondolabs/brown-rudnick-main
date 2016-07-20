@@ -4846,7 +4846,8 @@ body {
       margin-right: 250px; } }
 
 .orbit {
-  position: relative; }
+  position: relative;
+  width: 100%; }
 
 .orbit-container {
   position: relative;

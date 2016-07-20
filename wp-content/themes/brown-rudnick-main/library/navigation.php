@@ -10,6 +10,13 @@
 register_nav_menus(array(
 	'top-bar-r'  => 'Right Top Bar',
 	'mobile-nav' => 'Mobile',
+	'custom-submenu' => 'Submenu',
+	'about' => 'About',
+	'people' => 'People',
+	'insights' => 'Insights',
+	'careers' => 'Careers',
+	'public-interest'=>'Public Interest',
+	'member-portal'=> 'Member Portal'
 ));
 
 
