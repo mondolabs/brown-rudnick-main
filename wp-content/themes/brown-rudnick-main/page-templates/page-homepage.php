@@ -7,11 +7,21 @@ get_header(); ?>
 
 <?php do_action( 'foundationpress_before_content' ); ?>
 
-
-<p> I be Granicus :) </p>
-
-<section class ="homepage-slider">
-  <?php if( have_rows('homepage_slider') ): ?>
+<p> I AM THE HEADER </p>
+<div id="page-full-width" role="main">
+<?php
+// all our content is loaded at the beginning
+  $gov_array = array( 'category_name' => 'government_contracts'); 
+  $government_contracts = get_posts($gov_array);
+  $white_collar_array = array('category_name' => 'white_collar');
+  $white_collar = get_posts($white_collar_array);
+  $news_array = array('category_name' => 'in_the_news');
+  $in_news = get_posts($news_array);
+  $insights_array = array('category_name' => 'insights');
+  $insights = get_posts($insights_array);
+?>
+  <section class ="homepage-slider">
+    <?php if( have_rows('homepage_slider') ): ?>
       <?php $count = 0; ?>
 						<div class="orbit" role="region" aria-label="Latest Updates from Brown Rudnick" data-orbit>
 						  <ul class="orbit-container">
@@ -20,9 +30,9 @@ get_header(); ?>
 						    <?php while(have_rows('homepage_slider') ):
 						    	the_row();
 										$slider_image = get_sub_field('homepage_slider_image');
-          $slider_title = get_sub_field('homepage_slider_title');
-          $slider_content = get_sub_field('homepage_slider_description');
-        ?>
+                    $slider_title = get_sub_field('homepage_slider_title');
+                    $slider_content = get_sub_field('homepage_slider_description');
+                  ?>
         <li class="<?php if ($count == 0) { ?>is-active<?php } ?> orbit-slide <?php if( !empty($slider_image) ) { ?>has-image<?php } else { ?>no-image<?php } ?> <?php echo $slider_color; ?>">
           <?php if( !empty($slider_image) ): ?>
           <div class="homepage-slider-image">
@@ -47,9 +57,19 @@ get_header(); ?>
         <?php $count++; ?>
         <?php endwhile; ?>
       </nav>
-						</div>
+		</div>
 					<?php endif; ?>
-				</section>
+	</section>
+
+  <div class = "grids">
+  <p>Repeaters</p>
+  </div>
+
+    <div class= "public-interest">
+      <?php $background_img = get_field_object('public_interest_background'); ?>
+      <img src ="<?php echo $background_img['value'];?>">
+    </div>
+  </div>
 
 
 
