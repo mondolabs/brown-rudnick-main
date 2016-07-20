@@ -10,7 +10,7 @@ get_header(); ?>
 <p> I AM THE HEADER </p>
 <div id="page-full-width" role="main">
 <?php
-// all our content is loaded at the beginning
+// all our content is loaded at the beginning :) 
   $gov_array = array( 'category_name' => 'government_contracts'); 
   $government_contracts = get_posts($gov_array);
   $white_collar_array = array('category_name' => 'white_collar');
@@ -19,6 +19,19 @@ get_header(); ?>
   $in_news = get_posts($news_array);
   $insights_array = array('category_name' => 'insights');
   $insights = get_posts($insights_array);
+  // iterate and get info from our content for our grid display :)
+  foreach ($insights as $dog=>$cat):
+    echo $cat->post_title;
+  endforeach;
+  foreach ($government_contracts as $dog=>$cat):
+    echo $cat->post_title;
+  endforeach;
+  foreach ($white_collar as $dog=>$cat):
+    echo $cat->post_title;
+  endforeach; 
+  foreach ($in_news as $dog=>$cat):
+    echo $cat->post_title;
+  endforeach;
 ?>
   <section class ="homepage-slider">
     <?php if( have_rows('homepage_slider') ): ?>
