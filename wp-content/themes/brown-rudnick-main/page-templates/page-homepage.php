@@ -18,20 +18,12 @@ get_header(); ?>
   $news_array = array('category_name' => 'in_the_news');
   $in_news = get_posts($news_array);
   $insights_array = array('category_name' => 'insights');
-  $insights = get_posts($insights_array);
-  // iterate and get info from our content for our grid display :)
-  foreach ($insights as $dog=>$cat):
-    echo $cat->post_title;
-  endforeach;
-  foreach ($government_contracts as $dog=>$cat):
-    echo $cat->post_title;
-  endforeach;
-  foreach ($white_collar as $dog=>$cat):
+  $insights = get_posts($insights_array);?>
+  
+
+  <?php foreach ($white_collar as $dog=>$cat):
     echo $cat->post_title;
   endforeach; 
-  foreach ($in_news as $dog=>$cat):
-    echo $cat->post_title;
-  endforeach;
 ?>
   <section class ="homepage-slider">
     <?php if( have_rows('homepage_slider') ): ?>
@@ -75,20 +67,35 @@ get_header(); ?>
 	</section>
 
   <div class = "grids">
-  <p>Repeaters</p>
   </div>
 
     <div class= "public-interest">
-      <?php 
-        $insights_img = get_field_object('insights_image');
-        $blog_background = get_field_object('blog_background');
-        $events_img = get_field_object('events_image');
-         var_dump($insights_img);
-        // var_dump($blog_background);
-        // var_dump($events_img);
-      ?>
+      <img src ="<?php echo get_field('insights_image');?>">
+       <?php foreach ($insights as $dog=>$cat):?>
+        <p><?php echo $cat->post_title;?></p>
+       <?php endforeach;?>
+    </div>
 
+    <div>
+      <?php foreach ($in_news as $dog=>$cat):?>
+        <p><?php echo $cat->post_title; ?></p>
+      <?php endforeach;?>
+    </div>
 
+    <div>
+      <img src ="<?php echo get_field('blog_header');?>">
+      <?php foreach ($government_contracts as $dog=>$cat):?>
+        <p><?php echo $cat->post_title;?></p>
+      <?php endforeach;?>
+    </div>
+
+    <div>  
+      <img src ="<?php echo get_field('events_header');?>">
+    </div>
+
+      <img src ="<?php echo get_field('public_interest_background');?>">
+
+    <div>
     </div>
   </div>
 
