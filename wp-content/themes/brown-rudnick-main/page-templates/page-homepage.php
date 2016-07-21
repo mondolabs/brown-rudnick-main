@@ -10,15 +10,14 @@ get_header(); ?>
 
 <?php
 // all our content is loaded at the beginning :) 
-  $gov_array = array( 'category_name' => 'government_contracts'); 
+  $gov_array = array( 'category_name' => 'government_contracts', 'numberposts'=>1); 
   $government_contracts = get_posts($gov_array);
-  $white_collar_array = array('category_name' => 'white_collar');
+  $white_collar_array = array('category_name' => 'white_collar', 'numberposts'=>1);
   $white_collar = get_posts($white_collar_array);
-  $news_array = array('category_name' => 'in_the_news');
+  $news_array = array('category_name' => 'in_the_news', 'numberposts'=>1);
   $in_news = get_posts($news_array);
-  $insights_array = array('category_name' => 'insights');
+  $insights_array = array('category_name' => 'insights', 'numberposts'=>1);
   $insights = get_posts($insights_array);
-  $events = tribe_get_events();
 
   // get only the most recent event from all events :)
   $event_list = new WP_Query( array(
@@ -75,49 +74,59 @@ get_header(); ?>
 	</section>
 
 
-
+  <h3>Stay Current </h3>
     <?php if ($insights):?>
+      <?php foreach ($insights as $dog=>$cat):?>
+            <?php $category = get_the_category($cat->ID);?>
     <div class="row display">
-      <div class="medium-4 large-8 columns">
-        <img src ="<?php echo get_field('insights_image');?>">
-          <?php foreach ($insights as $dog=>$cat):?>
-          <p><?php echo $cat->post_title;?></p>
+      <div class="medium-4 large-8 columns homepage-grid-element">
+          <img class="insights-image" src ="<?php echo get_field('insights_image');?>">
+            <?php foreach ($category as $bunny=>$rabbit):
+                if ($rabbit ->name === 'Emerging Technologies'):?>
+              <p>Insights: <?php echo $rabbit->name;?></p>
+              <?php endif;?>
+          <?php endforeach; ?>
+          <p><?php echo str_replace('-','/',substr($cat->post_date, 0,10));?></p>
+          <h5><?php echo $cat->post_title;?></h5>
           <?php endforeach;?>
       </div>
-      <div class="medium-8 large-4 columns">
-        <?php foreach ($in_news as $dog=>$cat):?>
-        <p><?php echo $cat->post_title; ?></p>
-        <?php endforeach;?>
+      <div class="medium-8 large-4 columns homepage-grid-element">
+          <?php foreach ($in_news as $dog=>$cat):?>
+          <h5><?php echo $cat->post_title; ?></h5>
+          <?php endforeach;?>
+          <?php endif;?>
       </div> 
     </div>
-    <?php endif;?>
+  
 
-    <div class = "row display">
-      <div class ="medium-3 columns">
-      <?php if ($white_collar):?>
-       <?php foreach ($white_collar as $dog=>$cat):
-        echo $cat->post_title;
-      endforeach;?> 
-      <?php endif;?>
+    <div class = "row">
+
+      <div class ="medium-3 homepage-grid-element columns">
+        <?php if ($white_collar):?>
+         <?php foreach ($white_collar as $dog=>$cat):?>
+          <p><?php echo $cat->post_title;?></p>
+        <?php endforeach;?> 
+        <?php endif;?>
       </div>
-      <div class ="medium-3 columns">
+
+      <div class ="medium-3 homepage-grid-element columns">
         <img src ="<?php echo get_field('blog_header');?>">
-      <?php if ($government_contracts):?>
-        <?php foreach ($government_contracts as $dog=>$cat):
-          echo $cat->post_title;
-        endforeach;?>
+          <?php if ($government_contracts):?>
+            <?php foreach ($government_contracts as $dog=>$cat):?>
+              <p><?php echo $cat->post_title;?></p>
+            <?php endforeach;?>
+          <?php endif;?>
       </div>
-      <?php endif;?>
-      <div class ="medium-3 columns">
+
+      <div class ="medium-3 homepage-grid-element columns">
         <img src ="<?php echo get_field('events_header');?>">
-        <?php if($event_list):?>
-        <?php foreach ($event_list as $cat=>$dog):?>
-          <div class="homepage-slide-title">
-            <h5><?php echo $dog-> post_title;?></h5>
-          </div>
-        <?php endforeach;?>
-      <?php endif;?>
+          <?php if($event_list):?>
+          <?php foreach ($event_list as $cat=>$dog):?>
+              <p><?php echo $dog-> post_title;?></p>
+          <?php endforeach;?>
+        <?php endif;?>
       </div>
+    
     </div>
 
       

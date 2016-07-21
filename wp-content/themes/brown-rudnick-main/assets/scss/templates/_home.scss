@@ -1,13 +1,11 @@
 .page-template-page-homepage {
 		font-family: $brfont;
+		background: $grey-background;
 		.homepage-slider-title {
 		color: $white;
 	}
 }
-	.orbit-image {
-		width: 100%;
-	}
-  
+
  .orbit-container{
  	@media (min-width:600px){
 				height: 500px;
@@ -28,11 +26,35 @@
 				}
 			}
 		}
-
+@media(max-width: 600px){
+	.small-3{
+	width: auto;
+}
+}
+.homepage-grid-element {
+	border-style: solid;
+	border-width: 5px;
+	border-color: $grey-background;
+	background-color: $white;
+	margin: 0 auto;
+	text-align: center;
+}
 .homepage-slide-title {
-	border-bottom: 1px solid $white;
+	border-bottom: 2px solid $white;
 	border-bottom-width: 30%;
 }
 	.slider-button {
 		background-color: $primary-red;
+	}
+@media (min-width: 600px){
+	.homepage-grid-interior {
+		clear: right;
+	}
+		.insights-image{
+			float: left;
+			margin: 1%;
+		}
+		.homepage-grid-element{
+			height: 400px;
+		}		
 	}
