@@ -7,8 +7,7 @@ get_header(); ?>
 
 <?php do_action( 'foundationpress_before_content' ); ?>
 
-<p> I AM THE HEADER </p>
-<div id="page-full-width" role="main">
+
 <?php
 // all our content is loaded at the beginning :) 
   $gov_array = array( 'category_name' => 'government_contracts'); 
@@ -18,13 +17,21 @@ get_header(); ?>
   $news_array = array('category_name' => 'in_the_news');
   $in_news = get_posts($news_array);
   $insights_array = array('category_name' => 'insights');
-  $insights = get_posts($insights_array);?>
- 
+  $insights = get_posts($insights_array);
+  $events = tribe_get_events();
 
-  <?php foreach ($white_collar as $dog=>$cat):
-    echo $cat->post_title;
-  endforeach; 
+  // get only the most recent event from all events :)
+  $event_list = new WP_Query( array(
+      'post_type' => 'event',
+      'orderby' => 'date',
+      'order' => 'DESC', 
+      'max_num_pages'=>1
+  ));
 ?>
+  
+
+ <div class ="full-width">
+
   <section class ="homepage-slider">
     <?php if( have_rows('homepage_slider') ): ?>
       <?php $count = 0; ?>
@@ -63,40 +70,62 @@ get_header(); ?>
         <?php endwhile; ?>
       </nav>
 		</div>
-					<?php endif; ?>
+	<?php endif; ?>
 	</section>
 
-  <div class = "grids">
-  </div>
 
-    <div class= "public-interest">
-      <img src ="<?php echo get_field('insights_image');?>">
-       <?php foreach ($insights as $dog=>$cat):?>
-        <p><?php echo $cat->post_title;?></p>
-       <?php endforeach;?>
-    </div>
 
-    <div>
-      <?php foreach ($in_news as $dog=>$cat):?>
+    <?php if ($insights):?>
+    <div class="row display">
+      <div class="medium-4 large-8 columns">
+        <img src ="<?php echo get_field('insights_image');?>">
+          <?php foreach ($insights as $dog=>$cat):?>
+          <p><?php echo $cat->post_title;?></p>
+          <?php endforeach;?>
+      </div>
+      <div class="medium-8 large-4 columns">
+        <?php foreach ($in_news as $dog=>$cat):?>
         <p><?php echo $cat->post_title; ?></p>
-      <?php endforeach;?>
+        <?php endforeach;?>
+      </div> 
     </div>
+    <?php endif;?>
 
-    <div>
-      <?php foreach ($government_contracts as $dog=>$cat):
+    <div class = "row display">
+      <div class ="medium-3 columns">
+      <?php if ($white_collar):?>
+       <?php foreach ($white_collar as $dog=>$cat):
         echo $cat->post_title;
-      endforeach;?>
+      endforeach;?> 
+      <?endif;?>
+      </div>
+      <div class ="medium-3 columns">
+        <img src ="<?php echo get_field('blog_header');?>">
+      <?php if ($government_contracts):?>
+        <?php foreach ($government_contracts as $dog=>$cat):
+          echo $cat->post_title;
+        endforeach;?>
+      </div>
+      <?endif;?>
+      <div class ="medium-3 columns">
+        <img src ="<?php echo get_field('events_header');?>">
+        <?php if($event_list):?>
+        <?php foreach($event_list as $cat=>$dog):?>
+          <h5><?php echo $dog-> post_title;?></h5>
+        <?php endforeach;?>
+      <?php endif;?>
+      </div>
     </div>
 
-      <img src ="<?php echo get_field('blog_header');?>">
-      <img src ="<?php echo get_field('events_header');?>">
-      <img src ="<?php echo get_field('public_interest_background');?>">
+      
+    <section class ="homepage public-interest" style="background-image: url('<?php the_field('public_interest_background'); ?>')" >
+      <div class="public-interest-learn-more">
+        <p><?php echo get_field('center_for_public_interest_description');?></p>
+        <button><a href="<?php echo get_field('center_for_public_interest_url');?>">Learn More</a></button>
+      </div>
+    </section>
 
-    <div>
-    </div>
-  </div>
-
-
+</div>
 
 <?php do_action( 'foundationpress_after_content' ); ?>
 
