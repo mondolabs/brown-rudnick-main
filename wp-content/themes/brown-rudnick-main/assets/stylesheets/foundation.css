@@ -7374,24 +7374,28 @@ body#tinymce {
 .orbit-image {
   width: 100%; }
 
-.homepage-slider-image {
+@media (min-width: 600px) {
+  .orbit-container {
+    height: 500px; } }
+
+.homepage-full {
   display: block;
   text-align: center;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
-          background-size: cover;
-  height: 500px; }
-  .homepage-slider-image img {
+          background-size: cover; }
+  @media (min-width: 600px) {
+    .homepage-full {
+      height: 500px; } }
+  .homepage-full img {
     width: 100%; }
     @media screen and (min-width: 64em) {
-      .homepage-slider-image img {
+      .homepage-full img {
         max-width: 300px; } }
 
-.public-interest {
-  width: 100%;
-  height: 500px;
-  -webkit-background-size: cover;
-          background-size: cover; }
+.homepage-slide-title {
+  border-bottom: 1px solid #ffffff;
+  border-bottom-width: 30%; }
 
 .slider-button {
   background-color: #c10819; }
