@@ -131,4 +131,5 @@ get_header(); ?>
 </div>
 
 <?php do_action( 'foundationpress_after_content' ); ?>
-<?php get_footer();?>
+
+<?php get_footer();
