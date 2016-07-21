@@ -19,7 +19,7 @@ get_header(); ?>
   $in_news = get_posts($news_array);
   $insights_array = array('category_name' => 'insights');
   $insights = get_posts($insights_array);?>
-  
+ 
 
   <?php foreach ($white_collar as $dog=>$cat):
     echo $cat->post_title;
@@ -83,16 +83,13 @@ get_header(); ?>
     </div>
 
     <div>
+      <?php foreach ($government_contracts as $dog=>$cat):
+        echo $cat->post_title;
+      endforeach;?>
+    </div>
+
       <img src ="<?php echo get_field('blog_header');?>">
-      <?php foreach ($government_contracts as $dog=>$cat):?>
-        <p><?php echo $cat->post_title;?></p>
-      <?php endforeach;?>
-    </div>
-
-    <div>  
       <img src ="<?php echo get_field('events_header');?>">
-    </div>
-
       <img src ="<?php echo get_field('public_interest_background');?>">
 
     <div>
