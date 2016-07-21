@@ -79,8 +79,16 @@ get_header(); ?>
   </div>
 
     <div class= "public-interest">
-      <?php $background_img = get_field_object('public_interest_background'); ?>
-      <img src ="<?php echo $background_img['value'];?>">
+      <?php 
+        $insights_img = get_field_object('insights_image');
+        $blog_background = get_field_object('blog_background');
+        $events_img = get_field_object('events_image');
+         var_dump($insights_img);
+        // var_dump($blog_background);
+        // var_dump($events_img);
+      ?>
+
+
     </div>
   </div>
 
