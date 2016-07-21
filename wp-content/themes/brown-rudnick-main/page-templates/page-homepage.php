@@ -98,7 +98,7 @@ get_header(); ?>
        <?php foreach ($white_collar as $dog=>$cat):
         echo $cat->post_title;
       endforeach;?> 
-      <?endif;?>
+      <?php endif;?>
       </div>
       <div class ="medium-3 columns">
         <img src ="<?php echo get_field('blog_header');?>">
@@ -107,11 +107,11 @@ get_header(); ?>
           echo $cat->post_title;
         endforeach;?>
       </div>
-      <?endif;?>
+      <?php endif;?>
       <div class ="medium-3 columns">
         <img src ="<?php echo get_field('events_header');?>">
         <?php if($event_list):?>
-        <?php foreach($event_list as $cat=>$dog):?>
+        <?php foreach ($event_list as $cat=>$dog):?>
           <div class="homepage-slide-title">
             <h5><?php echo $dog-> post_title;?></h5>
           </div>
@@ -123,7 +123,7 @@ get_header(); ?>
       
     <section class ="homepage-full row" style="background-image: url('<?php echo get_field('public_interest_background'); ?>');"  >
       <div class="public-interest-learn-more">
-        <p><?php echo get_field('center_for_public_interest_description');?></p>
+        <p><?php echo get_field('center_for_public_interest_description'); ?></p>
         <button><a href="<?php echo get_field('center_for_public_interest_url');?>">Learn More</a></button>
       </div>
     </section>
