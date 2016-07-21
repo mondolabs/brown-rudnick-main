@@ -47,14 +47,15 @@ get_header(); ?>
                   ?>
         <li class="<?php if ($count == 0) { ?>is-active<?php } ?> orbit-slide <?php if( !empty($slider_image) ) { ?>has-image<?php } else { ?>no-image<?php } ?> <?php echo $slider_color; ?>">
           <?php if( !empty($slider_image) ): ?>
-          <div class="homepage-slider-image">
-            <img class="orbit-image" src="<?php echo $slider_image['url']; ?>" alt="<?php echo $slider_image['alt'] ?>" />
+          <div class="homepage-slider-image row" style="background-image:url('<?php echo $slider_image['url']; ?>');">
+            <div class="orbit-content">
+              <h5 class="homepage-slider-title"><?php echo $slider_title; ?></h5>
+                <p><?php echo $slider_content; ?></p>
+                
+            </div>
           </div>
           <?php endif; ?>
-          <div class="orbit-content">
-            <h5 class="homepage-slider-title"><?php echo $slider_title; ?></h5>
-            <?php echo $slider_content; ?>
-          </div>
+          
         </li>
         <?php $count++; ?>
         <?php endwhile; ?>
@@ -118,7 +119,7 @@ get_header(); ?>
     </div>
 
       
-    <section class ="homepage public-interest" style="background-image: url('<?php the_field('public_interest_background'); ?>')" >
+    <section class ="homepage public-interest row" style="background-image: url('<?php echo get_field('public_interest_background'); ?>');"  >
       <div class="public-interest-learn-more">
         <p><?php echo get_field('center_for_public_interest_description');?></p>
         <button><a href="<?php echo get_field('center_for_public_interest_url');?>">Learn More</a></button>
@@ -130,4 +131,4 @@ get_header(); ?>
 <?php do_action( 'foundationpress_after_content' ); ?>
 
 
-<?php get_footer();
+<?php get_footer();?>

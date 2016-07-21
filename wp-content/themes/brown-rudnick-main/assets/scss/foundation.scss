@@ -9,6 +9,7 @@
 
 //  Settings
 @import "global/settings"; // Foundation settings file.
+@import "global/brown-rudnick-settings"; // Brown Rudnick settings file.
 
 // Foundation mixins & browser resets
 @import '../components/foundation-sites/scss/foundation';
@@ -94,4 +95,4 @@
 @import "templates/page-sidebar-left";
 @import "templates/page-full-width";
 @import "templates/single-post";
-@import "templates/page-homepage";
+@import "templates/home"; // homepage template

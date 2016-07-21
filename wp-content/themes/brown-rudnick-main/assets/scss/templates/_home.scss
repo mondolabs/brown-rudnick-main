@@ -1,15 +1,18 @@
 .page-template-page-homepage {
 		font-family: $brfont;
+		.homepage-slider-title {
+		color: $white;
+	}
 }
 	.orbit-image {
 		width: 100%;
-		max-width: 200px;
 	}
- 
+  
 		.homepage-slider-image {
 			display: block;
 			text-align: center;
-			width: 30%;
+			background-repeat: no-repeat;
+			background-size: cover;
 			height: 500px;
 			img {
 				width: 100%;
@@ -18,3 +21,13 @@
 				}
 			}
 		}
+
+.public-interest {
+	width: 100%;
+	height: 500px;
+		background-size: cover;
+	}
+
+	.slider-button {
+		background-color: $primary-red;
+	}
