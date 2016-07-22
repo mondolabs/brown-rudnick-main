@@ -31,50 +31,29 @@ get_header(); ?>
 
  <div class ="full-width">
 
-  <section class ="homepage-slider">
+  
+
+  <div class = "slider-container" label="Latest Updates from Brown Rudnick" >
     <?php if( have_rows('homepage_slider') ): ?>
-      <?php $count = 0; ?>
-						<div class="orbit" role="region" aria-label="Latest Updates from Brown Rudnick" data-orbit>
-						  <ul class="orbit-container">
-						    <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
-						    <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
-						    <?php while(have_rows('homepage_slider') ):
-						    	the_row();
-										$slider_image = get_sub_field('homepage_slider_image');
-                    $slider_title = get_sub_field('homepage_slider_title');
-                    $slider_content = get_sub_field('homepage_slider_description');
-                  ?>
-        <li class="<?php if ($count == 0) { ?>is-active<?php } ?> orbit-slide <?php if( !empty($slider_image) ) { ?>has-image<?php } else { ?>no-image<?php } ?> <?php echo $slider_color; ?>">
-          <?php if( !empty($slider_image) ): ?>
-          <div class="homepage-full row" style="background-image:url('<?php echo $slider_image['url']; ?>');">
-            <div class="orbit-content">
-              <h5 class="homepage-slider-title"><?php echo $slider_title; ?></h5>
-                <p><?php echo $slider_content; ?></p>
+    <?php $count = 0; ?>
+    <?php while(have_rows('homepage_slider') ):
+      the_row();
+      $slider_image = get_sub_field('homepage_slider_image');
+      $slider_title = get_sub_field('homepage_slider_title');
+      $slider_content = get_sub_field('homepage_slider_description'); ?>
+    <?php if ($count == 0):?>
+    <?php endif; ?>
+    <?php if (!empty($slider_image)):?>
+      <div class="slide" style="background-image:url('<?php echo $slider_image['url']; ?>');">
+        <h5 class="homepage-slider-title"><?php echo $slider_title; ?></h5>
+         <p><?php echo $slider_content; ?></p> 
+    <?php endif;?>
+     </div>
+    <?php $count++;?>    
 
-            </div>
-          </div>
-          <?php endif; ?>
-          
-        </li>
-        <?php $count++; ?>
-        <?php endwhile; ?>
-      </ul>
-      <nav class="orbit-bullets">
-        <?php $count = 0; ?>
-        <?php while( have_rows('homepage_slider') ): the_row(); 
-          $slider_title = get_sub_field('homepage_slider_title');
-        ?>
-        <button class="<?php if ($count == 0) { ?>is-active<?php } ?>" data-slide="<?php echo $count; ?>"><span class="show-for-sr">
-        <?php echo $slider_title; ?></span><?php if ($count == 0) { ?><span class="show-for-sr">Current Slide</span><?php } ?></button>
-        <?php $count++; ?>
-        <?php endwhile; ?>
-      </nav>
-		</div>
-	<?php endif; ?>
-	</section>
-
-
-  <h3>Stay Current </h3>
+  <?php endwhile; ?>
+  <?php endif; ?>
+  </div>
     <?php if ($insights):?>
       <?php foreach ($insights as $dog=>$cat):?>
             <?php $category = get_the_category($cat->ID);?>
@@ -101,16 +80,21 @@ get_header(); ?>
 
     <div class = "row">
 
-      <div class ="medium-3 homepage-grid-element columns">
+      <div class ="medium-4 homepage-grid-element columns">
         <?php if ($white_collar):?>
          <?php foreach ($white_collar as $dog=>$cat):?>
+          <?php $category = get_the_category($cat->ID);?>
+          <?php foreach($category as $blog_category=>$name):?>
+             <p> Blog: <?php echo $name->name;?> </p>
+          <?php endforeach;?>
           <p><?php echo $cat->post_title;?></p>
         <?php endforeach;?> 
         <?php endif;?>
       </div>
 
-      <div class ="medium-3 homepage-grid-element columns">
+      <div class ="medium-4 homepage-grid-element columns">
         <img src ="<?php echo get_field('blog_header');?>">
+          <p>Blog: </p>
           <?php if ($government_contracts):?>
             <?php foreach ($government_contracts as $dog=>$cat):?>
               <p><?php echo $cat->post_title;?></p>
@@ -118,7 +102,7 @@ get_header(); ?>
           <?php endif;?>
       </div>
 
-      <div class ="medium-3 homepage-grid-element columns">
+      <div class ="medium-4 homepage-grid-element columns">
         <img src ="<?php echo get_field('events_header');?>">
           <?php if($event_list):?>
           <?php foreach ($event_list as $cat=>$dog):?>

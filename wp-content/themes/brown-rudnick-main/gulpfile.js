@@ -31,7 +31,9 @@ var PATHS = {
     'assets/components/foundation-sites/scss',
     'assets/components/motion-ui/src',
     'assets/components/fontawesome/scss',
+    'assets/components/slick/scss'
   ],
+
   javascript: [
     'assets/components/what-input/what-input.js',
     'assets/components/foundation-sites/js/foundation.core.js',
@@ -61,8 +63,11 @@ var PATHS = {
     // Motion UI
     'assets/components/motion-ui/motion-ui.js',
 
+    // Slick Slider
+    'assets/javascript/vendor/slick/slick.js',
+
     // Include your own custom scripts (located in the custom folder)
-    'assets/javascript/custom/*.js',
+    'assets/javascript/custom/*.js'
   ],
   phpcs: [
     '**/*.php',
@@ -180,7 +185,14 @@ gulp.task('copy', function() {
   var fontAwesome = gulp.src('assets/components/fontawesome/fonts/**/*.*')
       .pipe(gulp.dest('assets/fonts'));
 
-  return merge(motionUi, whatInput, fontAwesome);
+  var slickSlider = gulp.src('assets/javascript/vendor/slick/**')
+      .pipe($.flatten())
+      .pipe(gulp.dest('assets/javascript/vendor/slick'));
+
+  var slickFonts = gulp.src('assets/javascript/vendor/slick/fonts/**/*.*')
+      .pipe(gulp.dest('assets/fonts'));
+
+  return merge(motionUi, whatInput, fontAwesome, slickSlider, slickFonts);
 });
 
 // Package task
