@@ -57,6 +57,10 @@ get_header(); ?>
   <?php endif; ?>
   </div> <!-- end of slider container -->
 
+  <div class="stay-current">
+    <p>Stay Current</p>
+  </div>
+
     <?php if ($insights):?>
       <?php foreach ($insights as $dog=>$cat):?>
             <?php $category = get_the_category($cat->ID);?>
@@ -129,6 +133,9 @@ get_header(); ?>
 
     <div class ="homepage-full row" style="background-image: url('<?php echo get_field('public_interest_background'); ?>');"  >
       <div class="public-interest-learn-more">
+        <h5>center for the public interest</h5>
+        <div class ="pub-interest-title">
+        </div>
         <p><?php echo get_field('center_for_public_interest_description'); ?></p>
         <button class="public-interest-btn" href="<?php echo get_field('center_for_public_interest_url');?>">Learn More</button>
       </div>
