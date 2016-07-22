@@ -4,9 +4,7 @@ Template Name: Homepage
 */
 get_header(); ?>
 
-
 <?php do_action( 'foundationpress_before_content' ); ?>
-
 
 <?php
 // all our content is loaded at the beginning :) 
@@ -24,24 +22,25 @@ get_header(); ?>
       'post_type' => 'event',
       'orderby' => 'date',
       'order' => 'DESC', 
-      'max_num_pages'=>1
+      'max_num_pages'=> 1
   ));
 ?>
 
  <div class ="full-width">
 
-  <div class = "slider-container" label="Latest Updates from Brown Rudnick" >
+  <div class = "slider-container" label="Latest Updates from Brown Rudnick" > <!-- start slider container -->
     <?php if( have_rows('homepage_slider') ): ?>
-    <?php $count = 0; ?>
-    <?php while(have_rows('homepage_slider') ):
-      the_row();
-      $slider_image = get_sub_field('homepage_slider_image');
-      $slider_title = get_sub_field('homepage_slider_title');
-      $slider_content = get_sub_field('homepage_slider_description'); ?>
-    <?php if (!empty($slider_image)):?>
+      <?php $count = 0; ?>
+      <?php while(have_rows('homepage_slider') ):
+        the_row();
+        $slider_image = get_sub_field('homepage_slider_image');
+        $slider_title = get_sub_field('homepage_slider_title');
+        $slider_content = get_sub_field('homepage_slider_description'); ?>
+      <?php if (!empty($slider_image)):?>
       <p class="prev-slider-home">prev</p>
       <p class="next-slider-home">next</p>
       <div class="human-icon"></div> 
+      <!-- slide -->
       <div class="slide" style="background-image:url('<?php echo $slider_image['url']; ?>');">
         <div class="slide-description">
             <h2 class="homepage-slider-title"><?php echo $slider_title; ?></h2>
@@ -52,10 +51,9 @@ get_header(); ?>
           <button class="home-button">Learn More</button>
     <?php endif;?>
       </div>
-     </div>
+     </div> <!-- end slide -->
     <?php $count++;?>    
-
-  <?php endwhile; ?>
+    <?php endwhile; ?>
   <?php endif; ?>
   </div> <!-- end of slider container -->
 
@@ -72,8 +70,8 @@ get_header(); ?>
           <?php endforeach; ?>
           <p><?php echo str_replace('-','/',substr($cat->post_date, 0,10));?></p>
           <h5><?php echo $cat->post_title;?></h5>
-          <?php endforeach;?>
-      <?php endif;?>
+      <?php endforeach;?>
+    <?php endif;?>
       </div>
 
       <?php if ($in_news):?>
@@ -86,7 +84,8 @@ get_header(); ?>
         <h5><?php echo $cat->post_title; ?></h5>
         <?php endforeach;?>
       <?php endif;?>
-      </div> 
+      </div>
+
     </div>
   
 
@@ -128,7 +127,6 @@ get_header(); ?>
     
     </div>
 
-      
     <div class ="homepage-full row" style="background-image: url('<?php echo get_field('public_interest_background'); ?>');"  >
       <div class="public-interest-learn-more">
         <p><?php echo get_field('center_for_public_interest_description'); ?></p>
