@@ -38,8 +38,6 @@ get_header(); ?>
       $slider_image = get_sub_field('homepage_slider_image');
       $slider_title = get_sub_field('homepage_slider_title');
       $slider_content = get_sub_field('homepage_slider_description'); ?>
-    <?php if ($count == 0):?>
-    <?php endif; ?>
     <?php if (!empty($slider_image)):?>
       <p class="prev-slider-home">prev</p>
       <p class="next-slider-home">next</p>
@@ -75,6 +73,7 @@ get_header(); ?>
           <p><?php echo str_replace('-','/',substr($cat->post_date, 0,10));?></p>
           <h5><?php echo $cat->post_title;?></h5>
           <?php endforeach;?>
+      <?php endif;?>
       </div>
 
       <?php if ($in_news):?>
@@ -125,7 +124,6 @@ get_header(); ?>
               <p><?php echo $dog-> post_title;?></p>
           <?php endforeach;?>
         <?php endif;?>
-      <?php endif;?>
       </div>
     
     </div>
