@@ -77,6 +77,7 @@ get_header(); ?>
           <?php endforeach;?>
       </div>
 
+      <?php if ($in_news):?>
       <div class="medium-8 large-4 columns homepage-grid-element">
         <p class="homepage-header-text">PLACEHOLDER CATEGORY</p>
         <div class="homepage-header-container">
@@ -85,7 +86,7 @@ get_header(); ?>
         <p><?php echo str_replace('-','/',substr($cat->post_date, 0,10));?></p>
         <h5><?php echo $cat->post_title; ?></h5>
         <?php endforeach;?>
-        <?php endif;?>
+      <?php endif;?>
       </div> 
     </div>
   
@@ -124,6 +125,7 @@ get_header(); ?>
               <p><?php echo $dog-> post_title;?></p>
           <?php endforeach;?>
         <?php endif;?>
+      <?php endif;?>
       </div>
     
     </div>
