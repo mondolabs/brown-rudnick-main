@@ -27,11 +27,8 @@ get_header(); ?>
       'max_num_pages'=>1
   ));
 ?>
-  
 
  <div class ="full-width">
-
-  
 
   <div class = "slider-container" label="Latest Updates from Brown Rudnick" >
     <?php if( have_rows('homepage_slider') ): ?>
@@ -44,36 +41,51 @@ get_header(); ?>
     <?php if ($count == 0):?>
     <?php endif; ?>
     <?php if (!empty($slider_image)):?>
+      <p class="prev-slider-home">prev</p>
+      <p class="next-slider-home">next</p>
+      <div class="human-icon"></div> 
       <div class="slide" style="background-image:url('<?php echo $slider_image['url']; ?>');">
-        <h5 class="homepage-slider-title"><?php echo $slider_title; ?></h5>
-         <p><?php echo $slider_content; ?></p> 
+        <div class="slide-description">
+            <h2 class="homepage-slider-title"><?php echo $slider_title; ?></h2>
+            <div class="slide-description-heading">
+            </div>
+            <?php $abbreviation = substr($slider_content, 0, 60);?>
+          <p><?php echo $abbreviation; ?></p>
+          <button class="home-button">Learn More</button>
     <?php endif;?>
+      </div>
      </div>
     <?php $count++;?>    
 
   <?php endwhile; ?>
   <?php endif; ?>
-  </div>
+  </div> <!-- end of slider container -->
+
     <?php if ($insights):?>
       <?php foreach ($insights as $dog=>$cat):?>
             <?php $category = get_the_category($cat->ID);?>
-    <div class="row display">
+    <div class="row display homepage-row">
       <div class="medium-4 large-8 columns homepage-grid-element">
           <img class="insights-image" src ="<?php echo get_field('insights_image');?>">
-            <?php foreach ($category as $bunny=>$rabbit):
-                if ($rabbit ->name === 'Emerging Technologies'):?>
-              <p>Insights: <?php echo $rabbit->name;?></p>
-              <?php endif;?>
+            <?php foreach ($category as $bunny=>$rabbit):?>
+            <p class="homepage-header-text"><?php echo $rabbit->name;?></p>
+            <div class="homepage-header-container">
+            </div>
           <?php endforeach; ?>
           <p><?php echo str_replace('-','/',substr($cat->post_date, 0,10));?></p>
           <h5><?php echo $cat->post_title;?></h5>
           <?php endforeach;?>
       </div>
+
       <div class="medium-8 large-4 columns homepage-grid-element">
-          <?php foreach ($in_news as $dog=>$cat):?>
-          <h5><?php echo $cat->post_title; ?></h5>
-          <?php endforeach;?>
-          <?php endif;?>
+        <p class="homepage-header-text">PLACEHOLDER CATEGORY</p>
+        <div class="homepage-header-container">
+        </div>
+        <?php foreach ($in_news as $dog=>$cat):?>
+        <p><?php echo str_replace('-','/',substr($cat->post_date, 0,10));?></p>
+        <h5><?php echo $cat->post_title; ?></h5>
+        <?php endforeach;?>
+        <?php endif;?>
       </div> 
     </div>
   
@@ -85,7 +97,7 @@ get_header(); ?>
          <?php foreach ($white_collar as $dog=>$cat):?>
           <?php $category = get_the_category($cat->ID);?>
           <?php foreach($category as $blog_category=>$name):?>
-             <p> Blog: <?php echo $name->name;?> </p>
+             <p class="homepage-header-text"> Blog: <?php echo $name->name;?> </p>
           <?php endforeach;?>
           <p><?php echo $cat->post_title;?></p>
         <?php endforeach;?> 
@@ -94,7 +106,7 @@ get_header(); ?>
 
       <div class ="medium-4 homepage-grid-element columns">
         <img src ="<?php echo get_field('blog_header');?>">
-          <p>Blog: </p>
+          <p class="homepage-header-text">Blog: PLACEHOLDER CATEGORY</p>
           <?php if ($government_contracts):?>
             <?php foreach ($government_contracts as $dog=>$cat):?>
               <p><?php echo $cat->post_title;?></p>
@@ -103,7 +115,10 @@ get_header(); ?>
       </div>
 
       <div class ="medium-4 homepage-grid-element columns">
+        <?php if(get_field('events_header')):?>
         <img src ="<?php echo get_field('events_header');?>">
+        <?endif; ?>
+        <p class="homepage-header-text"> PLACEHOLDER CATEGORY </p>
           <?php if($event_list):?>
           <?php foreach ($event_list as $cat=>$dog):?>
               <p><?php echo $dog-> post_title;?></p>
@@ -114,12 +129,12 @@ get_header(); ?>
     </div>
 
       
-    <section class ="homepage-full row" style="background-image: url('<?php echo get_field('public_interest_background'); ?>');"  >
+    <div class ="homepage-full row" style="background-image: url('<?php echo get_field('public_interest_background'); ?>');"  >
       <div class="public-interest-learn-more">
         <p><?php echo get_field('center_for_public_interest_description'); ?></p>
-        <button><a href="<?php echo get_field('center_for_public_interest_url');?>">Learn More</a></button>
+        <button class="public-interest-btn" href="<?php echo get_field('center_for_public_interest_url');?>">Learn More</button>
       </div>
-    </section>
+    </div>
 
 </div>
 

@@ -7440,7 +7440,15 @@ body#tinymce {
 .page-template-page-homepage {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   background: #f0f0f0; }
+  .page-template-page-homepage .public-interest-btn {
+    background-color: #c10819;
+    color: #ffffff;
+    width: 60%;
+    padding: 5%;
+    text-transform: uppercase; }
   .page-template-page-homepage .homepage-slider-title {
+    color: #ffffff; }
+  .page-template-page-homepage .slide-description p {
     color: #ffffff; }
   .page-template-page-homepage .homepage-full {
     display: block;
@@ -7455,9 +7463,6 @@ body#tinymce {
       @media screen and (min-width: 64em) {
         .page-template-page-homepage .homepage-full img {
           max-width: 300px; } }
-  @media screen and (min-width: 40em) {
-    .page-template-page-homepage .small-3 {
-      width: auto; } }
   .page-template-page-homepage .homepage-grid-element {
     border-style: solid;
     border-width: 10px;
@@ -7466,7 +7471,7 @@ body#tinymce {
     margin: 0 auto; }
   .page-template-page-homepage .homepage-slide-title {
     border-bottom: 2px solid #ffffff;
-    border-bottom-width: 30%; }
+    border-bottom-width: 5px; }
   .page-template-page-homepage .slider-button {
     background-color: #c10819; }
   @media screen and (min-width: 40em) {
@@ -7474,19 +7479,65 @@ body#tinymce {
       clear: right; }
     .page-template-page-homepage .insights-image {
       float: left;
-      margin: 1%; }
+      max-height: 100%; }
     .page-template-page-homepage .homepage-grid-element {
-      height: 400px; } }
-
-@media screen and (min-width: 40em) {
-  .slider-container {
-    height: 100vh;
-    margin: 5%; }
-  .slide {
-    height: 100vh;
-    -webkit-background-size: contain;
-            background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center; } }
+      height: 300px; } }
+  .page-template-page-homepage .slide-description {
+    padding-top: 30%;
+    padding-bottom: 40%;
+    padding-left: 15%;
+    padding-right: 15%; }
+  @media screen and (min-width: 40em) {
+    .page-template-page-homepage .slider-container {
+      margin-bottom: 1%; }
+    .page-template-page-homepage .slide {
+      height: 100vh;
+      background-repeat: no-repeat;
+      -webkit-background-size: contain;
+              background-size: contain;
+      background-position: center; } }
+  .page-template-page-homepage .slide-description-heading {
+    border-bottom: 1px solid #ffffff;
+    width: 30%; }
+  .page-template-page-homepage .slick-arrow {
+    color: transparent; }
+  .page-template-page-homepage .human-icon {
+    position: absolute;
+    right: 10%;
+    bottom: 10%;
+    width: 10%;
+    height: 10%;
+    background: #c10819 url("../images/human-icon.png") no-repeat center;
+    z-index: 999; }
+  .page-template-page-homepage .prev-slider-home {
+    position: absolute;
+    top: 90%;
+    left: 20%;
+    list-style-type: none;
+    background: url("../images/back-slider.png") no-repeat; }
+  .page-template-page-homepage .next-slider-home {
+    position: absolute;
+    top: 90%;
+    left: 25%;
+    list-style-type: none;
+    background: url("../images/forward-slider.png") no-repeat; }
+  .page-template-page-homepage .homepage-header-container {
+    border-bottom: 2px solid #f0f0f0;
+    width: 50%; }
+  .page-template-page-homepage .home-button {
+    background-color: #c10819;
+    color: #ffffff;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%; }
+  .page-template-page-homepage .homepage-header-text {
+    color: #c10819; }
+  .page-template-page-homepage .public-interest-learn-more {
+    margin-top: 7.5%;
+    margin-left: 2.5%;
+    width: 30%;
+    padding: 2.5%;
+    background-color: #ffffff; }
 
 /*# sourceMappingURL=foundation.css.map */
