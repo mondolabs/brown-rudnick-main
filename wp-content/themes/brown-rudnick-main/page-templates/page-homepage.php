@@ -46,10 +46,10 @@ get_header(); ?>
             <h2 class="homepage-slider-title"><?php echo $slider_title; ?></h2>
             <div class="slide-description-heading">
             </div>
-            <?php $abbreviation = substr($slider_content, 0, 60);?>
+            <?php $abbreviation = substr($slider_content, 0, 60); ?>
           <p><?php echo $abbreviation; ?></p>
           <button class="home-button">Learn More</button>
-    <?php endif;?>
+      <?php endif;?>
       </div>
      </div> <!-- end slide -->
     <?php $count++;?>    
@@ -64,12 +64,12 @@ get_header(); ?>
       <div class="medium-4 large-8 columns homepage-grid-element">
           <img class="insights-image" src ="<?php echo get_field('insights_image');?>">
             <?php foreach ($category as $bunny=>$rabbit):?>
-            <p class="homepage-header-text"><?php echo $rabbit->name;?></p>
+            <p class="homepage-header-text"><?php echo $rabbit->name; ?></p>
             <div class="homepage-header-container">
             </div>
           <?php endforeach; ?>
-          <p><?php echo str_replace('-','/',substr($cat->post_date, 0,10));?></p>
-          <h5><?php echo $cat->post_title;?></h5>
+          <p><?php echo str_replace('-','/',substr($cat->post_date, 0,10)); ?></p>
+          <h5><?php echo $cat->post_title; ?></h5>
       <?php endforeach;?>
     <?php endif;?>
       </div>
