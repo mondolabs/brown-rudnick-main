@@ -7446,6 +7446,10 @@ body#tinymce {
     width: 60%;
     padding: 5%;
     text-transform: uppercase; }
+  .page-template-page-homepage .prev-slider-home {
+    width: 5%; }
+  .page-template-page-homepage .next-slider-home {
+    width: 5%; }
   .page-template-page-homepage .homepage-slider-title {
     color: #ffffff; }
   .page-template-page-homepage .slide-description p {
@@ -7482,19 +7486,25 @@ body#tinymce {
     .page-template-page-homepage .homepage-grid-element {
       height: 300px; } }
   .page-template-page-homepage .slide-description {
-    padding-top: 30%;
-    padding-bottom: 40%;
+    padding-top: 20%;
+    padding-bottom: 30%;
     padding-left: 15%;
     padding-right: 15%; }
+  .page-template-page-homepage .slide {
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+            background-size: cover;
+    background-position: center; }
   @media screen and (min-width: 40em) {
     .page-template-page-homepage .slider-container {
       margin-bottom: 1%; }
     .page-template-page-homepage .slide {
-      height: 100vh;
-      background-repeat: no-repeat;
-      -webkit-background-size: contain;
-              background-size: contain;
-      background-position: center; } }
+      height: 60vh; } }
+  @media screen and (min-width: 64em) {
+    .page-template-page-homepage .slide {
+      height: 80vh; }
+    .page-template-page-homepage .prev-slider-home, .page-template-page-homepage .next-slider-home {
+      width: 30%; } }
   .page-template-page-homepage .slide-description-heading {
     border-bottom: 1px solid #ffffff;
     width: 30%; }
@@ -7506,20 +7516,27 @@ body#tinymce {
     bottom: 10%;
     width: 7.5%;
     height: 7.5%;
+    padding: 1.5%;
     background: #c10819 url("../images/human-icon.png") no-repeat center;
+    -webkit-background-size: contain;
+            background-size: contain;
     z-index: 999; }
   .page-template-page-homepage .prev-slider-home {
     position: absolute;
-    top: 90%;
+    top: 80%;
     left: 20%;
     list-style-type: none;
-    background: url("../images/back-slider.png") no-repeat; }
+    background: url("../images/back-slider.png") no-repeat;
+    -webkit-background-size: contain;
+            background-size: contain; }
   .page-template-page-homepage .next-slider-home {
     position: absolute;
-    top: 90%;
+    top: 80%;
     left: 25%;
     list-style-type: none;
-    background: url("../images/forward-slider.png") no-repeat; }
+    background: url("../images/forward-slider.png") no-repeat;
+    -webkit-background-size: contain;
+            background-size: contain; }
   .page-template-page-homepage .homepage-header-container {
     border-bottom: 2px solid #f0f0f0;
     width: 50%; }
@@ -7529,7 +7546,8 @@ body#tinymce {
     padding-left: 5%;
     padding-right: 5%;
     padding-top: 2%;
-    padding-bottom: 2%; }
+    padding-bottom: 2%;
+    text-transform: uppercase; }
   .page-template-page-homepage .homepage-header-text {
     color: #c10819; }
   .page-template-page-homepage .public-interest-learn-more {
@@ -7553,7 +7571,11 @@ body#tinymce {
     margin-bottom: 3%;
     border-bottom: 1px solid #c10819;
     width: 60%; }
-  .page-template-page-homepage .homepage-slider-title {
+  .page-template-page-homepage .homepage-slider-title, .page-template-page-homepage .homepage-element-body {
     font-family: "adobe-garamond-pro", serif; }
+  .page-template-page-homepage .public-interest-learn-more {
+    font-family: "Avenir", Helvetica, Arial, sans-serif; }
+  .page-template-page-homepage .homepage-header-text {
+    font-family: "Avenir", Helvetica, Arial, sans-serif; }
 
 /*# sourceMappingURL=foundation.css.map */

@@ -9,6 +9,7 @@ $(document).ready(function(){
 					autoplaySpeed: 3000,
 					arrows: true,
 					pauseOnHover: true,
+					fade: true,
 					prevArrow: $('.prev-slider-home'),
 					nextArrow: $('.next-slider-home')
 				});

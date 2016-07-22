@@ -59,13 +59,14 @@ get_header(); ?>
 
   <div class="stay-current">
     <p>Stay Current</p>
-  </div>
+  </div> <!-- stay current -->
 
     <?php if ($insights):?>
       <?php foreach ($insights as $dog=>$cat):?>
             <?php $category = get_the_category($cat->ID);?>
-    <div class="row display homepage-row">
-      <div class="medium-4 large-8 columns homepage-grid-element">
+    <div class="row display"> <!-- row-->
+
+      <div class="medium-4 large-8 columns homepage-grid-element"> <!-- 2/3 column -->
           <img class="insights-image" src ="<?php echo get_field('insights_image');?>">
             <?php foreach ($category as $bunny=>$rabbit):?>
             <p class="homepage-header-text"><?php echo $rabbit->name; ?></p>
@@ -73,58 +74,61 @@ get_header(); ?>
             </div>
           <?php endforeach; ?>
           <p><?php echo str_replace('-','/',substr($cat->post_date, 0,10)); ?></p>
-          <h5><?php echo $cat->post_title; ?></h5>
+          <h5 class="homepage-element-body"><?php echo $cat->post_title; ?></h5>
       <?php endforeach;?>
     <?php endif;?>
       </div>
 
       <?php if ($in_news):?>
-      <div class="medium-8 large-4 columns homepage-grid-element">
+      <div class="medium-8 large-4 columns homepage-grid-element"> <!-- 1/3 column -->
         <p class="homepage-header-text">PLACEHOLDER CATEGORY</p>
         <div class="homepage-header-container">
         </div>
         <?php foreach ($in_news as $dog=>$cat):?>
         <p><?php echo str_replace('-','/',substr($cat->post_date, 0,10));?></p>
-        <h5><?php echo $cat->post_title; ?></h5>
+        <p class="homepage-element-body"><?php echo $cat->post_title; ?></p>
         <?php endforeach;?>
       <?php endif;?>
       </div>
-
+    
     </div>
   
 
-    <div class = "row">
+    <div class = "row"> <!-- row --> 
 
-      <div class ="medium-4 homepage-grid-element columns">
+      <div class ="medium-4 columns homepage-grid-element"> <!-- 1/3 column -->
         <?php if ($white_collar):?>
          <?php foreach ($white_collar as $dog=>$cat):?>
           <?php $category = get_the_category($cat->ID);?>
           <?php foreach($category as $blog_category=>$name):?>
              <p class="homepage-header-text"> Blog: <?php echo $name->name;?> </p>
           <?php endforeach;?>
-          <p><?php echo $cat->post_title;?></p>
+          <p><?php echo str_replace('-','/',substr($cat->post_date, 0,10)); ?></p>
+          <p class="homepage-element-body"><?php echo $cat->post_title;?></p>
         <?php endforeach;?> 
         <?php endif;?>
       </div>
 
-      <div class ="medium-4 homepage-grid-element columns">
+      <div class ="medium-4 columns  homepage-grid-element"> <!-- 1/3 column -->
         <img src ="<?php echo get_field('blog_header');?>">
           <p class="homepage-header-text">Blog: PLACEHOLDER CATEGORY</p>
           <?php if ($government_contracts):?>
             <?php foreach ($government_contracts as $dog=>$cat):?>
-              <p><?php echo $cat->post_title;?></p>
+              <p><?php echo str_replace('-','/',substr($cat->post_date, 0,10)); ?></p>
+              <p class="homepage-element-body" ><?php echo $cat->post_title;?></p>
             <?php endforeach;?>
           <?php endif;?>
       </div>
 
-      <div class ="medium-4 homepage-grid-element columns">
+      <div class ="medium-4 homepage-grid-element columns"> <!-- 1/3 column -->
         <?php if(get_field('events_header')):?>
         <img src ="<?php echo get_field('events_header');?>">
         <?php endif; ?>
         <p class="homepage-header-text"> PLACEHOLDER CATEGORY </p>
+        <p><?php echo str_replace('-','/',substr($cat->post_date, 0,10)); ?></p>
           <?php if($event_list):?>
             <?php foreach ($event_list as $events => $specific_event):?>
-                <p><?php echo $specific_event-> post_title;?></p>
+                <p class="homepage-element-body"><?php echo $specific_event-> post_title;?></p>
             <?php endforeach;?>
         <?php endif;?>
       </div>
@@ -132,6 +136,7 @@ get_header(); ?>
     </div>
 
     <div class ="homepage-full row" style="background-image: url('<?php echo get_field('public_interest_background'); ?>');"  >
+      
       <div class="public-interest-learn-more">
         <h5>center for the public interest</h5>
         <div class ="pub-interest-title">
@@ -139,6 +144,7 @@ get_header(); ?>
         <p><?php echo get_field('center_for_public_interest_description'); ?></p>
         <button class="public-interest-btn" href="<?php echo get_field('center_for_public_interest_url');?>">Learn More</button>
       </div>
+    
     </div>
 
 </div>
