@@ -116,12 +116,12 @@ get_header(); ?>
       <div class ="medium-4 homepage-grid-element columns">
         <?php if(get_field('events_header')):?>
         <img src ="<?php echo get_field('events_header');?>">
-        <?endif; ?>
+        <?php endif; ?>
         <p class="homepage-header-text"> PLACEHOLDER CATEGORY </p>
           <?php if($event_list):?>
-          <?php foreach ($event_list as $cat=>$dog):?>
-              <p><?php echo $dog-> post_title;?></p>
-          <?php endforeach;?>
+            <?php foreach ($event_list as $events => $specific_event):?>
+                <p><?php echo $specific_event-> post_title;?></p>
+            <?php endforeach;?>
         <?php endif;?>
       </div>
     
