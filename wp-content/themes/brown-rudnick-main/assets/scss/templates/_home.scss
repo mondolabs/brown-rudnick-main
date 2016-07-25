@@ -1,5 +1,5 @@
 	
-
+// header
 	#public-interest {
 		margin-left: 10%;
 		font-size: 1em;
@@ -36,11 +36,32 @@
 		
 	}
 
+// footer 
+#footer-container {
+	background-color: $white;; 
+}
 
+.footer-links {
+	display: inline-block;
+	width: 50%;
+	margin-left: 25%;
+	a { 
+		color: $black; 
+		text-transform: uppercase;
+	}
+}
+
+.social-icons {
+	display: inline-block;
+}
 
 
 .page-template-page-homepage {
 
+	.insights-grid {
+		padding-left: 0;
+
+	}
 	.public-interest-btn {
 		background-color: $primary-red;
 		color: $white;
@@ -97,9 +118,8 @@
 		clear: right;
 	}
 		.insights-image{
-			float: left;
 			max-height: 100%;
-			margin-left:0;
+			float: left;
 		}
 		.homepage-grid-element{
 			height: 300px;

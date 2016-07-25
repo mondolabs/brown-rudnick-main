@@ -7469,9 +7469,25 @@ body#tinymce {
     padding-left: 3.5%;
     text-transform: uppercase; }
 
+#footer-container {
+  background-color: #ffffff; }
+
+.footer-links {
+  display: inline-block;
+  width: 50%;
+  margin-left: 25%; }
+  .footer-links a {
+    color: #0a0a0a;
+    text-transform: uppercase; }
+
+.social-icons {
+  display: inline-block; }
+
 .page-template-page-homepage {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   background: #f0f0f0; }
+  .page-template-page-homepage .insights-grid {
+    padding-left: 0; }
   .page-template-page-homepage .public-interest-btn {
     background-color: #c10819;
     color: #ffffff;
@@ -7512,9 +7528,8 @@ body#tinymce {
     .page-template-page-homepage .homepage-grid-interior {
       clear: right; }
     .page-template-page-homepage .insights-image {
-      float: left;
       max-height: 100%;
-      margin-left: 0; }
+      float: left; }
     .page-template-page-homepage .homepage-grid-element {
       height: 300px; } }
   .page-template-page-homepage .slide-description {

@@ -76,8 +76,7 @@ get_header(); ?>
       <?php foreach ($insights as $dog=>$cat):?>
             <?php $category = get_the_category($cat->ID);?>
     <div class="row display"> <!-- row-->
-
-      <div class="medium-4 large-8 columns homepage-grid-element"> <!-- 2/3 column -->
+      <div class="medium-4 large-8 columns homepage-grid-element insights-grid"> <!-- 2/3 column -->
           <img class="insights-image" src ="<?php echo get_field('insights_image');?>">
             <?php foreach ($category as $bunny=>$rabbit):?>
             <p class="homepage-header-text"><?php echo $rabbit->name; ?></p>
@@ -120,7 +119,7 @@ get_header(); ?>
         <?php endif;?>
       </div>
 
-      <div class ="medium-4 columns  homepage-grid-element"> <!-- 1/3 column -->
+      <div class ="medium-4 columns  homepage-grid-element blog-grid"> <!-- 1/3 column -->
         <img src ="<?php echo get_field('blog_header');?>">
           <p class="homepage-header-text">Blog: PLACEHOLDER CATEGORY</p>
           <?php if ($government_contracts):?>
@@ -131,7 +130,7 @@ get_header(); ?>
           <?php endif;?>
       </div>
 
-      <div class ="medium-4 homepage-grid-element columns"> <!-- 1/3 column -->
+      <div class ="medium-4 columns homepage-grid-element blog-grid"> <!-- 1/3 column -->
         <?php if(get_field('events_header')):?>
         <img src ="<?php echo get_field('events_header');?>">
         <?php endif; ?>
