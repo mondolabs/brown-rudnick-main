@@ -59,6 +59,9 @@
 
 .page-template-page-homepage {
 
+	.slider-color-bar {
+		
+	}
 	.insights-grid {
 		padding-left: 0;
 
@@ -90,6 +93,7 @@
 		.homepage-full {
 			background-repeat: no-repeat;
 			background-size: cover;
+			overflow: hidden;
 			@include breakpoint(medium){
 				height: 500px;
 			}
@@ -212,13 +216,16 @@
 
 
 	@include breakpoint(medium){
-		
+	
+
 	.public-interest-learn-more {
+		max-height: 100%;
 		background-color: $white;
 		margin-top: 7.5%;
 		margin-left: 2.5%;
 		max-width: 40%;
 		padding: 2.5%;
+		vertical-align: middle;
 		h5 { text-transform: uppercase;}
 	}
 }

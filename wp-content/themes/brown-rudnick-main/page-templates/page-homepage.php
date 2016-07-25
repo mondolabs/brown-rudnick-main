@@ -66,6 +66,7 @@ get_header(); ?>
     <?php $count++;?>    
     <?php endwhile; ?>
   <?php endif; ?>
+    <div class="slider-color-bar"></div>
   </div> <!-- end of slider container -->
 
   <div class="stay-current">

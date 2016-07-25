@@ -7506,7 +7506,8 @@ body#tinymce {
   .page-template-page-homepage .homepage-full {
     background-repeat: no-repeat;
     -webkit-background-size: cover;
-            background-size: cover; }
+            background-size: cover;
+    overflow: hidden; }
     @media screen and (min-width: 40em) {
       .page-template-page-homepage .homepage-full {
         height: 500px; } }
@@ -7600,11 +7601,13 @@ body#tinymce {
     color: #c10819; }
   @media screen and (min-width: 40em) {
     .page-template-page-homepage .public-interest-learn-more {
+      max-height: 100%;
       background-color: #ffffff;
       margin-top: 7.5%;
       margin-left: 2.5%;
       max-width: 40%;
-      padding: 2.5%; }
+      padding: 2.5%;
+      vertical-align: middle; }
       .page-template-page-homepage .public-interest-learn-more h5 {
         text-transform: uppercase; } }
   .page-template-page-homepage .stay-current {
