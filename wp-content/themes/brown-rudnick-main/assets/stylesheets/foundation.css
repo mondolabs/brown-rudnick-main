@@ -7455,7 +7455,6 @@ body#tinymce {
   .page-template-page-homepage .slide-description p {
     color: #ffffff; }
   .page-template-page-homepage .homepage-full {
-    display: block;
     background-repeat: no-repeat;
     -webkit-background-size: cover;
             background-size: cover; }
@@ -7550,14 +7549,15 @@ body#tinymce {
     text-transform: uppercase; }
   .page-template-page-homepage .homepage-header-text {
     color: #c10819; }
-  .page-template-page-homepage .public-interest-learn-more {
-    margin-top: 7.5%;
-    margin-left: 2.5%;
-    width: 40%;
-    padding: 2.5%;
-    background-color: #ffffff; }
-    .page-template-page-homepage .public-interest-learn-more h5 {
-      text-transform: uppercase; }
+  @media screen and (min-width: 40em) {
+    .page-template-page-homepage .public-interest-learn-more {
+      background-color: #ffffff;
+      margin-top: 7.5%;
+      margin-left: 2.5%;
+      max-width: 40%;
+      padding: 2.5%; }
+      .page-template-page-homepage .public-interest-learn-more h5 {
+        text-transform: uppercase; } }
   .page-template-page-homepage .stay-current {
     color: #000000;
     margin: 5% auto;

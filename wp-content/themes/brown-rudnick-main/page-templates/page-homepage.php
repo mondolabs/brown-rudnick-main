@@ -135,7 +135,7 @@ get_header(); ?>
     
     </div>
 
-    <div class ="homepage-full row" style="background-image: url('<?php echo get_field('public_interest_background'); ?>');"  >
+    <div class ="homepage-full" style="background-image: url('<?php echo get_field('public_interest_background'); ?>');"  >
       
       <div class="public-interest-learn-more">
         <h5>center for the public interest</h5>

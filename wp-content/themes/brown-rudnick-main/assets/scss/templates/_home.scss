@@ -25,7 +25,6 @@
 			}
 		}
 		.homepage-full {
-			display: block;
 			background-repeat: no-repeat;
 			background-size: cover;
 			@include breakpoint(medium){
@@ -147,14 +146,19 @@
 	.homepage-header-text {
 		color: $primary-red;
 	}
+
+
+	@include breakpoint(medium){
+		
 	.public-interest-learn-more {
+		background-color: $white;
 		margin-top: 7.5%;
 		margin-left: 2.5%;
-		width: 40%;
+		max-width: 40%;
 		padding: 2.5%;
-		background-color: $white;
 		h5 { text-transform: uppercase;}
 	}
+}
 	.stay-current {
 		color: $br-black;
 		margin: 5% auto;
