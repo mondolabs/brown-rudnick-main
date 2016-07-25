@@ -39,7 +39,7 @@
 		<div class="title-bar-title">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="header-logo--mobile" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/BR-Logo.png"></a>
 			<div class="top-right-icon-group">
-				<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/Contact-Icon.png">
+				<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/Contact-icon.png">
 				<a href="<?php echo get_permalink(19);?>">Contact Us</a>
 				<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/Marker-Icon.png">
 				<a href="<?php echo get_permalink(27);?>">Locations</a>
