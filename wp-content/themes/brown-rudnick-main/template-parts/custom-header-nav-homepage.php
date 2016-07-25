@@ -9,9 +9,11 @@
 
 
 <div class="custom-header-nav">
-	<ul class="menu desktop-menu">
-		<?php foreach($child_pages as $page=>$page_meta): ?>
-			<a href="<?php echo get_permalink($page_meta->ID);?>"><li><?php echo $page_meta->post_title;?></li></a>
-	<?php endforeach;?>
-		</ul>
+			<ul class="menu desktop-menu">
+				<?php foreach($child_pages as $page=>$page_meta): ?>
+				<a href="<?php echo get_permalink($page_meta->ID);?>"><li><?php echo $page_meta->post_title;?></li></a>
+			<?php endforeach;?>
+				<a href="#" id="public-interest"> <li>Public Interest</li></a>
+				<a href="#" id="member-portal-anchor"><li id="member-portal-list"> Member Portal</li></a>
+			</ul>
 </div>

@@ -7437,14 +7437,37 @@ body#tinymce {
         #single-post .main-content:last-child:not(:first-child) {
           float: right; } }
 
-.title-bar-title {
-  padding: 5%; }
+#public-interest {
+  margin-left: 10%;
+  font-size: 1em; }
 
-.custom-header-nav li {
-  display: inline-block;
-  color: #000000;
+#member-portal-list:before {
+  content: "|"; }
+
+.site-header {
+  background-color: #ffffff; }
+
+.title-bar-title {
+  padding-top: 2.5%;
   padding-left: 5%;
-  text-transform: uppercase; }
+  padding-bottom: 2.5%; }
+
+@media screen and (min-width: 40em) {
+  .top-right-icon-group {
+    position: absolute;
+    top: 50px;
+    right: 12.5%;
+    text-transform: uppercase; } }
+
+.custom-header-nav {
+  background-color: #ffffff;
+  display: block;
+  padding: 2%; }
+  .custom-header-nav li {
+    display: inline-block;
+    color: #000000;
+    padding-left: 3.5%;
+    text-transform: uppercase; }
 
 .page-template-page-homepage {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -7490,7 +7513,8 @@ body#tinymce {
       clear: right; }
     .page-template-page-homepage .insights-image {
       float: left;
-      max-height: 100%; }
+      max-height: 100%;
+      margin-left: 0; }
     .page-template-page-homepage .homepage-grid-element {
       height: 300px; } }
   .page-template-page-homepage .slide-description {

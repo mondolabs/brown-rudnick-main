@@ -1,15 +1,44 @@
-	.title-bar-title{
-		padding: 5%;
+	
+
+	#public-interest {
+		margin-left: 10%;
+		font-size: 1em;
 	}
+	#member-portal-list:before{
+		content: "|";
+	}
+	.site-header {
+		background-color: $white;
+	}
+	.title-bar-title{
+		padding-top: 2.5%;
+		padding-left: 5%;
+		padding-bottom: 2.5%;
+	}
+@include breakpoint(medium){
+	.top-right-icon-group {
+		position: absolute;
+		top: 50px;
+		right: 12.5%;
+		text-transform: uppercase;
+	}
+}
 	.custom-header-nav {
+		background-color: $white;
+		display: block;
+		padding: 2%;
 	 li { 
 	 		display: inline-block; 
 	 		color: $br-black;
-	 		padding-left: 5%;
+	 		padding-left: 3.5%;
 	 		text-transform: uppercase;
 	 	}
 		
 	}
+
+
+
+
 .page-template-page-homepage {
 
 	.public-interest-btn {
@@ -70,6 +99,7 @@
 		.insights-image{
 			float: left;
 			max-height: 100%;
+			margin-left:0;
 		}
 		.homepage-grid-element{
 			height: 300px;
