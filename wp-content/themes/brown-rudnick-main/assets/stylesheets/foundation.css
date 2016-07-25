@@ -7470,7 +7470,8 @@ body#tinymce {
     text-transform: uppercase; }
 
 #footer-container {
-  background-color: #ffffff; }
+  background-color: #ffffff;
+  padding: 5%; }
 
 .footer-links {
   display: inline-block;
