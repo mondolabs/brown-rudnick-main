@@ -7437,6 +7437,15 @@ body#tinymce {
         #single-post .main-content:last-child:not(:first-child) {
           float: right; } }
 
+.title-bar-title {
+  padding: 5%; }
+
+.custom-header-nav li {
+  display: inline-block;
+  color: #000000;
+  padding-left: 5%;
+  text-transform: uppercase; }
+
 .page-template-page-homepage {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   background: #f0f0f0; }

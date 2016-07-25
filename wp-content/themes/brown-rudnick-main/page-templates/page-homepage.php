@@ -4,7 +4,7 @@ Template Name: Homepage
 */
 get_header(); ?>
 
-<?php do_action( 'foundationpress_before_content' ); ?>
+
 
 <?php
 // all our content is loaded at the beginning :) 
@@ -26,7 +26,15 @@ get_header(); ?>
   ));
 ?>
 
- <div class ="full-width">
+ <div id="page-full-width-homepage" class ="full-width" role="main">
+
+  <?php do_action( 'foundationpress_before_content' ); ?>
+
+  <section class="homepage-menu">
+    <div class="homepage-navigation">
+      <?php get_template_part('template-parts/custom-header-nav-homepage');?>
+    </div>
+  </section>
 
   <div class = "slider-container" label="Latest Updates from Brown Rudnick" > <!-- start slider container -->
     <?php if( have_rows('homepage_slider') ): ?>
@@ -35,7 +43,10 @@ get_header(); ?>
         the_row();
         $slider_image = get_sub_field('homepage_slider_image');
         $slider_title = get_sub_field('homepage_slider_title');
-        $slider_content = get_sub_field('homepage_slider_description'); ?>
+        $slider_content = get_sub_field('homepage_slider_description'); 
+        $slider_cta_text = get_sub_field('homepage_slider_cta_text');
+        $slider_cta_link = get_sub_field('homepage_slider_cta_link');
+        ?>
       <?php if (!empty($slider_image)):?>
       <p class="prev-slider-home">prev</p>
       <p class="next-slider-home">next</p>
@@ -48,7 +59,7 @@ get_header(); ?>
             </div>
             <?php $abbreviation = substr($slider_content, 0, 60); ?>
           <p><?php echo $abbreviation; ?></p>
-          <a href="<?php echo get_field('homepage_slider_cta_link');?>"><button class="home-button"><?php echo get_field('homepage_slider_cta_text');?></button></a>
+          <a href="<?php echo $slider_cta_link;?>"><button class="home-button"><?php echo $slider_cta_text; ?></button></a>
       <?php endif;?>
       </div>
      </div> <!-- end slide -->
