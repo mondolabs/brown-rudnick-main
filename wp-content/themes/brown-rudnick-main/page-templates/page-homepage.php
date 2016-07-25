@@ -48,7 +48,7 @@ get_header(); ?>
             </div>
             <?php $abbreviation = substr($slider_content, 0, 60); ?>
           <p><?php echo $abbreviation; ?></p>
-          <button class="home-button">Learn More</button>
+          <a href="<?php echo get_field('homepage_slider_cta_link');?>"><button class="home-button"><?php echo get_field('homepage_slider_cta_text');?></button></a>
       <?php endif;?>
       </div>
      </div> <!-- end slide -->
