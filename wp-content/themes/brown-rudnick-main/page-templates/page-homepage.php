@@ -70,7 +70,7 @@ get_header(); ?>
   </div> <!-- end of slider container -->
 
   <div class="stay-current">
-    <p>Stay Current</p>
+    <p><?php echo get_field('homepage_text_section'); ?></p>
   </div> <!-- stay current -->
 
     <?php if ($insights):?>
