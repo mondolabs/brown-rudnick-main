@@ -13,6 +13,35 @@ $(document).ready(function(){
 					prevArrow: $('.prev-slider-home'),
 					nextArrow: $('.next-slider-home')
 				});
+			
+
+				//create svg
+				var s = Snap("#slider-svg");
+				var line = s.paper.line(0, 0, 2000, 0);
+				line.attr({
+					fill: 'none',
+					stroke: 'transparent',
+					"fill-opacity" : 0
+				});
+				// animate svg under slider
+				var animateSvg = function() {
+					line.attr({
+					stroke: 'transparent',
+					strokeWidth: 20
+				});
+				line.animate({stroke: '#c10819'}, 2900 , mina.easein);
+				};
+				animateSvg();
+
+			$('.slider-container').on('beforeChange', function(slick, currentSlide, nextSlide){
+				animateSvg();
+			});
+
+
 	}
+
+
+
+
 });
 	

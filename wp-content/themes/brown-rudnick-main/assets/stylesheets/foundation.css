@@ -7484,6 +7484,9 @@ body#tinymce {
 .social-icons {
   display: inline-block; }
 
+#slider-svg {
+  fill: none; }
+
 .page-template-page-homepage {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   background: #f0f0f0; }
@@ -7545,8 +7548,6 @@ body#tinymce {
             background-size: cover;
     background-position: center; }
   @media screen and (min-width: 40em) {
-    .page-template-page-homepage .slider-container {
-      margin-bottom: 1%; }
     .page-template-page-homepage .slide {
       height: 60vh; } }
   @media screen and (min-width: 64em) {

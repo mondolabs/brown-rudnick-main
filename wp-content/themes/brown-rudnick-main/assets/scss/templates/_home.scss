@@ -56,12 +56,12 @@
 	display: inline-block;
 }
 
-
+   #slider-svg {
+   	fill: none;
+   }
+   
 .page-template-page-homepage {
 
-	.slider-color-bar {
-		
-	}
 	.insights-grid {
 		padding-left: 0;
 
@@ -144,9 +144,6 @@
 	}
 
 	@include breakpoint(medium){
-	.slider-container {
-		margin-bottom: 1%;
-	}
 	.slide {
 			height: 60vh;
 		}

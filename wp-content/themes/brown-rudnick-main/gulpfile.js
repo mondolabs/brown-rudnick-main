@@ -66,6 +66,9 @@ var PATHS = {
     // Slick Slider
     'assets/javascript/vendor/slick/slick.js',
 
+    // Snap SVG
+    'assets/javascript/vendor/snap/snap.svg.js',
+
     // Include your own custom scripts (located in the custom folder)
     'assets/javascript/custom/*.js'
   ],

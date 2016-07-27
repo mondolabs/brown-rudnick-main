@@ -65,14 +65,17 @@ get_header(); ?>
      </div> <!-- end slide -->
     <?php $count++;?>    
     <?php endwhile; ?>
+
   <?php endif; ?>
-    <div class="slider-color-bar"></div>
+
   </div> <!-- end of slider container -->
+<?php get_template_part('assets/images/homepage', 'slider.svg'); ?>
+  
 
   <div class="stay-current">
     <p><?php echo get_field('homepage_text_section'); ?></p>
   </div> <!-- stay current -->
-
+ 
     <?php if ($insights):?>
       <?php foreach ($insights as $dog=>$cat):?>
             <?php $category = get_the_category($cat->ID);?>
@@ -80,8 +83,8 @@ get_header(); ?>
       <div class="medium-4 large-8 columns homepage-grid-element insights-grid"> <!-- 2/3 column -->
           <img class="insights-image" src ="<?php echo get_field('insights_image');?>">
             <?php foreach ($category as $bunny=>$rabbit):?>
-            <p class="homepage-header-text"><?php echo $rabbit->name; ?></p>
             <div class="homepage-header-container">
+              <p class="homepage-header-text"><?php echo $rabbit->name; ?></p>
             </div>
           <?php endforeach; ?>
           <p><?php echo str_replace('-','/',substr($cat->post_date, 0,10)); ?></p>
