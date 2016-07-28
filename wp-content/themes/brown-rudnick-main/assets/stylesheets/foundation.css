@@ -7482,7 +7482,7 @@ body#tinymce {
     text-transform: uppercase; }
 
 .slider-svg {
-  height: 20px; }
+  height: 10px; }
 
 .social-icons {
   display: inline-block; }
@@ -7493,6 +7493,28 @@ body#tinymce {
 .page-template-page-homepage {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   background: #f0f0f0; }
+  .page-template-page-homepage .blog-grid-img {
+    width: 100%; }
+  .page-template-page-homepage .human-icon {
+    position: absolute;
+    right: 10%;
+    bottom: 10%;
+    width: 80px;
+    height: 80px;
+    padding: 30px;
+    background: #c10819 url("../images/human-icon.png") no-repeat center;
+    -webkit-background-size: 40% 40%;
+            background-size: 40%;
+    z-index: 999; }
+  .page-template-page-homepage .columns {
+    padding: 0 !important; }
+  .page-template-page-homepage .insights-image {
+    max-height: 100%;
+    z-index: 999; }
+  .page-template-page-homepage .insights-text-container {
+    display: inline-block;
+    width: 50%;
+    margin-left: 5%; }
   .page-template-page-homepage .insights-grid {
     padding-left: 0; }
   .page-template-page-homepage .public-interest-btn {
@@ -7535,48 +7557,37 @@ body#tinymce {
   @media screen and (min-width: 40em) {
     .page-template-page-homepage .homepage-grid-interior {
       clear: right; }
-    .page-template-page-homepage .insights-image {
-      max-height: 100%;
-      float: left; }
-    .page-template-page-homepage .homepage-grid-element {
-      height: 300px; } }
+    .page-template-page-homepage .homepage-header-container {
+      padding: .5%; } }
   .page-template-page-homepage .slide-description {
-    padding-top: 20%;
+    padding-top: 10%;
     padding-bottom: 25%;
-    padding-left: 15%;
-    padding-right: 15%; }
+    padding-left: 7.5%;
+    padding-right: 7.5%; }
   .page-template-page-homepage .slick-slide {
     height: 450px; }
   .page-template-page-homepage .slide {
     background-repeat: no-repeat;
     -webkit-background-size: cover;
-            background-size: cover; }
-  @media screen and (min-width: 40em) {
-    .page-template-page-homepage .slick-slide {
-      height: 750px; } }
+            background-size: cover;
+    background-position: center; }
   @media screen and (min-width: 64em) {
     .page-template-page-homepage .prev-slider-home, .page-template-page-homepage .next-slider-home {
-      width: 30px; } }
+      width: 30px; }
+    .page-template-page-homepage .slick-slide {
+      height: 650px; }
+    .page-template-page-homepage .homepage-grid-element {
+      height: 300px; } }
   .page-template-page-homepage .slide-description-heading {
     border-bottom: 1px solid #ffffff;
-    width: 30%; }
+    width: 30%;
+    margin-bottom: 3%; }
   .page-template-page-homepage .slick-arrow {
     color: transparent; }
-  .page-template-page-homepage .human-icon {
-    position: absolute;
-    right: 10%;
-    bottom: 10%;
-    width: 7.5%;
-    height: 7.5%;
-    padding: 1.5%;
-    background: #c10819 url("../images/human-icon.png") no-repeat center;
-    -webkit-background-size: contain;
-            background-size: contain;
-    z-index: 999; }
   .page-template-page-homepage .prev-slider-home {
     position: absolute;
     top: 80%;
-    left: 20%;
+    left: 7.5%;
     list-style-type: none;
     background: url("../images/back-slider.png") no-repeat;
     -webkit-background-size: contain;
@@ -7584,14 +7595,17 @@ body#tinymce {
   .page-template-page-homepage .next-slider-home {
     position: absolute;
     top: 80%;
-    left: 25%;
+    left: 15%;
     list-style-type: none;
     background: url("../images/forward-slider.png") no-repeat;
     -webkit-background-size: contain;
             background-size: contain; }
   .page-template-page-homepage .homepage-header-container {
     border-bottom: 2px solid #f0f0f0;
-    width: 50%; }
+    width: 50%;
+    display: inline-block; }
+  .page-template-page-homepage .insights-container {
+    display: inline-block; }
   .page-template-page-homepage .home-button {
     background-color: #c10819;
     color: #ffffff;
@@ -7599,7 +7613,8 @@ body#tinymce {
     padding-right: 5%;
     padding-top: 2%;
     padding-bottom: 2%;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    margin-top: 3%; }
   .page-template-page-homepage .homepage-header-text {
     color: #c10819; }
   @media screen and (min-width: 40em) {
@@ -7628,6 +7643,8 @@ body#tinymce {
     width: 60%; }
   .page-template-page-homepage .homepage-slider-title, .page-template-page-homepage .homepage-element-body {
     font-family: "adobe-garamond-pro", serif; }
+  .page-template-page-homepage .homepage-slider-title {
+    margin-bottom: 3%; }
   .page-template-page-homepage .public-interest-learn-more {
     font-family: "Avenir", Helvetica, Arial, sans-serif; }
   .page-template-page-homepage .homepage-header-text {

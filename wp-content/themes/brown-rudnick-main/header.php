@@ -38,19 +38,33 @@
 			</button>
 		<div class="title-bar-title">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="header-logo--mobile" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/BR-Logo.png"></a>
-			<div class="top-right-icon-group">
-				<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/Contact-icon.png">
-				<a href="<?php echo get_permalink(19);?>">Contact Us</a>
-				<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/Marker-Icon.png">
-				<a href="<?php echo get_permalink(27);?>">Locations</a>
-				<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/Search-Icon.png">
-				<a href='<?php echo get_permalink(104);?>'>Search</a>
-			</div>
 		</div>
 
 	</div>
 
-</header>
+	<?php	
+		$args = array('child_of'=>5, 'post_type'=>'page', 'sort_column'=>'menu_order');
+		$child_pages = get_pages($args);
+?>
+
+
+<div class="custom-header-nav">
+			<ul class="menu desktop-menu">
+				<?php foreach($child_pages as $page=>$page_meta): ?>
+				<a href="<?php echo get_permalink($page_meta->ID);?>"><li><?php echo $page_meta->post_title;?></li></a>
+			<?php endforeach;?>
+				<a href="#" id="public-interest"> <li>Public Interest</li></a>
+				<a href="#" id="member-portal-anchor"><li id="member-portal-list"> Member Portal</li></a>
+			</ul>
+				<div class="top-right-icon-group">
+					<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/Contact-icon.png">
+					<a href="<?php echo get_permalink(19);?>">Contact Us</a>
+					<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/Marker-Icon.png">
+					<a href="<?php echo get_permalink(27);?>">Locations</a>
+					<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/Search-Icon.png">
+					<a href='<?php echo get_permalink(104);?>'>Search</a>
+			</div>
+</div>
 
 		<div class="title-bar" data-responsive-toggle="site-navigation">
 			<button class="menu-icon" type="button" data-toggle="mobile-menu"></button>

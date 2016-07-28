@@ -30,11 +30,7 @@ get_header(); ?>
 
   <?php do_action( 'foundationpress_before_content' ); ?>
 
-  <section class="homepage-menu">
-    <div class="homepage-navigation">
-      <?php get_template_part('template-parts/custom-header-nav-homepage');?>
-    </div>
-  </section>
+
 
   <div class = "slider-container" label="Latest Updates from Brown Rudnick" > 
     <?php if( have_rows('homepage_slider') ): ?>
@@ -81,16 +77,19 @@ get_header(); ?>
     <?php if ($insights):?>
       <?php foreach ($insights as $dog=>$cat):?>
             <?php $category = get_the_category($cat->ID);?>
-    <div class="row display"> <!-- row-->
+    <div class="row"> <!-- row-->
       <div class="medium-4 large-8 columns homepage-grid-element insights-grid"> <!-- 2/3 column -->
-          <img class="insights-image" src ="<?php echo get_field('insights_image');?>">
-            <?php foreach ($category as $bunny=>$rabbit):?>
-            <div class="homepage-header-container">
-              <p class="homepage-header-text"><?php echo $rabbit->name; ?></p>
-            </div>
-          <?php endforeach; ?>
-          <p><?php echo str_replace('-','/',substr($cat->post_date, 0,10)); ?></p>
-          <h5 class="homepage-element-body"><?php echo $cat->post_title; ?></h5>
+            <img class="insights-image" src ="<?php echo get_field('insights_image');?>">
+            <div class="insights-text-container">
+              <?php foreach ($category as $bunny=>$rabbit):?>
+            
+              <div class="homepage-header-container">
+                <p class="homepage-header-text"><?php echo $rabbit->name; ?></p>
+              </div>
+              <?php endforeach; ?>
+              <p><?php echo str_replace('-','/',substr($cat->post_date, 0,10)); ?></p>
+              <h5 class="homepage-element-body"><?php echo $cat->post_title; ?></h5>
+          </div>
       <?php endforeach;?>
     <?php endif;?>
       </div>
@@ -126,7 +125,7 @@ get_header(); ?>
       </div>
 
       <div class ="medium-4 columns  homepage-grid-element blog-grid"> <!-- 1/3 column -->
-        <img src ="<?php echo get_field('blog_header');?>">
+        <img class="blog-grid-img" src ="<?php echo get_field('blog_header');?>">
           <p class="homepage-header-text">Blog: PLACEHOLDER CATEGORY</p>
           <?php if ($government_contracts):?>
             <?php foreach ($government_contracts as $dog=>$cat):?>
