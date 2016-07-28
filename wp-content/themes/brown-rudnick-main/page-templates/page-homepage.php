@@ -71,7 +71,7 @@ get_header(); ?>
   
 
   <div class="stay-current">
-    <p><?php echo get_field('homepage_text_section'); ?></p>
+    <h4><?php echo get_field('homepage_text_section'); ?></h4>
   </div> <!-- stay current -->
  
     <?php if ($insights):?>
@@ -88,7 +88,7 @@ get_header(); ?>
               </div>
               <?php endforeach; ?>
               <p><?php echo str_replace('-','/',substr($cat->post_date, 0,10)); ?></p>
-              <h5 class="homepage-element-body"><?php echo $cat->post_title; ?></h5>
+              <h4 class="homepage-element-body"><?php echo $cat->post_title; ?></h4>
           </div>
       <?php endforeach;?>
     <?php endif;?>
@@ -96,56 +96,69 @@ get_header(); ?>
 
       <?php if ($in_news):?>
       <div class="medium-8 large-4 columns homepage-grid-element"> <!-- 1/3 column -->
-        <p class="homepage-header-text">PLACEHOLDER CATEGORY</p>
-        <div class="homepage-header-container">
+        <div class="homepage-grid-interior">      
+          <div class="homepage-header-container">
+            <p class="homepage-header-text">PLACEHOLDER CATEGORY</p>
+          </div>
+          <?php foreach ($in_news as $dog=>$cat):?>
+          <p><?php echo str_replace('-','/',substr($cat->post_date, 0,10));?></p>
+          <h5 class="homepage-element-body"><?php echo $cat->post_title; ?></h5>
+          <?php endforeach;?>
+          <?php endif;?>
         </div>
-        <?php foreach ($in_news as $dog=>$cat):?>
-        <p><?php echo str_replace('-','/',substr($cat->post_date, 0,10));?></p>
-        <p class="homepage-element-body"><?php echo $cat->post_title; ?></p>
-        <?php endforeach;?>
-      <?php endif;?>
       </div>
-    
     </div>
   
 
     <div class = "row"> <!-- row --> 
 
       <div class ="medium-4 columns homepage-grid-element"> <!-- 1/3 column -->
+        <div class="homepage-grid-interior">
         <?php if ($white_collar):?>
          <?php foreach ($white_collar as $dog=>$cat):?>
           <?php $category = get_the_category($cat->ID);?>
-          <?php foreach($category as $blog_category=>$name):?>
-             <p class="homepage-header-text"> Blog: <?php echo $name->name;?> </p>
+          <?php foreach($category as $blog_category=>$name):?>         
+             <div class="homepage-header-container">
+               <p class="homepage-header-text"> Blog: <?php echo $name->name;?> </p>
+             </div>
           <?php endforeach;?>
           <p><?php echo str_replace('-','/',substr($cat->post_date, 0,10)); ?></p>
-          <p class="homepage-element-body"><?php echo $cat->post_title;?></p>
+          <h5 class="homepage-element-body"><?php echo $cat->post_title;?></h5>
         <?php endforeach;?> 
         <?php endif;?>
+        </div>
       </div>
 
       <div class ="medium-4 columns  homepage-grid-element blog-grid"> <!-- 1/3 column -->
         <img class="blog-grid-img" src ="<?php echo get_field('blog_header');?>">
-          <p class="homepage-header-text">Blog: PLACEHOLDER CATEGORY</p>
+         <div class="homepage-grid-interior">         
+          <div class="homepage-header-container">
+            <p class="homepage-header-text">Blog: PLACEHOLDER CATEGORY</p>
+          </div>
           <?php if ($government_contracts):?>
             <?php foreach ($government_contracts as $dog=>$cat):?>
               <p><?php echo str_replace('-','/',substr($cat->post_date, 0,10)); ?></p>
-              <p class="homepage-element-body" ><?php echo $cat->post_title;?></p>
+              <h5 class="homepage-element-body" ><?php echo $cat->post_title;?></h5>
             <?php endforeach;?>
           <?php endif;?>
+          </div>
       </div>
 
       <div class ="medium-4 columns homepage-grid-element blog-grid"> <!-- 1/3 column -->
         <?php if(get_field('events_header')):?>
         <img src ="<?php echo get_field('events_header');?>">
         <?php endif; ?>
-        <p class="homepage-header-text"> PLACEHOLDER CATEGORY </p>
-        <p><?php echo str_replace('-','/',substr($cat->post_date, 0,10)); ?></p>
+        <div class="homepage-grid-interior">
+          <div class="homepage-header-container">      
+            <p class="homepage-header-text"> PLACEHOLDER CATEGORY </p>
+          </div>
+          <p><?php echo str_replace('-','/',substr($cat->post_date, 0,10)); ?></p>
           <?php if($event_list):?>
             <?php foreach ($event_list as $events => $specific_event):?>
-                <p class="homepage-element-body"><?php echo $specific_event-> post_title;?></p>
+                <h5 class="homepage-element-body"><?php echo $specific_event-> post_title;?></h5>
             <?php endforeach;?>
-        <?php endif;?>
+          <?php endif;?>
+        </div>
       </div>
     
     </div>

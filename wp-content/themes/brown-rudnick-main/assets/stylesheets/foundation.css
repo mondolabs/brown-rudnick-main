@@ -7460,13 +7460,13 @@ body#tinymce {
   background-color: #ffffff;
   display: block;
   padding: 2%;
-  padding-left: 0; }
+  padding-left: 0;
+  font-family: "Avenir Medium", Helvetica, Arial, sans-serif; }
   .custom-header-nav li {
     display: inline-block;
     color: #000000;
     padding-left: 3.5%;
-    text-transform: uppercase;
-    font-weight: bold; }
+    text-transform: uppercase; }
 
 .right-icon-link {
   text-decoration: none;
@@ -7479,20 +7479,21 @@ body#tinymce {
   right: 6.5%;
   font-size: .85em; }
 
-#right-header-menu-last:before {
-  content: "|";
-  color: #000000; }
-
 #right-header-menu-first {
   position: absolute;
   right: 20%;
-  font-size: .85em; }
+  font-size: .80em;
+  padding-right: 5%;
+  border-right: 0.5px solid #000000; }
 
 .mobile-menu {
   content: "";
   width: 95%;
   border-bottom: 1px solid #f0f0f0;
   margin: 0 auto; }
+
+.desktop-menu a {
+  word-break: keep-all !important; }
 
 #footer-container {
   background-color: #ffffff;
@@ -7507,16 +7508,27 @@ body#tinymce {
 .footer-links {
   display: inline-block;
   width: 50%;
-  margin-left: 25%; }
+  margin: 0 auto;
+  text-align: center; }
   .footer-links a {
     color: #0a0a0a;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    padding-left: 5%;
+    font-family: "Avenir Medium", Helvetica, Arial, sans-serif; }
+
+.footer-logo {
+  display: inline-block;
+  width: 20%; }
 
 .slider-svg {
   height: 10px; }
 
 .social-icons {
-  display: inline-block; }
+  width: 20%;
+  display: inline-block;
+  text-align: right; }
+  .social-icons a {
+    padding-left: 7.5%; }
 
 #slider-svg {
   fill: none; }
@@ -7541,11 +7553,13 @@ body#tinymce {
     padding: 0 !important; }
   .page-template-page-homepage .insights-image {
     max-height: 100%;
-    z-index: 999; }
+    z-index: 999;
+    vertical-align: top; }
   .page-template-page-homepage .insights-text-container {
     display: inline-block;
     width: 50%;
-    margin-left: 5%; }
+    margin-left: 5%;
+    margin-top: 5%; }
   .page-template-page-homepage .insights-grid {
     padding-left: 0; }
   .page-template-page-homepage .public-interest-btn {
@@ -7555,9 +7569,9 @@ body#tinymce {
     padding: 5%;
     text-transform: uppercase; }
   .page-template-page-homepage .prev-slider-home {
-    width: 5%; }
+    width: 7.5%; }
   .page-template-page-homepage .next-slider-home {
-    width: 5%; }
+    width: 7.5%; }
   .page-template-page-homepage .homepage-slider-title {
     color: #ffffff; }
   .page-template-page-homepage .slide-description p {
@@ -7586,11 +7600,11 @@ body#tinymce {
     border-bottom: 5px solid #ffffff; }
   .page-template-page-homepage .slider-button {
     background-color: #c10819; }
+  .page-template-page-homepage .homepage-grid-interior {
+    padding: 10%; }
   @media screen and (min-width: 40em) {
     .page-template-page-homepage .homepage-grid-interior {
-      clear: right; }
-    .page-template-page-homepage .homepage-header-container {
-      padding: .5%; } }
+      clear: right; } }
   .page-template-page-homepage .slide-description {
     padding-top: 10%;
     padding-bottom: 25%;
@@ -7609,7 +7623,7 @@ body#tinymce {
     .page-template-page-homepage .slick-slide {
       height: 650px; }
     .page-template-page-homepage .homepage-grid-element {
-      height: 300px; } }
+      height: 350px; } }
   .page-template-page-homepage .slide-description-heading {
     border-bottom: 1px solid #ffffff;
     width: 30%;
@@ -7634,8 +7648,9 @@ body#tinymce {
             background-size: contain; }
   .page-template-page-homepage .homepage-header-container {
     border-bottom: 2px solid #f0f0f0;
-    width: 50%;
-    display: inline-block; }
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 7.5%; }
   .page-template-page-homepage .insights-container {
     display: inline-block; }
   .page-template-page-homepage .home-button {
@@ -7648,10 +7663,11 @@ body#tinymce {
     text-transform: uppercase;
     margin-top: 3%; }
   .page-template-page-homepage .homepage-header-text {
-    color: #c10819; }
+    color: #c10819;
+    text-transform: uppercase; }
   @media screen and (min-width: 40em) {
     .page-template-page-homepage .public-interest-learn-more {
-      max-height: 100%;
+      max-height: 600px;
       background-color: #ffffff;
       margin-top: 7.5%;
       margin-left: 2.5%;
@@ -7666,7 +7682,7 @@ body#tinymce {
     text-align: center;
     border-bottom: 3px solid #c10819;
     width: 20%; }
-    .page-template-page-homepage .stay-current p {
+    .page-template-page-homepage .stay-current h4 {
       text-transform: uppercase; }
   .page-template-page-homepage .pub-interest-title {
     margin-top: 3%;

@@ -28,8 +28,7 @@ $(document).ready(function(){
 					line.animate({stroke: '#c10819', fill:'none'}, 3900 , mina.linear);
 				};
 				animateSvg();
-				// animate svG on slide change, with -100 milisecond to account for the potential lag between
-				// both effects
+				// animate svG on slide change
 			$('.slider-container').on('beforeChange', function(slick, currentSlide, nextSlide){
 				animateSvg();
 			});

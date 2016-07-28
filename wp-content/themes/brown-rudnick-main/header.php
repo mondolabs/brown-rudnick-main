@@ -53,7 +53,7 @@
 				<?php foreach($child_pages as $page=>$page_meta): ?>
 				<a href="<?php echo get_permalink($page_meta->ID);?>"><li><?php echo $page_meta->post_title;?></li></a>
 			<?php endforeach;?>
-				<a href="#" id="right-header-menu-first"> <li>Public Interest</li></a>
+				<a href="#" id="right-header-menu-first"><li>Public Interest</li></a>
 				<a href="#" id="right-header-menu-last"><li> Member Portal</li></a>
 			</ul>
 				<div class="top-right-icon-group">

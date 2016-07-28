@@ -5,7 +5,9 @@
  */
 
 ?>
+	<div class="footer-logo">
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="header-logo--mobile" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/Black-Red-Logo.png"></a>
+	</div>
 	<div class="footer-links">
 		<a href="#">Contact us</a>
 		<a href="#">Terms of Use</a>

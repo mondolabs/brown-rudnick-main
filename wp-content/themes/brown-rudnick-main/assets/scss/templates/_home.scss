@@ -25,12 +25,12 @@
 		display: block;
 		padding: 2%;
 		padding-left: 0;
+		font-family: $br-avenir-heavy;
 	 li { 
 	 		display: inline-block; 
 	 		color: $br-black;
 	 		padding-left: 3.5%;
 	 		text-transform: uppercase;
-	 		font-weight: bold;
 	 	}
 		
 	}
@@ -45,20 +45,21 @@
 		right: 6.5%;
 		font-size: .85em;
 	}
-	#right-header-menu-last:before{
-		content: "|";
-		color: $br-black;
-	}
 	#right-header-menu-first {
 		position: absolute;		
 		right: 20%;
-		font-size: .85em;
+		font-size: .80em;
+		padding-right: 5%;
+		border-right: 0.5px solid $br-black;
 	}
 	.mobile-menu {
 		content: "";
 		width: 95%;
 		border-bottom: 1px solid $primary-grey;
 		margin: 0 auto;
+	}
+	.desktop-menu {
+		a {word-break: keep-all !important;}
 	}
 // footer 
 #footer-container {
@@ -76,11 +77,18 @@
 .footer-links {
 	display: inline-block;
 	width: 50%;
-	margin-left: 25%;
+	margin: 0 auto;
+	text-align: center;
 	a { 
 		color: $black; 
 		text-transform: uppercase;
+		padding-left: 5%;
+		font-family: $br-avenir-heavy;
 	}
+}
+.footer-logo {
+	display: inline-block;
+	width: 20%;
 }
 
 // svg container
@@ -88,7 +96,12 @@
 	height: 10px;
 }
 .social-icons {
+	width: 20%;
 	display: inline-block;
+	text-align: right;
+	a {
+		padding-left:7.5%;
+	}
 }
 
    #slider-svg {
@@ -117,14 +130,14 @@
 	}
 		.insights-image{
 			max-height: 100%;
-			//width: 33.3%;
 			z-index: 999;
-			//display: inline-block;
+			vertical-align: top;
 		}
 		.insights-text-container {
 			display: inline-block;
 			width: 50%;
 			margin-left: 5%;
+			margin-top:5%;
 		}
 	.insights-grid {
 		padding-left: 0;
@@ -138,10 +151,10 @@
 		text-transform: uppercase;
 	}
 	.prev-slider-home {
-		width:5%;
+		width:7.5%;
 	}
 	.next-slider-home{
-		width: 5%;
+		width: 7.5%;
 	}
 
 		font-family: $brfont;
@@ -170,7 +183,6 @@
 			}
 		}
 	.homepage-grid-element {
-		
 		border-style: solid;
 		border-width: 10px;
 		border-color: $primary-grey;
@@ -183,14 +195,13 @@
 		.slider-button {
 			background-color: $primary-red;
 		}
+		.homepage-grid-interior {
+			padding: 10%;
+		}
 @include breakpoint(medium){
 	.homepage-grid-interior {
 		clear: right;
 	}
-
-		.homepage-header-container{
-			padding: .5%;
-		}
 	
 	}
 	.slide-description {
@@ -217,7 +228,7 @@
 			height: 650px;
 	}
 		.homepage-grid-element{
-			height: 300px;
+			height: 350px;
 		}		
 }
 	.slide-description-heading {
@@ -250,8 +261,9 @@
 
 	.homepage-header-container{
 		border-bottom: 2px solid $primary-grey;
-		width: 50%;
+		width: 100%;
 		display: inline-block;
+		margin-bottom:7.5%;
 	}
 	.insights-container {
 		display: inline-block;
@@ -268,12 +280,13 @@
 	}
 	.homepage-header-text {
 		color: $primary-red;
+		text-transform: uppercase;
 	}
 
 
 	@include breakpoint(medium){
 	.public-interest-learn-more {
-		max-height: 100%;
+		max-height: 600px;
 		background-color: $white;
 		margin-top: 7.5%;
 		margin-left: 2.5%;
@@ -287,7 +300,7 @@
 		color: $br-black;
 		margin: 5% auto;
 		text-align: center;
-		p {
+		h4 {
 			text-transform: uppercase;
 		}
 		border-bottom: 3px solid $primary-red;
