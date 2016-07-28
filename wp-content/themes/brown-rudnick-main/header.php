@@ -53,16 +53,16 @@
 				<?php foreach($child_pages as $page=>$page_meta): ?>
 				<a href="<?php echo get_permalink($page_meta->ID);?>"><li><?php echo $page_meta->post_title;?></li></a>
 			<?php endforeach;?>
-				<a href="#" id="public-interest"> <li>Public Interest</li></a>
-				<a href="#" id="member-portal-anchor"><li id="member-portal-list"> Member Portal</li></a>
+				<a href="#" id="right-header-menu-first"> <li>Public Interest</li></a>
+				<a href="#" id="right-header-menu-last"><li> Member Portal</li></a>
 			</ul>
 				<div class="top-right-icon-group">
 					<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/Contact-icon.png">
-					<a href="<?php echo get_permalink(19);?>">Contact Us</a>
+					<a class="right-icon-link" href="<?php echo get_permalink(19);?>">Contact Us</a>
 					<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/Marker-Icon.png">
-					<a href="<?php echo get_permalink(27);?>">Locations</a>
+					<a class="right-icon-link" href="<?php echo get_permalink(27);?>">Locations</a>
 					<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/Search-Icon.png">
-					<a href='<?php echo get_permalink(104);?>'>Search</a>
+					<a class="right-icon-link" href='<?php echo get_permalink(104);?>'>Search</a>
 			</div>
 </div>
 

@@ -7437,41 +7437,72 @@ body#tinymce {
         #single-post .main-content:last-child:not(:first-child) {
           float: right; } }
 
+.top-right-icon-group {
+  text-align: right;
+  width: 50%;
+  position: absolute;
+  top: 7.5%;
+  right: 5%;
+  text-transform: uppercase; }
+
 #public-interest {
   margin-left: 10%;
   font-size: 1em; }
-
-#member-portal-list:before {
-  content: "|"; }
 
 .site-header {
   background-color: #ffffff; }
 
 .title-bar-title {
   padding-top: 2.5%;
-  padding-left: 5%;
   padding-bottom: 2.5%; }
-
-@media screen and (min-width: 40em) {
-  .top-right-icon-group {
-    position: absolute;
-    top: 50px;
-    right: 12.5%;
-    text-transform: uppercase; } }
 
 .custom-header-nav {
   background-color: #ffffff;
   display: block;
-  padding: 2%; }
+  padding: 2%;
+  padding-left: 0; }
   .custom-header-nav li {
     display: inline-block;
     color: #000000;
     padding-left: 3.5%;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    font-weight: bold; }
+
+.right-icon-link {
+  text-decoration: none;
+  color: #000000;
+  padding-left: 2%;
+  padding-right: 3%; }
+
+#right-header-menu-last {
+  position: absolute;
+  right: 6.5%;
+  font-size: .85em; }
+
+#right-header-menu-last:before {
+  content: "|";
+  color: #000000; }
+
+#right-header-menu-first {
+  position: absolute;
+  right: 20%;
+  font-size: .85em; }
+
+.mobile-menu {
+  content: "";
+  width: 95%;
+  border-bottom: 1px solid #f0f0f0;
+  margin: 0 auto; }
 
 #footer-container {
   background-color: #ffffff;
-  padding: 5%; }
+  margin-top: 0 !important; }
+
+#footer {
+  padding: 5% !important;
+  width: 100%;
+  max-width: inherit !important;
+  padding-bottom: 10%; }
 
 .footer-links {
   display: inline-block;
@@ -7535,7 +7566,8 @@ body#tinymce {
     background-repeat: no-repeat;
     -webkit-background-size: cover;
             background-size: cover;
-    overflow: hidden; }
+    overflow: hidden;
+    margin-top: 5%; }
     @media screen and (min-width: 40em) {
       .page-template-page-homepage .homepage-full {
         height: 500px; } }
