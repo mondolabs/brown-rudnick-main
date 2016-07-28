@@ -6,9 +6,9 @@ $(document).ready(function(){
 					slidesToShow: 1,
 					slidesToScroll: 1,
 					autoplay: true,
-					autoplaySpeed: 3000,
+					autoplaySpeed: 4000,
+					// variableWidth: true,
 					arrows: true,
-					pauseOnHover: true,
 					fade: true,
 					prevArrow: $('.prev-slider-home'),
 					nextArrow: $('.next-slider-home')
@@ -27,12 +27,14 @@ $(document).ready(function(){
 				var animateSvg = function() {
 					line.attr({
 					stroke: 'transparent',
-					strokeWidth: 20
+					fill: 'transparent',
+					strokeWidth: 5
 				});
-				line.animate({stroke: '#c10819'}, 2900 , mina.easein);
+				line.animate({stroke: '#c10819', fill:'#c10819'}, 3900 , mina.easeinout);
 				};
 				animateSvg();
-
+				// animate svG on slide change, with -100 milisecond to account for the potential lag between
+				// both effects
 			$('.slider-container').on('beforeChange', function(slick, currentSlide, nextSlide){
 				animateSvg();
 			});

@@ -7481,6 +7481,9 @@ body#tinymce {
     color: #0a0a0a;
     text-transform: uppercase; }
 
+.slider-svg {
+  height: 20px; }
+
 .social-icons {
   display: inline-block; }
 
@@ -7539,22 +7542,21 @@ body#tinymce {
       height: 300px; } }
   .page-template-page-homepage .slide-description {
     padding-top: 20%;
-    padding-bottom: 30%;
+    padding-bottom: 25%;
     padding-left: 15%;
     padding-right: 15%; }
+  .page-template-page-homepage .slick-slide {
+    height: 450px; }
   .page-template-page-homepage .slide {
     background-repeat: no-repeat;
     -webkit-background-size: cover;
-            background-size: cover;
-    background-position: center; }
+            background-size: cover; }
   @media screen and (min-width: 40em) {
-    .page-template-page-homepage .slide {
-      height: 60vh; } }
+    .page-template-page-homepage .slick-slide {
+      height: 750px; } }
   @media screen and (min-width: 64em) {
-    .page-template-page-homepage .slide {
-      height: 80vh; }
     .page-template-page-homepage .prev-slider-home, .page-template-page-homepage .next-slider-home {
-      width: 30%; } }
+      width: 30px; } }
   .page-template-page-homepage .slide-description-heading {
     border-bottom: 1px solid #ffffff;
     width: 30%; }

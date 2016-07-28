@@ -36,7 +36,7 @@ get_header(); ?>
     </div>
   </section>
 
-  <div class = "slider-container" label="Latest Updates from Brown Rudnick" > <!-- start slider container -->
+  <div class = "slider-container" label="Latest Updates from Brown Rudnick" > 
     <?php if( have_rows('homepage_slider') ): ?>
       <?php $count = 0; ?>
       <?php while(have_rows('homepage_slider') ):
@@ -48,11 +48,12 @@ get_header(); ?>
         $slider_cta_link = get_sub_field('homepage_slider_cta_link');
         ?>
       <?php if (!empty($slider_image)):?>
+    <!-- start slider container -->
       <p class="prev-slider-home">prev</p>
       <p class="next-slider-home">next</p>
       <div class="human-icon"></div> 
       <!-- slide -->
-      <div class="slide" style="background-image:url('<?php echo $slider_image['url']; ?>');">
+       <div class="slide" style="background-image:url('<?php echo $slider_image['url']; ?>');">      
         <div class="slide-description">
             <h2 class="homepage-slider-title"><?php echo $slider_title; ?></h2>
             <div class="slide-description-heading">
@@ -65,11 +66,12 @@ get_header(); ?>
      </div> <!-- end slide -->
     <?php $count++;?>    
     <?php endwhile; ?>
-
   <?php endif; ?>
-
+    <div class="slider-svg">
+      <?php get_template_part('assets/images/homepage', 'slider.svg'); ?>
+    </div>
   </div> <!-- end of slider container -->
-<?php get_template_part('assets/images/homepage', 'slider.svg'); ?>
+
   
 
   <div class="stay-current">
