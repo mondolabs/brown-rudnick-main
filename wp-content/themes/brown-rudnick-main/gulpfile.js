@@ -69,6 +69,9 @@ var PATHS = {
     // Snap SVG
     'assets/javascript/vendor/snap/snap.svg.js',
 
+    // Scroll reveal
+    'assets/javascript/vendor/scrollreveal/scrollreveal.js',
+
     // Include your own custom scripts (located in the custom folder)
     'assets/javascript/custom/*.js'
   ],
@@ -188,6 +191,7 @@ gulp.task('copy', function() {
   var fontAwesome = gulp.src('assets/components/fontawesome/fonts/**/*.*')
       .pipe(gulp.dest('assets/fonts'));
 
+  // Slick Slider
   var slickSlider = gulp.src('assets/javascript/vendor/slick/**')
       .pipe($.flatten())
       .pipe(gulp.dest('assets/javascript/vendor/slick'));
