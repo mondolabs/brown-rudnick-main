@@ -2,78 +2,44 @@
 /*
 Template Name: Homepage
 */
-get_header(); ?>
 
+get_header();
+
+$data = Timber::get_context();
+
+$post = new TimberPost();
+$data['post'] = $post;
+$data['posts'] = Timber::get_posts();
+$data['main_image_id'] = $post->contact_us_image;
+$data['gov_array'] = array( 'category_name' => 'government_contracts', 'numberposts'=>1); 
+$data['government_contracts'] = get_posts($gov_array);
+$data['white_collar_array'] = array('category_name' => 'white_collar', 'numberposts'=>1);
+$data['white_collar'] = get_posts($white_collar_array);
+$data['news_array'] = array('category_name' => 'in_the_news', 'numberposts'=>1);
+$data['in_news'] = get_posts($news_array);
+$data['insights_array'] = array('category_name' => 'insights', 'numberposts'=>1);
+$data['insights'] = get_posts($insights_array);
+$data['have_rows_homepage_slider'] = have_rows('homepage_slider');
+$data['event_list'] = new WP_Query( array(
+    'post_type' => 'event',
+    'orderby' => 'date',
+    'order' => 'DESC', 
+    'max_num_pages'=> 1
+));
+
+
+?>
 
 
 <?php
 // all our content is loaded at the beginning :) 
-  $gov_array = array( 'category_name' => 'government_contracts', 'numberposts'=>1); 
-  $government_contracts = get_posts($gov_array);
-  $white_collar_array = array('category_name' => 'white_collar', 'numberposts'=>1);
-  $white_collar = get_posts($white_collar_array);
-  $news_array = array('category_name' => 'in_the_news', 'numberposts'=>1);
-  $in_news = get_posts($news_array);
-  $insights_array = array('category_name' => 'insights', 'numberposts'=>1);
-  $insights = get_posts($insights_array);
-
-  // get only the most recent event from all events :)
-  $event_list = new WP_Query( array(
-      'post_type' => 'event',
-      'orderby' => 'date',
-      'order' => 'DESC', 
-      'max_num_pages'=> 1
-  ));
 ?>
-
- <div id="page-full-width-homepage" class ="full-width" role="main">
-
-  <?php do_action( 'foundationpress_before_content' ); ?>
-
-
-
-  <div class = "slider-container" label="Latest Updates from Brown Rudnick" > 
-    <?php if( have_rows('homepage_slider') ): ?>
-      <?php $count = 0; ?>
-      <?php while(have_rows('homepage_slider') ):
-        the_row();
-        $slider_image = get_sub_field('homepage_slider_image');
-        $slider_title = get_sub_field('homepage_slider_title');
-        $slider_content = get_sub_field('homepage_slider_description'); 
-        $slider_cta_text = get_sub_field('homepage_slider_cta_text');
-        $slider_cta_link = get_sub_field('homepage_slider_cta_link');
-        ?>
-      <?php if (!empty($slider_image)):?>
-    <!-- start slider container -->
-      <p class="prev-slider-home">prev</p>
-      <p class="next-slider-home">next</p>
-      <div class="human-icon"></div> 
-      <!-- slide -->
-       <div class="slide" style="background-image:url('<?php echo $slider_image['url']; ?>');">      
-        <div class="slide-description">
-            <h2 class="homepage-slider-title"><?php echo $slider_title; ?></h2>
-            <div class="slide-description-heading">
-            </div>
-            <?php $abbreviation = substr($slider_content, 0, 60); ?>
-          <p><?php echo $abbreviation; ?></p>
-          <a href="<?php echo $slider_cta_link;?>"><button class="home-button"><?php echo $slider_cta_text; ?></button></a>
-      <?php endif;?>
-      </div>
-     </div> <!-- end slide -->
-    <?php $count++;?>    
-    <?php endwhile; ?>
-  <?php endif; ?>
-    <div class="slider-svg">
-      <?php get_template_part('assets/images/homepage', 'slider.svg'); ?>
-    </div>
-  </div> <!-- end of slider container -->
-
-  
-
-  <div class="stay-current">
-    <h4><?php echo get_field('homepage_text_section'); ?></h4>
-  </div> <!-- stay current -->
- 
+  <div id="page-full-width-homepage" class ="full-width" role="main">
+    <?php Timber::render('slider.twig', $data); ?>
+    <div class="stay-current">
+      <h4><?php echo get_field('homepage_text_section'); ?></h4>
+    </div> <!-- stay current -->
+   
     <?php if ($insights):?>
       <?php foreach ($insights as $dog=>$cat):?>
             <?php $category = get_the_category($cat->ID);?>
@@ -174,9 +140,7 @@ get_header(); ?>
       </div>
     
     </div>
-
-</div>
-
+  </div>  
 <?php do_action( 'foundationpress_after_content' ); ?>
 
 <?php get_footer();

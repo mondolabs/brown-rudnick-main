@@ -10,14 +10,48 @@
 register_nav_menus(array(
 	'top-bar-r'  => 'Right Top Bar',
 	'mobile-nav' => 'Mobile',
-	'custom-submenu' => 'Submenu',
-	'about' => 'About',
-	'people' => 'People',
-	'insights' => 'Insights',
-	'careers' => 'Careers',
-	'public-interest'=>'Public Interest',
-	'member-portal'=> 'Member Portal'
+	'custom-menu' => 'Desktop Menu',
+	'custom-topmenu' => 'Desktop Topmenu'
 ));
+
+/**
+ * Desktop navigation - Custom Desktop Nav Menu
+ *
+ * @link http://codex.wordpress.org/Function_Reference/wp_nav_menu
+ */
+if ( ! function_exists( 'desktop_menu' ) ) {
+	function desktop_menu() {
+		wp_nav_menu( array(
+			'container'      => false,
+			'menu_class'     => 'dropdown menu',
+			'items_wrap'     => '<ul id="%1$s" class="menu %2$s desktop-menu" data-dropdown-menu>%3$s</ul>',
+			'theme_location' => 'custom-menu',
+			'depth'          => 3,
+			'fallback_cb'    => false,
+			'walker'         => new Foundationpress_Top_Bar_Walker(),
+		));
+	}
+}
+
+
+/**
+ * Desktop navigation - Custom Desktop Nav Submenu
+ *
+ * @link http://codex.wordpress.org/Function_Reference/wp_nav_menu
+ */
+if ( ! function_exists( 'desktop_topmenu' ) ) {
+	function desktop_topmenu() {
+		wp_nav_menu( array(
+			'container'      => false,
+			'menu_class'     => 'dropdown topmenu',
+			'items_wrap'     => '<ul id="%1$s" class="%2$s desktop-menu" data-dropdown-menu>%3$s</ul>',
+			'theme_location' => 'custom-topmenu',
+			'depth'          => 3,
+			'fallback_cb'    => false,
+			'walker'         => new Foundationpress_Top_Bar_Walker(),
+		));
+	}
+}
 
 
 /**

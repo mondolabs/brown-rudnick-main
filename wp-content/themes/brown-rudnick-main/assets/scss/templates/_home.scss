@@ -94,6 +94,7 @@
 // svg container
 .slider-svg {
 	height: 10px;
+
 }
 .social-icons {
 	width: 20%;
@@ -107,6 +108,10 @@
    #slider-svg {
    	fill: none;
    }
+   
+button.slick-arrow  {
+	display: none !important;
+}
    
 .page-template-page-homepage {
 	.blog-grid-img {

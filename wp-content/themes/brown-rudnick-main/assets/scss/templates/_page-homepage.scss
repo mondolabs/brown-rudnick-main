@@ -1,20 +1,22 @@
 .page-template-page-homepage {
-		font-family: $brfont;
+	font-family: $brfont;
 }
-	.orbit-image {
-		width: 100%;
-		max-width: 200px;
-	}
+
+.orbit-image {
+	width: 100%;
+	max-width: 200px;
+}
  
-		.homepage-slider-image {
-			display: block;
-			text-align: center;
-			width: 30%;
-			height: 500px;
-			img {
-				width: 100%;
-				@media #{$large-up} {
-					max-width: 300px;
-				}
-			}
+.homepage-slider-image {
+	display: block;
+	text-align: center;
+	width: 30%;
+	height: 500px;
+	img {
+		width: 100%;
+		@media #{$large-up} {
+			max-width: 300px;
 		}
+	}
+}
+

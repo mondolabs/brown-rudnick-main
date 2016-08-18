@@ -7533,6 +7533,9 @@ body#tinymce {
 #slider-svg {
   fill: none; }
 
+button.slick-arrow {
+  display: none !important; }
+
 .page-template-page-homepage {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   background: #f0f0f0; }
