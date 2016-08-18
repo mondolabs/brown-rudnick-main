@@ -349,17 +349,6 @@ function ewww_image_optimizer_aux_images_script( $hook ) {
 								continue;
 							}
 							$already_optimized = ewww_image_optimizer_find_already_optimized( $path );
-							/*$query = $wpdb->prepare( "SELECT id,path FROM $wpdb->ewwwio_images WHERE path LIKE %s AND image_size LIKE '$image_size'", $path );
-							$optimized_query = $wpdb->get_results( $query, ARRAY_A );
-							if ( ! empty( $optimized_query ) ) {
-								foreach ( $optimized_query as $image ) {
-									if ( $image['path'] != $path ) {
-										ewwwio_debug_message( "{$image['path']} does not match $path, continuing our search" );
-									} else {
-										$already_optimized = $image;
-									}
-								}
-							}*/
 							$mimetype = ewww_image_optimizer_mimetype( $path, 'i' );
 							if ( preg_match( '/^image\/(jpeg|png|gif)/', $mimetype ) && empty( $already_optimized ) ) {
 								$slide_paths[] = $path;
@@ -397,6 +386,12 @@ function ewww_image_optimizer_aux_images_script( $hook ) {
 		if ( 'ewww-image-optimizer-auto' == $hook ) {
 			// queue the filenames we retrieved using the background image task
 			global $ewwwio_image_background;
+			if ( ! class_exists( 'WP_Background_Process' ) ) {
+				require_once( EWWW_IMAGE_OPTIMIZER_PLUGIN_PATH . 'background.php' );
+			}
+			if ( ! is_object( $ewwwio_image_background ) ) {
+				$ewwwio_image_background = new EWWWIO_Image_Background_Process();
+			}
 			foreach ( $attachments as $attachment ) {
 				$ewwwio_image_background->push_to_queue( $attachment );
 				ewwwio_debug_message( "scheduler queued: $attachment" );
