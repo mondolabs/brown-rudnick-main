@@ -116,6 +116,12 @@ if (match('/simple-ads-manager[\/]+sam-ajax-loader\.php/', request.path) and mat
 if (match('/gwolle\-gb[\/]+frontend[\/]+captcha[\/]+ajaxresponse\.php/', request.path) and match('/.*/', request.queryString.abspath)):
 	block(id=17, category='rfi', description='Gwolle Guestbook <= 1.5.3 - Remote File Inclusion', whitelist=0)
 
+if (match('/\/(?:timthumb\.php|img\.php)/i', request.path) and match('/[^A-Za-z0-9\-\.\_:\/\?\&\+\;\=]/', request.queryString.src) and lengthGreaterThan('0', request.queryString.webshot)):
+	block(id=64, category='rce', description='TimThumb <= 2.8.13 - Remote Code Execution')
+
+if (match('/\/(?:timthumb\.php|img\.php)/i', request.path) and notMatch('_^[^\?]+?\.(?:jpg|jpeg|gif|png)(?:\?[a-z0-9\-\_\.\~%\!\$&\'\(\)\*\+,;\=\:@\/\?]*)?$_iu', request.queryString.src) and lengthGreaterThan('0', request.queryString.src) and (lengthLessThan('1', request.queryString.webshot) or equals('0', request.queryString.webshot))):
+	block(id=63, category='rfd', description='TimThumb <= 1.33 - Remote File Download')
+
 if (matchCount(sqliRegex, request.body, request.queryString)):
 	failSQLi(id=3, category='sqli', score=40, description='SQL Injection')
 

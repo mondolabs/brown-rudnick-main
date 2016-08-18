@@ -68,11 +68,12 @@ class OM4_Typekit_Admin {
 				} else {
 					// ensure the Typekit account ID maps to a valid JS file on Typekit's servers (ie doesn't return a 404 error)
 					$url = sprintf($this->typekitInstance->embedcodeurl, $id);
-					$result = wp_remote_head($url);
-					if (is_array($result) && $result['response']['code'] == 404) {
+					$response = wp_remote_head( $url );
+
+					if ( 404 == wp_remote_retrieve_response_code( $response ) ) {
 						?>
 						<div id="error" class="error"><p>
-							<?php printf(__('Your Typekit embed code may be incorrect because  <a href="%1$s" target="_blank">%1$s</a> does not exist. Please verify that your Typekit embed code is correct. If you have just published your kit, please try again in a few minutes.', 'typekit-fonts-for-wordpress'), $url); ?>
+							<?php printf( __( 'Your Typekit embed code may be incorrect because  <a href="%1$s" target="_blank">%1$s</a> does not exist. Please verify that your Typekit embed code is correct. If you have just published your kit, please try again in a few minutes.', 'typekit-fonts-for-wordpress'), esc_url( $url ) ); ?>
 						</p></div>
 						<?php
 					}

@@ -2,9 +2,9 @@
 Contributors: jamescollins, glenn-om4
 Donate link: https://om4.com.au/plugins/#donate
 Tags: typekit, fonts, font, design, wp, multisite, wpmu, css, snippet
-Requires at least: 4.0
-Tested up to: 4.5
-Stable tag: 1.8.1
+Requires at least: 4.2
+Tested up to: 4.6
+Stable tag: 1.8.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -60,6 +60,10 @@ Please see [this page](http://help.typekit.com/customer/portal/articles/6786-bro
 2. Detailed inline help
 
 == Changelog ==
+
+= 1.8.2 =
+* WordPress 4.6 compatibility.
+* Improved handling of the HTTP response when verifying a Typekit Kit URL.
 
 = 1.8.1 =
 * PHP7 compatibility (no more deprecated constructor warning).

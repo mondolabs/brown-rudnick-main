@@ -11,6 +11,10 @@ wp-content/backupwordpress-*/
 wp-content/managewp/backups/
 wp-content/advanced-cache.php
 wp-content/wp-cache-config.php
+
+wp-content/plugins/wordfence/tmp/configCache.php
+wp-content/wflogs/config.php
+
 sitemap.xml
 sitemap.xml.gz
 *.log

@@ -4,8 +4,8 @@ Contributors: ModernTribe, borkweb, zbtirrell, barry.hughes, bordoni, brianjesse
 Tags: events, calendar, event, venue, organizer, dates, date, google maps, conference, workshop, concert, meeting, seminar, summit, class, modern tribe, tribe, widget
 Donate link: http://m.tri.be/29
 Requires at least: 3.9
-Tested up to: 4.5.3
-Stable tag: 4.2.3
+Tested up to: 4.6
+Stable tag: 4.2.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -290,7 +290,18 @@ At no point during the 3.0 lifecycle will the major version change. But you can 
 
 == Changelog ==
 
-= [4.2.3] 2016-07-21 =
+= [4.2.5] 2016-08-17 =
+
+* Fix - Fixed inconsistent template filtering logic for single event template [62525]
+* Tweak - Restored preview for published events [64874]
+
+= [4.2.4] 2016-08-03 =
+
+* Tweak - Changed "Event Add-Ons" to load faster [64286]
+* Fix - Fixed default venue setting [64628]
+* Fix - Fixed default venue state and province settings [64629]
+
+= [4.2.3] 2016-07-20 =
 
 * Fix - In month view, be sure to unhook JSON-LD output when calling unhook function
 * Fix - Incorrect JSON-LD event start and end times (thank you @jjbte for reporting on .org forums)
