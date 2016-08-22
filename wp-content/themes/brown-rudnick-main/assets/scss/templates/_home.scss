@@ -182,6 +182,9 @@ button.slick-arrow  {
 		.homepage_post-text-container {
 			display: inline-block;
 			margin: 50px;
+			&.has-image {
+				margin-top: 20px;
+			}
 		}
 	.featured_firsts-grid {
 		padding-left: 0;
@@ -279,10 +282,6 @@ button.slick-arrow  {
 ul.desktop-menu {
 	float: right;
 	padding-top: 34px;
-}
-
-.dropdown.is-drop-down-submenu {
-	display: flex !important;
 }
 
 ul.menu li a{

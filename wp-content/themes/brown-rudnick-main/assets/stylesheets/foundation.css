@@ -7604,6 +7604,9 @@ button.slick-arrow {
   .page-template-page-homepage .homepage_post-text-container {
     display: inline-block;
     margin: 50px; }
+    .page-template-page-homepage .featured_firsts-text-container.has-image,
+    .page-template-page-homepage .homepage_post-text-container.has-image {
+      margin-top: 20px; }
   .page-template-page-homepage .featured_firsts-grid {
     padding-left: 0; }
   .page-template-page-homepage .public-interest-btn {
@@ -7670,10 +7673,6 @@ button.slick-arrow {
   .page-template-page-homepage ul.desktop-menu {
     float: right;
     padding-top: 34px; }
-  .page-template-page-homepage .dropdown.is-drop-down-submenu {
-    display: -webkit-box !important;
-    display: -ms-flexbox !important;
-    display: flex !important; }
   .page-template-page-homepage ul.menu li a {
     color: #0a0a0a;
     font-family: "Avenir", Helvetica, Arial, sans-serif;

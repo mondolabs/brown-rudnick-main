@@ -62,7 +62,7 @@
 			{% if not homepage_post.thumbnail %}
 				<span class="red__border--top"></span>
 			{% endif %}	
-				<div class="homepage_post-text-container">
+				<div class="homepage_post-text-container {% if homepage_post.thumbnail %}has-image{% endif %}">
 					<div class="homepage-header-container">
 						<p class="homepage-header-text">
 							{% if homepage_post.post_type == 'news' %}

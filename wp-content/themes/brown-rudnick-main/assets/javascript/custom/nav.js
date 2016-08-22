@@ -14,7 +14,6 @@ var NAV = {
 				var eSubMenu = $(toElement).parent().find('ul');
 				var colorBlock = $('.subnav__color-block');
 		  		if ( (subMenu.length > 0) || ($(toElement).is('ul.dropdown')) || $(toElement).parent().hasClass('is-submenu-item') ) {
-		  			console.log('dont hide the gray');
 		  			if ( $(toElement).parent().hasClass('is-submenu-item') || ($(toElement).is('ul.dropdown')) ){
 			  			console.log('dont hide the gray');
 		  			}
@@ -28,6 +27,7 @@ var NAV = {
 			function(e) {
 				var toElement = e.toElement;
 				if ( !$(toElement).is('a') ) {
+					$(this).parent().find('ul.submenu').css('display', 'none');
 					$('.subnav__color-block, ul.is-drop-down').hide(200);
 				}
 			}
