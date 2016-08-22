@@ -1,4 +1,6 @@
 	
+
+
 // header
 	
 .top-right-icon-group {
@@ -91,10 +93,22 @@
 	width: 20%;
 }
 
+
+// Hero Slider
+
+.slide__content--outer-wrapper {
+	display: table;
+	height: 100%;
+}
+
+.slide__content--inner-wrapper {
+	display: table-cell;
+	vertical-align: middle;
+}
+
 // svg container
 .slider-svg {
-	height: 10px;
-
+	height: 19px;
 }
 .social-icons {
 	width: 20%;
@@ -112,7 +126,33 @@
 button.slick-arrow  {
 	display: none !important;
 }
+
+
+
+.color-block__wrapper {
+	padding: 70px;
+}
+
+.color-block {
+	padding: 60px;
+	&.vellum {
+		background-color: rgba(255, 255, 255, .8);
+	}
+}
+
+
+.body-text.hero {
+	font-family: $brfont;
+	line-height: 1.8;
+	font-size: 24px;
+}
    
+.homepage-post__image--wrapper {
+	height: 90px;
+	width: 100%;
+	background-size: cover !important;
+}
+
 .page-template-page-homepage {
 	.blog-grid-img {
 		width: 100%;
@@ -133,18 +173,17 @@ button.slick-arrow  {
 	.columns {
 		padding: 0!important;
 	}
-		.insights-image{
+		.featured_firsts-image{
 			max-height: 100%;
 			z-index: 999;
 			vertical-align: top;
 		}
-		.insights-text-container {
+		.featured_firsts-text-container,
+		.homepage_post-text-container {
 			display: inline-block;
-			width: 50%;
-			margin-left: 5%;
-			margin-top:5%;
+			margin: 50px;
 		}
-	.insights-grid {
+	.featured_firsts-grid {
 		padding-left: 0;
 
 	}
@@ -169,7 +208,10 @@ button.slick-arrow  {
 		}
 		.slide-description {
 			p {
-				color: $white;
+				color: $black;
+			}
+			h2 {
+				color: $black;
 			}
 		}
 		.homepage-full {
@@ -203,29 +245,22 @@ button.slick-arrow  {
 		.homepage-grid-interior {
 			padding: 10%;
 		}
-@include breakpoint(medium){
+@include breakpoint(medium) {
 	.homepage-grid-interior {
 		clear: right;
-	}
-	
-	}
-	.slide-description {
-			padding-top: 10%;
-			padding-bottom: 25%;
-			padding-left: 7.5%;
-			padding-right: 7.5%;
-		}
+	}	
+}
 
-	.slick-slide{
-			height: 450px;
-	}
-	.slide {
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position: center;
-	}
+.slick-slide{
+	height: 450px;
+}
+.slide {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
 
-@include breakpoint(large){
+@include breakpoint(large) {
 		.prev-slider-home, .next-slider-home {
 			width: 30px;
 		}
@@ -233,63 +268,123 @@ button.slick-arrow  {
 			height: 650px;
 	}
 		.homepage-grid-element{
-			height: 350px;
+			height: 450px;
 		}		
 }
-	.slide-description-heading {
-		border-bottom: 1px solid $white;
-		width: 30%;
-		margin-bottom: 3%;
-	}
-	.slick-arrow {
-		color: transparent;
-	}
 
-	
+.menu__wrapper--desktop {
+	padding: 40px 0 0;
+}
 
-	.prev-slider-home {
-		position: absolute;
-		top: 80%;
-		left: 7.5%;
-		list-style-type: none;
-		background: url('../images/back-slider.png') no-repeat;
-		background-size: contain;
-	}
-	.next-slider-home {
-		position: absolute;
-		top: 80%;
-		left: 15%;
-		list-style-type: none;
-		background: url('../images/forward-slider.png') no-repeat;
-		background-size: contain;
-	}
+ul.desktop-menu {
+	float: right;
+	padding-top: 34px;
+}
 
-	.homepage-header-container{
-		border-bottom: 2px solid $primary-grey;
-		width: 100%;
-		display: inline-block;
-		margin-bottom:7.5%;
+.dropdown.is-drop-down-submenu {
+	display: flex !important;
+}
+
+ul.menu li a{
+	color: $black;
+	font-family: $brfont;
+	font-size: 14px;
+	font-weight: 800;
+	text-transform: uppercase;
+    -webkit-transition: width 2s, height 2s, background-color 2s, -webkit-transform 2s;
+	transition: width 2s, height 2s, background-color 2s, transform 2s;
+	letter-spacing: 1.2px;
+	&:after {
+		border: none !important;
 	}
-	.insights-container {
-		display: inline-block;
-	}
-	.home-button{
-		background-color: $primary-red;
-		color: $white;
-		padding-left: 5%;
-		padding-right: 5%;
-		padding-top: 2%;
-		padding-bottom: 2%;
-		text-transform: uppercase;
-		margin-top: 3%;
-	}
-	.homepage-header-text {
+	&:hover {
 		color: $primary-red;
-		text-transform: uppercase;
 	}
+}
+
+.subnav__color-block {
+	width: 400%;
+    height: 80px;
+    position: relative;
+    left: -100%;
+    background-color: $primary-grey;
+    top: 0;
+    display: none;
+    margin-bottom: -32px;
+}
 
 
-	@include breakpoint(medium){
+.featured-blog__grid {
+	padding-bottom: 10px;
+}
+
+.homepage__image--wrapper {
+	max-height: 100px;
+	background-size: cover;
+	&.featured__blog {
+		height: 100%;
+		max-height: none;
+		background-size: cover;
+		background-position-x: 75%; 
+	}	
+}
+
+.homepage-header-container{
+	border-bottom: 2px solid $primary-grey;
+	width: 100%;
+	display: inline-block;
+	margin-bottom: 14px;
+}
+.featured_firsts-container {
+	display: inline-block;
+}
+.homepage-header-text {
+	color: $primary-red;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 1.5;
+	letter-spacing: 1.0px;
+	margin-bottom: 14px;
+}
+
+.homepage-date {
+	font-size: 12px;
+	font-weight: bold;
+	color: $primary-grey;
+}
+
+
+.homepage-arrow {
+	border-top: 1px solid $primary-grey;
+	border-left: 1px solid $primary-grey;
+    height: 45px;
+    width: 70px;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+	background: url('../images/red-arrow.png') no-repeat center;
+	a {
+		z-index: 2;
+	    height: 100%;
+	    width: 100%;
+	    position: relative;
+	    display: block;
+	}
+}
+
+span.red__border--top {
+	position: absolute;
+	top: 0;
+	height: 12px;
+	width: 100%;
+	background-color: $primary-red;
+	display: block;
+	margin-bottom: 40px;
+}
+
+
+@include breakpoint(medium) {
 	.public-interest-learn-more {
 		max-height: 600px;
 		background-color: $white;
@@ -303,12 +398,12 @@ button.slick-arrow  {
 }
 	.stay-current {
 		color: $br-black;
-		margin: 5% auto;
+		margin: 60px auto 50px;
 		text-align: center;
 		h4 {
 			text-transform: uppercase;
+			margin: 0;
 		}
-		border-bottom: 3px solid $primary-red;
 		width: 20%;
 	}
 	.pub-interest-title {
@@ -319,6 +414,14 @@ button.slick-arrow  {
 		}
 		.homepage-slider-title, .homepage-element-body {
 			font-family: $brgaramond;
+			font-size: 26px;
+			line-height: 1.5;
+			&.big {
+				font-size: 30px;
+				@include breakpoint(medium) {
+					font-size: 26px;	
+				}
+			}	
 		}
 		.homepage-slider-title{
 			margin-bottom: 3%;

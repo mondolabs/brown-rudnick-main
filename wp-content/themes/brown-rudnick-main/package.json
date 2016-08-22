@@ -73,6 +73,8 @@
     "phpcbf": "gulp phpcbf",
     "postinstall": "bower install && gulp build",
     "production": "gulp --production",
-    "watch": "gulp"
+    "watch": "gulp",
+    "start": "gulp",
+    "build": "gulp sass"
   }
 }

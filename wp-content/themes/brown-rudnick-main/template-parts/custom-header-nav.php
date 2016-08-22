@@ -3,9 +3,7 @@
  * Template part for custom header nav
  *
  */
-
 ?>
-
 <div class="custom-header-nav">
 	<ul class="menu desktop-menu">
 		<li class="menu-item menu-item-has-children js-menu-item"><a class="js-submenu-trigger">About <i class="fa fa-caret-down icon--expand" aria-hidden="true"></i></a>

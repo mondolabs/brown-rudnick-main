@@ -7,7 +7,6 @@
  * @package FoundationPress
  * @since FoundationPress 1.0.0
  */
-
 ?>
 <!doctype html>
 <html class="no-js" <?php language_attributes(); ?> >
@@ -16,7 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<?php wp_head(); ?>
 	</head>
-	<body <?php body_class(); ?>>
+	<body <?php body_class(); ?> >
 		<?php do_action( 'foundationpress_after_body' ); ?>
 
 		<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) == 'offcanvas' ) : ?>
@@ -31,20 +30,23 @@
 				
 
 		<header id="masthead" class="site-header" role="banner">
-			<?php desktop_menu(); ?>
-			
+			<div class="menu__wrapper--desktop row">
+				<div class="logo__wrapper columns large-3 medium-3">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="header-logo--mobile" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/BR-Logo.png"></a>
+				</div>
+				<div class="menu__inner-wrapper--desktop columns large-9 medium-9">
+					<?php desktop_menu(); ?>
+					<span class="subnav__color-block"></span>
+				</div>
+			</div>
+
 			<div class="mobile-menu">
 				<button class="hamburger-icon" type="button" data-toggle="mobile-menu">
 					<span></span>
 				</button>
 			</div>
 
-			<div class="title-bar-title">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="header-logo--mobile" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/BR-Logo.png"></a>
-			</div>
-
-
-			<?php	
+			<?php
 				$args = array('child_of'=>5, 'post_type'=>'page', 'sort_column'=>'menu_order');
 				$child_pages = get_pages($args);
 			?>
@@ -53,5 +55,6 @@
 
 	<?php do_action( 'foundationpress_after_header' ); ?>
 	</body>
-</html>	
+</html>
+
 

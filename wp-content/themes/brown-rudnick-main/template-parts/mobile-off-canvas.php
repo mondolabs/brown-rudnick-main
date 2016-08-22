@@ -5,7 +5,6 @@
  * @package FoundationPress
  * @since FoundationPress 1.0.0
  */
-
 ?>
 
 <nav class="off-canvas position-left" id="mobile-menu" data-off-canvas data-position="left" role="navigation">
