@@ -32,11 +32,30 @@ var NAV = {
 				}
 			}
 		)
-	}
+	},
+	desktopMenu: $('#masthead'),
+	scrollEvents: function(){
+		if ( $(window).scrollTop() >= NAV.desktopMenu.height() ) {
+			$(NAV.desktopMenu).hide();
+			$('.menu__outer-wrapper--desktop-on-scroll').fadeIn();
+			console.log('nav is hidden')
+		} else {
+			$(NAV.desktopMenu).show();
+			$('.menu__outer-wrapper--desktop-on-scroll').hide();
+		}
+	}	
 }
 
 $(document).ready(function(){
 	NAV.listeners();
+	if ( $(document).width() > 640) {
+		$(document).scroll( function(){
+			NAV.scrollEvents();
+		})
+	}
+	if ( $(window).scrollTop() >= NAV.desktopMenu.height() && $(document).width() > 640) {
+		$(NAV.desktopMenu).hide();
+	}
 })
 
 

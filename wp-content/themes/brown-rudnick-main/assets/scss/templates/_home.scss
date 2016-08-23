@@ -2,7 +2,20 @@
 
 
 // header
-	
+
+.menu__outer-wrapper--desktop-on-scroll {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    display: none;
+}
+
+#mastheadOnScroll {
+	position: relative;
+}
+
+
 .top-right-icon-group {
 		text-align: right;
 		width: 50%;
@@ -131,10 +144,23 @@ button.slick-arrow  {
 
 .color-block__wrapper {
 	padding: 70px;
+	@media screen and (max-width: 1024px) {
+		padding: 30px; 
+	}
+	@media screen and (max-width: 640px) {
+		padding: 10px; 
+	}
+
 }
 
 .color-block {
 	padding: 60px;
+	@media screen and (max-width: 1024px) {
+		padding: 40px; 
+	}
+	@media screen and (max-width: 640px) {
+		padding: 20px; 
+	}
 	&.vellum {
 		background-color: rgba(255, 255, 255, .8);
 	}
@@ -153,105 +179,98 @@ button.slick-arrow  {
 	background-size: cover !important;
 }
 
-.page-template-page-homepage {
-	.blog-grid-img {
-		width: 100%;
-	}
-	.human-icon {
-		position: absolute;
-		right: 10%;
-		bottom: 10%;
-		width: 80px;
-		height: 80px;
-		//width: 2.5%;
-		//height: 5%;
-		padding: 30px;
-		background: $primary-red url('../images/human-icon.png') no-repeat center;
-		background-size: 40%;
+
+.blog-grid-img {
+	width: 100%;
+}
+.human-icon {
+	position: absolute;
+	right: 10%;
+	bottom: 10%;
+	width: 80px;
+	height: 80px;
+	//width: 2.5%;
+	//height: 5%;
+	padding: 30px;
+	background: $primary-red url('../images/human-icon.png') no-repeat center;
+	background-size: 40%;
+	z-index: 999;
+}
+.columns {
+	padding: 0!important;
+}
+	.featured_firsts-image{
+		max-height: 100%;
 		z-index: 999;
+		vertical-align: top;
 	}
-	.columns {
-		padding: 0!important;
+	.featured_firsts-text-container,
+	.homepage_post-text-container {
+		display: inline-block;
+		margin: 50px;
+		&.has-image {
+			margin-top: 20px;
+		}
 	}
-		.featured_firsts-image{
-			max-height: 100%;
-			z-index: 999;
-			vertical-align: top;
-		}
-		.featured_firsts-text-container,
-		.homepage_post-text-container {
-			display: inline-block;
-			margin: 50px;
-			&.has-image {
-				margin-top: 20px;
-			}
-		}
-	.featured_firsts-grid {
-		padding-left: 0;
+.featured_firsts-grid {
+	padding-left: 0;
 
-	}
-	.public-interest-btn {
-		background-color: $primary-red;
-		color: $white;
-		width: 60%;
-		padding: 5%;
-		text-transform: uppercase;
-	}
-	.prev-slider-home {
-		width:7.5%;
-	}
-	.next-slider-home{
-		width: 7.5%;
-	}
+}
+.public-interest-btn {
+	background-color: $primary-red;
+	color: $white;
+	width: 60%;
+	padding: 5%;
+	text-transform: uppercase;
+}
+.prev-slider-home {
+	width:7.5%;
+}
+.next-slider-home{
+	width: 7.5%;
+}
 
-		font-family: $brfont;
-		background: $primary-grey;
-		.homepage-slider-title  {
-			color: $white;
-		}
-		.slide-description {
-			p {
-				color: $black;
-			}
-			h2 {
-				color: $black;
-			}
-		}
-		.homepage-full {
-			background-repeat: no-repeat;
-			background-size: cover;
-			overflow: hidden;
-			margin-top: 5%;
-			@include breakpoint(medium){
-				height: 500px;
-			}
-			img {
-				width: 100%;
-				@media #{$large-up} {
-					max-width: 300px;
-				}
-			}
-		}
-	.homepage-grid-element {
-		border-style: solid;
-		border-width: 10px;
-		border-color: $primary-grey;
-		background-color: $white;
-		margin: 0 auto;
+.homepage-slider-title  {
+	color: $white;
+}
+
+.slide-description {
+	p {
+		color: $black;
 	}
-	.homepage-slide-title {
-		border-bottom: 5px solid $white;
+	h2 {
+		color: $black;
 	}
-		.slider-button {
-			background-color: $primary-red;
+}
+.homepage-full {
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow: hidden;
+	@include breakpoint(medium){
+		height: 500px;
+	}
+	img {
+		width: 100%;
+		@media #{$large-up} {
+			max-width: 300px;
 		}
-		.homepage-grid-interior {
-			padding: 10%;
-		}
-@include breakpoint(medium) {
-	.homepage-grid-interior {
-		clear: right;
-	}	
+	}
+}
+.homepage-grid-element {
+	border-style: solid;
+	border-width: 10px;
+	border-color: $primary-grey;
+	background-color: $white;
+	margin: 0 auto;
+}
+.homepage-slide-title {
+	border-bottom: 5px solid $white;
+}
+.slider-button {
+	background-color: $primary-red;
+}
+.homepage-grid-interior {
+	padding: 10%;
 }
 
 .slick-slide{
@@ -264,15 +283,15 @@ button.slick-arrow  {
 }
 
 @include breakpoint(large) {
-		.prev-slider-home, .next-slider-home {
-			width: 30px;
-		}
-		.slick-slide{
-			height: 650px;
+	.prev-slider-home, .next-slider-home {
+		width: 30px;
 	}
-		.homepage-grid-element{
-			height: 450px;
-		}		
+	.slick-slide{
+		height: 650px;
+	}
+	.homepage-grid-element{
+		height: 450px;
+	}		
 }
 
 .menu__wrapper--desktop {
@@ -298,6 +317,27 @@ ul.menu li a{
 	}
 	&:hover {
 		color: $primary-red;
+	}
+}
+
+.mobile-menu {
+	border-bottom: none;
+}
+
+.menu__wrapper--desktop-on-scroll {
+	padding: 20px 0 10px;
+}
+
+ul.desktop__menu--icons-list {
+	margin: 0;
+	float: right;
+	list-style: none;
+	li {
+		display: inline-block;
+		padding-right: 20px;
+	}
+	&.scrolled {
+		padding-top: 36px;
 	}
 }
 
@@ -383,6 +423,13 @@ span.red__border--top {
 }
 
 
+.homepage-section-3-title {
+	font-family: $brfont;
+	font-size: 22px;
+	color: $black;
+	letter-spacing: 1.6px;
+}
+
 @include breakpoint(medium) {
 	.public-interest-learn-more {
 		max-height: 600px;
@@ -395,40 +442,40 @@ span.red__border--top {
 		h5 { text-transform: uppercase;}
 	}
 }
-	.stay-current {
-		color: $br-black;
-		margin: 60px auto 50px;
-		text-align: center;
-		h4 {
-			text-transform: uppercase;
-			margin: 0;
-		}
-		width: 20%;
+
+.stay-current {
+	color: $br-black;
+	margin: 60px auto 50px;
+	text-align: center;
+	h4 {
+		text-transform: uppercase;
+		margin: 0;
 	}
-	.pub-interest-title {
-			margin-top: 3%;
-			margin-bottom: 3%;
-			border-bottom: 1px solid $primary-red;
-			width: 60%;	
+	width: 20%;
+}
+.pub-interest-title {
+	margin-top: 3%;
+	margin-bottom: 3%;
+	border-bottom: 1px solid $primary-red;
+	width: 60%;	
+}
+.homepage-slider-title, .homepage-element-body {
+	font-family: $brgaramond;
+	font-size: 26px;
+	line-height: 1.5;
+	&.big {
+		font-size: 40px;
+		@include breakpoint(medium) {
+			font-size: 26px;	
 		}
-		.homepage-slider-title, .homepage-element-body {
-			font-family: $brgaramond;
-			font-size: 26px;
-			line-height: 1.5;
-			&.big {
-				font-size: 30px;
-				@include breakpoint(medium) {
-					font-size: 26px;	
-				}
-			}	
-		}
-		.homepage-slider-title{
-			margin-bottom: 3%;
-		}
-		.public-interest-learn-more {
-			font-family: $brfont;
-		}
-		.homepage-header-text {
-			font-family: $brfont;
-		}
+	}	
+}
+.homepage-slider-title{
+	margin-bottom: 3%;
+}
+.public-interest-learn-more {
+	font-family: $brfont;
+}
+.homepage-header-text {
+	font-family: $brfont;
 } 

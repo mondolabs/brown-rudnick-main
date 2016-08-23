@@ -63,9 +63,6 @@ var PATHS = {
     // Motion UI
     'assets/components/motion-ui/motion-ui.js',
 
-    // Slick Slider
-    'assets/javascript/vendor/slick/slick.js',
-
     // Snap SVG
     'assets/javascript/vendor/snap/snap.svg.js',
 
@@ -73,7 +70,11 @@ var PATHS = {
     'assets/javascript/vendor/scrollreveal/scrollreveal.js',
 
     // Include your own custom scripts (located in the custom folder)
-    'assets/javascript/custom/*.js'
+    'assets/javascript/custom/*.js',
+
+    // Vendor
+    'assets/javascript/vendor/*.js',
+    'assets/javascript/vendor/backstretch/backstretch.min.js'
   ],
   phpcs: [
     '**/*.php',

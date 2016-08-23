@@ -30,9 +30,11 @@
 				
 
 		<header id="masthead" class="site-header" role="banner">
-			<div class="menu__wrapper--desktop row">
+			<div class="menu__wrapper--desktop row sr">
 				<div class="logo__wrapper columns large-3 medium-3">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="header-logo--mobile" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/BR-Logo.png"></a>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<img class="header-logo--mobile" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/BR-Logo.png">
+					</a>
 				</div>
 				<div class="menu__inner-wrapper--desktop columns large-9 medium-9">
 					<?php desktop_menu(); ?>
@@ -50,8 +52,38 @@
 				$args = array('child_of'=>5, 'post_type'=>'page', 'sort_column'=>'menu_order');
 				$child_pages = get_pages($args);
 			?>
-
 		</header>
+
+		<div class="menu__outer-wrapper--desktop-on-scroll">
+			<header id="mastheadOnScroll" class="site-header" role="banner">
+				<div class="menu__wrapper--desktop-on-scroll row">
+					<div class="logo__wrapper columns large-3 medium-3">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+							<img class="header-logo--mobile" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/BR-Logo.png">
+						</a>
+					</div>
+					<div class="menu__inner-wrapper--desktop columns large-9 medium-9">
+						<ul class="desktop__menu--icons-list scrolled">
+							<li>
+								<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/contact-icon.png">
+							</li>
+							<li>
+								<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/marker-icon.png">
+							</li>
+							<li>
+								<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/search-icon.png">
+							</li>
+						</ul>
+						<?php desktop_menu(); ?>
+						<span class="subnav__color-block"></span>
+					</div>
+				</div>	
+				<?php
+					$args = array('child_of'=>5, 'post_type'=>'page', 'sort_column'=>'menu_order');
+					$child_pages = get_pages($args);
+				?>
+			</header>
+		</div>	
 
 	<?php do_action( 'foundationpress_after_header' ); ?>
 	</body>
