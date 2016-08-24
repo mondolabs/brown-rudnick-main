@@ -445,11 +445,15 @@ span.red__border--top {
 
 .stay-current {
 	color: $br-black;
-	margin: 60px auto 50px;
+	margin: 0 auto 50px;
 	text-align: center;
+	padding-top: 60px;
+	background-color: $primary-grey;
 	h4 {
-		text-transform: uppercase;
-		margin: 0;
+	    text-transform: uppercase;
+	    margin: 0;
+	    letter-spacing: 1.5px;
+	    font-weight: 500;
 	}
 	width: 20%;
 }
@@ -479,3 +483,8 @@ span.red__border--top {
 .homepage-header-text {
 	font-family: $brfont;
 } 
+
+.homepage__tiles--wrapper {
+	background-color: $primary-grey;
+	padding-bottom: 60PX;
+}

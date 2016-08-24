@@ -73,8 +73,10 @@ var PATHS = {
     'assets/javascript/custom/*.js',
 
     // Vendor
-    'assets/javascript/vendor/*.js',
-    'assets/javascript/vendor/backstretch/backstretch.min.js'
+    'assets/javascript/vendor/*',
+    'assets/javascript/vendor/backstretch/backstretch.min.js',
+    'assets/javascript/vendor/slick/*.js'
+
   ],
   phpcs: [
     '**/*.php',

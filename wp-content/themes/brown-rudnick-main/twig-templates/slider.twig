@@ -1,0 +1,44 @@
+{% do action( 'foundationpress_before_content' ) %}
+
+<div class="human-icon"></div> 
+<div class = "slider-container" label="Latest Updates from Brown Rudnick" > 
+    {% for item in post.get_field('homepage_slider') %}
+
+        <!-- slide -->
+        <div class="slide" style="background-image:url({{item.homepage_slider_image.url}});">
+         	<div class="slide__content--outer-wrapper">
+         		<div class="slide__content--inner-wrapper">
+					<div class="color-block__wrapper large-8 medium-10 small-12">
+				        <div class="color-block vellum">
+				         	<div class="slide-description">
+				            	<h2 class="homepage-slider-title">{{item.homepage_slider_title}}</h2>
+				            	<div class="slide-description-heading"></div>
+				            </div>
+				    		<p class="body-text hero">
+				    			{{ item.homepage_slider_description | truncate(60) }}
+				        	</p>
+				        	<a href="{{item.homepage_slider_cta_link}}">
+				        		<button class="home-button sites-button">
+				        			<?php echo $slider_cta_text; ?>
+				        			{{ item.homepage_slider_cta_text }}
+				    			</button>
+		    			        <p class="prev-slider-home">
+
+		    			        </p>
+									<p class="next-slider-home">
+
+									</p>
+							</a>    	
+				        </div> 	
+					</div>
+		        </div>
+		    </div>      
+    	</div>
+    {% endfor %}
+</div>	
+<div class="slider-svg">
+	<svg id="slider-svg" xmlns="http://www.w3.org/2000/svg" class="slider_svg" viewBox="0 0 180 180">
+</div>
+{% do action( 'foundationpress_after_content' ) %}
+{{wp_footer}}
+

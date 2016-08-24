@@ -13,3 +13,11 @@
 		border-bottom: 3px solid $primary-red;
 	}
 }
+
+.list-divider {
+	display: block;
+	height: 2px;
+	background-color: $primary-grey;
+	width: 80px;
+	margin:	20px 0 16px; 
+}

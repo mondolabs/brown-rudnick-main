@@ -10,6 +10,6 @@ $(document).ready(function(){
 			var redHover = $(this).find('span');
 			$(redHover).animate({"marginBottom":"0"}, 300);
 			$(redHover).animate({"opacity":"0"}, 300);
-
-		})
+		}
+	)
 })

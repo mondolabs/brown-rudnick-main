@@ -1,0 +1,101 @@
+
+<div class="homepage__tiles--wrapper">
+	<div class="stay-current">
+	  <h4>
+	  	{{homepage_text_section}}
+	  </h4>
+	</div>
+	<div class="row sr"> <!-- row-->
+		{% set featured_first = featured_posts[0] %}
+		{% set remaining = [ featured_posts[1], featured_posts[2], featured_posts[3], featured_posts[4] ] %}
+
+		<div class="medium-6 large-8 columns homepage-grid-element featured-blog__grid relative">
+			{% if featured_first.thumbnail %}
+				<div class="homepage__image--wrapper hide-for-medium-down large-3 columns featured__blog" style="background-image:url({{featured_first.thumbnail.src}});">
+				</div>	
+			{% endif %}	
+			<div class="medium-12 {% if not featured_first.thumbnail %}large-12{% else %}large-9{% endif %} columns">
+				{% if not featured_first.thumbnail %}
+					<span class="red__border--top"></span>
+				{% endif %}	
+				<div class="featured_firsts-text-container">
+					<div class="homepage-header-container">
+						<p class="homepage-header-text">
+							{% if featured_first.post_type == 'news' %}
+								IN THE NEWS
+							{% elseif featured_first.post_type == 'event' %}
+								EVENTS
+							{% elseif featured_first.post_type == 'alert' %}
+								ALERTS &amp; BULLETINS
+							{% else %}	
+								BLOG: {{ featured_first.post_type|replace({'_':' '})}}
+							{% endif %}
+						</p>
+					</div>
+					<p class="homepage-date">
+						{{ featured_first.post_date|date('m/d/Y') }}
+					</p>
+					<h4 class="homepage-element-body big">
+						{{ featured_first.post_title|truncate(12) }}
+					</h4>
+					<p>
+						{% if featured_first.post_excerpt %}
+							{{ featured_first.post_excerpt|truncate(12) }}
+						{% else %}
+							{{ featured_first.post_content|truncate(12) }}
+						{% endif %}	
+					</p>
+				</div>
+			</div>	
+			<span class="homepage-arrow featured_first">
+				<a href="{{ featured_first.permalink }}"></a>
+			</span>
+		</div>
+		{% for homepage_post in remaining %}
+			<div class="medium-6 large-4 columns homepage-grid-element relative">
+				{% if homepage_post.thumbnail %}
+					<div class="hide-for-medium-down large-12 columns homepage-post__image--wrapper" style="background:url({{homepage_post.thumbnail.src}})no-repeat center;">
+					</div>	
+				{% endif %}	
+				<div class="homepage__image--wrapper medium-12 large-12 columns" {% if homepage_post.thumbnail %}style="background-image:url({{homepage_post.thumbnail.src}});"{% endif %}>
+				</div>	
+				<div class="medium-12 large-12 columns relative">
+				{% if not homepage_post.thumbnail %}
+					<span class="red__border--top"></span>
+				{% endif %}	
+					<div class="homepage_post-text-container {% if homepage_post.thumbnail %}has-image{% endif %}">
+						<div class="homepage-header-container">
+							<p class="homepage-header-text">
+								{% if homepage_post.post_type == 'news' %}
+									IN THE NEWS
+								{% elseif homepage_post.post_type == 'event' %}
+									EVENTS
+								{% elseif homepage_post.post_type == 'alert' %}
+									ALERTS &amp; BULLETINS
+								{% else %}	
+									BLOG: {{ homepage_post.post_type|replace({'_':' '}) }}
+								{% endif %}
+							</p>
+						</div>
+						<p class="homepage-date">
+							{{ homepage_post.post_date|date('m/d/Y') }}
+						</p>
+						<h4 class="homepage-element-body">
+							{{ homepage_post.post_title|truncate(12) }}
+						</h4>
+						<p>
+							{% if homepage_post.post_excerpt %}
+								{{ homepage_post.post_excerpt|truncate(12) }}
+							{% else %}
+								{{ homepage_post.post_content|truncate(12) }}
+							{% endif %}	
+						</p>
+					</div>
+				</div>	
+				<span class="homepage-arrow homepage_post">
+					<a href="{{ homepage_post.permalink }}"></a>
+				</span>
+			</div>
+		{% endfor %}	
+	</div>  	
+</div>

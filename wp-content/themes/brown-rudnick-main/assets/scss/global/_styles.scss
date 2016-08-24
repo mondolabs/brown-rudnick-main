@@ -1,12 +1,41 @@
 .hover-arrow {
 	width: 29px;
-	margin: 0 auto;
+	margin: -10px auto;
 	opacity: 0;
 	display: block;
 }
 
+ul.list-style__none {
+	list-style: none;
+	margin: 0;
+}
+
+li.list-item__sidebar {
+	a {
+		font-size: 14px;
+		line-height: 2.2;
+		text-transform: uppercase;
+		font-family: $brfont;
+		letter-spacing: 1.2px;
+		font-weight: 500;
+	}
+}
+
 .display-block {
 	display: block;
+}
+
+.body__wrapper {
+	margin: 70px 0;
+}
+
+h4.list__header {
+	font-size: 24px;
+	font-family: $brgaramond;
+	line-height: 1;
+	&.red {
+		color: $primary-red;
+	}
 }
 
 a.link {
@@ -14,11 +43,18 @@ a.link {
 	cursor: pointer;
 	-webkit-transition: color .3s ease-in-out;
     transition: color .3s ease-in-out;
-	&:hover {
+	&:hover,
+	&:focus {
 		color: $primary-red;
 	}
 	&:visited {
 		color: $br-black;
+		&:hover {
+			color: $primary-red;
+		}
+	}
+	&.red {
+		color: $primary-red;
 	}
 }
 
@@ -33,6 +69,10 @@ h3.title {
 
 .margin-bottom--0 {
 	margin-bottom: 0;
+}
+
+.margin-top-60 {
+	margin-top: 60px;
 }
 
 .black {
@@ -107,4 +147,39 @@ h3.title {
 .experience-tile__inner-wrapper {
     vertical-align: middle;
     display: table-cell;
+}
+
+.color-block__experience {
+	height: 100px;
+	background-color: $primary-grey;
+	display: table;
+	width: 100%;
+	border: 8px solid $white;
+}
+
+.color-block__experience--inner-wrapper {
+	width: 240px;
+    margin: 0 auto;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.experience__link--wrapper {
+	max-width: 240px;
+    display: block;
+    margin: 0 auto;
+}
+
+a.experience__link {
+	display: block;
+	font-size: 11px;
+	text-transform: uppercase;
+	font-weight: 900;
+	letter-spacing: 2px;
+	line-height: 1.8;
+	margin-top: 2px;
+}
+
+.columns.last.float-left {
+	float: left;
 }

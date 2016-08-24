@@ -49,3 +49,10 @@ require_once( 'library/responsive-images.php' );
 
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/protocol-relative-theme-assets.php' );
+
+add_filter('upload_mimes', 'custom_upload_mimes');
+function custom_upload_mimes ( $existing_mimes=array() ) {
+	// add your extension to the array
+	$existing_mimes['vcf'] = 'text/x-vcard';
+	return $existing_mimes;
+}

@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Experience
+Template Name: Single Practice Page
 */
 get_header();
 
@@ -9,11 +9,14 @@ $post = new TimberPost();
 $data['post'] = $post;
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) );
 $data['featured_image_url'] = $data['featured_image_url'][0];
-$data['experience_header_text'] = get_field('experience_header_text');
-$data['experience_tile_one'] = get_field('experience_tile_one');
-$data['experience_tile_two'] = get_field('experience_tile_two');
-$data['experience_tile_three'] = get_field('experience_tile_three');
-$data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
+$people_posts_args = array(
+    'post_type' =>  'people',
+    'orderby' => 'title',
+    'order' => 'ASC',
+     'posts_per_page'=>-1
+);
+$data['people'] = Timber::get_posts($people_posts_args);
+
 
 ?>
 <html>
@@ -22,7 +25,7 @@ $data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arro
   </head>
   <body>
     <div id="page-full-width-homepage" class ="full-width" role="main">
-      <?php Timber::render('/twig-templates/experience.twig', $data); ?>
+      <?php Timber::render('/twig-templates/practice.twig', $data); ?>
     </div>  
     <?php do_action( 'foundationpress_after_content' ); ?>
     <?php get_footer(); ?>
