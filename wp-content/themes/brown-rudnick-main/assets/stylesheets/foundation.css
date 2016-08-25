@@ -48,6 +48,60 @@ p.wp-caption-text {
 .relative {
   position: relative; }
 
+.title__text {
+  font-family: "adobe-garamond-pro", serif;
+  font-size: 30px; }
+  .title__text p {
+    line-height: 1.2; }
+  .title__text.smaller {
+    font-size: 24px; }
+  .title__text.people__details {
+    margin-bottom: 2px; }
+
+.body__text p {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.625; }
+
+.body__text.people__details {
+  margin-bottom: 2px; }
+
+.tag__text {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 2;
+  font-weight: 800; }
+  .tag__text.people__details {
+    margin-bottom: 2px; }
+
+.sidebar__color-block--outer-wrapper {
+  height: 60px;
+  background-color: #f0f0f0;
+  display: table;
+  width: 100%;
+  margin-bottom: 10px; }
+
+.sidebar__color-block--wrapper {
+  width: 100%;
+  display: table-cell;
+  vertical-align: middle; }
+
+.padding__wrapper {
+  display: block;
+  position: relative; }
+  .padding__wrapper.ten.sides__only {
+    padding: 0 10px; }
+  .padding__wrapper.forty.sides__only {
+    padding: 0 40px; }
+  .padding__wrapper.ten.right__only {
+    padding-right: 10px; }
+
+.margin__0 {
+  margin: 0; }
+
+.hidden {
+  display: none; }
+
 .hover-arrow {
   width: 29px;
   margin: -10px auto;
@@ -79,9 +133,13 @@ h4.list__header {
   h4.list__header.red {
     color: #c10819; }
 
+.accordion__trigger {
+  cursor: pointer; }
+
 a.link {
   color: inherit;
   cursor: pointer;
+  display: block;
   -webkit-transition: color .3s ease-in-out;
   transition: color .3s ease-in-out; }
   a.link:hover, a.link:focus {
@@ -167,7 +225,8 @@ h3.title {
   background-color: #f0f0f0;
   display: table;
   width: 100%;
-  border: 8px solid #ffffff; }
+  border: 8px solid #ffffff;
+  padding: 4px; }
 
 .color-block__experience--inner-wrapper {
   width: 240px;
@@ -191,6 +250,16 @@ a.experience__link {
 
 .columns.last.float-left {
   float: left; }
+
+.people__details--outer-wrapper {
+  display: table;
+  height: 220px;
+  padding-left: 10px; }
+
+.people__details--inner-wrapper {
+  display: table-cell;
+  height: 100%;
+  vertical-align: middle; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -7045,6 +7114,18 @@ a {
   background-color: #f0f0f0;
   width: 80px;
   margin: 20px 0 16px; }
+  .list-divider.red {
+    background-color: #c10819; }
+  .list-divider.people__deatils {
+    margin: 8px 0; }
+
+.page__divider {
+  height: 2px;
+  display: block;
+  width: 100%;
+  margin: 40px auto; }
+  .page__divider.grey {
+    background-color: #f0f0f0; }
 
 /* Apply outline styles only when input method is keyboard
  * remove :focus style via What Input using progressive enhancement

@@ -6,7 +6,6 @@ Template Name: Homepage
 get_header();
 
 $data = Timber::get_context();
-
 $post = new TimberPost();
 $data['post'] = $post;
 $data['posts'] = Timber::get_posts();
@@ -39,3 +38,6 @@ $data['homepage_section_3_header'] = get_field('homepage_section_3_header');
     <?php get_footer(); ?>
   </body>
 </html>
+
+
+

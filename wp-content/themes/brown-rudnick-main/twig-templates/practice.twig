@@ -1,3 +1,112 @@
-{% for person in people %}
-	{{ person.first_name }}
-{% endfor %}
+<div id="featuredImage" class ="featured-image__header--image-wrapper">
+
+	{% if featured_image_url %}
+		{% set header_text_color = "white" %}
+	{% else %}
+		{% set header_text_color = "black" %}
+	{% endif %}
+	{# hero header #}
+	<div class="featured-image__header--text-outer-wrapper row">
+		<div class="featured-image__header--text-wrapper">
+			<div class="featured-image__header--text-inner-wrapper">
+				<h1 class="page__header {{ header_text_color }}">
+					{{ practice_header_text }}
+				</h1>
+				<span class="slide-description-heading red">
+				</span>
+			</div>
+		</div>	
+	</div>
+</div>	
+	{# body - with sidebar #}
+<div class="row">
+	<div class="experience__wrapper row body__wrapper columns small-12 medium-12 large-12">
+		<div class="padding__wrapper ten sides__only">
+			<div class="columns show-for-medium-up medium-3 large-2">
+			    <p class="tag__text">
+			    	{{ 'headlines'|upper }}
+			    </p>
+			    {% for item in headlines %}
+		        	{% set headline =  item|first %}
+		        	<a href="{{ headline.guid}}" class="link tag__text">
+		        		{{ headline.post_title|upper }}
+		        	</a>
+		        	<br>
+			    {% endfor %}
+			    <p class="tag__text">
+			    	{{ 'related experience'|upper }}
+			    </p>
+			    {% for item in related_experience %}
+		        	{% set experience =  item|first %}
+					<div class="sidebar__color-block--outer-wrapper">
+						<div class="sidebar__color-block--wrapper">
+				        	<a href="{{ experience.guid }}" class="link margin__0 tag__text text-align__center">
+			    	    		{{ experience.post_title|upper }}
+			        		</a>
+			        	</div>
+					</div>
+			    {% endfor %}
+			</div>
+			<div class="columns small-12 medium-9 large-10">
+				<div class="padding__wrapper forty sides__only">
+					<div class="title__text ">
+						{{ text_content_top }}
+					</div>
+				</div>
+				<div class="padding__wrapper forty sides__only">
+					<div class="body__text ">
+						{{ text_content_body }}
+					</div>	
+				</div>
+				<div class="padding__wrapper forty sides__only">
+					<span class="page__divider grey"></span>
+				</div>
+				<div class="padding__wrapper forty sides__only">
+					<div class="title__text ">
+						Practice Group Leaders
+					</div>
+			    	{% for leader in practice_group_leaders %}
+			    		{% set leader = leader|first %}
+						<div class="columns medium-12 large-6 small-12">
+							<div class="columns medium-6 large-6 small-12">
+								<img src="{{ TimberImage(leader.image).src }}" />
+							</div>
+							<div class="columns medium-6 large-6 small-12">
+								<div class="people__details--outer-wrapper">
+									<div class="people__details--inner-wrapper">
+										<p class="people__details title__text smaller">
+											{{ leader.first_name }} {% if leader.middle_initial %}{{ leader.middle_initial }}. {% endif %} {{ leader.last_name }}
+										</p>
+										{% if leader.title %}	
+											<p class="people__details tag__text">
+												{{ leader.title|upper }}
+											</p>
+										{% endif %}	
+										<span class="people__deatils list-divider red"></span>
+										<p class="people__details body__text">
+											{{ leader.primary_city }}, {{ leader.primary_state }}{% if leader.secondary_city and leader.secondary_state %} | {{ leader.secondary_city }}, {{ leader.secondary_state}} {% endif %} 
+										</p>
+										<p class="people__details body__text">
+											{{ leader.phone_number }}
+										</p>
+										<p class="people__details body__text">
+											{{ leader.email }}
+										</p>
+									</div>
+								</div>	
+							</div>
+						</div>
+					{% endfor %}					
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>	
+
+<script type="text/javascript">
+	{% if featured_image_url %}
+		$(document).ready(function(){
+			$('#featuredImage').backstretch("{{featured_image_url}}");
+		})
+	{% endif %}
+</script>

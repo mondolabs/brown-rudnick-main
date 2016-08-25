@@ -1,3 +1,75 @@
+.title__text {
+	font-family: $brgaramond;
+	font-size: 30px;
+	p {
+		line-height: 1.2;
+	}
+	&.smaller {
+		font-size: 24px;
+	}
+	&.people__details {
+		margin-bottom: 2px;
+	}
+}
+
+.body__text {
+	p {
+	font-family: $brfont;
+	font-size: 16px;
+		line-height: 1.625;
+	}
+	&.people__details {
+		margin-bottom: 2px;
+	}
+}
+
+
+.tag__text {
+	font-family: $brfont;
+    font-size: 12px;
+    line-height: 2;
+    font-weight: 800;
+	&.people__details {
+		margin-bottom: 2px;
+	}
+}
+
+.sidebar__color-block--outer-wrapper {
+    height: 60px;
+    background-color: $primary-grey;
+    display: table;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.sidebar__color-block--wrapper {
+    width: 100%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.padding__wrapper {
+    display: block;
+    position: relative;
+    &.ten.sides__only {
+    	padding: 0 10px;
+    }
+    &.forty.sides__only {
+    	padding: 0 40px;
+    }
+    &.ten.right__only {
+    	padding-right: 10px;
+    }
+}
+
+.margin__0 {
+	margin: 0;
+}
+
+.hidden {
+	display: none;
+}
+
 .hover-arrow {
 	width: 29px;
 	margin: -10px auto;
@@ -38,9 +110,14 @@ h4.list__header {
 	}
 }
 
+.accordion__trigger {
+	cursor: pointer;
+}
+
 a.link {
 	color: inherit;
 	cursor: pointer;
+	display: block;
 	-webkit-transition: color .3s ease-in-out;
     transition: color .3s ease-in-out;
 	&:hover,
@@ -155,6 +232,7 @@ h3.title {
 	display: table;
 	width: 100%;
 	border: 8px solid $white;
+	padding: 4px;
 }
 
 .color-block__experience--inner-wrapper {
@@ -182,4 +260,15 @@ a.experience__link {
 
 .columns.last.float-left {
 	float: left;
+}
+
+.people__details--outer-wrapper {
+	display: table;
+	height: 220px;
+    padding-left: 10px;
+}
+.people__details--inner-wrapper {
+	display: table-cell;
+	height: 100%;
+	vertical-align: middle;
 }

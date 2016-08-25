@@ -19,5 +19,21 @@
 	height: 2px;
 	background-color: $primary-grey;
 	width: 80px;
-	margin:	20px 0 16px; 
+	margin:	20px 0 16px;
+	&.red {
+		background-color: $primary-red;
+	}
+	&.people__deatils {
+		margin: 8px 0;
+	}
+}
+
+.page__divider {
+    height: 2px;
+    display: block;
+    width: 100%;
+    margin: 40px auto;
+    &.grey {
+    	background-color: $primary-grey;
+    }
 }
