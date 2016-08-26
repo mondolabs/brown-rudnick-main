@@ -12,6 +12,9 @@
 	&.red {
 		border-bottom: 3px solid $primary-red;
 	}
+	@media screen and (max-width: 640px) {
+		margin-left: 10px;
+	}
 }
 
 .list-divider {

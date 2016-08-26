@@ -1,6 +1,12 @@
+&.grey__background {
+	background-color: $primary-grey;
+}
+
+
 .title__text {
 	font-family: $brgaramond;
 	font-size: 30px;
+	margin-bottom: 20px;
 	p {
 		line-height: 1.2;
 	}
@@ -9,20 +15,30 @@
 	}
 	&.people__details {
 		margin-bottom: 2px;
+		@media screen and (max-width: 1140px) {
+			font-size: 20px;
+		}
 	}
 }
 
 .body__text {
-	p {
 	font-family: $brfont;
 	font-size: 16px;
+	line-height: 1.625;
+	p {
+		font-family: $brfont;
+		font-size: 16px;
 		line-height: 1.625;
 	}
 	&.people__details {
 		margin-bottom: 2px;
+		font-size: 14px;
+	}
+	&.service__text {
+		margin-left: 30px;
+		margin-top: -23px;
 	}
 }
-
 
 .tag__text {
 	font-family: $brfont;
@@ -51,6 +67,9 @@
 .padding__wrapper {
     display: block;
     position: relative;
+    &.top-and-bottom.sixty {
+    	padding: 60px 0;
+    }
     &.ten.sides__only {
     	padding: 0 10px;
     }
@@ -148,6 +167,10 @@ h3.title {
 	margin-bottom: 0;
 }
 
+.margin-bottom--20 {
+	margin-bottom: 20;
+}
+
 .margin-top-60 {
 	margin-top: 60px;
 }
@@ -190,6 +213,10 @@ h3.title {
 .page__header {
 	font-size: 60px;
 	font-family: $brgaramond;
+	@media screen and (max-width: 640px) {
+		font-size: 40px;
+		padding-left: 10px;
+	}
 }
 
 .experience-tile__outer-wrapper {
@@ -264,11 +291,32 @@ a.experience__link {
 
 .people__details--outer-wrapper {
 	display: table;
-	height: 220px;
+	height: 185px;
     padding-left: 10px;
 }
 .people__details--inner-wrapper {
 	display: table-cell;
 	height: 100%;
 	vertical-align: middle;
+}
+img.people__details {
+	max-width: 200px;
+	@media screen and (max-width: 1140px){
+		max-width: 175px;
+	}
+	@media screen and (max-width: 1024px){
+		max-width: 200px;
+	}
+}
+.service {
+	float: left !important;
+	min-height: 50px;
+	&:before {
+		content: " ";
+		height: 8px;
+		width: 8px;
+		display: inline-block;
+		position: relative;
+		background-color: $primary-red;
+	}
 }
