@@ -2,6 +2,10 @@
 	background-color: $primary-grey;
 }
 
+.white__border--ten {
+	border: solid 10px $white;
+}
+
 
 .title__text {
 	font-family: $brgaramond;
@@ -18,6 +22,12 @@
 		@media screen and (max-width: 1140px) {
 			font-size: 20px;
 		}
+	}
+	&.red {
+		color: $primary-red;
+	}
+	&.insights__blog {
+		margin-top: 20px;
 	}
 }
 
@@ -38,6 +48,13 @@
 		margin-left: 30px;
 		margin-top: -23px;
 	}
+	&.insight,
+	&.insights {
+		margin-bottom: 0;
+	}
+	&.insights.link {
+		font-size: 14px;
+	}
 }
 
 .tag__text {
@@ -47,6 +64,15 @@
     font-weight: 800;
 	&.people__details {
 		margin-bottom: 2px;
+	}
+	&.smaller {
+		font-size: 10px;
+	}
+	&.grey {
+		color: $darker-grey;
+	}
+	&.font-weight__regular {
+		font-weight: 400;
 	}
 }
 
@@ -67,6 +93,9 @@
 .padding__wrapper {
     display: block;
     position: relative;
+    &.ten {
+    	padding: 10px;
+    }
     &.top-and-bottom.sixty {
     	padding: 60px 0;
     }
@@ -79,6 +108,12 @@
     &.ten.right__only {
     	padding-right: 10px;
     }
+	&.twenty.right__only {
+    	padding-right: 10px;
+    }
+	&.twenty.left__only {
+    	padding-left: 10px;
+    }
 }
 
 .margin__0 {
@@ -87,13 +122,6 @@
 
 .hidden {
 	display: none;
-}
-
-.hover-arrow {
-	width: 29px;
-	margin: -10px auto;
-	opacity: 0;
-	display: block;
 }
 
 ul.list-style__none {
@@ -133,6 +161,16 @@ h4.list__header {
 	cursor: pointer;
 }
 
+span.link {
+	cursor: pointer;
+	-webkit-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+	&:hover,
+	&:focus {
+		color: $primary-red;
+	}
+}
+
 a.link {
 	color: inherit;
 	cursor: pointer;
@@ -151,6 +189,10 @@ a.link {
 	}
 	&.red {
 		color: $primary-red;
+		&:hover,
+		&:focus {
+			color: $black;
+		}
 	}
 }
 
@@ -169,6 +211,10 @@ h3.title {
 
 .margin-bottom--20 {
 	margin-bottom: 20;
+}
+
+.margin-top-20 {
+	margin-top: 20px;
 }
 
 .margin-top-60 {
@@ -319,4 +365,35 @@ img.people__details {
 		position: relative;
 		background-color: $primary-red;
 	}
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.color__block--grey {
+	padding: 20px;
+	background-color: $primary-grey;
+	height: 300px;
+	position: relative;
+	&.insights--publication {
+	    min-height: inherit;
+    	position: relative;
+    	text-align: center;
+    	height: auto;
+	}
+}
+
+img.insights {
+	width: 100%;
+}
+
+
+.insight__blogs--outer-wrapper {
+	margin-left: -10px;
+}
+
+
+.insight__blog--wrapper {
+	padding: 10px;
 }

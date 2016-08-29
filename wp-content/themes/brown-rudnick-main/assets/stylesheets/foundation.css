@@ -51,6 +51,9 @@ p.wp-caption-text {
 .grey__background {
   background-color: #f0f0f0; }
 
+.white__border--ten {
+  border: solid 10px #ffffff; }
+
 .title__text {
   font-family: "adobe-garamond-pro", serif;
   font-size: 30px;
@@ -64,6 +67,10 @@ p.wp-caption-text {
     @media screen and (max-width: 1140px) {
       .title__text.people__details {
         font-size: 20px; } }
+  .title__text.red {
+    color: #b91628; }
+  .title__text.insights__blog {
+    margin-top: 20px; }
 
 .body__text {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -79,6 +86,10 @@ p.wp-caption-text {
   .body__text.service__text {
     margin-left: 30px;
     margin-top: -23px; }
+  .body__text.insight, .body__text.insights {
+    margin-bottom: 0; }
+  .body__text.insights.link {
+    font-size: 14px; }
 
 .tag__text {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -87,6 +98,12 @@ p.wp-caption-text {
   font-weight: 800; }
   .tag__text.people__details {
     margin-bottom: 2px; }
+  .tag__text.smaller {
+    font-size: 10px; }
+  .tag__text.grey {
+    color: #a7a6a6; }
+  .tag__text.font-weight__regular {
+    font-weight: 400; }
 
 .sidebar__color-block--outer-wrapper {
   height: 60px;
@@ -103,6 +120,8 @@ p.wp-caption-text {
 .padding__wrapper {
   display: block;
   position: relative; }
+  .padding__wrapper.ten {
+    padding: 10px; }
   .padding__wrapper.top-and-bottom.sixty {
     padding: 60px 0; }
   .padding__wrapper.ten.sides__only {
@@ -111,18 +130,16 @@ p.wp-caption-text {
     padding: 0 40px; }
   .padding__wrapper.ten.right__only {
     padding-right: 10px; }
+  .padding__wrapper.twenty.right__only {
+    padding-right: 10px; }
+  .padding__wrapper.twenty.left__only {
+    padding-left: 10px; }
 
 .margin__0 {
   margin: 0; }
 
 .hidden {
   display: none; }
-
-.hover-arrow {
-  width: 29px;
-  margin: -10px auto;
-  opacity: 0;
-  display: block; }
 
 ul.list-style__none {
   list-style: none;
@@ -152,6 +169,13 @@ h4.list__header {
 .accordion__trigger {
   cursor: pointer; }
 
+span.link {
+  cursor: pointer;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out; }
+  span.link:hover, span.link:focus {
+    color: #b91628; }
+
 a.link {
   color: inherit;
   cursor: pointer;
@@ -166,6 +190,8 @@ a.link {
       color: #b91628; }
   a.link.red {
     color: #b91628; }
+    a.link.red:hover, a.link.red:focus {
+      color: #0a0a0a; }
 
 h3.title {
   font-size: 30px;
@@ -179,6 +205,9 @@ h3.title {
 
 .margin-bottom--20 {
   margin-bottom: 20; }
+
+.margin-top-20 {
+  margin-top: 20px; }
 
 .margin-top-60 {
   margin-top: 60px; }
@@ -303,6 +332,29 @@ img.people__details {
     display: inline-block;
     position: relative;
     background-color: #b91628; }
+
+.underline {
+  text-decoration: underline; }
+
+.color__block--grey {
+  padding: 20px;
+  background-color: #f0f0f0;
+  height: 300px;
+  position: relative; }
+  .color__block--grey.insights--publication {
+    min-height: inherit;
+    position: relative;
+    text-align: center;
+    height: auto; }
+
+img.insights {
+  width: 100%; }
+
+.insight__blogs--outer-wrapper {
+  margin-left: -10px; }
+
+.insight__blog--wrapper {
+  padding: 10px; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -7120,8 +7172,21 @@ a {
   border: none;
   padding: 25px 110px;
   text-transform: uppercase;
-  margin-top: 3%;
-  letter-spacing: 1.2px; }
+  margin: 3% auto;
+  letter-spacing: 1.2px;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out; }
+  .sites-button.advanced-search {
+    font-size: 11px;
+    padding: 12px 15px; }
+  .sites-button.inverse {
+    background: #ffffff;
+    color: #b91628;
+    border: 1px solid #b91628; }
+    .sites-button.inverse:hover, .sites-button.inverse:focus {
+      background: #b91628;
+      color: #ffffff;
+      border: 1px solid #ffffff; }
 
 #featured-hero {
   -webkit-background-size: cover;
@@ -7156,7 +7221,7 @@ a {
 
 .list-divider {
   display: block;
-  height: 2px;
+  height: 1px;
   background-color: #f0f0f0;
   width: 80px;
   margin: 20px 0 16px; }
@@ -7164,6 +7229,13 @@ a {
     background-color: #b91628; }
   .list-divider.people__deatils {
     margin: 8px 0; }
+  .list-divider.insights {
+    width: calc(100% - 15px);
+    margin: 40px 0 10px; }
+  .list-divider.smaller {
+    width: 30px; }
+  .list-divider.smallest {
+    width: 20px; }
 
 .page__divider {
   height: 2px;
@@ -7179,6 +7251,53 @@ a {
  */
 [data-whatinput="mouse"] a:focus, button:focus [data-whatinput="touch"] a:focus, button:focus {
   outline: none; }
+
+.hover-arrow {
+  cursor: pointer; }
+  .hover-arrow.experience {
+    width: 29px;
+    margin: -10px auto;
+    opacity: 0;
+    display: block; }
+  .hover-arrow.insights {
+    position: absolute;
+    right: 20px;
+    top: 2px; }
+  .hover-arrow.insights--blog {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 48px;
+    width: 68px;
+    border-left: 2px #ffffff solid;
+    border-top: 2px #ffffff solid; }
+    .hover-arrow.insights--blog img {
+      padding-top: 18px;
+      padding-left: 18px; }
+
+input[type="text"] {
+  border: none;
+  border-bottom: 2px solid #f0f0f0;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  font-size: 14px; }
+  input[type="text"]:focus, input[type="text"]:active {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    border: none;
+    border-bottom: 2px solid #a7a6a6;
+    box-shadow: none; }
+
+button.arrow {
+  display: block;
+  position: absolute;
+  height: 41px;
+  width: 45px;
+  top: 10px;
+  right: -14px;
+  margin-top: -12px; }
 
 #front-hero {
   background: url("../images/demo/hero-bg-foundation-6-small.svg") bottom center;

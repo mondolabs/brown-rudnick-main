@@ -2,7 +2,6 @@
 /*
 Template Name: Experience
 */
-get_header();
 
 $data = Timber::get_context();
 $post = new TimberPost();
@@ -21,6 +20,9 @@ $data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arro
     <?php wp_head()?>
   </head>
   <body>
+    <?php 
+      get_header(); 
+    ?>
     <div id="page-full-width-homepage" class ="full-width" role="main">
       <?php Timber::render('/twig-templates/experience.twig', $data); ?>
     </div>  

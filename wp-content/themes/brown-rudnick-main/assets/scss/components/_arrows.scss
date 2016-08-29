@@ -1,0 +1,27 @@
+.hover-arrow {
+	cursor: pointer;
+	&.experience {
+		width: 29px;
+		margin: -10px auto;
+		opacity: 0;
+		display: block;
+	}
+	&.insights {
+		position: absolute;
+	    right: 20px;
+	    top: 2px;
+	}
+	&.insights--blog {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		height: 48px;
+		width: 68px;
+	    border-left: 2px $white solid;
+    	border-top: 2px $white solid;
+    	img {
+		    padding-top: 18px;
+    		padding-left: 18px;
+    	}
+	}
+}

@@ -19,7 +19,7 @@
 
 .list-divider {
 	display: block;
-	height: 2px;
+	height: 1px;
 	background-color: $primary-grey;
 	width: 80px;
 	margin:	20px 0 16px;
@@ -28,6 +28,16 @@
 	}
 	&.people__deatils {
 		margin: 8px 0;
+	}
+	&.insights {
+	    width: calc(100% - 15px);
+    	margin: 40px 0 10px;
+	}
+	&.smaller {
+		width: 30px;
+	}
+	&.smallest {
+		width: 20px;
 	}
 }
 
