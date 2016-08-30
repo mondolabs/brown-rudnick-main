@@ -8,10 +8,9 @@ $practice_posts_args = array(
     'post_type' =>  'practice',
     'orderby' => 'title',
     'order' => 'ASC',
-     'posts_per_page'=>-1
+    'posts_per_page'=>-1
 );
 $data['practices'] = Timber::get_posts($practice_posts_args);
-
 $data['post'] = $post;
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
 $data['featured_image_url'] = $data['featured_image_url'][0];

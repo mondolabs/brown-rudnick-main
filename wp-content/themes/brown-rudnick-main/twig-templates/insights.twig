@@ -29,7 +29,7 @@
 				<span class="list-divider"></span>
 			    {% for sidebar_item in insights_sidebar_items %}
 			    	{% if sidebar_item.has_sub_menu %}
-						<a class="hide-for-small-only accordion__trigger link tag__text" data-trigger-target="{{sidebar_item.insights_sidebar_submenu_accordion_trigger }}">
+						<a class="hide-for-small-only accordion__trigger link" data-trigger-target="{{sidebar_item.insights_sidebar_submenu_accordion_trigger }}">
 							{{ sidebar_item.insights_sidebar_item_text|upper }}
 						</a>
 						<ul id="blogsSidebarAccordion" class="hidden list-style__none hide-for-small-only">
@@ -56,7 +56,7 @@
 							{% endfor %}
 						</ul>
 					{% else %}
-				    	<a class="link tag__text" href="{{ sidebar_item.insights_sidebar_item_link }}">
+				    	<a class="link" href="{{ sidebar_item.insights_sidebar_item_link }}">
 				    		{{ sidebar_item.insights_sidebar_item_text|upper }}
 				    	</a>
 					{% endif %}
