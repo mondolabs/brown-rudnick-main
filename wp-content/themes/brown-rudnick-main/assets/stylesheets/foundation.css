@@ -337,7 +337,6 @@ img.people__details {
     content: " ";
     height: 8px;
     width: 8px;
-    display: inline-block;
     position: absolute;
     background-color: #b91628; }
 
