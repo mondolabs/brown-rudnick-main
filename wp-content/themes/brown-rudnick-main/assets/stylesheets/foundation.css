@@ -338,7 +338,7 @@ img.people__details {
     height: 8px;
     width: 8px;
     display: inline-block;
-    position: relative;
+    position: absolute;
     background-color: #b91628; }
 
 .underline {
