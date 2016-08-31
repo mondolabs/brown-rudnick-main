@@ -7,30 +7,6 @@
 }
 
 
-.title__text {
-	font-family: $brgaramond;
-	font-size: 30px;
-	margin-bottom: 20px;
-	p {
-		line-height: 1.2;
-	}
-	&.smaller {
-		font-size: 24px;
-	}
-	&.people__details {
-		margin-bottom: 2px;
-		@media screen and (max-width: 1140px) {
-			font-size: 20px;
-		}
-	}
-	&.red {
-		color: $primary-red;
-	}
-	&.insights__blog {
-		margin-top: 20px;
-	}
-}
-
 .body__text {
 	font-family: $brfont;
 	font-size: 16px;
@@ -59,6 +35,34 @@
 		font-size: 14px;
 	}
 }
+
+.title__text {
+	font-family: $brgaramond;
+	font-size: 30px;
+	margin-bottom: 20px;
+	p {
+		font-family: $brfont;
+		font-size: 16px;
+		line-height: 1.625;
+		line-height: 1.2;
+	}
+	&.smaller {
+		font-size: 24px;
+	}
+	&.people__details {
+		margin-bottom: 2px;
+		@media screen and (max-width: 1140px) {
+			font-size: 20px;
+		}
+	}
+	&.red {
+		color: $primary-red;
+	}
+	&.insights__blog {
+		margin-top: 20px;
+	}
+}
+
 
 .tag__text {
 	font-family: $brfont;
@@ -199,6 +203,9 @@ a.link {
 		&:focus {
 			color: $black;
 		}
+	}
+	&.inline__link {
+		display: inline-block;
 	}
 }
 
