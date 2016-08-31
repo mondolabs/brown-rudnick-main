@@ -74,10 +74,11 @@ p.wp-caption-text {
     margin-bottom: 0; }
   .body__text.insights.link {
     font-size: 14px; }
-  .body__text.subtitle__text {
-    font-family: "adobe-garamond-pro", serif;
-    font-size: 24px;
-    margin-bottom: 20px; }
+
+.subtitle__text {
+  font-family: "adobe-garamond-pro", serif;
+  font-size: 24px;
+  margin-bottom: 20px; }
 
 .title__text {
   font-family: "adobe-garamond-pro", serif;
