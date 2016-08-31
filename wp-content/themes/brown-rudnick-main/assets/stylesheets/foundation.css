@@ -54,24 +54,6 @@ p.wp-caption-text {
 .white__border--ten {
   border: solid 10px #ffffff; }
 
-.title__text {
-  font-family: "adobe-garamond-pro", serif;
-  font-size: 30px;
-  margin-bottom: 20px; }
-  .title__text p {
-    line-height: 1.2; }
-  .title__text.smaller {
-    font-size: 24px; }
-  .title__text.people__details {
-    margin-bottom: 2px; }
-    @media screen and (max-width: 1140px) {
-      .title__text.people__details {
-        font-size: 20px; } }
-  .title__text.red {
-    color: #b91628; }
-  .title__text.insights__blog {
-    margin-top: 20px; }
-
 .body__text {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -92,6 +74,27 @@ p.wp-caption-text {
     margin-bottom: 0; }
   .body__text.insights.link {
     font-size: 14px; }
+
+.title__text {
+  font-family: "adobe-garamond-pro", serif;
+  font-size: 30px;
+  margin-bottom: 20px; }
+  .title__text p {
+    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.625;
+    line-height: 1.2; }
+  .title__text.smaller {
+    font-size: 24px; }
+  .title__text.people__details {
+    margin-bottom: 2px; }
+    @media screen and (max-width: 1140px) {
+      .title__text.people__details {
+        font-size: 20px; } }
+  .title__text.red {
+    color: #b91628; }
+  .title__text.insights__blog {
+    margin-top: 20px; }
 
 .tag__text {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -196,6 +199,8 @@ a.link {
     color: #b91628; }
     a.link.red:hover, a.link.red:focus {
       color: #0a0a0a; }
+  a.link.inline__link {
+    display: inline; }
 
 h3.title {
   font-size: 30px;
