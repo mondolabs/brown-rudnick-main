@@ -34,13 +34,15 @@
 	&.insights.link {
 		font-size: 14px;
 	}
+	&.subtitle__text {
+		p {
+			font-family: $brgaramond;
+			font-size: 24px;
+			margin-bottom: 20px;
+		}
+	}
 }
 
-p.subtitle__text {
-	font-family: $brgaramond;
-	font-size: 24px;
-	margin-bottom: 20px;
-}
 
 .title__text {
 	font-family: $brgaramond;
