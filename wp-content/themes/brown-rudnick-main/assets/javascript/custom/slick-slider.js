@@ -17,7 +17,7 @@ $(document).ready(function(){
 		animateSvg();
 	});
 
-	if ( $("body").hasClass("page-template-page-homepage") ){
+	if ( $("body").hasClass("page-template-homepage") ){
 
 		$('.slider-container').slick()({
 			slide: '.slide',
