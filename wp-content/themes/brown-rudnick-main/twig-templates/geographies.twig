@@ -27,37 +27,9 @@
 			</h4>
 			<span class="list-divider"></span>
 		    {% for sidebar_item in geographies_sidebar_items %}
-		    	{% if sidebar_item.has_sub_menu %}
-					<a class="hide-for-small-only accordion__trigger link" data-trigger-target="{{sidebar_item.geographies_sidebar_submenu_accordion_trigger }}">
-						{{ sidebar_item.geographies_sidebar_item_text|upper }}
-					</a>
-					<ul id="blogsSidebarAccordion" class="hidden list-style__none hide-for-small-only">
-						{% for sidebar_submenu_item in sidebar_item.geographies_sidebar_submenu %}
-							<li class="list-item__sidebar">
-								<a class="link sidebar__link {% if post.post_name == 'geographies' %}red{% endif %}" href="{{ sidebar_submenu_item.geographies_sidebar_submenu_item_link }}" >
-									{{ sidebar_submenu_item.geographies_sidebar_submenu_item_text }}
-								</a>
-							</li>
-						{% endfor %}
-					</ul>
-			{# mobile #}
-					<a class="show-for-small-only accordion__trigger red list__header" data-trigger-target="{{sidebar_item.geographies_sidebar_submenu_accordion_trigger_mobile }}">
-						{{ sidebar_item.geographies_sidebar_item_text }}
-					</a>
-					<ul id="blogsSidebarAccordionMobile" class="hidden mobile__sidebar--menu list-style__none show-for-small-only">
-						{% for sidebar_submenu_item in sidebar_item.geographies_sidebar_submenu %}
-							<li class="list-item__sidebar">
-								<a class="link sidebar__link" href="{{ sidebar_submenu_item.geographies_sidebar_submenu_item_link }}" >
-									{{ sidebar_submenu_item.geographies_sidebar_submenu_item_text }}
-								</a>
-							</li>
-						{% endfor %}
-					</ul>
-				{% else %}
-			    	<a class="link sidebar__link {% if sidebar_item.geographies_sidebar_item_text|upper == 'GEOGRAPHY' %}red{% endif %}" href="{{ sidebar_item.geographies_sidebar_item_link }}">
-			    		{{ sidebar_item.geographies_sidebar_item_text|upper }}
-			    	</a>
-				{% endif %}
+		    	<a class="{% if sidebar_item.geographies_sidebar_item_text|upper == 'GEOGRAPHY' %}red{% endif %} link sidebar__link" href="{{ sidebar_item.geographies_sidebar_item_link }}">
+		    		{{ sidebar_item.geographies_sidebar_item_text|upper }}
+		    	</a>
 		    {% endfor %}
 		</div>
 		<div class="columns show-for-medium-up medium-9 large-10">
