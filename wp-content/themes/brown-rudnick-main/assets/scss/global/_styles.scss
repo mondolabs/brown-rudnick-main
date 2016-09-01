@@ -407,3 +407,20 @@ img.insights {
 .insight__blog--wrapper {
 	padding: 10px;
 }
+
+
+.breadcrumb__wrapper {
+	top: 18px;
+	position: absolute;
+	a.breadcrumb__link {
+		font-size: 10px;
+		font-weight: 800;
+		cursor: pointer;
+		-webkit-transition: color .3s ease-in-out;
+		transition: color .3s ease-in-out;
+		&:hover,
+		&:focus {
+			color: $primary-red;
+		}
+	}
+}
