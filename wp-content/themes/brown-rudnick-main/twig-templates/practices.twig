@@ -37,17 +37,19 @@
 		<div class="columns show-for-medium-up medium-9 large-10">
 			<div class="row">
 				{% for practice in practices %}
-					<div class="columns large-4 medium-4 x-large-4 small-12 {% if loop.last %}last float-left{% endif %}">
-						<div class="color-block__experience">
-							<div class="color-block__experience--inner-wrapper">
-								<div class="experience__link--wrapper">
-									<a class="link experience__link text-align__center" href="{{ practice._permalink }}">
-										{{ practice.title }}
-									</a>
-								</div>	
-							</div>
-						</div>	
-					</div>	
+					{% if not practice.title|upper == 'MENA DISPUTES' %}	
+						<div class="columns large-4 medium-4 x-large-4 small-12 {% if loop.last %}last float-left{% endif %}">
+							<div class="color-block__experience">
+								<div class="color-block__experience--inner-wrapper">
+									<div class="experience__link--wrapper">
+										<a class="link experience__link text-align__center" href="{{ practice._permalink }}">
+											{{ practice.title }}
+										</a>
+									</div>	
+								</div>
+							</div>	
+						</div>
+					{% endif %}	
 				{% endfor %}
 			</div>
 		</div>
