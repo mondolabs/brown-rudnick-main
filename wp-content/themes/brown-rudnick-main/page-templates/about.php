@@ -10,18 +10,15 @@ $practice_posts_args = array(
     'order' => 'ASC',
     'posts_per_page'=>-1
 );
-$data['abouts'] = Timber::get_posts($about_posts_args);
 $data['post'] = $post;
+$data['about_sidebar_header'] = get_field('about_sidebar_header');
+$data['about_sidebar_items'] = get_field('about_sidebar_items');
+$data['text_content_top'] = get_field('text_content_top');
+$data['text_content_body'] = get_field('text_content_body');
+$data['bullet_section_header'] = get_field('bullet_section_header');
+$data['bullets'] = get_field('bullets');
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
 $data['featured_image_url'] = $data['featured_image_url'][0];
-$data['about_header_text'] = get_field('about_header_text');
-$data['about_sidebar_header'] = get_field('about_sidebar_header');
-$data['about_sidebar_link_1_text'] = get_field('about_sidebar_link_1_text');
-$data['about_sidebar_link_1_url'] = get_field('about_sidebar_link_1_url');
-$data['about_sidebar_link_2_text'] = get_field('about_sidebar_link_2_text');
-$data['about_sidebar_link_2_url'] = get_field('about_sidebar_link_2_url');
-$data['about_sidebar_link_3_text'] = get_field('about_sidebar_link_3_text');
-$data['about_sidebar_link_3_url'] = get_field('about_sidebar_link_3_url');
 $data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
 ?>
 
@@ -37,3 +34,5 @@ $data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arro
     <?php get_footer(); ?>
   </body>
 </html>
+
+

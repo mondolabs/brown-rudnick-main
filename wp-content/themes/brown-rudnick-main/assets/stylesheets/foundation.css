@@ -63,7 +63,7 @@ p.wp-caption-text {
   .body__text.people__details {
     margin-bottom: 2px;
     font-size: 14px; }
-  .body__text.service__text {
+  .body__text.service__text, .body__text.bullet__text {
     margin-left: 30px;
     margin-top: -8px; }
   .body__text.insight, .body__text.insights {
@@ -197,6 +197,9 @@ a.link {
       color: #000; }
   a.link.inline__link {
     display: inline; }
+  a.link.sidebar__link {
+    max-width: 159px;
+    margin-bottom: 14px; }
 
 h3.title {
   font-size: 30px;
@@ -330,10 +333,12 @@ img.people__details {
     img.people__details {
       max-width: 200px; } }
 
-.service {
+.service,
+.bullet {
   float: left !important;
   min-height: 50px; }
-  .service:before {
+  .service:before,
+  .bullet:before {
     content: " ";
     height: 8px;
     width: 8px;
@@ -374,6 +379,16 @@ img.insights {
     transition: color .3s ease-in-out; }
     .breadcrumb__wrapper a.breadcrumb__link:hover, .breadcrumb__wrapper a.breadcrumb__link:focus {
       color: #b91628; }
+
+.color__block--outer-wrapper {
+  position: relative;
+  height: 100%;
+  display: inline-block; }
+  .color__block--outer-wrapper.white__bg {
+    background-color: #fff; }
+
+.color__block--inner-wrapper {
+  padding: 50px; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -7230,7 +7245,6 @@ a {
 .slide-description-heading {
   border-bottom: 3px solid #000;
   width: 30%;
-  margin-bottom: 3%;
   display: block; }
   .slide-description-heading.red {
     border-bottom: 3px solid #b91628; }

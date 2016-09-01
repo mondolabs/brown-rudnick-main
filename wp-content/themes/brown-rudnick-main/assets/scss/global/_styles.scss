@@ -18,7 +18,8 @@
 		margin-bottom: 2px;
 		font-size: 14px;
 	}
-	&.service__text {
+	&.service__text,
+	&.bullet__text {
 		margin-left: 30px;
 		margin-top: -8px;
 	}
@@ -201,6 +202,10 @@ a.link {
 	&.inline__link {
 		display: inline;
 	}
+	&.sidebar__link {
+		max-width: 159px;
+		margin-bottom: 14px;
+	}
 }
 
 h3.title {
@@ -365,7 +370,8 @@ img.people__details {
 		max-width: 200px;
 	}
 }
-.service {
+.service,
+.bullet {
 	float: left !important;
 	min-height: 50px;
 	&:before {
@@ -423,4 +429,17 @@ img.insights {
 			color: $primary-red;
 		}
 	}
+}
+
+.color__block--outer-wrapper {
+	position: relative;
+    height: 100%;
+    display: inline-block;
+    &.white__bg {
+    	background-color: $white;
+    }
+}
+
+.color__block--inner-wrapper {
+	padding: 50px;
 }
