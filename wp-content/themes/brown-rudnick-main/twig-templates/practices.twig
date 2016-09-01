@@ -57,7 +57,8 @@
 						</ul>
 					{% else %}
 				    	<a class="link sidebar__link {% if post.post_name == 'practices' %}red{% endif %}" href="{{ sidebar_item.practice_sidebar_item_link }}">
-				    		{{ sidebar_item.practice_sidebar_item_text|upper }}
+				    		{# {{ sidebar_item.practice_sidebar_item_text|upper }} #}
+				    		{{ post.post_name }}
 				    	</a>
 					{% endif %}
 			    {% endfor %}
@@ -70,7 +71,7 @@
 						<div class="color-block__experience">
 							<div class="color-block__experience--inner-wrapper">
 								<div class="experience__link--wrapper">
-									<a class="link experience__link text-align__center" href="{{ practice._permalink}}">
+									<a class="link experience__link text-align__center" href="{{ practice._permalink }}">
 										{{ practice.title }}
 									</a>
 								</div>	
