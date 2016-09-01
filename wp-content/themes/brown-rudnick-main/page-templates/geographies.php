@@ -16,12 +16,7 @@ $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id
 $data['featured_image_url'] = $data['featured_image_url'][0];
 $data['geographies_header_text'] = get_field('geographies_header_text');
 $data['geographies_sidebar_header'] = get_field('geographies_sidebar_header');
-$data['geographies_sidebar_link_1_text'] = get_field('geographies_sidebar_link_1_text');
-$data['geographies_sidebar_link_1_url'] = get_field('geographies_sidebar_link_1_url');
-$data['geographies_sidebar_link_2_text'] = get_field('geographies_sidebar_link_2_text');
-$data['geographies_sidebar_link_2_url'] = get_field('geographies_sidebar_link_2_url');
-$data['geographies_sidebar_link_3_text'] = get_field('geographies_sidebar_link_3_text');
-$data['geographies_sidebar_link_3_url'] = get_field('geographies_sidebar_link_3_url');
+$data['geographies_sidebar_items'] = get_field('geographies_sidebar_items');
 $data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
 ?>
 
