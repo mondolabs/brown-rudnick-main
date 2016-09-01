@@ -16,12 +16,7 @@ $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id
 $data['featured_image_url'] = $data['featured_image_url'][0];
 $data['practice_header_text'] = get_field('practice_header_text');
 $data['practice_sidebar_header'] = get_field('practice_sidebar_header');
-$data['practice_sidebar_link_1_text'] = get_field('practice_sidebar_link_1_text');
-$data['practice_sidebar_link_1_url'] = get_field('practice_sidebar_link_1_url');
-$data['practice_sidebar_link_2_text'] = get_field('practice_sidebar_link_2_text');
-$data['practice_sidebar_link_2_url'] = get_field('practice_sidebar_link_2_url');
-$data['practice_sidebar_link_3_text'] = get_field('practice_sidebar_link_3_text');
-$data['practice_sidebar_link_3_url'] = get_field('practice_sidebar_link_3_url');
+$data['practice_sidebar_items'] = get_field('practice_sidebar_items');
 $data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
 ?>
 

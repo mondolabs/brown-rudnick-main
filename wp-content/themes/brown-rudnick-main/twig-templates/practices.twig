@@ -22,45 +22,46 @@
 <div class="experience__wrapper row body__wrapper columns small-12 medium-12 large-12">
 	<div class="padding__wrapper ten sides__only">
 		<div class="columns show-for-medium-up medium-3 large-2">
-			<h4 class="accordion__trigger red list__header" data-trigger-target="sidebarAccordion">
-				{{practice_sidebar_header}}
-			</h4>
-			<span class="hidden list-divider"></span>
-			<ul class="list-style__none hide-for-small-only">
-				<li class="list-item__sidebar">
-					<a class="link sidebar__link {% if post.post_name == 'practices' %}red{% endif %}" href="{{ practice_sidebar_link_1_url }}">
-						{{ practice_sidebar_link_1_text }}
-					</a>
-				</li>
-				<li class="list-item__sidebar">
-					<a class="link sidebar__link" href="{{ practice_sidebar_link_2_url }}">
-						{{ practice_sidebar_link_2_text }}
-					</a>
-				</li>
-				<li class="list-item__sidebar">
-					<a class="link sidebar__link" href="{{ practice_sidebar_link_3_url }}">
-						{{ practice_sidebar_link_3_text }}
-					</a>
-				</li>
-			</ul>
-	{# mobile #}
-			<ul id="sidebarAccordion" class="hidden mobile__sidebar--menu list-style__none show-for-small-only">
-				<li class="list-item__sidebar">
-					<a class="link {% if post.post_name == 'practices' %}red{% endif %}" href="{{ practice_sidebar_link_1_url }}">
-						{{ practice_sidebar_link_1_text }}
-					</a>
-				</li>
-				<li class="list-item__sidebar">
-					<a class="link" href="{{ practice_sidebar_link_2_url }}">
-						{{ practice_sidebar_link_2_text }}
-					</a>
-				</li>
-				<li class="list-item__sidebar">
-					<a class="link" href="{{ practice_sidebar_link_3_url }}">
-						{{ practice_sidebar_link_3_text }}
-					</a>
-				</li>
-			</ul>
+			<div class="padding__wrapper ten sides__only">
+				<h4 class="red title__text smaller">
+					{{ practice_sidebar_header }}
+				</h4>
+				<span class="list-divider"></span>
+			    {% for sidebar_item in practice_sidebar_items %}
+			    	{% if sidebar_item.has_sub_menu %}
+						<a class="hide-for-small-only accordion__trigger link" data-trigger-target="{{sidebar_item.practice_sidebar_submenu_accordion_trigger }}">
+							{{ sidebar_item.practice_sidebar_item_text|upper }}
+						</a>
+						<ul id="blogsSidebarAccordion" class="hidden list-style__none hide-for-small-only">
+							{% for sidebar_submenu_item in sidebar_item.practice_sidebar_submenu %}
+								<li class="list-item__sidebar">
+									<a class="link sidebar__link {% if post.post_name == 'practices' %}red{% endif %}" href="{{ sidebar_submenu_item.practice_sidebar_submenu_item_link }}" >
+										{{ sidebar_submenu_item.practice_sidebar_submenu_item_text }}
+									</a>
+								</li>
+							{% endfor %}
+						</ul>
+
+				{# mobile #}
+						<a class="show-for-small-only accordion__trigger red list__header" data-trigger-target="{{sidebar_item.practice_sidebar_submenu_accordion_trigger_mobile }}">
+							{{ sidebar_item.practice_sidebar_item_text }}
+						</a>
+						<ul id="blogsSidebarAccordionMobile" class="hidden mobile__sidebar--menu list-style__none show-for-small-only">
+							{% for sidebar_submenu_item in sidebar_item.practice_sidebar_submenu %}
+								<li class="list-item__sidebar">
+									<a class="link sidebar__link" href="{{ sidebar_submenu_item.practice_sidebar_submenu_item_link }}" >
+										{{ sidebar_submenu_item.practice_sidebar_submenu_item_text }}
+									</a>
+								</li>
+							{% endfor %}
+						</ul>
+					{% else %}
+				    	<a class="link sidebar__link" href="{{ sidebar_item.practice_sidebar_item_link }}">
+				    		{{ sidebar_item.practice_sidebar_item_text|upper }}
+				    	</a>
+					{% endif %}
+			    {% endfor %}
+			</div>
 		</div>
 		<div class="columns show-for-medium-up medium-9 large-10">
 			<div class="row">
@@ -71,7 +72,6 @@
 								<div class="experience__link--wrapper">
 									<a class="link experience__link text-align__center" href="{{ practice._permalink}}">
 										{{ practice.title }}
-										{# {{ dump(practice)}} #}
 									</a>
 								</div>	
 							</div>
