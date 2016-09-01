@@ -16,13 +16,9 @@ $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id
 $data['featured_image_url'] = $data['featured_image_url'][0];
 $data['industries_header_text'] = get_field('industries_header_text');
 $data['industries_sidebar_header'] = get_field('industries_sidebar_header');
-$data['industries_sidebar_link_1_text'] = get_field('industries_sidebar_link_1_text');
-$data['industries_sidebar_link_1_url'] = get_field('industries_sidebar_link_1_url');
-$data['industries_sidebar_link_2_text'] = get_field('industries_sidebar_link_2_text');
-$data['industries_sidebar_link_2_url'] = get_field('industries_sidebar_link_2_url');
-$data['industries_sidebar_link_3_text'] = get_field('industries_sidebar_link_3_text');
-$data['industries_sidebar_link_3_url'] = get_field('industries_sidebar_link_3_url');
+$data['industries_sidebar_items'] = get_field('industries_sidebar_items');
 $data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
+
 ?>
 
 <html>

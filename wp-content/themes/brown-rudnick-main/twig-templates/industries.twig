@@ -25,42 +25,40 @@
 			<h4 class="accordion__trigger red list__header" data-trigger-target="sidebarAccordion">
 				{{industries_sidebar_header}}
 			</h4>
-			<span class="hidden list-divider"></span>
-			<ul class="list-style__none hide-for-small-only">
-				<li class="list-item__sidebar">
-					<a class="link sidebar__link {% if post.post_name == 'industries' %}red{% endif %}" href="{{ industries_sidebar_link_1_url }}">
-						{{ industries_sidebar_link_1_text }}
+			<span class="list-divider"></span>
+		    {% for sidebar_item in industries_sidebar_items %}
+		    	{% if sidebar_item.has_sub_menu %}
+					<a class="hide-for-small-only accordion__trigger link" data-trigger-target="{{sidebar_item.industries_sidebar_submenu_accordion_trigger }}">
+						{{ sidebar_item.industries_sidebar_item_text|upper }}
 					</a>
-				</li>
-				<li class="list-item__sidebar">
-					<a class="link sidebar__link" href="{{ industries_sidebar_link_2_url }}">
-						{{ industries_sidebar_link_2_text }}
+					<ul id="blogsSidebarAccordion" class="hidden list-style__none hide-for-small-only">
+						{% for sidebar_submenu_item in sidebar_item.industries_sidebar_submenu %}
+							<li class="list-item__sidebar">
+								<a class="link sidebar__link {% if post.post_name == 'industries' %}red{% endif %}" href="{{ sidebar_submenu_item.industries_sidebar_submenu_item_link }}" >
+									{{ sidebar_submenu_item.industries_sidebar_submenu_item_text }}
+								</a>
+							</li>
+						{% endfor %}
+					</ul>
+			{# mobile #}
+					<a class="show-for-small-only accordion__trigger red list__header" data-trigger-target="{{sidebar_item.industries_sidebar_submenu_accordion_trigger_mobile }}">
+						{{ sidebar_item.industries_sidebar_item_text }}
 					</a>
-				</li>
-				<li class="list-item__sidebar">
-					<a class="link sidebar__link" href="{{ industries_sidebar_link_3_url }}">
-						{{ industries_sidebar_link_3_text }}
-					</a>
-				</li>
-			</ul>
-	{# mobile #}
-			<ul id="sidebarAccordion" class="hidden mobile__sidebar--menu list-style__none show-for-small-only">
-				<li class="list-item__sidebar">
-					<a class="link {% if post.post_name == 'industries' %}red{% endif %}" href="{{ industries_sidebar_link_1_url }}">
-						{{ industries_sidebar_link_1_text }}
-					</a>
-				</li>
-				<li class="list-item__sidebar">
-					<a class="link" href="{{ industries_sidebar_link_2_url }}">
-						{{ industries_sidebar_link_2_text }}
-					</a>
-				</li>
-				<li class="list-item__sidebar">
-					<a class="link" href="{{ industries_sidebar_link_3_url }}">
-						{{ industries_sidebar_link_3_text }}
-					</a>
-				</li>
-			</ul>
+					<ul id="blogsSidebarAccordionMobile" class="hidden mobile__sidebar--menu list-style__none show-for-small-only">
+						{% for sidebar_submenu_item in sidebar_item.industries_sidebar_submenu %}
+							<li class="list-item__sidebar">
+								<a class="link sidebar__link" href="{{ sidebar_submenu_item.industries_sidebar_submenu_item_link }}" >
+									{{ sidebar_submenu_item.industries_sidebar_submenu_item_text }}
+								</a>
+							</li>
+						{% endfor %}
+					</ul>
+				{% else %}
+			    	<a class="link sidebar__link {% if sidebar_item.industries_sidebar_item_text|upper == 'INDUSTRY' %}red{% endif %}" href="{{ sidebar_item.industries_sidebar_item_link }}">
+			    		{{ sidebar_item.industries_sidebar_item_text|upper }}
+			    	</a>
+				{% endif %}
+		    {% endfor %}
 		</div>
 		<div class="columns show-for-medium-up medium-9 large-10">
 			<div class="row">
