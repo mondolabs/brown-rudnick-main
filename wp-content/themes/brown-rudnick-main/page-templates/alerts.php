@@ -13,6 +13,11 @@ $featured_posts_args = array(
 );
 $data['featured_posts'] = Timber::get_posts($featured_posts_args);
 $data['top_content'] = get_field('top_content');
+
+$data['insights_header_text'] = get_field('insights_header_text');
+$data['insights_sidebar_header'] = get_field('insights_sidebar_header');
+$data['insights_sidebar_items'] = get_field('insights_sidebar_items');
+
 $data['media_inquiry_name'] = get_field('media_inquiry_name');
 $data['media_inquiry_title'] = get_field('media_inquiry_title');
 $data['media_inquiry_phone_number'] = get_field('media_inquiry_phone_number');
