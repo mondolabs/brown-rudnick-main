@@ -119,6 +119,9 @@ p.subtitle__text {
   width: 100%;
   display: table-cell;
   vertical-align: middle; }
+  .sidebar__color-block--wrapper a.link {
+    padding-left: 10px;
+    padding-right: 10px; }
 
 .padding__wrapper {
   display: block;

@@ -22,34 +22,30 @@
 <div class="experience__wrapper row body__wrapper columns small-12 medium-12 large-12">
 	<div class="padding__wrapper ten sides__only">
 		<div class="columns show-for-medium-up medium-3 large-2">
-			<div class="padding__wrapper ten sides__only">
-				<h4 class="red title__text smaller">
-					{{ practice_sidebar_header }}
-				</h4>
-				<span class="list-divider"></span>
-			    {% for sidebar_item in practice_sidebar_items %}
-			    	<a class="{% if sidebar_item.practice_sidebar_item_text|upper == 'PRACTICE' %}red{% endif %} link sidebar__link" href="{{ sidebar_item.practice_sidebar_item_link }}">
-			    		{{ sidebar_item.practice_sidebar_item_text|upper }}
-			    	</a>
-			    {% endfor %}
-			</div>
+			<h4 class="accordion__trigger red list__header" data-trigger-target="sidebarAccordion">
+				{{practice_sidebar_header}}
+			</h4>
+			<span class="list-divider"></span>
+		    {% for sidebar_item in practice_sidebar_items %}
+		    	<a class="{% if sidebar_item.practice_sidebar_item_text|upper == 'PRACTICE' %}red{% endif %} link sidebar__link" href="{{ sidebar_item.practice_sidebar_item_link }}">
+		    		{{ sidebar_item.practice_sidebar_item_text|upper }}
+		    	</a>
+		    {% endfor %}
 		</div>
 		<div class="columns show-for-medium-up medium-9 large-10">
 			<div class="row">
 				{% for practice in practices %}
-					{% if not practice.title|upper == 'MENA DISPUTES' %}	
-						<div class="columns large-4 medium-4 x-large-4 small-12 {% if loop.last %}last float-left{% endif %}">
-							<div class="color-block__experience">
-								<div class="color-block__experience--inner-wrapper">
-									<div class="experience__link--wrapper">
-										<a class="link experience__link text-align__center" href="{{ practice._permalink }}">
-											{{ practice.title }}
-										</a>
-									</div>	
-								</div>
-							</div>	
-						</div>
-					{% endif %}	
+					<div class="columns large-4 medium-4 x-large-4 small-12 {% if loop.last %}last float-left{% endif %}">
+						<div class="color-block__experience">
+							<div class="color-block__experience--inner-wrapper">
+								<div class="experience__link--wrapper">
+									<a class="link experience__link text-align__center" href="{{ practice._permalink}}">
+										{{ practice.title }}
+									</a>
+								</div>	
+							</div>
+						</div>	
+					</div>	
 				{% endfor %}
 			</div>
 		</div>

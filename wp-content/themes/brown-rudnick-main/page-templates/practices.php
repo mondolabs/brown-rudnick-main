@@ -18,6 +18,7 @@ $data['practice_header_text'] = get_field('practice_header_text');
 $data['practice_sidebar_header'] = get_field('practice_sidebar_header');
 $data['practice_sidebar_items'] = get_field('practice_sidebar_items');
 $data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
+
 ?>
 
 <html>
