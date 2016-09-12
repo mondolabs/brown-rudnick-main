@@ -1,1 +1,106 @@
-TEST
+<div id="featuredImage" class ="featured-image__header--image-wrapper">
+
+	{% if featured_image_url %}
+		{% set header_text_color = "white" %}
+	{% else %}
+		{% set header_text_color = "black" %}
+	{% endif %}
+	{# hero header #}
+	<div class="featured-image__header--text-outer-wrapper row">
+		<div class="featured-image__header--text-wrapper">
+			<div class="featured-image__header--text-inner-wrapper">
+				<h1 class="page__header {{ header_text_color }}">
+					{{ about_header_text }}
+				</h1>
+				<span class="slide-description-heading red">
+				</span>
+			</div>
+		</div>	
+	</div>
+</div>	
+	{# body - with sidebar #}
+<div class="row">
+	<div class="experience__wrapper row body__wrapper columns small-12 medium-12 large-12">
+		<div class="columns show-for-medium-up medium-3 large-2">
+			<div class="padding__wrapper ten sides__only">
+				<h4 class="red title__text smaller">
+					{{ about_sidebar_header }}
+				</h4>
+				<span class="list-divider"></span>
+			    {% for sidebar_item in about_sidebar_items %}
+			    	{% if sidebar_item.has_sub_menu %}
+						<a class="hide-for-small-only accordion__trigger link" data-trigger-target="{{sidebar_item.about_sidebar_submenu_accordion_trigger }}">
+							{{ sidebar_item.about_sidebar_item_text|upper }}
+						</a>
+						<ul id="blogsSidebarAccordion" class="hidden list-style__none hide-for-small-only">
+							{% for sidebar_submenu_item in sidebar_item.about_sidebar_submenu %}
+								<li class="list-item__sidebar">
+									<a class="link sidebar__link" href="{{ sidebar_submenu_item.about_sidebar_submenu_item_link }}" >
+										{{ sidebar_submenu_item.about_sidebar_submenu_item_text }}
+									</a>
+								</li>
+							{% endfor %}
+						</ul>
+
+				{# mobile #}
+						<a class="show-for-small-only accordion__trigger red list__header" data-trigger-target="{{sidebar_item.about_sidebar_submenu_accordion_trigger_mobile }}">
+							{{ sidebar_item.about_sidebar_item_text }}
+						</a>
+						<ul id="blogsSidebarAccordionMobile" class="hidden mobile__sidebar--menu list-style__none show-for-small-only">
+							{% for sidebar_submenu_item in sidebar_item.about_sidebar_submenu %}
+								<li class="list-item__sidebar">
+									<a class="link sidebar__link" href="{{ sidebar_submenu_item.about_sidebar_submenu_item_link }}" >
+										{{ sidebar_submenu_item.about_sidebar_submenu_item_text }}
+									</a>
+								</li>
+							{% endfor %}
+						</ul>
+					{% else %}
+				    	<a class="link sidebar__link" href="{{ sidebar_item.about_sidebar_item_link }}">
+				    		{{ sidebar_item.about_sidebar_item_text|upper }}
+				    	</a>
+					{% endif %}
+			    {% endfor %}
+			</div>
+		</div>	
+		<div class="columns small-12 medium-9 large-10">
+			<div class="columns small-12 medium-12 large-12">
+				<p class="title__text">
+					{{ text_content_top }}
+				</p>
+				<p class="body__text">
+					{{ text_content_body }}
+				</p>
+			</div>	
+		</div>
+	</div>
+</div>
+<div class="grey__background experience__wrapper columns small-12 medium-12 large-12">
+	<div class="row padding__wrapper top-and-bottom sixty">
+		<div class="large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">
+			<div class="color__block--outer-wrapper white__bg">
+				<div class="color__block--inner-wrapper">
+					<p class="body__text">
+						{{ bullet_section_header }}
+					</p>
+					{% for bullet in bullets %}
+						{% set bullet = bullet|first %}
+						<div class="bullet">
+							<div class="body__text bullet__text">
+								{{bullet}}
+							</div>
+						</div>	
+					{% endfor %}
+				</div>
+			</div>	
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	{% if featured_image_url %}
+		$(document).ready(function(){
+			$('#featuredImage').backstretch("{{featured_image_url}}");
+		})
+	{% endif %}
+</script>
