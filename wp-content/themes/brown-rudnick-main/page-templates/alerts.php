@@ -4,24 +4,21 @@ Template Name: Alerts & Bulletins
 */
 get_header();
 $data = Timber::get_context();
+$post = new TimberPost();
+$data['post'] = $post;
+$data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
+$data['featured_image_url'] = $data['featured_image_url'][0];
 
-$featured_posts_args = array(
-    'post_type' =>  'alert',
-    'orderby' => 'date',
-    'order' => 'DESC',
-    'max_num_pages'=>5
-);
-$data['featured_posts'] = Timber::get_posts($featured_posts_args);
-$data['top_content'] = get_field('top_content');
-
-$data['insights_header_text'] = get_field('insights_header_text');
 $data['insights_sidebar_header'] = get_field('insights_sidebar_header');
 $data['insights_sidebar_items'] = get_field('insights_sidebar_items');
 
-$data['media_inquiry_name'] = get_field('media_inquiry_name');
-$data['media_inquiry_title'] = get_field('media_inquiry_title');
-$data['media_inquiry_phone_number'] = get_field('media_inquiry_phone_number');
-$data['media_inquiry_email'] = get_field('media_inquiry_email');
+$data['contact_name'] = get_field('contact_name');
+$data['contact_title'] = get_field('contact_title');
+$data['contact_phone_number'] = get_field('contact_phone_number');
+$data['contact_email'] = get_field('contact_email');
+$data['publications_header'] = get_field('publications_header');
+$data['publications'] = get_field('publications');
+
 $data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
 
 ?>
