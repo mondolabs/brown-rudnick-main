@@ -14,9 +14,9 @@ $data['practices'] = Timber::get_posts($practice_posts_args);
 $data['post'] = $post;
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
 $data['featured_image_url'] = $data['featured_image_url'][0];
-$data['practice_header_text'] = get_field('practice_header_text');
-$data['practice_sidebar_header'] = get_field('practice_sidebar_header');
-$data['practice_sidebar_items'] = get_field('practice_sidebar_items');
+$data['header_text'] = get_field('header_text');
+$data['sidebar_header'] = get_field('sidebar_header');
+$data['sidebar_items'] = get_field('sidebar_items');
 $data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
 
 ?>
