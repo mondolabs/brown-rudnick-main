@@ -122,6 +122,7 @@
   width: 60vw;
 }
 .is-dropdown-submenu > li {
+  margin-top: 2%;
   @include breakpoint(medium){
     width: 19% !important;
   }
@@ -141,5 +142,4 @@
   right: -30vw !important;
   top: 100% !important;
   text-align: center !important;
-  float: left !important;
 }

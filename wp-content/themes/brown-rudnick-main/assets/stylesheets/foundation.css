@@ -7159,6 +7159,7 @@ a::after {
   width: 60vw; }
 
 .is-dropdown-submenu > li {
+  margin-top: 2%;
   width: 10% !important;
   background-color: transparent; }
   @media screen and (min-width: 40em) {
@@ -7173,8 +7174,7 @@ a::after {
   right: auto !important;
   right: -30vw !important;
   top: 100% !important;
-  text-align: center !important;
-  float: left !important; }
+  text-align: center !important; }
   @media screen and (min-width: 40em) {
     .is-dropdown-submenu {
       left: -30vw !important; } }
@@ -8219,6 +8219,7 @@ ul.desktop__menu--icons-list {
     padding-top: 36px; }
 
 .subnav__color-block {
+  margin-top: 2%;
   width: 400%;
   height: 60px;
   position: relative;

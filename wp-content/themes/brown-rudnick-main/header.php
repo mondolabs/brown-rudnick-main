@@ -33,7 +33,7 @@
 			<div class="menu__wrapper--desktop row sr">
 				<div class="logo__wrapper columns large-3 medium-3 hide-for-small-only">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-						<img class="header-logo--mobile" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/BR-Logo.png">
+						<img class="header-logo--mobile" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/BR-logo-for-nav.png">
 					</a>
 				</div>
 				<div class="menu__inner-wrapper--desktop columns large-9 medium-9">
