@@ -24,10 +24,12 @@
 		<div class="columns show-for-medium-up medium-3 large-2">
 			<h4 class="accordion__trigger red list__header" data-trigger-target="sidebarAccordion">
 				{{sidebar_header}}
+				{{ slug }}
 			</h4>
 			<span class="list-divider"></span>
 		    {% for sidebar_item in sidebar_items %}
-		    	<a class="{% if sidebar_item.sidebar_item_text|upper == 'PRACTICE' %}red{% endif %} link sidebar__link" href="{{ sidebar_item.sidebar_item_link }}">
+		    	{% set link_slug = sidebar_item.sidebar_item_link|split('/')[3] %}
+		    	<a class="{% if slug == link_slug %}red{% endif %} link sidebar__link" href="{{ sidebar_item.sidebar_item_link }}">
 		    		{{ sidebar_item.sidebar_item_text|upper }}
 		    	</a>
 		    {% endfor %}
