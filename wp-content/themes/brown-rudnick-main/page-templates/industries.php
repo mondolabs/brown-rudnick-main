@@ -10,7 +10,7 @@ $industries_posts_args = array(
     'order' => 'ASC',
     'posts_per_page'=>-1 
 );
-$data['industries'] = Timber::get_posts($industries_posts_args);
+$data['experiences'] = Timber::get_posts($industries_posts_args);
 $data['post'] = $post;
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
 $data['featured_image_url'] = $data['featured_image_url'][0];
