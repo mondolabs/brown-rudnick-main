@@ -7150,6 +7150,31 @@ a::after {
 .nav-next {
   float: right; }
 
+.submenu > li {
+  display: inline-block !important; }
+
+.is-dropdown-submenu {
+  border: none;
+  background: transparent;
+  width: 60vw; }
+
+.is-dropdown-submenu > li {
+  width: 15% !important;
+  background-color: transparent; }
+  @media screen and (min-width: 40em) {
+    .is-dropdown-submenu > li {
+      width: 19% !important; } }
+
+.is-dropdown-submenu li a {
+  font-size: 0.85em !important;
+  font-weight: 400 !important; }
+
+.is-dropdown-submenu {
+  right: auto !important;
+  left: -30vw !important;
+  top: 100% !important;
+  text-align: center !important; }
+
 #footer-container {
   max-width: 100%;
   width: 100%;

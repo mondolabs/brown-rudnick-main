@@ -109,3 +109,33 @@
 .nav-next {
 	float:right;
 }
+
+
+// desktop navigation hover
+.submenu > li {
+  display: inline-block !important;
+}
+
+.is-dropdown-submenu{
+  border: none;
+  background: transparent;
+  width: 60vw;
+}
+.is-dropdown-submenu > li {
+  @include breakpoint(medium){
+    width: 19% !important;
+  }
+  width: 15% !important;
+  background-color: transparent;
+}
+
+.is-dropdown-submenu li a { 
+  font-size: 0.85em !important; 
+  font-weight: 400 !important;
+}
+.is-dropdown-submenu {
+  right: auto !important;
+  left: -30vw !important;
+  top: 100% !important;
+  text-align: center !important;
+}
