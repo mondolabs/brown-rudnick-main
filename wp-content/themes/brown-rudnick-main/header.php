@@ -44,14 +44,9 @@
 
 			<div class="mobile-menu">
 				<button class="hamburger-icon" type="button" data-toggle="mobile-menu">
-					<span></span>
+					<?php get_template_part( 'template-parts/mobile-off-canvas' ); ?>
 				</button>
 			</div>
-
-			<?php
-				$args = array('child_of'=>5, 'post_type'=>'page', 'sort_column'=>'menu_order');
-				$child_pages = get_pages($args);
-			?>
 		</header>
 
 		<div class="menu__outer-wrapper--desktop-on-scroll">
@@ -78,10 +73,7 @@
 						<span class="subnav__color-block"></span>
 					</div>
 				</div>	
-				<?php
-					$args = array('child_of'=>5, 'post_type'=>'page', 'sort_column'=>'menu_order');
-					$child_pages = get_pages($args);
-				?>
+	
 			</header>
 		</div>	
 
