@@ -9,8 +9,8 @@ $data['post'] = $post;
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
 $data['featured_image_url'] = $data['featured_image_url'][0];
 
-$data['insights_sidebar_header'] = get_field('insights_sidebar_header');
-$data['insights_sidebar_items'] = get_field('insights_sidebar_items');
+$data['sidebar_header'] = get_field('sidebar_header');
+$data['sidebar_items'] = get_field('sidebar_items');
 
 $data['news_articles'] = get_field('news_articles');
 $data['alerts'] = get_field('alerts');
