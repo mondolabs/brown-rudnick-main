@@ -28,6 +28,8 @@
 				</h4>
 				<span class="list-divider"></span>
 			    {% for sidebar_item in sidebar_items %}
+			    	{% set link_slug = sidebar_item.sidebar_item_link|split('/')[3] %}
+					{{ link_slug }}		    
 			    	{% if sidebar_item.has_sub_menu %}
 						<a class="hide-for-small-only accordion__trigger link" data-trigger-target="{{sidebar_item.sidebar_submenu_accordion_trigger }}">
 							{{ sidebar_item.sidebar_item_text|upper }}
@@ -56,9 +58,9 @@
 							{% endfor %}
 						</ul>
 					{% else %}
-				    	<a class="link" href="{{ sidebar_item.sidebar_item_link }}">
+				    	<a class="{% if slug == link_slug %}red{% endif %} link sidebar__link" href="{{ sidebar_item.sidebar_item_link }}">
 				    		{{ sidebar_item.sidebar_item_text|upper }}
-				    	</a>
+		    			</a>
 					{% endif %}
 			    {% endfor %}
 				<span class="list-divider smaller"></span>

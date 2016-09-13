@@ -15,6 +15,8 @@ $data['contact_phone_number'] = get_field('contact_phone_number');
 $data['contact_email'] = get_field('contact_email');
 $data['top_content'] = get_field('top_content');
 $data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
+$slug = basename(get_permalink());
+$data['slug'] = $slug;
 
 ?>
 
@@ -30,6 +32,3 @@ $data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arro
     <?php get_footer(); ?>
   </body>
 </html>
-
-
-
