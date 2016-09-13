@@ -29,7 +29,6 @@
 				<span class="list-divider"></span>
 			    {% for sidebar_item in sidebar_items %}
 			    	{% set link_slug = sidebar_item.sidebar_item_link|split('/')[3] %}
-					{{ link_slug }}		    
 			    	{% if sidebar_item.has_sub_menu %}
 						<a class="hide-for-small-only accordion__trigger link" data-trigger-target="{{sidebar_item.sidebar_submenu_accordion_trigger }}">
 							{{ sidebar_item.sidebar_item_text|upper }}
