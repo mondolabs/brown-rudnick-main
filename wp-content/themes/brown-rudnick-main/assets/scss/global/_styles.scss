@@ -73,11 +73,12 @@ p.subtitle__text {
 	&.grey {
 		color: $darker-grey;
 	}
-	&.font-weight__regular {
-		font-weight: 400;
-	}
+
 	&.red {
 		color: $primary-red;
+	}
+	&.contact {
+		font-size: 11px;
 	}
 }
 
@@ -446,4 +447,12 @@ img.insights {
 
 .color__block--inner-wrapper {
 	padding: 50px;
+}
+
+.font-weight__regular {
+	font-weight: 400;
+}
+
+.font-weight__bold {
+	font-weight: 800;
 }

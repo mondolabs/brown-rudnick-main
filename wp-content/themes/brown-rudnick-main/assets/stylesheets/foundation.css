@@ -103,10 +103,10 @@ p.subtitle__text {
     font-size: 10px; }
   .tag__text.grey {
     color: #a7a6a6; }
-  .tag__text.font-weight__regular {
-    font-weight: 400; }
   .tag__text.red {
     color: #b91628; }
+  .tag__text.contact {
+    font-size: 11px; }
 
 .sidebar__color-block--outer-wrapper {
   height: 60px;
@@ -392,6 +392,12 @@ img.insights {
 
 .color__block--inner-wrapper {
   padding: 50px; }
+
+.font-weight__regular {
+  font-weight: 400; }
+
+.font-weight__bold {
+  font-weight: 800; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -7224,6 +7230,11 @@ a {
       background: #b91628;
       color: #fff;
       border: 1px solid #fff; }
+  .sites-button.alerts {
+    position: absolute;
+    margin-bottom: 0;
+    margin-top: 45px;
+    margin-left: 40px; }
 
 #featured-hero {
   -webkit-background-size: cover;

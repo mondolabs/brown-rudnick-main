@@ -84,7 +84,7 @@
 					<h4 class="title__text smaller insights margin-bottom--0">
 						{{ contact_name }}
 					</h4>
-					<p class="tag__text insights margin-bottom--0 font-weight__regular">
+					<p class="tag__text contact margin-bottom--0 font-weight__bold">
 						{{ contact_title|upper }}
 					</p>
 					<span class="list-divider smallest red"></span>
@@ -100,12 +100,23 @@
 			</div>
 		</div>
 		<div class="columns small-12 medium-9 large-10">
-			<div class="columns small-12 medium-12 large-12">
-				<p class="title__text">
-					{{ top_content }}
-				</p>
-			</div>	
-		</div>
+			<div class="padding__wrapper forty sides__only">
+				<div class="columns small-12 medium-12 large-12">
+					<p class="title__text">
+						{{ top_content }}
+					</p>
+				</div>
+				<div class="columns small-12 medium-12 large-6 x-large-8">
+					<p class="title__text">
+						Subscribe to our email list
+					</p>
+					<input type="text" name="email" placeholder="EMAIL">
+				</div>
+				<div class="columns small-12 medium-12 large-6 x-large-4">
+					<button type="submit" class="subscribe alerts sites-button">ENTER</button>
+				</div>
+			</div>
+		</div>	
 	</div>
 </div>	
 

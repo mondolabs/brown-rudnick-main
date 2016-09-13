@@ -30,4 +30,10 @@ a {
 	    	border: 1px solid $white;
 	    }
 	}
+	&.alerts {
+	    position: absolute;
+	    margin-bottom: 0;
+    	margin-top: 45px;
+    	margin-left: 40px;
+	}
 }
