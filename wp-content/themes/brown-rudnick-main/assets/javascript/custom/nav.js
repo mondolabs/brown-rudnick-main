@@ -2,7 +2,8 @@
 
 var navbar = {
 	onHover: function(){
-		if ($(window).innerWidth() > 640 ) {
+		// medium breakpoint
+		if ($(window).innerWidth() > 700 ) {
 				$('.menu-item-has-children').on({
 					mouseover: function(){
 						$('.subnav__color-block').stop().show(400);

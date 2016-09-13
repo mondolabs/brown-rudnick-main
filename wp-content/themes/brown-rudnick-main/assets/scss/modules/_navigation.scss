@@ -125,7 +125,7 @@
   @include breakpoint(medium){
     width: 19% !important;
   }
-  width: 15% !important;
+  width: 10% !important;
   background-color: transparent;
 }
 
@@ -135,7 +135,11 @@
 }
 .is-dropdown-submenu {
   right: auto !important;
-  left: -30vw !important;
+  @include breakpoint (medium) {
+    left: -30vw !important;
+  }
+  right: -30vw !important;
   top: 100% !important;
   text-align: center !important;
+  float: left !important;
 }

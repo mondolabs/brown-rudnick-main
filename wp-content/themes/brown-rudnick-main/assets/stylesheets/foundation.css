@@ -7159,7 +7159,7 @@ a::after {
   width: 60vw; }
 
 .is-dropdown-submenu > li {
-  width: 15% !important;
+  width: 10% !important;
   background-color: transparent; }
   @media screen and (min-width: 40em) {
     .is-dropdown-submenu > li {
@@ -7171,9 +7171,13 @@ a::after {
 
 .is-dropdown-submenu {
   right: auto !important;
-  left: -30vw !important;
+  right: -30vw !important;
   top: 100% !important;
-  text-align: center !important; }
+  text-align: center !important;
+  float: left !important; }
+  @media screen and (min-width: 40em) {
+    .is-dropdown-submenu {
+      left: -30vw !important; } }
 
 #footer-container {
   max-width: 100%;
@@ -8216,7 +8220,7 @@ ul.desktop__menu--icons-list {
 
 .subnav__color-block {
   width: 400%;
-  height: 80px;
+  height: 60px;
   position: relative;
   left: -100%;
   background-color: #f0f0f0;

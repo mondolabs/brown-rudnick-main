@@ -31,7 +31,7 @@
 
 		<header id="masthead" class="site-header" role="banner">
 			<div class="menu__wrapper--desktop row sr">
-				<div class="logo__wrapper columns large-3 medium-3">
+				<div class="logo__wrapper columns large-3 medium-3 hide-for-small-only">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 						<img class="header-logo--mobile" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/BR-Logo.png">
 					</a>
