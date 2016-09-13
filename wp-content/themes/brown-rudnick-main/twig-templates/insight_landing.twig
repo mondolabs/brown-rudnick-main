@@ -120,9 +120,46 @@
 			<div class="padding__wrapper forty sides__only">
 				<div class="page__divider grey">
 				</div>
-				<p class="title__text">
-					{{ header_text }}
-				</p>
+				<div class="columns small-12 medium-12 large-6 x-large-6">
+					<p class="title__text">
+						{{ header_text }}
+					</p>
+				</div>
+				<div class="columns small-12 medium-12 large-6 x-large-6">
+					<p class="inline__text">
+						date
+					</p>
+					<select id="geographySelect" name="geography_query" class="inline__text">
+						<option value="">
+							GEOGRAPHIES
+						</option>
+						{% for geography in geographies %}
+							<option value="{{ geography.name|upper }}">
+								{{ geography.name|upper }}
+							</option>
+						{% endfor %}
+					</select>
+					<select id="industrySelect" name="industry_query" class="inline__text">
+						<option value="">
+							INDUSTRIES
+						</option>
+						{% for industry in industries %}
+							<option value="{{ industry.name|upper }}">
+								{{ industry.name|upper }}
+							</option>
+						{% endfor %}
+					</select>
+					<select id="practiceSelect" name="practice_query" class="inline__text">
+						<option value="">
+							PRACTICES
+						</option>
+						{% for practice in practices %}
+							<option value="{{ practice.name|upper }}">
+								{{ practice.name|upper }}
+							</option>
+						{% endfor %}
+					</select>
+				</div>	
 			</div>
 		</div>	
 	</div>

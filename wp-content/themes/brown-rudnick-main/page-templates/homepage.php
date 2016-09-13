@@ -13,10 +13,10 @@ $data['main_image_id'] = $post->contact_us_image;
 $data['homepage_text_section'] = get_field('homepage_text_section');
 $data['have_rows_homepage_slider'] = have_rows('homepage_slider');
 $featured_posts_args = array(
-    'post_type' =>  array('article', 'emerging_technology', 'event', 'crime_watch', 'government_contract', 'alert'),
-    'orderby' => 'date',
-    'order' => 'DESC',
-    'max_num_pages'=> 5
+  'post_type' =>  array('article', 'emerging_technology', 'event', 'crime_watch', 'government_contract', 'alert'),
+  'orderby' => 'date',
+  'order' => 'DESC',
+  'max_num_pages'=> 5
 );
 $data['featured_posts'] = Timber::get_posts($featured_posts_args);
 $data['homepage_section_3_image'] = get_field('homepage_section_3_image');

@@ -56,3 +56,11 @@ function custom_upload_mimes ( $existing_mimes=array() ) {
 	$existing_mimes['vcf'] = 'text/x-vcard';
 	return $existing_mimes;
 }
+
+add_filter( 'query_vars', 'custom_insights_query_vars' );
+function custom_insights_query_vars( $vars ) {
+  $vars[] = 'geography_query';
+  $vars[] = 'industry_query';
+  $vars[] = 'practice_query';
+  return $vars;
+}

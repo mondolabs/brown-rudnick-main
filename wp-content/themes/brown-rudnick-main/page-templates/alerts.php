@@ -2,7 +2,10 @@
 /*
 Template Name: Insight Landing Page
 */
+
+
 get_header();
+
 $data = Timber::get_context();
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
 $data['featured_image_url'] = $data['featured_image_url'][0];
@@ -17,6 +20,56 @@ $data['top_content'] = get_field('top_content');
 $data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
 $slug = basename(get_permalink());
 $data['slug'] = $slug;
+
+$geography = get_query_var('geography_query', "Geographies");
+$industry = get_query_var('industry_query', "Industries");
+$practice = get_query_var('practice_query', "Practices");
+
+$data['geographies'] = get_terms( 
+  array(
+    'taxonomy' => 'geography',
+    'hide_empty' => true,
+  )
+);
+
+$data['industries'] = get_terms( 
+  array(
+    'taxonomy' => 'industry',
+    'hide_empty' => true,
+  )
+);
+
+$data['practices'] = get_terms( 
+  array(
+    'taxonomy' => 'practice',
+    'hide_empty' => true,
+  )
+);
+
+// $alerts_args = array(
+//   'post_type' =>  'alert',
+//   'tax_query' => array(
+//           'relation' => 'AND',
+//           array(
+//               'taxonomy' => 'geography',
+//               'field' => 'slug',
+//               'terms' => array( $geography )
+//           ),
+//           array(
+//               'taxonomy' => 'industry',
+//               'field' => 'slug',
+//               'terms' => array( $industry )
+//           ),
+//           array(
+//               'taxonomy' => 'practice',
+//               'field' => 'slug',
+//               'terms' => array( $practice )
+//           )
+//         )
+//   'max_num_pages'=> 5,
+//   'orderby' => 'date',
+//   'order' => 'DESC'
+// );
 
 ?>
 
