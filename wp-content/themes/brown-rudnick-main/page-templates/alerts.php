@@ -46,30 +46,34 @@ $data['practices'] = get_terms(
   )
 );
 
-// $alerts_args = array(
-//   'post_type' =>  'alert',
-//   'tax_query' => array(
-//           'relation' => 'AND',
-//           array(
-//               'taxonomy' => 'geography',
-//               'field' => 'slug',
-//               'terms' => array( $geography )
-//           ),
-//           array(
-//               'taxonomy' => 'industry',
-//               'field' => 'slug',
-//               'terms' => array( $industry )
-//           ),
-//           array(
-//               'taxonomy' => 'practice',
-//               'field' => 'slug',
-//               'terms' => array( $practice )
-//           )
-//         )
-//   'max_num_pages'=> 5,
-//   'orderby' => 'date',
-//   'order' => 'DESC'
-// );
+
+$alerts_args = array(
+  'post_type' =>  'alert',
+  'tax_query' => array(
+    'relation' => 'AND',
+    array(
+        'taxonomy' => 'geography',
+        'field' => 'slug',
+        'terms' => array( $geography )
+    ),
+    array(
+        'taxonomy' => 'industry',
+        'field' => 'slug',
+        'terms' => array( $industry )
+    ),
+    array(
+        'taxonomy' => 'practice',
+        'field' => 'slug',
+        'terms' => array( $practice )
+    )
+  ),
+  'max_num_pages'=> 5,
+  'orderby' => 'date',
+  'order' => 'DESC'
+);
+
+$data['alerts'] = Timber::get_posts($alerts_args);
+
 
 ?>
 
