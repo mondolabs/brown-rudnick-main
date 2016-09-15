@@ -36,7 +36,7 @@
 						<ul id="blogsSidebarAccordion" class="hidden list-style__none hide-for-small-only">
 							{% for sidebar_submenu_item in sidebar_item.sidebar_submenu %}
 								<li class="list-item__sidebar">
-									<a class="link" href="{{ sidebar_submenu_item.sidebar_submenu_item_link }}" >
+									<a class="link text-align__center" href="{{ sidebar_submenu_item.sidebar_submenu_item_link }}" >
 										{{ sidebar_submenu_item.sidebar_submenu_item_text }}
 									</a>
 								</li>
@@ -118,8 +118,6 @@
 		</div>
 		<div class="columns small-12 medium-9 large-10">
 			<div class="padding__wrapper forty sides__only">
-				<div class="page__divider grey">
-				</div>
 				<div class="columns small-12 medium-12 large-6 x-large-6">
 					<p class="title__text">
 						{{ header_text }}
@@ -164,14 +162,16 @@
 		</div>
 		<div class="columns small-12 medium-9 large-10">
 			<div class="padding__wrapper forty sides__only">
-				<div class="columns small-12 medium-12 large-12">
+				<div class="margin-top-60 columns small-12 medium-12 large-12">
 					{% for insight in insights %}
 						<a class='link' href="{{insight._permalink}}">
 							{{ insight.title }}
 						</a>
-						<p class="tag__text contact margin-top-20 margin-bottom--0 grey font-weight__bold">
-							{{ insight.date }}
+						<p class="tag__text contact margin-top-20 grey font-weight__bold">
+							{{ insight.date|date("M, d Y")   }}
 						</p>
+						<div class="page__divider grey">
+						</div>
 					{% endfor %}
 				</div>	
 			</div>
