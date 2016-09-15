@@ -73,7 +73,7 @@ $alerts_args = array(
 );
 
 $data['alerts'] = Timber::get_posts($alerts_args);
-
+// var_dump($data['alerts']);
 
 ?>
 
