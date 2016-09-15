@@ -48,7 +48,7 @@ $data['practices'] = get_terms(
 
 
 $alerts_args = array(
-  'post_type' =>  'alert',
+  'post_type' =>  'article',
   'tax_query' => array(
     'relation' => 'AND',
     array(
@@ -72,7 +72,7 @@ $alerts_args = array(
   'order' => 'DESC'
 );
 
-$data['alerts'] = Timber::get_posts($alerts_args);
+$data['insights'] = Timber::get_posts($alerts_args);
 // var_dump($data['alerts']);
 
 ?>
