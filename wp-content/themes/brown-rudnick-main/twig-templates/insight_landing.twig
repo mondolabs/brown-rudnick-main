@@ -134,7 +134,7 @@
 							GEOGRAPHIES
 						</option>
 						{% for geography in geographies %}
-							<option value="{{ geography.name|upper }}">
+							<option value="{{ geography.slug|upper }}">
 								{{ geography.name|upper }}
 							</option>
 						{% endfor %}
@@ -144,7 +144,7 @@
 							INDUSTRIES
 						</option>
 						{% for industry in industries %}
-							<option value="{{ industry.name|upper }}">
+							<option value="{{ industry.slug|upper }}">
 								{{ industry.name|upper }}
 							</option>
 						{% endfor %}
@@ -154,7 +154,7 @@
 							PRACTICES
 						</option>
 						{% for practice in practices %}
-							<option value="{{ practice.name|upper }}">
+							<option value="{{ practice.slug|upper }}">
 								{{ practice.name|upper }}
 							</option>
 						{% endfor %}
@@ -166,7 +166,12 @@
 			<div class="padding__wrapper forty sides__only">
 				<div class="columns small-12 medium-12 large-12">
 					{% for insight in insights %}
-						{{ insight.title }} - {{ insight.date }}}<br>
+						<a class='link' href="{{insight._permalink}}">
+							{{ insight.title }}
+						</a>
+						<p class="tag__text contact margin-top-20 margin-bottom--0 grey font-weight__bold">
+							{{ insight.date }}
+						</p>
 					{% endfor %}
 				</div>	
 			</div>

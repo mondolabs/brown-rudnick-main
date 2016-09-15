@@ -28,9 +28,10 @@ var INSIGHTS = {
 		});
 	},
 	onLoad: function(){
-		var selectedGeography = $.url().param('geography_query') || "GEOGRAPHIES";
-		var selectedIndustry = $.url().param('industry_query') || "INDUSTRIES";
-		var selectedPractice = $.url().param('practice_query') || "PRACTICES";
+		
+		var selectedGeography = $.url().param('geography_query', 'strict') || "GEOGRAPHIES";
+		var selectedIndustry = $.url().param('industry_query', 'strict') || "INDUSTRIES";
+		var selectedPractice = $.url().param('practice_query', 'strict') || "PRACTICES";
 
 		var geographySelect = $('select#geographySelect');
 		var industrySelect = $('select#industrySelect');
