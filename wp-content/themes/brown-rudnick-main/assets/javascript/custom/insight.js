@@ -28,9 +28,9 @@ var INSIGHTS = {
 		});
 	},
 	onLoad: function(){
-		var selectedGeography = $.url().param('geography_query') || "";
-		var selectedIndustry = $.url().param('industry_query') || "";
-		var selectedPractice = $.url().param('practice_query') || "";
+		var selectedGeography = $.url().param('geography_query') || "GEOGRAPHIES";
+		var selectedIndustry = $.url().param('industry_query') || "INDUSTRIES";
+		var selectedPractice = $.url().param('practice_query') || "PRACTICES";
 
 		var geographySelect = $('select#geographySelect');
 		var industrySelect = $('select#industrySelect');
@@ -39,6 +39,7 @@ var INSIGHTS = {
 		geographySelect.val(decodeURIComponent(selectedGeography));
 		industrySelect.val(decodeURIComponent(selectedIndustry));
 		practiceSelect.val(decodeURIComponent(selectedPractice));
+
 	}
 }
 

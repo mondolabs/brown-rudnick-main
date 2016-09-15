@@ -130,7 +130,7 @@
 						date
 					</p>
 					<select id="geographySelect" name="geography_query" class="inline__text">
-						<option value="">
+						<option value="GEOGRAPHIES">
 							GEOGRAPHIES
 						</option>
 						{% for geography in geographies %}
@@ -140,7 +140,7 @@
 						{% endfor %}
 					</select>
 					<select id="industrySelect" name="industry_query" class="inline__text">
-						<option value="">
+						<option value="INDUSTRIES">
 							INDUSTRIES
 						</option>
 						{% for industry in industries %}
@@ -150,7 +150,7 @@
 						{% endfor %}
 					</select>
 					<select id="practiceSelect" name="practice_query" class="inline__text">
-						<option value="">
+						<option value="PRACTICES">
 							PRACTICES
 						</option>
 						{% for practice in practices %}
@@ -166,7 +166,7 @@
 			<div class="padding__wrapper forty sides__only">
 				<div class="columns small-12 medium-12 large-12">
 					{% for insight in insights %}
-						{{ insight.title }}
+						{{ insight.title }} - {{ insight.date }}}<br>
 					{% endfor %}
 				</div>	
 			</div>

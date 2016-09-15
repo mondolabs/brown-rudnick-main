@@ -21,59 +21,57 @@ $data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arro
 $slug = basename(get_permalink());
 $data['slug'] = $slug;
 
-$geography = get_query_var('geography_query', "Geographies");
-$industry = get_query_var('industry_query', "Industries");
-$practice = get_query_var('practice_query', "Practices");
+$geography = get_query_var('geography_query', "GEOGRAPHIES");
+$industry = get_query_var('industry_query', "INDUSTRY");
+$practice = get_query_var('practice_query', "PRACTICE");
 
-$data['geographies'] = get_terms( 
-  array(
-    'taxonomy' => 'geography',
-    'hide_empty' => true,
-  )
+$insights_args = array(
+    'post_type' => 'alert',
+    'posts_per_page' => -1, 
 );
 
-$data['industries'] = get_terms( 
-  array(
-    'taxonomy' => 'industry',
-    'hide_empty' => true,
-  )
-);
+if( !strcasecmp($geography, "GEOGRAPHIES") && !strcasecmp($industry, "INDUSTRIES") && !strcasecmp($practice, "PRACTICES") ) {
+  $tax_query_array = array("tax_query" => array( 'relation' => 'AND' ) ); 
+  array_push( $insights_args, $tax_query_array );
+  if ( !strcasecmp($geography, "GEOGRAPHIES") ) {
+    $geography_term_query_array = array('taxonomy' => 'geography', 'terms' => $geography);
+    array_push($insights_args['tax_query'], $geography_term_query_array );
+  }
+  if ( !strcasecmp($industry, "INDUSTRIES") ) {
+    $industry_term_query_array = array('taxonomy' => 'industry', 'terms' => $industry);
+    array_push($insights_args['tax_query'], $industry_term_query_array );
+  }
+  if ( !strcasecmp($practice, "PRACTICES") ) {
+    $practice_term_query_array = array('taxonomy' => 'practice', 'terms' => $practice);
+    array_push($insights_args['tax_query'], $practice_term_query_array );
+  }
+}
 
-$data['practices'] = get_terms( 
-  array(
-    'taxonomy' => 'practice',
-    'hide_empty' => true,
-  )
-);
 
 
-$alerts_args = array(
-  'post_type' =>  'alert',
-  'tax_query' => array(
-    'relation' => 'AND',
-    array(
-        'taxonomy' => 'geography',
-        'field' => 'slug',
-        'terms' => array( $geography )
-    ),
-    array(
-        'taxonomy' => 'industry',
-        'field' => 'slug',
-        'terms' => array( $industry )
-    ),
-    array(
-        'taxonomy' => 'practice',
-        'field' => 'slug',
-        'terms' => array( $practice )
-    )
-  ),
-  'max_num_pages'=> 5,
-  'orderby' => 'date',
-  'order' => 'DESC'
-);
 
-$data['insights'] = Timber::get_posts($alerts_args);
-// var_dump($data['alerts']);
+// foreach ($data['geography_insights'] as &$geography_insight) {
+//   array_push($data['insights'], $geography_insight );
+// }
+// foreach ($data['industry_insights'] as &$geography_insight) {
+//   array_push($data['insights'], $geography_insight );
+// }
+// foreach ($data['practice_insights'] as &$geography_insight) {
+//   array_push($data['insights'], $geography_insight );
+// }
+
+$data['insights'] = Timber::get_posts($insights_args);
+$data['insights'] = array_unique($data['insights']);
+
+function sort_objects_by_date($a, $b) {
+  if($a->date == $b->date){
+    return 0;
+  }
+  return ($a->date < $b->date) ? -1 : 1;
+}
+usort($data['insights'], "sort_objects_by_date");
+$data['insights'] = array_slice($data['insights'], 0, 5 );
+$data['insights'] = array_reverse($data['insights']);
 
 ?>
 
