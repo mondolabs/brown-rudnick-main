@@ -472,14 +472,15 @@ img.insights {
 
 .tile__arrow {
     position: absolute;
-    bottom: 14px;
-    right: 14px;
+    bottom: 12px;
+    right: 12px;
     height: 40px;
     width: 64px;
-    border: 2px $primary-grey solid;
+    border: 1px $primary-grey solid;
 	img {
 	    display: block;
     	position: relative;
-    	margin: 16px auto;
+    	margin: 14px auto;
+    	padding-right: 4px;
 	}
 }
