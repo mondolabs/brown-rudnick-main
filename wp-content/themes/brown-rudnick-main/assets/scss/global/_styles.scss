@@ -1,3 +1,5 @@
+
+
 &.grey__background {
 	background-color: $primary-grey;
 }
@@ -176,7 +178,8 @@ span.link {
 	-webkit-transition: color .3s ease-in-out;
     transition: color .3s ease-in-out;
 	&:hover,
-	&:focus {
+	&:focus,
+	&:visited {
 		color: $primary-red;
 	}
 }
@@ -199,6 +202,9 @@ a.link {
 	}
 	&.red {
 		color: $primary-red;
+		&:visited {
+			color: $primary-red;
+		}
 		&:hover,
 		&:focus {
 			color: $black;
@@ -490,5 +496,59 @@ img.insights {
 	}
 	&:hover {
 	    background-position:right bottom;
+	}
+}
+
+.expander {
+    width: 25px;
+	display: inline-block;
+    position: absolute;
+    bottom: 1px;
+    right: 96px;
+    cursor: pointer;
+    &:hover {
+    	&:after,
+    	&:before {
+    		background-color: $primary-red;
+    	}	
+    }
+	&:before {
+		content: " ";
+		background-color: $primary-red;
+		display: inline-block;
+	    height: 9px;
+	    width: 1px;
+	    position: relative;
+	    left: 10px;
+	    bottom: 0px;
+	    -webkit-transition: all .3s ease-in-out;
+	    transition: all .3s ease-in-out;
+	    opacity: 1;
+	}
+	&:after {
+	    content: " ";
+	    background-color: $primary-red;
+	    display: inline-block;
+	    height: 1px;
+	    width: 9px;
+	    position: relative;
+	    left: 5px;
+	    bottom: 4px;
+	    -webkit-transition: all .3s ease-in-out;
+	    transition: all .3s ease-in-out;
+	    opacity: 1;
+	}
+	&.expanded {
+		&:after {
+		    -webkit-transition-delay: .1s;
+    		transition-delay: .1s;
+		    -ms-transform: rotate(-180deg); 
+		    -webkit-transform: rotate(-180deg);
+		    transform: rotate(-180deg);
+	    	left: 0px;
+		}
+		&:before {
+			opacity: 0;
+		}
 	}
 }
