@@ -416,17 +416,21 @@ img.insights {
   height: 40px;
   width: 64px;
   border: 1px #f0f0f0 solid;
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out; }
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  background: -webkit-gradient(linear, right top, left top, color-stop(50%, #b91628), color-stop(50%, transparent));
+  background: -webkit-linear-gradient(right, #b91628 50%, transparent 50%);
+  background: linear-gradient(to left, #b91628 50%, transparent 50%);
+  -webkit-background-size: 200% 100%;
+          background-size: 200% 100%;
+  background-position: left bottom; }
   .tile__arrow img {
     display: block;
     position: relative;
     margin: 14px auto;
     padding-right: 4px; }
-  .tile__arrow:hover img {
-    -webkit-transform: scale(1.05);
-        -ms-transform: scale(1.05);
-            transform: scale(1.05); }
+  .tile__arrow:hover {
+    background-position: right bottom; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome

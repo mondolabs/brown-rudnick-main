@@ -477,8 +477,11 @@ img.insights {
     height: 40px;
     width: 64px;
     border: 1px $primary-grey solid;
-	-webkit-transition: all .3s ease-in-out;
-	transition: all .3s ease-in-out;
+	-webkit-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+    background: linear-gradient(to left, $primary-red  50%, transparent 50% );
+    background-size: 200% 100%;
+    background-position:left bottom;
 	img {
 	    display: block;
     	position: relative;
@@ -486,8 +489,6 @@ img.insights {
     	padding-right: 4px;
 	}
 	&:hover {
-		img {
-			transform: scale(1.05);
-		}
+	    background-position:right bottom;
 	}
 }
