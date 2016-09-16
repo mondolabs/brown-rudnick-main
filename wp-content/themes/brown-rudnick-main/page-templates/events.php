@@ -49,18 +49,6 @@ $geography =  str_replace("-slash-", " / ", $geography);
 $industry =  str_replace("-slash-", " / ", $industry);
 $practice =  str_replace("-slash-", " / ", $practice);
 
-
-function sort_objects_by_date($a, $b) {
-  if($a->date == $b->date){
-    return 0;
-  }
-  return ($a->date < $b->date) ? -1 : 1;
-}
-
-usort($data['insights'], "sort_objects_by_date");
-$data['insights'] = array_slice($data['insights'], 0, 5 );
-$data['insights'] = array_reverse($data['insights']);
-
 ?>
 
 <html>
