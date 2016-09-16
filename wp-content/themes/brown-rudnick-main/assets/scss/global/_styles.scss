@@ -477,10 +477,17 @@ img.insights {
     height: 40px;
     width: 64px;
     border: 1px $primary-grey solid;
+	-webkit-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
 	img {
 	    display: block;
     	position: relative;
     	margin: 14px auto;
     	padding-right: 4px;
+	}
+	&:hover {
+		img {
+			transform: scale(1.05);
+		}
 	}
 }
