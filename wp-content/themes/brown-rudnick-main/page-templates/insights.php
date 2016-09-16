@@ -25,8 +25,6 @@ $data['publications'] = get_field('publications');
 
 $data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
 
-
-
 ?>
 <html>
   <head>

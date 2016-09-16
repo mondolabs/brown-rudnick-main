@@ -1,1 +1,0 @@
-events_landing_page.twig
