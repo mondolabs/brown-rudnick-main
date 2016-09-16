@@ -157,43 +157,73 @@
 							</option>
 						{% endfor %}
 					</select>
-				</div>	
-			</div>
-		</div>
-		<div class="columns small-12 medium-9 large-10">
-			<div class="padding__wrapper forty sides__only">
-				<div class="margin-top-60 columns small-12 medium-12 large-12">
-					<p class="title__text">
-						Upcoming Events
-					</p>
+				</div>
+				<div class="columns small-12 medium-12 large-12 x-large-12">
 					{% for upcoming_event in upcoming_events %}
-						<a class='link' href="{{upcoming_event._permalink}}">
-							{{ upcoming_event.title }}
-						</a>
-						<p class="tag__text contact margin-top-20 grey font-weight__bold">
-							{{ upcoming_event.date|date("M, d Y")   }}
-						</p>
-						<div class="page__divider grey">
-						</div>
+					<a class='link' href="{{upcoming_event._permalink}}">
+						{{ upcoming_event.title }}
+					</a>
+					<p class="tag__text contact margin-top-20 grey font-weight__bold">
+						{{ upcoming_event.date|date("M, d Y")   }}
+					</p>
+					<div class="page__divider grey">
+					</div>
 					{% endfor %}
 				</div>
-				<div class="margin-top-60 columns small-12 medium-12 large-12">
+				<div class="columns small-12 medium-12 large-6 x-large-6">
 					<p class="title__text">
 						Past Events
 					</p>
-					{% for past_event in past_events %}
-						<a class='link' href="{{past_event._permalink}}">
-							{{ past_event.title }}
-						</a>
-						<p class="tag__text contact margin-top-20 grey font-weight__bold">
-							{{ past_event.date|date("M, d Y")   }}
-						</p>
-						<div class="page__divider grey">
-						</div>
-					{% endfor %}
 				</div>
+				<div class="columns small-12 medium-12 large-6 x-large-6">
+					<p class="inline__text">
+						date
+					</p>
+					<select id="geographySelect" name="geography_query" class="inline__text">
+						<option value="GEOGRAPHIES">
+							GEOGRAPHIES
+						</option>
+						{% for geography in geographies %}
+							<option value="{{ geography.slug|upper }}">
+								{{ geography.name|upper }}
+							</option>
+						{% endfor %}
+					</select>
+					<select id="industrySelect" name="industry_query" class="inline__text">
+						<option value="INDUSTRIES">
+							INDUSTRIES
+						</option>
+						{% for industry in industries %}
+							<option value="{{ industry.slug|upper }}">
+								{{ industry.name|upper }}
+							</option>
+						{% endfor %}
+					</select>
+					<select id="practiceSelect" name="practice_query" class="inline__text">
+						<option value="PRACTICES">
+							PRACTICES
+						</option>
+						{% for practice in practices %}
+							<option value="{{ practice.slug|upper }}">
+								{{ practice.name|upper }}
+							</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="columns small-12 medium-12 large-12 x-large-12">
+					{% for past_event in past_events %}
+					<a class='link' href="{{past_event._permalink}}">
+						{{ past_event.title }}
+					</a>
+					<p class="tag__text contact margin-top-20 grey font-weight__bold">
+						{{ past_event.date|date("M, d Y")   }}
+					</p>
+					<div class="page__divider grey">
+					</div>
+					{% endfor %}
+				</div>	
 			</div>
-		</div>	
+		</div>
 	</div>
 </div>	
 
