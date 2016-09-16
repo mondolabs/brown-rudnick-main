@@ -411,8 +411,15 @@ img.insights {
 
 .tile__arrow {
   position: absolute;
-  bottom: 40px;
-  right: 40px; }
+  bottom: 14px;
+  right: 14px;
+  height: 40px;
+  width: 64px;
+  border: 1px #f0f0f0 solid; }
+  .tile__arrow img {
+    display: block;
+    position: relative;
+    margin: 16px auto; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome

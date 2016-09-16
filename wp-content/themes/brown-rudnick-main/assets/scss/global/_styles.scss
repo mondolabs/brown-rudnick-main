@@ -471,7 +471,15 @@ img.insights {
 }
 
 .tile__arrow {
-	position: absolute;
-	bottom: 40px;
-	right: 40px;
+    position: absolute;
+    bottom: 14px;
+    right: 14px;
+    height: 40px;
+    width: 64px;
+    border: 1px $primary-grey solid;
+	img {
+	    display: block;
+    	position: relative;
+    	margin: 16px auto;
+	}
 }
