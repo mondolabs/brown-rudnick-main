@@ -8,7 +8,6 @@ get_header();
 $data = Timber::get_context();
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
 $data['featured_image_url'] = $data['featured_image_url'][0];
-$data['header_text'] = get_field('header_text');
 $data['sidebar_header'] = get_field('sidebar_header');
 $data['sidebar_items'] = get_field('sidebar_items');
 $data['contact_name'] = get_field('contact_name');
