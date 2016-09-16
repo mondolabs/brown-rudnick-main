@@ -20,6 +20,9 @@ $data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arro
 $slug = basename(get_permalink());
 $data['slug'] = $slug;
 
+$data['upcoming_events'] = get_field('upcoming_events');
+$data['past_events'] = get_field('past_events');
+
 $post_type_args = array(
   'post_type' => 'event',
   'numberposts' => -1,

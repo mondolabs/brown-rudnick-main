@@ -1,1 +1,206 @@
-TEST
+<div id="featuredImage" class ="featured-image__header--image-wrapper">
+
+	{% if featured_image_url %}
+		{% set header_text_color = "white" %}
+	{% else %}
+		{% set header_text_color = "black" %}
+	{% endif %}
+	{# hero header #}
+	<div class="featured-image__header--text-outer-wrapper row">
+		<div class="featured-image__header--text-wrapper">
+			<div class="featured-image__header--text-inner-wrapper">
+				<h1 class="page__header {{ header_text_color }}">
+					{{ header_text }}
+				</h1>
+				<span class="slide-description-heading red">
+				</span>
+			</div>
+		</div>	
+	</div>
+</div>	
+	{# body - with sidebar #}
+<div class="row">
+	<div class="experience__wrapper row body__wrapper columns small-12 medium-12 large-12">
+		<div class="columns show-for-medium-up medium-3 large-2">
+			<div class="padding__wrapper ten sides__only">
+				<h4 class="red title__text smaller">
+					{{ sidebar_header }}
+				</h4>
+				<span class="list-divider"></span>
+			    {% for sidebar_item in sidebar_items %}
+			    	{% set link_slug = sidebar_item.sidebar_item_link|split('/')[3] %}
+			    	{% if sidebar_item.has_sub_menu %}
+						<a class="hide-for-small-only accordion__trigger link" data-trigger-target="{{sidebar_item.sidebar_submenu_accordion_trigger }}">
+							{{ sidebar_item.sidebar_item_text|upper }}
+						</a>
+						<ul id="blogsSidebarAccordion" class="hidden list-style__none hide-for-small-only">
+							{% for sidebar_submenu_item in sidebar_item.sidebar_submenu %}
+								<li class="list-item__sidebar">
+									<a class="link text-align__center" href="{{ sidebar_submenu_item.sidebar_submenu_item_link }}" >
+										{{ sidebar_submenu_item.sidebar_submenu_item_text }}
+									</a>
+								</li>
+							{% endfor %}
+						</ul>
+
+				{# mobile #}
+						<a class="show-for-small-only accordion__trigger red list__header" data-trigger-target="{{sidebar_item.sidebar_submenu_accordion_trigger_mobile }}">
+							{{ sidebar_item.sidebar_item_text }}
+						</a>
+						<ul id="blogsSidebarAccordionMobile" class="hidden mobile__sidebar--menu list-style__none show-for-small-only">
+							{% for sidebar_submenu_item in sidebar_item.sidebar_submenu %}
+								<li class="list-item__sidebar">
+									<a class="link" href="{{ sidebar_submenu_item.sidebar_submenu_item_link }}" >
+										{{ sidebar_submenu_item.sidebar_submenu_item_text }}
+									</a>
+								</li>
+							{% endfor %}
+						</ul>
+					{% else %}
+				    	<a class="{% if slug == link_slug %}red{% endif %} link sidebar__link" href="{{ sidebar_item.sidebar_item_link }}">
+				    		{{ sidebar_item.sidebar_item_text|upper }}
+		    			</a>
+					{% endif %}
+			    {% endfor %}
+				<span class="list-divider smaller"></span>
+				<div class="sidebar__wrapper">
+					<button class="sites-button advanced-search inverse" type="button">
+						ADVANCED SEARCH
+					</button>
+				</div>
+				<span class="list-divider smaller"></span>
+				<div class="sidebar__wrapper">
+					<h4 class="title__text smaller insights margin-bottom--0">
+						Subscribe
+					</h4>
+					<form class="relative">
+						<input type="text" placeholder="EMAIL" class="subscribe">
+						</input>
+						<button style="background: url({{hover_arrow}}) no-repeat; background-position-y: center;" class="arrow" type="submit">
+						</button>
+					</form>
+				</div>
+				<span class="list-divider smaller"></span>
+				<div class="sidebar__wrapper">
+					<h4 class="title__text smaller insights margin-bottom--0">
+						{{ contact_name }}
+					</h4>
+					<p class="tag__text contact margin-bottom--0 font-weight__bold">
+						{{ contact_title|upper }}
+					</p>
+					<span class="list-divider smallest red"></span>
+					<p class="body__text insights">
+						{{ contact_phone_number }}
+					</p>
+					<a class="body__text insights link red" href="mailto:{{contact_email}}"> 
+						<p class="link body__text insights">
+							{{ contact_email }}
+						</p>
+					</a>
+				</div>	
+			</div>
+		</div>
+		<div class="columns small-12 medium-9 large-10">
+			<div class="padding__wrapper forty sides__only">
+				<div class="columns small-12 medium-12 large-12">
+					{{ top_content }}
+				</div>
+				<div class="columns small-12 medium-12 large-6 x-large-8">
+					<p class="title__text">
+						Subscribe to our email list
+					</p>
+					<input type="text" name="email" placeholder="EMAIL">
+				</div>
+				<div class="columns small-12 medium-12 large-6 x-large-4">
+					<button type="submit" class="subscribe alerts sites-button">ENTER</button>
+				</div>
+			</div>
+		</div>
+		<div class="columns small-12 medium-9 large-10">
+			<div class="padding__wrapper forty sides__only">
+				<div class="columns small-12 medium-12 large-6 x-large-6">
+					<p class="title__text">
+						{{ header_text }}
+					</p>
+				</div>
+				<div class="columns small-12 medium-12 large-6 x-large-6">
+					<p class="inline__text">
+						date
+					</p>
+					<select id="geographySelect" name="geography_query" class="inline__text">
+						<option value="GEOGRAPHIES">
+							GEOGRAPHIES
+						</option>
+						{% for geography in geographies %}
+							<option value="{{ geography.slug|upper }}">
+								{{ geography.name|upper }}
+							</option>
+						{% endfor %}
+					</select>
+					<select id="industrySelect" name="industry_query" class="inline__text">
+						<option value="INDUSTRIES">
+							INDUSTRIES
+						</option>
+						{% for industry in industries %}
+							<option value="{{ industry.slug|upper }}">
+								{{ industry.name|upper }}
+							</option>
+						{% endfor %}
+					</select>
+					<select id="practiceSelect" name="practice_query" class="inline__text">
+						<option value="PRACTICES">
+							PRACTICES
+						</option>
+						{% for practice in practices %}
+							<option value="{{ practice.slug|upper }}">
+								{{ practice.name|upper }}
+							</option>
+						{% endfor %}
+					</select>
+				</div>	
+			</div>
+		</div>
+		<div class="columns small-12 medium-9 large-10">
+			<div class="padding__wrapper forty sides__only">
+				<div class="margin-top-60 columns small-12 medium-12 large-12">
+					<p class="title__text">
+						Upcoming Events
+					</p>
+					{% for upcoming_event in upcoming_events %}
+						<a class='link' href="{{upcoming_event._permalink}}">
+							{{ upcoming_event.title }}
+						</a>
+						<p class="tag__text contact margin-top-20 grey font-weight__bold">
+							{{ upcoming_event.date|date("M, d Y")   }}
+						</p>
+						<div class="page__divider grey">
+						</div>
+					{% endfor %}
+				</div>
+				<div class="margin-top-60 columns small-12 medium-12 large-12">
+					<p class="title__text">
+						Past Events
+					</p>
+					{% for past_event in past_events %}
+						<a class='link' href="{{past_event._permalink}}">
+							{{ past_event.title }}
+						</a>
+						<p class="tag__text contact margin-top-20 grey font-weight__bold">
+							{{ past_event.date|date("M, d Y")   }}
+						</p>
+						<div class="page__divider grey">
+						</div>
+					{% endfor %}
+				</div>	
+			</div>
+		</div>	
+	</div>
+</div>	
+
+<script type="text/javascript">
+	{% if featured_image_url %}
+		$(document).ready(function(){
+			$('#featuredImage').backstretch("{{featured_image_url}}");
+		})
+	{% endif %}
+</script>
