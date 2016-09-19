@@ -1,3 +1,5 @@
+
+
 .dotted {
   border-style: dashed;
   margin: 2rem 0;
@@ -48,4 +50,10 @@
     &.grey {
     	background-color: $primary-grey;
     }
+    &.red {
+    	background-color: $primary-red;
+    }
+	&.inline__block {
+		display: inline-block;
+	}
 }

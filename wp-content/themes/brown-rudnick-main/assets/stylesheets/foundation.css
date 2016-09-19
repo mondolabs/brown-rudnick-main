@@ -477,6 +477,9 @@ img.insights {
   .expander.expanded:before {
     opacity: 0; }
 
+.letter__anchor--indicator {
+  display: block; }
+
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -7394,6 +7397,10 @@ a {
   margin: 40px auto; }
   .page__divider.grey {
     background-color: #f0f0f0; }
+  .page__divider.red {
+    background-color: #b91628; }
+  .page__divider.inline__block {
+    display: inline-block; }
 
 /* Apply outline styles only when input method is keyboard
  * remove :focus style via What Input using progressive enhancement
