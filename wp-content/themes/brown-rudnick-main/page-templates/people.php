@@ -20,9 +20,7 @@ $data['sidebar_items'] = get_field('sidebar_items');
 $data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
 $data['alphabet'] = range('A', 'Z');
 
-
-
-?> 
+?>
 
 <html>
   <head>
