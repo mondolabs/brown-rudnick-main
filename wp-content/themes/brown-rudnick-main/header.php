@@ -31,9 +31,9 @@
 
 		<header id="masthead" class="site-header" role="banner">
 			<div class="menu__wrapper--desktop row sr">
-				<div class="logo__wrapper columns large-3 medium-3">
+				<div class="logo__wrapper columns large-3 medium-3 hide-for-small-only">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-						<img class="header-logo--mobile" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/BR-Logo.png">
+						<img class="header-logo--mobile" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/BR-logo-for-nav.png">
 					</a>
 				</div>
 				<div class="menu__inner-wrapper--desktop columns large-9 medium-9">
@@ -44,14 +44,9 @@
 
 			<div class="mobile-menu">
 				<button class="hamburger-icon" type="button" data-toggle="mobile-menu">
-					<span></span>
+					<?php get_template_part( 'template-parts/mobile-off-canvas' ); ?>
 				</button>
 			</div>
-
-			<?php
-				$args = array('child_of'=>5, 'post_type'=>'page', 'sort_column'=>'menu_order');
-				$child_pages = get_pages($args);
-			?>
 		</header>
 
 		<div class="menu__outer-wrapper--desktop-on-scroll">
@@ -78,10 +73,7 @@
 						<span class="subnav__color-block"></span>
 					</div>
 				</div>	
-				<?php
-					$args = array('child_of'=>5, 'post_type'=>'page', 'sort_column'=>'menu_order');
-					$child_pages = get_pages($args);
-				?>
+	
 			</header>
 		</div>	
 

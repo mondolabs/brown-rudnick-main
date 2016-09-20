@@ -1,4 +1,26 @@
-	
+// change bottom navbar on scroll with the navbar that appears upon scroll
+
+// element.style {
+//     display: none;
+//     height: 60px;
+//     padding: 0px;
+//     margin: 2px 0px -32px;
+//     width: 1672px;
+//     opacity: 1;
+// }
+// .subnav__color-block {
+//     margin-top: 2%;
+//     width: 400%;
+//     height: 60px;
+//     /* position: relative; */
+//     width: 100%;
+//     position: absolute;
+//     left: 0;
+//     background-color: #f0f0f0;
+//     top: 100%;
+//     display: none;
+//     margin-bottom: -32px;
+// }	
 
 
 // header
@@ -342,8 +364,9 @@ ul.desktop__menu--icons-list {
 }
 
 .subnav__color-block {
+	margin-top: 2%;
 	width: 400%;
-    height: 80px;
+    height: 60px;
     position: relative;
     left: -100%;
     background-color: $primary-grey;
