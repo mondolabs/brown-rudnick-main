@@ -1,5 +1,4 @@
 a {
-	-webkit-transition: color .3s ease-in-out;
     transition: color .3s ease-in-out;
 }
 
@@ -134,6 +133,10 @@ p.subtitle__text {
     }
 }
 
+.padding__right--50 {
+	padding-right: 50px;
+}
+
 .margin__0 {
 	margin: 0;
 }
@@ -181,7 +184,6 @@ h4.list__header {
 
 span.link {
 	cursor: pointer;
-	-webkit-transition: color .3s ease-in-out;
     transition: color .3s ease-in-out;
 	&:hover,
 	&:focus,
@@ -194,7 +196,6 @@ a.link {
 	color: inherit;
 	cursor: pointer;
 	display: block;
-	-webkit-transition: color .3s ease-in-out;
     transition: color .3s ease-in-out;
 	&:hover,
 	&:focus {
@@ -281,16 +282,25 @@ h3.title {
 .featured-image__header--image-wrapper {
 	background-color: $primary-grey;
 	height: 215px;
+	&.person {
+		height: 380px;
+	}
 }
 
 .featured-image__header--text-wrapper {
 	display: table;
 	height: 100%;
+	&.person {
+		width: 100%;
+	}
 }
 
 .featured-image__header--text-inner-wrapper {
 	display: table-cell;
 	vertical-align: middle;
+	&.person {
+		width: 100%;
+	}
 }
 
 .page__header {
@@ -376,6 +386,7 @@ a.experience__link {
 	display: table;
 	height: 185px;
     padding-left: 10px;
+    width: 100%;
 }
 .people__details--inner-wrapper {
 	display: table-cell;
@@ -448,7 +459,6 @@ img.insights {
 		font-size: 10px;
 		font-weight: 800;
 		cursor: pointer;
-		-webkit-transition: color .3s ease-in-out;
 		transition: color .3s ease-in-out;
 		&:hover,
 		&:focus {
@@ -489,7 +499,6 @@ img.insights {
     height: 40px;
     width: 64px;
     border: 1px $primary-grey solid;
-	-webkit-transition: all .5s ease-in-out;
 	transition: all .5s ease-in-out;
     background: linear-gradient(to left, $primary-red  50%, transparent 50% );
     background-size: 200% 100%;
@@ -522,12 +531,11 @@ img.insights {
 		content: " ";
 		background-color: $primary-red;
 		display: inline-block;
-	    height: 9px;
+	    height: 10px;
 	    width: 1px;
 	    position: relative;
 	    left: 10px;
 	    bottom: 0px;
-	    -webkit-transition: all .3s ease-in-out;
 	    transition: all .3s ease-in-out;
 	    opacity: 1;
 	}
@@ -536,20 +544,16 @@ img.insights {
 	    background-color: $primary-red;
 	    display: inline-block;
 	    height: 1px;
-	    width: 9px;
+	    width: 10px;
 	    position: relative;
 	    left: 5px;
-	    bottom: 4px;
-	    -webkit-transition: all .3s ease-in-out;
+	    bottom: 5px;
 	    transition: all .3s ease-in-out;
 	    opacity: 1;
 	}
 	&.expanded {
 		&:after {
-		    -webkit-transition-delay: .1s;
     		transition-delay: .1s;
-		    -ms-transform: rotate(-180deg); 
-		    -webkit-transform: rotate(-180deg);
 		    transform: rotate(-180deg);
 	    	left: 0px;
 		}
@@ -590,6 +594,7 @@ img.insights {
     display: table;
     height: 40px;
     margin: 0 auto 16px;
+    transition: all .3s ease-in-out;
 	&.active,
 	&:hover {
 		background-color: $primary-red;
