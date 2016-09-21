@@ -1,3 +1,8 @@
+a {
+	-webkit-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+}
+
 &.grey__background {
 	background-color: $primary-grey;
 }
@@ -46,6 +51,10 @@ p.subtitle__text {
 	}
 	&.people__details {
 		margin-bottom: 2px;
+		color: $black;
+		&:hover {
+			color: $primary-red;
+		}
 		@media screen and (max-width: 1140px) {
 			font-size: 20px;
 		}
@@ -552,8 +561,50 @@ img.insights {
 
 .letter__anchor--indicator {
 	display: block;
+	margin-top: 28px;
 }
 
-.sidebar__fixed {
-	position: fixed;
+.letter__anchor--inner-indicator {
+	width: 30px;
+	height: 30px;
+	background-color: $primary-red;
+	color: $white;
+	font-family: $br-avenir-heavy;
+	text-align: center;
+	padding-top: 3px;
+}
+
+.letter__links_wrapper {
+	margin-left: -10px;
+    margin-top: 21px;
+}
+
+
+.letter__link--outer-wrapper {
+	width: 40px;
+}
+
+.letter__link--inner-wrapper {
+	background-color: $white;
+    width: 40px;
+    display: table;
+    height: 40px;
+    margin: 0 auto 16px;
+	&.active,
+	&:hover {
+		background-color: $primary-red;
+		.letter__link {
+			color: $white;
+		}
+	}
+}
+
+.letter__link {
+	color: $black;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+	&.active {
+		color: $white;
+	}
 }

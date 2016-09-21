@@ -48,6 +48,10 @@ p.wp-caption-text {
 .relative {
   position: relative; }
 
+a {
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out; }
+
 .grey__background {
   background-color: #f0f0f0; }
 
@@ -83,7 +87,10 @@ p.subtitle__text {
   .title__text.smaller {
     font-size: 24px; }
   .title__text.people__details {
-    margin-bottom: 2px; }
+    margin-bottom: 2px;
+    color: #000; }
+    .title__text.people__details:hover {
+      color: #b91628; }
     @media screen and (max-width: 1140px) {
       .title__text.people__details {
         font-size: 20px; } }
@@ -478,7 +485,43 @@ img.insights {
     opacity: 0; }
 
 .letter__anchor--indicator {
-  display: block; }
+  display: block;
+  margin-top: 28px; }
+
+.letter__anchor--inner-indicator {
+  width: 30px;
+  height: 30px;
+  background-color: #b91628;
+  color: #fff;
+  font-family: "Avenir Medium", Helvetica, Arial, sans-serif;
+  text-align: center;
+  padding-top: 3px; }
+
+.letter__links_wrapper {
+  margin-left: -10px;
+  margin-top: 21px; }
+
+.letter__link--outer-wrapper {
+  width: 40px; }
+
+.letter__link--inner-wrapper {
+  background-color: #fff;
+  width: 40px;
+  display: table;
+  height: 40px;
+  margin: 0 auto 16px; }
+  .letter__link--inner-wrapper.active, .letter__link--inner-wrapper:hover {
+    background-color: #b91628; }
+    .letter__link--inner-wrapper.active .letter__link, .letter__link--inner-wrapper:hover .letter__link {
+      color: #fff; }
+
+.letter__link {
+  color: #000;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center; }
+  .letter__link.active {
+    color: #fff; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -7393,6 +7436,8 @@ a {
     width: 30px; }
   .list-divider.smallest {
     width: 20px; }
+  .list-divider.letter__links {
+    margin-top: 21px; }
 
 .page__divider {
   height: 2px;
@@ -8021,7 +8066,9 @@ button.arrow {
   display: none; }
 
 #mastheadOnScroll {
-  position: relative; }
+  position: relative;
+  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); }
 
 .top-right-icon-group {
   text-align: right;
@@ -8083,7 +8130,7 @@ button.arrow {
 
 #footer-container {
   background-color: #fff;
-  margin-top: 0 !important; }
+  margin-top: 40px !important; }
 
 #footer {
   padding: 5% !important;

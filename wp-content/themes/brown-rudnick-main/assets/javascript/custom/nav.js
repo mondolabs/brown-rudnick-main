@@ -21,11 +21,11 @@ var NAV = {
 	scrollEvents: function(){
 		if ( $(window).scrollTop() >= NAV.desktopMenu.height() ) {
 			$(NAV.desktopMenu).hide();
-			$('.menu__outer-wrapper--desktop-on-scroll').fadeIn();
+			$('.menu__outer-wrapper--desktop-on-scroll').slideDown('300');
 			console.log('nav is hidden')
 		} else {
 			$(NAV.desktopMenu).show();
-			$('.menu__outer-wrapper--desktop-on-scroll').hide();
+			$('.menu__outer-wrapper--desktop-on-scroll').slideUp('300');
 		}
 	}	
 }

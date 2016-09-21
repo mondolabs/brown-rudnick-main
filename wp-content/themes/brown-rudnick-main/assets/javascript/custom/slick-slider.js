@@ -48,6 +48,8 @@ var homepage = {
 
 
 $(document).ready(function(){
-	homepage.initializeSlider();
+	if( $('#slider-svg').length ){
+		homepage.initializeSlider();
+	}	
 });
 	
