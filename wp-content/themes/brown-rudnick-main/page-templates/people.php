@@ -5,7 +5,7 @@ Template Name: People Landing Page
 get_header();
 $data = Timber::get_context();
 $people_args = array(
-    'post_type' =>  'person',
+    'post_type' =>  'people',
     'orderby' => 'meta_value',
     'meta_key'  => 'last_name',
     'order' => 'ASC',
