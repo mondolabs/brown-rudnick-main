@@ -343,6 +343,8 @@ a.experience__link {
   height: 185px;
   padding-left: 10px;
   width: 100%; }
+  .people__details--outer-wrapper.person {
+    padding-left: 0; }
 
 .people__details--inner-wrapper {
   display: table-cell;
@@ -357,6 +359,17 @@ img.people__details {
   @media screen and (max-width: 1024px) {
     img.people__details {
       max-width: 200px; } }
+  img.people__details.person {
+    max-width: 300px;
+    width: 300px; }
+    @media screen and (max-width: 1140px) {
+      img.people__details.person {
+        max-width: 225px;
+        width: 225px; } }
+    @media screen and (max-width: 1024px) {
+      img.people__details.person {
+        max-width: 300px;
+        width: 300px; } }
 
 .service,
 .bullet {
@@ -399,7 +412,8 @@ img.insights {
 
 .breadcrumb__wrapper {
   top: 18px;
-  position: absolute; }
+  position: absolute;
+  z-index: 2; }
   .breadcrumb__wrapper a.breadcrumb__link {
     font-size: 10px;
     font-weight: 800;
@@ -427,6 +441,20 @@ img.insights {
 
 .inline__text {
   display: inline-block; }
+
+.inline__wrapper {
+  display: inline-block; }
+  .inline__wrapper.person {
+    height: 380px; }
+
+.table__wrapper {
+  display: table;
+  height: 100%; }
+
+.table__inner {
+  display: table-cell;
+  height: 100%;
+  vertical-align: middle; }
 
 .tile__arrow {
   position: absolute;
@@ -467,8 +495,8 @@ img.insights {
     height: 10px;
     width: 1px;
     position: relative;
-    left: 10px;
-    bottom: 0px;
+    left: 11px;
+    bottom: 1px;
     -webkit-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
     opacity: 1; }

@@ -9,32 +9,39 @@
 	{# hero header #}
 		<div class="featured-image__header--text-wrapper person">
 			<div class="featured-image__header--text-inner-wrapper person">
-				<div class="people__details--outer-wrapper">
+				<div class="people__details--outer-wrapper person">
 					<div class="people__details--inner-wrapper">
-						<div class="columns medium-12 large-12 small-12">
-
-							<div class="inline__text padding__right--50">
-								<img class="people__details" src="{{ TimberImage(person.image).src }}" />
+						<div class="columns medium-12 large-12 small-12 relative">
+							<div class="inline__wrapper person padding__right--50">
+								<div class="table__wrapper">
+									<div class="table__inner">
+										<img class="people__details person" src="{{ TimberImage(person.image).src }}"/>
+									</div>
+								</div>
 							</div>
-							<div class="inline__text">
-								<p class="people__details title__text smaller">
-									{{ person.first_name }} {% if person.middle_initial %}{{ person.middle_initial }}. {% endif %} {{ person.last_name }}
-								</p>
-								{% if person.job_title %}	
-									<p class="people__details tag__text">
-										{{ person.job_title|upper }}
-									</p>
-								{% endif %}	
-								<span class="people__deatils list-divider red"></span>
-								<p class="people__details body__text">
-									{{ person.primary_city }}, {{ person.primary_state }}{% if person.secondary_city and person.secondary_state %} | {{ person.secondary_city }}, {{ person.secondary_state}} {% endif %} 
-								</p>
-								<p class="people__details body__text">
-									{{ person.primary_phone_number }}
-								</p>
-								<p class="people__details body__text">
-									{{ person.email }}
-								</p>
+							<div class="inline__wrapper person">
+								<div class="table__wrapper">
+									<div class="table__inner">
+										<p class="people__details title__text smaller">
+											{{ person.first_name }} {% if person.middle_initial %}{{ person.middle_initial }}. {% endif %} {{ person.last_name }}
+										</p>
+										{% if person.job_title %}	
+											<p class="people__details tag__text">
+												{{ person.job_title|upper }}
+											</p>
+										{% endif %}	
+										<span class="people__deatils list-divider red"></span>
+										<p class="people__details body__text">
+											{{ person.primary_city }}, {{ person.primary_state }}{% if person.secondary_city and person.secondary_state %} | {{ person.secondary_city }}, {{ person.secondary_state}} {% endif %} 
+										</p>
+										<p class="people__details body__text">
+											{{ person.primary_phone_number }}
+										</p>
+										<p class="people__details body__text">
+											{{ person.email }}
+										</p>
+									</div>	
+								</div>	
 							</div>	
 						</div>	
 					</div>
@@ -52,7 +59,7 @@
 				    <p class="tag__text">
 				    	{{ 'Area of Expertise'|upper }}
 				    </p>
-				    <p class="title__text smaller">
+				    <p class="title__text">
 						{{ specialization }}
 				    </p>
 				{% endif %}
@@ -62,7 +69,7 @@
 				    </p>
 				    {% for item in related_experiences %}
 			        	{% set experience = item|first %}
-						<div class="sidebar__color-block--outer-wrapper {% if loop.index > 5%}hidden hidden__exp{% endif %}">
+						<div class="sidebar__color-block--outer-wrapper {% if loop.index > 4 %}hidden hidden__exp{% endif %}">
 							<div class="sidebar__color-block--wrapper">
 					        	<a href="{{ experience.guid }}" class="link margin__0 tag__text text-align__center">
 				    	    		{{ experience.post_title|upper }}
@@ -70,7 +77,7 @@
 				        	</div>
 						</div>
 				    {% endfor %}
-					{% if related_experiences|length > 5 %}
+					{% if related_experiences|length > 4 %}
 					    <a id="showMoreRelatedExperiences" class="more link red tag__text underline" href="#more">
 					    	SHOW MORE
 					    </a>
@@ -101,10 +108,10 @@
 				    		{% set leader = leader|first %}
 							<div class="columns medium-12 large-6 small-12 margin-bottom--20 end">
 								<div class="columns medium-6 large-6 small-12">
-									<img class="people__details" src="{{ TimberImage(leader.image).src }}" />
+									<img class="people__details person" src="{{ TimberImage(leader.image).src }}" />
 								</div>
 								<div class="columns medium-6 large-6 small-12">
-									<div class="people__details--outer-wrapper">
+									<div class="people__details--outer-wrapper person">
 										<div class="people__details--inner-wrapper">
 											<p class="people__details title__text smaller">
 												{{ leader.first_name }} {% if leader.middle_initial %}{{ leader.middle_initial }}. {% endif %} {{ leader.last_name }}
