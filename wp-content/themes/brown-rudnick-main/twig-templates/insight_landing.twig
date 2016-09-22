@@ -15,9 +15,10 @@
 	</div>
 </div>	
 	{# body - with sidebar #}
-<div class="row">
-	<div class="experience__wrapper row body__wrapper columns small-12 medium-12 large-12">
-		<div class="columns show-for-medium-up medium-3 large-2">
+
+<div class="experience__wrapper row body__wrapper columns small-12 medium-12 large-12">
+	<div class="padding__wrapper ten sides__only">
+		<div class="columns show-for-medium-up medium-3 large-2 sidebar__on-scroll--fixed">
 			<div class="padding__wrapper ten sides__only">
 				<h4 class="red title__text smaller">
 					{{ sidebar_header }}
@@ -96,21 +97,24 @@
 				</div>	
 			</div>
 		</div>
-		<div class="columns small-12 medium-9 large-10">
-			<div class="padding__wrapper forty sides__only">
-				<div class="columns small-12 medium-12 large-12">
-					{{ top_content }}
+		<div class="columns show-for-medium-up medium-9 large-10 small-12">
+			<div class="row">
+				<div class="padding__wrapper forty sides__only">
+					<div class="columns show-for-medium-up medium-9 large-10 small-12">			
+						<div class="columns small-12 medium-12 large-12">
+							{{ top_content }}
+						</div>
+						<div class="columns small-12 medium-12 large-6 x-large-8">
+							<p class="title__text">
+								Subscribe to our email list
+							</p>
+							<input type="text" name="email" placeholder="EMAIL">
+						</div>
+						<div class="columns small-12 medium-12 large-6 x-large-4">
+							<button type="submit" class="subscribe alerts sites-button">ENTER</button>
+						</div>
 				</div>
-				<div class="columns small-12 medium-12 large-6 x-large-8">
-					<p class="title__text">
-						Subscribe to our email list
-					</p>
-					<input type="text" name="email" placeholder="EMAIL">
-				</div>
-				<div class="columns small-12 medium-12 large-6 x-large-4">
-					<button type="submit" class="subscribe alerts sites-button">ENTER</button>
-				</div>
-			</div>
+			</div>	
 		</div>
 		<div class="columns small-12 medium-9 large-10">
 			<div class="padding__wrapper forty sides__only">
@@ -171,9 +175,9 @@
 					{% endfor %}
 				</div>	
 			</div>
-		</div>	
-	</div>
-</div>	
+		</div>
+	</div>		
+</div>
 
 <script type="text/javascript">
 	{% if featured_image_url %}

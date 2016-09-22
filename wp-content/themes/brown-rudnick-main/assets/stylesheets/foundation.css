@@ -7478,6 +7478,9 @@ a {
     width: 20px; }
   .list-divider.letter__links {
     margin-top: 21px; }
+  .list-divider.about__deatils {
+    height: 4px;
+    width: 60px; }
 
 .page__divider {
   height: 2px;
