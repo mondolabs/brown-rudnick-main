@@ -1,0 +1,72 @@
+<div id="featuredImage" class ="featured-image__header--image-wrapper">
+
+	{% set header_text_color = "black" %}
+	{# hero header #}
+	<div id="featuredImage" class="featured-image__header--text-outer-wrapper row">
+		<div class="featured-image__header--text-wrapper">
+			<div class="featured-image__header--text-inner-wrapper">
+				<div class="color__block vellum">
+					<h1 class="page__header {{ header_text_color }}">
+						{{ ceo_header_text }}
+					</h1>
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>	
+	{# body - with sidebar #}
+<div class="row">
+	<div class="experience__wrapper row body__wrapper columns small-12 medium-12 large-12">
+		<div class="columns show-for-medium-up medium-3 large-2 sidebar__on-scroll--fixed">
+			<div class="padding__wrapper ten sides__only">
+				<h4 class="red title__text smaller">
+					{{ about_sidebar_header }}
+				</h4>
+				<span class="list-divider"></span>
+				{% for about_sidebar_item in about_sidebar_items %}
+			    	{% set link_slug = about_sidebar_item.about_sidebar_item_link|split('/')[3] %}
+			    	<a class="{% if slug == link_slug %}red{% endif %} link sidebar__link" href="{{ about_sidebar_item.about_sidebar_item_link }}">
+			    		{{ about_sidebar_item.about_sidebar_item_text|upper }}
+			    	</a>
+			    {% endfor %}
+			</div>
+		</div>	
+		<div class="columns small-12 medium-9 large-10">
+			<div class="columns small-12 medium-12 large-12">
+				<p class="body__text">
+					{{ post.content }}
+				</p>
+			</div>
+			<div class="columns small-12 medium-12 large-12">
+				<div class="inline__wrapper person padding__right--50">
+					<div class="table__wrapper">
+						<div class="table__inner">
+							<img class="people__details" src="{{ ceo_image }}"/>
+						</div>
+					</div>
+				</div>
+				<div class="inline__wrapper person">
+					<div class="table__wrapper">
+						<div class="table__inner">
+							<p class="people__details title__text smaller">
+								{{ ceo_name }}
+							</p>
+							<p class="people__details tag__text">
+								{{ ceo_title|upper }}
+							</p>
+							<span class="about__deatils list-divider red"></span>
+						</div>	
+					</div>	
+				</div>
+			</div>	
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	{% if banner_image|length > 0 %}
+		$(document).ready(function(){
+			$('#featuredImage').backstretch("{{ banner_image }}");
+		})
+	{% endif %}
+</script>
