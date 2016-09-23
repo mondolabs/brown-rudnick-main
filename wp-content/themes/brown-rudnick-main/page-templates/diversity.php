@@ -25,6 +25,9 @@ $data['slug'] = $slug;
     <?php wp_head()?>
   </head>
   <body>
+    <div class="vellum black--vellum modal__background diversity hidden">
+
+    </div>
     <div id="page-full-width-homepage" class ="full-width" role="main">
       <?php Timber::render('/twig-templates/diversity.twig', $data); ?>
     </div>  

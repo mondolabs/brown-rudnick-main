@@ -114,6 +114,8 @@ p.subtitle__text {
     color: #b91628; }
   .tag__text.contact {
     font-size: 11px; }
+  .tag__text.bigger {
+    font-size: 16px; }
 
 .sidebar__color-block--outer-wrapper {
   height: 60px;
@@ -139,6 +141,8 @@ p.subtitle__text {
     padding: 60px 0; }
   .padding__wrapper.ten.sides__only {
     padding: 0 10px; }
+  .padding__wrapper.twenty.sides__only {
+    padding: 0 20px; }
   .padding__wrapper.forty.sides__only {
     padding: 0 40px; }
   .padding__wrapper.ten.right__only {
@@ -156,6 +160,10 @@ p.subtitle__text {
 
 .hidden {
   display: none; }
+
+.float--right,
+.columns.float--right {
+  float: right; }
 
 ul.list-style__none {
   list-style: none;
@@ -562,6 +570,20 @@ img.insights {
   text-align: center; }
   .letter__link.active {
     color: #fff; }
+
+.about__bullets--wrapper.white__background {
+  padding: 40px !important;
+  background-color: #fff; }
+
+.modal__background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2; }
+  .modal__background.black--vellum {
+    background-color: rgba(0, 0, 0, 0.7); }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
