@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Message From the CEO
+Template Name: Pro Bono
 */
 get_header();
 $data = Timber::get_context();
