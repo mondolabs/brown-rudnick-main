@@ -10,12 +10,19 @@ $data['banner_image'] = get_field('banner_image');
 $data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
 $data['about_sidebar_header'] = get_field('about_sidebar_header');
 $data['about_sidebar_items'] = get_field('about_sidebar_items');
+
+
+
 $data['pro_bono_header_text'] = get_field('pro_bono_header_text');
-$data['pro_bono_image'] = get_field('pro_bono_image');
-$data['pro_bono_name'] = get_field('pro_bono_name');
-$data['pro_bono_title'] = get_field('pro_bono_title');
+$data['pro_bono_top_content'] = get_field('pro_bono_top_content');
+$data['pro_bono_bottom_banner_header'] = get_field('pro_bono_bottom_banner_header');
+$data['pro_bono_bottom_banner_text_content'] = get_field('pro_bono_bottom_banner_text_content');
+$data['pro_bono_bottom_banner_link_url'] = get_field('pro_bono_bottom_banner_link_url');
+$data['pro_bono_bottom_banner_image'] = get_field('pro_bono_bottom_banner_image');
+
 $slug = basename(get_permalink());
 $data['slug'] = $slug;
+
 
 ?>
 
@@ -31,3 +38,4 @@ $data['slug'] = $slug;
     <?php get_footer(); ?>
   </body>
 </html>
+

@@ -151,6 +151,18 @@ p.subtitle__text {
 	display: none;
 }
 
+.z-index__0 {
+	z-index: 0;
+}
+
+.z-index__1 {
+	z-index: 1;
+}
+
+.z-index__2 {
+	z-index: 2;
+}
+
 .float--right,
 .columns.float--right {
 	float: right;
@@ -458,9 +470,15 @@ img.people__details {
 	}
 }
 
-.color__block.vellum {
-    background-color: rgba(255,255,255,.8);
-    padding: 12px 48px;
+.color__block {
+	&.vellum {
+    	background-color: rgba(255,255,255,.8);
+    	padding: 12px 48px;
+	}
+	&.white {
+		background-color: rgba(255,255,255,1);
+    	padding: 12px 48px;	
+	}
 }
 
 img.insights {
@@ -529,6 +547,9 @@ img.insights {
 .table__wrapper {
 	display: table;
 	height: 100%;
+	&.pro-bono__banner {
+		width: 100%;
+	}
 }
 
 .table__inner {
@@ -556,6 +577,10 @@ img.insights {
 	}
 	&:hover {
 	    background-position:right bottom;
+	}
+	&.pro-bono {
+	    bottom: 0;
+    	right: 1px;
 	}
 }
 
