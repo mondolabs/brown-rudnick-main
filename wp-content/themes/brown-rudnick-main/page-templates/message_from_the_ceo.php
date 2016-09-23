@@ -17,6 +17,8 @@ $data['ceo_title'] = get_field('ceo_title');
 $slug = basename(get_permalink());
 $data['slug'] = $slug;
 
+var_dump($data['banner_image']);
+
 ?>
 
 <html>
