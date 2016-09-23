@@ -20,11 +20,10 @@ var NAV = {
 	desktopMenu: $('#masthead'),
 	scrollEvents: function(){
 		if ( $(window).scrollTop() >= NAV.desktopMenu.height() ) {
-			$(NAV.desktopMenu).hide();
+			$(NAV.desktopMenu).css('opacity', '0');
 			$('.menu__outer-wrapper--desktop-on-scroll').slideDown('300');
-			console.log('nav is hidden')
 		} else {
-			$(NAV.desktopMenu).show();
+			$(NAV.desktopMenu).css('opacity', '1');
 			$('.menu__outer-wrapper--desktop-on-scroll').slideUp('300');
 		}
 	}	
