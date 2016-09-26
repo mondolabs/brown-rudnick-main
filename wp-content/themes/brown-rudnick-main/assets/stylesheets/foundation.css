@@ -198,6 +198,8 @@ h4.list__header {
   line-height: 1; }
   h4.list__header.red {
     color: #b91628; }
+  h4.list__header.mobile {
+    font-size: 20px; }
 
 .accordion__trigger {
   cursor: pointer; }
@@ -232,6 +234,14 @@ a.link {
   a.link.sidebar__link {
     max-width: 159px;
     margin-bottom: 14px; }
+    a.link.sidebar__link.mobile {
+      max-width: initial;
+      font-size: 12.5px;
+      border-bottom: #d7d7d7 1px solid;
+      padding: 10px;
+      margin: 10px 0 0; }
+      a.link.sidebar__link.mobile.last-sidebar__link {
+        border: none; }
 
 h3.title {
   font-size: 30px;
@@ -284,6 +294,9 @@ h3.title {
   height: 100%; }
   .featured-image__header--text-wrapper.person {
     width: 100%; }
+  @media screen and (max-width: 640px) {
+    .featured-image__header--text-wrapper {
+      margin: auto; } }
 
 .featured-image__header--text-inner-wrapper {
   display: table-cell;
@@ -296,7 +309,7 @@ h3.title {
   font-family: "adobe-garamond-pro", serif; }
   @media screen and (max-width: 640px) {
     .page__header {
-      font-size: 40px;
+      font-size: 32.5px;
       padding-left: 10px; } }
 
 .experience-tile__outer-wrapper {
@@ -510,13 +523,28 @@ img.insights {
 
 .expander {
   width: 25px;
+  height: 25px;
   display: inline-block;
   position: absolute;
-  bottom: 1px;
+  top: 1px;
   right: 96px;
   cursor: pointer; }
+  .expander.top__menu {
+    background-color: #b91628;
+    right: 15px;
+    top: 0; }
+    .expander.top__menu:before {
+      top: 0;
+      left: 12px;
+      background-color: #fff; }
+    .expander.top__menu:after {
+      top: -4px;
+      left: 7px;
+      background-color: #fff; }
   .expander:hover:after, .expander:hover:before {
     background-color: #b91628; }
+  .expander:hover.top__menu:after, .expander:hover.top__menu:before {
+    background-color: #fff; }
   .expander:before {
     content: " ";
     background-color: #b91628;
@@ -550,6 +578,8 @@ img.insights {
     left: 0px; }
   .expander.expanded:before {
     opacity: 0; }
+  .expander.expanded.top__menu:after {
+    left: 7px; }
 
 .letter__anchor--indicator {
   display: block;
@@ -649,6 +679,20 @@ button.close__modal {
             transform: rotate(-45deg);
     right: 8px;
     top: 14px; }
+
+.show-for-small-only.hidden {
+  display: none; }
+
+.sidebar-items__wrapper {
+  display: block;
+  background-color: transparent;
+  position: relative; }
+  @media screen and (max-width: 640px) {
+    .sidebar-items__wrapper {
+      position: absolute;
+      width: calc(100% - 20px);
+      display: none;
+      background-color: #f0f0f0; } }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -7568,6 +7612,11 @@ a {
   .list-divider.about__deatils {
     height: 4px;
     width: 60px; }
+  .list-divider.mobile {
+    display: block;
+    height: 2px;
+    width: 100%;
+    margin: 20px 0 16px; }
 
 .page__divider {
   height: 2px;
@@ -8357,9 +8406,6 @@ button.slick-arrow {
   -webkit-background-size: 40% 40%;
           background-size: 40%;
   z-index: 999; }
-
-.columns {
-  padding: 0 !important; }
 
 .featured_firsts-image {
   max-height: 100%;

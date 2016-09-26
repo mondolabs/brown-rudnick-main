@@ -225,22 +225,19 @@ button.slick-arrow  {
 	background-size: 40%;
 	z-index: 999;
 }
-.columns {
-	padding: 0!important;
+.featured_firsts-image{
+	max-height: 100%;
+	z-index: 999;
+	vertical-align: top;
 }
-	.featured_firsts-image{
-		max-height: 100%;
-		z-index: 999;
-		vertical-align: top;
+.featured_firsts-text-container,
+.homepage_post-text-container {
+	display: inline-block;
+	margin: 50px;
+	&.has-image {
+		margin-top: 20px;
 	}
-	.featured_firsts-text-container,
-	.homepage_post-text-container {
-		display: inline-block;
-		margin: 50px;
-		&.has-image {
-			margin-top: 20px;
-		}
-	}
+}
 .featured_firsts-grid {
 	padding-left: 0;
 

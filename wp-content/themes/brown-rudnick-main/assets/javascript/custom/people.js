@@ -17,7 +17,7 @@ var PEOPLE = {
 	},
 	stickySideBar: $('.sidebar__on-scroll--fixed'),
 	scrollEvents: function(){
-		var scrollStopperOffset = $('#masthead').height() + $('.body__wrapper').height() - 135;
+		var scrollStopperOffset = $('#masthead').height() + $('.body__wrapper').height() - 263;
 		if ( $(window).scrollTop() >= ($('#featuredImage').height() - 60) && $(window).scrollTop() <= scrollStopperOffset ) {
 			PEOPLE.stickSideBar('top');
 		} else if ( $(window).scrollTop() >= scrollStopperOffset ) {
@@ -28,26 +28,39 @@ var PEOPLE = {
 	},
 	stickSideBar: function(location) {
 		if ( location === 'top' ) {	
+			if ( $(window).width() < 1000 ) {
+				var sideBarWidth = 'calc(75em / 4)';
+			} else {
+				var sideBarWidth = 'calc(75em / 6)';
+			}
 			PEOPLE.stickySideBar.css({
 				position: 'fixed',
-				width: 'calc(75em / 6 )',
+				width: sideBarWidth,
 				top: '280px'
 			});
 		} else {
+			if ( $(window).width() < 1000 ) {
+				var sideBarWidth = '25%';
+			} else {
+				var sideBarWidth = '16.66667%';
+			}
 			PEOPLE.stickySideBar.css({
 				position: 'absolute',
-				width: 'calc(75em / 6 )',
+				width: sideBarWidth,
 				top: 'initial',
 				bottom: '10px'
-
 			});
-			console.log('stick bottom!');
 		}	
 	},
 	unstickSideBar: function() {
+		if ( $(window).width() < 1000 ) {
+			var sideBarWidth = '25%';
+		} else {
+			var sideBarWidth = '16.66667%';
+		}
 		PEOPLE.stickySideBar.css({
 			position: 'relative',
-			width: '16.666667%',
+			width: sideBarWidth,
 			top: 'initial'			
 		});
 	}

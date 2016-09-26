@@ -1,8 +1,10 @@
-var RELATED_EXPERIENCES = {
+var EXPANDER = {
 	addListeners: function(){
 		$('#showMoreRelatedExperiences, .expander').click(function(event) {
 			var hiddeExperiences = $('.sidebar__color-block--outer-wrapper.hidden__exp');
 			$(hiddeExperiences).toggleClass('hidden');
+			var hiddenMenuItems = $('.sidebar-items__wrapper');
+			$(hiddenMenuItems).slideToggle('300');
 			var expander = $('.expander');
 			$(expander).toggleClass('expanded');
 			if ($('#showMoreRelatedExperiences').hasClass('more')){
@@ -15,5 +17,5 @@ var RELATED_EXPERIENCES = {
 }
 
 $(document).ready(function(){
-	RELATED_EXPERIENCES.addListeners();
+	EXPANDER.addListeners();
 });

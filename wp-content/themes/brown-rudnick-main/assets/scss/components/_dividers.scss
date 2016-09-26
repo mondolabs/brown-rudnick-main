@@ -47,6 +47,12 @@
 		height: 4px;
 		width: 60px;
 	}
+	&.mobile {
+	    display: block;
+    	height: 2px;
+    	width: 100%;
+    	margin: 20px 0 16px;
+	}
 }
 
 .page__divider {

@@ -199,6 +199,9 @@ h4.list__header {
 	&.red {
 		color: $primary-red;
 	}
+	&.mobile {
+		font-size: 20px;
+	}
 }
 
 .accordion__trigger {
@@ -246,6 +249,16 @@ a.link {
 	&.sidebar__link {
 		max-width: 159px;
 		margin-bottom: 14px;
+		&.mobile {
+		    max-width: initial;
+    		font-size: 12.5px;
+    		border-bottom: darken($primary-grey, 10%) 1px solid;
+	    	padding: 10px;
+    		margin: 10px 0 0;
+    		&.last-sidebar__link {
+    			border: none;
+    		}
+		}
 	}
 }
 
@@ -316,6 +329,9 @@ h3.title {
 	&.person {
 		width: 100%;
 	}
+	@media screen and (max-width: 640px) {
+		margin: auto;
+	}
 }
 
 .featured-image__header--text-inner-wrapper {
@@ -330,7 +346,7 @@ h3.title {
 	font-size: 60px;
 	font-family: $brgaramond;
 	@media screen and (max-width: 640px) {
-		font-size: 40px;
+		font-size: 32.5px;
 		padding-left: 10px;
 	}
 }
@@ -590,16 +606,39 @@ img.insights {
 
 .expander {
     width: 25px;
+    height: 25px;
 	display: inline-block;
     position: absolute;
-    bottom: 1px;
+    top: 1px;
     right: 96px;
     cursor: pointer;
+	&.top__menu {
+		background-color: $primary-red;
+		right: 15px;
+    	top: 0;
+		&:before {
+			top: 0;
+			left: 12px;
+			background-color: $white;
+		}
+		&:after {
+			top: -4px;
+			left: 7px;
+			background-color: $white;
+
+		}
+	}
     &:hover {
     	&:after,
     	&:before {
     		background-color: $primary-red;
-    	}	
+    	}
+    	&.top__menu {
+	    	&:after,
+	    	&:before {
+	    		background-color: $white;
+	    	}
+		}
     }
 	&:before {
 		content: " ";
@@ -634,6 +673,11 @@ img.insights {
 		&:before {
 			opacity: 0;
 		}
+    	&.top__menu {
+			&:after {
+	    		left: 7px;
+	    	}	
+    	}
 	}
 }
 
@@ -750,4 +794,24 @@ button.close__modal {
 		right: 8px;
 		top: 14px;
 	}
+}
+
+
+.show-for-small-only {
+	&.hidden {
+		display: none;
+	}
+}
+
+.sidebar-items__wrapper {
+	display: block;
+	background-color: transparent;
+    position: relative;
+	@media screen and (max-width: 640px) {
+	    position: absolute;
+    	width: calc(100% - 20px);
+		display: none;
+    	background-color: $primary-grey;
+    }
+
 }
