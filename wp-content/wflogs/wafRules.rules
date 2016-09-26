@@ -149,9 +149,6 @@ if (match('/\/wp\-admin[\/]+admin\-ajax\.php/i', request.path) and md5Equals('69
 if (equals('mainwp-setup', request.body.page, request.queryString.page) and currentUserIsNot('administrator', server.empty)):
 	block(id=29, category='xss', description='WPMain Stored XSS <= 3.1.2')
 
-if (lengthGreaterThan('0', request.md5Body.a7103de66ff2464cf198e95558797201, request.md5QueryString.a7103de66ff2464cf198e95558797201) and lengthGreaterThan('0', request.md5Body['3311842a74c4736836a29eefbc1ea464'], request.md5QueryString['3311842a74c4736836a29eefbc1ea464']) and currentUserIsNot('administrator', server.empty)):
-	block(id=30, category='sde', description='FB1848')
-
 if (lengthGreaterThan('0', request.md5Body['3448147ad57606b48fc7a2d1bf946c3f']) and (currentUserIsNot('administrator', server.empty) or notMatch('/^\d+$/', request.md5Body['3448147ad57606b48fc7a2d1bf946c3f']) or (lengthGreaterThan('0', request.md5Body['64adec2d588253e23e718034b1ad140d']) and notMatch('/^\d+$/', request.md5Body['64adec2d588253e23e718034b1ad140d'])) or (lengthGreaterThan('0', request.md5Body.ab494af1a5663f82e0b8b11723b87867) and notMatch('/^\d+$/', request.md5Body.ab494af1a5663f82e0b8b11723b87867)))):
 	block(id=31, category='file_upload', description='FB1787')
 

@@ -606,6 +606,50 @@ img.insights {
   .modal__background.black--vellum {
     background-color: rgba(0, 0, 0, 0.7); }
 
+.diversity__modal--outer-wrapper {
+  margin: 200px 100px;
+  background-color: white;
+  padding: 80px; }
+  @media screen and (max-width: 800px) {
+    .diversity__modal--outer-wrapper {
+      margin: 100px 50px;
+      padding: 60px; } }
+
+button.close__modal {
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  width: 30px;
+  height: 30px;
+  background-color: #b91628;
+  color: #fff;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out; }
+  button.close__modal:hover {
+    background-color: #d0192d; }
+  button.close__modal:before {
+    content: " ";
+    height: 3px;
+    width: 14px;
+    position: absolute;
+    background-color: #fff;
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+    right: 8px;
+    top: 14px; }
+  button.close__modal:after {
+    content: " ";
+    height: 3px;
+    width: 14px;
+    position: absolute;
+    background-color: #fff;
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    right: 8px;
+    top: 14px; }
+
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
