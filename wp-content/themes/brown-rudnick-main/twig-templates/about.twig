@@ -32,11 +32,13 @@
 				<span class="list-divider hide-for-small-only"></span>
 				{# MOBILE SIDEBAR LIST DIVIDER #}
 				<span class="list-divider mobile show-for-small-only"></span>
+				
 				<div class="sidebar-items__wrapper">
 				    {% for sidebar_item in about_sidebar_items %}
+			    		{% set link_slug = sidebar_item.about_sidebar_item_link|split('/')[3] %}
 				    	{% if sidebar_item.has_sub_menu %}
 						{# DESKTOP SUBMENU ITEMS #}
-							<a class="hide-for-small-only accordion__trigger link" data-trigger-target="{{sidebar_item.about_sidebar_submenu_accordion_trigger }}">
+							<a class="{% if slug == link_slug %}red{% endif %} hide-for-small-only accordion__trigger link" data-trigger-target="{{sidebar_item.about_sidebar_submenu_accordion_trigger }}">
 								{{ sidebar_item.about_sidebar_item_text|upper }}
 							</a>
 							<ul id="blogsSidebarAccordion" class="hidden list-style__none hide-for-small-only">
@@ -52,10 +54,10 @@
 							<a class="show-for-small-only accordion__trigger red list__header" data-trigger-target="aboutSidebarAccordionMobile">
 								{{ sidebar_item.about_sidebar_item_text }}
 							</a>
-							<ul id="aboutSidebarAccordionMobile" class="hidden mobile__sidebar--menu list-style__none show-for-small-only">
+							<ul id="aboutSidebarAccordionMobile" class="mobile__sidebar--menu list-style__none show-for-small-only">
 								{% for sidebar_submenu_item in sidebar_item.about_sidebar_submenu %}
 									<li class="list-item__sidebar">
-										<a class="mobile link sidebar__link" href="{{ sidebar_submenu_item.about_sidebar_submenu_item_link }}" >
+										<a class="{% if slug == link_slug %}red{% endif %} link sidebar__link" href="{{ sidebar_submenu_item.about_sidebar_submenu_item_link }} mobile" >
 											{{ sidebar_submenu_item.about_sidebar_submenu_item_text }}
 										</a>
 									</li>
@@ -63,11 +65,11 @@
 							</ul>
 						{% else %}
 						{# DESKTOP MENU ITEMS #}
-					    	<a class="hide-for-small-only link sidebar__link" href="{{ sidebar_item.about_sidebar_item_link }}">
+					    	<a class="{% if slug == link_slug %}red{% endif %} hide-for-small-only link sidebar__link" href="{{ sidebar_item.about_sidebar_item_link }}">
 					    		{{ sidebar_item.about_sidebar_item_text|upper }}
 					    	</a>
 						{# MOBILE MENU ITEMS #}
-							<a class="show-for-small-only hidden link sidebar__link" href="{{ sidebar_item.about_sidebar_item_link }} mobile">
+							<a class="{% if slug == link_slug %}red{% endif %} show-for-small-only link sidebar__link mobile {% if loop.last %} last-sidebar__link{% endif %}" href="{{ sidebar_item.about_sidebar_item_link }}">
 					    		{{ sidebar_item.about_sidebar_item_text|upper }}
 					    	</a>
 						{% endif %}

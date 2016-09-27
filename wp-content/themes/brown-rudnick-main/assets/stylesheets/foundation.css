@@ -74,6 +74,13 @@ a {
     margin-bottom: 0; }
   .body__text.insights.link {
     font-size: 14px; }
+  .body__text.smaller {
+    font-size: 12px; }
+  .body__text.roman {
+    font-weight: 500; }
+
+.italic {
+  font-style: italic; }
 
 p.subtitle__text {
   font-family: "adobe-garamond-pro", serif;
