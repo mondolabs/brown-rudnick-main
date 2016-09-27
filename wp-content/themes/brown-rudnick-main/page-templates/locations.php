@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: All Locations Page
+Template Name: Locations
 */
 get_header();
 $data = Timber::get_context();
