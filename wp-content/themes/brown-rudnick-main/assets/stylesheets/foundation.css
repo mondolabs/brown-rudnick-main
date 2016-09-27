@@ -90,7 +90,10 @@ p.subtitle__text {
 .title__text {
   font-family: "adobe-garamond-pro", serif;
   font-size: 30px;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  color: #000;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out; }
   .title__text.smaller {
     font-size: 24px; }
   .title__text.people__details {
@@ -105,6 +108,8 @@ p.subtitle__text {
     color: #b91628; }
   .title__text.insights__blog {
     margin-top: 20px; }
+  .title__text.link:hover {
+    color: #b91628; }
 
 .tag__text {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -376,7 +381,8 @@ a.experience__link {
   margin-top: 2px; }
 
 .columns.last.float-left {
-  float: left; }
+  float: left;
+  clear: both; }
 
 .people__details--outer-wrapper {
   display: table;

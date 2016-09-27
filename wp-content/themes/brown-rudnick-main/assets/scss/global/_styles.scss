@@ -55,6 +55,8 @@ p.subtitle__text {
 	font-family: $brgaramond;
 	font-size: 30px;
 	margin-bottom: 20px;
+	color: $black;
+    transition: color .3s ease-in-out;
 	&.smaller {
 		font-size: 24px;
 	}
@@ -73,6 +75,11 @@ p.subtitle__text {
 	}
 	&.insights__blog {
 		margin-top: 20px;
+	}
+	&.link {
+		&:hover {
+			color: $primary-red;
+		}
 	}
 }
 
@@ -433,6 +440,7 @@ a.experience__link {
 
 .columns.last.float-left {
 	float: left;
+	clear: both;
 }
 
 .people__details--outer-wrapper {

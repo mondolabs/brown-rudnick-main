@@ -8,13 +8,14 @@ $post = new TimberPost();
 $data['post'] = $post;
 $data['banner_image'] = get_field('banner_image');
 $data['locations_header_text'] = get_field('locations_header_text');
+$data['banner_image'] = get_field('banner_image');
 $data['bottom_banner_image'] = get_field('bottom_banner_image');
 $data['bottom_banner_header_text'] = get_field('bottom_banner_header_text');
 $data['bottom_banner_content_text'] = get_field('bottom_banner_content_text');
 $data['locations'] = get_field('locations');
-$data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
-$data['featured_image_url'] = $data['featured_image_url'][0];
 $data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
+
+
 ?>
 
 <html>
