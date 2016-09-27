@@ -19,10 +19,9 @@
 	<div class="columns large-12 medium-12 small-12">
 		{% for location in locations %}
 			<div class="{% if loop.last %} float-left last{% endif %} columns large-4 medium-4 small-12">
-				{% set location = location|first %}
-				<a href="{{ location.guid }}">
+					<a href="{{ location.permalink }}">
 					<p class="title__text link">
-						{{ location.post_name|title }}
+						{{ location.title }}
 					</p>
 				</a> 
 				<p class="body__text">
