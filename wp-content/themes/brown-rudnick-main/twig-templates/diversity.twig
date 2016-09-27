@@ -21,11 +21,15 @@
 			<div class="padding__wrapper ten sides__only">
 				{# DESKTOP SIDEBAR HEADER #}
 				<h4 class="red title__text smaller hide-for-small-only">
-					{{ about_sidebar_header }}
+					<a class="red link inline__link" href="/about">
+						{{ about_sidebar_header }}
+					</a>
 				</h4>
 				{# MOBILE SIDEBAR HEADER #}
 				<h4 class="show-for-small-only accordion__trigger red list__header mobile" data-trigger-target="sidebarMobileAccordion">
-					{{ about_sidebar_header }}
+					<a class="red link inline__link" href="/about">
+						{{ about_sidebar_header }}
+					</a>
 				</h4>
 				<span class="show-for-small-only expander top__menu" data-show-target="about_sidebar_item_link" ></span>
 				{# DESKTOP SIDEBAR LIST DIVIDER #}
@@ -119,6 +123,10 @@
 		</div>
 	</div>
 {% endif %}
+
+<div class="columns small-12 medium-12 large-12 red-base__button--wrapper">
+
+</div>
 
 <script type="text/javascript">
 	$(document).ready(function(){

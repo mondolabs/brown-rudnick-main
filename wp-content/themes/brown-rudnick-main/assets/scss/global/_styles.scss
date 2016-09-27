@@ -570,7 +570,8 @@ img.insights {
 .inline__wrapper {
 	display: inline-block;
 	&.person {
-		height: 380px;
+		height: 200px;
+		margin-top: 20px;
 	}
 }
 

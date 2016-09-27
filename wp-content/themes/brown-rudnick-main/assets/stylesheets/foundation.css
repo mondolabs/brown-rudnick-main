@@ -489,7 +489,8 @@ img.insights {
 .inline__wrapper {
   display: inline-block; }
   .inline__wrapper.person {
-    height: 380px; }
+    height: 200px;
+    margin-top: 20px; }
 
 .table__wrapper {
   display: table;
