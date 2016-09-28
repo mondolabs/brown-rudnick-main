@@ -84,6 +84,9 @@ p.subtitle__text {
 			color: $primary-red;
 		}
 	}
+	&.normal {
+    	font-style: normal;
+	}
 }
 
 .tag__text {
@@ -157,6 +160,10 @@ p.subtitle__text {
 	&.twenty.left__only {
     	padding-left: 10px;
     }
+}
+
+.no__pad {
+	padding: 0 !important;
 }
 
 .padding__right--50 {

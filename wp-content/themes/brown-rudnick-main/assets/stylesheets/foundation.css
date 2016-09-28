@@ -112,6 +112,8 @@ p.subtitle__text {
     margin-top: 20px; }
   .title__text.link:hover {
     color: #b91628; }
+  .title__text.normal {
+    font-style: normal; }
 
 .tag__text {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -165,6 +167,9 @@ p.subtitle__text {
     padding-right: 10px; }
   .padding__wrapper.twenty.left__only {
     padding-left: 10px; }
+
+.no__pad {
+  padding: 0 !important; }
 
 .padding__right--50 {
   padding-right: 50px; }

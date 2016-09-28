@@ -1,71 +1,33 @@
 <?php
 /*
-Template Name: Search
+Template Name: Search Page
 */
 get_header();
 
-function get_search_form( $echo = true ) {
-    /**
-     * Fires before the search form is retrieved, at the start of get_search_form().
-     *
-     * @since 2.7.0 as 'get_search_form' action.
-     * @since 3.6.0
-     *
-     * @link https://core.trac.wordpress.org/ticket/19321
-     */
-    do_action( 'pre_get_search_form' );
- 
-    $format = current_theme_supports( 'html5', 'search-form' ) ? 'html5' : 'xhtml';
- 
-    /**
-     * Filters the HTML format of the search form.
-     *
-     * @since 3.6.0
-     *
-     * @param string $format The type of markup to use in the search form.
-     *                       Accepts 'html5', 'xhtml'.
-     */
-    $format = apply_filters( 'search_form_format', $format );
- 
-    $search_form_template = locate_template( 'searchform.php' );
-    if ( '' != $search_form_template ) {
-        ob_start();
-        require( $search_form_template );
-        $form = ob_get_clean();
-    } else {
-        if ( 'html5' == $format ) {
-            $form = '<form role="search" method="get" class="search-form" action="' . esc_url( home_url( '/' ) ) . '">
-                <label>
-                    <span class="screen-reader-text">' . _x( 'Search for:', 'label' ) . '</span>
-                    <input type="search" class="search-field" placeholder="' . esc_attr_x( 'Search &hellip;', 'placeholder' ) . '" value="' . get_search_query() . '" name="s" />
-                </label>
-                <input type="submit" class="search-submit" value="'. esc_attr_x( 'Search', 'submit button' ) .'" />
-            </form>';
-        } else {
-            $form = '<form role="search" method="get" id="searchform" class="searchform" action="' . esc_url( home_url( '/' ) ) . '">
-                <div>
-                    <label class="screen-reader-text" for="s">' . _x( 'Search for:', 'label' ) . '</label>
-                    <input type="text" value="' . get_search_query() . '" name="s" id="s" />
-                    <input type="submit" id="searchsubmit" value="'. esc_attr_x( 'Search', 'submit button' ) .'" />
-                </div>
-            </form>';
-        }
-    }
- 
-    /**
-     * Filters the HTML output of the search form.
-     *
-     * @since 2.7.0
-     *
-     * @param string $form The search form HTML output.
-     */
-    $result = apply_filters( 'get_search_form', $form );
- 
-    if ( null === $result )
-        $result = $form;
- 
-    if ( $echo )
-        echo $result;
-    else
-        return $result;
-}
+$data = Timber::get_context();
+$search_query = get_search_query();
+$search_args = array(
+    's' =>  $search_query,
+    'posts_per_page'=> -1
+);
+$data['results'] = Timber::get_posts($search_args);
+$data['search_banner_image'] = get_template_directory_uri() . "/assets/images/search-bg.png";
+$data['form_action'] = get_home_url();
+$data['search_query'] = $search_query;
+
+?>
+
+<html>
+  <head>
+    <?php wp_head()?>
+  </head>
+  <body>
+  <h1>
+  </h1>
+    <div id="page-full-width-homepage" class ="full-width" role="main">
+      <?php Timber::render('/twig-templates/search.twig', $data); ?>
+    </div>  
+    <?php do_action( 'foundationpress_after_content' ); ?>
+    <?php get_footer(); ?>
+  </body>
+</html>

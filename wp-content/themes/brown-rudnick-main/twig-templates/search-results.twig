@@ -1,0 +1,55 @@
+<div id="featuredImage" class ="featured-image__header--image-wrapper">
+
+	{% set header_text_color = "black" %}
+	{# hero header #}
+	<div id="featuredImage" class="featured-image__header--text-outer-wrapper row">
+		<div class="featured-image__header--text-wrapper">
+			<div class="featured-image__header--text-inner-wrapper">
+				<div class="color__block vellum">
+					<h1 class="page__header {{ header_text_color }}">
+						{{ "Search" }}
+					</h1>
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>
+<div class="row body__wrapper small-12 medium-12 large-12">
+	<form role="search" id ="searchform" method="get" action="{{form_action}}">
+ 		<div class="input-group">
+	    	<div class="columns small-12 medium-8 large-8 no__pad">
+	    		<input type="text" class="input-custom-search" value="{% if search_query %}{{search_query}}{% endif %}" name ="s" id="s" placeholder='Enter your search'>
+	    	</div>
+	    	<div class="columns small-12 medium-4 large-4 no__pad">
+			    <div class="input-group-button">
+			    	<input type="submit" id="searchsubmit" value="Search" class="button">
+		    	</div>
+		    </div>	
+	  	</div>
+	</form>
+	{% if results|length > 0 %}
+		{% for result in results %}
+			<p class="title__text smaller normal">
+				<a class="black link inline__link" href="{{ result.permalink }}">
+					 {{ result.post_title }}
+				</a>
+			</p>
+			<p class="body__text">
+				{{ result.content|striptags|length > 250 ? result.content|striptags|slice(0, 250) ~ '...' : result.content|striptags  }}
+			</p>
+			<span class="page__divider grey">
+			</span>
+		{% endfor %}
+	{% else %}
+		<p class="title__text smaller normal">
+			Sorry! We couldn’t find any results for "{{ search_query }}".
+		</p>
+	{% endif %}
+</div> 
+<script type="text/javascript">
+	$(document).ready(function(){
+		{% if search_banner_image|length > 0 %}
+			$('#featuredImage').backstretch("{{ search_banner_image }}");
+		{% endif %}
+	})
+</script>		
