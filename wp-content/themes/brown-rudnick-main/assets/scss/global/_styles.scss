@@ -39,6 +39,9 @@ a {
 	&.roman {
 		font-weight: 500;
 	}
+	&.black {
+		color: $black;
+	}
 }
 
 .italic {
@@ -402,6 +405,32 @@ h3.title {
     display: table-cell;
 }
 
+.color-block__wrapper {
+	padding: 70px;
+	@media screen and (max-width: 1024px) {
+		padding: 30px; 
+	}
+	@media screen and (max-width: 575px) {
+		padding: 80px 20px; 
+	}
+	&.map {
+		padding: 0;
+	}
+}
+
+.color-block {
+	padding: 60px;
+	@media screen and (max-width: 1024px) {
+		padding: 40px; 
+	}
+	@media screen and (max-width: 640px) {
+		padding: 20px; 
+	}
+	&.vellum {
+		background-color: rgba(255, 255, 255, .8);
+	}
+}
+
 .color-block__experience {
 	height: 100px;
 	background-color: $primary-grey;
@@ -440,7 +469,6 @@ a.experience__link {
 
 .columns.last.float-left {
 	float: left;
-	clear: both;
 }
 
 .people__details--outer-wrapper {
@@ -588,6 +616,9 @@ img.insights {
 	height: 100%;
 	&.pro-bono__banner {
 		width: 100%;
+	}
+	&.location__map {
+		height: 500px;
 	}
 }
 
@@ -833,4 +864,17 @@ button.close__modal {
     	background-color: $primary-grey;
     }
 
+}
+
+#locationMap {
+	width: 100%;
+	height: 500px;
+}
+
+.full__width {
+	width: 100%;
+	&.location__map {
+		position: absolute;
+		bottom: 0;
+	}
 }

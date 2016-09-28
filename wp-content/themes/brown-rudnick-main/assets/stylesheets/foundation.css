@@ -78,6 +78,8 @@ a {
     font-size: 12px; }
   .body__text.roman {
     font-weight: 500; }
+  .body__text.black {
+    color: #000; }
 
 .italic {
   font-style: italic; }
@@ -349,6 +351,28 @@ h3.title {
   vertical-align: middle;
   display: table-cell; }
 
+.color-block__wrapper {
+  padding: 70px; }
+  @media screen and (max-width: 1024px) {
+    .color-block__wrapper {
+      padding: 30px; } }
+  @media screen and (max-width: 575px) {
+    .color-block__wrapper {
+      padding: 80px 20px; } }
+  .color-block__wrapper.map {
+    padding: 0; }
+
+.color-block {
+  padding: 60px; }
+  @media screen and (max-width: 1024px) {
+    .color-block {
+      padding: 40px; } }
+  @media screen and (max-width: 640px) {
+    .color-block {
+      padding: 20px; } }
+  .color-block.vellum {
+    background-color: rgba(255, 255, 255, 0.8); }
+
 .color-block__experience {
   height: 100px;
   background-color: #f0f0f0;
@@ -381,8 +405,7 @@ a.experience__link {
   margin-top: 2px; }
 
 .columns.last.float-left {
-  float: left;
-  clear: both; }
+  float: left; }
 
 .people__details--outer-wrapper {
   display: table;
@@ -503,6 +526,8 @@ img.insights {
   height: 100%; }
   .table__wrapper.pro-bono__banner {
     width: 100%; }
+  .table__wrapper.location__map {
+    height: 500px; }
 
 .table__inner {
   display: table-cell;
@@ -707,6 +732,16 @@ button.close__modal {
       width: calc(100% - 20px);
       display: none;
       background-color: #f0f0f0; } }
+
+#locationMap {
+  width: 100%;
+  height: 500px; }
+
+.full__width {
+  width: 100%; }
+  .full__width.location__map {
+    position: absolute;
+    bottom: 0; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -8374,26 +8409,6 @@ button.arrow {
 
 button.slick-arrow {
   display: none !important; }
-
-.color-block__wrapper {
-  padding: 70px; }
-  @media screen and (max-width: 1024px) {
-    .color-block__wrapper {
-      padding: 30px; } }
-  @media screen and (max-width: 640px) {
-    .color-block__wrapper {
-      padding: 10px; } }
-
-.color-block {
-  padding: 60px; }
-  @media screen and (max-width: 1024px) {
-    .color-block {
-      padding: 40px; } }
-  @media screen and (max-width: 640px) {
-    .color-block {
-      padding: 20px; } }
-  .color-block.vellum {
-    background-color: rgba(255, 255, 255, 0.8); }
 
 .body-text.hero {
   font-family: "Avenir", Helvetica, Arial, sans-serif;

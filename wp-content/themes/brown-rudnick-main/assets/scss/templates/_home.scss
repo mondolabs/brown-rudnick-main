@@ -169,33 +169,6 @@ button.slick-arrow  {
 	display: none !important;
 }
 
-
-
-.color-block__wrapper {
-	padding: 70px;
-	@media screen and (max-width: 1024px) {
-		padding: 30px; 
-	}
-	@media screen and (max-width: 640px) {
-		padding: 10px; 
-	}
-
-}
-
-.color-block {
-	padding: 60px;
-	@media screen and (max-width: 1024px) {
-		padding: 40px; 
-	}
-	@media screen and (max-width: 640px) {
-		padding: 20px; 
-	}
-	&.vellum {
-		background-color: rgba(255, 255, 255, .8);
-	}
-}
-
-
 .body-text.hero {
 	font-family: $brfont;
 	line-height: 1.8;
