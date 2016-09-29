@@ -11,20 +11,29 @@ var PEOPLE = {
 			$('html,body').animate({
 	          scrollTop: letterAnchor.offset().top - 200
 	        }, 1000);
-	        console.log("Scrolling to" + letter );
+	        console.log("Scrolling to " + letter );
 	        return false;
+		});
+		$('#advancedPeopleSearch').click(function(event) {
+			PEOPLE.revealAdvancedSearch();
 		});
 	},
 	stickySideBar: $('.sidebar__on-scroll--fixed'),
 	scrollEvents: function(){
-		var scrollStopperOffset = $('#masthead').height() + $('.body__wrapper').height() - 263;
-		if ( $(window).scrollTop() >= ($('#featuredImage').height() - 60) && $(window).scrollTop() <= scrollStopperOffset ) {
-			PEOPLE.stickSideBar('top');
-		} else if ( $(window).scrollTop() >= scrollStopperOffset ) {
-			PEOPLE.stickSideBar('bottom');
-		} else {
-			PEOPLE.unstickSideBar();
-		}
+		// if ( $('.page-template-people').length > 0 ){
+		// 	var heightAdjustment = 800;
+		// } else {
+		// 	var heightAdjustment = 263;
+		// }
+		// var scrollStopperOffset = $('#masthead').height() + $('.body__wrapper').height() - heightAdjustment;
+		// if ( $(window).scrollTop() >= ($('#featuredImage').height() - 60) && $(window).scrollTop() <= scrollStopperOffset ) {
+		// 	PEOPLE.stickSideBar('top');
+		// } else if ( $(window).scrollTop() >= scrollStopperOffset ) {
+		// 	PEOPLE.stickSideBar('bottom');
+		// 	console.log('bottom sticker');
+		// } else {
+		// 	PEOPLE.unstickSideBar();
+		// }
 	},
 	stickSideBar: function(location) {
 		if ( location === 'top' ) {	
@@ -36,7 +45,7 @@ var PEOPLE = {
 			PEOPLE.stickySideBar.css({
 				position: 'fixed',
 				width: sideBarWidth,
-				top: '280px'
+				top: '160px'
 			});
 		} else {
 			if ( $(window).width() < 1000 ) {
@@ -63,6 +72,14 @@ var PEOPLE = {
 			width: sideBarWidth,
 			top: 'initial'			
 		});
+	},
+	revealAdvancedSearch: function(){
+		$('#advancedSearchModal').removeClass('hidden').fadeIn('slow');
+		console.log("advanced search revealed!")
+	},
+	hideAdvancedSearch: function(){
+		$('#advancedSearchModal').addClass('hidden').fadeOut('slow');
+		console.log("advanced search hidden!")
 	}
 };
 

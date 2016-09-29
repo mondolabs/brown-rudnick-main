@@ -26,7 +26,7 @@
 				<div class="letter__links_wrapper">
 					{% for letter in alphabet %}
 					    <div class="columns medium-4 large-4 small-2 {% if loop.index == 26 %} float-left   {% endif %} letter__link--outer-wrapper">
-					    	<div class="letter__link--inner-wrapper">
+					    	<div class="letter__link--inner-wrapper {% if loop.first %} active {% endif %}">
 						    	<a data-letter="{{letter}}" class="letter__link">
 						    		{{ letter }}
 						    	</a>
@@ -34,9 +34,14 @@
 					    </div>			    	
 					{% endfor %}    	    
 				</div>
+				<div class="letter__links_wrapper">
+					<button id="advancedPeopleSearch" type="button" class="sites-button inverse advanced-search" >
+						Advanced Search
+					</button>
+				</div>
 			</div>
 		</div>	
-		<div class="columns small-12 medium-9 large-10 relative">
+		<div class="columns small-12 medium-9 large-10 relative float--right">
 			<div class="padding__wrapper forty sides__only">	
 				<div class="columns small-12 medium-12 large-12 relative">
 					{% for person in people %}
@@ -82,7 +87,7 @@
 												<p class="people__details body__text">
 													{{ person.primary_phone_number }}
 												</p>
-												<p class="people__details body__text">
+												<a href="mailto:{{person.email}}" class="red link inline__link body__text people__details">
 													{{ person.email }}
 												</p>
 											</div>

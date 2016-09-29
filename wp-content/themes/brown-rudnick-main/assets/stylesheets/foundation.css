@@ -7599,15 +7599,15 @@ a {
   transition: all .3s ease-in-out; }
   .sites-button.advanced-search {
     font-size: 11px;
-    padding: 12px 15px; }
+    padding: 12px 14px; }
   .sites-button.inverse {
     background: #fff;
     color: #b91628;
-    border: 1px solid #b91628; }
-    .sites-button.inverse:hover, .sites-button.inverse:focus {
+    border: 2px solid #b91628; }
+    .sites-button.inverse:hover {
       background: #b91628;
       color: #fff;
-      border: 1px solid #fff; }
+      border: 2px solid #fff; }
   .sites-button.alerts {
     position: absolute;
     margin-bottom: 0;

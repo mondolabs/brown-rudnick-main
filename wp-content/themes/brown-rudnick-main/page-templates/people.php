@@ -27,6 +27,40 @@ $data['alphabet'] = range('A', 'Z');
     <?php wp_head()?>
   </head>
   <body>
+  <div id="advancedSearchModal" class="vellum black--vellum modal__background diversity hidden">
+      <div class="row">
+        <div class="diversity__modal--outer-wrapper table__wrapper relative">
+          <div class="diversity__modal--inner-wrapper table__innner">
+            <div class="diversity__modal--text-wrapper">
+              <button class="close__modal cancel">
+                
+              </button>
+              <p class="title__text text-align__center">
+                Advanced Search
+              </p>
+              <p class="body__text bigger text-align__center">
+                SEARCH ALL PEOPLE
+              </p>
+              <div class="columns large-12 medium-12 small-12">
+                <input type="text" name="name">
+              </div>
+
+              <div class="columns large-6 medium-6 small-6">
+                <select>
+                  
+                </select>
+              </div>
+              <div class="columns large-6 medium-6 small-6">
+                <select>
+                  
+                </select>
+              </div>
+
+            </div>
+          </div>  
+        </div>
+      </div>  
+    </div>
     <div id="page-full-width-homepage" class ="full-width" role="main">
       <?php Timber::render('/twig-templates/people.twig', $data); ?>
     </div>  

@@ -13,21 +13,19 @@ a {
 	text-transform: uppercase;
     margin: 3% auto;
 	letter-spacing: 1.2px;
-	-webkit-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
 	&.advanced-search {
 	    font-size: 11px;
-	    padding: 12px 15px;
+	    padding: 12px 14px;
 	}
 	&.inverse {
 	    background: $white;
 	    color: $primary-red;
-	    border: 1px solid $primary-red;
-	    &:hover,
-	    &:focus {
+	    border: 2px solid $primary-red;
+	    &:hover {
 	    	background: $primary-red;
 	    	color: $white;
-	    	border: 1px solid $white;
+	    	border: 2px solid $white;
 	    }
 	}
 	&.alerts {
