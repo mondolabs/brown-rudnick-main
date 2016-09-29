@@ -1,7 +1,3 @@
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfY9nWH297WSD5wfXdWYKcaqhFWu93o7A&callback=initMap"
-  async defer>
-</script>
-
 <div id="featuredImage" class ="featured-image__header--image-wrapper">
 
   {% set header_text_color = "black" %}
@@ -87,7 +83,7 @@
       var longitudeOffset = .007;
     } else {
       var longitudeOffset = .005;
-      
+
     }
     map = new google.maps.Map(document.getElementById('locationMap'), {
       center: {lat: latitude, lng: longitude - longitudeOffset },
@@ -109,4 +105,8 @@
       map: map
     });
   }
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfY9nWH297WSD5wfXdWYKcaqhFWu93o7A&callback=initMap"
+  async defer>
 </script>
