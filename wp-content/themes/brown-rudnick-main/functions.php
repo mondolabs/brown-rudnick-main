@@ -62,5 +62,10 @@ function custom_insights_query_vars( $vars ) {
   $vars[] = 'geography_query';
   $vars[] = 'industry_query';
   $vars[] = 'practice_query';
+  $vars[] = 'language_query';
+  $vars[] = 'location_query';
+  $vars[] = 'admission_query';
+  $vars[] = 'education_query';
+
   return $vars;
 }

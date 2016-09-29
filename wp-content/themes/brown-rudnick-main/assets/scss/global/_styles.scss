@@ -828,12 +828,9 @@ button.close__modal {
     background-color: $primary-red;
     color: $white;
     transition: all .3s ease-in-out;
-    &:hover {
-    	background-color: lighten($primary-red, 5%);
-    }
 	&:before {
 		content: " ";
-		height: 3px;
+		height: 2px;
 		width: 14px;
 		position: absolute;
 		background-color: $white;
@@ -843,7 +840,7 @@ button.close__modal {
 	}
 	&:after {
 		content: " ";
-		height: 3px;
+		height: 2px;
 		width: 14px;
 		position: absolute;
 		background-color: $white;

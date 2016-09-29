@@ -17,16 +17,41 @@ var PEOPLE = {
 		$('#advancedPeopleSearch').click(function(event) {
 			PEOPLE.revealAdvancedSearch();
 		});
+		$('#peopleAdvancedSearchButton').click(function(event) {
+			event.preventDefault();
+			console.log("prevented!");
+			var selects = $('select');
+			var queryStringBase = location.origin + location.pathname;
+			var queryString = "";
+			var filters = [];
+			for (var i = selects.length - 1; i >= 0; i--) {
+				var select = selects[i];
+				if ( $(select).val().length > 0 ) {
+					filters.push($(select));
+				}
+			}
+			console.log(filters);
+			for(var i = filters.length - 1; i >= 0; i--) {
+				var paramName = $(filters[i]).attr('name');
+				var paramValue = $(filters[i]).val();
+				if ( paramValue.length > 0 && i === filters.length - 1 ) {
+					queryString = queryStringBase + "?" + paramName + "=" + paramValue;
+				} else if ( paramValue.length > 0 ) {
+					queryString = queryString + "&" + paramName + "=" + paramValue;
+				}
+			}
+			window.location.replace(queryString);
+		});
 	},
 	stickySideBar: $('.sidebar__on-scroll--fixed'),
 	scrollEvents: function(){
-		if ( $('.page-template-people').length > 0 ){
+		if ( $('.page-template-people').length > 0 &&  $('.people__details--container').height() > $('.sidebar__on-scroll--fixed').height() ){
 			var heightAdjustment = 800;
 		} else {
 			var heightAdjustment = 263;
 		}
 		var scrollStopperOffset = $('#masthead').height() + $('.body__wrapper').height() - heightAdjustment;
-		if ( $(window).scrollTop() >= ($('#featuredImage').height() - 60) && $(window).scrollTop() <= scrollStopperOffset ) {
+		if ( $(window).scrollTop() >= ($('#featuredImage').height()) && $(window).scrollTop() <= scrollStopperOffset ) {
 			PEOPLE.stickSideBar('top');
 		} else if ( $(window).scrollTop() >= scrollStopperOffset ) {
 			PEOPLE.stickSideBar('bottom');

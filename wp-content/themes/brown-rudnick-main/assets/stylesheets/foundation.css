@@ -699,11 +699,9 @@ button.close__modal {
   color: #fff;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out; }
-  button.close__modal:hover {
-    background-color: #d0192d; }
   button.close__modal:before {
     content: " ";
-    height: 3px;
+    height: 2px;
     width: 14px;
     position: absolute;
     background-color: #fff;
@@ -714,7 +712,7 @@ button.close__modal {
     top: 14px; }
   button.close__modal:after {
     content: " ";
-    height: 3px;
+    height: 2px;
     width: 14px;
     position: absolute;
     background-color: #fff;

@@ -13,7 +13,9 @@ var BR = {
 		// 		$(redHover).animate({"opacity":"0"}, 300);
 		// 	}
 		// )
-
+		$('.close__modal').click(function(event) {
+			$(this).closest('.modal__background').fadeOut('300').addClass('hidden');
+		});
 		$('.accordion__trigger').click( function(e){
 			var triggerId = $(this).data('trigger-target');
 			var accordion = $('#'+triggerId);
