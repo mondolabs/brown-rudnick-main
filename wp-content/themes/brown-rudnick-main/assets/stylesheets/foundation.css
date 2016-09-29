@@ -524,7 +524,7 @@ img.insights {
   display: inline-block; }
   .inline__wrapper.person {
     height: 200px;
-    margin-top: 20px; }
+    margin-top: -40px; }
 
 .table__wrapper {
   display: table;
