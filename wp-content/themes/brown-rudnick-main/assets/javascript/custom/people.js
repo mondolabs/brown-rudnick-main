@@ -20,20 +20,20 @@ var PEOPLE = {
 	},
 	stickySideBar: $('.sidebar__on-scroll--fixed'),
 	scrollEvents: function(){
-		// if ( $('.page-template-people').length > 0 ){
-		// 	var heightAdjustment = 800;
-		// } else {
-		// 	var heightAdjustment = 263;
-		// }
-		// var scrollStopperOffset = $('#masthead').height() + $('.body__wrapper').height() - heightAdjustment;
-		// if ( $(window).scrollTop() >= ($('#featuredImage').height() - 60) && $(window).scrollTop() <= scrollStopperOffset ) {
-		// 	PEOPLE.stickSideBar('top');
-		// } else if ( $(window).scrollTop() >= scrollStopperOffset ) {
-		// 	PEOPLE.stickSideBar('bottom');
-		// 	console.log('bottom sticker');
-		// } else {
-		// 	PEOPLE.unstickSideBar();
-		// }
+		if ( $('.page-template-people').length > 0 ){
+			var heightAdjustment = 800;
+		} else {
+			var heightAdjustment = 263;
+		}
+		var scrollStopperOffset = $('#masthead').height() + $('.body__wrapper').height() - heightAdjustment;
+		if ( $(window).scrollTop() >= ($('#featuredImage').height() - 60) && $(window).scrollTop() <= scrollStopperOffset ) {
+			PEOPLE.stickSideBar('top');
+		} else if ( $(window).scrollTop() >= scrollStopperOffset ) {
+			PEOPLE.stickSideBar('bottom');
+			console.log('bottom sticker');
+		} else {
+			PEOPLE.unstickSideBar();
+		}
 	},
 	stickSideBar: function(location) {
 		if ( location === 'top' ) {	
