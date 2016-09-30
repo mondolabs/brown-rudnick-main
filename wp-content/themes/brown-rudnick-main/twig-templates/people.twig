@@ -12,12 +12,12 @@
 		            </p>
 			        <form id="peopleAdvancedSearch">
 			            <div class="columns large-12 medium-12 small-12">
-			              <input type="text" name="name" placeholder="Name">
+			              <input id="keywordInput" type="text" name="s" placeholder="Name or Keyword">
 			            </div>
 
 			            <div class="columns large-6 medium-6 small-6">
 			            	<select id="geographySelect" name="geography_query" class="inline__text">
-								<option value="GEOGRAPHIES">
+								<option value="">
 									GEOGRAPHIES
 								</option>
 								{% for geography in geographies %}
@@ -29,7 +29,7 @@
 						</div>
 						<div class="columns large-6 medium-6 small-6">	
 							<select id="industrySelect" name="industry_query" class="inline__text">
-								<option value="INDUSTRIES">
+								<option value="">
 									INDUSTRIES
 								</option>
 								{% for industry in industries %}
@@ -41,7 +41,7 @@
 						</div>	
 						<div class="columns large-6 medium-6 small-6">
 							<select id="practiceSelect" name="practice_query" class="inline__text">
-								<option value="PRACTICES">
+								<option value="">
 									PRACTICES
 								</option>
 								{% for practice in practices %}
@@ -53,7 +53,7 @@
 			            </div>
 						<div class="columns large-6 medium-6 small-6">
 							<select id="languageSelect" name="language_query" class="inline__text">
-								<option value="LANGUAGES">
+								<option value="">
 									LANGUAGES
 								</option>
 								{% for language in languages %}
@@ -65,7 +65,7 @@
 			            </div>
 						<div class="columns large-6 medium-6 small-6">
 							<select id="locationSelect" name="location_query" class="inline__text">
-								<option value="LOCATIONS">
+								<option value="">
 									LOCATIONS
 								</option>
 								{% for location in locations %}
@@ -77,7 +77,7 @@
 			            </div>
 			            <div class="columns large-6 medium-6 small-6">
 							<select id="admissionSelect" name="admission_query" class="inline__text">
-								<option value="ADMISSIONS">
+								<option value="">
 									ADMISSIONS
 								</option>
 								{% for admission in admissions %}
@@ -89,7 +89,7 @@
 			            </div>
 			            <div class="columns large-6 medium-6 small-6">
 							<select id="educationSelect" name="education_query" class="inline__text">
-								<option value="EDUCATION">
+								<option value="">
 									EDUCATION
 								</option>
 								{% for education in educations %}

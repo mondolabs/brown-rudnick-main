@@ -21,6 +21,7 @@ var PEOPLE = {
 			event.preventDefault();
 			console.log("prevented!");
 			var selects = $('select');
+			var keyword = $("#keywordInput").val() || "";
 			var queryStringBase = location.origin + location.pathname;
 			var queryString = "";
 			var filters = [];
@@ -40,6 +41,16 @@ var PEOPLE = {
 					queryString = queryString + "&" + paramName + "=" + paramValue;
 				}
 			}
+			if ( queryString.length > 0 ){
+				if ( keyword.length > 0 ) {
+					queryString = queryString + "&keyword=" + keyword;
+				}
+			} else {
+				if ( keyword.length > 0 ) {
+					queryString = queryString + "?keyword=" + keyword;
+				}
+			}
+			// debugger;
 			window.location.replace(queryString);
 		});
 	},

@@ -33,13 +33,14 @@ $data['locations'] = wp_get_object_terms( $ids, 'locations' );
 $data['admissions'] = wp_get_object_terms( $ids, 'admissions' );
 $data['educations'] = wp_get_object_terms( $ids, 'educations' );
 
-$geography = get_query_var('geography_query', "GEOGRAPHIES");
-$industry = get_query_var('industry_query', "INDUSTRIES");
-$practice = get_query_var('practice_query', "PRACTICES");
-$language = get_query_var('language_query', "LANGUAGES");
-$location = get_query_var('location_query', "LOCATIONS");
-$admission = get_query_var('admission_query', "ADMISSIONS");
-$education = get_query_var('education_query', "EDUCATION");
+$geography = get_query_var('geography_query', "");
+$industry = get_query_var('industry_query', "");
+$practice = get_query_var('practice_query', "");
+$language = get_query_var('language_query', "");
+$location = get_query_var('location_query', "");
+$admission = get_query_var('admission_query', "");
+$education = get_query_var('education_query', "");
+$keyword = get_query_var('keyword');
 
 $geography =  str_replace("-and-", " & ", $geography);
 $industry =  str_replace("-and-", " & ", $industry);
@@ -57,46 +58,203 @@ $location =  str_replace("-slash-", " / ", $location);
 $admission =  str_replace("-slash-", " / ", $admission);
 $education =  str_replace("-slash-", " / ", $education);
 
-$people_args = array(
+if ( $keyword !== "" ) {
+  $people_args = array( 
     'post_type' =>  'people',
     'orderby' => 'meta_value',
     'meta_key'  => 'last_name',
     'order' => 'ASC',
-    'posts_per_page'=>-1
-);
+    'posts_per_page'=>-1,
+    'meta_query' => array(
+    'relation' => 'OR',
+      array(
+        'key' => 'first_name ',
+        'value' => $keyword,
+        'compare' => 'LIKE',
+      ),  
+      array(
+        'key' => 'last_name',
+        'value' => $keyword,
+        'compare' => 'LIKE',
+      ),  
+      array(
+        'key' => 'middle_initial',
+        'value' => $keyword,
+        'compare' => 'LIKE',
+      ),  
+      array(
+        'key' => 'title',
+        'value' => $keyword,
+        'compare' => 'LIKE',
+      ),  
+      array(
+        'key' => 'job_title',
+        'value' => $keyword,
+        'compare' => 'LIKE',
+      ),  
+      array(
+        'key' => 'specialization',
+        'value' => $keyword,
+        'compare' => 'LIKE',
+      ),  
+      array(
+        'key' => 'primary_city',
+        'value' => $keyword,
+        'compare' => 'LIKE',
+      ),  
+      array(
+        'key' => 'primary_state',
+        'value' => $keyword,
+        'compare' => 'LIKE',
+      ),  
+      array(
+        'key' => 'secondary_city',
+        'value' => $keyword,
+        'compare' => 'LIKE',
+      ),  
+      array(
+        'key' => 'secondary_state',
+        'value' => $keyword,
+        'compare' => 'LIKE',
+      ),  
+      array(
+        'key' => 'primary_phone_number',
+        'value' => $keyword,
+        'compare' => 'LIKE',
+      ),  
+      array(
+        'key' => 'secondary_phone_number',
+        'value' => $keyword,
+        'compare' => 'LIKE',
+      ),  
+      array(
+        'key' => 'fax_number',
+        'value' => $keyword,
+        'compare' => 'LIKE',
+      ),  
+      array(
+        'key' => 'primary_country_code',
+        'value' => $keyword,
+        'compare' => 'LIKE',
+      ),  
+      array(
+        'key' => 'secondary_country_code',
+        'value' => $keyword,
+        'compare' => 'LIKE',
+      ),  
+      array(
+        'key' => 'fax_country_code',
+        'value' => $keyword,
+        'compare' => 'LIKE',
+      ),  
+      array(
+        'key' => 'email',
+        'value' => $keyword,
+        'compare' => 'LIKE',
+      ),  
+      array(
+        'key' => 'education',
+        'value' => $keyword,
+        'compare' => 'LIKE',
+      ),  
+      array(
+        'key' => 'language',
+        'value' => $keyword,
+        'compare' => 'LIKE',
+      ),  
+      array(
+        'key' => 'related_experience',
+        'value' => $keyword,
+        'compare' => 'LIKE',
+      ),  
+      array(
+        'key' => 'cases',
+        'value' => $keyword,
+        'compare' => 'LIKE',
+      ),  
+      array(
+        'key' => 'publication',
+        'value' => $keyword,
+        'compare' => 'LIKE',
+      ),  
+      array(
+        'key' => 'engagement',
+        'value' => $keyword,
+        'compare' => 'LIKE',
+      ),  
+      array(
+        'key' => 'affiliation',
+        'value' => $keyword,
+        'compare' => 'LIKE',
+      ),  
+      array(
+        'key' => 'professional_memberships',
+        'value' => $keyword,
+        'compare' => 'LIKE',
+      ),  
+      array(
+        'key' => 'involvement',
+        'value' => $keyword,
+        'compare' => 'LIKE',
+      ),  
+      array(
+        'key' => 'firm_activities',
+        'value' => $keyword,
+        'compare' => 'LIKE',
+      ),  
+      array(
+        'key' => 'bar',
+        'value' => $keyword,
+        'compare' => 'LIKE',
+      ),  
+      array(
+        'key' => 'honor',
+        'value' => $keyword,
+        'compare' => 'LIKE',
+      ),  
+    )
+  );
+} else {
+  $people_args = array(
+    'post_type' =>  'people',
+    'orderby' => 'meta_value',
+    'meta_key'  => 'last_name',
+    'order' => 'ASC',
+    'posts_per_page'=>-1,
+  );
+}
 
-if( ($geography !== "GEOGRAPHIES") || ( $industry !== "INDUSTRIES") || ($practice !== "PRACTICES") || ($language !== "LANGUAGES") || ($location !== "LOCATIONS") || ($admission !== "ADMISSIONS") || ($education !== "EDUCATION")) {
+if( ($geography !== "") || ( $industry !== "") || ($practice !== "") || ($language !== "") || ($location !== "") || ($admission !== "") || ($education !== "") || ($keyword !== "") ) {
   $people_args["tax_query"] = array( 'relation' => 'AND' );
-  if ( $geography !== "GEOGRAPHIES" ) {
+  if ( $geography !== "" ) {
     $geography_term_query_array = array('taxonomy' => 'geography', 'field' => 'slug', 'terms' => array( $geography));
     array_push($people_args['tax_query'], $geography_term_query_array );
   }
-  if ( $industry !== "INDUSTRIES" ) {
+  if ( $industry !== "" ) {
     $industry_term_query_array = array('taxonomy' => 'industry', 'field' => 'slug', 'terms' => array( $industry));
     array_push($people_args['tax_query'], $industry_term_query_array );
   }
-  if ( $practice !== "PRACTICES" ) {
+  if ( $practice !== "" ) {
     $practice_term_query_array = array('taxonomy' => 'practice', 'field' => 'slug', 'terms' => array( $practice));
     array_push($people_args['tax_query'], $practice_term_query_array );
   }
-  if ( $language !== "LANGUAGES" ) {
+  if ( $language !== "" ) {
     $language_term_query_array = array('taxonomy' => 'languages', 'field' => 'slug', 'terms' => array( $language));
     array_push($people_args['tax_query'], $language_term_query_array );
   }
-  if ( $location !== "LOCATIONS" ) {
+  if ( $location !== "" ) {
     $location_term_query_array = array('taxonomy' => 'locations', 'field' => 'slug', 'terms' => array( $location));
     array_push($people_args['tax_query'], $location_term_query_array );
   }
-  if ( $admission !== "ADMISSIONS" ) {
+  if ( $admission !== "" ) {
     $admission_term_query_array = array('taxonomy' => 'admissions', 'field' => 'slug', 'terms' => array( $admission));
     array_push($people_args['tax_query'], $admission_term_query_array );
   }
-    if ( $education !== "EDUCATION" ) {
+  if ( $education !== "" ) {
     $education_term_query_array = array('taxonomy' => 'educations', 'field' => 'slug', 'terms' => array( $education));
     array_push($people_args['tax_query'], $education_term_query_array );
   }
 }
-
 
 $data['people'] = Timber::get_posts($people_args);
 $data['people'] = array_unique($data['people']);
@@ -115,3 +273,9 @@ $data['people'] = array_unique($data['people']);
     <?php get_footer(); ?>
   </body>
 </html>
+
+
+
+
+
+

@@ -8,11 +8,11 @@ var INSIGHTS = {
 			var filters = [];
 			for (var i = selects.length - 1; i >= 0; i--) {
 				var select = selects[i];
-				if ( $(select).val().length > 0 ) {
+				if ( $(select).val().length > 0 &&  $(select).val() !== "" ) {
 					filters.push($(select));
 				}
 			}
-			console.log(filters);
+			console.log("filters" + filters);
 			for(var i = filters.length - 1; i >= 0; i--) {
 				var paramName = $(filters[i]).attr('name');
 				var paramValue = $(filters[i]).val();
@@ -30,13 +30,15 @@ var INSIGHTS = {
 	},
 	onLoad: function(){
 		// Get search param values from url
-		var selectedGeography = $.url().param('geography_query', 'strict') || "GEOGRAPHIES";
-		var selectedIndustry = $.url().param('industry_query', 'strict') || "INDUSTRIES";
-		var selectedPractice = $.url().param('practice_query', 'strict') || "PRACTICES";
-		var selectedLanguage = $.url().param('language_query', 'strict') || "LANGUAGES";
-		var selectedLocations = $.url().param('location_query', 'strict') || "LOCATIONS";
-		var selectedAdmission = $.url().param('admission_query', 'strict') || "ADMISSIONS";
-		var selectedEducation = $.url().param('education_query', 'strict') || "EDUCATION";
+		var selectedGeography = $.url().param('geography_query', 'strict') || "";
+		var selectedIndustry = $.url().param('industry_query', 'strict') || "";
+		var selectedPractice = $.url().param('practice_query', 'strict') || "";
+		var selectedLanguage = $.url().param('language_query', 'strict') || "";
+		var selectedLocations = $.url().param('location_query', 'strict') || "";
+		var selectedAdmission = $.url().param('admission_query', 'strict') || "";
+		var selectedEducation = $.url().param('education_query', 'strict') || "";
+		var selectedKeyword = $.url().param('s', 'strict') || "";
+
 
 		// Set vars for selects for all search params
 		var geographySelect = $('select#geographySelect');
@@ -46,6 +48,8 @@ var INSIGHTS = {
 		var locationSelect = $('select#locationSelect');
 		var admissionSelect = $('select#admissionSelect');
 		var educationSelect = $('select#educationSelect');
+		var keywordInput = $('input#keywordInput');
+
 
 		// Change value of selects based on url params
 		geographySelect.val(decodeURIComponent(selectedGeography));
@@ -55,7 +59,7 @@ var INSIGHTS = {
 		locationSelect.val(decodeURIComponent(selectedLocations));
 		admissionSelect.val(decodeURIComponent(selectedAdmission));
 		educationSelect.val(decodeURIComponent(selectedEducation));
-
+		keywordInput.val(decodeURIComponent(selectedKeyword));
 	}
 }
 
