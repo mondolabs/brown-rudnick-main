@@ -1,0 +1,19 @@
+.long__arrow--svg {
+	max-width: 70px;
+    top: 12px;
+    position: relative;
+    left: 10px;
+    transition: all .3s ease-in-out;
+}
+
+.long__arrow {
+	transform: scale(.5);
+	fill:none;
+	stroke-linecap:round;
+	stroke-linejoin:round;
+	stroke-width:2px;
+	&.white {
+		stroke: $white;
+	}
+}
+

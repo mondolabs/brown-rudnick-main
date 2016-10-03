@@ -19,13 +19,15 @@ $data['careers_tile_one'] = get_field('careers_tile_one');
 $data['careers_tile_two'] = get_field('careers_tile_two');
 $data['careers_tile_three'] = get_field('careers_tile_three');
 $data['careers_tile_four'] = get_field('careers_tile_four');
-$data['text_content_top'] = get_field('text_content_top');
-$data['text_content_body'] = get_field('text_content_body');
+$data['careers_top_text'] = get_field('careers_top_text');
+$data['careers_tiles_header'] = get_field('careers_tiles_header');
 $data['bullet_section_header'] = get_field('bullet_section_header');
 $data['bullets'] = get_field('bullets');
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
 $data['featured_image_url'] = $data['featured_image_url'][0];
 $data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
+$data['white_hover_arrow'] = get_template_directory_uri() . "/assets/images/white-long-arrow.svg";
+
 ?>
 
 <html>

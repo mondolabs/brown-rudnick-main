@@ -276,6 +276,7 @@ a.link {
 	&.sidebar__link {
 		max-width: 159px;
 		margin-bottom: 14px;
+		font-size: 14px;
 		&.mobile {
 		    max-width: initial;
     		font-size: 12.5px;
@@ -638,7 +639,7 @@ img.insights {
 .tile__arrow {
     position: absolute;
     bottom: 12px;
-    right: 12px;
+    right: -1px;
     height: 40px;
     width: 64px;
     border: 1px $primary-grey solid;
@@ -880,5 +881,28 @@ button.close__modal {
 	&.location__map {
 		position: absolute;
 		bottom: 0;
+	}
+}
+
+.bottom-banner__cta--outer-wrapper {
+	height: 75px;
+	background-color: $primary-red;
+	cursor: pointer;
+    &:hover {
+    	svg {
+    		left: 15px;
+    	}	
+    }
+	.bottom-banner__cta--inner-wrapper {
+		text-align: center;
+		color: $white;
+		height: 100%;
+		margin: 0 auto;
+	}
+}
+
+.bottom-banner__text--wrapper {
+	p {
+		width: 200px;
 	}
 }

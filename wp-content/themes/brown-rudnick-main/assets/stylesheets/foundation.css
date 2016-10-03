@@ -48,6 +48,25 @@ p.wp-caption-text {
 .relative {
   position: relative; }
 
+.long__arrow--svg {
+  max-width: 70px;
+  top: 12px;
+  position: relative;
+  left: 10px;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out; }
+
+.long__arrow {
+  -webkit-transform: scale(0.5);
+      -ms-transform: scale(0.5);
+          transform: scale(0.5);
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2px; }
+  .long__arrow.white {
+    stroke: #fff; }
+
 a {
   -webkit-transition: color .3s ease-in-out;
   transition: color .3s ease-in-out; }
@@ -252,7 +271,8 @@ a.link {
     display: inline; }
   a.link.sidebar__link {
     max-width: 159px;
-    margin-bottom: 14px; }
+    margin-bottom: 14px;
+    font-size: 14px; }
     a.link.sidebar__link.mobile {
       max-width: initial;
       font-size: 12.5px;
@@ -542,7 +562,7 @@ img.insights {
 .tile__arrow {
   position: absolute;
   bottom: 12px;
-  right: 12px;
+  right: -1px;
   height: 40px;
   width: 64px;
   border: 1px #f0f0f0 solid;
@@ -745,6 +765,21 @@ button.close__modal {
   .full__width.location__map {
     position: absolute;
     bottom: 0; }
+
+.bottom-banner__cta--outer-wrapper {
+  height: 75px;
+  background-color: #b91628;
+  cursor: pointer; }
+  .bottom-banner__cta--outer-wrapper:hover svg {
+    left: 15px; }
+  .bottom-banner__cta--outer-wrapper .bottom-banner__cta--inner-wrapper {
+    text-align: center;
+    color: #fff;
+    height: 100%;
+    margin: 0 auto; }
+
+.bottom-banner__text--wrapper p {
+  width: 200px; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome

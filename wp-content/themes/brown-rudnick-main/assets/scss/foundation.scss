@@ -17,7 +17,9 @@
 // WP overrides
 @import "global/wp-admin"; // Fix issues with wp-admin bar positioning
 @import "global/wp-overrides"; // Override the default WordPress styling for some elements
+@import "global/svgs";
 @import "global/styles";
+
 
 
 // Third-party libraries
