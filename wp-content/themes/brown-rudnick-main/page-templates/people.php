@@ -58,6 +58,25 @@ $location =  str_replace("-slash-", " / ", $location);
 $admission =  str_replace("-slash-", " / ", $admission);
 $education =  str_replace("-slash-", " / ", $education);
 
+
+$data['geography'] = str_replace("-AND-", " & ", $geography);
+$data['industry'] = str_replace("-AND-", " & ", $industry);
+$data['practice'] = str_replace("-AND-", " & ", $practice);
+$data['language'] = str_replace("-AND-", " & ", $language);
+$data['location'] = str_replace("-AND-", " & ", $location);
+$data['admission'] = str_replace("-AND-", " & ", $admission);
+$data['education'] = str_replace("-AND-", " & ", $education);
+$data['keyword'] = str_replace("-AND-", " & ", $keyword);
+
+$data['geography'] = ucwords(strtolower($data['geography']));
+$data['industry'] = ucwords(strtolower($data['industry']));
+$data['practice'] = ucwords(strtolower($data['practice']));
+$data['language'] = ucwords(strtolower($data['language']));
+$data['location'] = ucwords(strtolower($data['location']));
+$data['admission'] = ucwords(strtolower($data['admission']));
+$data['education'] = ucwords(strtolower($data['education']));
+$data['keyword'] = $data['keyword'];
+
 if ( $keyword !== "" ) {
   $people_args = array( 
     'post_type' =>  'people',

@@ -2,14 +2,14 @@
 
 /**
  * Module Name: Mobile Theme
- * Module Description: Optimize your site with a mobile-friendly theme for smartphones.
+ * Module Description: Optimize your site for smartphones and tablets.
  * Sort Order: 21
  * Recommendation Order: 11
  * First Introduced: 1.8
  * Requires Connection: No
  * Auto Activate: No
  * Module Tags: Appearance, Mobile, Recommended
- * Feature: Recommended
+ * Feature: Appearance
  * Additional Search Queries: mobile, theme, minileven
  */
 
@@ -129,6 +129,8 @@ function minileven_enabled( $wp_mobile_disable_option ) {
 	return true;
 }
 
-add_filter( 'option_wp_mobile_disable', 'minileven_enabled' );
+if ( defined( 'IS_WPCOM' ) && IS_WPCOM ) {
+	add_filter( 'option_wp_mobile_disable', 'minileven_enabled' );
+}
 
 jetpack_load_minileven();

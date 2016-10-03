@@ -70,7 +70,6 @@ class Jetpack_Sync_Defaults {
 		'comment_whitelist',
 		'comment_max_links',
 		'moderation_keys',
-		'lang_id',
 		'wga',
 		'disabled_likes',
 		'disabled_reblogs',
@@ -150,6 +149,8 @@ class Jetpack_Sync_Defaults {
 		'wp_version'                       => array( 'Jetpack_Sync_Functions', 'wp_version' ),
 		'get_plugins'                      => array( 'Jetpack_Sync_Functions', 'get_plugins' ),
 		'active_modules'                   => array( 'Jetpack', 'get_active_modules' ),
+		'hosting_provider'                 => array( 'Jetpack_Sync_Functions', 'get_hosting_provider' ),
+		'locale'                           => 'get_locale',
 	);
 
 	static $blacklisted_post_types = array(
@@ -198,6 +199,7 @@ class Jetpack_Sync_Defaults {
 		'_wp_page_template',
 		'_publicize_twitter_user',
 		'_wp_trash_meta_comments_status',
+		'_wp_attached_file',
 	);
 
 	static $default_blacklist_meta_keys = array(
@@ -211,7 +213,16 @@ class Jetpack_Sync_Defaults {
 		'snapFB',
 		'syndication_item_hash',
 		'phonenumber_spellings',
-		'tmac_last_id'
+		'tmac_last_id',
+		'opanda_imperessions',
+		'administer_stats',
+		'spec_ads_views',
+		'snp_views',
+		'mip_post_views_count',
+		'esml_socialcount_LAST_UPDATED',
+		'wprss_last_update_items',
+		'wp_automatic_cache',
+		'snapTW',
 	);
 
 	// TODO: move this to server? - these are theme support values

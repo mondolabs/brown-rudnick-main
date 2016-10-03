@@ -37,7 +37,7 @@ var INSIGHTS = {
 		var selectedLocations = $.url().param('location_query', 'strict') || "";
 		var selectedAdmission = $.url().param('admission_query', 'strict') || "";
 		var selectedEducation = $.url().param('education_query', 'strict') || "";
-		var selectedKeyword = $.url().param('s', 'strict') || "";
+		var selectedKeyword = $.url().param('keyword', 'strict') || "";
 
 
 		// Set vars for selects for all search params

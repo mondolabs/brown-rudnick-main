@@ -157,6 +157,73 @@
 		<div class="columns small-12 medium-9 large-10 relative float--right people__details--container">
 			<div class="padding__wrapper forty sides__only">	
 				<div class="columns small-12 medium-12 large-12 relative">
+					<div>
+						{% if geography %}
+							<div class="search-results__tag--outer-wrapper">
+								<div class="search-results__tag--inner-wrapper">
+									geography: {{ geography }}
+									<button class="tag__canceler">
+										x
+									</button>
+								</div>
+							</div>	
+						{% endif %}
+						{% if industry %}
+							<div class="search-results__tag--outer-wrapper">
+								<div class="search-results__tag--inner-wrapper">
+									industry: {{ industry }}
+									<button class="tag__canceler">
+										x
+									</button>
+								</div>
+							</div>	
+						{% endif %}
+						{% if practice %}
+							<div class="search-results__tag--outer-wrapper">
+								<div class="search-results__tag--inner-wrapper">
+									practice: {{ practice }}
+									<button class="tag__canceler">
+										x
+									</button>
+								</div>
+							</div>	
+						{% endif %}
+						{% if language %}
+							<div class="search-results__tag--outer-wrapper">
+								<div class="search-results__tag--inner-wrapper">
+									language: {{ language }}
+									<button class="tag__canceler">
+										x
+									</button>
+								</div>
+							</div>	
+						{% endif %}
+						{% if admission %}
+							<div class="search-results__tag--outer-wrapper">
+								<div class="search-results__tag--inner-wrapper">
+									admission: {{ admission }}
+									<button class="tag__canceler">
+										x
+									</button>
+								</div>
+							</div>	
+						{% endif %}
+						{% if education %}
+							<div class="search-results__tag--outer-wrapper">
+								<div class="search-results__tag--inner-wrapper">
+									education: {{ education }}
+									<button class="tag__canceler">
+										x
+									</button>
+								</div>
+							</div>	
+						{% endif %}	
+					</div>
+						{% if keyword %}
+							<p class="title__text">
+								Showing results for your search "{{keyword}}"
+							</p>
+						{% endif %}	
 					{% if people|length > 0 %}
 						{% for person in people %}
 							{% set first_letter_of_last = person.last_name|slice(0,1)|upper %}
@@ -212,9 +279,15 @@
 							{% endfor %}
 						{% endfor %}
 					{% else %}
-						<p class="title__text">
-							Sorry! We couldn't find any results for your query!
-						</p>
+						{% if keyword %}
+							<p class="title__text">
+								Showing results for your search "{{keyword}}"
+							</p>
+						{% else %}	
+							<p class="title__text">
+								Sorry! We couldn't find any results for your query!
+							</p>
+						{% endif %}	
 					{% endif %}
 				</div>
 			</div>	
