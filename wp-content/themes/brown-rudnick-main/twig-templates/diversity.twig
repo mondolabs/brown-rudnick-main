@@ -103,9 +103,9 @@
 </div>
 
 {% if diversity_efforts|length > 0%}	
-	<div class="grey__background experience__wrapper columns small-12 medium-12 large-12 scroll-stopper">
-		<div class="row padding__wrapper top-and-bottom sixty">
-			<div class="large-offset-2 medium-offset-3 columns large-10 medium-9 small-12 white__background about__bullets--wrapper">
+	<div class="grey__background experience__wrapper small-12 medium-12 large-12 relative">
+		<div class="row padding__wrapper top-and-bottom sixty relative">
+			<div class="large-offset-2 medium-offset-3 columns large-10 medium-9 small-12 white__background about__bullets--wrapper relative">
 				<p class="tag__text bigger">
 					{{ diversity_efforts_header }}
 				</p>
@@ -124,8 +124,19 @@
 	</div>
 {% endif %}
 
-<div class="columns small-12 medium-12 large-12 red-base__button--wrapper">
-
+<div id="diversityModalTrigger" class="bottom-banner__cta--outer-wrapper relative">
+	<div class="bottom-banner__cta--inner-wrapper table__wrapper relative">
+		<div class="bottom-banner__text--wrapper table__inner tag__text relative">
+			<p class="inline__text margin-bottom--0">
+				EEOE STATEMENT
+				<svg class="long__arrow--svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
+					<title>long arrow</title>
+					<line class="long__arrow white" x1="1" y1="9" x2="56" y2="9"/>
+					<polyline class="long__arrow white" points="48 1 56 9 48 17"/>
+				</svg>
+			</p>
+		</div>
+	</div>
 </div>
 
 <script type="text/javascript">
@@ -133,11 +144,13 @@
 		{% if banner_image|length > 0 %}
 			$('#featuredImage').backstretch("{{ banner_image }}");
 		{% endif %}
+		
+		// originally designed to show modal only if user has not been to site, that is, their 'visitedDiversity' cookie == false. Behavior was changed to trigger modal click event. See application.js
 
-		var visitedDiversity = BR_COOKIES.readCookie("visitedDiversity");
-		if ( visitedDiversity !== "true" ) {
-			BR_COOKIES.visitDiversity();
-			BR_COOKIES.showDiversityModal();
-		}
+		// var visitedDiversity = BR_COOKIES.readCookie("visitedDiversity");
+		// if ( visitedDiversity !== "true" ) {
+		// 	BR_COOKIES.visitDiversity();
+		// 	BR_COOKIES.showDiversityModal();
+		// }
 	})
 </script>

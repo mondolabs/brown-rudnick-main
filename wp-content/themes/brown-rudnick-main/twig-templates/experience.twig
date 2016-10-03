@@ -1,5 +1,4 @@
 <div id="featuredImage" class ="featured-image__header--image-wrapper" >
-
 	{% set header_text_color = "black" %}
 	{# hero header #}
 	<div class="featured-image__header--text-outer-wrapper row">
@@ -69,7 +68,11 @@
 					</a>
 					<a href="{{ experience_tile_one_link }}">
 						<span class="tile__arrow">
-							<img src="{{hover_arrow}}">
+							<svg class="long__arrow--svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
+								<title>long arrow</title>
+								<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
+								<polyline class="long__arrow red" points="48 1 56 9 48 17"/>
+							</svg>
 						</span>
 					</a>	
 				</div>
@@ -85,7 +88,11 @@
 					</a>
 					<a href="{{ experience_tile_two_link }}">
 						<span class="tile__arrow">
-							<img src="{{hover_arrow}}">
+							<svg class="long__arrow--svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
+								<title>long arrow</title>
+								<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
+								<polyline class="long__arrow red" points="48 1 56 9 48 17"/>
+							</svg>
 						</span>
 					</a>	
 				</div>
@@ -101,7 +108,11 @@
 					</a>
 					<a href="{{ experience_tile_three_link }}">
 						<span class="tile__arrow">
-							<img src="{{hover_arrow}}">
+							<svg class="long__arrow--svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
+								<title>long arrow</title>
+								<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
+								<polyline class="long__arrow red" points="48 1 56 9 48 17"/>
+							</svg>
 						</span>
 					</a>
 				</div>
@@ -109,6 +120,7 @@
 		</div>
 	</div>
 </div>
+
 <script type="text/javascript">
 	{% if featured_image_url %}
 		$(document).ready(function(){

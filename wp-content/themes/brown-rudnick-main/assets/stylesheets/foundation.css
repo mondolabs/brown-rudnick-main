@@ -49,14 +49,16 @@ p.wp-caption-text {
   position: relative; }
 
 .long__arrow--svg {
-  max-width: 70px;
-  top: 12px;
+  max-width: 80px;
+  top: 14px;
   position: relative;
-  left: 10px;
+  left: 14px;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out; }
 
 .long__arrow {
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
   -webkit-transform: scale(0.5);
       -ms-transform: scale(0.5);
           transform: scale(0.5);
@@ -66,6 +68,8 @@ p.wp-caption-text {
   stroke-width: 2px; }
   .long__arrow.white {
     stroke: #fff; }
+  .long__arrow.red {
+    stroke: #b91628; }
 
 a {
   -webkit-transition: color .3s ease-in-out;
@@ -581,6 +585,8 @@ img.insights {
     padding-right: 4px; }
   .tile__arrow:hover {
     background-position: right bottom; }
+    .tile__arrow:hover .long__arrow {
+      stroke: #fff; }
   .tile__arrow.pro-bono {
     bottom: 0;
     right: 1px; }
@@ -771,7 +777,7 @@ button.close__modal {
   background-color: #b91628;
   cursor: pointer; }
   .bottom-banner__cta--outer-wrapper:hover svg {
-    left: 15px; }
+    left: 20px; }
   .bottom-banner__cta--outer-wrapper .bottom-banner__cta--inner-wrapper {
     text-align: center;
     color: #fff;

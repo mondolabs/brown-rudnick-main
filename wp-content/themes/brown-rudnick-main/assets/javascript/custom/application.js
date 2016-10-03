@@ -24,6 +24,11 @@ var BR = {
 			// 	$(this).toggleClass('hidden');
 			// })
 		})
+
+		$('#diversityModalTrigger').click(function(event) {
+			BR_COOKIES.visitDiversity();
+			BR_COOKIES.showDiversityModal();
+		});
 	}
 }
 

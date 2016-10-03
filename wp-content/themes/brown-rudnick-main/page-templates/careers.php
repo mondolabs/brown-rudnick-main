@@ -25,8 +25,6 @@ $data['bullet_section_header'] = get_field('bullet_section_header');
 $data['bullets'] = get_field('bullets');
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
 $data['featured_image_url'] = $data['featured_image_url'][0];
-$data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
-$data['white_hover_arrow'] = get_template_directory_uri() . "/assets/images/white-long-arrow.svg";
 
 ?>
 
@@ -35,6 +33,25 @@ $data['white_hover_arrow'] = get_template_directory_uri() . "/assets/images/whit
     <?php wp_head()?>
   </head>
   <body>
+    <div class="vellum black--vellum modal__background diversity hidden">
+      <div class="row">
+        <div class="diversity__modal--outer-wrapper table__wrapper relative">
+          <div class="diversity__modal--inner-wrapper table__innner">
+            <div class="diversity__modal--text-wrapper">
+              <button class="close__modal cancel">
+                
+              </button>
+              <p class="title__text text-align__center">
+                Equal Opportunity Employer Statement
+              </p>
+              <p class="body__text text-align__center">
+                Brown Rudnick LLP is an Equal Employment Opportunity Employer.  All persons are afforded equal opportunity in every area of hiring and employment without regard to race, color, religion, age, sex, sexual orientation, gender identity, national origin, marital status, disability, handicap, veteran’s status or any other legally protected status recognized by federal, state or local laws.
+              </p>
+            </div>
+          </div>  
+        </div>
+      </div>  
+    </div>
     <div id="page-full-width-homepage" class ="full-width" role="main">
       <?php Timber::render('/twig-templates/careers.twig', $data); ?>
     </div>  

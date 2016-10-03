@@ -655,6 +655,9 @@ img.insights {
 	}
 	&:hover {
 	    background-position:right bottom;
+	    .long__arrow {
+	    	stroke: $white;
+	    }
 	}
 	&.pro-bono {
 	    bottom: 0;
@@ -890,7 +893,7 @@ button.close__modal {
 	cursor: pointer;
     &:hover {
     	svg {
-    		left: 15px;
+    		left: 20px;
     	}	
     }
 	.bottom-banner__cta--inner-wrapper {
