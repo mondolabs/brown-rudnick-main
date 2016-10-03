@@ -1,1 +1,55 @@
-Careers -> Lawyers -> twig
+<div id="featuredImage" class ="featured-image__header--image-wrapper" >
+
+	{% set header_text_color = "black" %}
+	{# hero header #}
+	<div class="featured-image__header--text-outer-wrapper row">
+		<div class="featured-image__header--text-wrapper">
+			<div class="featured-image__header--text-inner-wrapper">
+				<div class="color__block vellum">
+					<h1 class="page__header {{ header_text_color }}">
+						{{ header_text }}
+					</h1>
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>	
+	{# body - with sidebar #}
+<div class="row careers__wrapper body__wrapper columns small-12 medium-12 large-12">
+	<div class="columns show-for-medium-up medium-3 large-2">
+		<div class="columns medium-3 large-2 small-12 sidebar__on-scroll--fixed">
+			<div class="padding__wrapper ten sides__only">
+				{# DESKTOP SIDEBAR HEADER #}
+				<h4 class="red title__text smaller hide-for-small-only">
+					<a class="red link inline__link" href="/experience">
+						{{ sidebar_header }}
+					</a>
+				</h4>
+				{# MOBILE SIDEBAR HEADER #}
+				<h4 class="show-for-small-only accordion__trigger red list__header mobile" data-trigger-target="sidebarMobileAccordion">
+					<a class="red link inline__link" href="/experience">
+						{{ sidebar_header }}
+					</a>
+				</h4>
+				<span class="show-for-small-only expander top__menu" data-show-target="sidebarMobileAccordion" ></span>
+				{# DESKTOP SIDEBAR LIST DIVIDER #}
+				<span class="list-divider hide-for-small-only"></span>
+				{# MOBILE SIDEBAR LIST DIVIDER #}
+				<span class="list-divider mobile show-for-small-only"></span>
+				
+				<div class="sidebar-items__wrapper">
+				    {% for sidebar_item in sidebar_items %}
+						{# DESKTOP MENU ITEMS #}
+				    	<a class="hide-for-small-only link sidebar__link" href="{{ sidebar_item.ssidebar_item_link }}">
+				    		{{ sidebar_item.sidebar_item_text|upper }}
+				    	</a>
+					{# MOBILE MENU ITEMS #}
+						<a class="show-for-small-only link sidebar__link mobile {% if loop.last %} last-sidebar__link{% endif %}" href="{{ sidebar_item.sidebar_item_link }}">
+				    		{{ sidebar_item.sidebar_item_text|upper }}
+				    	</a>
+				    {% endfor %}
+				</div>    
+			</div>
+		</div>
+	</div>
+</div>	
