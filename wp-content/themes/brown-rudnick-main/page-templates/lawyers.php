@@ -28,9 +28,9 @@ $post_type_args = array(
   'post_type' => 'job-opening',
   'numberposts' => -1
 );
-$custom_posts = get_posts($post_type_args);
+$job_opening_posts = get_posts($post_type_args);
 $ids = [];
-foreach ( $custom_posts as $post ) {
+foreach ( $job_opening_posts as $post ) {
   array_push($ids, $post->ID);
 }
 $data['locations'] = wp_get_object_terms( $ids, 'locations' );
