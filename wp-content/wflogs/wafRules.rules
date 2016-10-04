@@ -215,6 +215,9 @@ if (match('/\/(?:timthumb\.php|img\.php)/i', request.path) and notMatch('_^[^\?]
 if (currentUserIsNot('administrator', server.empty) and match('/^(?:wysija_)+campaigns/i', request.body.page, request.queryString.page) and (equals('themes', request.body.action, request.queryString.action) or equals('themeupload', request.body.action, request.queryString.action))):
 	block(id=65, category='file_upload', description='MailPoet <= 2.6.7 - Arbitrary File Upload')
 
+if (currentUserIsNot('administrator', server.empty) and currentUserIsNot('editor', server.empty) and currentUserIsNot('author', server.empty) and filePatternsMatch('', request.fileNames)):
+	block(id=68, category='file_upload', description='Malicious File Upload (Patterns)')
+
 if (matchCount(sqliRegex, request.body, request.queryString)):
 	failSQLi(id=3, category='sqli', score=40, description='SQL Injection')
 
