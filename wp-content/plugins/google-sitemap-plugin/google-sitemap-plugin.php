@@ -1,12 +1,12 @@
 <?php
 /*
 Plugin Name: Google Sitemap by BestWebSoft
-Plugin URI: http://bestwebsoft.com/products/google-sitemap/
+Plugin URI: http://bestwebsoft.com/products/wordpress/plugins/google-sitemap/
 Description: Generate and add XML sitemap to WordPress website. Help search engines index your blog.
 Author: BestWebSoft
 Text Domain: google-sitemap-plugin
 Domain Path: /languages
-Version: 3.0.5
+Version: 3.0.7
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -136,13 +136,6 @@ if ( ! function_exists( 'gglstmp_sitemapcreate' ) ) {
 	function gglstmp_sitemapcreate() {
 		global $wpdb, $gglstmp_settings;
 
-		$str_post_type = "";
-		foreach ( $gglstmp_settings['post_type'] as $val ) {
-			if ( $str_post_type != "" )
-				$str_post_type .= ", ";
-			$str_post_type .= "'" . $val . "'";
-		}
-
 		$taxonomies = array();
 		foreach ( $gglstmp_settings['taxonomy'] as $val ) {
 			$taxonomies[] = $val;
@@ -167,10 +160,29 @@ if ( ! function_exists( 'gglstmp_sitemapcreate' ) ) {
 		$changefreq->appendChild( $xml->createTextNode( 'monthly' ) );
 		$priority = $url->appendChild( $xml->createElement( 'priority' ) );
 		$priority->appendChild( $xml->createTextNode( 1.0 ) );
+		/* getting an array of the excluded post ids of 'forum', 'topic' and 'reply' post types (hidden and private bbPress forum posts) */
+		$excluded_posts_array = $wpdb->get_col( "SELECT `ID` FROM $wpdb->posts WHERE `post_status` IN ('hidden', 'private') AND `post_type` IN ('forum', 'topic', 'reply')" );
+		if ( ! empty( $excluded_posts_array ) ) {
+			$excluded_posts_string = implode( ', ', $excluded_posts_array );
+			while ( true ) {
+				$hidden_child_array = $wpdb->get_col( "SELECT `ID` FROM $wpdb->posts WHERE `post_status` NOT IN ('hidden','private') AND `post_type` IN ('forum', 'topic', 'reply') AND `post_parent` IN ($excluded_posts_string)" );
+				if ( ! empty( $hidden_child_array ) ) {
+					$excluded_posts_array = array_merge( $excluded_posts_array, $hidden_child_array );
+					$excluded_posts_string = implode( ', ', $hidden_child_array );
+				} else {
+					break 1;
+				}
+			}
+		}
 
-		if ( ! empty( $str_post_type ) ) {
-			$loc = $wpdb->get_results( "SELECT `ID`, `post_modified` FROM $wpdb->posts WHERE `post_status` = 'publish' AND `post_type` IN (" . $str_post_type . ")" );
-
+		if ( ! empty( $gglstmp_settings['post_type'] ) ) {
+			$args = array(
+				'posts_per_page'	=> -1,
+				'exclude'			=> $excluded_posts_array,
+				'post_type'			=> $gglstmp_settings['post_type'],
+				'post_status'		=> 'publish',
+			);
+			$loc = get_posts( $args );
 			if ( ! empty( $loc ) ) {
 				foreach ( $loc as $val ) {
 					$gglstmp_url = $gglstmp_urlset->appendChild( $xml->createElement( 'url' ) );
@@ -357,7 +369,6 @@ if ( ! function_exists ( 'gglstmp_settings_page' ) ) {
 						update_site_option( $gglstmp_htaccess_options_name, $gglstmp_htaccess_options );
 					}
 				}
-
 			}
 		}
 
@@ -553,7 +564,7 @@ if ( ! function_exists ( 'gglstmp_settings_page' ) ) {
 								</tr>
 							<?php } ?>
 							<tr valign="top">
-								<th scope="row" colspan="2"><?php _e( 'Please choose the necessary post types and taxonomies the links to which are to be added to the sitemap', 'google-sitemap-plugin' ); ?>:</th>
+								<th scope="row" colspan="2"><?php _e( 'Add post types and taxonomies links to the sitemap', 'google-sitemap-plugin' ); ?>:</th>
 							</tr>
 							<tr valign="top">
 								<td colspan="2">
@@ -585,7 +596,7 @@ if ( ! function_exists ( 'gglstmp_settings_page' ) ) {
 								} elseif ( 'not_installed' == $gglstmp_htaccess['status'] ) {
 									$gglstmp_attr_disabled = 'disabled="disabled"';
 									$gglstmp_plugin_notice = sprintf( __( 'You should %s to use this functionality', 'google-sitemap-plugin' ),
-										sprintf( '<a href="http://bestwebsoft.com/products/htaccess/?k=bc745b0c9d4b19ba95ae2c861418e0df&pn=83&v=%s&wp_v=%s">%s %s</a>', $gglstmp_plugin_info["Version"], $wp_version, __( 'download', 'google-sitemap-plugin' ), $gglstmp_plugin_name )
+										sprintf( '<a href="http://bestwebsoft.com/products/wordpress/plugins/htaccess/?k=bc745b0c9d4b19ba95ae2c861418e0df&pn=83&v=%s&wp_v=%s">%s %s</a>', $gglstmp_plugin_info["Version"], $wp_version, __( 'download', 'google-sitemap-plugin' ), $gglstmp_plugin_name )
 									);
 								}
 								if ( '1' == $gglstmp_htaccess_options['allow_xml'] && $gglstmp_attr_disabled == '' ) {
@@ -854,7 +865,7 @@ if ( ! function_exists( 'gglstmp_add_site' ) ) {
 			if ( isset( $gglstmp_wmt_error[0]['message'] ) ) {
 				printf( '<div>%s</div>', $gglstmp_wmt_error[0]['message'] );
 			} else {
-				printf( '<div>%s.</div>', __( 'When you add a site in Google Webmaster Tools unexpected error occurred', 'google-sitemap-plugin' ) );
+				printf( '<div>%s.</div>', __( 'An error occurred while adding the site in Google Webmaster Tools', 'google-sitemap-plugin' ) );
 			}
 			printf( '<div>%s - <a target="_blank" href="%s">%s</a>.</div>', __( "The site couldn't be added. Please, add the site manually", 'google-sitemap-plugin' ), $gglstmp_instruction_url, __( 'View the Instruction', 'google-sitemap-plugin' ) );
 			echo '</div><!-- .gglstmp_wmt_content -->';
@@ -920,7 +931,7 @@ if ( ! function_exists( 'gglstmp_add_site' ) ) {
 					if ( isset( $gglstmp_wmt_error[0]['message'] ) ) {
 						printf( '<div>%s</div>', $gglstmp_wmt_error[0]['message'] );
 					} else {
-						printf( '<div>%s.</div>', __( 'When you add a sitemap file in Google Webmaster Tools unexpected error occurred', 'google-sitemap-plugin' ) );
+						printf( '<div>%s.</div>', __( 'An error occurred while adding the sitemap file in Google Webmaster Tools', 'google-sitemap-plugin' ) );
 					}
 					printf( '<div>%s - <a target="_blank" href="%s">%s</a>.</div>', __( "The sitemap file couldn't be added. Please, add the sitemap file manually", 'google-sitemap-plugin' ), $gglstmp_instruction_url, __( 'View the Instruction', 'google-sitemap-plugin' ) );
 				}
@@ -976,7 +987,7 @@ if ( ! function_exists( 'gglstmp_update_sitemap' ) ) {
 if ( ! function_exists( 'gglstmp_action_links' ) ) {
 	function gglstmp_action_links( $links, $file ) {
 		/* Static so we don't call plugin_basename on every plugin row. */
-		if ( ! is_network_admin() ) {
+		if ( ! is_network_admin() && ! is_plugin_active( 'google-sitemap-pro/google-sitemap-pro.php' ) ) {
 			static $this_plugin;
 			if ( ! $this_plugin )
 				$this_plugin = plugin_basename( __FILE__ );
@@ -993,7 +1004,7 @@ if ( ! function_exists( 'gglstmp_links' ) ) {
 	function gglstmp_links( $links, $file ) {
 		$base = plugin_basename( __FILE__ );
 		if ( $file == $base ) {
-			if ( ! is_network_admin() )
+			if ( ! is_network_admin() && ! is_plugin_active( 'google-sitemap-pro/google-sitemap-pro.php' ) )
 				$links[] = '<a href="admin.php?page=google-sitemap-plugin.php">' . __( 'Settings', 'google-sitemap-plugin' ) . '</a>';
 			$links[] = '<a href="http://wordpress.org/plugins/google-sitemap-plugin/faq/" target="_blank">' . __( 'FAQ', 'google-sitemap-plugin' ) . '</a>';
 			$links[] = '<a href="http://support.bestwebsoft.com">' . __( 'Support', 'google-sitemap-plugin' ) . '</a>';
@@ -1084,37 +1095,44 @@ if ( ! function_exists( 'gglstmp_delete_sitemap' ) ) {
 if ( ! function_exists( 'gglstmp_delete_settings' ) ) {
 	function gglstmp_delete_settings() {
 		global $wpdb;
-		if ( is_multisite() ) {
-			/* Get all blog ids */
-			$blogids = $wpdb->get_col( "SELECT `blog_id` FROM $wpdb->blogs" );
-			foreach ( $blogids as $blog_id ) {
-				delete_blog_option( $blog_id, 'gglstmp_settings' );
-				delete_blog_option( $blog_id, 'gglstmp_robots' );
-				$site_url = preg_replace( "/[^a-zA-ZА-Яа-я0-9\s]/", '_',  str_replace( 'http://', '', str_replace( 'https://', '', get_site_url( $blog_id ) ) ) );
-				$file     = ABSPATH . "sitemap_{$site_url}.xml";
-				if ( file_exists( $file ) )
-					unlink( $file );
-			}
-		} else {
-			delete_option( 'gglstmp_settings' );
-			delete_option( 'gglstmp_robots' );
-			$sitemap_path = ABSPATH . "sitemap.xml";
-			$sitemap_url  = site_url( '/sitemap.xml' );
-			$robots_path  = ABSPATH . "robots.txt";
+		if ( ! function_exists( 'get_plugins' ) )
+			require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+		$all_plugins = get_plugins();
 
-			if ( file_exists( $sitemap_path ) )
-				unlink( $sitemap_path );
+		if ( ! array_key_exists( 'google-sitemap-pro/google-sitemap-pro.php', $all_plugins ) ) {
+			if ( is_multisite() ) {
+				/* Get all blog ids */
+				$blogids = $wpdb->get_col( "SELECT `blog_id` FROM $wpdb->blogs" );
+				foreach ( $blogids as $blog_id ) {
+					delete_blog_option( $blog_id, 'gglstmp_settings' );
+					delete_blog_option( $blog_id, 'gglstmp_robots' );
+					$site_url = preg_replace( "/[^a-zA-ZА-Яа-я0-9\s]/", '_',  str_replace( 'http://', '', str_replace( 'https://', '', get_site_url( $blog_id ) ) ) );
+					$file     = ABSPATH . "sitemap_{$site_url}.xml";
+					if ( file_exists( $file ) )
+						unlink( $file );
+				}
+			} else {
+				delete_option( 'gglstmp_settings' );
+				delete_option( 'gglstmp_robots' );
+				$sitemap_path = ABSPATH . "sitemap.xml";
+				$sitemap_url  = site_url( '/sitemap.xml' );
+				$robots_path  = ABSPATH . "robots.txt";
 
-			if ( file_exists( $robots_path ) ) {
-				if ( ! is_writable( $robots_path ) )
-					@chmod( $robots_path, 0755 );
-				if ( is_writable( $robots_path ) ) {
-					$content = file_get_contents( $robots_path );
-					$content = preg_replace( "|\nSitemap: {$sitemap_url}|", '', $content );
-					file_put_contents( $robots_path, $content );
+				if ( file_exists( $sitemap_path ) )
+					unlink( $sitemap_path );
+
+				if ( file_exists( $robots_path ) ) {
+					if ( ! is_writable( $robots_path ) )
+						@chmod( $robots_path, 0755 );
+					if ( is_writable( $robots_path ) ) {
+						$content = file_get_contents( $robots_path );
+						$content = preg_replace( "|\nSitemap: {$sitemap_url}|", '', $content );
+						file_put_contents( $robots_path, $content );
+					}
 				}
 			}
 		}
+
 		require_once( dirname( __FILE__ ) . '/bws_menu/bws_include.php' );
 		bws_include_init( plugin_basename( __FILE__ ) );
 		bws_delete_plugin( plugin_basename( __FILE__ ) );

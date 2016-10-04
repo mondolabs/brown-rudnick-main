@@ -25,7 +25,7 @@ if ( ! function_exists( 'gglstmp_pro_block' ) ) {
 				</div>
 				<div class="bws_pro_version_tooltip">
 					<div class="bws_info"><?php _e( 'Unlock premium options by upgrading to Pro version', 'google-sitemap-plugin' ); ?></div>
-					<a class="bws_button" href="http://bestwebsoft.com/products/google-sitemap/?k=28d4cf0b4ab6f56e703f46f60d34d039&pn=83&v=<?php echo $gglstmp_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>" target="_blank" title="Google Sitemap Pro"><?php _e( 'Learn More', 'google-sitemap-plugin' ); ?></a>
+					<a class="bws_button" href="http://bestwebsoft.com/products/wordpress/plugins/google-sitemap/?k=28d4cf0b4ab6f56e703f46f60d34d039&pn=83&v=<?php echo $gglstmp_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>" target="_blank" title="Google Sitemap Pro"><?php _e( 'Learn More', 'google-sitemap-plugin' ); ?></a>
 				</div>
 			</div>
 		<?php }
@@ -63,7 +63,7 @@ if ( ! function_exists( 'gglstmp_extra_block' ) ) {
 		<table class="form-table bws_pro_version">
 			<tr valign="top">
 				<td colspan="2">
-					<?php _e( 'Please choose the necessary post types and taxonomies the links to which are to be added to the sitemap:', 'google-sitemap-plugin' ); ?>
+					<?php _e( 'Add post types and taxonomies links to the sitemap', 'google-sitemap-plugin' ); ?>:
 				</td>
 			</tr>
 			<tr valign="top">

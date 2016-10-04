@@ -148,7 +148,7 @@ class wfScanEngine {
 	}
 	public function fork(){
 		wordfence::status(4, 'info', "Entered fork()");
-		if(wfConfig::set_ser('wfsd_engine', $this, true)){
+		if(wfConfig::set_ser('wfsd_engine', $this, true, wfConfig::DONT_AUTOLOAD)){
 			wordfence::status(4, 'info', "Calling startScan(true)");
 			self::startScan(true);
 		} //Otherwise there was an error so don't start another scan.
@@ -158,9 +158,20 @@ class wfScanEngine {
 		$this->i->emailNewIssues();
 	}
 	public function submitMetrics() {
-		$this->api->call('record_scan_metrics', array(), array('metrics' => $this->metrics));
+		if (wfConfig::get('other_WFNet', true)) {
+			$this->api->call('record_scan_metrics', array(), array('metrics' => $this->metrics));
+		}
 	}
 	private function doScan(){
+		if (wfConfig::get('lowResourceScansEnabled')) {
+			$isFork = ($_GET['isFork'] == '1' ? true : false);
+			wfConfig::set('lowResourceScanWaitStep', !wfConfig::get('lowResourceScanWaitStep'));
+			if ($isFork && wfConfig::get('lowResourceScanWaitStep')) {
+				sleep($this->maxExecTime / 2);
+				$this->fork(); //exits
+			}
+		}
+		
 		while(sizeof($this->jobList) > 0){
 			self::checkForKill();
 			$jobName = $this->jobList[0];
@@ -178,7 +189,7 @@ class wfScanEngine {
 		}
 		$summary = $this->i->getSummaryItems();
 		$this->status(1, 'info', '-------------------');
-		$this->status(1, 'info', "Scan Complete. Scanned " . $summary['totalFiles'] . " files, " . $summary['totalPlugins'] . " plugins, " . $summary['totalThemes'] . " themes, " . ($summary['totalPages'] + $summary['totalPosts']) . " pages, " . $summary['totalComments'] . " comments and " . $summary['totalRows'] . " records in " . (time() - $this->startTime) . " seconds.");
+		$this->status(1, 'info', "Scan Complete. Scanned " . $summary['totalFiles'] . " files, " . $summary['totalPlugins'] . " plugins, " . $summary['totalThemes'] . " themes, " . ($summary['totalPages'] + $summary['totalPosts']) . " pages, " . $summary['totalComments'] . " comments and " . $summary['totalRows'] . " records in " . wfUtils::makeDuration(time() - $this->startTime, true) . ".");
 		if($this->i->totalIssues  > 0){
 			$this->status(10, 'info', "SUM_FINAL:Scan complete. You have " . $this->i->totalIssues . " new issues to fix. See below.");
 		} else {
@@ -482,8 +493,6 @@ class wfScanEngine {
 		$this->i->updateSummaryItem('totalData', wfUtils::formatBytes($this->hasher->totalData));
 		$this->i->updateSummaryItem('totalFiles', $this->hasher->totalFiles);
 		$this->i->updateSummaryItem('totalDirs', $this->hasher->totalDirs);
-		$this->i->updateSummaryItem('linesOfPHP', $this->hasher->linesOfPHP);
-		$this->i->updateSummaryItem('linesOfJCH', $this->hasher->linesOfJCH);
 		$this->hasher = false;
 	}
 	private function scan_knownFiles_finish(){
@@ -1138,6 +1147,7 @@ class wfScanEngine {
 				wfUtils::getScanFileError();
 				return "A scan is already running. Use the kill link if you would like to terminate the current scan.";
 			}
+			wfConfig::set('currentCronKey', ''); //Ensure the cron key is cleared
 		}
 		$timeout = self::getMaxExecutionTime() - 2; //2 seconds shorter than max execution time which ensures that only 2 HTTP processes are ever occupied
 		$testURL = admin_url('admin-ajax.php?action=wordfence_testAjax');
