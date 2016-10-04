@@ -253,6 +253,7 @@ class EWWWIO_Async_Request extends WP_Async_Request {
 			ewwwio_debug_message( 'ignored async optimization request' );
 			return;
 		}
+		ewww_image_optimizer_hidpi_optimize( $file_path );
 		ewwwio_debug_message( 'checking for: ' . $file_path . '.processing' );
 		if ( is_file( $file_path . '.processing' ) ) {
 			ewwwio_debug_message( 'removing ' . $file_path . '.processing' );
@@ -295,11 +296,40 @@ class EWWWIO_Async_Key_Verification extends WP_Async_Request {
 	protected $action = 'ewwwio_async_key_verification';
 
 	protected function handle() {
+		session_write_close();
 		ewww_image_optimizer_cloud_verify( false );
 		ewww_image_optimizer_debug_log();
-		session_write_close();
 	}
 }
 
 global $ewwwio_async_key_verification;
 $ewwwio_async_key_verification = new EWWWIO_Async_Key_Verification();
+
+class EWWWIO_Test_Async_Handler extends WP_Async_Request {
+
+	protected $action = 'ewwwio_test_optimize';
+
+	protected function handle() {
+		session_write_close();
+		if ( empty( $_POST['ewwwio_test_verify'] ) ) {
+			return;
+		}
+		$item = $_POST['ewwwio_test_verify'];
+		ewwwio_debug_message( "testing async handling, received $item" );
+		if ( ewww_image_optimizer_detect_wpsf_location_lock() ) {
+			ewwwio_debug_message( 'detected location lock, not enabling background opt' );
+			ewww_image_optimizer_debug_log();
+			return;
+		}
+		if ( $item != '949c34123cf2a4e4ce2f985135830df4a1b2adc24905f53d2fd3f5df5b162932' ) {
+			ewwwio_debug_message( 'wrong item received, not enabling background opt' );
+			ewww_image_optimizer_debug_log();
+			return;
+		}
+		ewww_image_optimizer_set_option( 'ewww_image_optimizer_background_optimization', true );
+		ewww_image_optimizer_debug_log();
+	}
+}
+
+global $ewwwio_test_async;
+$ewwwio_test_async = new EWWWIO_Test_Async_Handler();

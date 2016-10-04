@@ -5,7 +5,7 @@
 ?>
 <a class="wf-logo" href="//www.wordfence.com/zz8/"><img src="<?php echo wfUtils::getBaseURL(); ?>images/logo.png" alt=""/></a>
 
-<h2>Top <?php echo (int) $limit; ?> IP's Blocked</h2>
+<h2>Top <?php echo (int) $limit; ?> IPs Blocked</h2>
 
 <?php wfHelperString::cycle(); ?>
 
@@ -167,9 +167,12 @@
 <?php if ($updates_needed['plugins']): ?>
 	<h4>Plugins</h4>
 	<ul>
-		<?php foreach ($updates_needed['plugins'] as $plugin): ?>
+		<?php
+		foreach ($updates_needed['plugins'] as $plugin):
+			$newVersion = ($plugin['newVersion'] == 'Unknown' ? $plugin['newVersion'] : "v{$plugin['newVersion']}");
+		?>
 			<li>
-				A new version of the plugin "<?php echo esc_html("{$plugin['Name']} (v{$plugin['newVersion']})") ?>" is available.
+				A new version of the plugin "<?php echo esc_html("{$plugin['Name']} ({$newVersion})") ?>" is available.
 			</li>
 		<?php endforeach ?>
 	</ul>
@@ -177,9 +180,12 @@
 <?php if ($updates_needed['themes']): ?>
 	<h4>Themes</h4>
 	<ul>
-		<?php foreach ($updates_needed['themes'] as $theme): ?>
+		<?php
+		foreach ($updates_needed['themes'] as $theme):
+			$newVersion = ($theme['newVersion'] == 'Unknown' ? $theme['newVersion'] : "v{$theme['newVersion']}");
+		?>
 			<li>
-				A new version of the theme "<?php echo esc_html("{$theme['name']} (v{$theme['newVersion']})") ?>" is available.
+				A new version of the theme "<?php echo esc_html("{$theme['name']} ({$newVersion})") ?>" is available.
 			</li>
 		<?php endforeach ?>
 	</ul>
