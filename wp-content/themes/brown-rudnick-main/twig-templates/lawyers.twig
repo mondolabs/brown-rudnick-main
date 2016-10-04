@@ -91,9 +91,9 @@
 		</div>
 		<div class="columns small-12 medium-12 large-12 relative">
 			{% set job_openings = post.get_field('job_openings') %}
-			{% set job_openings = job_openings|first %}
-			{% for job_opening in job_openings %}
 				<table>
+					{% for job_opening in job_openings %}
+					{% set job_opening = job_opening|first %}
 					<tr>
 						<td>
 							{{ job_opening.position }}
@@ -113,8 +113,8 @@
 							{{ job_opening.position_description }}
 						</td>
 					</tr>
-				</table>
-			{% endfor %}
+				{% endfor %}
+			</table>
 		</div>
 
 

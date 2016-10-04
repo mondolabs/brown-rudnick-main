@@ -14,15 +14,10 @@ var EXPANDER = {
 			}
 		});
 		$('.job_expander').click(function(event) {
-			var hiddenJobDescripton = $('.hidden__job--description td');
+			var expander = $(this);
+			var hiddenJobDescripton = $(expander).parent().parent().next('tr').find('td');
 			$(hiddenJobDescripton).slideToggle('fast');
-			var expander = $('.job_expander');
 			$(expander).toggleClass('expanded');
-			if ($('#showMoreRelatedExperiences').hasClass('more')){
-				$('#showMoreRelatedExperiences').removeClass('more').addClass('less').text("SHOW LESS");
-			} else {
-				$('#showMoreRelatedExperiences').removeClass('less').addClass('more').text("SHOW MORE");
-			}
 		});
 	}
 }
@@ -30,3 +25,5 @@ var EXPANDER = {
 $(document).ready(function(){
 	EXPANDER.addListeners();
 });
+
+ 
