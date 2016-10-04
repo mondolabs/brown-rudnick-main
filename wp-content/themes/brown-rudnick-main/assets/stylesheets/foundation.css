@@ -591,7 +591,8 @@ img.insights {
     bottom: 0;
     right: 1px; }
 
-.expander {
+.experience_expander,
+.job_expander {
   width: 25px;
   height: 25px;
   display: inline-block;
@@ -599,23 +600,31 @@ img.insights {
   top: 1px;
   right: 96px;
   cursor: pointer; }
-  .expander.top__menu {
+  .experience_expander.top__menu,
+  .job_expander.top__menu {
     background-color: #b91628;
     right: 15px;
     top: 0; }
-    .expander.top__menu:before {
+    .experience_expander.top__menu:before,
+    .job_expander.top__menu:before {
       top: 0;
       left: 12px;
       background-color: #fff; }
-    .expander.top__menu:after {
+    .experience_expander.top__menu:after,
+    .job_expander.top__menu:after {
       top: -4px;
       left: 7px;
       background-color: #fff; }
-  .expander:hover:after, .expander:hover:before {
+  .experience_expander:hover:after, .experience_expander:hover:before,
+  .job_expander:hover:after,
+  .job_expander:hover:before {
     background-color: #b91628; }
-  .expander:hover.top__menu:after, .expander:hover.top__menu:before {
+  .experience_expander:hover.top__menu:after, .experience_expander:hover.top__menu:before,
+  .job_expander:hover.top__menu:after,
+  .job_expander:hover.top__menu:before {
     background-color: #fff; }
-  .expander:before {
+  .experience_expander:before,
+  .job_expander:before {
     content: " ";
     background-color: #b91628;
     display: inline-block;
@@ -627,7 +636,8 @@ img.insights {
     -webkit-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
     opacity: 1; }
-  .expander:after {
+  .experience_expander:after,
+  .job_expander:after {
     content: " ";
     background-color: #b91628;
     display: inline-block;
@@ -639,16 +649,19 @@ img.insights {
     -webkit-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
     opacity: 1; }
-  .expander.expanded:after {
+  .experience_expander.expanded:after,
+  .job_expander.expanded:after {
     -webkit-transition-delay: .1s;
             transition-delay: .1s;
     -webkit-transform: rotate(-180deg);
         -ms-transform: rotate(-180deg);
             transform: rotate(-180deg);
     left: 0px; }
-  .expander.expanded:before {
+  .experience_expander.expanded:before,
+  .job_expander.expanded:before {
     opacity: 0; }
-  .expander.expanded.top__menu:after {
+  .experience_expander.expanded.top__menu:after,
+  .job_expander.expanded.top__menu:after {
     left: 7px; }
 
 .letter__anchor--indicator {

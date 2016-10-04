@@ -13,7 +13,7 @@
 			</div>
 		</div>	
 	</div>
-</div>	
+</div>
 	{# body - with sidebar #}
 <div class="row careers__wrapper body__wrapper columns small-12 medium-12 large-12">
 	<div class="columns show-for-medium-up medium-3 large-2">
@@ -21,13 +21,13 @@
 			<div class="padding__wrapper ten sides__only">
 				{# DESKTOP SIDEBAR HEADER #}
 				<h4 class="red title__text smaller hide-for-small-only">
-					<a class="red link inline__link" href="/experience">
+					<a class="red link inline__link" href="/careers">
 						{{ sidebar_header }}
 					</a>
 				</h4>
 				{# MOBILE SIDEBAR HEADER #}
 				<h4 class="show-for-small-only accordion__trigger red list__header mobile" data-trigger-target="sidebarMobileAccordion">
-					<a class="red link inline__link" href="/experience">
+					<a class="red link inline__link" href="/careers">
 						{{ sidebar_header }}
 					</a>
 				</h4>
@@ -39,17 +39,84 @@
 				
 				<div class="sidebar-items__wrapper">
 				    {% for sidebar_item in sidebar_items %}
+		    		{% set link_slug = sidebar_item.sidebar_item_link|split('/')[3] %}
 						{# DESKTOP MENU ITEMS #}
-				    	<a class="hide-for-small-only link sidebar__link" href="{{ sidebar_item.ssidebar_item_link }}">
+				    	<a class="{% if slug == link_slug|lower %}red{% endif %} hide-for-small-only link sidebar__link" href="{{ sidebar_item.ssidebar_item_link }}">
 				    		{{ sidebar_item.sidebar_item_text|upper }}
 				    	</a>
 					{# MOBILE MENU ITEMS #}
-						<a class="show-for-small-only link sidebar__link mobile {% if loop.last %} last-sidebar__link{% endif %}" href="{{ sidebar_item.sidebar_item_link }}">
+						<a class="{% if slug == link_slug|lower %}red{% endif %} show-for-small-only link sidebar__link mobile {% if loop.last %} last-sidebar__link{% endif %}" href="{{ sidebar_item.sidebar_item_link }}">
 				    		{{ sidebar_item.sidebar_item_text|upper }}
 				    	</a>
 				    {% endfor %}
 				</div>    
 			</div>
 		</div>
+	</div>
+	<div class="columns small-12 medium-9 large-10 float--right relative">
+		<div class="columns small-12 medium-12 large-12 relative">
+			<p class="title__text">
+				{{ top_text_header }}
+			</p>
+
+			<p class="body__text">
+				{{ top_text_content }}
+			</p>
+		</div>
+		<div class="columns small-12 medium-12 large-12 relative">
+			<div class="page__divider grey"></div>
+		</div>
+		<div class="columns small-12 medium-12 large-12 relative">
+			<p class="title__text">
+				{{ middle_text_header }}
+			</p>
+
+			<p class="body__text">
+				{{ middle_text_content }}
+			</p>
+		</div>
+		<div class="columns small-12 medium-12 large-12 relative">
+			<div class="small-3 medium-3 large-3 float--right">
+				<select id="locationSelect" name="location_query" class="inline__text">
+					<option value="">
+						LOCATIONS
+					</option>
+					{% for location in locations %}
+						<option value="{{ location.slug|upper }}">
+							{{ location.name|upper }}
+						</option>
+					{% endfor %}
+				</select>
+			</div>
+		</div>
+		<div class="columns small-12 medium-12 large-12 relative">
+			{% set job_openings = post.get_field('job_openings') %}
+			{% set job_openings = job_openings|first %}
+			{% for job_opening in job_openings %}
+				<table>
+					<tr>
+						<td>
+							{{ job_opening.position }}
+						</td>
+						<td>
+							{{ job_opening.start_date|date("m/d/Y") }}
+						</td>
+						<td>
+						    {{ job_opening.offices }}
+						</td>
+						<td>
+							<span class="job_expander top__menu job_opening" data-show-target="jobOpeningAdditionalDetails" ></span>
+						</td>
+					</tr>
+					<tr class="hidden__job--description">
+						<td class="hidden" colspan="5">
+							{{ job_opening.position_description }}
+						</td>
+					</tr>
+				</table>
+			{% endfor %}
+		</div>
+
+
 	</div>
 </div>	
