@@ -191,6 +191,9 @@ p.subtitle__text {
   .padding__wrapper.twenty.left__only {
     padding-left: 10px; }
 
+.min--height__225 {
+  min-height: 225px; }
+
 .no__pad {
   padding: 0 !important; }
 
