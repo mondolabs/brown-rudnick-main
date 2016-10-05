@@ -10,9 +10,7 @@ $data['banner_image'] = get_field('banner_image');
 $data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
 $data['about_sidebar_header'] = get_field('about_sidebar_header');
 $data['about_sidebar_items'] = get_field('about_sidebar_items');
-
-
-
+$data['parent'] = get_post($post->post_parent);
 $data['pro_bono_header_text'] = get_field('pro_bono_header_text');
 $data['pro_bono_top_content'] = get_field('pro_bono_top_content');
 $data['pro_bono_bottom_banner_header'] = get_field('pro_bono_bottom_banner_header');
@@ -22,6 +20,8 @@ $data['pro_bono_bottom_banner_image'] = get_field('pro_bono_bottom_banner_image'
 
 $slug = basename(get_permalink());
 $data['slug'] = $slug;
+
+var_dump($data['parent']);
 
 
 ?>
