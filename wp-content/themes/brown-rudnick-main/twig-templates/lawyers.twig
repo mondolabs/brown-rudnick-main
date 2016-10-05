@@ -92,6 +92,9 @@
 		<div class="columns small-12 medium-12 large-12 relative">
 			{% set job_openings = post.get_field('job_openings') %}
 				<table>
+					<h1>
+						{{ job_openings|length }}
+					</h1>
 					{% for job_opening in job_openings %}
 					{% set job_opening = job_opening|first %}
 					<tr>
