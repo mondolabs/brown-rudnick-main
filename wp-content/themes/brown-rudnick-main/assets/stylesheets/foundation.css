@@ -552,6 +552,8 @@ img.insights {
   .inline__wrapper.person {
     height: 200px;
     margin-top: -40px; }
+  .inline__wrapper.ceo {
+    height: 200px; }
 
 .table__wrapper {
   display: table;
@@ -805,6 +807,14 @@ button.close__modal {
 
 .bottom-banner__text--wrapper p {
   width: 200px; }
+
+.tester {
+  height: 250px; }
+  .tester.red-bg {
+    background-color: red;
+    border: 1px solid green; }
+  .tester.blue-bg {
+    background-color: blue; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome

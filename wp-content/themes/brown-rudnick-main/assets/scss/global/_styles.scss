@@ -621,6 +621,9 @@ img.insights {
 		height: 200px;
 		margin-top: -40px;
 	}
+	&.ceo {
+		height: 200px;
+	}
 }
 
 .table__wrapper {
@@ -918,3 +921,15 @@ button.close__modal {
 		width: 200px;
 	}
 }
+
+
+.tester{
+	height: 250px;
+	&.red-bg {
+		background-color: red;
+		border: 1px solid green;
+	}
+	&.blue-bg {
+		background-color: blue;
+	}
+} 
