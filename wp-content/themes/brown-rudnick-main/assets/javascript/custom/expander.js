@@ -1,6 +1,7 @@
 var EXPANDER = {
 	addListeners: function(){
 		$('#showMoreRelatedExperiences, .experience_expander').click(function(event) {
+			$(document.body).trigger("sticky_kit:recalc");
 			var hiddenExperiences = $('.sidebar__color-block--outer-wrapper.hidden__exp');
 			$(hiddenExperiences).toggleClass('hidden');
 			var hiddenMenuItems = $('.sidebar-items__wrapper');

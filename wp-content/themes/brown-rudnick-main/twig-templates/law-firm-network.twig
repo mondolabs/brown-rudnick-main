@@ -39,7 +39,7 @@
 				
 				<div class="sidebar-items__wrapper">
 				    {% for sidebar_item in law_firm_network_sidebar_items %}
-			    		{% set link_slug = sidebar_item.law_firm_network_sidebar_item_link|split('/')[3] %}
+			    		{% set link_slug = sidebar_item.law_firm_network_sidebar_item_link|split('/')[4] %}
 				    	{% if sidebar_item.has_sub_menu %}
 						{# DESKTOP SUBMENU ITEMS #}
 							<a class="{% if slug == link_slug %}red{% endif %} hide-for-small-only accordion__trigger link" data-trigger-target="{{sidebar_item.law_firm_network_sidebar_submenu_accordion_trigger }}">

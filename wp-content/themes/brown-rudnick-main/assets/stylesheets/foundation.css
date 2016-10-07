@@ -265,7 +265,7 @@ a.link {
   a.link:hover, a.link:focus {
     color: #b91628; }
   a.link:visited {
-    color: #000000; }
+    color: #000; }
     a.link:visited:hover {
       color: #b91628; }
   a.link.red {
@@ -315,7 +315,7 @@ h3.title {
   margin-top: 60px; }
 
 .black {
-  color: #000000; }
+  color: #000; }
 
 .white {
   color: #fff; }
@@ -8388,13 +8388,13 @@ button.arrow {
   font-family: "Avenir Medium", Helvetica, Arial, sans-serif; }
   .custom-header-nav li {
     display: inline-block;
-    color: #000000;
+    color: #000;
     padding-left: 3.5%;
     text-transform: uppercase; }
 
 .right-icon-link {
   text-decoration: none;
-  color: #000000;
+  color: #000;
   padding-left: 2%;
   padding-right: 3%; }
 
@@ -8408,7 +8408,7 @@ button.arrow {
   right: 20%;
   font-size: .80em;
   padding-right: 5%;
-  border-right: 0.5px solid #000000; }
+  border-right: 0.5px solid #000; }
 
 .mobile-menu {
   content: "";
@@ -8715,7 +8715,7 @@ span.red__border--top {
       text-transform: uppercase; } }
 
 .stay-current {
-  color: #000000;
+  color: #000;
   margin: 0 auto 50px;
   text-align: center;
   padding-top: 60px;

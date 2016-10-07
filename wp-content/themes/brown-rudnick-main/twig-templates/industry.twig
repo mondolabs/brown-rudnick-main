@@ -20,115 +20,116 @@
 </div>	
 	{# body - with sidebar #}
 <div class="row">
-	<div class="experience__wrapper row body__wrapper columns small-12 medium-12 large-12">
-		<div class="padding__wrapper ten sides__only">
-			<div class="columns show-for-medium-up medium-3 large-2">
-				{% if headlines %}
-				    <p class="tag__text">
-				    	{{ 'headlines'|upper }}
-				    </p>
-				    {% for item in headlines %}
-			        	{% set headline = item|first %}
-			        		{% if headline.has_external_link %}
-					        	<a href="{{ headline.external_link}}" class="link tag__text">
-					        		{{ headline.post_title|upper }}
-					        	</a>
-		        			{% else %}
-					        	<a href="{{ headline.guid}}" class="red link tag__text">
-					        		{{ headline.post_title|upper }}
-					        	</a>
-			        		{% endif %}
-			        	<br>
-				    {% endfor %}
-				{% endif %}
-				{% if related_experience %}
-				    <p class="tag__text">
-				    	{{ 'related experience'|upper }}
-				    </p>
-				    {% for item in related_experience %}
-			        	{% set experience =  item|first %}
-						<div class="sidebar__color-block--outer-wrapper">
-							<div class="sidebar__color-block--wrapper">
-					        	<a href="{{ experience.guid }}" class="link margin__0 tag__text text-align__center">
-				    	    		{{ experience.post_title|upper }}
-				        		</a>
-				        	</div>
-						</div>
-				    {% endfor %}
-				{% endif %}    
+	<div class="experience__wrapper row body__wrapper columns small-12 medium-12 large-12 content" data-sticky_parent>
+		<div class="columns show-for-medium-up medium-3 large-2 sidebar__on-scroll--fixed">
+			{% if headlines %}
+			    <p class="tag__text">
+			    	{{ 'headlines'|upper }}
+			    </p>
+			    {% for item in headlines %}
+		        	{% set headline = item|first %}
+		        		{% if headline.has_external_link %}
+				        	<a href="{{ headline.external_link}}" class="link tag__text">
+				        		{{ headline.post_title|upper }}
+				        	</a>
+	        			{% else %}
+				        	<a href="{{ headline.guid}}" class="red link tag__text">
+				        		{{ headline.post_title|upper }}
+				        	</a>
+		        		{% endif %}
+		        	<br>
+			    {% endfor %}
+			{% endif %}
+			{% if related_experience %}
+			    <p class="tag__text">
+			    	{{ 'related experience'|upper }}
+			    </p>
+			    {% for item in related_experience %}
+		        	{% set experience =  item|first %}
+					<div class="sidebar__color-block--outer-wrapper {% if loop.index > 5%}hidden hidden__exp{% endif %}">
+						<div class="sidebar__color-block--wrapper">
+				        	<a href="{{ experience.guid }}" class="link margin__0 tag__text text-align__center">
+			    	    		{{ experience.post_title|upper }}
+			        		</a>
+			        	</div>
+					</div>
+			    {% endfor %}
+			    <a id="showMoreRelatedExperiences" class="more link red tag__text underline" href="#more">
+			    	SHOW MORE
+			    </a>
+			    <span class="expander"></span>
+			{% endif %}   
+		</div>
+		<div class="columns small-12 medium-9 large-10">
+			<div class="padding__wrapper forty sides__only">
+				<div class="title__text ">
+					{{ text_content_top }}
+				</div>
 			</div>
-			<div class="columns small-12 medium-9 large-10">
-				<div class="padding__wrapper forty sides__only">
+			<div class="padding__wrapper forty sides__only">
+				<div class="body__text ">
+					{{ post.post_content }}
+				</div>	
+			</div>
+			<div class="padding__wrapper forty sides__only">
+				<span class="page__divider grey"></span>
+			</div>
+			<div class="padding__wrapper forty sides__only">
+				{% if industry_group_leaders %}
 					<div class="title__text ">
-						{{ text_content_top }}
+						{{ industry_header_text }} Group Leaders
 					</div>
-				</div>
-				<div class="padding__wrapper forty sides__only">
-					<div class="body__text ">
-						{{ post.post_content }}
-					</div>	
-				</div>
-				<div class="padding__wrapper forty sides__only">
-					<span class="page__divider grey"></span>
-				</div>
-				<div class="padding__wrapper forty sides__only">
-					{% if industry_group_leaders %}
-						<div class="title__text ">
-							{{ industry_header_text }} Group Leaders
-						</div>
-				    	{% for leader in industry_group_leaders %}
-				    		{% set leader = leader|first %}
-							<div class="columns medium-12 large-6 small-12 margin-bottom--20 end">
-								<div class="columns medium-6 large-6 small-12">
-									<img class="people__details" src="{{ TimberImage(leader.image).src }}" />
-								</div>
-								<div class="columns medium-6 large-6 small-12">
-									<div class="people__details--outer-wrapper">
-										<div class="people__details--inner-wrapper">
-											<p class="people__details title__text smaller">
-												{{ leader.first_name }} {% if leader.middle_initial %}{{ leader.middle_initial }}. {% endif %} {{ leader.last_name }}
-											</p>
-											{% if leader.title %}	
-												<p class="people__details tag__text">
-													{{ leader.title|upper }}
-												</p>
-											{% endif %}	
-											<span class="people__deatils list-divider red"></span>
-											<p class="people__details body__text">
-												{{ leader.primary_city }}, {{ leader.primary_state }}{% if leader.secondary_city and leader.secondary_state %} | {{ leader.secondary_city }}, {{ leader.secondary_state}} {% endif %} 
-											</p>
-											<p class="people__details body__text">
-												{{ leader.phone_number }}
-											</p>
-											<p class="people__details body__text">
-												{{ leader.email }}
-											</p>
-										</div>
-									</div>	
-								</div>
+			    	{% for leader in industry_group_leaders %}
+			    		{% set leader = leader|first %}
+						<div class="columns medium-12 large-6 small-12 margin-bottom--20 end">
+							<div class="columns medium-6 large-6 small-12">
+								<img class="people__details" src="{{ TimberImage(leader.image).src }}" />
 							</div>
-						{% endfor %}					
-					{% endif %}
-				</div>
-				{% if related_people|length > 0%}	
-
-					<div class="padding__wrapper forty sides__only">
-						<p class="title__text">
-							Related People
-						</p>
-						{% for person in related_people %}
-							{% set person = person|first %}
-							<div class="columns medium-6 large-6 small-12 person end">
-								<a class="body__text red link margin-bottom--10" href="{{ person.guid }}">
-									{{ person.first_name }} {% if person.middle_initial %}{{ person.middle_initial }}. {% endif %} {{ person.last_name }}
-								</a>
-							</div>	
-						{% endfor %}
-					</div>
-				{% endif %}	
-
+							<div class="columns medium-6 large-6 small-12">
+								<div class="people__details--outer-wrapper">
+									<div class="people__details--inner-wrapper">
+										<p class="people__details title__text smaller">
+											{{ leader.first_name }} {% if leader.middle_initial %}{{ leader.middle_initial }}. {% endif %} {{ leader.last_name }}
+										</p>
+										{% if leader.title %}	
+											<p class="people__details tag__text">
+												{{ leader.title|upper }}
+											</p>
+										{% endif %}	
+										<span class="people__deatils list-divider red"></span>
+										<p class="people__details body__text">
+											{{ leader.primary_city }}, {{ leader.primary_state }}{% if leader.secondary_city and leader.secondary_state %} | {{ leader.secondary_city }}, {{ leader.secondary_state}} {% endif %} 
+										</p>
+										<p class="people__details body__text">
+											{{ leader.phone_number }}
+										</p>
+										<p class="people__details body__text">
+											{{ leader.email }}
+										</p>
+									</div>
+								</div>	
+							</div>
+						</div>
+					{% endfor %}					
+				{% endif %}
 			</div>
-		</div>	
+			{% if related_people|length > 0%}	
+
+				<div class="padding__wrapper forty sides__only">
+					<p class="title__text">
+						Related People
+					</p>
+					{% for person in related_people %}
+						{% set person = person|first %}
+						<div class="columns medium-6 large-6 small-12 person end">
+							<a class="body__text red link margin-bottom--10" href="{{ person.guid }}">
+								{{ person.first_name }} {% if person.middle_initial %}{{ person.middle_initial }}. {% endif %} {{ person.last_name }}
+							</a>
+						</div>	
+					{% endfor %}
+				</div>
+			{% endif %}	
+		</div>
 	</div>
 </div>	
 {% if services|length > 0%}	

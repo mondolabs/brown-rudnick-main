@@ -13,22 +13,17 @@ var homepage = {
 				strokeWidth: 5,
 				"fill-opacity" : 0
 			});
-
 			// animate SVG line	
 			line.animate({stroke: '#c10819', fill:'none'}, 1900 , mina.linear);
 		
 		};
-		
 		animateSvg();
-
 		// animate SVG on slide change
 		$('.slider-container').on('beforeChange', function(slick, currentSlide, nextSlide){
 			animateSvg();
 		});
 
 		if ( $("body").hasClass("page-template-homepage") ){
-
-
 			// start Slick slider
 			$('.slider-container').slick({
 				slide: '.slide',

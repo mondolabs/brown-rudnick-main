@@ -32,6 +32,7 @@ var PATHS = {
     'assets/components/motion-ui/src',
     'assets/components/fontawesome/scss',
     'assets/components/slick/scss'
+
   ],
 
   javascript: [
@@ -77,7 +78,8 @@ var PATHS = {
     'assets/javascript/vendor/backstretch/backstretch.min.js',
     'assets/javascript/vendor/slick/*.js',
     'assets/javascript/vendor/purl/*.js',
-    'assets/javascript/vendor/cookies/*.js'
+    'assets/javascript/vendor/cookies/*.js',
+    'assets/javascript/vendor/sticky-kit/*.js', 
   ],
   phpcs: [
     '**/*.php',
@@ -280,7 +282,7 @@ gulp.task('default', ['build', 'browser-sync'], function() {
   }
 
   // Sass Watch
-  gulp.watch(['assets/scss/**/*.scss'], ['clean:css', 'sass'])
+  gulp.watch(['assets/scss/**/*.scss', 'assets/scss/**/**/*.scss'], ['clean:css', 'sass'])
     .on('change', function(event) {
       logFileChange(event);
     });

@@ -1,4 +1,3 @@
-
 $(window).bind(' load resize orientationChange ', function () {
    var footer = $("#footer-container");
    var pos = footer.position();
@@ -11,7 +10,6 @@ $(window).bind(' load resize orientationChange ', function () {
          'margin-top': height + 'px'
      });
    }
-
    if (height > 0) {
      stickyFooter();
    }
