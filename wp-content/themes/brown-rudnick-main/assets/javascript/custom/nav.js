@@ -8,10 +8,10 @@ var NAV = {
 			// medium breakpoint hover interaction
 		if ($(window).innerWidth() > 700 ) {
 				$('.menu-item-has-children').on({
-					mouseover: function(){
+					mouseover: function(){					
 						$('.subnav__color-block').stop().show(410);
 					},
-					mouseout: function(){
+					mouseout: function(){						
 						$('.subnav__color-block').stop().hide(410);
 					}
 				});	
@@ -21,6 +21,7 @@ var NAV = {
 	scrollEvents: function(){
 		if ( $(window).scrollTop() >= NAV.desktopMenu.height() ) {
 			$(NAV.desktopMenu).css('opacity', '0');
+			$('.subnav__color-block').css({'width': '400%'});
 			$('.menu__outer-wrapper--desktop-on-scroll').slideDown('300');
 		} else {
 			$(NAV.desktopMenu).css('opacity', '1');
