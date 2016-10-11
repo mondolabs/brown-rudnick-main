@@ -7576,9 +7576,7 @@ a::after {
   width: 60vw; }
 
 .is-dropdown-submenu > li {
-  margin-top: 2%;
-  width: 10% !important;
-  background-color: transparent; }
+  margin-top: 2%; }
   @media screen and (min-width: 40em) {
     .is-dropdown-submenu > li {
       width: 19% !important; } }
@@ -7586,15 +7584,6 @@ a::after {
 .is-dropdown-submenu li a {
   font-size: 0.85em !important;
   font-weight: 400 !important; }
-
-.is-dropdown-submenu {
-  right: auto !important;
-  right: -30vw !important;
-  top: 100% !important;
-  text-align: center !important; }
-  @media screen and (min-width: 40em) {
-    .is-dropdown-submenu {
-      left: -30vw !important; } }
 
 #footer-container {
   max-width: 100%;

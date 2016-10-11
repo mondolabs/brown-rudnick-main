@@ -41,7 +41,9 @@
 				    {% for sidebar_item in careers_sidebar_items %}
 						{# DESKTOP MENU ITEMS #}
 				    	<a class="hide-for-small-only link sidebar__link" href="{{ sidebar_item.careers_sidebar_item_link }}">
+				    		{{ sidebar_item|length }}
 				    		{{ sidebar_item.careers_sidebar_item_text|upper }}
+				    		
 				    	</a>
 					{# MOBILE MENU ITEMS #}
 						<a class="show-for-small-only link sidebar__link mobile {% if loop.last %} last-sidebar__link{% endif %}" href="{{ sidebar_item.careers_sidebar_item_link }}">
