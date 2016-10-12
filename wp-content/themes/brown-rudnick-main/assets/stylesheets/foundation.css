@@ -484,6 +484,15 @@ img.people__details {
     position: absolute;
     background-color: #b91628; }
 
+.lawyers-bullet {
+  float: none !important;
+  display: inline-block !important;
+  width: 49% !important;
+  min-width: 400px !important; }
+  .lawyers-bullet p {
+    padding-right: 2% !important;
+    padding-left: 2% !important; }
+
 .underline {
   text-decoration: underline; }
 
@@ -815,6 +824,19 @@ button.close__modal {
     border: 1px solid green; }
   .tester.blue-bg {
     background-color: blue; }
+
+.bullet__full-width {
+  width: 100%; }
+
+.lawyers__text {
+  font-family: "adobe-garamond-pro", serif;
+  color: #000 !important; }
+
+.clear {
+  clear: both;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome

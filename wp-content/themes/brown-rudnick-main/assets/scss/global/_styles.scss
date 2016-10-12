@@ -531,6 +531,18 @@ img.people__details {
 	}
 }
 
+.lawyers-bullet { 
+		float: none !important;
+		display: inline-block !important;
+		width: 49% !important;
+		min-width: 400px!important;
+		p {
+			padding-right: 2% !important;
+			padding-left: 2% !important;
+		}
+	}
+
+
 .underline {
 	text-decoration: underline;
 }
@@ -932,4 +944,22 @@ button.close__modal {
 	&.blue-bg {
 		background-color: blue;
 	}
+}
+
+.bullet__full-width {
+	width: 100%;
+}
+
+.lawyers__text {
+	font-family: $brgaramond;
+	color: $br-black !important;
 } 
+%clearDiv {
+	clear: both;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-bottom: 50px;
+}
+.clear {
+	@extend %clearDiv;
+}

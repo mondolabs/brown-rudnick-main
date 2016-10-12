@@ -8,8 +8,9 @@ $data = Timber::get_context();
 $data['post'] = new TimberPost();
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
 $data['featured_image_url'] = $data['featured_image_url'][0];
+$data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
 $data['sidebar_header'] = get_field('sidebar_header');
-$data['sidebar_items'] = get_field('lawyers_sidebar_items');
+$data['lawyers_sidebar_items'] = get_field('lawyers_sidebar_items');
 $data['header_text'] = get_field('header_text');
 $data['top_text_header'] = get_field('top_text_header');
 $data['top_text_content'] = get_field('top_text_content');
@@ -22,6 +23,7 @@ $data['benefits_header'] = get_field('benefits_header');
 $data['lawyers_benefits'] = get_field('lawyers_benefits');
 $data['bottom_banner_text'] = get_field('bottom_banner_text');
 $data['bottom_banner_image'] = get_field('bottom_banner_image');
+
 $slug = basename(get_permalink());
 $data['slug'] = $slug;
 $post_type_args = array(
