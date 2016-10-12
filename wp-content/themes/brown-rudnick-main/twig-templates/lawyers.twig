@@ -71,8 +71,9 @@
 
 			<p class="body__text">
 				{{ middle_text_content }}
-			</p>
+			</p>			
 		</div>
+
 		<div class="columns small-12 medium-12 large-12 relative">
 			<div class="small-3 medium-3 large-3 float--right">
 				<select id="locationSelect" name="location_query" class="inline__text">
@@ -88,7 +89,7 @@
 			</div>
 		</div>
 		<div class="columns small-12 medium-12 large-12 relative">
-			{% set job_openings = post.get_field('job_openings') %}
+			{% set job_openings = post.get_field('lawyers_job_openings') %}
 				<table>
 					{% for job_opening in job_openings %}
 					{% set job_opening = job_opening|first %}
@@ -114,5 +115,33 @@
 				{% endfor %}
 			</table>
 		</div>
+
+
+		<div class="columns small-12 medium-12 large-12 relative">
+			<p class="title__text">
+				{{ features_header }}
+
+			</p>
+				{% for lawyers_feature in lawyers_features %}
+					{{lawyers_feature.feature}}
+				{% endfor %}			
+		</div>
+
+		<div class="columns small-12 medium-12 large-12 relative">
+			<p class="title__text">
+				{{ benefits_header }}
+
+			</p>
+				{% for lawyers_benefit in lawyers_benefits %}
+					{{lawyers_benefit.benefit}}
+				{% endfor %}			
+		</div>
 	</div>
 </div>	
+<script type="text/javascript">
+	{% if featured_image_url %}
+		$(document).ready(function(){
+			$('#featuredImage').backstretch("{{featured_image_url}}");
+		})
+	{% endif %}
+</script>
