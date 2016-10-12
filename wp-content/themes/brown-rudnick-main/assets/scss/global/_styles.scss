@@ -623,6 +623,8 @@ img.insights {
 	font-weight: 800;
 }
 
+
+
 .inline__text {
 	display: inline-block;
 }
@@ -934,6 +936,9 @@ button.close__modal {
 	}
 }
 
+.wide-spacing {
+	letter-spacing: 2px;
+}
 
 .tester{
 	height: 250px;
@@ -962,4 +967,14 @@ button.close__modal {
 }
 .clear {
 	@extend %clearDiv;
+}
+.job__openings__title{
+	font-family: $brgaramond;
+}
+.job__opening {
+	border-bottom: solid 2px $primary-grey;
+}
+.jobs__table {
+	border: none !important;
+	border-collapse: collapse;
 }

@@ -95,15 +95,15 @@
 					<table>
 						{% for job_opening in job_openings %}
 						{% set job_opening = job_opening|first %}
-						<tr>
-							<td>
+						<tr class="job__opening">
+							<td class="job__openings__title title__text smaller">
 								{{ job_opening.position }}
 							</td>
-							<td>
+							<td class="font-weight__bold wide-spacing body__text smaller">
 								{{ job_opening.start_date|date("m/d/Y") }}
 							</td>
-							<td>
-							    {{ job_opening.offices }}
+							<td class="font-weight__bold wide-spacing body__text smaller">
+							    {{ job_opening.offices|upper }}
 							</td>
 							<td>
 								<span class="job_expander top__menu job_opening" data-show-target="jobOpeningAdditionalDetails" ></span>
@@ -123,51 +123,7 @@
 
 		</div>
 
-		<div class="grey__background columns small-12 medium-12 large-12">
-			<div class="row padding__wrapper top-and-bottom sixty">
-				<div class="large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">
-					<div class="color__block--outer-wrapper white__bg">
-						<div class="color__block--inner-wrapper">
-							<p class="title__text">
-								{{ features_header }}
-							</p>
-							{% for lawyers_feature in lawyers_features %}
-								<div class="bullet bullet__full-width">
-									<div class="body__text bullet__text">
-										{{lawyers_feature.feature}}
-									</div>
-								</div>	
-							{% endfor %}
-						</div>
-						<div class="clear">
-							{{features_bottom_text}}
-						</div>
-					</div>	
-				</div>
-			</div>
-		</div>
-
-
-		<div class="experience__wrapper columns small-12 medium-12 large-12">
-			<div class="row padding__wrapper top-and-bottom">
-				<div class="large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">
-					<div class="color__block--outer-wrapper white__bg">
-						<div class="color__block--inner-wrapper">
-							<p class="title__text">
-								{{ benefits_header }}
-							</p>
-							{% for lawyers_benefit in lawyers_benefits %}
-								<div class="bullet lawyers-bullet">
-									<div class="body__text bullet__text">
-										{{lawyers_benefit.benefit}}
-									</div>
-								</div>	
-							{% endfor %}
-						</div>
-					</div>	
-				</div>
-			</div>
-		</div>
+	
 	
 	</div>
 </div>

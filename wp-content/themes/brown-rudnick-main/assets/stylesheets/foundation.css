@@ -817,6 +817,9 @@ button.close__modal {
 .bottom-banner__text--wrapper p {
   width: 200px; }
 
+.wide-spacing {
+  letter-spacing: 2px; }
+
 .tester {
   height: 250px; }
   .tester.red-bg {
@@ -837,6 +840,16 @@ button.close__modal {
   padding-left: 50px;
   padding-right: 50px;
   padding-bottom: 50px; }
+
+.job__openings__title {
+  font-family: "adobe-garamond-pro", serif; }
+
+.job__opening {
+  border-bottom: solid 2px #f0f0f0; }
+
+.jobs__table {
+  border: none !important;
+  border-collapse: collapse; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome

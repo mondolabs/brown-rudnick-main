@@ -26,6 +26,7 @@ $data['bottom_banner_image'] = get_field('bottom_banner_image');
 
 $slug = basename(get_permalink());
 $data['slug'] = $slug;
+
 $post_type_args = array(
   'post_type' => 'job-opening',
   'numberposts' => -1

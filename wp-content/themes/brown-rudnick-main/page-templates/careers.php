@@ -25,6 +25,9 @@ $data['careers_tiles_header'] = get_field('careers_tiles_header');
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
 $data['featured_image_url'] = $data['featured_image_url'][0];
 
+$slug = basename(get_permalink());
+$data['slug'] = $slug;
+
 ?>
 
 <html>
