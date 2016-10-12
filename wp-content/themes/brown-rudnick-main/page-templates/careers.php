@@ -15,11 +15,6 @@ $data['post'] = $post;
 $data['careers_header_text'] = get_field('careers_header_text');
 $data['careers_sidebar_header'] = get_field('careers_sidebar_header');
 $data['careers_sidebar_items'] = get_field('careers_sidebar_items');
-
-$test = get_field('careers_sidebar_items');
-$test_two = get_field('careers_sidebar_header');
-var_dump($test);
-
 $data['careers_tile_one'] = get_field('careers_tile_one');
 $data['careers_tile_two'] = get_field('careers_tile_two');
 $data['careers_tile_three'] = get_field('careers_tile_three');
