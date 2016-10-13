@@ -123,6 +123,66 @@
 
 		</div>
 
+<div class="experience__wrapper columns small-12 medium-12 large-12">
+	<div class="row padding__wrapper top-and-bottom">
+		<div class="large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">
+			<div class="color__block--outer-wrapper white__bg">
+				<div class="color__block--inner-wrapper">
+					<p class="title__text">
+						{{ features_header }}
+					</p>
+					<div class="bullets inline__text">
+						{% for feature in lawyers_features %}
+							<div class="bullet bullet__full-width">
+								<div class="body__text bullet__text">
+									{{feature.feature}}
+								</div>
+							</div>	
+						{% endfor %}
+					</div>	
+					<p class="body__text roman">
+						{{ bullet_section_bottom_content }}
+					</p>
+					<p class="body__text smaller italic">
+						{{ bullet_section_notice }}
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="experience__wrapper columns small-12 medium-12 large-12">
+	<div class="row padding__wrapper top-and-bottom">
+		<div class="large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">
+			<div class="color__block--outer-wrapper white__bg">
+				<div class="color__block--inner-wrapper">
+					<p class="title__text">
+						{{ benefits_header }}
+					</p>
+					<div class="bullets inline__text">
+						{% for benefit in lawyers_benefits %}
+							<div class="bullet lawyers-bullet ">
+								<div class="body__text bullet__text">
+									{{benefit.benefit}}
+								</div>
+							</div>	
+						{% endfor %}
+					</div>	
+					<p class="body__text roman">
+						{{ bullet_section_bottom_content }}
+					</p>
+					<p class="body__text smaller italic">
+						{{ bullet_section_notice }}
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
 	
 	
 	</div>
