@@ -76,6 +76,14 @@
 				</p>			
 			</div>
 
+			{% if job_keyword %}
+							<p class="title__text">
+								Showing results for your search "{{job_keyword}}"
+							</p>
+			{% endif %}	
+
+
+
 			<div class="columns small-12 medium-12 large-12 relative">
 				<div class="small-3 medium-3 large-3 float--right">
 					<select id="locationSelect" name="location_query" class="inline__text">
@@ -91,29 +99,32 @@
 				</div>
 			</div>
 			<div class="columns small-12 medium-12 large-12 relative">
-				{% set job_openings = post.get_field('lawyers_job_openings') %}
+						{% set job_openings = post.get_field('lawyers_job_openings') %}
+					
 					<table>
 						{% for job_opening in job_openings %}
 						{% set job_opening = job_opening|first %}
-						<tr class="job__opening">
-							<td class="job__openings__title title__text smaller">
-								{{ job_opening.position }}
-							</td>
-							<td class="font-weight__bold wide-spacing body__text smaller">
-								{{ job_opening.start_date|date("m/d/Y") }}
-							</td>
-							<td class="font-weight__bold wide-spacing body__text smaller">
-							    {{ job_opening.offices|upper }}
-							</td>
-							<td>
-								<span class="job_expander top__menu job_opening" data-show-target="jobOpeningAdditionalDetails" ></span>
-							</td>
-						</tr>
-						<tr class="hidden__job--description">
-							<td class="hidden" colspan="5">
-								{{ job_opening.position_description }}
-							</td>
-						</tr>
+							{% if location|capitalize in [ job_opening.offices|capitalize ] %}
+								<tr class="job__opening">
+									<td class="job__openings__title title__text smaller">
+										{{ job_opening.position }}
+									</td>
+									<td class="font-weight__bold wide-spacing body__text smaller">
+										{{ job_opening.start_date|date("m/d/Y") }}
+									</td>
+									<td class="font-weight__bold wide-spacing body__text smaller">
+									    {{ job_opening.offices|upper }}
+									</td>
+									<td>
+										<span class="job_expander top__menu job_opening" data-show-target="jobOpeningAdditionalDetails" ></span>
+									</td>
+								</tr>
+								<tr class="hidden__job--description">
+									<td class="hidden" colspan="5">
+										{{ job_opening.position_description }}
+									</td>
+								</tr>
+							{% endif %}
 					{% endfor %}
 				</table>
 			</div>

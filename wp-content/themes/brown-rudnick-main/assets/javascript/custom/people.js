@@ -33,6 +33,7 @@ var PEOPLE = {
 			var queryStringBase = location.origin + location.pathname;
 			var queryString = "";
 			var filters = [];
+			// selects values from dropdown options and determines number of filters from these
 			for (var i = selects.length - 1; i >= 0; i--) {
 				var select = selects[i];
 				if ( $(select).val().length > 0 ) {
@@ -40,6 +41,7 @@ var PEOPLE = {
 				}
 			}
 			console.log(filters);
+			// passes the parameters from each of the selected filters
 			for(var i = filters.length - 1; i >= 0; i--) {
 				var paramName = $(filters[i]).attr('name');
 				var paramValue = $(filters[i]).val();
