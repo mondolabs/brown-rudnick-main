@@ -62,6 +62,7 @@ whitelistParam(url='/(?:lint|import)\.php$/i', param=request.body['sql_query'])
 whitelistParam(url='/\/wp-admin\/admin-ajax\.php$/i', param=request.body['divi_integration_body'])
 whitelistParam(url='/\/wp-admin\/admin-ajax\.php$/i', param=request.body['divi_integration_head'])
 whitelistParam(url='#wp\-admin/+options\-general.php$#i', param=request.body['options']['modules']['ga_code'], rules=[9])
+whitelistParam(url='#importbuddy\.php$#i', param=request.fileNames, rules=[76])
 
 sqliRegex = '/(?:[^\w<]|\/\*\![0-9]*|^)(?:
 @@HOSTNAME|
@@ -209,8 +210,32 @@ if ((match('/Abonti|aggregator|AhrefsBot|asterias|BDCbot|BLEXBot|BuiltBotTough|B
 if (match('/sitemap_.*?<.*?(:?_\d+)?\.xml(:?\.gz)?/i', request.path)):
 	block(id=49, category='xss', description='All in One SEO Pack <= 2.3.7 - Unauthenticated Stored XSS')
 
+if (match('#/wp\-admin/admin\-ajax\.php$#i', server.script_filename) and equals('frs_save', request.body.action) and currentUserIsNot('administrator', server.empty) and currentUserIsNot('editor', server.empty)):
+	block(id=50, category='auth-bypass', description='Fluid Responsive Slideshow <= 2.2.26 - Unauthorized Content Modification')
+
+if (match('#/wp\-admin/admin\-ajax\.php$#i', server.script_filename) and currentUserIsNot('administrator', server.empty) and lengthGreaterThan('0', request.md5Body.dfff0a7fa1a55c8c1a4966c19f6da452, request.md5QueryString.dfff0a7fa1a55c8c1a4966c19f6da452) and md5Equals('266e0d3d29830abfe7d4ed98b47966f7', request.body.action, request.queryString.action)):
+	block(id=52, category='file_upload', description='File Manager <= 3.0.0 - Arbitrary File Upload/Download')
+
+if (currentUserIsNot('administrator', server.empty) and match('/^(?:lvo_admin_head|lvo_add_new_album|lvo_delete_album|reset_albums|save_lvo_settings|lvo_single_image_upload|lvo_resize_image_and_add|lvo_delete_image|lvo_get_albums_table|lvo_get_albums_images_table|activate|deactivate|lvo_get_album|lvo_get_album_images|get_image|lvo_delete_cache|lvo_reorder_image|lvo_reorder_album|lvo_bulk_delete_albums|lvo_bulk_disable_albums|lvo_bulk_enable_albums|delete_image|lvo_bulk_delete_images|lvo_bulk_disable_images|lvo_bulk_enable_images|lvo_disable_album|lvo_enable_album|lvo_disable_image|lvo_enable_image)$/i', request.body.task, request.queryString.task)):
+	block(id=53, category='file_upload', description='Levo Slideshow <= 2.3 - Arbitrary File Upload')
+
+if (match('#/form\-lightbox/ajax\.php$#i', server.script_filename) and currentUserIsNot('administrator', server.empty)):
+	block(id=55, category='auth-bypass', description='Form Lightbox <= 2.1 - Unauthenticated Options Update')
+
+if (match('#/wp\-admin/admin\-ajax\.php$#i', server.script_filename) and currentUserIsNot('administrator', server.empty) and equals('dcwss_update', request.body.action, request.queryString.action)):
+	block(id=56, category='auth-bypass', description='WordPress Social Stream <= 1.5.15 - Authenticated Unauthorized Options Update')
+
+if (currentUserIsNot('administrator', server.empty) and (md5Equals('8c2e1c2817e3de18e2140498bdd4f7fa', request.queryString.Action) or md5Equals('e12a2417ffbd0ae4010210b596a3f230', request.queryString.Action) or md5Equals('df33bf68ad0288e1547139e02c1e096b', request.queryString.Action) or md5Equals('c000b32f92bbd81b6cbbddd101073e54', request.queryString.Action) or md5Equals('cc61a84091dcc8b9bd6ae35cf48d71ab', request.queryString.Action) or md5Equals('c80c9038bbb5910385decc276e42061e', request.queryString.Action) or md5Equals('b81e270701125a0024db04bebdbcfc2a', request.queryString.Action) or md5Equals('2e563359c1b268da0041c5bf822857a1', request.queryString.Action) or md5Equals('4ba84dbaaafd4e7d98f55e9f093fe65a', request.queryString.Action) or md5Equals('1deb089a44f2962f92c678a451e61142', request.queryString.Action) or md5Equals('6ffa8f3e70a6279866e4b2c16fe18729', request.queryString.Action) or md5Equals('aa1c4fd7fb193a2cd1b0cc9150131b31', request.queryString.Action) or md5Equals('91e590bfc230eb3971ef1bb6b97ef974', request.queryString.Action) or md5Equals('d0e980fd7bc681b3c3085b1ac31024d6', request.queryString.Action) or md5Equals('069dde6f8ea27c8618cc8f6c6703a7c7', request.queryString.Action) or md5Equals('819900411c0d5c99c116bbce137ee04b', request.queryString.Action) or md5Equals('097d5401a3ae688b669f29351b9667de', request.queryString.Action) or md5Equals('81f1bbc03176c4525b8801b0058b309a', request.queryString.Action) or md5Equals('a8072b3a87b49ffea18548f35c6abd8c', request.queryString.Action) or md5Equals('364409901cb1fce968104dce4bf7e4fe', request.queryString.Action) or md5Equals('246c8343383408c8644f31b1f42617ce', request.queryString.Action) or md5Equals('66d87c0a0e2c02192c322c61d9d6990a', request.queryString.Action) or md5Equals('67bfe619d00425b51276ae083ae271a5', request.queryString.Action) or md5Equals('4aaddae320d8aaa8241ffd22693dd546', request.queryString.Action) or md5Equals('141f5901534f2b3092be526cac250bb6', request.queryString.Action) or md5Equals('2b7efaffcb87e027a011c33125585db7', request.queryString.Action) or md5Equals('979e32726f541a1e568557e9eb6554aa', request.queryString.Action) or md5Equals('c252a9eb30d304ba6079376ef5231aad', request.queryString.Action) or md5Equals('75b0967858cf244d4e2654e69b33d2f1', request.queryString.Action) or md5Equals('9cfad494bbf947c2ce316fe96eac396d', request.queryString.Action) or md5Equals('a4a148b325f286e07d9f24e3654e2672', request.queryString.Action) or md5Equals('3863850b63dc41d4e6e8cee097644d18', request.queryString.Action) or md5Equals('8fb62eed357b03c7be735352ab247bbe', request.queryString.Action) or md5Equals('a0380a8020e3a09257a6c67a1fe14627', request.queryString.Action) or md5Equals('b0f145120ec76e700969f63c5af3e8f4', request.queryString.Action) or md5Equals('52f6fc037a9e97f93309b1115882c080', request.queryString.Action) or md5Equals('f2a2c32747d2d49ddf682158eb9a510e', request.queryString.Action) or md5Equals('5caa7c3d6bba5a36798619b0ac4747bb', request.queryString.Action) or md5Equals('a0793408acebd97af0414d46b6705a65', request.queryString.Action) or md5Equals('f605a16b247f81f2eb2fdc097e1e1a19', request.queryString.Action) or md5Equals('ea7348459bf68bf881facb0e5d18ccd7', request.queryString.Action) or md5Equals('c747677e1903fdfffd4108f3347cf5ab', request.queryString.Action) or md5Equals('05c0ea3ee2df67b6bc2f3921c3fe2180', request.queryString.Action) or md5Equals('d986eb29534241e46402c30e678af902', request.queryString.Action))):
+	block(id=57, category='priv-esc', description='Ultimate Product Catalogue <= 3.8.1 - Privilege Escalation')
+
 if (match('#includes\/+plugin\-media\-upload\.php$#i', server.script_filename) and currentUserIsNot('administrator', server.empty) and currentUserIsNot('editor', server.empty) and currentUserIsNot('author', server.empty) and currentUserIsNot('contributor', server.empty)):
 	block(id=58, category='file_upload', description='360 Product Rotation <= 1.2.1 - Arbitrary File Upload')
+
+if (match(xssRegex, request.headers['Client-IP'], request.headers['X-Forwarded-For'], request.headers['X-Forwarded'], request.headers['X-Cluster-Client-IP'], request.headers['Forwarded-For'], request.headers.Forwarded)):
+	block(id=59, category='xss', description='WordPress Activity Log <= 2.3.1 - Persistent XSS')
+
+if (match('#/wp\-admin/admin\-ajax\.php$#i', server.script_filename) and match(sqliRegex, request.body.umm_user, request.queryString.umm_user)):
+	block(id=61, category='sqli', description='User Meta Manager <= 3.4.6 - SQL Injection')
 
 if (match('/\/(?:timthumb\.php|img\.php)/i', request.path) and match('/[^A-Za-z0-9\-\.\_:\/\?\&\+\;\=]/', request.queryString.src) and lengthGreaterThan('0', request.queryString.webshot)):
 	block(id=64, category='rce', description='TimThumb <= 2.8.13 - Remote Code Execution')
@@ -232,6 +257,9 @@ if (matchCount(xssRegex, request.body, request.queryString)):
 
 if (match('/\.(p(h(p|tml)[0-9]?|l|y)|(j|a)sp|aspx|sh|shtml|html?|cgi|htaccess)($|\.)/i', request.fileNames) and currentUserIsNot('administrator', server.empty)):
 	block(id=11, category='file_upload', description='Malicous File Upload')
+
+if (match('/(^|\/|\\)(\.\.?(\\|\/)+)+wp\-config\.php/i', request.body, request.queryString) and currentUserIsNot('administrator', server.empty)):
+	block(id=67, category='lfi', description='Directory Traversal - wp-config.php', whitelist=0)
 
 if (match('/(^|\/|\\)\.\.(\\|\/)/', request.body, request.queryString) and currentUserIsNot('administrator', server.empty)):
 	block(id=12, category='lfi', description='Directory Traversal')
