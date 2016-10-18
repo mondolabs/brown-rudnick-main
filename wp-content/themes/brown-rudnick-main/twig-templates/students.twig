@@ -74,9 +74,10 @@
 					</tr>
 				{% endfor %}
 			</table>
-			<p class="body__text">
+			<p class="body__text margin-top-20">
 				{{ middle_text_content }}
 			</p>
+
 		<div class="columns small-12 medium-12 large-12 relative no__pad margin-top-60">
 			<div class="people__details--outer-wrapper person">
 				<div class="people__details--inner-wrapper">
@@ -99,7 +100,7 @@
 											{{ ceo.job_title|upper }}
 										</p>
 									{% endif %}	
-									<span class="people__deatils list-divider red"></span>
+									<span class="people__details list-divider red"></span>
 									<p class="people__details body__text">
 										{{ ceo.primary_city }}, {{ ceo.primary_state }}{% if ceo.secondary_city and ceo.secondary_state %} | {{ ceo.secondary_city }}, {{ ceo.secondary_state}} {% endif %} 
 									</p>
@@ -119,6 +120,8 @@
 		<div class="columns small-12 medium-12 large-12 relative">
 			<div class="page__divider grey"></div>
 		</div>
+		{{ tiles_header }}
+
 		<div class="row	small-up-1 medium-up-2 large-up-5">
 			{% set tiles = post.get_field('tiles') %}
 			{# {% set tiles = tiles|first %} #}
@@ -148,3 +151,11 @@
 		</div>
 	</div>
 </div>	
+
+<script type="text/javascript">
+	{% if featured_image_url %}
+		$(document).ready(function(){
+			$('#featuredImage').backstretch("{{featured_image_url}}");
+		})
+	{% endif %}
+</script>

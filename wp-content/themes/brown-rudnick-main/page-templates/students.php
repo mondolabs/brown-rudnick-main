@@ -17,6 +17,7 @@ $data['tiles_header'] = get_field('tiles_header');
 $data['tiles'] = get_field('tiles');
 $data['bottom_banner_text'] = get_field('bottom_banner_text');
 $data['bottom_banner_image'] = get_field('bottom_banner_image');
+$data['middle_text_content'] = get_field('middle_text_content');
 
 $slug = basename(get_permalink());
 $data['slug'] = $slug;

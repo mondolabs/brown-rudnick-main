@@ -851,6 +851,18 @@ button.close__modal {
   border: none !important;
   border-collapse: collapse; }
 
+.job__description__body h5, .job__description__body .document__link {
+  font-weight: 800;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px; }
+
+.job__description__body .document__link {
+  color: #bcbcbc; }
+
+.job__description__body .document__link:hover {
+  color: #bcbcbc; }
+
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)

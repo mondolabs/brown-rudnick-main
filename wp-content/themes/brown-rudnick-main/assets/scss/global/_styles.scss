@@ -978,3 +978,17 @@ button.close__modal {
 	border: none !important;
 	border-collapse: collapse;
 }
+.job__description__body {
+	h5, .document__link {
+		font-weight: 800;
+		font-size: 12px;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+	}
+	.document__link {
+		color: #bcbcbc;
+	}
+	.document__link:hover {
+		color: #bcbcbc;
+	}
+}
