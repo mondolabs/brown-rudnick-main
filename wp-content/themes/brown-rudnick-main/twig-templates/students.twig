@@ -37,7 +37,7 @@
 		
 		<div class="sidebar-items__wrapper">
 		    {% for sidebar_item in sidebar_items %}
-    		{% set link_slug = sidebar_item.sidebar_item_link|split('/')[3] %}
+    			{% set link_slug = sidebar_item.sidebar_item_link|split('/')[3] %}
 				{# DESKTOP MENU ITEMS #}
 		    	<a class="{% if slug == link_slug|lower %}red{% endif %} hide-for-small-only link sidebar__link" href="{{ sidebar_item.ssidebar_item_link }}">
 		    		{{ sidebar_item.sidebar_item_text|upper }}
