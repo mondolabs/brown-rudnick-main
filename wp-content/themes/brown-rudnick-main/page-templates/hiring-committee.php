@@ -2,11 +2,17 @@
 /*
 Template Name: Hiring Committee Page
 */
-
 get_header();
+
 $data = Timber::get_context();
 $post = new TimberPost();
 $data['post'] = $post;
+
+$data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
+$data['featured_image_url'] = $data['featured_image_url'][0];
+
+$data['header_text'] = get_field('header_text');
+
 $args = array(
     'post_type' =>  'people',
     'posts_per_page'=>-1,
@@ -18,9 +24,6 @@ $args = array(
     	),
       ),
 );
-// get all members of the hiring committee by using a taxonomy query (tax_query for WP documentation)
-//$hiring_committee_members = get_posts();
-//$data['members_list'] = $hiring_committee_members;
 
 // pass results to twig template
 $data['hiring_committee_members'] = Timber::get_posts($args);

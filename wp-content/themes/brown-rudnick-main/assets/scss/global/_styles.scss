@@ -326,6 +326,9 @@ h3.title {
 .margin-top-60 {
 	margin-top: 60px;
 }
+.margin-bottom-60 {
+	margin-bottom: 60px;	
+}
 
 .black {
 	color: $br-black;
@@ -992,3 +995,11 @@ button.close__modal {
 		color: #bcbcbc;
 	}
 }
+// general application font
+.bold__wide__spacing {
+	letter-spacing: 2px;
+	font-size: 14px;
+	font-weight: 800;
+	text-transform: uppercase;
+}
+

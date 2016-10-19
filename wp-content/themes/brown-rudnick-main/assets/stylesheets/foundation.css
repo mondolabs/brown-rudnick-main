@@ -314,6 +314,9 @@ h3.title {
 .margin-top-60 {
   margin-top: 60px; }
 
+.margin-bottom-60 {
+  margin-bottom: 60px; }
+
 .black {
   color: #000; }
 
@@ -862,6 +865,12 @@ button.close__modal {
 
 .job__description__body .document__link:hover {
   color: #bcbcbc; }
+
+.bold__wide__spacing {
+  letter-spacing: 2px;
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -7787,6 +7796,11 @@ a {
     background-color: #b91628; }
   .page__divider.inline__block {
     display: inline-block; }
+
+.hiring-divider {
+  width: 80px;
+  border-bottom: solid #b91628 1px;
+  height: 1px; }
 
 /* Apply outline styles only when input method is keyboard
  * remove :focus style via What Input using progressive enhancement
