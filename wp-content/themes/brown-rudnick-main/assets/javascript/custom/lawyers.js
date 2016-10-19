@@ -14,7 +14,10 @@ var LOCATIONSEARCHER = {
 	onLoad: function(){
 		var jobKeyword = $.url().param('job_location_query', 'strict');
 		var locationSelect = $('#locationSelect');
-		locationSelect.val(decodeURIComponent(jobKeyword));
+		if (jobKeyword !== undefined) {
+			locationSelect.val(decodeURIComponent(jobKeyword));
+		}
+		
 	}
 }
 

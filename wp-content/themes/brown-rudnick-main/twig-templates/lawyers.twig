@@ -99,22 +99,15 @@
 				</div>
 			</div>
 			<div class="columns small-12 medium-12 large-12 relative">
-						{% set job_openings = post.get_field('lawyers_job_openings') %}
-					
+					{% set job_openings = post.get_field('lawyers_job_openings') %}
 					<table>
 						{% for job_opening in job_openings %}
-
-						{% set job_opening = job_opening|first %}
-
-
-							{% for job_location in job_opening.get_field('locations') %}
-								
-								{% set comparison = job_location.location %}
+							{% set job_opening = job_opening|first %}
+							{% set job_openings_list = job_opening.get_field('locations') %}
+							{% for job_location in job_openings_list %}
 								{# CONDITIONAL CHECK MADE TO ADAPT TO WASHINGTON, DC STRING PARSING #}
-								{% if location|replace({'-': ' '}) in comparison|upper or location|replace({'-': ', ', 'DC':'D.C.'}) in comparison|upper %}
-
+								{% if location|replace({'-': ' '}) in job_location.location|upper or location|replace({'-': ', ', 'DC':'D.C.'}) in job_location.location|upper %}
 									<tr class="job__opening">
-
 										<td class="job__openings__title title__text smaller">
 											{{ job_opening.position }}
 										</td>
@@ -129,14 +122,19 @@
 										</td>
 									</tr>
 									<tr class="hidden__job--description">
-										<td class="hidden job__description__body" colspan="5">											
+										<td class="hidden job__description__body" colspan="5">
+										{% if job_opening.department %}							
 											<h5 class="margin-bottom--20 margin-top-20">Department</h5>
 											{{ job_opening.department }}
+										{% endif %}
+										{% if job_opening.position_description %}							
 											<h5 class="margin-bottom--20 margin-top-20">Position</h5>
 											{{ job_opening.position_description }}
+										{% endif %}
+										{% if job_opening.qualifications_description %}							
 											<h5 class="margin-bottom--20 margin-top-20">Qualifications</h5>
 											{{ job_opening.qualifications_description }}
-											
+										{% endif %}
 										{% if job_opening.job_description_file%}
 											<h5 class="margin-bottom--20 margin-top-20">Qualifications</h5>
 											<a class="document__link" href="{{ job_opening.get_field('job_description_file') }}">View pdf</a>
@@ -144,11 +142,8 @@
 											<p class="margin-bottom--20 margin-top-20">{{bottom_banner_text}}</p>
 										</td>
 									</tr>
-
-
 								{% endif %}
-							{% endfor %}
-							
+							{% endfor %}							
 					{% endfor %}
 				</table>
 			</div>
