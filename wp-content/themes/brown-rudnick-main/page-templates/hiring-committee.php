@@ -16,11 +16,13 @@ $data['header_text'] = get_field('header_text');
 $args = array(
     'post_type' =>  'people',
     'posts_per_page'=>-1,
+    'order_by'=> 'name',
+    'order'=> 'ASC',
     'tax_query' =>array(
     	array(
     		'taxonomy' => 'committee_memberships',
-        		'field'=> 'slug',
-        		'terms'=>'Hiring'
+        	'field'=> 'slug',
+        	'terms'=>'Hiring'
     	),
       ),
 );

@@ -1,0 +1,64 @@
+<div id="featuredImage" class ="featured-image__header--image-wrapper" >
+
+	{% set header_text_color = "black" %}
+	{# hero header #}
+	<div class="featured-image__header--text-outer-wrapper row">
+		<div class="featured-image__header--text-wrapper">
+			<div class="featured-image__header--text-inner-wrapper">
+				<div class="color__block vellum">
+					<h1 class="page__header {{ header_text_color }}">
+						{{ header_text }}
+					</h1>
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>
+
+<div id="traineeImage" class="scroll-stopper">
+	<div class="row">
+		<div class="table__wrapper pro-bono__banner">
+		    <div class="table__inner pro-bono__banner">
+		        <div class="color-block__wrapper large-6 medium-8 small-12 float--right">
+		          <div class="color__block white relative">
+		            	<h4 class="tag__text bigger red">
+		                	{{ trainee_bottom_banner_header|upper }}
+		            	</h4>
+					<span class="list-divider about__deatils red"></span>
+		            <p class="title__text black">
+		            		{{ trainee_bottom_banner_text_content }}
+		            </p>
+					<a href="{{ pro_bono_bottom_banner_link_url }}">
+						<span class="tile__arrow pro-bono">
+							<img src="{{hover_arrow}}">
+						</span>
+					</a>     
+		          </div>  
+		        </div>
+	        </div>
+		</div>
+	</div>	
+</div>
+
+{{ content_title}}
+<br>
+{{ content_text_first }}
+<br>
+{{ content_text_second }}
+<br>
+
+{{ trainee_bottom_banner_image }}
+
+
+<script type="text/javascript">
+	{% if featured_image_url %}
+		$(document).ready(function(){
+			$('#featuredImage').backstretch("{{featured_image_url}}");
+		})
+	{% endif %}
+	{% if trainee_bottom_banner_image|length > 0 %}
+		$(document).ready(function(){
+			$('#traineeImage').backstretch("{{ trainee_bottom_banner_image }}");
+		})
+	{% endif %}
+</script>
