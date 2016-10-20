@@ -14,6 +14,32 @@
 		</div>	
 	</div>
 </div>
+{{ content_title}}
+<br>
+{{ content_text_first }}
+<br>
+{{ content_text_second }}
+<br>
+
+	<table>
+		{% for item in trainee_faq_items %}
+
+		<tr class="job__opening">
+			<td class="job__openings__title title__text smaller">
+				{{ item.faq_item_title }} 
+			</td>
+			<td>
+				<span class="job_expander top__menu job_opening" ></span>				
+			</td>
+		</tr>
+		<tr >
+			<td class="hidden job--description">
+				{{ item.faq_item_content }}
+			</td>
+		</tr>
+		{% endfor %}
+	</table>
+
 
 <div id="traineeImage" class="scroll-stopper">
 	<div class="row">
@@ -40,14 +66,8 @@
 	</div>	
 </div>
 
-{{ content_title}}
-<br>
-{{ content_text_first }}
-<br>
-{{ content_text_second }}
-<br>
 
-{{ trainee_bottom_banner_image }}
+
 
 
 <script type="text/javascript">
