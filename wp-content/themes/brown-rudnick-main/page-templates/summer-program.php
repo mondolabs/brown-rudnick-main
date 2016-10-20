@@ -11,6 +11,7 @@ $data['post'] = new TimberPost();
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
 $data['featured_image_url'] = $data['featured_image_url'][0];
 $data['summer_bottom_banner_image'] = get_field('summer_bottom_banner_image');
+$data['summer_recruitment_title'] = get_field('summer_recruitment_title');
 $data['summer_committee_tiles'] = get_field('summer_committee_tiles');
 $data['summer_committee_description_first'] = get_field('summer_committee_description_first');
 $data['summer_committee_description_second'] = get_field('summer_committee_description_second');

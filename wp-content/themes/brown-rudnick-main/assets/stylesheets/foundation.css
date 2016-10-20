@@ -875,6 +875,9 @@ button.close__modal {
 .table__white tr, .table__white td {
   background-color: #fff; }
 
+.grey-block-full {
+  background-color: #f0f0f0; }
+
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
