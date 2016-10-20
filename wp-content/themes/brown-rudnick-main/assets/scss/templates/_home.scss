@@ -120,7 +120,7 @@
 
 .footer-links {
 	display: inline-block;
-	width: 50%;
+	width: 65%;
 	margin: 0 auto;
 	text-align: center;
 	a { 
@@ -128,10 +128,16 @@
 		text-transform: uppercase;
 		padding-left: 5%;
 	}
+	@include breakpoint(medium){
+		a:hover{
+			color: $primary-red;
+		}	
+	}
+	
 }
 .footer-logo {
 	display: inline-block;
-	width: 20%;
+	width: 15%;
 }
 
 
@@ -152,7 +158,7 @@
 	height: 19px;
 }
 .social-icons {
-	width: 20%;
+	width: 15%;
 	display: inline-block;
 	text-align: right;
 	a {

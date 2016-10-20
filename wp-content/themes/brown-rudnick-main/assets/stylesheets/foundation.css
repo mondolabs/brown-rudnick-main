@@ -8499,17 +8499,20 @@ button.arrow {
 
 .footer-links {
   display: inline-block;
-  width: 50%;
+  width: 65%;
   margin: 0 auto;
   text-align: center; }
   .footer-links a {
     color: #000;
     text-transform: uppercase;
     padding-left: 5%; }
+  @media screen and (min-width: 40em) {
+    .footer-links a:hover {
+      color: #b91628; } }
 
 .footer-logo {
   display: inline-block;
-  width: 20%; }
+  width: 15%; }
 
 .slide__content--outer-wrapper {
   display: table;
@@ -8523,7 +8526,7 @@ button.arrow {
   height: 19px; }
 
 .social-icons {
-  width: 20%;
+  width: 15%;
   display: inline-block;
   text-align: right; }
   .social-icons a {

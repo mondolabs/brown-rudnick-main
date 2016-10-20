@@ -9,6 +9,7 @@
 </div>
 <div class="footer-links bold__wide__spacing">
 	<a href="#">Contact us</a>
+	<a href="#">Candidate Portal</a>
 	<a href="#">Terms of Use</a>
 	<a href="#">Privacy</a>
 	<a href="#">Sitemap</a>
