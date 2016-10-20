@@ -872,6 +872,9 @@ button.close__modal {
   font-weight: 800;
   text-transform: uppercase; }
 
+.table__white tr, .table__white td {
+  background-color: #fff; }
+
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -8502,8 +8505,7 @@ button.arrow {
   .footer-links a {
     color: #000;
     text-transform: uppercase;
-    padding-left: 5%;
-    font-family: "Avenir Medium", Helvetica, Arial, sans-serif; }
+    padding-left: 5%; }
 
 .footer-logo {
   display: inline-block;

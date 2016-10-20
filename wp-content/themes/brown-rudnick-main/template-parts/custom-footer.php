@@ -7,7 +7,7 @@
 <div class="footer-logo">
 	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="header-logo--mobile" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/Black-Red-Logo.png"></a>
 </div>
-<div class="footer-links">
+<div class="footer-links bold__wide__spacing">
 	<a href="#">Contact us</a>
 	<a href="#">Terms of Use</a>
 	<a href="#">Privacy</a>
