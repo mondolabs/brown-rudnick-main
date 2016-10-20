@@ -1,4 +1,4 @@
-<?php
+ <?php
 /*
 Template Name: London Trainee Program
 */
@@ -10,9 +10,10 @@ $data['featured_image_url'] = $data['featured_image_url'][0];
 $data['header_text'] = get_field('header_text');
 $data['content_title'] =get_field('content_title');
 $data['content_text_first'] = get_field('content_text_first');
+$data['content_text_second'] = get_field('content_text_second');
 $data['trainee_faq_title'] = get_field('trainee_faq_title');
 $data['trainee_faq_items'] = get_field('trainee_faq_items');
-$data['trainee_bottom_banner_text_content'] = get_field('trainee_bottom_banner_text_content');
+$data['trainee_bottom_banner_text'] = get_field('trainee_bottom_banner_text');
 $data['trainee_bottom_banner_header'] = get_field('trainee_bottom_banner_header');
 $data['trainee_bottom_banner_image'] = get_field('trainee_bottom_banner_image');
 
