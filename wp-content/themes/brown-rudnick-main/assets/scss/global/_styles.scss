@@ -323,6 +323,10 @@ h3.title {
 	margin-top: 40px;
 }
 
+.margin-bottom-40 {
+	margin-bottom: 40px;
+}
+
 .margin-top-60 {
 	margin-top: 60px;
 }
@@ -983,10 +987,7 @@ button.close__modal {
 }
 .job__description__body {
 	h5, .document__link {
-		font-weight: 800;
-		font-size: 12px;
-		text-transform: uppercase;
-		letter-spacing: 2px;
+		@extend %greyBold;
 	}
 	.document__link {
 		color: #bcbcbc;
@@ -995,16 +996,94 @@ button.close__modal {
 		color: #bcbcbc;
 	}
 }
+
+.document__link {
+	@extend %greyBold;
+}
 // general application font
-.bold__wide__spacing {
+.bold__wide__spacing, .medium__weight__spacing {
 	letter-spacing: 2px;
 	font-size: 14px;
-	font-weight: 800;
 	text-transform: uppercase;
 }
+.bold__wide__spacing {
+		font-weight: 800;
+}
+.medium__weight__spacing {
+	font-weight: 400;
+}
+
 .table__white {
-	tr, td { background-color: $white;}
+	tr, td { background-color: $white !important;}
+	border: none !important;
+	.grey-block {background-color: $primary-grey !important; }
+	//border-collapse: separate !important;
+}
+
+#locationSelect {
+	@extend %cleanBorder;
+  border-bottom: 1px solid #A8A8A8;
+}
+
+%greyBold {
+	color: $darker-grey;
+	font-weight: 800;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
 }
 .grey-block-full {
+	background-color: $primary-grey !important; 
+	.white-row {
+		background-color:$white;
+	}
+}
+
+.full-width-grey {
 	background-color: $primary-grey;
+}
+
+.padding-top-60 {
+	padding-top: 60px;
+}
+.padding-bottom-60 {
+	padding-bottom: 60px;
+}
+
+.padding-top-20 {
+	padding-top: 20px;
+}
+.padding-bottom-20 {
+	padding-bottom: 20px;
+}
+
+.fullWidth {
+ max-width: 100% !important;
+ margin-left: auto;
+ margin-right: auto;
+ &.full-width-white {
+ 	background-color: $white;
+ }
+}
+
+.red {
+	color: $primary-red;
+}
+
+.table__legend {
+	//border-bottom: 1px solid $darker-grey !important;
+}
+.centered-tile {
+	text-align: center;
+	padding: 3%;
+	p {
+		margin-top: 20px;
+	}
+}
+
+.float__right {
+	float:right !important;
+}
+.div__half {
+	width:49%; display: inline-block;
 }

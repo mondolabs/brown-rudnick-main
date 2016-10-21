@@ -39,7 +39,7 @@
 		    {% for sidebar_item in sidebar_items %}
     			{% set link_slug = sidebar_item.sidebar_item_link|split('/')[3] %}
 				{# DESKTOP MENU ITEMS #}
-		    	<a class="{% if slug == link_slug|lower %}red{% endif %} hide-for-small-only link sidebar__link" href="{{ sidebar_item.ssidebar_item_link }}">
+		    	<a class="medium__weight__spacing {% if slug == link_slug|lower %}red{% endif %} hide-for-small-only link sidebar__link" href="{{ sidebar_item.ssidebar_item_link }}">
 		    		{{ sidebar_item.sidebar_item_text|upper }}
 		    	</a>
 			{# MOBILE MENU ITEMS #}
@@ -50,17 +50,17 @@
 		</div>    
 	</div>
 	<div class="columns small-12 medium-9 large-10 float--right relative">
-		<div class="columns small-12 medium-12 large-12 relative">
+		<div class="margin-bottom-60 columns small-12 medium-12 large-12 relative">
 			<p class="body__text">
 				{{ top_text_content }}
 			</p>
 		</div>
 		{% set accordions = post.get_field('accordions') %}
-				<table>
+				<table class="margin-bottom-60 margin-top-60">
 					{% for accordion in accordions %}
 					{% set accordion = accordion|first|first %}
 					<tr>
-						<td>
+						<td class="title__text smaller">
 							{{ accordion.accordion_header }}
 						</td>
 						<td>
@@ -78,7 +78,7 @@
 				{{ middle_text_content }}
 			</p>
 
-		<div class="columns small-12 medium-12 large-12 relative no__pad margin-top-60">
+		<div class="columns small-12 medium-12 large-12 relative no__pad margin-top-20">
 			<div class="people__details--outer-wrapper person">
 				<div class="people__details--inner-wrapper">
 					<div class="columns medium-12 large-12 small-12 relative">

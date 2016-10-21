@@ -7,6 +7,20 @@
   The Foundation framework is built by Zurb
   Licensed under MIT Open Source
 */
+#locationSelect {
+  border-left: none !important;
+  border-right: none !important;
+  border-top: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important; }
+
+#locationSelect {
+  border-left: none !important;
+  border-right: none !important;
+  border-top: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important; }
+
 /**
  * Foundation for Sites by ZURB
  * Version 6.2.3
@@ -310,6 +324,9 @@ h3.title {
 
 .margin-top-40 {
   margin-top: 40px; }
+
+.margin-bottom-40 {
+  margin-bottom: 40px; }
 
 .margin-top-60 {
   margin-top: 60px; }
@@ -854,29 +871,82 @@ button.close__modal {
   border: none !important;
   border-collapse: collapse; }
 
-.job__description__body h5, .job__description__body .document__link {
-  font-weight: 800;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 2px; }
-
 .job__description__body .document__link {
   color: #bcbcbc; }
 
 .job__description__body .document__link:hover {
   color: #bcbcbc; }
 
-.bold__wide__spacing {
+.bold__wide__spacing, .medium__weight__spacing {
   letter-spacing: 2px;
   font-size: 14px;
-  font-weight: 800;
   text-transform: uppercase; }
 
-.table__white tr, .table__white td {
-  background-color: #fff; }
+.bold__wide__spacing {
+  font-weight: 800; }
+
+.medium__weight__spacing {
+  font-weight: 400; }
+
+.table__white {
+  border: none !important; }
+  .table__white tr, .table__white td {
+    background-color: #fff !important; }
+  .table__white .grey-block {
+    background-color: #f0f0f0 !important; }
+
+#locationSelect {
+  border-bottom: 1px solid #A8A8A8; }
+
+.job__description__body h5, .job__description__body .document__link, .document__link {
+  color: #a7a6a6;
+  font-weight: 800;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px; }
 
 .grey-block-full {
+  background-color: #f0f0f0 !important; }
+  .grey-block-full .white-row {
+    background-color: #fff; }
+
+.full-width-grey {
   background-color: #f0f0f0; }
+
+.padding-top-60 {
+  padding-top: 60px; }
+
+.padding-bottom-60 {
+  padding-bottom: 60px; }
+
+.padding-top-20 {
+  padding-top: 20px; }
+
+.padding-bottom-20 {
+  padding-bottom: 20px; }
+
+.fullWidth {
+  max-width: 100% !important;
+  margin-left: auto;
+  margin-right: auto; }
+  .fullWidth.full-width-white {
+    background-color: #fff; }
+
+.red {
+  color: #b91628; }
+
+.centered-tile {
+  text-align: center;
+  padding: 3%; }
+  .centered-tile p {
+    margin-top: 20px; }
+
+.float__right {
+  float: right !important; }
+
+.div__half {
+  width: 49%;
+  display: inline-block; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome

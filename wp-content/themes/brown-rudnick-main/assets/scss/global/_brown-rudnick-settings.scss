@@ -23,3 +23,11 @@ $black: #000;
 $primary-grey: #f0f0f0;
 $darker-grey: #a7a6a6;
 $br-black: #000;  
+
+// no borders for various elements
+%cleanBorder {
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    box-shadow: none !important;
+}

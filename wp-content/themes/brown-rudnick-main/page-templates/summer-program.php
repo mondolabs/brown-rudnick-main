@@ -49,6 +49,8 @@ $args = array(
 $data['summer_committee_members'] = Timber::get_posts($args);
 $data['summer_committee_members'] = array_unique($data['summer_committee_members']);
 
+$hiring_schedule = get_field('hiring_schedule');
+
 ?>
 
 <html>
@@ -56,7 +58,42 @@ $data['summer_committee_members'] = array_unique($data['summer_committee_members
     <?php wp_head()?>
   </head>
   <body>
-    <div id="page-full-width-homepage" class ="full-width" role="main">
+     <div class="vellum black--vellum modal__background diversity hidden">
+      <div class="row">
+        <div class="diversity__modal--outer-wrapper table__wrapper relative">
+          <div class="diversity__modal--inner-wrapper table__innner">
+            <div class="diversity__modal--text-wrapper">
+              <button class="close__modal cancel">
+                
+              </button>
+              <p class="title__text text-align__center">
+                2015 Schedule
+              </p>
+              <p class="body__text text-align__center">
+                As part of our fall recruiting outreach, we visit a select group of schools and engage in on-campus interviews with top candidates.
+              </p>
+               <div class="div__half document__link">
+                school
+              </div> 
+              <div class="div__half document__link">
+                oci date
+              </div>
+               <?php foreach ($hiring_schedule as $key) { ?>
+                  <?php foreach($key as $dog) { ?>                  
+                    <div class="div__half"><?php echo $dog;?></div>
+                  <?php }?>                 
+                <?php }?>
+
+                 
+      
+               
+            </div>
+          </div>  
+        </div>
+      </div>  
+    </div>
+
+    <div id="page-full-width-homepage" class =" full-width" role="main">
       <?php Timber::render('/twig-templates/summer_program.twig', $data); ?>
     </div>  
     <?php do_action( 'foundationpress_after_content' ); ?>
