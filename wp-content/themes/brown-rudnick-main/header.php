@@ -57,13 +57,14 @@
 							<img class="header-logo--mobile" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/BR-logo-for-nav.png">
 						</a>
 					</div>
+					
 					<div class="menu__inner-wrapper--desktop columns large-9 medium-9">
 						<ul class="desktop__menu--icons-list scrolled">
 							<li>
-								<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/contact-icon.png">
+								<img src="<?php bloginfo('stylesheet_directory');?>/assets/images/contact-icon.png">
 							</li>
 							<li>
-								<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/marker-icon.png">
+								<img src="<?php bloginfo('stylesheet_directory');?>/assets/images/marker-icon.png">
 							</li>
 							<li>
 								<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/search-icon.png">
