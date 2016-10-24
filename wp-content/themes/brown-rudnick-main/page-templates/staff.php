@@ -26,6 +26,8 @@ $data['bottom_banner_image'] = get_field('bottom_banner_image');
 
 $slug = basename(get_permalink());
 $data['slug'] = $slug;
+$data['career_track_header'] = get_field('career_track_header');
+$data['career_track_items'] = get_field('career_tracks');
 
 $post_type_args = array(
   'post_type' => 'job_opening_staff',
@@ -45,7 +47,21 @@ foreach ( $job_opening_posts as $post ) {
 $data['job_opportunities'] = Timber::get_posts($post_type_args);
 // get custom post type objects with the IDs
 $data['locations'] = wp_get_object_terms( $ids, 'locations' );
+
 // filter the location when we reload the page
 $data['location'] = get_query_var('job_location_query', "");
 
 ?>
+
+<html>
+  <head>
+    <?php wp_head()?>
+  </head>
+  <body>
+    <div id="page-full-width-homepage" class ="full-width" role="main">
+      <?php Timber::render('/twig-templates/staff.twig', $data); ?>
+    </div>  
+    <?php do_action( 'foundationpress_after_content' ); ?>
+    <?php get_footer(); ?>
+  </body>
+</html>
