@@ -18,68 +18,61 @@
 	<body <?php body_class(); ?> >
 		<?php do_action( 'foundationpress_after_body' ); ?>
 
-		<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) == 'offcanvas' ) : ?>
+
+			<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) == 'offcanvas' ) : ?>
+			<button type="button" class="button show-for-small-only" data-toggle="offCanvas">Open Menu</button>		
 			<div class="off-canvas-wrapper">
 				<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
-					<!-- get mobile menu  under here // need to write the template-->
 					<?php get_template_part( 'template-parts/mobile-off-canvas' ); ?>
-				</div>
-			</div>	
-		<?php endif; ?>
-		<?php do_action( 'foundationpress_layout_start' ); ?>
-				
+				<?php endif; ?>
+				<?php get_template_part( 'template-parts/mobile-off-canvas' ); ?>
+					<?php do_action( 'foundationpress_layout_start' ); ?>
 
-		<header id="masthead" class="site-header" role="banner">
-			<div class="menu__wrapper--desktop row sr">
-				<div class="logo__wrapper columns large-3 medium-3 hide-for-small-only">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-						<img class="header-logo--mobile" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/BR-logo-for-nav.png">
-					</a>
-				</div>
-				<div class="menu__inner-wrapper--desktop columns large-9 medium-9">
-					<?php desktop_menu(); ?>
-					<span class="subnav__color-block"></span>
-				</div>
-			</div>
-
-			<div class="mobile-menu">
-				<button class="hamburger-icon" type="button" data-toggle="mobile-menu">
-					<?php get_template_part( 'template-parts/mobile-off-canvas' ); ?>
-				</button>
-			</div>
-		</header>
-
-		<div class="menu__outer-wrapper--desktop-on-scroll">
-			<header id="mastheadOnScroll" class="site-header" role="banner">
-				<div class="menu__wrapper--desktop-on-scroll row">
-					<div class="logo__wrapper columns large-3 medium-3">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-							<img class="header-logo--mobile" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/BR-logo-for-nav.png">
-						</a>
+				<header id="masthead" class="site-header" role="banner">
+					<div class="menu__wrapper--desktop row sr">
+						<div class="logo__wrapper columns large-3 medium-3 hide-for-small-only">
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+								<img class="header-logo--mobile" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/BR-logo-for-nav.png">
+							</a>
+						</div>
+						<div class="menu__inner-wrapper--desktop columns large-9 medium-9">
+							<?php desktop_menu(); ?>
+							<span class="subnav__color-block"></span>
+						</div>
 					</div>
-					
-					<div class="menu__inner-wrapper--desktop columns large-9 medium-9">
-						<ul class="desktop__menu--icons-list scrolled">
-							<li>
-								<img src="<?php bloginfo('stylesheet_directory');?>/assets/images/contact-icon.png">
-							</li>
-							<li>
-								<img src="<?php bloginfo('stylesheet_directory');?>/assets/images/marker-icon.png">
-							</li>
-							<li>
-								<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/search-icon.png">
-							</li>
-						</ul>
-						<?php desktop_menu(); ?>
-						<span class="subnav__color-block"></span>
-					</div>
+
+				</header>
+
+				<div class="menu__outer-wrapper--desktop-on-scroll">
+					<header id="mastheadOnScroll" class="site-header" role="banner">
+						<div class="menu__wrapper--desktop-on-scroll row">
+							<div class="logo__wrapper columns large-3 medium-3">
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+									<img class="header-logo--mobile" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/BR-logo-for-nav.png">
+								</a>
+							</div>
+							
+							<div class="menu__inner-wrapper--desktop columns large-9 medium-9">
+								<ul class="desktop__menu--icons-list scrolled">
+									<li>
+										<img src="<?php bloginfo('stylesheet_directory');?>/assets/images/contact-icon.png">
+									</li>
+									<li>
+										<img src="<?php bloginfo('stylesheet_directory');?>/assets/images/marker-icon.png">
+									</li>
+									<li>
+										<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/search-icon.png">
+									</li>
+								</ul>
+								<?php desktop_menu(); ?>
+								<span class="subnav__color-block"></span>
+							</div>
+						</div>	
+			
+					</header>
 				</div>	
-	
-			</header>
-		</div>	
 
 	<?php do_action( 'foundationpress_after_header' ); ?>
-	</body>
-</html>
+
 
 

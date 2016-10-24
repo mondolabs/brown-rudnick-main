@@ -24,18 +24,21 @@ $data['homepage_section_3_button_link'] = get_field('homepage_section_3_button_l
 $data['homepage_section_3_description'] = get_field('homepage_section_3_description');
 $data['homepage_section_3_header'] = get_field('homepage_section_3_header');
 ?>
-<html>
+
   <head>
     <?php wp_head()?>
   </head>
   <body>
-    <div id="page-full-width-homepage" class ="full-width" role="main">
-      <?php Timber::render('/twig-templates/slider.twig', $data); ?>
-      <?php Timber::render('/twig-templates/blog-tiles.twig', $data); ?>
-      <?php Timber::render('/twig-templates/homepage-section-3.twig', $data); ?>
-    </div>  
-    <?php do_action( 'foundationpress_after_content' ); ?>
-    <?php get_footer(); ?>
+        <div id="page-full-width-homepage" class ="full-width" role="main">
+          <?php Timber::render('/twig-templates/slider.twig', $data); ?>
+          <?php Timber::render('/twig-templates/blog-tiles.twig', $data); ?>
+          <?php Timber::render('/twig-templates/homepage-section-3.twig', $data); ?>
+        </div>  
+                      </div> <!-- close off canvas wrapper inner -->
+    </div> <!-- close off canvas wrapper -->
+    </div> <!-- close off canvas content wrapper -->
+        <?php do_action( 'foundationpress_after_content' ); ?>
+        <?php get_footer(); ?>
   </body>
 </html>
 
