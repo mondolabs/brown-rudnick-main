@@ -45,8 +45,7 @@ foreach ( $job_opening_posts as $post ) {
 
 $data['job_opportunities'] = Timber::get_posts($post_type_args);
 // get custom post type objects with the IDs
-$data['locations'] = get_object_taxonomies( $ids, 'locations' );
-
+$data['job_locations'] = wp_get_object_terms( $ids, 'locations' );
 // filter the location when we reload the page
 $data['location'] = get_query_var('job_location_query', "");
 

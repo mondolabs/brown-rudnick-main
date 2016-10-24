@@ -14,6 +14,7 @@
 	</div>
 </div>
 
+
 {# body - with sidebar #}
 <div class="row white-row relative z-index__1">
 	<div class="row careers__wrapper body__wrapper columns small-12 medium-12 large-12">
@@ -111,7 +112,7 @@
 						<option class="document__link" value="">
 							OFFICE
 						</option>
-						{% for location in locations %}
+						{% for location in job_locations %}
 							<option  value="{{ location.slug|upper }}">
 								{{ location.name|upper }}
 							</option>
@@ -185,7 +186,7 @@
 		{# this table APPEARS IF THERE IS A SEARCH QUERY #}
 		{% if location %}
 				<div class="columns small-12 medium-12 large-12 relative">
-						{% set job_openings = post.get_field('lawyers_job_openings') %}
+						{% set job_openings = post.get_field('job_openings') %}
 						<table border ="none" class="table__white">
 							{% for job_opening in job_openings %}
 								{% set job_opening = job_opening|first %}
