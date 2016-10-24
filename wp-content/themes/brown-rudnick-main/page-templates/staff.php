@@ -10,7 +10,7 @@ $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id
 $data['featured_image_url'] = $data['featured_image_url'][0];
 $data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
 $data['sidebar_header'] = get_field('sidebar_header');
-$data['lawyers_sidebar_items'] = get_field('lawyers_sidebar_items');
+$data['sidebar_items'] = get_field('sidebar_items');
 $data['header_text'] = get_field('header_text');
 $data['top_text_header'] = get_field('top_text_header');
 $data['top_text_content'] = get_field('top_text_content');
@@ -43,10 +43,9 @@ foreach ( $job_opening_posts as $post ) {
   array_push($ids, $post->ID);
 }
 
-
 $data['job_opportunities'] = Timber::get_posts($post_type_args);
 // get custom post type objects with the IDs
-$data['locations'] = wp_get_object_terms( $ids, 'locations' );
+$data['locations'] = get_object_taxonomies( $ids, 'locations' );
 
 // filter the location when we reload the page
 $data['location'] = get_query_var('job_location_query', "");
