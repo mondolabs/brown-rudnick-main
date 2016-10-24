@@ -8,20 +8,17 @@ $data['post'] = new TimberPost();
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
 $data['featured_image_url'] = $data['featured_image_url'][0];
 $data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
+
 $data['sidebar_header'] = get_field('sidebar_header');
 $data['sidebar_items'] = get_field('sidebar_items');
 $data['header_text'] = get_field('header_text');
-$data['top_text_header'] = get_field('top_text_header');
-$data['top_text_content'] = get_field('top_text_content');
-$data['middle_text_header'] = get_field('middle_text_header');
-$data['middle_text_content'] = get_field('middle_text_content');
-$data['features_header'] = get_field('features_header');
-$data['lawyers_features'] = get_field('lawyers_features');
-$data['features_bottom_text'] = get_field('features_bottom_text');
-$data['benefits_header'] = get_field('benefits_header');
-$data['lawyers_benefits'] = get_field('lawyers_benefits');
-$data['bottom_banner_text'] = get_field('bottom_banner_text');
-$data['bottom_banner_image'] = get_field('bottom_banner_image');
+$data['first_paragraph'] = get_field('first_paragraph');
+$data['second_paragraph'] = get_field('second_paragraph');
+$data['third_paragraph'] = get_field('third_paragraph');
+
+$data['highlights_title'] = get_field('highlights_title');
+$data['highlights'] = get_field('highlights');
+$data['main_body_title'] = get_field('main_body_title');
 
 $slug = basename(get_permalink());
 $data['slug'] = $slug;
@@ -39,4 +36,3 @@ $data['slug'] = $slug;
     <?php get_footer(); ?>
   </body>
 </html>
-*/
