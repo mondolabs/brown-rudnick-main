@@ -579,8 +579,7 @@ img.insights {
 .inline__wrapper {
   display: inline-block; }
   .inline__wrapper.person {
-    height: 200px;
-    margin-top: -40px; }
+    height: 200px; }
   .inline__wrapper.ceo {
     height: 200px; }
 
