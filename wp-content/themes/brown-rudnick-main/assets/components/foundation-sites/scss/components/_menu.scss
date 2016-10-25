@@ -45,7 +45,7 @@ $menu-icon-spacing: 0.25rem !default;
   // List items are table cell to allow for vertical alignment
   > li {
     @include disable-mouse-outline;
-
+    z-index: 99999;
     @if $global-flexbox {
       flex: 0 0 auto;
     }
@@ -99,6 +99,7 @@ $menu-icon-spacing: 0.25rem !default;
     @else {
       > li {
         display: table-cell;
+        z-index: 99999;
       }
     }
   }

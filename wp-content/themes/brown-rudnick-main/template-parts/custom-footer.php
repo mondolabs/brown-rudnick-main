@@ -20,3 +20,7 @@
  <a href="#"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/rss-icon.png"></a>
  <a href="#"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/youtube-icon.png"></a>
 </div>
+ <div class="footer-message">
+	<p> &copy; 2016 Brown Rudnick. Attorney advertising.</p>
+	<p> Prior results do not guarantee a similar outcome.</p>
+</div>

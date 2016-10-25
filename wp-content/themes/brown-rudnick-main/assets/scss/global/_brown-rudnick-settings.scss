@@ -23,6 +23,7 @@ $black: #000;
 $primary-grey: #f0f0f0;
 $darker-grey: #a7a6a6;
 $br-black: #000;  
+$light-grey-three: #a7a7a7;
 
 // no borders for various elements
 %cleanBorder {
@@ -30,4 +31,12 @@ $br-black: #000;
     border-right: none !important;
     border-top: none !important;
     box-shadow: none !important;
+}
+
+// footer elements on mobile
+%footerMobile {
+	@media screen and (max-width: 768px){
+		display: table;
+		margin: 0 auto;
+	}
 }

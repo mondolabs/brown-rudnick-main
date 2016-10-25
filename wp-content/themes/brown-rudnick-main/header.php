@@ -19,13 +19,10 @@
 		<?php do_action( 'foundationpress_after_body' ); ?>
 
 
-			<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) == 'offcanvas' ) : ?>
-			<button type="button" class="button show-for-small-only" data-toggle="offCanvas">Open Menu</button>		
-			<div class="off-canvas-wrapper">
-				<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
-					<?php get_template_part( 'template-parts/mobile-off-canvas' ); ?>
+			<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) == 'topbar' ) : ?>
+			<button type="button" class="right-menu-icon button menu-icon hamburger show-for-small-only float-right" data-toggle="offCanvas"></button>		
+					<?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
 				<?php endif; ?>
-				<?php get_template_part( 'template-parts/mobile-off-canvas' ); ?>
 					<?php do_action( 'foundationpress_layout_start' ); ?>
 
 				<header id="masthead" class="site-header" role="banner">

@@ -14,12 +14,22 @@
   -webkit-box-shadow: none !important;
           box-shadow: none !important; }
 
+@media screen and (max-width: 768px) {
+  .footer-logo > a, .footer-links > a {
+    display: table;
+    margin: 0 auto; } }
+
 #locationSelect {
   border-left: none !important;
   border-right: none !important;
   border-top: none !important;
   -webkit-box-shadow: none !important;
           box-shadow: none !important; }
+
+@media screen and (max-width: 768px) {
+  .footer-logo > a, .footer-links > a {
+    display: table;
+    margin: 0 auto; } }
 
 /**
  * Foundation for Sites by ZURB
@@ -946,6 +956,15 @@ button.close__modal {
 .div__half {
   width: 49%;
   display: inline-block; }
+
+#menu-mobile-menu {
+  display: none;
+  height: 100vh !important;
+  overflow: hidden;
+  z-index: 9999;
+  text-align: center; }
+  #menu-mobile-menu li {
+    margin: 40px; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -5623,6 +5642,7 @@ input[type="range"] {
   margin: 0;
   list-style-type: none; }
   .menu > li {
+    z-index: 99999;
     display: table-cell;
     vertical-align: middle; }
     [data-whatinput='mouse'] .menu > li {
@@ -5649,17 +5669,20 @@ input[type="range"] {
     margin-right: 0.25rem;
     display: inline-block; }
   .menu > li {
-    display: table-cell; }
+    display: table-cell;
+    z-index: 99999; }
   .menu.vertical > li {
     display: block; }
   @media screen and (min-width: 40em) {
     .menu.medium-horizontal > li {
-      display: table-cell; }
+      display: table-cell;
+      z-index: 99999; }
     .menu.medium-vertical > li {
       display: block; } }
   @media screen and (min-width: 64em) {
     .menu.large-horizontal > li {
-      display: table-cell; }
+      display: table-cell;
+      z-index: 99999; }
     .menu.large-vertical > li {
       display: block; } }
   .menu.simple li {
@@ -7737,6 +7760,18 @@ a::after {
       margin: 0;
       padding: 0; }
 
+.footer-message {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center; }
+  .footer-message p {
+    margin: 0;
+    font-size: 0.75em;
+    color: #a7a7a7; }
+    @media screen and (min-width: 768px) {
+      .footer-message p {
+        display: inline-block; } }
+
 .sidebar {
   width: 100%;
   float: left;
@@ -8554,6 +8589,19 @@ button.arrow {
 .desktop-menu a {
   word-break: keep-all !important; }
 
+@media screen and (max-width: 768px) {
+  .footer-links > a {
+    padding-left: 0; } }
+
+.footer-logo {
+  margin-top: 40px;
+  width: 15%;
+  display: inline-block; }
+  @media screen and (max-width: 768px) {
+    .footer-logo {
+      display: table;
+      margin: 0 auto; } }
+
 #footer-container {
   background-color: #fff;
   margin-top: 0; }
@@ -8581,10 +8629,11 @@ button.arrow {
   @media screen and (min-width: 40em) {
     .footer-links a:hover {
       color: #b91628; } }
-
-.footer-logo {
-  display: inline-block;
-  width: 15%; }
+  @media screen and (max-width: 768px) {
+    .footer-links {
+      display: table; }
+      .footer-links a {
+        margin: 40px auto; } }
 
 .slide__content--outer-wrapper {
   display: table;
@@ -8603,6 +8652,14 @@ button.arrow {
   text-align: right; }
   .social-icons a {
     padding-left: 7.5%; }
+  @media screen and (max-width: 768px) {
+    .social-icons {
+      display: table;
+      margin: 0 auto;
+      width: 300px;
+      text-align: center; }
+      .social-icons a {
+        padding: 5%; } }
 
 #slider-svg {
   fill: none; }
@@ -8761,6 +8818,7 @@ ul.desktop__menu--icons-list {
     padding-top: 36px; }
 
 .subnav__color-block {
+  z-index: 1;
   margin-top: 2%;
   width: 400%;
   height: 60px;
@@ -8892,5 +8950,8 @@ span.red__border--top {
 .homepage__tiles--wrapper {
   background-color: #f0f0f0;
   padding-bottom: 60PX; }
+
+.menu li {
+  z-index: 99999; }
 
 /*# sourceMappingURL=foundation.css.map */

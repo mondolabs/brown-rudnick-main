@@ -34,9 +34,6 @@ $data['homepage_section_3_header'] = get_field('homepage_section_3_header');
           <?php Timber::render('/twig-templates/blog-tiles.twig', $data); ?>
           <?php Timber::render('/twig-templates/homepage-section-3.twig', $data); ?>
         </div>  
-                      </div> <!-- close off canvas wrapper inner -->
-    </div> <!-- close off canvas wrapper -->
-    </div> <!-- close off canvas content wrapper -->
         <?php do_action( 'foundationpress_after_content' ); ?>
         <?php get_footer(); ?>
   </body>

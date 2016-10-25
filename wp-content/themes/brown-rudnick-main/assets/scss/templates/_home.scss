@@ -99,7 +99,33 @@
 	.desktop-menu {
 		a {word-break: keep-all !important;}
 	}
+
 // footer 
+
+
+.footer-logo > a, .footer-links > a {
+	@extend %footerMobile;
+}
+
+.footer-links > a { 
+	@media screen and (max-width: 768px){
+		padding-left: 0;
+	}
+}
+
+.footer-logo {
+	margin-top: 40px;
+	width: 15%;
+	display: inline-block;
+	@media screen and (max-width: 768px){
+		display: table;
+		margin: 0 auto;
+	}
+	// @include breakpoint(medium){
+	// 	display: inline-block;
+
+	// }
+}
 #footer-container {
 	background-color: $white;
 	margin-top: 0;
@@ -133,13 +159,12 @@
 			color: $primary-red;
 		}	
 	}
+	@media screen and (max-width: 768px){
+		display: table;
+		a { margin: 40px auto; }
+	}
 	
 }
-.footer-logo {
-	display: inline-block;
-	width: 15%;
-}
-
 
 // Hero Slider
 
@@ -163,6 +188,15 @@
 	text-align: right;
 	a {
 		padding-left:7.5%;
+	}
+	@media screen and (max-width: 768px){
+		display: table;
+		margin: 0 auto;
+		width: 300px;
+		text-align: center;
+		a {
+			padding: 5%;
+		}
 	}
 }
 
@@ -346,6 +380,7 @@ ul.desktop__menu--icons-list {
 }
 
 .subnav__color-block {
+	z-index: 1;
 	margin-top: 2%;
 	width: 400%;
     height: 60px;
@@ -492,4 +527,7 @@ span.red__border--top {
 .homepage__tiles--wrapper {
 	background-color: $primary-grey;
 	padding-bottom: 60PX;
+}
+.menu li {
+	z-index:99999;
 }
