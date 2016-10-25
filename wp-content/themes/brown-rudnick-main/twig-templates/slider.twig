@@ -1,6 +1,6 @@
 {% do action( 'foundationpress_before_content' ) %}
 
-<div class="human-icon"></div> 
+<div class="human-icon" data-toggle="offCanvas"></div> 
 <div class = "slider-container" label="Latest Updates from Brown Rudnick" > 
     {% for item in post.get_field('homepage_slider') %}
         <!-- slide -->
@@ -38,6 +38,8 @@
 <div class="slider-svg">
 	<svg id="slider-svg" xmlns="http://www.w3.org/2000/svg" class="slider_svg" viewBox="0 0 180 180">
 </div>
+
+   
 {% do action( 'foundationpress_after_content' ) %}
 {{wp_footer}}
 

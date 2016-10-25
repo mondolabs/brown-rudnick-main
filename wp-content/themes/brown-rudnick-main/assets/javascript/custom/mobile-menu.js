@@ -9,19 +9,21 @@ var mobileMenu = {
 				}
 			};
 
-			$('.right-menu-icon').click(function(){
+			$('#open-mobile-menu').click(function(){
 
-				$('.human-icon').toggle();
-				$('.right-menu-icon').toggleClass('mobile-active');
-				$('.right-menu-icon').toggleClass('menu-icon');
-				// show mobile menu and prevent other interactions
-				 $('body').toggleClass('no-scroll');
+				
+				$('#mobile__logo__container').toggle();
+				$('#open-mobile-menu').toggleClass('mobile-active');
+				$('#open-mobile-menu').toggleClass('close__modal');
+				$('#open-mobile-menu').css({'top':'5px', 'left': '0'});
+				$('.mobile__menu__bottom').toggle();
+				$('body').toggleClass('no-scroll');
+				$('.human-icon').slideToggle(500);
 				$('#menu-mobile-menu').slideToggle(500);
 				// call check scroll function defined above
 				checkScroll();
 			});
 		},
-
 		animate: function(){
 			// animate elements on mobile menu
 			$('#menu-nested-pages').addClass('is-animating');		
@@ -30,5 +32,6 @@ var mobileMenu = {
 
 $(document).ready(function(){
 	mobileMenu.openDropdown();
+	mobileMenu.animate();
 });
 

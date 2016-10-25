@@ -225,7 +225,7 @@ button.slick-arrow  {
 	width: 100%;
 }
 .human-icon {
-	position: absolute;
+	position: fixed;
 	right: 10%;
 	bottom: 10%;
 	width: 80px;
@@ -236,6 +236,10 @@ button.slick-arrow  {
 	background: $primary-red url('../images/human-icon.png') no-repeat center;
 	background-size: 40%;
 	z-index: 999;
+	@media screen and (max-width: 768px){
+		bottom: 20%;
+
+	}
 }
 .featured_firsts-image{
 	max-height: 100%;
@@ -300,6 +304,9 @@ button.slick-arrow  {
 	border-color: $primary-grey;
 	background-color: $white;
 	margin: 0 auto;
+	@media screen and (max-width: 768px){
+		text-align: center;
+	}
 }
 .homepage-slide-title {
 	border-bottom: 5px solid $white;
@@ -312,7 +319,7 @@ button.slick-arrow  {
 }
 
 .slick-slide{
-	height: 450px;
+	height: 500px;
 }
 .slide {
 	background-repeat: no-repeat;
@@ -460,6 +467,10 @@ span.red__border--top {
 	background-color: $primary-red;
 	display: block;
 	margin-bottom: 40px;
+	// mobile breakpoint
+	@media screen and (max-width: 768px){
+		position: relative;
+	}
 }
 
 
@@ -494,8 +505,8 @@ span.red__border--top {
 	    margin: 0;
 	    letter-spacing: 1.5px;
 	    font-weight: 500;
+	    font-size: 30px;
 	}
-	width: 20%;
 }
 .pub-interest-title {
 	margin-top: 3%;
@@ -530,4 +541,7 @@ span.red__border--top {
 }
 .menu li {
 	z-index:99999;
+}
+.test-content {
+	display: none;
 }

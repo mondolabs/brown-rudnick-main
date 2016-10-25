@@ -20,7 +20,14 @@
 
 
 			<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) == 'topbar' ) : ?>
-			<button type="button" class="right-menu-icon button menu-icon hamburger show-for-small-only float-right" data-toggle="offCanvas"></button>		
+			<div id="mobile__logo__container" class="show-for-small-only">
+				<a href="/">
+					<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/BR-logo-for-nav.png">
+				</a>
+			</div>
+			<div class="mobile__button__container">
+				<button type="button" id="open-mobile-menu" class="mobile-active right-menu-icon show-for-small-only" ></button>
+			</div>		
 					<?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
 				<?php endif; ?>
 					<?php do_action( 'foundationpress_layout_start' ); ?>
