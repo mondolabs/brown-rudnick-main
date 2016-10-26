@@ -40,3 +40,17 @@ $light-grey-three: #a7a7a7;
 		margin: 0 auto;
 	}
 }
+
+
+// fix active class from foundation
+%fixActiveClassMobile {
+	a { 
+				color: $primary-red !important;
+				background: $white !important;
+			}
+}
+%fixActiveClass {
+	a { 
+				color: $primary-red !important;
+			}
+}

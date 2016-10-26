@@ -19,6 +19,10 @@
     display: table;
     margin: 0 auto; } }
 
+#menu-mobile-menu li.active a {
+  color: #b91628 !important;
+  background: #fff !important; }
+
 #locationSelect {
   border-left: none !important;
   border-right: none !important;
@@ -30,6 +34,10 @@
   .footer-logo > a, .footer-links > a {
     display: table;
     margin: 0 auto; } }
+
+#menu-mobile-menu li.active a {
+  color: #b91628 !important;
+  background: #fff !important; }
 
 /**
  * Foundation for Sites by ZURB
@@ -973,9 +981,6 @@ button.close__modal {
     #menu-mobile-menu li a {
       font-size: 20px;
       letter-spacing: 2px; }
-    #menu-mobile-menu li.active a {
-      color: #b91628 !important;
-      background: #fff !important; }
 
 .mobile__menu__bottom {
   display: none;

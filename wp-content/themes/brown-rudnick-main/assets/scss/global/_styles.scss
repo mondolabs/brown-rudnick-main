@@ -1107,14 +1107,13 @@ button.close__modal {
 			letter-spacing: 2px;
 		}
 		&.active {
-			a { 
-				color: $primary-red !important;
-				background: $white !important;
-			}
-		}
+		@extend %fixActiveClassMobile;
 	}
 
+	}
 }
+
+
 
 .mobile__menu__bottom {
 	display: none;
