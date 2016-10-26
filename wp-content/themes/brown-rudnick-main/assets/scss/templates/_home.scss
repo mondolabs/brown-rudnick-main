@@ -265,13 +265,21 @@ button.slick-arrow  {
 	padding: 5%;
 	text-transform: uppercase;
 }
-.prev-slider-home {
-	width:7.5%;
+.prev-slider-home, .next-slider-home {
+	width:30px;
+	display: inline-block;
+	margin: 7px;
+	@include breakpoint(medium){
+		margin: 25px;
+	}
+	
 }
-.next-slider-home{
-	width: 7.5%;
+.arrows-container {
+	text-align: center;
+	@include breakpoint(medium){
+		text-align: left;
+	}
 }
-
 .homepage-slider-title  {
 	color: $white;
 }
@@ -282,6 +290,11 @@ button.slick-arrow  {
 	}
 	h2 {
 		color: $black;
+	}
+}
+.slide-description-heading {
+	@media screen and (max-width: 768px){
+		margin: 0 auto;
 	}
 }
 .homepage-full {
@@ -479,6 +492,9 @@ span.red__border--top {
 	font-size: 22px;
 	color: $black;
 	letter-spacing: 1.6px;
+	@media screen and (max-width: 768px){
+		text-align: center;
+	}
 }
 
 @include breakpoint(medium) {
@@ -505,7 +521,7 @@ span.red__border--top {
 	    margin: 0;
 	    letter-spacing: 1.5px;
 	    font-weight: 500;
-	    font-size: 30px;
+	    font-size: 25px;
 	}
 }
 .pub-interest-title {

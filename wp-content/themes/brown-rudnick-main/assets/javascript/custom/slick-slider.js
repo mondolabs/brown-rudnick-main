@@ -29,7 +29,7 @@ var homepage = {
 				slide: '.slide',
 				slidesToShow: 1,
 				slidesToScroll: 1,
-				autoplay: true,
+				autoplay: false,
 				autoplaySpeed: 2000,
 				arrows: true,
 				fade: true,
