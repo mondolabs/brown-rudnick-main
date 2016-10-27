@@ -1057,6 +1057,16 @@ button.close__modal {
     color: #fff;
     text-align: center !important; }
 
+.back__to__top {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: #b91628;
+  width: 200px;
+  color: #fff;
+  z-index: 99999; }
+
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)

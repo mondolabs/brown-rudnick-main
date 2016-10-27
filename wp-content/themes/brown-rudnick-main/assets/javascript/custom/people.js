@@ -1,18 +1,28 @@
 var PEOPLE = {
 	listeners: function(){
 		console.log('People js loaded');
+
+		// navigate to letter anchor
 		$('.letter__link').click(function(event) {
+			
 			var letterlLinkInnerWrappers = $('.letter__link--inner-wrapper');
 			var letter = $(this).data('letter');
 			var letterAnchor = $("div[data-letter-anchor="+ letter +"]");
-			letterlLinkInnerWrappers.removeClass('active');
-			var selectedletterlLinkInnerWrapper = $(this).parent();
-			selectedletterlLinkInnerWrapper.addClass('active');
-			$('html,body').animate({
-	          scrollTop: letterAnchor.offset().top - 200
-	        }, 1000);
-	        console.log("Scrolling to " + letter );
-	        return false;
+			// handle the case when there is no element with that letter 
+			if (letterAnchor.offset() !== undefined) { 
+				letterlLinkInnerWrappers.removeClass('active');
+				var selectedletterlLinkInnerWrapper = $(this).parent();
+				selectedletterlLinkInnerWrapper.addClass('active');
+				$('html,body').animate({
+		          scrollTop: letterAnchor.offset().top - 200
+		        }, 1000);
+		        console.log("Scrolling to " + letter );
+		        $('.back__to__top').slideToggle();
+		        return false;
+			} else {
+				alert('No lawyers found for that letter. Try another one!');
+			}
+			
 		});
 		// $(document).resize(function(event) {
 		// 	if ( $(document).width() > 640) {
@@ -129,21 +139,42 @@ var PEOPLE = {
 	hideAdvancedSearch: function(){
 		$('#advancedSearchModal').addClass('hidden').fadeOut('slow');
 		console.log("advanced search hidden!")
+	},
+
+	scrollBackToTop: function(){
+		$('.back__to__top').click(function(event){
+					window.scrollTo(0, $('.letter__links_wrapper').offset().top - 50);
+					$(this).slideToggle();
+
+		});
+
 	}
+
+
 };
 
 $(document).ready(function(){
 	PEOPLE.listeners();
+	PEOPLE.scrollBackToTop();
 	// if ( $(document).width() > 640) {
 	// 	PEOPLE.scrollEvents();
 	// 	$(document).scroll( function(){
 	// 		PEOPLE.scrollEvents();
 	// 	});
 	// }
-	var headerHeight = $('#mastheadOnScroll').height() + 140;
-	console.log(headerHeight);
-	if ( $('.sidebar__on-scroll--fixed').length > 0){
-		console.log("STICKY");
-		$('.sidebar__on-scroll--fixed').stick_in_parent({ offset_top: headerHeight });
-	}	
+
+	$(window).resize(function(event) {
+		console.log('resizing');
+		
+			var headerHeight = $('#mastheadOnScroll').height() + 140;
+			console.log(headerHeight);
+			if ( $('.sidebar__on-scroll--fixed').length > 0){
+				console.log("STICKY");
+				if ($(window).innerWidth() > 640) {
+					$('.sidebar__on-scroll--fixed').stick_in_parent({ offset_top: headerHeight });
+				}	
+		}
+	});
+
+	
 });
