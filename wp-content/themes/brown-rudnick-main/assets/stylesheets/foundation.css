@@ -23,6 +23,12 @@
   color: #b91628 !important;
   background: #fff !important; }
 
+.arrows-container, .slide-description p, .slide-description h2, .homepage-section-3-title {
+  text-align: center; }
+  @media screen and (min-width: 40em) {
+    .arrows-container, .slide-description p, .slide-description h2, .homepage-section-3-title {
+      text-align: left; } }
+
 #locationSelect {
   border-left: none !important;
   border-right: none !important;
@@ -38,6 +44,12 @@
 #menu-mobile-menu li.active a {
   color: #b91628 !important;
   background: #fff !important; }
+
+.arrows-container, .slide-description p, .slide-description h2, .homepage-section-3-title {
+  text-align: center; }
+  @media screen and (min-width: 40em) {
+    .arrows-container, .slide-description p, .slide-description h2, .homepage-section-3-title {
+      text-align: left; } }
 
 /**
  * Foundation for Sites by ZURB
@@ -8674,8 +8686,8 @@ button.arrow {
 
 .footer-logo {
   margin-top: 40px;
-  width: 15%;
-  display: inline-block; }
+  display: inline-block;
+  width: 200px; }
   @media screen and (max-width: 768px) {
     .footer-logo {
       display: table;
@@ -8806,28 +8818,14 @@ button.slick-arrow {
     .prev-slider-home, .next-slider-home {
       margin: 25px; } }
 
-.arrows-container {
-  text-align: center; }
-  @media screen and (min-width: 40em) {
-    .arrows-container {
-      text-align: left; } }
-
 .homepage-slider-title {
   color: #fff; }
 
 .slide-description p {
-  color: #000;
-  text-align: center; }
-  @media screen and (min-width: 40em) {
-    .slide-description p {
-      text-align: left; } }
+  color: #000; }
 
 .slide-description h2 {
-  color: #000;
-  text-align: center; }
-  @media screen and (min-width: 40em) {
-    .slide-description h2 {
-      text-align: left; } }
+  color: #000; }
 
 @media screen and (max-width: 768px) {
   .slide-description-heading {
@@ -9007,9 +9005,6 @@ span.red__border--top {
   font-size: 22px;
   color: #000;
   letter-spacing: 1.6px; }
-  @media screen and (max-width: 768px) {
-    .homepage-section-3-title {
-      text-align: center; } }
 
 @media screen and (min-width: 40em) {
   .public-interest-learn-more {
@@ -9070,5 +9065,13 @@ span.red__border--top {
 
 .test-content {
   display: none; }
+
+.homepage__lower__section p {
+  font-family: "adobe-garamond-pro", serif;
+  margin-bottom: 20px;
+  color: #000;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+  font-size: 18px; }
 
 /*# sourceMappingURL=foundation.css.map */

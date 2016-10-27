@@ -116,16 +116,12 @@
 
 .footer-logo {
 	margin-top: 40px;
-	width: 15%;
 	display: inline-block;
 	@media screen and (max-width: 768px){
 		display: table;
 		margin: 0 auto;
 	}
-	// @include breakpoint(medium){
-	// 	display: inline-block;
-
-	// }
+	width: 200px;
 }
 #footer-container {
 	background-color: $white;
@@ -276,10 +272,7 @@ button.slick-arrow  {
 	
 }
 .arrows-container {
-	text-align: center;
-	@include breakpoint(medium){
-		text-align: left;
-	}
+	@extend %centeronMobile;
 }
 .homepage-slider-title  {
 	color: $white;
@@ -288,17 +281,11 @@ button.slick-arrow  {
 .slide-description {
 	p {
 		color: $black;
-		text-align: center;
-		@include breakpoint(medium){
-			text-align: left;
-		}
+		@extend %centeronMobile;
 	}
 	h2 {
 		color: $black;
-			text-align: center;
-		@include breakpoint(medium){
-			text-align: left;
-		}
+			@extend %centeronMobile;
 	}
 }
 .slide-description-heading {
@@ -504,9 +491,7 @@ span.red__border--top {
 	font-size: 22px;
 	color: $black;
 	letter-spacing: 1.6px;
-	@media screen and (max-width: 768px){
-		text-align: center;
-	}
+	@extend %centeronMobile;
 }
 
 @include breakpoint(medium) {
@@ -572,4 +557,14 @@ span.red__border--top {
 }
 .test-content {
 	display: none; 
+}
+
+.homepage__lower__section {
+	p {
+		font-family: $brgaramond;
+		margin-bottom: 20px;
+		color: $black;
+		transition: color .3s ease-in-out;
+		font-size: 18px;
+	}
 }

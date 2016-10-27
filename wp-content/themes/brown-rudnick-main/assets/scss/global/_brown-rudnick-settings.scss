@@ -54,3 +54,10 @@ $light-grey-three: #a7a7a7;
 				color: $primary-red !important;
 			}
 }
+%centeronMobile {
+	text-align: center;
+		@include breakpoint(medium){
+			text-align: left;
+		}
+
+}
