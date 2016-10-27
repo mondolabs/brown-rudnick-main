@@ -8714,7 +8714,8 @@ button.arrow {
   padding: 5% !important;
   width: 100%;
   max-width: inherit !important;
-  padding-bottom: 10%; }
+  padding-bottom: 10%;
+  text-align: center !important; }
 
 .footer-links {
   display: inline-block;
@@ -9081,8 +9082,5 @@ span.red__border--top {
   -webkit-transition: color .3s ease-in-out;
   transition: color .3s ease-in-out;
   font-size: 18px; }
-
-footer {
-  text-align: center; }
 
 /*# sourceMappingURL=foundation.css.map */
