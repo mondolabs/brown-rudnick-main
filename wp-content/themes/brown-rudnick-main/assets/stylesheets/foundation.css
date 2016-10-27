@@ -8695,7 +8695,7 @@ button.arrow {
 .footer-logo {
   margin-top: 40px;
   display: inline-block;
-  width: 200px; }
+  width: 125px; }
   @media screen and (max-width: 768px) {
     .footer-logo {
       display: table;
@@ -8718,7 +8718,7 @@ button.arrow {
 
 .footer-links {
   display: inline-block;
-  width: 65%;
+  width: 60%;
   margin: 0 auto;
   text-align: center; }
   .footer-links a {
@@ -8746,7 +8746,7 @@ button.arrow {
   height: 19px; }
 
 .social-icons {
-  width: 15%;
+  width: 18%;
   display: inline-block;
   text-align: right; }
   .social-icons a {
