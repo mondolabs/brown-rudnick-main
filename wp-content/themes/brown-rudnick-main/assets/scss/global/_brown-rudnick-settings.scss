@@ -42,13 +42,6 @@ $light-grey-three: #a7a7a7;
 }
 
 
-// fix active class from foundation
-%fixActiveClassMobile {
-	a { 
-				color: $primary-red !important;
-				background: $white !important;
-			}
-}
 %fixActiveClass {
 	a { 
 				color: $primary-red !important;
