@@ -164,10 +164,8 @@ $(document).ready(function(){
 	// 	});
 	// }
 
-	$(window).resize(function(event) {
-		console.log('resizing');
-		
-			var headerHeight = $('#mastheadOnScroll').height() + 140;
+	$(window).resize(function(event) {		
+			var headerHeight = $('#mastheadOnScroll').height() + 180;
 			console.log(headerHeight);
 			if ( $('.sidebar__on-scroll--fixed').length > 0){
 				console.log("STICKY");
