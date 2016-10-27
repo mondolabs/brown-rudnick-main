@@ -5815,8 +5815,8 @@ input[type="range"] {
   .menu.nested {
     margin-left: 1rem; }
   .menu .active > a {
-    color: #fff;
-    background: #121212; }
+    color: #b91628;
+    background: #fff; }
 
 .menu-text {
   font-weight: bold;
@@ -7937,6 +7937,10 @@ a {
     margin-bottom: 0;
     margin-top: 45px;
     margin-left: 40px; }
+
+@media screen and (max-width: 768px) {
+  .advanced-search-container {
+    text-align: center; } }
 
 #featured-hero {
   -webkit-background-size: cover;

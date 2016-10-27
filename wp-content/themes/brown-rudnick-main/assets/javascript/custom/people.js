@@ -16,7 +16,7 @@ var PEOPLE = {
 				$('html,body').animate({
 		          scrollTop: letterAnchor.offset().top - 200
 		        }, 1000);
-		        console.log("Scrolling to " + letter );
+		        console.log("Scrolling to " + letter );  
 		        $('.back__to__top').slideToggle();
 		        return false;
 			} else {
