@@ -8884,7 +8884,10 @@ button.slick-arrow {
     height: 450px; } }
 
 .menu__wrapper--desktop {
-  padding: 40px 0 0; }
+  padding: 0; }
+  @media screen and (min-width: 40em) {
+    .menu__wrapper--desktop {
+      padding: 40px 0 0; } }
 
 ul.desktop-menu {
   float: right;

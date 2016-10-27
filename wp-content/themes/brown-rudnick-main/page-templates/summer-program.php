@@ -73,14 +73,16 @@ $hiring_schedule = get_field('hiring_schedule');
                 As part of our fall recruiting outreach, we visit a select group of schools and engage in on-campus interviews with top candidates.
               </p>
                <div class="div__half document__link">
-                school
+                <p class="float__left">school</p>
               </div> 
               <div class="div__half document__link">
-                oci date
+                <p class="float__right no__margin">oci date</p>
               </div>
                <?php foreach ($hiring_schedule as $key) { ?>
-                  <?php foreach($key as $dog) { ?>                  
-                    <div class="div__half"><?php echo $dog;?></div>
+                  <?php 
+                    $count = 0;
+                    foreach($key as $dog) { ?>                  
+                    <div class="div__half "><p class="<?php if (++$count%2) { echo "float__left title__text smaller"; } else { echo "float__right bold__wide__spacing"; }?>"><?php echo $dog;?></p></div>
                   <?php }?>                 
                 <?php }?>
 

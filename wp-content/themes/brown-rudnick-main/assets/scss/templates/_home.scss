@@ -53,6 +53,7 @@
 	}
 	.site-header {
 		background-color: $white;
+
 	}
 	.title-bar-title{
 		padding-top: 2.5%;
@@ -361,7 +362,10 @@ button.slick-arrow  {
 }
 
 .menu__wrapper--desktop {
-	padding: 40px 0 0;
+	@include breakpoint(medium){
+		padding: 40px 0 0;
+	}
+	padding: 0;
 }
 
 ul.desktop-menu {
