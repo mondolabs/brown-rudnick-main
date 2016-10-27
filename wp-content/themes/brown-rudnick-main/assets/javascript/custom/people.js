@@ -144,6 +144,7 @@ var PEOPLE = {
 	scrollBackToTop: function(){
 		$('.back__to__top').click(function(event){
 					window.scrollTo(0, $('.letter__links_wrapper').offset().top - 50);
+					//$(this).toggleClass('table__display');
 					$(this).slideToggle();
 
 		});

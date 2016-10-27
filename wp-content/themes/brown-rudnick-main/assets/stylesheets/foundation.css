@@ -1052,16 +1052,14 @@ button.close__modal {
 .back__to__top {
   display: none;
   position: fixed;
-  display: table;
   bottom: 0;
   right: 0;
   background-color: #b91628;
   width: 30px;
-  height: 30px;
+  height: 40px;
   z-index: 99999; }
   .back__to__top p {
-    display: table-cell;
-    vertical-align: middle; }
+    margin-top: 5px; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
