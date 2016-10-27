@@ -200,9 +200,9 @@
 	}
 }
 
-   #slider-svg {
-   	fill: none;
-   }
+ #slider-svg {
+ 	fill: none;
+ }
    
 button.slick-arrow  {
 	display: none !important;
@@ -287,9 +287,17 @@ button.slick-arrow  {
 .slide-description {
 	p {
 		color: $black;
+		text-align: center;
+		@include breakpoint(medium){
+			text-align: left;
+		}
 	}
 	h2 {
 		color: $black;
+			text-align: center;
+		@include breakpoint(medium){
+			text-align: left;
+		}
 	}
 }
 .slide-description-heading {

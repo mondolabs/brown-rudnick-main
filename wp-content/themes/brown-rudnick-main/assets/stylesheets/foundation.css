@@ -8816,10 +8816,18 @@ button.slick-arrow {
   color: #fff; }
 
 .slide-description p {
-  color: #000; }
+  color: #000;
+  text-align: center; }
+  @media screen and (min-width: 40em) {
+    .slide-description p {
+      text-align: left; } }
 
 .slide-description h2 {
-  color: #000; }
+  color: #000;
+  text-align: center; }
+  @media screen and (min-width: 40em) {
+    .slide-description h2 {
+      text-align: left; } }
 
 @media screen and (max-width: 768px) {
   .slide-description-heading {

@@ -42,7 +42,7 @@
 			    		{% set link_slug = sidebar_item.about_sidebar_item_link|split('/')[4] %}
 				    	{% if sidebar_item.has_sub_menu %}
 						{# DESKTOP SUBMENU ITEMS #}
-							<a class="{% if slug == link_slug %}red{% endif %} hide-for-small-only accordion__trigger link" data-trigger-target="{{sidebar_item.about_sidebar_submenu_accordion_trigger }}">
+							<a class="{% if slug == link_slug %}red{% endif %} medium__weight__spacinghide-for-small-only accordion__trigger link" data-trigger-target="{{sidebar_item.about_sidebar_submenu_accordion_trigger }}">
 								{{ sidebar_item.about_sidebar_item_text|upper }}
 							</a>
 							<ul id="blogsSidebarAccordion" class="hidden list-style__none hide-for-small-only">
@@ -69,7 +69,7 @@
 							</ul>
 						{% else %}
 						{# DESKTOP MENU ITEMS #}
-					    	<a class="{% if slug == link_slug %}red{% endif %} hide-for-small-only link sidebar__link" href="{{ sidebar_item.about_sidebar_item_link }}">
+					    	<a class=" medium__weight__spacing {% if slug == link_slug %}red{% endif %} hide-for-small-only link sidebar__link" href="{{ sidebar_item.about_sidebar_item_link }}">
 					    		{{ sidebar_item.about_sidebar_item_text|upper }}
 					    	</a>
 						{# MOBILE MENU ITEMS #}

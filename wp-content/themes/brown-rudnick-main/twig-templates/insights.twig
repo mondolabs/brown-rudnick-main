@@ -25,7 +25,7 @@
 				<span class="list-divider"></span>
 			    {% for sidebar_item in sidebar_items %}
 			    	{% if sidebar_item.has_sub_menu %}
-						<a class="hide-for-small-only accordion__trigger link" data-trigger-target="{{sidebar_item.sidebar_submenu_accordion_trigger }}">
+						<a class="hide-for-small-only medium__weight__spacing accordion__trigger link" data-trigger-target="{{sidebar_item.sidebar_submenu_accordion_trigger }}">
 							{{ sidebar_item.sidebar_item_text|upper }}
 						</a>
 						<ul id="blogsSidebarAccordion" class="hidden list-style__none hide-for-small-only">
@@ -52,7 +52,7 @@
 							{% endfor %}
 						</ul>
 					{% else %}
-				    	<a class="link" href="{{ sidebar_item.sidebar_item_link }}">
+				    	<a class="link medium__weight__spacing" href="{{ sidebar_item.sidebar_item_link }}">
 				    		{{ sidebar_item.sidebar_item_text|upper }}
 				    	</a>
 					{% endif %}
