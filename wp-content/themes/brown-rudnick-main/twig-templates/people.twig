@@ -165,7 +165,7 @@
 				</button>
 			</div>
 		</div>	
-		<div class="columns small-12 medium-9 large-10 relative float--right people__details--container">
+		<div class="columns no__pad small-12 medium-8 large-10 relative float--right people__details--container">
 			<div class="padding__wrapper forty sides__only">	
 				<div class="columns small-12 medium-12 large-12 relative">
 					<div>
@@ -258,15 +258,26 @@
 									{% endif %}
 									<div class="columns medium-12 large-6 small-12 min--height__225 end">
 										<div class="columns medium-6 large-6 small-12">
-											<img class="people__details" src="{{ TimberImage(person.image).src }}" />
+											<div class="people__image__container">
+												<img class="people__details" src="{{ TimberImage(person.image).src }}" />
+											</div>
 										</div>
 										<div class="columns medium-6 large-6 small-12">
 											<div class="people__details--outer-wrapper">
 												<div class="people__details--inner-wrapper">
 													<a href="{{ person._permalink }}" class="people__details title__text smaller">
 														{# {{ person.first_name }} {% if person.middle_initial %}{{ person.middle_initial }}. {% endif %} {{ person.last_name }} #}
-														{{ person.name }}
+														{% if person.last_name %} 
+															{{person.last_name}}, 
+														{% endif %} 
+														{% if person.first_name %}
+															{{ person.first_name}}
+														{% endif %} 
+														{% if person.middle_initial %}
+															{{ person.middle_initial }}.
+														{% endif %}
 													</a>
+
 													{% if person.title %}	
 														<p class="people__details tag__text">
 															{{ person.job_title|upper }}

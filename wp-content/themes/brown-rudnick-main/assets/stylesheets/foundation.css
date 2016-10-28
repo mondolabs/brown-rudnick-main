@@ -496,8 +496,11 @@ a.experience__link {
   height: 100%;
   vertical-align: middle; }
 
+.people__details--container .columns {
+  padding: 0 !important; }
+
 img.people__details {
-  max-width: 200px; }
+  max-width: 180px; }
   @media screen and (max-width: 1140px) {
     img.people__details {
       max-width: 175px; } }
