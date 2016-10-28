@@ -8,7 +8,6 @@ var PEOPLE = {
 			var letterlLinkInnerWrappers = $('.letter__link--inner-wrapper');
 			var letter = $(this).data('letter');
 			var letterAnchor = $("div[data-letter-anchor="+ letter +"]");
-			// handle the case when there is no element with that letter 
 			if (letterAnchor.offset() !== undefined) { 
 				letterlLinkInnerWrappers.removeClass('active');
 				var selectedletterlLinkInnerWrapper = $(this).parent();
@@ -20,7 +19,11 @@ var PEOPLE = {
 		        $('.back__to__top').slideToggle();
 		        return false;
 			} else {
-				alert('No lawyers found for that letter. Try another one!');
+				// handle the case when there is no element with that letter 
+				// letter is not clickable
+				letterAnchor.click(function(event){
+					event.preventDefault();
+				})
 			}
 			
 		});
@@ -143,16 +146,30 @@ var PEOPLE = {
 
 	scrollBackToTop: function(){
 		$('.back__to__top').click(function(event){
-					window.scrollTo(0, $('.letter__links_wrapper').offset().top - 50);
-					//$(this).toggleClass('table__display');
-					$(this).slideToggle();
-
+			$('html,body').animate({
+        scrollTop: $('.letter__links_wrapper').offset().top - 100
+      }, 1000);
+      if ($(this).is(":visible")) {
+				$(this).slideToggle();
+      }
 		});
-
 	}
-
-
 };
+
+
+	$(window).on('resize', function(event) {		
+			var headerHeight = $('#mastheadOnScroll').height() + 140;
+			var elementToStick = $('.sidebar__on-scroll--fixed');
+			if ( $('.sidebar__on-scroll--fixed').length > 0 && $(document).width() > 640){
+				console.log("STICKY");
+					elementToStick.stick_in_parent({ offset_top: headerHeight });
+			}	else {
+				elementToStick.trigger("sticky_kit:detach", function(){
+					console.log('no longer stuck');
+				});
+			}	
+
+	});
 
 $(document).ready(function(){
 	PEOPLE.listeners();
@@ -163,17 +180,17 @@ $(document).ready(function(){
 	// 		PEOPLE.scrollEvents();
 	// 	});
 	// }
+	var headerHeight = $('#mastheadOnScroll').height() + 140;
+	var elementToStick = $('.sidebar__on-scroll--fixed');
+		console.log(headerHeight);
+		if ( $('.sidebar__on-scroll--fixed').length > 0){
+			console.log("STICKY");
+			if ($(document).width() > 640) {
+				elementToStick.stick_in_parent({ offset_top: headerHeight });
+			} 	
+	}	
+	$(window).trigger('resize');
 
-	$(window).resize(function(event) {		
-			var headerHeight = $('#mastheadOnScroll').height() + 180;
-			console.log(headerHeight);
-			if ( $('.sidebar__on-scroll--fixed').length > 0){
-				console.log("STICKY");
-				if ($(window).innerWidth() > 640) {
-					$('.sidebar__on-scroll--fixed').stick_in_parent({ offset_top: headerHeight });
-				}	
-		}
-	});
 
 	
 });

@@ -5,19 +5,20 @@
 
 var NAV = {
 	listeners: function(){
-			// medium breakpoint hover interaction
+			// medium breakpoint hover interaction for navigation
 		if ($(window).innerWidth() > 700 ) {
 				$('.menu-item-has-children').on({
 					mouseover: function(){					
-						$('.subnav__color-block').stop().show(410);
+						$('.subnav__color-block').stop().show(510);
 					},
 					mouseout: function(){						
-						$('.subnav__color-block').stop().hide(410);
+						$('.subnav__color-block').stop().hide(510);
 					}
 				});	
 			}
 	},
 	desktopMenu: $('#masthead'),
+	// hide or show scroll nav bar
 	scrollEvents: function(){
 		if ( $(window).scrollTop() >= NAV.desktopMenu.height() ) {
 			$(NAV.desktopMenu).css('opacity', '0');
@@ -38,10 +39,18 @@ $(document).ready(function(){
 		})
 	}
 	if ( $(window).scrollTop() >= NAV.desktopMenu.height() && $(document).width() > 640) {
-		$(NAV.desktopMenu).hide();
+		// differentiate between page load and user scroll
+		// otherwise regular menu is always hidden on page load at scroll location :P
+		var userScroll = false;     
+		function mouseEvent(e) { 
+			userScroll = true; 
+		} 
+		// only hide if user has scrolled
+		if (userScroll) {
+			$(NAV.desktopMenu).hide();
+		}
 	}
 })
-
 
 
 
