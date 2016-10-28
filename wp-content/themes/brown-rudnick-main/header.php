@@ -47,7 +47,7 @@
 
 				</header>
 
-				<div class="menu__outer-wrapper--desktop-on-scroll">
+				<div class="menu__outer-wrapper--desktop-on-scroll hide-for-small-only">
 					<header id="mastheadOnScroll" class="site-header" role="banner">
 						<div class="menu__wrapper--desktop-on-scroll row">
 							<div class="logo__wrapper columns large-3 medium-3">

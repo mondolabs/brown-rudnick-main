@@ -8,7 +8,7 @@
 
 ?>
 
-<nav class="vertical menu" id="mobile-menu" role="navigation">
+<nav class="vertical menu show-for-small-only" id="mobile-menu" role="navigation">
   <?php foundationpress_mobile_nav(); ?>
   <div class="mobile__menu__bottom">
   	<div class="one__half padding__wrapper five">
