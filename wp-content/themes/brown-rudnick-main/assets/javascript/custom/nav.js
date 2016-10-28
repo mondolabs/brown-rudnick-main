@@ -20,7 +20,7 @@ var NAV = {
 	desktopMenu: $('#masthead'),
 	// hide or show scroll nav bar
 	scrollEvents: function(){
-
+		// differentiate btw mobile and all else
 		var desktopCheck = $(window).scrollTop() >= NAV.desktopMenu.height();
 		var mobileCheck = $(window).scrollTop() > 250;
 		var check;

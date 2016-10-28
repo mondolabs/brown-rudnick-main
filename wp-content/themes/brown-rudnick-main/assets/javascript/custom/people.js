@@ -145,16 +145,16 @@ var PEOPLE = {
 	},
 
 	scrollBackToTop: function(){
-		$('.back__to__top').click(function(event){
-			$('html,body').animate({
-        scrollTop: $('.letter__links_wrapper').offset().top - 400
-      }, 1000);
-      if ($(this).is(":visible")) {
-				$(this).slideToggle();
-      }
-		});
-	}
-};
+			$('.back__to__top').click(function(event){
+				$('html,body').animate({
+	        scrollTop: $('.letter__links_wrapper').offset().top - 400
+	      }, 1000);
+	      if ($(this).is(":visible")) {
+					$(this).slideToggle();
+	      }
+			});
+		}
+	};
 
 
 	$(window).on('resize', function(event) {		
@@ -168,7 +168,6 @@ var PEOPLE = {
 					console.log('no longer stuck');
 				});
 			}	
-
 	});
 
 $(document).ready(function(){
@@ -190,7 +189,4 @@ $(document).ready(function(){
 			} 	
 	}	
 	$(window).trigger('resize');
-
-
-	
 });
