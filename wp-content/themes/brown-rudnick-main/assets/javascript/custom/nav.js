@@ -20,7 +20,16 @@ var NAV = {
 	desktopMenu: $('#masthead'),
 	// hide or show scroll nav bar
 	scrollEvents: function(){
-		if ( $(window).scrollTop() >= NAV.desktopMenu.height() ) {
+
+		var desktopCheck = $(window).scrollTop() >= NAV.desktopMenu.height();
+		var mobileCheck = $(window).scrollTop() > 250;
+		var check;
+		if ($(document).width() > 640) {
+			check = desktopCheck;
+		} else {
+			check = mobileCheck;
+		}
+		if ( check  ) {
 			$(NAV.desktopMenu).css('opacity', '0');
 			$('.subnav__color-block').css({'width': '400%'});
 			$('.menu__outer-wrapper--desktop-on-scroll').slideDown('300');
@@ -33,11 +42,11 @@ var NAV = {
 
 $(document).ready(function(){
 	NAV.listeners();
-	if ( $(document).width() > 640) {
+	//if ( $(document).width() > 640) {
 		$(document).scroll( function(){
 			NAV.scrollEvents();
 		})
-	}
+	//}
 	if ( $(window).scrollTop() >= NAV.desktopMenu.height() && $(document).width() > 640) {
 		// differentiate between page load and user scroll
 		// otherwise regular menu is always hidden on page load at scroll location :P

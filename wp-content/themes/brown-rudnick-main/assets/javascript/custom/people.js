@@ -147,7 +147,7 @@ var PEOPLE = {
 	scrollBackToTop: function(){
 		$('.back__to__top').click(function(event){
 			$('html,body').animate({
-        scrollTop: $('.letter__links_wrapper').offset().top - 100
+        scrollTop: $('.letter__links_wrapper').offset().top - 400
       }, 1000);
       if ($(this).is(":visible")) {
 				$(this).slideToggle();
