@@ -14,106 +14,117 @@
 		</div>	
 	</div>
 </div>
-<div class="row full-width white-row margin-top-60 margin-bottom-60 small-12 medium-12 large-12">
-	<p class="body__text">{{ summer_first_paragraph}}</p>
-	<p class="title__text margin-bottom-20 margin-top-40">{{ summer_recruitment_title }}</p>
-	<p class="body__text">{{ summer_committee_description_first }}</p>
-	<p class="body__text">{{ summer_committee_description_second }}</p>
-	<a id="recruitingModal" class="bold__wide__spacing link red underline">View Fall Recruiting Schedule</a>
-</div>
+<div class="row columns full-width white-row margin-top-60 margin-bottom-60 small-12 medium-12 large-12 body__wrapper">
+	<div class="columns">
+		<p class="body__text">{{ summer_first_paragraph}}</p>
+		<p class="title__text margin-bottom-20 margin-top-40">{{ summer_recruitment_title }}</p>
+		<p class="body__text">{{ summer_committee_description_first }}</p>
+		<p class="body__text">{{ summer_committee_description_second }}</p>
+		<a id="recruitingModal" class="bold__wide__spacing link red underline">View Fall Recruiting Schedule</a>
+	</div>
 
-<div class="full-width-grey padding-top-20 padding-bottom-20">
-	<div class="row margin-top-60 margin-bottom-60 grey-block-full">
-		<p class="title__text">{{ summer_recruitment_committee_title }}</p>
-		{% for member in summer_committee_members %}
-			<div class="medium-unstack small-12 medium-4 large-4 columns margin-top-20 margin-bottom--20">
-			<p class="title__text">
-				{{ member.first_name}} {{ member.middle_initial }} {{member.last_name}}{% if member.is_hiring_committee_chair == true %}, Chair {% endif %}
-			</p>
-			<p class="bold__wide__spacing">
-				{{ member.specialization }}
-			</p>
-			<div class="hiring-divider margin-bottom--20"></div>
-			{% if  member.primary_phone_number %}
-				<p class="body__text">
-					P: {{member.primary_phone_number}}
+	<div class="columns padding-top-20 padding-bottom-20">
+		<div class="row columns margin-top-60 margin-bottom-60 grey-block-full">
+			<div class="columns">
+			<p class="title__text">{{ summer_recruitment_committee_title }}</p>
+			{% for member in summer_committee_members %}
+				<div class="medium-unstack small-12 medium-4 large-4 columns margin-top-20 margin-bottom--20">
+				<p class="title__text">
+					{{ member.first_name}} {{ member.middle_initial }} {{member.last_name}}{% if member.is_hiring_committee_chair == true %}, Chair {% endif %}
 				</p>
-			{% endif %}
-			{% if  member.fax_number %}
-				<p class="body__text">
-					F: {{ member.fax_number }}
+				<p class="bold__wide__spacing">
+					{{ member.specialization }}
 				</p>
-			{% endif %}
-			<a class="red inline__link link">
-				{{member.email}}
-			</a>
+				<div class="hiring-divider margin-bottom--20"></div>
+				{% if  member.primary_phone_number %}
+					<p class="body__text">
+						P: {{member.primary_phone_number}}
+					</p>
+				{% endif %}
+				{% if  member.fax_number %}
+					<p class="body__text">
+						F: {{ member.fax_number }}
+					</p>
+				{% endif %}
+				<a class="red inline__link link">
+					{{member.email}}
+				</a>
+				</div>
+			{% endfor %}
+		</div>
+		</div>
+	</div>
+
+	<div class="row columns padding-top-20 padding-bottom-20 white-row row margin-top-60 relative z-index__1">
+		<div class="columns">
+		<p class="title__text">{{ summer_committee_questions_title }}?</p>
+		<table class="table__white">
+			{% for x in summer_committee_questions %}
+			<tr class="job__opening">
+				<td class="job__openings__title title__text smaller">
+					{{  x.question }}
+				</td>
+				<td>
+					<span class="job_expander top__menu job_opening" ></span>				
+				</td>
+			</tr>
+			<tr >
+				<td class="hidden job--description padding-bottom-20 padding-top-20">
+					{{  x.answer }}
+				</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+</div>
+<div class="row">
+	<div class="columns white-row row padding-top-60 padding-bottom-60">
+		<div class="columns">
+			<p class="body__text">{{ tile_paragraph_one}}</p>
+			<p class="body__text">{{ tile_paragraph_two }}</p>
+			{% for tile in summer_committee_tiles %}
+				<div class="medium-unstack small-12 medium-4 large-4 columns margin-top-20 margin-bottom--20 centered-tile">
+					<img src="{{ TimberImage(tile.image).src }}">
+					<p class="title__text"> {{ tile.title }}</p>
+					<p class="body__text">{{ tile.description }}</p>
+					<br>
+				</div>
+			{% endfor %}
+		</div>
+		<div class="columns full-width-grey padding-top-60 padding-bottom-60">
+			<div class="columns">
+				<p class="title__text">{{ after_hours_title }}</p>
+				<p class="body__text">{{ after_hours_text }}</p>
+				<p class="body__text">{{ after_hours_text_second}}</p>
+				<div class="bullets inline__text">
+					{% for item in after_hours_items %}
+						<div class="bullet lawyers-bullet ">
+							<div class="body__text bullet__text">
+								{{ item.after_hours_item }}
+							</div>
+						</div>	
+					{% endfor %}
+				</div>	
 			</div>
-		{% endfor %}
+		</div>
 	</div>
 </div>
 
-<div class="padding-top-20 padding-bottom-20 white-row row margin-top-60 relative z-index__1">
-	<p class="title__text">{{ summer_committee_questions_title }}?</p>
-	<table class="table__white">
-		{% for x in summer_committee_questions %}
-		<tr class="job__opening">
-			<td class="job__openings__title title__text smaller">
-				{{  x.question }}
-			</td>
-			<td>
-				<span class="job_expander top__menu job_opening" ></span>				
-			</td>
-		</tr>
-		<tr >
-			<td class="hidden job--description padding-bottom-20 padding-top-20">
-				{{  x.answer }}
-			</td>
-		</tr>
-		{% endfor %}
-	</table>
 </div>
-
-<div class="white-row row padding-top-60 padding-bottom-60">
-	<p class="body__text">{{ tile_paragraph_one}}</p>
-	<p class="body__text">{{ tile_paragraph_two }}</p>
-	{% for tile in summer_committee_tiles %}
-		<div class="medium-unstack small-12 medium-4 large-4 columns margin-top-20 margin-bottom--20 centered-tile">
-			<img src="{{ TimberImage(tile.image).src }}">
-			<p class="title__text"> {{ tile.title }}</p>
-			<p class="body__text">{{ tile.description }}</p>
-			<br>
-		</div>
-	{% endfor %}
-</div>
-<div class="full-width-grey padding-top-60 padding-bottom-60">
-	<div class="row grey-block-full ">
-		<p class="title__text">{{ after_hours_title }}</p>
-		<p class="body__text">{{ after_hours_text }}</p>
-		<p class="body__text">{{ after_hours_text_second}}</p>
-		<div class="bullets inline__text">
-			{% for item in after_hours_items %}
-				<div class="bullet lawyers-bullet ">
-					<div class="body__text bullet__text">
-						{{ item.after_hours_item }}
-					</div>
-				</div>	
-			{% endfor %}
+	<div id="summerImage" class="scroll-stopper">
+		<div class="row">
+			<div class="table__wrapper pro-bono__banner">
+			    <div class="table__inner pro-bono__banner">
+			        <div class="color-block__wrapper large-7 medium-8 small-12 float--right">
+			          <div class="color__block white relative lawyers__text title__text smaller">
+			            		<p>{{ trainee_bottom_banner_text }}</p>
+			          </div>  
+			        </div>
+		        </div>
+			</div>
 		</div>	
 	</div>
-</div>
-<div id="summerImage" class="scroll-stopper">
-	<div class="row">
-		<div class="table__wrapper pro-bono__banner">
-		    <div class="table__inner pro-bono__banner">
-		        <div class="color-block__wrapper large-7 medium-8 small-12 float--right">
-		          <div class="color__block white relative lawyers__text title__text smaller">
-		            		<p>{{ trainee_bottom_banner_text }}</p>
-		          </div>  
-		        </div>
-	        </div>
-		</div>
-	</div>	
-</div>
+
 
 <script type="text/javascript">
 	{% if featured_image_url %}

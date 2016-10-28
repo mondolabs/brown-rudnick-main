@@ -815,7 +815,10 @@ img.insights {
 	background-color: $white;
     width: 40px;
     display: table;
-    height: 40px;
+    @media screen and (min-height: 700px){
+    	height: 40px;
+    }
+    
     margin: 0 auto 16px;
     transition: all .3s ease-in-out;
 	&.active,

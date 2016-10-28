@@ -127,7 +127,7 @@
 			{# {% set tiles = tiles|first %} #}
 			{% set tiles = tiles|first|first %}
 			{% for tile in tiles %}
-				<div class="column experience-tile__outer-wrapper {% if loop.last %}last float-left{% endif %}">
+				<div class="column large-6 experience-tile__outer-wrapper {% if loop.last %}last float-left{% endif %}">
 					<div class="experience-tile__wrapper">
 						<div class="experience-tile__inner-wrapper relative">
 							<a class="link red" href="{{ tile.tile_link}}">

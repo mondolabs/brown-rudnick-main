@@ -752,10 +752,12 @@ img.insights {
   background-color: #fff;
   width: 40px;
   display: table;
-  height: 40px;
   margin: 0 auto 16px;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out; }
+  @media screen and (min-height: 700px) {
+    .letter__link--inner-wrapper {
+      height: 40px; } }
   .letter__link--inner-wrapper.active, .letter__link--inner-wrapper:hover {
     background-color: #b91628; }
     .letter__link--inner-wrapper.active .letter__link, .letter__link--inner-wrapper:hover .letter__link {
@@ -8928,13 +8930,23 @@ ul.menu li a {
 
 ul.desktop__menu--icons-list {
   margin: 0;
-  float: right;
+  position: absolute;
+  right: 40px;
+  top: -10px;
   list-style: none; }
+  ul.desktop__menu--icons-list .tag__text {
+    text-transform: uppercase; }
+  ul.desktop__menu--icons-list a {
+    color: #000; }
   ul.desktop__menu--icons-list li {
     display: inline-block;
     padding-right: 20px; }
   ul.desktop__menu--icons-list.scrolled {
     padding-top: 36px; }
+
+.desktop__menu__icon__single {
+  width: 15px;
+  display: inline-block; }
 
 .subnav__color-block {
   z-index: 1;

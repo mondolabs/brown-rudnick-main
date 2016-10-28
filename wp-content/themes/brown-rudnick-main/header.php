@@ -34,12 +34,13 @@
 
 				<header id="masthead" class="site-header" role="banner">
 					<div class="menu__wrapper--desktop row sr">
-						<div class="logo__wrapper columns large-3 medium-3 hide-for-small-only">
+						<div class="logo__wrapper columns large-4 medium-3 hide-for-small-only">
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 								<img class="header-logo--mobile" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/BR-logo-for-nav.png">
 							</a>
 						</div>
-						<div class="menu__inner-wrapper--desktop columns large-9 medium-9">
+							<?php get_template_part('template-parts/desktop-icons')?>
+						<div class="menu__inner-wrapper--desktop columns large-7 medium-9">
 							<?php desktop_menu(); ?>
 							<span class="subnav__color-block"></span>
 						</div>
@@ -50,24 +51,13 @@
 				<div class="menu__outer-wrapper--desktop-on-scroll hide-for-small-only">
 					<header id="mastheadOnScroll" class="site-header" role="banner">
 						<div class="menu__wrapper--desktop-on-scroll row">
-							<div class="logo__wrapper columns large-3 medium-3">
+							<div class="logo__wrapper columns large-4 medium-3">
 								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 									<img class="header-logo--mobile" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/BR-logo-for-nav.png">
 								</a>
 							</div>
-							
-							<div class="menu__inner-wrapper--desktop columns large-9 medium-9">
-								<ul class="desktop__menu--icons-list scrolled">
-									<li>
-										<img src="<?php bloginfo('stylesheet_directory');?>/assets/images/contact-icon.png">
-									</li>
-									<li>
-										<img src="<?php bloginfo('stylesheet_directory');?>/assets/images/marker-icon.png">
-									</li>
-									<li>
-										<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/search-icon.png">
-									</li>
-								</ul>
+							<?php get_template_part('template-parts/desktop-icons')?>
+							<div class="menu__inner-wrapper--desktop columns large-7 medium-10">								
 								<?php desktop_menu(); ?>
 								<span class="subnav__color-block"></span>
 							</div>

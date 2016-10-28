@@ -388,8 +388,16 @@ ul.menu li a{
 
 ul.desktop__menu--icons-list {
 	margin: 0;
-	float: right;
+	position: absolute;
+	right: 40px;
+	top: -10px;
 	list-style: none;
+	.tag__text {
+		text-transform: uppercase;
+	}
+	a {
+		color: $br-black;
+	}
 	li {
 		display: inline-block;
 		padding-right: 20px;
@@ -397,6 +405,11 @@ ul.desktop__menu--icons-list {
 	&.scrolled {
 		padding-top: 36px;
 	}
+}
+
+.desktop__menu__icon__single {
+	width: 15px;
+	display: inline-block;
 }
 
 .subnav__color-block {
