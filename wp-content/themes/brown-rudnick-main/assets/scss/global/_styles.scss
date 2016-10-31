@@ -165,6 +165,9 @@ p.subtitle__text {
 	&.twenty.left__only {
     	padding-left: 10px;
     }
+   &.twenty {
+   	padding: 20px;
+   }
 }
 
 .min--height__225 {
@@ -1211,4 +1214,18 @@ button.close__modal {
 	p { 
 		margin-top: 5px;
 	}
+}
+
+#searchsubmit {
+	background-color: $primary-red;
+	text-transform: uppercase;
+	padding: 20px;
+	font-weight: 800;
+	letter-spacing: 2px;
+	width: 250px;
+}
+.input-custom-search {
+	text-transform: uppercase;
+	font-weight: 800;
+	letter-spacing: 2px;
 }

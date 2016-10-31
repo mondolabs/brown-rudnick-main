@@ -235,6 +235,8 @@ p.subtitle__text {
     padding-right: 10px; }
   .padding__wrapper.twenty.left__only {
     padding-left: 10px; }
+  .padding__wrapper.twenty {
+    padding: 20px; }
 
 .min--height__225 {
   min-height: 225px; }
@@ -1080,6 +1082,19 @@ button.close__modal {
   z-index: 99999; }
   .back__to__top p {
     margin-top: 5px; }
+
+#searchsubmit {
+  background-color: #b91628;
+  text-transform: uppercase;
+  padding: 20px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  width: 250px; }
+
+.input-custom-search {
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 2px; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
