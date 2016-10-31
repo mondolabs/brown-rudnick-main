@@ -44,13 +44,26 @@ body {
 		margin: 0 auto;
 	}
 }
-
-
-%fixActiveClass {
-	a { 
-				color: $primary-red !important;
-			}
+%buttonAbsolute{
+	@include breakpoint(medium){
+		position: absolute;
+    margin-bottom: 0; 
+  	margin-top: 45px;
+  	margin-left: 40px;
+	}
 }
+.button__absolute {
+	@extend %buttonAbsolute;
+}
+
+
+%greyBold {
+	color: $darker-grey;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
 %centeronMobile {
 	text-align: center;
 		@include breakpoint(medium){

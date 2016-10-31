@@ -110,10 +110,14 @@ p.subtitle__text {
 	&.contact {
 		font-size: 11px;
 	}
+	&.medium {
+		font-size: 12px;
+	}
 	&.bigger {
 		font-size: 16px;
 	}
 }
+
 
 .sidebar__color-block--outer-wrapper {
     height: 60px;
@@ -184,6 +188,9 @@ p.subtitle__text {
 
 .margin__0 {
 	margin: 0;
+}
+.margin__1 {
+	margin: 1%;
 }
 
 .hidden {
@@ -1030,8 +1037,16 @@ button.close__modal {
 	}
 }
 
+.grey__bold__text {
+	@extend %greyBold;
+	&.smaller {
+		font-size: 12px;
+	}
+}
+
 .document__link {
 	@extend %greyBold;
+	font-size: 12px;
 }
 // general application font
 .bold__wide__spacing, .medium__weight__spacing {
@@ -1053,18 +1068,11 @@ button.close__modal {
 	//border-collapse: separate !important;
 }
 
-#locationSelect {
+#locationSelect, .clean___border {
 	@extend %cleanBorder;
   border-bottom: 1px solid #A8A8A8;
 }
 
-%greyBold {
-	color: $darker-grey;
-	font-weight: 800;
-	font-size: 12px;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-}
 .grey-block-full {
 	background-color: $primary-grey !important; 
 	.white-row {
@@ -1088,6 +1096,10 @@ button.close__modal {
 }
 .padding-bottom-20 {
 	padding-bottom: 20px;
+}
+
+.padding-left-5{
+	padding-left: 5px;
 }
 
 .fullWidth {

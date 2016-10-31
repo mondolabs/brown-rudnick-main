@@ -7,7 +7,7 @@
   The Foundation framework is built by Zurb
   Licensed under MIT Open Source
 */
-#locationSelect {
+#locationSelect, .clean___border {
   border-left: none !important;
   border-right: none !important;
   border-top: none !important;
@@ -21,6 +21,19 @@ body {
   .footer-logo > a, .footer-links > a {
     display: table;
     margin: 0 auto; } }
+
+@media screen and (min-width: 40em) {
+  .button__absolute {
+    position: absolute;
+    margin-bottom: 0;
+    margin-top: 45px;
+    margin-left: 40px; } }
+
+.job__description__body h5, .job__description__body .document__link, .grey__bold__text, .document__link {
+  color: #a7a6a6;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px; }
 
 .arrows-container, .slide-description p, .slide-description h2, .homepage-section-3-title {
   text-align: center; }
@@ -28,7 +41,7 @@ body {
     .arrows-container, .slide-description p, .slide-description h2, .homepage-section-3-title {
       text-align: left; } }
 
-#locationSelect {
+#locationSelect, .clean___border {
   border-left: none !important;
   border-right: none !important;
   border-top: none !important;
@@ -42,6 +55,19 @@ body {
   .footer-logo > a, .footer-links > a {
     display: table;
     margin: 0 auto; } }
+
+@media screen and (min-width: 40em) {
+  .button__absolute {
+    position: absolute;
+    margin-bottom: 0;
+    margin-top: 45px;
+    margin-left: 40px; } }
+
+.job__description__body h5, .job__description__body .document__link, .grey__bold__text, .document__link {
+  color: #a7a6a6;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px; }
 
 .arrows-container, .slide-description p, .slide-description h2, .homepage-section-3-title {
   text-align: center; }
@@ -195,6 +221,8 @@ p.subtitle__text {
     color: #b91628; }
   .tag__text.contact {
     font-size: 11px; }
+  .tag__text.medium {
+    font-size: 12px; }
   .tag__text.bigger {
     font-size: 16px; }
 
@@ -249,6 +277,9 @@ p.subtitle__text {
 
 .margin__0 {
   margin: 0; }
+
+.margin__1 {
+  margin: 1%; }
 
 .hidden {
   display: none; }
@@ -925,6 +956,12 @@ button.close__modal {
 .job__description__body .document__link:hover {
   color: #bcbcbc; }
 
+.grey__bold__text.smaller {
+  font-size: 12px; }
+
+.document__link {
+  font-size: 12px; }
+
 .bold__wide__spacing, .medium__weight__spacing {
   letter-spacing: 2px;
   font-size: 14px;
@@ -943,15 +980,8 @@ button.close__modal {
   .table__white .grey-block {
     background-color: #f0f0f0 !important; }
 
-#locationSelect {
+#locationSelect, .clean___border {
   border-bottom: 1px solid #A8A8A8; }
-
-.job__description__body h5, .job__description__body .document__link, .document__link {
-  color: #a7a6a6;
-  font-weight: 800;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 2px; }
 
 .grey-block-full {
   background-color: #f0f0f0 !important; }
@@ -972,6 +1002,9 @@ button.close__modal {
 
 .padding-bottom-20 {
   padding-bottom: 20px; }
+
+.padding-left-5 {
+  padding-left: 5px; }
 
 .fullWidth {
   max-width: 100% !important;
@@ -9616,7 +9649,7 @@ ul.desktop__menu--icons-list {
   width: 400%;
   height: 60px;
   position: relative;
-  left: -100%;
+  left: -200%;
   background-color: #f0f0f0;
   top: 0;
   display: none;
