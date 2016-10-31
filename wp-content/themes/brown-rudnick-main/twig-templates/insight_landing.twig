@@ -16,6 +16,37 @@
 </div>	
 	{# body - with sidebar #}
 
+		{% set dateValues = [] %}
+            {% set datePresenters = [] %}
+            {% for date in dates %}
+                {% set valueFormattedDate = date|date("mY")%}
+                {% set presentationFormattedDate = date|date("F, Y")%}
+                {% if valueFormattedDate not in dateValues %}
+                    {% set dateValues = dateValues|merge([valueFormattedDate]) %}
+                {% endif %}
+                {% if presentationFormattedDate not in datePresenters %}
+                    {% set datePresenters = datePresenters|merge([presentationFormattedDate]) %}
+                {% endif %}
+            {% endfor %}
+            <p class="title__text">
+                {{ section_header }}
+            </p>
+            <h2>
+            </h2>
+            <select id="dateSelect" name="date_query" class="news inline__text">
+                <option value="">
+                    DATE
+                </option>
+                {% for i in datePresenters %}
+                    <option value='{{ dateValues[loop.index0] }}'>
+                        {{ datePresenters[loop.index0] }}
+                    </option>
+                {% endfor %}
+            </select>
+
+
+
+
 <div class="experience__wrapper body__wrapper columns small-12 medium-12 large-12">
 	<div class="padding__wrapper ten sides__only">
 		<div class="columns show-for-medium-up medium-3 large-2 sidebar__on-scroll--fixed">

@@ -27,6 +27,38 @@ $post_type_args = array(
   'posts_per_page' => -1
 );
 
+
+$date = get_query_var('date_query', "");
+$year = substr($date, -4 );
+$month = substr($date, 0, 2 );
+$posts_args = array(
+  'post_type' => $data['post_type'],
+  'numberposts' => -1,
+  'posts_per_page' => -1,
+  'orderby' => 'date',
+  'date_query' => array(
+    array(
+      'year'  => $year,
+      'month' => $month,
+    ),
+  )
+);
+$data['posts_collection'] = get_posts($posts_args);
+$posts_from_collection_args = array(
+  'post_type' => $data['post_type'],
+  'numberposts' => -1,
+  'posts_per_page' => -1,
+  'orderby' => 'date',
+);
+$dates = [];
+$posts_from_collection = get_posts($posts_from_collection_args);
+foreach ( $posts_from_collection as $post_from_collection ) {
+  array_push( $dates, strtotime($post_from_collection->post_date));
+};
+$data['dates'] = array_unique($dates);
+
+
+
 $custom_posts = get_posts($post_type_args);
 $ids = [];
 
