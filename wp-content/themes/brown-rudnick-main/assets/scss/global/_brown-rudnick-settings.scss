@@ -46,10 +46,10 @@ body {
 }
 %buttonAbsolute{
 	@include breakpoint(medium){
-		position: absolute;
-    margin-bottom: 0; 
-  	margin-top: 45px;
-  	margin-left: 40px;
+		position: absolute !important;
+    margin-bottom: 0 !important; 
+  	margin-top: 45px !important;
+  	margin-left: 40px !important;
 	}
 }
 .button__absolute {

@@ -24,10 +24,10 @@ body {
 
 @media screen and (min-width: 40em) {
   .button__absolute {
-    position: absolute;
-    margin-bottom: 0;
-    margin-top: 45px;
-    margin-left: 40px; } }
+    position: absolute !important;
+    margin-bottom: 0 !important;
+    margin-top: 45px !important;
+    margin-left: 40px !important; } }
 
 .job__description__body h5, .job__description__body .document__link, .grey__bold__text, .document__link {
   color: #a7a6a6;
@@ -58,10 +58,10 @@ body {
 
 @media screen and (min-width: 40em) {
   .button__absolute {
-    position: absolute;
-    margin-bottom: 0;
-    margin-top: 45px;
-    margin-left: 40px; } }
+    position: absolute !important;
+    margin-bottom: 0 !important;
+    margin-top: 45px !important;
+    margin-left: 40px !important; } }
 
 .job__description__body h5, .job__description__body .document__link, .grey__bold__text, .document__link {
   color: #a7a6a6;
