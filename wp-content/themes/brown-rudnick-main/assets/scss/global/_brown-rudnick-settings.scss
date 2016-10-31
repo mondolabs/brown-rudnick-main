@@ -16,7 +16,7 @@
 
 $brfont: 'Avenir', Helvetica, Arial, sans-serif;
 $brgaramond: 'adobe-garamond-pro', serif;
-$br-avenir-heavy: 'Avenir Medium', Helvetica, Arial, sans-serif;;
+$br-avenir-heavy: 'Avenir Medium', Helvetica, Arial, sans-serif;
 $primary-red: #b91628;
 $white: #fff;
 $black: #000;
@@ -31,6 +31,10 @@ $light-grey-three: #a7a7a7;
     border-right: none !important;
     border-top: none !important;
     box-shadow: none !important;
+}
+
+body {
+	font-family: $brfont !important;
 }
 
 // footer elements on mobile
