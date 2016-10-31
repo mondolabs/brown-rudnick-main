@@ -181,7 +181,11 @@
 	height: 19px;
 }
 .social-icons {
-	width: 18%;
+	// svg icons on footer
+	svg { 
+		width: 25px; 
+		height: 25px; 
+	}
 	display: inline-block;
 	text-align: right;
 	a {

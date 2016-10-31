@@ -10,8 +10,7 @@ var mobileMenu = {
 			};
 
 			$('#open-mobile-menu').click(function(){
-
-				
+				$('#search__icon__mobile').toggle();
 				$('#mobile__logo__container').toggle();
 				$('#open-mobile-menu').toggleClass('mobile-active');
 				$('#open-mobile-menu').toggleClass('close__modal');
