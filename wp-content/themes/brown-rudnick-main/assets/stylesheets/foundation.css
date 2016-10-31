@@ -576,6 +576,11 @@ img.people__details {
     @media screen and (min-width: 48em) {
       .color__block.title__text {
         font-size: 24px; } }
+  .color__block.float__right {
+    float: none !important; }
+    @media screen and (min-width: 48em) {
+      .color__block.float__right {
+        float: right !important; } }
 
 img.insights {
   width: 100%; }

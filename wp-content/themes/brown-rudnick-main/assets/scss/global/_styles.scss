@@ -598,6 +598,14 @@ img.people__details {
 			font-size: 24px;
 		}
 	}
+	&.float__right{
+		float: none !important;
+		@include breakpoint(medium){
+			float: right !important;
+		}
+
+	}
+
 }
 
 img.insights {
