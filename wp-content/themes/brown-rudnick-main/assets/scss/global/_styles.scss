@@ -140,7 +140,9 @@ p.subtitle__text {
     	padding: 10px;
     }
     &.five {
-    	padding: 5%;
+    	@media screen and (max-width:450px){
+    		padding: 5%;
+    	}   	
     }
     &.top-and-bottom.sixty {
     	padding: 60px 0;
@@ -1172,6 +1174,9 @@ button.close__modal {
 		text-transform: uppercase;
 		font-size: 14px;
 		font-weight: 600;
+	}
+	svg {
+		max-height: 40px !important;
 	}
 }
 

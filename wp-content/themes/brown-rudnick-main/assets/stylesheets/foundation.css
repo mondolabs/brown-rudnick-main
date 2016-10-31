@@ -218,8 +218,9 @@ p.subtitle__text {
   position: relative; }
   .padding__wrapper.ten {
     padding: 10px; }
-  .padding__wrapper.five {
-    padding: 5%; }
+  @media screen and (max-width: 450px) {
+    .padding__wrapper.five {
+      padding: 5%; } }
   .padding__wrapper.top-and-bottom.sixty {
     padding: 60px 0; }
   .padding__wrapper.ten.sides__only {
@@ -1048,6 +1049,8 @@ button.close__modal {
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 600; }
+  .one__half svg {
+    max-height: 40px !important; }
 
 #mobile__logo__container {
   width: 225px;
