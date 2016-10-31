@@ -592,6 +592,12 @@ img.people__details {
 		background-color: rgba(255,255,255,1);
     		padding: 12px 48px;	
 	}
+	&.title__text {
+		font-size: 20px;
+		@include breakpoint(medium){
+			font-size: 24px;
+		}
+	}
 }
 
 img.insights {
@@ -1216,14 +1222,6 @@ button.close__modal {
 	}
 }
 
-#searchsubmit {
-	background-color: $primary-red;
-	text-transform: uppercase;
-	padding: 20px;
-	font-weight: 800;
-	letter-spacing: 2px;
-	width: 250px;
-}
 .input-custom-search {
 	text-transform: uppercase;
 	font-weight: 800;
