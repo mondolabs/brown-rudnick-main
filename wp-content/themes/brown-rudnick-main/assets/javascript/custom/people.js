@@ -160,7 +160,7 @@ var PEOPLE = {
 	$(window).on('resize', function(event) {		
 			var headerHeight = $('#mastheadOnScroll').height() + 160;
 			var elementToStick = $('.sidebar__on-scroll--fixed');
-			if ( $('.sidebar__on-scroll--fixed').length > 0 && $(document).width() > 768){
+			if ( $('.sidebar__on-scroll--fixed').length > 0 && $(document).width() >= 768){
 				console.log("STICKY");
 					elementToStick.css('width', '175px !important');
 					elementToStick.stick_in_parent({ offset_top: headerHeight });
@@ -183,7 +183,7 @@ $(document).ready(function(){
 	var elementToStick = $('.sidebar__on-scroll--fixed');
 		if ( $('.sidebar__on-scroll--fixed').length > 0){
 			console.log("STICKY");
-			if ($(document).width() > 768) {
+			if ($(document).width() >= 768) {
 				console.log(headerHeight);
 				elementToStick.stick_in_parent({ offset_top: headerHeight });
 			} 	

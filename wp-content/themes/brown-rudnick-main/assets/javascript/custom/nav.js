@@ -24,7 +24,7 @@ var NAV = {
 		var desktopCheck = $(window).scrollTop() >= NAV.desktopMenu.height();
 		var mobileCheck = $(window).scrollTop() > 250;
 		var check;
-		if ($(document).width() > 768) {
+		if ($(document).width() >= 768) {
 			check = desktopCheck;
 		} else {
 			check = mobileCheck;
@@ -47,7 +47,7 @@ $(document).ready(function(){
 			NAV.scrollEvents();
 		})
 	//}
-	if ( $(window).scrollTop() >= NAV.desktopMenu.height() && $(document).width() > 768) {
+	if ( $(window).scrollTop() >= NAV.desktopMenu.height() && $(document).width() >= 768) {
 		// differentiate between page load and user scroll
 		// otherwise regular menu is always hidden on page load at scroll location :P
 		var userScroll = false;     
