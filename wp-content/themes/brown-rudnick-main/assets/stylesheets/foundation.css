@@ -1050,7 +1050,9 @@ button.close__modal {
     font-size: 14px;
     font-weight: 600; }
   .one__half svg {
-    max-height: 40px !important; }
+    max-height: 40px; }
+  .one__half a {
+    color: #000; }
 
 #mobile__logo__container {
   width: 225px;
@@ -6380,8 +6382,7 @@ input[type="range"] {
   .menu.nested {
     margin-left: 1rem; }
   .menu .active > a {
-    color: #b91628;
-    background: #fff; }
+    color: #b91628; }
 
 .menu-text {
   font-weight: bold;

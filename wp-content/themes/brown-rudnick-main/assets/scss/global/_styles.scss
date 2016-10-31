@@ -1176,7 +1176,10 @@ button.close__modal {
 		font-weight: 600;
 	}
 	svg {
-		max-height: 40px !important;
+		max-height: 40px;
+	}
+	a {
+		color: $br-black;
 	}
 }
 
