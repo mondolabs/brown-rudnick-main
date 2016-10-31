@@ -1114,9 +1114,12 @@ button.close__modal {
 	z-index: 9999;
 	text-align: center;
 	li {
-		margin: 7.5%;
+		@media screen and (min-height: 450px){
+			margin: 7.5%;
+		}
+			margin: 1%;
 		a {
-			font-size: 20px;
+			font-size: 18px;
 			letter-spacing: 2px;
 		}
 
