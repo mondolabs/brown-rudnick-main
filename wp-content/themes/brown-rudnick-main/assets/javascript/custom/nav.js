@@ -9,10 +9,10 @@ var NAV = {
 		if ($(window).innerWidth() > 700 ) {
 				$('.menu-item-has-children').on({
 					mouseover: function(){					
-						$('.subnav__color-block').stop().show(510);
+						$('.subnav__color-block').stop().show(310);
 					},
 					mouseout: function(){						
-						$('.subnav__color-block').stop().hide(510);
+						$('.subnav__color-block').stop().hide(310);
 					}
 				});	
 			}

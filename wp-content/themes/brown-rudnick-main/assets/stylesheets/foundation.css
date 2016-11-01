@@ -9523,7 +9523,8 @@ button.slick-arrow {
 .prev-slider-home, .next-slider-home {
   width: 30px;
   display: inline-block;
-  margin: 7px; }
+  margin: 7px;
+  cursor: pointer; }
   @media screen and (min-width: 48em) {
     .prev-slider-home, .next-slider-home {
       margin: 25px; } }

@@ -124,11 +124,8 @@ if ($date_query_term !== "DATE") {
         'month' => $month_query, 
         'relation'=>'AND',
       ),
-    );
- 
-  
+    ); 
 }
-
 
 $data['insights'] = Timber::get_posts($insights_args);
 $data['insights'] = array_unique($data['insights']);
