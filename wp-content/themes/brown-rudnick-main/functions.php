@@ -70,6 +70,7 @@ function custom_insights_query_vars( $vars ) {
   $vars[] = 'location_query';
   $vars[] = 'admission_query';
   $vars[] = 'education_query';
+  $vars[] = 'date_query';
   $vars[] = 'keyword';
   return $vars;
 }

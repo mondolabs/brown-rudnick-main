@@ -29,6 +29,7 @@ $post_type_args = array(
 
 
 $date = get_query_var('date_query', "");
+
 $year = substr($date, -4 );
 $month = substr($date, 0, 2 );
 $posts_args = array(
@@ -50,6 +51,7 @@ $posts_from_collection_args = array(
   'posts_per_page' => -1,
   'orderby' => 'date',
 );
+
 $dates = [];
 $posts_from_collection = get_posts($posts_from_collection_args);
 foreach ( $posts_from_collection as $post_from_collection ) {
@@ -66,10 +68,13 @@ foreach ( $custom_posts as $post ) {
   array_push($ids, $post->ID);
 }
 
+
 $data['geographies'] = wp_get_object_terms( $ids, 'geography' );
 $data['industries'] = wp_get_object_terms( $ids, 'industry' );
 $data['practices'] = wp_get_object_terms( $ids, 'practice' );
 
+
+$date = get_query_var('date_query', "DATE");
 $geography = get_query_var('geography_query', "GEOGRAPHIES");
 $industry = get_query_var('industry_query', "INDUSTRIES");
 $practice = get_query_var('practice_query', "PRACTICES");
@@ -87,7 +92,11 @@ $insights_args = array(
     'posts_per_page' => -1, 
 );
 
-if( ($geography !== "GEOGRAPHIES") || ( $industry !== "INDUSTRIES") || ($practice !=="PRACTICES") ) {
+
+
+
+
+if( ($geography !== "GEOGRAPHIES") || ( $industry !== "INDUSTRIES") || ($practice !=="PRACTICES")  ) {
   $insights_args["tax_query"] = array( 'relation' => 'AND' );
   if ( $geography !== "GEOGRAPHIES" ) {
     $geography_term_query_array = array('taxonomy' => 'geography', 'field' => 'slug', 'terms' => array( $geography));
@@ -102,6 +111,21 @@ if( ($geography !== "GEOGRAPHIES") || ( $industry !== "INDUSTRIES") || ($practic
     array_push($insights_args['tax_query'], $practice_term_query_array );
   }
 }
+
+if ($date !== "DATE") {
+    $year_query = intval($year);
+    $month_query = intval($month); 
+    $insights_args['date_query'] = array(
+      array(
+        'year'  => $year_query,
+        'month' => $month_query, 
+      ),
+    );
+ 
+  var_dump($insights_args);
+}
+
+
 
 $data['insights'] = Timber::get_posts($insights_args);
 $data['insights'] = array_unique($data['insights']);

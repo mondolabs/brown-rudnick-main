@@ -16,33 +16,16 @@
 </div>	
 	{# body - with sidebar #}
 
-		{% set dateValues = [] %}
-            {% set datePresenters = [] %}
-            {% for date in dates %}
-                {% set valueFormattedDate = date|date("mY")%}
-                {% set presentationFormattedDate = date|date("F, Y")%}
-                {% if valueFormattedDate not in dateValues %}
-                    {% set dateValues = dateValues|merge([valueFormattedDate]) %}
-                {% endif %}
-                {% if presentationFormattedDate not in datePresenters %}
-                    {% set datePresenters = datePresenters|merge([presentationFormattedDate]) %}
-                {% endif %}
-            {% endfor %}
+	
+
+
             <p class="title__text">
                 {{ section_header }}
             </p>
             <h2>
             </h2>
-            <select id="dateSelect" name="date_query" class="news inline__text">
-                <option value="">
-                    DATE
-                </option>
-                {% for i in datePresenters %}
-                    <option value='{{ dateValues[loop.index0] }}'>
-                        {{ datePresenters[loop.index0] }}
-                    </option>
-                {% endfor %}
-            </select>
+           
+
 
 
 
@@ -151,11 +134,29 @@
 						{{ header_text }}
 					</p>
 				</div>
-				<div class="columns small-12 medium-12 large-9 x-large-6">
-					<div class="columns large-2 no__pad">
-					<p class="inline__text">
-						date
-					</p>
+				<div class="large-3 no__pad padding-left-5 margin__1 text-align__center">
+					 <select id="dateSelect" name="date_query" class="clean___border insight inline__text grey__bold__text smaller">
+            {% set dateValues = [] %}
+            {% set datePresenters = [] %}
+		            {% for date in dates %}
+		                {% set valueFormattedDate = date|date("mY")%}
+		                {% set presentationFormattedDate = date|date("F, Y")%}
+		                {% if valueFormattedDate not in dateValues %}
+		                    {% set dateValues = dateValues|merge([valueFormattedDate]) %}
+		                {% endif %}
+		                {% if presentationFormattedDate not in datePresenters %}
+		                    {% set datePresenters = datePresenters|merge([presentationFormattedDate]) %}
+		                {% endif %}
+		            {% endfor %}
+		            <option value="">
+		            	DATE
+		            </option>
+                {% for i in datePresenters %}
+                  <option value='{{ dateValues[loop.index0] }}'>
+                      {{ datePresenters[loop.index0] }}
+                  </option>
+                {% endfor %}
+            </select>
 				</div> 
 				<div class="columns large-3 no__pad padding-left-5 margin__1 text-align__center">
 					<select id="geographySelect" name="geography_query" class="clean___border insight inline__text grey__bold__text smaller">
