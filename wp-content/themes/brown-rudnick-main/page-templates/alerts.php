@@ -74,7 +74,7 @@ $data['industries'] = wp_get_object_terms( $ids, 'industry' );
 $data['practices'] = wp_get_object_terms( $ids, 'practice' );
 
 
-$date = get_query_var('date_query', "DATE");
+$date_query_term = get_query_var('date_query', "DATE");
 $geography = get_query_var('geography_query', "GEOGRAPHIES");
 $industry = get_query_var('industry_query', "INDUSTRIES");
 $practice = get_query_var('practice_query', "PRACTICES");
@@ -90,6 +90,7 @@ $practice =  str_replace("-slash-", " / ", $practice);
 $insights_args = array(
     'post_type' => 'alert',
     'posts_per_page' => -1, 
+    'orderby'=>'date',
 );
 
 
@@ -112,19 +113,21 @@ if( ($geography !== "GEOGRAPHIES") || ( $industry !== "INDUSTRIES") || ($practic
   }
 }
 
-if ($date !== "DATE") {
+
+
+if ($date_query_term !== "DATE") {
     $year_query = intval($year);
     $month_query = intval($month); 
     $insights_args['date_query'] = array(
       array(
         'year'  => $year_query,
         'month' => $month_query, 
+        'relation'=>'AND',
       ),
     );
  
-  var_dump($insights_args);
+  
 }
-
 
 
 $data['insights'] = Timber::get_posts($insights_args);

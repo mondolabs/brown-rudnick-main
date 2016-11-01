@@ -112,105 +112,106 @@
 			</div>
 		</div>
 
-		<div class="columns show-for-medium-up medium-9 large-9 small-12">
-			<div class="row">
-				<div class="padding__wrapper forty sides__only">
-					<div class="columns show-for-medium-up medium-9 large-10 small-12">			
-						<div class="columns small-12 medium-12 large-12 padding-bottom-60">
-							{{ top_content }}
-						</div>
-						<div class="columns small-12 medium-12 large-12 x-large-12">
-							{{ post.post_content|shortcodes }}
-						</div>
-							
-				</div>
-			</div>			
-		</div>
-		<div class="page__divider grey"></div>
-		<div class="columns small-12 medium-9 large-12 margin-top-60">
-			<div class="no__pad">
-				<div class="columns small-12 medium-12 large-3 x-large-6">
-					<p class="title__text">
-						{{ header_text }}
-					</p>
-				</div>
-				<div class="large-3 no__pad padding-left-5 margin__1 text-align__center">
-					 <select id="dateSelect" name="date_query" class="clean___border insight inline__text grey__bold__text smaller">
-            {% set dateValues = [] %}
-            {% set datePresenters = [] %}
-		            {% for date in dates %}
-		                {% set valueFormattedDate = date|date("mY")%}
-		                {% set presentationFormattedDate = date|date("F, Y")%}
-		                {% if valueFormattedDate not in dateValues %}
-		                    {% set dateValues = dateValues|merge([valueFormattedDate]) %}
-		                {% endif %}
-		                {% if presentationFormattedDate not in datePresenters %}
-		                    {% set datePresenters = datePresenters|merge([presentationFormattedDate]) %}
-		                {% endif %}
-		            {% endfor %}
-		            <option value="">
-		            	DATE
-		            </option>
-                {% for i in datePresenters %}
-                  <option value='{{ dateValues[loop.index0] }}'>
-                      {{ datePresenters[loop.index0] }}
-                  </option>
-                {% endfor %}
-            </select>
-				</div> 
-				<div class="columns large-3 no__pad padding-left-5 margin__1 text-align__center">
-					<select id="geographySelect" name="geography_query" class="clean___border insight inline__text grey__bold__text smaller">
-						<option value="">
-							GEOGRAPHIES
-						</option>
-						{% for geography in geographies %}
-							<option value="{{ geography.slug|upper }}">
-								{{ geography.name|upper }}
-							</option>
-						{% endfor %}
-					</select>
-				</div>
-				<div class="columns large-3 no__pad padding-left-5 margin__1 text-align__center">
-					<select id="industrySelect" name="industry_query" class="clean___border insight inline__text grey__bold__text smaller">
-						<option value="">
-							INDUSTRIES
-						</option>
-						{% for industry in industries %}
-							<option value="{{ industry.slug|upper }}">
-								{{ industry.name|upper }}
-							</option>
-						{% endfor %}
-					</select>
-				</div>
-				<div class="columns large-3 no__pad padding-left-5 float__left margin__1 ">
-					<select id="practiceSelect" name="practice_query" class="clean___border insight inline__text grey__bold__text smaller">
-						<option value="">
-							PRACTICES
-						</option>
-						{% for practice in practices %}
-							<option value="{{ practice.slug|upper }}">
-								{{ practice.name|upper }}
-							</option>
-						{% endfor %}
-					</select>
-				</div>
-				</div>	
+			<div class="columns show-for-medium-up medium-9 large-9 small-12">
+				<div class="row">
+					<div class="padding__wrapper forty sides__only">
+						<div class="columns show-for-medium-up medium-9 large-10 small-12">			
+							<div class="columns small-12 medium-12 large-12 padding-bottom-60">
+								{{ top_content }}
+							</div>
+							<div class="columns small-12 medium-12 large-12 x-large-12">
+								{{ post.post_content|shortcodes }}
+							</div>
+								
+					</div>
+				</div>			
 			</div>
-		</div>
-		<div class="columns small-12 medium-12 large-12">
-				<div class="margin-top-60 columns small-12 medium-12 large-12">
-					{% for insight in insights %}
-						<a class='link' href="{{insight._permalink}}">
-							{{ insight.title }}
-						</a>
-						<p class="tag__text contact margin-top-20 grey font-weight__bold">
-							{{ insight.date|date("M, d Y")   }}
+			<div class="page__divider grey"></div>
+	<div class="row">
+			<div class="columns small-12 medium-9 large-12 margin-top-60">
+				<div class="no__pad">
+					<div class="columns small-12 medium-12 large-3 x-large-6">
+						<p class="title__text">
+							{{ header_text }}
 						</p>
-						<div class="page__divider grey">
+					</div>
+					<div class="columns large-3 no__pad padding-left-5 margin__1 text-align__center">
+						 <select id="dateSelect" name="date_query" class="clean___border insight inline__text grey__bold__text smaller">
+	            {% set dateValues = [] %}
+	            {% set datePresenters = [] %}
+			            {% for date in dates %}
+			                {% set valueFormattedDate = date|date("mY")%}
+			                {% set presentationFormattedDate = date|date("F, Y")%}
+			                {% if valueFormattedDate not in dateValues %}
+			                    {% set dateValues = dateValues|merge([valueFormattedDate]) %}
+			                {% endif %}
+			                {% if presentationFormattedDate not in datePresenters %}
+			                    {% set datePresenters = datePresenters|merge([presentationFormattedDate]) %}
+			                {% endif %}
+			            {% endfor %}
+			            <option value="">
+			            	DATE
+			            </option>
+	                {% for i in datePresenters %}
+	                  <option value='{{ dateValues[loop.index0] }}'>
+	                      {{ datePresenters[loop.index0] }}
+	                  </option>
+	                {% endfor %}
+	            </select>
+					</div> 
+						<div class="columns large-3 no__pad padding-left-5 margin__1 text-align__center">
+							<select id="geographySelect" name="geography_query" class="clean___border insight inline__text grey__bold__text smaller">
+								<option value="">
+									GEOGRAPHIES
+								</option>
+							{% for geography in geographies %}
+								<option value="{{ geography.slug|upper }}">
+									{{ geography.name|upper }}
+								</option>
+							{% endfor %}
+							</select>
 						</div>
-					{% endfor %}
-				</div>	
+						<div class="columns large-3 no__pad padding-left-5 margin__1 text-align__center">
+							<select id="industrySelect" name="industry_query" class="clean___border insight inline__text grey__bold__text smaller">
+								<option value="">
+									INDUSTRIES
+								</option>
+								{% for industry in industries %}
+									<option value="{{ industry.slug|upper }}">
+										{{ industry.name|upper }}
+									</option>
+								{% endfor %}
+							</select>
+						</div>
+						<div class="columns large-3 no__pad padding-left-5 float__left margin__1 ">
+							<select id="practiceSelect" name="practice_query" class="clean___border insight inline__text grey__bold__text smaller">
+								<option value="">
+									PRACTICES
+								</option>
+								{% for practice in practices %}
+									<option value="{{ practice.slug|upper }}">
+										{{ practice.name|upper }}
+									</option>
+								{% endfor %}
+							</select>
+						</div>
+					</div>	
+				</div>
 			</div>
+			<div class="columns small-12 medium-12 large-12">
+					<div class="margin-top-60 columns small-12 medium-12 large-12">
+						{% for insight in insights %}
+							<a class='link' href="{{insight._permalink}}">
+								{{ insight.title }}
+							</a>
+							<p class="tag__text contact margin-top-20 grey font-weight__bold">
+								{{ insight.date|date("M, d Y")   }}
+							</p>
+							<div class="page__divider grey">
+							</div>
+						{% endfor %}
+					</div>	
+				</div>
 		</div>
 </div>
 
