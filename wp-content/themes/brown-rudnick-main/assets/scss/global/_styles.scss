@@ -731,7 +731,9 @@ img.insights {
 }
 
 .experience_expander, 
-.job_expander {
+.job_expander,
+.accordion_expander,
+.mobile__sidebar--expander {
     width: 25px;
     height: 25px;
 	display: inline-block;

@@ -703,7 +703,9 @@ img.insights {
     right: 1px; }
 
 .experience_expander,
-.job_expander {
+.job_expander,
+.accordion_expander,
+.mobile__sidebar--expander {
   width: 25px;
   height: 25px;
   display: inline-block;
@@ -712,30 +714,46 @@ img.insights {
   right: 96px;
   cursor: pointer; }
   .experience_expander.top__menu,
-  .job_expander.top__menu {
+  .job_expander.top__menu,
+  .accordion_expander.top__menu,
+  .mobile__sidebar--expander.top__menu {
     background-color: #b91628;
     right: 15px;
     top: 0; }
     .experience_expander.top__menu:before,
-    .job_expander.top__menu:before {
+    .job_expander.top__menu:before,
+    .accordion_expander.top__menu:before,
+    .mobile__sidebar--expander.top__menu:before {
       top: 0;
       left: 12px;
       background-color: #fefefe; }
     .experience_expander.top__menu:after,
-    .job_expander.top__menu:after {
+    .job_expander.top__menu:after,
+    .accordion_expander.top__menu:after,
+    .mobile__sidebar--expander.top__menu:after {
       top: -4px;
       left: 7px;
       background-color: #fefefe; }
   .experience_expander:hover:after, .experience_expander:hover:before,
   .job_expander:hover:after,
-  .job_expander:hover:before {
+  .job_expander:hover:before,
+  .accordion_expander:hover:after,
+  .accordion_expander:hover:before,
+  .mobile__sidebar--expander:hover:after,
+  .mobile__sidebar--expander:hover:before {
     background-color: #b91628; }
   .experience_expander:hover.top__menu:after, .experience_expander:hover.top__menu:before,
   .job_expander:hover.top__menu:after,
-  .job_expander:hover.top__menu:before {
+  .job_expander:hover.top__menu:before,
+  .accordion_expander:hover.top__menu:after,
+  .accordion_expander:hover.top__menu:before,
+  .mobile__sidebar--expander:hover.top__menu:after,
+  .mobile__sidebar--expander:hover.top__menu:before {
     background-color: #fefefe; }
   .experience_expander:before,
-  .job_expander:before {
+  .job_expander:before,
+  .accordion_expander:before,
+  .mobile__sidebar--expander:before {
     content: " ";
     background-color: #b91628;
     display: inline-block;
@@ -748,7 +766,9 @@ img.insights {
     transition: all .3s ease-in-out;
     opacity: 1; }
   .experience_expander:after,
-  .job_expander:after {
+  .job_expander:after,
+  .accordion_expander:after,
+  .mobile__sidebar--expander:after {
     content: " ";
     background-color: #b91628;
     display: inline-block;
@@ -761,7 +781,9 @@ img.insights {
     transition: all .3s ease-in-out;
     opacity: 1; }
   .experience_expander.expanded:after,
-  .job_expander.expanded:after {
+  .job_expander.expanded:after,
+  .accordion_expander.expanded:after,
+  .mobile__sidebar--expander.expanded:after {
     -webkit-transition-delay: .1s;
             transition-delay: .1s;
     -webkit-transform: rotate(-180deg);
@@ -769,10 +791,14 @@ img.insights {
             transform: rotate(-180deg);
     left: 0px; }
   .experience_expander.expanded:before,
-  .job_expander.expanded:before {
+  .job_expander.expanded:before,
+  .accordion_expander.expanded:before,
+  .mobile__sidebar--expander.expanded:before {
     opacity: 0; }
   .experience_expander.expanded.top__menu:after,
-  .job_expander.expanded.top__menu:after {
+  .job_expander.expanded.top__menu:after,
+  .accordion_expander.expanded.top__menu:after,
+  .mobile__sidebar--expander.expanded.top__menu:after {
     left: 7px; }
 
 .job_expander {
