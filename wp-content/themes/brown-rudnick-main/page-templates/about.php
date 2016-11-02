@@ -12,11 +12,15 @@ $practice_posts_args = array(
 );
 $post = new TimberPost();
 $data['post'] = $post;
-$data['about_header_text'] = get_field('about_header_text');
-$data['about_sidebar_header'] = get_field('about_sidebar_header');
-$data['about_sidebar_items'] = get_field('about_sidebar_items');
 
-
+$sidebar_slug = 'foundation-sidebar';
+$args = array(
+  'name'        => $sidebar_slug,
+  'post_type'   => 'sidebar',
+  'post_status' => 'publish',
+  'numberposts' => 1
+);
+$data['sidebar'] = get_posts($args);
 
 $data['text_content_top'] = get_field('text_content_top');
 $data['text_content_body'] = get_field('text_content_body');
