@@ -48,7 +48,7 @@
 							<ul id="blogsSidebarAccordion" class="hidden list-style__none hide-for-small-only">
 								{% for sidebar_submenu_item in sidebar_item.about_sidebar_submenu %}
 									<li class="list-item__sidebar">
-										<a class="link sidebar__link" href="{{ sidebar_submenu_item.about_sidebar_submenu_item_link }}" >
+										<a class="bold__wide__spacing bold__wide__spacing link sidebar__link" href="{{ sidebar_submenu_item.about_sidebar_submenu_item_link }}" >
 											{{ sidebar_submenu_item.about_sidebar_submenu_item_text }}
 										</a>
 									</li>
@@ -69,7 +69,7 @@
 							</ul>
 						{% else %}
 						{# DESKTOP MENU ITEMS #}
-					    	<a class="{% if slug == link_slug %}red{% endif %} hide-for-small-only link sidebar__link" href="{{ sidebar_item.about_sidebar_item_link }}">
+					    	<a class="{% if slug == link_slug %}red{% endif %} hide-for-small-only link sidebar__link medium__weight__spacing" href="{{ sidebar_item.about_sidebar_item_link }}">
 					    		{{ sidebar_item.about_sidebar_item_text|upper }}
 					    	</a>
 						{# MOBILE MENU ITEMS #}

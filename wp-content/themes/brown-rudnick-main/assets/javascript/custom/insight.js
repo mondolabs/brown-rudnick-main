@@ -24,12 +24,17 @@ var INSIGHTS = {
 					console.log(queryString);
 				}
 			}
-			console.log(queryString);
-			window.location.replace(queryString);
+			// set back the url to the base if there are no queries left
+			if( queryString.length > 0) {
+				window.location.replace(queryString);
+			} else {
+				window.location.replace(queryStringBase);
+			}
 		});
 	},
 	onLoad: function(){
 		// Get search param values from url
+		var selectedDate = $.url().param('date_query', 'strict') || "";
 		var selectedGeography = $.url().param('geography_query', 'strict') || "";
 		var selectedIndustry = $.url().param('industry_query', 'strict') || "";
 		var selectedPractice = $.url().param('practice_query', 'strict') || "";
@@ -41,6 +46,7 @@ var INSIGHTS = {
 
 
 		// Set vars for selects for all search params
+		var dateSelect = $('select#dateSelect');
 		var geographySelect = $('select#geographySelect');
 		var industrySelect = $('select#industrySelect');
 		var practiceSelect = $('select#practiceSelect');
@@ -52,6 +58,7 @@ var INSIGHTS = {
 
 
 		// Change value of selects based on url params
+		dateSelect.val(decodeURIComponent(selectedDate));
 		geographySelect.val(decodeURIComponent(selectedGeography));
 		industrySelect.val(decodeURIComponent(selectedIndustry));
 		practiceSelect.val(decodeURIComponent(selectedPractice));

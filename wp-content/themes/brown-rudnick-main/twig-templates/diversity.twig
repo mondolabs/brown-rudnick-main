@@ -42,7 +42,7 @@
 			    		{% set link_slug = sidebar_item.about_sidebar_item_link|split('/')[4] %}
 				    	{% if sidebar_item.has_sub_menu %}
 						{# DESKTOP SUBMENU ITEMS #}
-							<a class="{% if slug == link_slug %}red{% endif %} hide-for-small-only accordion__trigger link" data-trigger-target="{{sidebar_item.about_sidebar_submenu_accordion_trigger }}">
+							<a class="{% if slug == link_slug %}red{% endif %} medium__weight__spacinghide-for-small-only accordion__trigger link" data-trigger-target="{{sidebar_item.about_sidebar_submenu_accordion_trigger }}">
 								{{ sidebar_item.about_sidebar_item_text|upper }}
 							</a>
 							<ul id="blogsSidebarAccordion" class="hidden list-style__none hide-for-small-only">
@@ -69,7 +69,7 @@
 							</ul>
 						{% else %}
 						{# DESKTOP MENU ITEMS #}
-					    	<a class="{% if slug == link_slug %}red{% endif %} hide-for-small-only link sidebar__link" href="{{ sidebar_item.about_sidebar_item_link }}">
+					    	<a class=" medium__weight__spacing {% if slug == link_slug %}red{% endif %} hide-for-small-only link sidebar__link" href="{{ sidebar_item.about_sidebar_item_link }}">
 					    		{{ sidebar_item.about_sidebar_item_text|upper }}
 					    	</a>
 						{# MOBILE MENU ITEMS #}
@@ -128,12 +128,12 @@
 	<div class="bottom-banner__cta--inner-wrapper table__wrapper relative">
 		<div class="bottom-banner__text--wrapper table__inner tag__text relative">
 			<p class="inline__text margin-bottom--0">
-				EEOE STATEMENT
-				<svg class="long__arrow--svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
+				FOR MORE INFORMATION PLEASE SEE OUR EQUAL EMPLOYMENT OPPORTUNITY EMPLOYER STATEMENT
+				{# <svg class="long__arrow--svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
 					<title>long arrow</title>
 					<line class="long__arrow white" x1="1" y1="9" x2="56" y2="9"/>
 					<polyline class="long__arrow white" points="48 1 56 9 48 17"/>
-				</svg>
+				</svg> #}
 			</p>
 		</div>
 	</div>

@@ -20,6 +20,7 @@ var EXPANDER = {
 			$(hiddenJobDescripton).slideToggle('fast');
 			$(expander).toggleClass('expanded');
 		});
+
 	}
 }
 

@@ -25,7 +25,7 @@
 				<span class="list-divider"></span>
 			    {% for sidebar_item in sidebar_items %}
 			    	{% if sidebar_item.has_sub_menu %}
-						<a class="hide-for-small-only accordion__trigger link" data-trigger-target="{{sidebar_item.sidebar_submenu_accordion_trigger }}">
+						<a class="hide-for-small-only medium__weight__spacing accordion__trigger link" data-trigger-target="{{sidebar_item.sidebar_submenu_accordion_trigger }}">
 							{{ sidebar_item.sidebar_item_text|upper }}
 						</a>
 						<ul id="blogsSidebarAccordion" class="hidden list-style__none hide-for-small-only">
@@ -52,13 +52,13 @@
 							{% endfor %}
 						</ul>
 					{% else %}
-				    	<a class="link" href="{{ sidebar_item.sidebar_item_link }}">
+				    	<a class="link medium__weight__spacing" href="{{ sidebar_item.sidebar_item_link }}">
 				    		{{ sidebar_item.sidebar_item_text|upper }}
 				    	</a>
 					{% endif %}
 			    {% endfor %}
 				<span class="list-divider smaller"></span>
-				<div class="sidebar__wrapper">
+				<div class="sidebar__wrapper advanced-search-container">
 					<button class="sites-button advanced-search inverse" type="button">
 						ADVANCED SEARCH
 					</button>
@@ -96,8 +96,8 @@
 			</div>
 		</div>	
 			<div class="columns small-12 medium-9 large-10">
-				<div class="columns small-12 medium-6 large-6">
-					<div class="padding__wrapper sides__only forty">
+				<div class="columns small-12 medium-6 large-6 margin-top-40">
+					<div class="padding__wrapper">
 						<p class="title__text">
 							Articles
 						</p>
@@ -127,7 +127,7 @@
 						</a>
 					</div>
 				</div>
-				<div class="columns small-12 medium-6 large-6">
+				<div class="columns small-12 medium-6 large-6 margin-top-40">
 					<div class="padding__wrapper sides__only ten">
 						<p class="title__text">
 							Alerts

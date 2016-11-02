@@ -5,22 +5,33 @@
 
 var NAV = {
 	listeners: function(){
-			// medium breakpoint hover interaction
+			// medium breakpoint hover interaction for navigation
 		if ($(window).innerWidth() > 700 ) {
 				$('.menu-item-has-children').on({
-					mouseover: function(){
-						$('.subnav__color-block').stop().show(410);
+					mouseover: function(){					
+						$('.subnav__color-block').stop().show(310);
 					},
-					mouseout: function(){
-						$('.subnav__color-block').stop().hide(410);
+					mouseout: function(){						
+						$('.subnav__color-block').stop().hide(310);
 					}
 				});	
 			}
 	},
 	desktopMenu: $('#masthead'),
+	// hide or show scroll nav bar
 	scrollEvents: function(){
-		if ( $(window).scrollTop() >= NAV.desktopMenu.height() ) {
+		// differentiate btw mobile and all else
+		var desktopCheck = $(window).scrollTop() >= NAV.desktopMenu.height();
+		var mobileCheck = $(window).scrollTop() > 250;
+		var check;
+		if ($(document).width() >= 768) {
+			check = desktopCheck;
+		} else {
+			check = mobileCheck;
+		}
+		if ( check  ) {
 			$(NAV.desktopMenu).css('opacity', '0');
+			$('.subnav__color-block').css({'width': '400%'});
 			$('.menu__outer-wrapper--desktop-on-scroll').slideDown('300');
 		} else {
 			$(NAV.desktopMenu).css('opacity', '1');
@@ -31,16 +42,24 @@ var NAV = {
 
 $(document).ready(function(){
 	NAV.listeners();
-	if ( $(document).width() > 640) {
+	//if ( $(document).width() > 640) {
 		$(document).scroll( function(){
 			NAV.scrollEvents();
 		})
-	}
-	if ( $(window).scrollTop() >= NAV.desktopMenu.height() && $(document).width() > 640) {
-		$(NAV.desktopMenu).hide();
+	//}
+	if ( $(window).scrollTop() >= NAV.desktopMenu.height() && $(document).width() >= 768) {
+		// differentiate between page load and user scroll
+		// otherwise regular menu is always hidden on page load at scroll location :P
+		var userScroll = false;     
+		function mouseEvent(e) { 
+			userScroll = true; 
+		} 
+		// only hide if user has scrolled
+		if (userScroll) {
+			$(NAV.desktopMenu).hide();
+		}
 	}
 })
-
 
 
 

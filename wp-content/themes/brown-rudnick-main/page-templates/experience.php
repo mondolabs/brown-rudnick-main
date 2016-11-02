@@ -14,6 +14,9 @@ $data['experience_sidebar_items'] = get_field('experience_sidebar_items');
 $data['experience_tile_one'] = get_field('experience_tile_one');
 $data['experience_tile_two'] = get_field('experience_tile_two');
 $data['experience_tile_three'] = get_field('experience_tile_three');
+$data['experience_tile_one_link'] = get_field('experience_tile_one_link');
+$data['experience_tile_two_link'] = get_field('experience_tile_two_link');
+$data['experience_tile_three_link'] = get_field('experience_tile_three_link');
 $data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
 
 ?>

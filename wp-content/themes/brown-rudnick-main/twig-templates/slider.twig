@@ -1,6 +1,5 @@
 {% do action( 'foundationpress_before_content' ) %}
 
-<div class="human-icon"></div> 
 <div class = "slider-container" label="Latest Updates from Brown Rudnick" > 
     {% for item in post.get_field('homepage_slider') %}
         <!-- slide -->
@@ -12,22 +11,24 @@
 				         	<div class="slide-description">
 				            	<h2 class="homepage-slider-title">{{item.homepage_slider_title}}</h2>
 				            	<div class="slide-description-heading"></div>
-				            </div>
-				    		<p class="body-text hero">
-				    			{{ item.homepage_slider_description | truncate(60) }}
-				        	</p>
+				            	<p class="body-text hero">
+						    				{{ item.homepage_slider_description | truncate(60) }}
+						        	</p>
+			            </div>
+				    			
 				        	<a href="{{item.homepage_slider_cta_link}}">
 				        		<button class="home-button sites-button">
-				        			<?php echo $slider_cta_text; ?>
 				        			{{ item.homepage_slider_cta_text }}
-				    			</button>
-		    			        <p class="prev-slider-home">
-
-		    			        </p>
-								<p class="next-slider-home">
-
-								</p>
-							</a>    	
+				    				</button> 
+									</a>
+									<div class="arrows-container"> 
+									 	<p class="prev-slider-home">
+										 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37.22 31"><defs><style>.cls-1{fill:none;stroke:#231f20;stroke-linecap:round;stroke-linejoin:round;stroke-width:3px;}</style></defs><title>arrow left</title><g id="Layer_2" data-name="Layer 2"><g id="Isolation_Mode" data-name="Isolation Mode"><line class="cls-1" x1="1.5" y1="15.5" x2="35.72" y2="15.5"/><polyline class="cls-1" points="15.5 29.5 1.5 15.5 15.5 1.5"/></g></g></svg>
+									 	</p>
+										<p class="next-slider-home">
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37.22 31"><defs><style>.cls-1{fill:none;stroke:#231f20;stroke-linecap:round;stroke-linejoin:round;stroke-width:3px;}</style></defs><title>arrow right</title><g id="Layer_2" data-name="Layer 2"><g id="Isolation_Mode" data-name="Isolation Mode"><line class="cls-1" x1="35.72" y1="15.5" x2="1.5" y2="15.5"/><polyline class="cls-1" points="21.72 1.5 35.72 15.5 21.72 29.5"/></g></g></svg>
+											</p>
+										</div>   	
 				        </div> 	
 					</div>
 		        </div>
@@ -38,6 +39,8 @@
 <div class="slider-svg">
 	<svg id="slider-svg" xmlns="http://www.w3.org/2000/svg" class="slider_svg" viewBox="0 0 180 180">
 </div>
+
+   
 {% do action( 'foundationpress_after_content' ) %}
 {{wp_footer}}
 

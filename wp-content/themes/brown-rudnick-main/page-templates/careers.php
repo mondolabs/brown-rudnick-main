@@ -22,8 +22,16 @@ $data['careers_tile_four'] = get_field('careers_tile_four');
 $data['careers_top_text'] = get_field('careers_top_text');
 $data['careers_tiles_header'] = get_field('careers_tiles_header');
 
+$data['careers_tile_one_link'] = get_field('careers_tile_one_link');
+$data['careers_tile_two_link'] = get_field('careers_tile_two_link');
+$data['careers_tile_three_link'] = get_field('careers_tile_three_link');
+$data['careers_tile_four_link'] = get_field('careers_tile_four_link');
+
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
 $data['featured_image_url'] = $data['featured_image_url'][0];
+
+$slug = basename(get_permalink());
+$data['slug'] = $slug;
 
 ?>
 

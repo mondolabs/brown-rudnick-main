@@ -39,9 +39,12 @@
 				
 				<div class="sidebar-items__wrapper">
 				    {% for sidebar_item in careers_sidebar_items %}
+				    {% set link_slug = sidebar_item.careers_sidebar_item_link|split('/')[3] %}	
 						{# DESKTOP MENU ITEMS #}
-				    	<a class="hide-for-small-only link sidebar__link" href="{{ sidebar_item.careers_sidebar_item_link }}">
+				    	<a class="medium__weight__spacing {% if slug == link_slug %}red{% endif %} hide-for-small-only link sidebar__link" href="{{ sidebar_item.careers_sidebar_item_link }}">
+
 				    		{{ sidebar_item.careers_sidebar_item_text|upper }}
+				    		
 				    	</a>
 					{# MOBILE MENU ITEMS #}
 						<a class="show-for-small-only link sidebar__link mobile {% if loop.last %} last-sidebar__link{% endif %}" href="{{ sidebar_item.careers_sidebar_item_link }}">
@@ -52,6 +55,8 @@
 			</div>
 		</div>
 	</div>
+
+
 	<div class="columns show-for-medium-up medium-9 large-10">
 		<p class="title__text">
 			{{ careers_top_text }}
@@ -60,7 +65,7 @@
 		<p class="body__text">
 			{{ careers_tiles_header }}
 		</p>
-		<div class="first experience-tile__outer-wrapper columns small-12 medium-3 large-3">
+		<div class="first experience-tile__outer-wrapper columns small-12 medium-6 large-3">
 			<div class="experience-tile__wrapper">
 				<div class="experience-tile__inner-wrapper relative">
 					<a class="link red" href="{{ careers_tile_one_link }}">
@@ -80,7 +85,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="middle experience-tile__outer-wrapper columns small-12 medium-3 large-3">
+		<div class="middle experience-tile__outer-wrapper columns small-12 medium-6 large-3">
 			<div class="experience-tile__wrapper">
 				<div class="experience-tile__inner-wrapper relative">
 					<a class="link red" href="{{ careers_tile_two_link }}">
@@ -100,7 +105,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="middle experience-tile__outer-wrapper columns small-12 medium-3 large-3">
+		<div class="middle experience-tile__outer-wrapper columns small-12 medium-6 large-3">
 			<div class="experience-tile__wrapper">
 				<div class="experience-tile__inner-wrapper relative">
 					<a class="link red" href="{{ careers_tile_three_link }}">
@@ -120,7 +125,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="last experience-tile__outer-wrapper columns small-12 medium-3 large-3">
+		<div class="last experience-tile__outer-wrapper columns small-12 medium-6 large-3">
 			<div class="experience-tile__wrapper">
 				<div class="experience-tile__inner-wrapper relative">
 					<a class="link red" href="{{ careers_tile_four_link }}">
@@ -140,11 +145,12 @@
 				</div>
 			</div>
 		</div>
+
 	</div>
 </div>
 <div id="diversityModalTrigger" class="bottom-banner__cta--outer-wrapper">
 	<div class="bottom-banner__cta--inner-wrapper table__wrapper">
-		<div class="bottom-banner__text--wrapper table__inner tag__text">
+		<div class="bottom-banner__text--wrapper table__inner tag__text bold__wide__spacing">
 			<p class="inline__text margin-bottom--0">
 				EEOE STATEMENT
 				<svg class="long__arrow--svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">

@@ -128,6 +128,19 @@
 	</div>
 </div>	
 	{# body - with sidebar #}
+
+<div class="back__to__top show-for-small-only">
+	<p>
+		<?xml version="1.0" encoding="iso-8859-1"?>
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 32.634 32.634" style="enable-background:new 0 0 32.634 32.634;" xml:space="preserve">
+		<g>
+			<path d="M16.317,32.634c-0.276,0-0.5-0.224-0.5-0.5V0.5c0-0.276,0.224-0.5,0.5-0.5s0.5,0.224,0.5,0.5v31.634   C16.817,32.41,16.594,32.634,16.317,32.634z" fill="#FFFFFF"/>
+			<path d="M28.852,13.536c-0.128,0-0.256-0.049-0.354-0.146L16.319,1.207L4.135,13.39c-0.195,0.195-0.512,0.195-0.707,0   s-0.195-0.512,0-0.707L15.966,0.146C16.059,0.053,16.186,0,16.319,0l0,0c0.133,0,0.26,0.053,0.354,0.146l12.533,12.536   c0.195,0.195,0.195,0.512,0,0.707C29.108,13.487,28.98,13.536,28.852,13.536z" fill="#FFFFFF"/>
+		</g>
+		</svg>
+	</p>
+</div>
+
 <div class="row">
 	<div class="experience__wrapper row body__wrapper content columns small-12 medium-12 large-12" data-sticky_parent >
 		<div class="columns show-for-medium-up small-12 medium-3 large-2 x-large-2 sidebar__on-scroll--fixed">
@@ -152,7 +165,7 @@
 				</button>
 			</div>
 		</div>	
-		<div class="columns small-12 medium-9 large-10 relative float--right people__details--container">
+		<div class="columns no__pad small-12 medium-8 large-10 relative float--right people__details--container">
 			<div class="padding__wrapper forty sides__only">	
 				<div class="columns small-12 medium-12 large-12 relative">
 					<div>
@@ -245,15 +258,26 @@
 									{% endif %}
 									<div class="columns medium-12 large-6 small-12 min--height__225 end">
 										<div class="columns medium-6 large-6 small-12">
-											<img class="people__details" src="{{ TimberImage(person.image).src }}" />
+											<div class="people__image__container">
+												<img class="people__details" src="{{ TimberImage(person.image).src }}" />
+											</div>
 										</div>
 										<div class="columns medium-6 large-6 small-12">
 											<div class="people__details--outer-wrapper">
 												<div class="people__details--inner-wrapper">
 													<a href="{{ person._permalink }}" class="people__details title__text smaller">
 														{# {{ person.first_name }} {% if person.middle_initial %}{{ person.middle_initial }}. {% endif %} {{ person.last_name }} #}
-														{{ person.name }}
+														{% if person.last_name %} 
+															{{person.last_name}}, 
+														{% endif %} 
+														{% if person.first_name %}
+															{{ person.first_name}}
+														{% endif %} 
+														{% if person.middle_initial %}
+															{{ person.middle_initial }}.
+														{% endif %}
 													</a>
+
 													{% if person.title %}	
 														<p class="people__details tag__text">
 															{{ person.job_title|upper }}

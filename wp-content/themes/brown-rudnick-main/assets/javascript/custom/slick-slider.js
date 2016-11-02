@@ -14,7 +14,7 @@ var homepage = {
 				"fill-opacity" : 0
 			});
 			// animate SVG line	
-			line.animate({stroke: '#c10819', fill:'none'}, 1900 , mina.linear);
+			line.animate({stroke: '#c10819', fill:'none'}, 3900 , mina.linear);
 		
 		};
 		animateSvg();
@@ -30,7 +30,7 @@ var homepage = {
 				slidesToShow: 1,
 				slidesToScroll: 1,
 				autoplay: true,
-				autoplaySpeed: 2000,
+				autoplaySpeed: 4000,
 				arrows: true,
 				fade: true,
 				infinite: true,

@@ -1,3 +1,7 @@
+footer {
+	//margin-top: 60px;
+}
+
 #footer-container {
 	max-width: 100%;
 	width: 100%;
@@ -16,3 +20,19 @@
 		}
 	}
 }
+
+.footer-message {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	text-align: center;
+	p { 
+		margin: 0; 
+		font-size: 0.75em; 
+		color: $light-grey-three;
+		@media screen and (min-width: 768px){
+			display: inline-block;
+		}
+	}
+	
+}
+

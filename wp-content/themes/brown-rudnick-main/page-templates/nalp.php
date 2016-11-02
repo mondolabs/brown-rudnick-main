@@ -13,11 +13,14 @@ $practice_posts_args = array(
 $post = new TimberPost();
 $data['post'] = $post;
 
-
-
+$data['header_text'] =  get_field('header_text');
+$data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
-
 $data['featured_image_url'] = $data['featured_image_url'][0];
+$data['middle_text_content'] = get_field('middle_text_content');
+$data['nalp_report_banner_header'] = get_field('nalp_report_banner_header');
+$data['nalp_report_banner_text_content'] = get_field('nalp_report_banner_text_content');
+$data['nalp_bottom_banner_image'] = get_field('nalp_bottom_banner_image');
 
 ?>
 

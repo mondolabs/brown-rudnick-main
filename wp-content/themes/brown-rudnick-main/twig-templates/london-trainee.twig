@@ -1,0 +1,72 @@
+<div id="featuredImage" class ="featured-image__header--image-wrapper" >
+	{% set header_text_color = "black" %}
+	{# hero header #}
+	<div class="featured-image__header--text-outer-wrapper row">
+		<div class="featured-image__header--text-wrapper">
+			<div class="featured-image__header--text-inner-wrapper">
+				<div class="color__block vellum">
+					<h1 class="page__header {{ header_text_color }}">
+						{{ header_text }}
+					</h1>
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>
+
+<div class="row relative z-index__1">
+	<div class="row careers__wrapper body__wrapper columns small-12 medium-12 large-12">		
+		<div class="columns margin-bottom-60">
+			<p class="title__text">{{ content_title}}</p>
+			<p class="body__text">{{ content_text_first }}</p>
+			<p class="body__text">{{ content_text_second }}</p>
+		</div>
+		<div class= "columns">
+			<p class="title__text">{{ trainee_faq_title }}</p>
+			<table class="table__white">
+				{% for item in trainee_faq_items %}
+				<tr class="job__opening">
+					<td class="job__openings__title title__text smaller">
+						{{ item.faq_item_title }} 
+					</td>
+					<td>
+						<span class="job_expander top__menu job_opening" ></span>				
+					</td>
+				</tr>
+				<tr >
+					<td class="hidden job--description padding-bottom-20 padding-top-20">
+						{{ item.faq_item_content }}
+					</td>
+				</tr>
+				{% endfor %}
+			</table>
+		</div>
+	</div>
+</div>
+
+<div id="traineeImage" class="scroll-stopper">
+	<div class="row">
+		<div class="table__wrapper pro-bono__banner">
+		    <div class="table__inner pro-bono__banner">
+		        <div class="color-block__wrapper large-7 medium-8 small-12 float--right">
+		          <div class="color__block white relative lawyers__text title__text smaller">
+		            		<p>{{ trainee_bottom_banner_text }}</p>
+		          </div>  
+		        </div>
+	        </div>
+		</div>
+	</div>	
+</div>
+
+<script type="text/javascript">
+	{% if featured_image_url %}
+		$(document).ready(function(){
+			$('#featuredImage').backstretch("{{featured_image_url}}");
+		})
+	{% endif %}
+	{% if trainee_bottom_banner_image|length > 0 %}
+		$(document).ready(function(){
+			$('#traineeImage').backstretch("{{ trainee_bottom_banner_image }}");
+		})
+	{% endif %}
+</script>

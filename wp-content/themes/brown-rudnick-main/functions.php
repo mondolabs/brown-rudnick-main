@@ -47,6 +47,9 @@ require_once( 'library/sticky-posts.php' );
 /** Configure responsive image sizes */
 require_once( 'library/responsive-images.php' );
 
+
+require_once( 'library/custom-functions.php' );
+
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/protocol-relative-theme-assets.php' );
 
@@ -57,6 +60,7 @@ function custom_upload_mimes ( $existing_mimes=array() ) {
 	return $existing_mimes;
 }
 
+// registering custom filters for custom searches of people 
 add_filter( 'query_vars', 'custom_insights_query_vars' );
 function custom_insights_query_vars( $vars ) {
   $vars[] = 'geography_query';
@@ -66,8 +70,18 @@ function custom_insights_query_vars( $vars ) {
   $vars[] = 'location_query';
   $vars[] = 'admission_query';
   $vars[] = 'education_query';
+  $vars[] = 'date_query';
   $vars[] = 'keyword';
-
-
   return $vars;
 }
+
+// register custom query vars for searches by jobs
+add_filter( 'query_vars', 'custom_jobs_query_vars' );
+function custom_jobs_query_vars( $vars ) {
+  $vars[] = 'job_keyword';
+  $vars[] = 'job_location_query';
+  return $vars;
+}
+
+
+  

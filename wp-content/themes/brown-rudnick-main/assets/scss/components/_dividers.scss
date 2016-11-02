@@ -31,8 +31,8 @@
 		margin: 8px 0;
 	}
 	&.insights {
-	    width: calc(100% - 15px);
-    	margin: 40px 0 10px;
+		width: calc(100% - 15px);
+		margin: 40px 0 10px;
 	}
 	&.smaller {
 		width: 30px;
@@ -48,10 +48,10 @@
 		width: 60px;
 	}
 	&.mobile {
-	    display: block;
-    	height: 2px;
-    	width: 100%;
-    	margin: 20px 0 16px;
+		display: block;
+		height: 2px;
+		width: 100%;
+		margin: 20px 0 16px;
 	}
 }
 
@@ -69,4 +69,10 @@
 	&.inline__block {
 		display: inline-block;
 	}
+}
+
+.hiring-divider {
+	width: 80px;
+	border-bottom: solid $primary-red 1px;
+	height: 1px;
 }
