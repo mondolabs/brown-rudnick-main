@@ -13,7 +13,7 @@ $practice_posts_args = array(
 $post = new TimberPost();
 $data['post'] = $post;
 
-$sidebar_slug = 'foundation-sidebar';
+$sidebar_slug = 'about-sidebar';
 $args = array(
   'name'        => $sidebar_slug,
   'post_type'   => 'sidebar',
