@@ -143,5 +143,5 @@ $(document).ready(function(){
 	if ( $('.sidebar__on-scroll--fixed').length > 0){
 		console.log("STICKY");
 		$('.sidebar__on-scroll--fixed').stick_in_parent({ offset_top: headerHeight });
-	}	
+	}
 });
