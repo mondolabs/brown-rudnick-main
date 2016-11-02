@@ -293,6 +293,7 @@ a.link {
 		display: inline;
 	}
 	&.sidebar__link {
+		max-width: 185px;
 		margin-bottom: 14px;
 		font-size: 14px;
 		&.mobile {
@@ -1059,7 +1060,7 @@ button.close__modal {
 		font-weight: 800;
 }
 .medium__weight__spacing {
-	font-weight: 400;
+	font-weight: 500;
 }
 
 .table__white {
