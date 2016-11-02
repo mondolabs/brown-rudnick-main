@@ -39,12 +39,12 @@
 				    {% for sidebar_item in sidebar_links %}
 			    		{% set link_slug = sidebar_item.link_url|split('/')[4] %}
 						{# DESKTOP MENU ITEMS #}
-				    	<a class="{% if slug == link_slug %}red{% endif %} hide-for-small-only link sidebar__link" href="{{ sidebar_item.link_url }}">
+				    	<a class="medium__weight__spacing {% if slug == link_slug %}red{% endif %} hide-for-small-only link sidebar__link" href="{{ sidebar_item.link_url }}">
 				    		{{ sidebar_item.link_text|upper }}
 				    	</a>
 					
 						{# MOBILE MENU ITEMS #}
-						<a class="{% if slug == link_slug %}red{% endif %} show-for-small-only link sidebar__link mobile {% if loop.last %} last-sidebar__link{% endif %}" href="{{ sidebar_item.link_url }}">
+						<a class="medium__weight__spacing {% if slug == link_slug %}red{% endif %} show-for-small-only link sidebar__link mobile {% if loop.last %} last-sidebar__link{% endif %}" href="{{ sidebar_item.link_url }}">
 				    		{{ sidebar_item.link_text|upper }}
 				    	</a>
 				    {% endfor %}
