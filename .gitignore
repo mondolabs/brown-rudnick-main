@@ -12,6 +12,7 @@ wp-content/managewp/backups/
 wp-content/advanced-cache.php
 wp-content/wp-cache-config.php
 
+wp-content/themes/brown-rudnick-main/assets/stylesheets/foundation.css.map
 wp-content/plugins/wordfence/tmp/configCache.php
 wp-content/wflogs/config.php
 
