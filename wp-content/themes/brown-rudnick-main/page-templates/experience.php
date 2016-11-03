@@ -27,6 +27,9 @@ $data['experience_tile_two_link'] = get_field('experience_tile_two_link');
 $data['experience_tile_three_link'] = get_field('experience_tile_three_link');
 $data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
 
+$slug = basename(get_permalink());
+$data['slug'] = $slug;
+
 ?>
 <html>
   <head>

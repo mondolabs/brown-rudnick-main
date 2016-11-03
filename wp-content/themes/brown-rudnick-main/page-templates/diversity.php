@@ -8,7 +8,10 @@ $post = new TimberPost();
 $data['post'] = $post;
 $data['banner_image'] = get_field('banner_image');
 $data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
-$sidebar_slug = 'about-sidebar';
+
+$parent = get_page($post->post_parent);
+$parent_name = $parent->post_name;
+$sidebar_slug = $parent_name . '-sidebar';
 $args = array(
   'name'        => $sidebar_slug,
   'post_type'   => 'sidebar',
@@ -16,6 +19,7 @@ $args = array(
   'numberposts' => 1
 );
 $data['sidebar'] = get_posts($args);
+
 $data['diversity_header_text'] = get_field('diversity_header_text');
 $data['diversity_top_content'] = get_field('diversity_top_content');
 $data['diversity_video_url'] = get_field('diversity_video_url');
@@ -24,7 +28,7 @@ $data['diversity_efforts'] = get_field('diversity_efforts');
 $slug = basename(get_permalink());
 $data['slug'] = $slug;
 
-$data['parent_link'] = get_permalink( $post->post_parent );
+$data['parent_link'] = get_permalink( $parent );
 
 ?>
 

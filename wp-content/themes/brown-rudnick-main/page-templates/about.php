@@ -29,6 +29,10 @@ $data['bullets'] = get_field('bullets');
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
 $data['featured_image_url'] = $data['featured_image_url'][0];
 $data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
+
+$slug = basename(get_permalink());
+$data['slug'] = $slug;
+
 ?>
 
 <html>

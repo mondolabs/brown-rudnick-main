@@ -9,8 +9,15 @@ $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id
 $data['featured_image_url'] = $data['featured_image_url'][0];
 $data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
 
-$data['sidebar_header'] = get_field('sidebar_header');
-$data['sidebar_items'] = get_field('sidebar_items');
+$sidebar_slug = 'careers-sidebar';
+$args = array(
+  'name'        => $sidebar_slug,
+  'post_type'   => 'sidebar',
+  'post_status' => 'publish',
+  'numberposts' => 1
+);
+$data['sidebar'] = get_posts($args);
+
 $data['header_text'] = get_field('header_text');
 $data['first_paragraph'] = get_field('first_paragraph');
 $data['second_paragraph'] = get_field('second_paragraph');
