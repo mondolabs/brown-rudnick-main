@@ -113,38 +113,42 @@
 
 // desktop navigation hover
 .submenu > li {
-  display: inline-block !important;
+  @media screen and (min-width: 1024px){
+    display: inline-block !important;
+  }
 }
 
 .is-dropdown-submenu{
   border: none;
+  //display: inline-flex !important;
   //background: transparent;
-  width: 60vw;
 }
 
 .is-dropdown-submenu {
   text-align: center !important;
   background-color: $primary-grey;
-  width: 140vw;
+  @include breakpoint(medium){
+    width: 160vw;
+  }
+  width: 150vw;
   li {
-    width: 10%!important;
+    //width: 5%;
+    @media screen and (min-width: 1024px){
+        width: 7%!important;
+    }
   }
 }
 
 
 .is-dropdown-submenu {
-  @include breakpoint(medium){
-     transform: translateX(-50%);
-  }
- 
-  .opens-right {
-    transform: translateX(-50%);
-  }
-  .opens-left {
-    transform: translateX(-30%);
-  }
+  transform: translateX(-50%);
 }
-
+.is-dropdown-submenu:first-child{
+  transform: translateX(-35%);
+}
+.is-dropdown-submenu:nth-child(4){
+  transform: translateX(-60%);
+}
 
 .is-dropdown-submenu li a { 
   font-size: 0.85em !important; 

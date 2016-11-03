@@ -23,7 +23,7 @@ if ( ! function_exists( 'desktop_menu' ) ) {
 	function desktop_menu() {
 		wp_nav_menu( array(
 			'container'      => false,
-			'menu_class'     => 'dropdown menu menu-centered',
+			'menu_class'     => 'dropdown menu',
 			'items_wrap'     => '<ul id="%1$s" class="menu %2$s desktop-menu" data-dropdown-menu>%3$s</ul>',
 			'theme_location' => 'custom-menu',
 			'depth'          => 3,
