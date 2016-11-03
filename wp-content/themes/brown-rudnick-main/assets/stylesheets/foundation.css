@@ -201,7 +201,7 @@ p.subtitle__text {
     color: #b91628; }
   .title__text.insights__blog {
     margin-top: 20px; }
-  .title__text.link:hover {
+  .title__text.link:hover, .title__text.link:focus {
     color: #b91628; }
   .title__text.normal {
     font-style: normal; }
@@ -362,6 +362,8 @@ a.link {
       color: #b91628; }
     a.link.red:hover, a.link.red:focus {
       color: #0a0a0a; }
+    a.link.red.tile:hover, a.link.red.tile:focus {
+      color: #b91628; }
   a.link.inline__link {
     display: inline; }
   a.link.sidebar__link {
@@ -378,7 +380,7 @@ a.link {
         border: none; }
 
 h3.title {
-  font-size: 30px;
+  font-size: 24px;
   font-family: "adobe-garamond-pro", serif; }
   h3.title.tile {
     max-width: 200px;

@@ -80,7 +80,8 @@ p.subtitle__text {
 		margin-top: 20px;
 	}
 	&.link {
-		&:hover {
+		&:hover,
+		&:focus {
 			color: $primary-red;
 		}
 	}
@@ -302,6 +303,12 @@ a.link {
 		&:focus {
 			color: $black;
 		}
+		&.tile {
+			&:hover,
+			&:focus {
+				color: $primary-red;
+			}
+		}
 	}
 	&.inline__link {
 		display: inline;
@@ -324,7 +331,7 @@ a.link {
 }
 
 h3.title {
-	font-size: 30px;
+	font-size: 24px;
 	font-family: $brgaramond;
 	&.tile {
     	max-width: 200px;
