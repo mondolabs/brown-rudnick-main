@@ -26,7 +26,6 @@ $args = array(
     	),
       ),
 );
-
 // pass results to twig template
 $data['hiring_committee_members'] = Timber::get_posts($args);
 $data['hiring_committee_members'] = array_unique($data['hiring_committee_members']);

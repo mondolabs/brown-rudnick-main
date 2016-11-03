@@ -7,9 +7,14 @@ $data = Timber::get_context();
 $post = new TimberPost();
 $data['post'] = $post;
 $data['banner_image'] = get_field('banner_image');
-$data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
-$data['about_sidebar_header'] = get_field('about_sidebar_header');
-$data['about_sidebar_items'] = get_field('about_sidebar_items');
+$sidebar_slug = 'about-sidebar';
+$args = array(
+  'name'        => $sidebar_slug,
+  'post_type'   => 'sidebar',
+  'post_status' => 'publish',
+  'numberposts' => 1
+);
+$data['sidebar'] = get_posts($args);
 $data['parent'] = get_post($post->post_parent);
 $data['parent'] = $data['parent']->post_title;
 $data['pro_bono_header_text'] = get_field('pro_bono_header_text');
@@ -20,6 +25,8 @@ $data['pro_bono_bottom_banner_link_url'] = get_field('pro_bono_bottom_banner_lin
 $data['pro_bono_bottom_banner_image'] = get_field('pro_bono_bottom_banner_image');
 $slug = basename(get_permalink());
 $data['slug'] = $slug;
+$data['parent_link'] = get_permalink( $post->post_parent );
+
 ?>
 
 <html>

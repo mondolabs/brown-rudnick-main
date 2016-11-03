@@ -201,7 +201,7 @@ p.subtitle__text {
     color: #b91628; }
   .title__text.insights__blog {
     margin-top: 20px; }
-  .title__text.link:hover {
+  .title__text.link:hover, .title__text.link:focus {
     color: #b91628; }
   .title__text.normal {
     font-style: normal; }
@@ -315,14 +315,24 @@ li.list-item__sidebar a {
 .body__wrapper {
   margin: 70px 0; }
 
-h4.list__header {
+.list__header {
   font-size: 24px;
   font-family: "adobe-garamond-pro", serif;
   line-height: 1; }
-  h4.list__header.red {
+  .list__header.red {
     color: #b91628; }
-  h4.list__header.mobile {
+  .list__header.mobile {
     font-size: 20px; }
+
+a.list__header {
+  cursor: pointer;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+  color: #0a0a0a; }
+  a.list__header.red {
+    color: #b91628; }
+  a.list__header:hover, a.list__header:focus {
+    color: #b91628; }
 
 .accordion__trigger {
   cursor: pointer; }
@@ -352,10 +362,12 @@ a.link {
       color: #b91628; }
     a.link.red:hover, a.link.red:focus {
       color: #0a0a0a; }
+    a.link.red.tile:hover, a.link.red.tile:focus {
+      color: #b91628; }
   a.link.inline__link {
     display: inline; }
   a.link.sidebar__link {
-    max-width: 159px;
+    max-width: 185px;
     margin-bottom: 14px;
     font-size: 14px; }
     a.link.sidebar__link.mobile {
@@ -368,7 +380,7 @@ a.link {
         border: none; }
 
 h3.title {
-  font-size: 30px;
+  font-size: 24px;
   font-family: "adobe-garamond-pro", serif; }
   h3.title.tile {
     max-width: 200px;
@@ -424,7 +436,7 @@ h3.title {
   height: 100%; }
   .featured-image__header--text-wrapper.person {
     width: 100%; }
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 768px) {
     .featured-image__header--text-wrapper {
       margin: auto; } }
 
@@ -437,7 +449,7 @@ h3.title {
 .page__header {
   font-size: 60px;
   font-family: "adobe-garamond-pro", serif; }
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 768px) {
     .page__header {
       font-size: 32.5px;
       padding-left: 10px; } }
@@ -483,7 +495,7 @@ h3.title {
   @media screen and (max-width: 1024px) {
     .color-block {
       padding: 40px; } }
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 768px) {
     .color-block {
       padding: 20px; } }
   .color-block.vellum {
@@ -495,7 +507,8 @@ h3.title {
   display: table;
   width: 100%;
   border: 8px solid #fefefe;
-  padding: 4px; }
+  padding: 4px;
+  margin-bottom: 20px; }
 
 .color-block__experience--inner-wrapper {
   width: 240px;
@@ -703,7 +716,9 @@ img.insights {
     right: 1px; }
 
 .experience_expander,
-.job_expander {
+.job_expander,
+.accordion_expander,
+.mobile__sidebar--expander {
   width: 25px;
   height: 25px;
   display: inline-block;
@@ -712,30 +727,46 @@ img.insights {
   right: 96px;
   cursor: pointer; }
   .experience_expander.top__menu,
-  .job_expander.top__menu {
+  .job_expander.top__menu,
+  .accordion_expander.top__menu,
+  .mobile__sidebar--expander.top__menu {
     background-color: #b91628;
     right: 15px;
     top: 0; }
     .experience_expander.top__menu:before,
-    .job_expander.top__menu:before {
+    .job_expander.top__menu:before,
+    .accordion_expander.top__menu:before,
+    .mobile__sidebar--expander.top__menu:before {
       top: 0;
       left: 12px;
       background-color: #fefefe; }
     .experience_expander.top__menu:after,
-    .job_expander.top__menu:after {
+    .job_expander.top__menu:after,
+    .accordion_expander.top__menu:after,
+    .mobile__sidebar--expander.top__menu:after {
       top: -4px;
       left: 7px;
       background-color: #fefefe; }
   .experience_expander:hover:after, .experience_expander:hover:before,
   .job_expander:hover:after,
-  .job_expander:hover:before {
+  .job_expander:hover:before,
+  .accordion_expander:hover:after,
+  .accordion_expander:hover:before,
+  .mobile__sidebar--expander:hover:after,
+  .mobile__sidebar--expander:hover:before {
     background-color: #b91628; }
   .experience_expander:hover.top__menu:after, .experience_expander:hover.top__menu:before,
   .job_expander:hover.top__menu:after,
-  .job_expander:hover.top__menu:before {
+  .job_expander:hover.top__menu:before,
+  .accordion_expander:hover.top__menu:after,
+  .accordion_expander:hover.top__menu:before,
+  .mobile__sidebar--expander:hover.top__menu:after,
+  .mobile__sidebar--expander:hover.top__menu:before {
     background-color: #fefefe; }
   .experience_expander:before,
-  .job_expander:before {
+  .job_expander:before,
+  .accordion_expander:before,
+  .mobile__sidebar--expander:before {
     content: " ";
     background-color: #b91628;
     display: inline-block;
@@ -748,7 +779,9 @@ img.insights {
     transition: all .3s ease-in-out;
     opacity: 1; }
   .experience_expander:after,
-  .job_expander:after {
+  .job_expander:after,
+  .accordion_expander:after,
+  .mobile__sidebar--expander:after {
     content: " ";
     background-color: #b91628;
     display: inline-block;
@@ -761,7 +794,9 @@ img.insights {
     transition: all .3s ease-in-out;
     opacity: 1; }
   .experience_expander.expanded:after,
-  .job_expander.expanded:after {
+  .job_expander.expanded:after,
+  .accordion_expander.expanded:after,
+  .mobile__sidebar--expander.expanded:after {
     -webkit-transition-delay: .1s;
             transition-delay: .1s;
     -webkit-transform: rotate(-180deg);
@@ -769,10 +804,14 @@ img.insights {
             transform: rotate(-180deg);
     left: 0px; }
   .experience_expander.expanded:before,
-  .job_expander.expanded:before {
+  .job_expander.expanded:before,
+  .accordion_expander.expanded:before,
+  .mobile__sidebar--expander.expanded:before {
     opacity: 0; }
   .experience_expander.expanded.top__menu:after,
-  .job_expander.expanded.top__menu:after {
+  .job_expander.expanded.top__menu:after,
+  .accordion_expander.expanded.top__menu:after,
+  .mobile__sidebar--expander.expanded.top__menu:after {
     left: 7px; }
 
 .job_expander {
@@ -884,10 +923,10 @@ button.close__modal {
   display: block;
   background-color: transparent;
   position: relative; }
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 768px) {
     .sidebar-items__wrapper {
       position: absolute;
-      width: calc(100% - 20px);
+      width: 100%;
       display: none;
       background-color: #f0f0f0; } }
 
@@ -971,7 +1010,7 @@ button.close__modal {
   font-weight: 800; }
 
 .medium__weight__spacing {
-  font-weight: 400; }
+  font-weight: 500; }
 
 .table__white {
   border: none !important; }

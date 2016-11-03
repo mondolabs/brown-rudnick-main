@@ -17,7 +17,15 @@ var EXPANDER = {
 		$('.job_expander').click(function(event) {
 			var expander = $(this);
 			var hiddenJobDescripton = $(expander).parent().parent().next('tr').find('td');
-			$(hiddenJobDescripton).slideToggle('fast');
+			$(hiddenJobDescripton).slideToggle(400);
+			$(expander).toggleClass('expanded');
+		});
+		$('.mobile__sidebar--expander').click(function(event) {
+			var expander = $(this);
+			var triggerId = $(expander).data('show-target');
+			var hiddenMenuItems = $('#'+triggerId);
+			$(hiddenMenuItems).slideToggle(400);
+			console.log('expanded');
 			$(expander).toggleClass('expanded');
 		});
 

@@ -80,7 +80,8 @@ p.subtitle__text {
 		margin-top: 20px;
 	}
 	&.link {
-		&:hover {
+		&:hover,
+		&:focus {
 			color: $primary-red;
 		}
 	}
@@ -238,7 +239,7 @@ li.list-item__sidebar {
 	margin: 70px 0;
 }
 
-h4.list__header {
+.list__header {
 	font-size: 24px;
 	font-family: $brgaramond;
 	line-height: 1;
@@ -249,6 +250,20 @@ h4.list__header {
 		font-size: 20px;
 	}
 }
+
+a.list__header {
+	cursor: pointer;
+    transition: color .3s ease-in-out;
+    color: $black;
+	&.red {
+		color: $primary-red;
+	}
+	&:hover,
+	&:focus {
+		color: $primary-red;
+	}
+}
+
 
 .accordion__trigger {
 	cursor: pointer;
@@ -288,12 +303,18 @@ a.link {
 		&:focus {
 			color: $black;
 		}
+		&.tile {
+			&:hover,
+			&:focus {
+				color: $primary-red;
+			}
+		}
 	}
 	&.inline__link {
 		display: inline;
 	}
 	&.sidebar__link {
-		max-width: 159px;
+		max-width: 185px;
 		margin-bottom: 14px;
 		font-size: 14px;
 		&.mobile {
@@ -310,7 +331,7 @@ a.link {
 }
 
 h3.title {
-	font-size: 30px;
+	font-size: 24px;
 	font-family: $brgaramond;
 	&.tile {
     	max-width: 200px;
@@ -383,7 +404,7 @@ h3.title {
 	&.person {
 		width: 100%;
 	}
-	@media screen and (max-width: 640px) {
+	@media screen and (max-width: 768px) {
 		margin: auto;
 	}
 }
@@ -399,7 +420,7 @@ h3.title {
 .page__header {
 	font-size: 60px;
 	font-family: $brgaramond;
-	@media screen and (max-width: 640px) {
+	@media screen and (max-width: 768px) {
 		font-size: 32.5px;
 		padding-left: 10px;
 	}
@@ -457,7 +478,7 @@ h3.title {
 	@media screen and (max-width: 1024px) {
 		padding: 40px; 
 	}
-	@media screen and (max-width: 640px) {
+	@media screen and (max-width: 768px) {
 		padding: 20px; 
 	}
 	&.vellum {
@@ -472,6 +493,7 @@ h3.title {
 	width: 100%;
 	border: 8px solid $white;
 	padding: 4px;
+	margin-bottom: 20px;
 }
 
 .color-block__experience--inner-wrapper {
@@ -731,7 +753,9 @@ img.insights {
 }
 
 .experience_expander, 
-.job_expander {
+.job_expander,
+.accordion_expander,
+.mobile__sidebar--expander {
     width: 25px;
     height: 25px;
 	display: inline-block;
@@ -938,9 +962,9 @@ button.close__modal {
 	display: block;
 	background-color: transparent;
     position: relative;
-	@media screen and (max-width: 640px) {
+	@media screen and (max-width: 768px) {
 	    position: absolute;
-    	width: calc(100% - 20px);
+    	width: 100%;
 		display: none;
     	background-color: $primary-grey;
     }
@@ -1058,7 +1082,7 @@ button.close__modal {
 		font-weight: 800;
 }
 .medium__weight__spacing {
-	font-weight: 400;
+	font-weight: 500;
 }
 
 .table__white {
