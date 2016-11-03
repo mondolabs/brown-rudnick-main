@@ -49,16 +49,28 @@ var NAV = {
 			$(NAV.desktopMenu).css('opacity', '1');
 			$('.menu__outer-wrapper--desktop-on-scroll').slideUp('300');
 		}
-	}	
+	},	
+	// corrects spacing of last submenu item
+	submenuCorrection: function(){
+		// for regular menu
+		$('.is-dropdown-submenu:eq(0)' ).addClass('first-submenu-item');
+		$('.is-dropdown-submenu:eq(2)' ).addClass('before-last-submenu-item');
+		$('.is-dropdown-submenu:eq(3)' ).addClass('last-submenu-item');
+		// for scroll menu
+		$('.is-dropdown-submenu:eq(4)' ).addClass('first-submenu-item');
+		$('.is-dropdown-submenu:eq(6)' ).addClass('before-last-submenu-item');
+		$('.is-dropdown-submenu:eq(7)' ).addClass('last-submenu-item');
+	}
+
 }
 
 $(document).ready(function(){
 	NAV.listeners();
-	//if ( $(document).width() > 640) {
+	NAV.submenuCorrection();
 		$(document).scroll( function(){
 			NAV.scrollEvents();
 		})
-	//}
+
 	if ( $(window).scrollTop() >= NAV.desktopMenu.height() && $(document).width() >= 768) {
 		// differentiate between page load and user scroll
 		// otherwise regular menu is always hidden on page load at scroll location :P

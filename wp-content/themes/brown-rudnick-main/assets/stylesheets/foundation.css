@@ -8382,10 +8382,6 @@ table.hover tr:nth-of-type(even):hover {
   .desktop-menu, .top-bar-left {
     display: none !important; } }
 
-@media screen and (min-width: 48em) {
-  #mobile-menu, .title-bar {
-    display: none !important; } }
-
 /* Mobile menu */
 .off-canvas > ul.menu {
   height: 100vh;
@@ -8478,12 +8474,14 @@ a::after {
 .nav-next {
   float: right; }
 
-@media screen and (min-width: 1024px) {
-  .submenu > li {
-    display: inline-block !important; } }
+.submenu > li {
+  display: inline-block !important; }
 
 .is-dropdown-submenu {
   border: none; }
+  @media screen and (max-width: 1024px) {
+    .is-dropdown-submenu {
+      left: 0 !important; } }
 
 .is-dropdown-submenu {
   text-align: center !important;
@@ -8494,25 +8492,31 @@ a::after {
       width: 160vw; } }
   @media screen and (min-width: 1024px) {
     .is-dropdown-submenu li {
-      width: 7% !important; } }
+      width: 7% !important;
+      padding: 0.5%; } }
 
 .is-dropdown-submenu {
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%); }
 
-.is-dropdown-submenu:first-child {
-  -webkit-transform: translateX(-35%);
-      -ms-transform: translateX(-35%);
-          transform: translateX(-35%); }
+.first-submenu-item {
+  -webkit-transform: translateX(-40%);
+      -ms-transform: translateX(-40%);
+          transform: translateX(-40%); }
 
-.is-dropdown-submenu:nth-child(4) {
-  -webkit-transform: translateX(-60%);
-      -ms-transform: translateX(-60%);
-          transform: translateX(-60%); }
+.before-last-submenu-item {
+  -webkit-transform: translateX(-53%);
+      -ms-transform: translateX(-53%);
+          transform: translateX(-53%); }
+
+.last-submenu-item {
+  -webkit-transform: translateX(-63%);
+      -ms-transform: translateX(-63%);
+          transform: translateX(-63%); }
 
 .is-dropdown-submenu li a {
-  font-size: 0.85em !important;
+  font-size: 0.75em !important;
   font-weight: 400 !important; }
 
 #footer-container {
@@ -9575,10 +9579,7 @@ button.slick-arrow {
     height: 450px; } }
 
 .menu__wrapper--desktop {
-  padding: 0; }
-  @media screen and (min-width: 48em) {
-    .menu__wrapper--desktop {
-      padding: 40px 0 0; } }
+  padding: 20px 0px 0px; }
 
 ul.desktop-menu {
   padding-top: 34px; }
@@ -9586,7 +9587,7 @@ ul.desktop-menu {
 ul.menu li a {
   color: #0a0a0a;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 800;
   text-transform: uppercase;
   -webkit-transition: width 2s, height 2s, background-color 2s, -webkit-transform 2s;
@@ -9616,8 +9617,6 @@ ul.desktop__menu--icons-list {
   ul.desktop__menu--icons-list li {
     display: inline-block;
     padding-right: 20px; }
-  ul.desktop__menu--icons-list.scrolled {
-    padding-top: 36px; }
 
 .desktop__menu__icon__single {
   width: 15px;

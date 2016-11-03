@@ -1,28 +1,3 @@
-// change bottom navbar on scroll with the navbar that appears upon scroll
-
-// element.style {
-//     display: none;
-//     height: 60px;
-//     padding: 0px;
-//     margin: 2px 0px -32px;
-//     width: 1672px;
-//     opacity: 1;
-// }
-// .subnav__color-block {
-//     margin-top: 2%;
-//     width: 400%;
-//     height: 60px;
-//     /* position: relative; */
-//     width: 100%;
-//     position: absolute;
-//     left: 0;
-//     background-color: #f0f0f0;
-//     top: 100%;
-//     display: none;
-//     margin-bottom: -32px;
-// }	
-
-
 // header
 
 .menu__outer-wrapper--desktop-on-scroll {
@@ -355,10 +330,7 @@ button.slick-arrow  {
 }
 
 .menu__wrapper--desktop {
-	@include breakpoint(medium){
-		padding: 40px 0 0;
-	}
-	padding: 0;
+		padding: 20px 0px 0px;
 }
 
 ul.desktop-menu {
@@ -368,7 +340,7 @@ ul.desktop-menu {
 ul.menu li a{
 	color: $black;
 	font-family: $brfont;
-	font-size: 14px;
+	font-size: 12px;
 	font-weight: 800;
 	text-transform: uppercase;
     -webkit-transition: width 2s, height 2s, background-color 2s, -webkit-transform 2s;
@@ -394,9 +366,6 @@ ul.menu li a{
 ul.desktop__menu--icons-list {
 	margin: 0;
 	float: right;
-	//position: absolute;
-	//right: 40px;
-	//top: -10px;
 	list-style: none;
 	.tag__text {
 		text-transform: uppercase;
@@ -408,9 +377,9 @@ ul.desktop__menu--icons-list {
 		display: inline-block;
 		padding-right: 20px;
 	}
-	&.scrolled {
-		padding-top: 36px;
-	}
+	// &.scrolled {
+	// 	padding-top: 36px;
+	// }
 }
 
 .desktop__menu__icon__single {
