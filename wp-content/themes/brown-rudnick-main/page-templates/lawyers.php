@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Lawyers and Staff
+Template Name: Lawyers
 */
 
 get_header();

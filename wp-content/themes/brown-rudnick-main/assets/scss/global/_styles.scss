@@ -397,7 +397,7 @@ h3.title {
 	&.person {
 		width: 100%;
 	}
-	@media screen and (max-width: 640px) {
+	@media screen and (max-width: 768px) {
 		margin: auto;
 	}
 }
@@ -413,7 +413,7 @@ h3.title {
 .page__header {
 	font-size: 60px;
 	font-family: $brgaramond;
-	@media screen and (max-width: 640px) {
+	@media screen and (max-width: 768px) {
 		font-size: 32.5px;
 		padding-left: 10px;
 	}
@@ -471,7 +471,7 @@ h3.title {
 	@media screen and (max-width: 1024px) {
 		padding: 40px; 
 	}
-	@media screen and (max-width: 640px) {
+	@media screen and (max-width: 768px) {
 		padding: 20px; 
 	}
 	&.vellum {
@@ -486,6 +486,7 @@ h3.title {
 	width: 100%;
 	border: 8px solid $white;
 	padding: 4px;
+	margin-bottom: 20px;
 }
 
 .color-block__experience--inner-wrapper {
@@ -954,7 +955,7 @@ button.close__modal {
 	display: block;
 	background-color: transparent;
     position: relative;
-	@media screen and (max-width: 640px) {
+	@media screen and (max-width: 768px) {
 	    position: absolute;
     	width: 100%;
 		display: none;

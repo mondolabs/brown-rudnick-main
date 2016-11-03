@@ -20,8 +20,8 @@ $args = array(
   'post_status' => 'publish',
   'numberposts' => 1
 );
-
 $data['sidebar'] = get_posts($args);
+
 $data['text_content_top'] = get_field('text_content_top');
 $data['text_content_body'] = get_field('text_content_body');
 $data['bullet_section_header'] = get_field('bullet_section_header');

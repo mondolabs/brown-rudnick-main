@@ -14,23 +14,12 @@
 	</div>
 </div>	
 	{# body - with sidebar #}
-<div class="experience__wrapper row body__wrapper columns small-12 medium-12 large-12 content" data-sticky_parent>
-	<div class="columns show-for-medium-up medium-3 large-2 sidebar__on-scroll--fixed">
-		<h4 class="accordion__trigger red list__header" data-trigger-target="sidebarAccordion">
-			{{sidebar_header}}
-		</h4>
-		<span class="list-divider"></span>
-	    {% for sidebar_item in sidebar_items %}
-	    	{% set link_slug = sidebar_item.sidebar_item_link|split('/')[3] %}
-	    	<a class="{% if slug == link_slug %}red{% endif %} link sidebar__link" href="{{ sidebar_item.sidebar_item_link }}">
-	    		{{ sidebar_item.sidebar_item_text|upper }}
-	    	</a>
-	    {% endfor %}
-	</div>
+<div class="experience__wrapper row body__wrapper columns small-12 medium-12 large-12">
+		{% include '/twig-templates/sidebar.twig' with sidebar %}
 	<div class="columns show-for-medium-up medium-9 large-10">
 		<div class="row">
 			{% for experience in experiences %}
-				<div class="columns large-4 medium-4 x-large-4 small-12 {% if loop.last %}last float-left{% endif %}">
+				<div class="columns large-6 medium-6 xlarge-4 small-12 {% if loop.last %}last float-left{% endif %}">
 					<div class="color-block__experience">
 						<div class="color-block__experience--inner-wrapper">
 							<div class="experience__link--wrapper">

@@ -9,8 +9,16 @@ $data['post'] = $post;
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) );
 $data['featured_image_url'] = $data['featured_image_url'][0];
 $data['experience_header_text'] = get_field('experience_header_text');
-$data['experience_sidebar_header'] = get_field('experience_sidebar_header');
-$data['experience_sidebar_items'] = get_field('experience_sidebar_items');
+
+$sidebar_slug = 'experience-sidebar';
+$args = array(
+  'name'        => $sidebar_slug,
+  'post_type'   => 'sidebar',
+  'post_status' => 'publish',
+  'numberposts' => 1
+);
+$data['sidebar'] = get_posts($args);
+
 $data['experience_tile_one'] = get_field('experience_tile_one');
 $data['experience_tile_two'] = get_field('experience_tile_two');
 $data['experience_tile_three'] = get_field('experience_tile_three');

@@ -434,7 +434,7 @@ h3.title {
   height: 100%; }
   .featured-image__header--text-wrapper.person {
     width: 100%; }
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 768px) {
     .featured-image__header--text-wrapper {
       margin: auto; } }
 
@@ -447,7 +447,7 @@ h3.title {
 .page__header {
   font-size: 60px;
   font-family: "adobe-garamond-pro", serif; }
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 768px) {
     .page__header {
       font-size: 32.5px;
       padding-left: 10px; } }
@@ -493,7 +493,7 @@ h3.title {
   @media screen and (max-width: 1024px) {
     .color-block {
       padding: 40px; } }
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 768px) {
     .color-block {
       padding: 20px; } }
   .color-block.vellum {
@@ -505,7 +505,8 @@ h3.title {
   display: table;
   width: 100%;
   border: 8px solid #fefefe;
-  padding: 4px; }
+  padding: 4px;
+  margin-bottom: 20px; }
 
 .color-block__experience--inner-wrapper {
   width: 240px;
@@ -920,7 +921,7 @@ button.close__modal {
   display: block;
   background-color: transparent;
   position: relative; }
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 768px) {
     .sidebar-items__wrapper {
       position: absolute;
       width: 100%;
