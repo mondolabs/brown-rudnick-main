@@ -15,8 +15,14 @@ $data['post'] = $post;
 $data['banner_image'] = get_field('banner_image');
 $data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
 $data['law_firm_network_header_text'] = get_field('law_firm_network_header_text');
-$data['law_firm_network_sidebar_header'] = get_field('law_firm_network_sidebar_header');
-$data['law_firm_network_sidebar_items'] = get_field('law_firm_network_sidebar_items');
+$sidebar_slug = 'about-sidebar';
+$args = array(
+  'name'        => $sidebar_slug,
+  'post_type'   => 'sidebar',
+  'post_status' => 'publish',
+  'numberposts' => 1
+);
+$data['sidebar'] = get_posts($args);
 $data['text_content_top'] = get_field('text_content_top');
 $data['text_content_body'] = get_field('text_content_body');
 $data['bullet_section_header'] = get_field('bullet_section_header');
@@ -25,6 +31,8 @@ $data['bullet_section_bottom_content'] = get_field('bullet_section_bottom_conten
 $data['bullet_section_notice'] = get_field('bullet_section_notice');
 $slug = basename(get_permalink());
 $data['slug'] = $slug;
+$data['parent_link'] = get_permalink( $post->post_parent );
+
 ?>
 
 <html>

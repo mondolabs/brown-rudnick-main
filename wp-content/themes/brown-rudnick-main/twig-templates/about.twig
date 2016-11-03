@@ -1,5 +1,4 @@
 <div id="featuredImage" class ="featured-image__header--image-wrapper">
-
 	{% set header_text_color = "black" %}
 	{# hero header #}
 	<div class="featured-image__header--text-outer-wrapper row">
@@ -16,39 +15,8 @@
 </div>	
 	{# body - with sidebar #}
 <div class="row">
-	<div class="experience__wrapper body__wrapper columns small-12 medium-12 large-12">
-		<div class="medium-3 large-2 small-12 sidebar__on-scroll--fixed columns no__pad">
-			{% set pro_bono_sidebar = sidebar|first %}
-			{# DESKTOP SIDEBAR HEADER #}
-			<h4 class="red title__text smaller hide-for-small-only">
-				{{ pro_bono_sidebar.sidebar_header }}
-			</h4>
-			{# MOBILE SIDEBAR HEADER #}
-			<h4 class="show-for-small-only red list__header mobile">
-				{{ pro_bono_sidebar.sidebar_header }}
-			</h4>
-			<span class="show-for-small-only mobile__sidebar--expander top__menu" data-show-target="sidebarMobileAccordion"></span>
-			{# DESKTOP SIDEBAR LIST DIVIDER #}
-			<span class="list-divider hide-for-small-only"></span>
-			{# MOBILE SIDEBAR LIST DIVIDER #}
-			<span class="list-divider mobile show-for-small-only"></span>
-			{% set sidebar_links = TimberPost(sidebar[0]).get_field('sidebar_links') %}
-			
-			<div id="sidebarMobileAccordion" class="sidebar-items__wrapper">
-			    {% for sidebar_item in sidebar_links %}
-		    		{% set link_slug = sidebar_item.link_url|split('/')[4] %}
-					{# DESKTOP MENU ITEMS #}
-			    	<a class="medium__weight__spacing {% if slug == link_slug %}red{% endif %} hide-for-small-only link sidebar__link" href="{{ sidebar_item.link_url }}">
-			    		{{ sidebar_item.link_text|upper }}
-			    	</a>
-				
-					{# MOBILE MENU ITEMS #}
-					<a class="medium__weight__spacing {% if slug == link_slug %}red{% endif %} show-for-small-only link sidebar__link mobile {% if loop.last %} last-sidebar__link{% endif %}" href="{{ sidebar_item.link_url }}">
-			    		{{ sidebar_item.link_text|upper }}
-			    	</a>
-			    {% endfor %}
-			</div>
-		</div>
+	<div class="row experience__wrapper body__wrapper columns small-12 medium-12 large-12">
+		{% include '/twig-templates/sidebar.twig' with sidebar %}
 		<div class="columns small-12 medium-9 large-10 no__pad">
 			<div class="columns small-12 medium-12 large-12">
 				<p class="title__text">

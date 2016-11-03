@@ -238,7 +238,7 @@ li.list-item__sidebar {
 	margin: 70px 0;
 }
 
-h4.list__header {
+.list__header {
 	font-size: 24px;
 	font-family: $brgaramond;
 	line-height: 1;
@@ -249,6 +249,20 @@ h4.list__header {
 		font-size: 20px;
 	}
 }
+
+a.list__header {
+	cursor: pointer;
+    transition: color .3s ease-in-out;
+    color: $black;
+	&.red {
+		color: $primary-red;
+	}
+	&:hover,
+	&:focus {
+		color: $primary-red;
+	}
+}
+
 
 .accordion__trigger {
 	cursor: pointer;
@@ -942,7 +956,7 @@ button.close__modal {
     position: relative;
 	@media screen and (max-width: 640px) {
 	    position: absolute;
-    	width: calc(100% - 20px);
+    	width: 100%;
 		display: none;
     	background-color: $primary-grey;
     }

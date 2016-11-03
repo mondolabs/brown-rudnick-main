@@ -34,7 +34,6 @@ $post_type_args = array(
   'numberposts' => -1
 );
 
-
 $job_opening_posts = get_posts($post_type_args);
 $ids = [];
 

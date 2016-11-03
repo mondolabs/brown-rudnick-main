@@ -315,14 +315,24 @@ li.list-item__sidebar a {
 .body__wrapper {
   margin: 70px 0; }
 
-h4.list__header {
+.list__header {
   font-size: 24px;
   font-family: "adobe-garamond-pro", serif;
   line-height: 1; }
-  h4.list__header.red {
+  .list__header.red {
     color: #b91628; }
-  h4.list__header.mobile {
+  .list__header.mobile {
     font-size: 20px; }
+
+a.list__header {
+  cursor: pointer;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+  color: #0a0a0a; }
+  a.list__header.red {
+    color: #b91628; }
+  a.list__header:hover, a.list__header:focus {
+    color: #b91628; }
 
 .accordion__trigger {
   cursor: pointer; }
@@ -913,7 +923,7 @@ button.close__modal {
   @media screen and (max-width: 640px) {
     .sidebar-items__wrapper {
       position: absolute;
-      width: calc(100% - 20px);
+      width: 100%;
       display: none;
       background-color: #f0f0f0; } }
 

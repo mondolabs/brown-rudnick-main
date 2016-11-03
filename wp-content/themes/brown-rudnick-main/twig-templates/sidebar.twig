@@ -1,0 +1,52 @@
+<div class="medium-3 large-2 small-12 sidebar__on-scroll--fixed columns no__pad">
+	{% set sidebar = sidebar|first %}
+	{% set header_link_slug = sidebar_item.link_url|split('/')[3] %}
+
+	{% if parent_link %}
+		{# DESKTOP SIDEBAR HEADER #}
+		<a href="{{ parent_link }}" class="{% if slug == header_link_slug %}red{% endif %} title__text smaller hide-for-small-only list__header">
+			{{ sidebar.sidebar_header }}
+		</a>
+		{# MOBILE SIDEBAR HEADER #}
+		<div class="padding__wrapper twenty sides__only">
+			<a href="{{ parent_link }}" class="show-for-small-only {% if slug == header_link_slug %}red{% endif %} mobile list__header">
+				{{ sidebar.sidebar_header }}
+			</a>
+		</div>	
+	{% else %}
+		{# DESKTOP SIDEBAR HEADER #}
+		<h4 class="{% if slug == header_link_slug %}red{% endif %} title__text smaller hide-for-small-only list__header">
+			{{ sidebar.sidebar_header }}
+		</h4>
+		{# MOBILE SIDEBAR HEADER #}
+		<div class="padding__wrapper twenty sides__only">
+			<h4 class="show-for-small-only {% if slug == header_link_slug %}red{% endif %} mobile list__header">
+				{{ sidebar.sidebar_header }}
+			</h4>
+		</div>	
+	{% endif %}
+	<span class="show-for-small-only mobile__sidebar--expander top__menu" data-show-target="sidebarMobileAccordion"></span>
+	{# DESKTOP SIDEBAR LIST DIVIDER #}
+	<span class="list-divider hide-for-small-only"></span>
+	{# MOBILE SIDEBAR LIST DIVIDER #}
+	<span class="list-divider mobile show-for-small-only"></span>
+	{% set sidebar_links = TimberPost(sidebar).get_field('sidebar_links') %}
+	<div id="desktopMobileAccordion" class="sidebar-items__wrapper hide-for-small-only">
+	    {% for sidebar_item in sidebar_links %}
+    		{% set link_slug = sidebar_item.link_url|split('/')[4] %}
+			{# DESKTOP MENU ITEMS #}
+	    	<a class="medium__weight__spacing {% if slug == link_slug %}red{% endif %}  link sidebar__link" href="{{ sidebar_item.link_url }}">
+	    		{{ sidebar_item.link_text|upper }}
+	    	</a>
+	    {% endfor %}
+	</div>
+	<div id="sidebarMobileAccordion" class="sidebar-items__wrapper show-for-small-only">
+	    {% for sidebar_item in sidebar_links %}
+    		{% set link_slug = sidebar_item.link_url|split('/')[4] %}
+			{# MOBILE MENU ITEMS #}
+			<a class="medium__weight__spacing {% if slug == link_slug %}red{% endif %}  link sidebar__link mobile {% if loop.last %} last-sidebar__link{% endif %}" href="{{ sidebar_item.link_url }}">
+	    		{{ sidebar_item.link_text|upper }}
+	    	</a>
+	    {% endfor %}
+	</div>
+</div>
