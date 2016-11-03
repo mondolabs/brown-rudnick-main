@@ -690,7 +690,7 @@ img.insights {
 .tile__arrow {
   position: absolute;
   bottom: 12px;
-  right: -1px;
+  right: -3px;
   height: 40px;
   width: 64px;
   border: 1px #f0f0f0 solid;
@@ -925,6 +925,7 @@ button.close__modal {
   position: relative; }
   @media screen and (max-width: 768px) {
     .sidebar-items__wrapper {
+      z-index: 2;
       position: absolute;
       width: 100%;
       display: none;
@@ -8652,7 +8653,8 @@ a {
   margin: 3% auto;
   letter-spacing: 1.2px;
   -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out; }
+  transition: all .3s ease-in-out;
+  border: 2px solid #b91628; }
   .sites-button.advanced-search {
     font-size: 11px;
     padding: 12px 14px; }
@@ -8669,6 +8671,8 @@ a {
     margin-bottom: 0;
     margin-top: 45px;
     margin-left: 40px; }
+  .sites-button.full-width {
+    width: 100%; }
 
 @media screen and (max-width: 768px) {
   .advanced-search-container {

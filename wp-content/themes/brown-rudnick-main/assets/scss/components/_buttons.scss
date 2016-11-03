@@ -14,10 +14,10 @@ a {
     margin: 3% auto;
 	letter-spacing: 1.2px;
     transition: all .3s ease-in-out;
+    border: 2px solid $primary-red;
 	&.advanced-search {
 	    font-size: 11px;
 	    padding: 12px 14px;
-
 	}
 	&.inverse {
 	    background: $white;
@@ -34,6 +34,9 @@ a {
 	    margin-bottom: 0;
     	margin-top: 45px;
     	margin-left: 40px;
+	}
+	&.full-width {
+		width: 100%;
 	}
 }
 .advanced-search-container {

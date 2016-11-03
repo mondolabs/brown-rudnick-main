@@ -9,8 +9,16 @@ $data['post'] = $post;
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
 $data['featured_image_url'] = $data['featured_image_url'][0];
 
-$data['sidebar_header'] = get_field('sidebar_header');
-$data['sidebar_items'] = get_field('sidebar_items');
+$parent = get_page($post->post_parent);
+$parent_name = $parent->post_name;
+$sidebar_slug = $parent_name . '-sidebar';
+$args = array(
+  'name'        => $sidebar_slug,
+  'post_type'   => 'sidebar',
+  'post_status' => 'publish',
+  'numberposts' => 1
+);
+$data['sidebar'] = get_posts($args);
 
 $data['news_articles'] = get_field('news_articles');
 $data['alerts'] = get_field('alerts');

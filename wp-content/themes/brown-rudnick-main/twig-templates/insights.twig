@@ -16,209 +16,132 @@
 </div>	
 	{# body - with sidebar #}
 <div class="row">
-	<div class="experience__wrapper row body__wrapper columns small-12 medium-12 large-12">
-		<div class="columns show-for-medium-up medium-3 large-2">
-			<div class="padding__wrapper ten sides__only">
-				<h4 class="red title__text smaller">
-					{{ sidebar_header }}
-				</h4>
-				<span class="list-divider"></span>
-			    {% for sidebar_item in sidebar_items %}
-			    	{% if sidebar_item.has_sub_menu %}
-						<a class="hide-for-small-only medium__weight__spacing accordion__trigger link" data-trigger-target="{{sidebar_item.sidebar_submenu_accordion_trigger }}">
-							{{ sidebar_item.sidebar_item_text|upper }}
-						</a>
-						<ul id="blogsSidebarAccordion" class="hidden list-style__none hide-for-small-only">
-							{% for sidebar_submenu_item in sidebar_item.sidebar_submenu %}
-								<li class="list-item__sidebar">
-									<a class="text-align__center link" href="{{ sidebar_submenu_item.sidebar_submenu_item_link }}" >
-										{{ sidebar_submenu_item.sidebar_submenu_item_text }}
-									</a>
-								</li>
-							{% endfor %}
-						</ul>
-
-				{# mobile #}
-						<a class="show-for-small-only accordion__trigger red list__header" data-trigger-target="{{sidebar_item.insights_sidebar_submenu_accordion_trigger_mobile }}">
-							{{ sidebar_item.sidebar_item_text }}
-						</a>
-						<ul id="blogsSidebarAccordionMobile" class="hidden mobile__sidebar--menu list-style__none show-for-small-only">
-							{% for sidebar_submenu_item in sidebar_item.sidebar_submenu %}
-								<li class="list-item__sidebar">
-									<a class="text-align__center link" href="{{ sidebar_submenu_item.insights_sidebar_submenu_item_link }}" >
-										{{ sidebar_submenu_item.sidebar_submenu_item_text }}
-									</a>
-								</li>
-							{% endfor %}
-						</ul>
-					{% else %}
-				    	<a class="link medium__weight__spacing" href="{{ sidebar_item.sidebar_item_link }}">
-				    		{{ sidebar_item.sidebar_item_text|upper }}
-				    	</a>
-					{% endif %}
-			    {% endfor %}
-				<span class="list-divider smaller"></span>
-				<div class="sidebar__wrapper advanced-search-container">
-					<button class="sites-button advanced-search inverse" type="button">
-						ADVANCED SEARCH
-					</button>
-				</div>
-				<span class="list-divider smaller"></span>
-				<div class="sidebar__wrapper">
-					<h4 class="title__text smaller insights margin-bottom--0">
-						Subscribe
-					</h4>
-					<form class="relative">
-						<input type="text" placeholder="EMAIL" class="subscribe">
-						</input>
-						<button style="background: url({{hover_arrow}}) no-repeat; background-position-y: center;" class="arrow" type="submit">
-						</button>
-					</form>
-				</div>
-				<span class="list-divider smaller"></span>
-				<div class="sidebar__wrapper">
-					<h4 class="title__text smaller insights margin-bottom--0">
-						{{ contact_name }}
-					</h4>
-					<p class="tag__text smaller insights margin-bottom--0 font-weight__bold">
-						{{ contact_title|upper }}
+	<div class="row experience__wrapper body__wrapper columns small-12 medium-12 large-12">
+		{% include '/twig-templates/insights-sidebar.twig' with sidebar %}
+		<div class="columns small-12 medium-9 large-10">
+			<div class="columns small-12 medium-6 large-6 margin-top-40">
+				<div class="padding__wrapper">
+					<p class="title__text">
+						Articles
 					</p>
-					<span class="list-divider smallest red"></span>
-					<p class="body__text insights">
-						{{ contact_phone_number }}
-					</p>
-					<a class="body__text insights link red" href="mailto:{{contact_email}}"> 
-						<p class="link body__text insights">
-							{{ contact_email }}
-						</p>
+					{% for news_article in news_articles %}
+						{% set news_article = news_article|first %}
+						<a href="{{news_article.guid}}" class="black body__text link">
+							{{ news_article.post_title }}<br>
+						</a>
+						<div class="columns small-12 medium-12 large-12">
+							<div class="columns small-4 medium-4 large-4">
+								<p class="tag__text smaller grey">
+									{{ news_article.date|date("M d, y")|upper }}
+								</p>
+							</div>
+							<div class="columns padding__wrapper small-8 medium-8 large-8 right">
+								<a href="{{news_article.guid}}">
+									<span class="hover-arrow insights red">
+										<img src="{{ hover_arrow }}">
+									</span>
+								</a>	
+							</div>	
+							<span class="insights list-divider"></span>
+						</div>
+					{% endfor %}
+					<a class="link red tag__text underline" href="/articles">
+						{{ "see all articles"|upper }}
 					</a>
-				</div>	
+				</div>
 			</div>
-		</div>	
-			<div class="columns small-12 medium-9 large-10">
-				<div class="columns small-12 medium-6 large-6 margin-top-40">
-					<div class="padding__wrapper">
-						<p class="title__text">
-							Articles
-						</p>
-						{% for news_article in news_articles %}
-							{% set news_article = news_article|first %}
-							<a href="{{news_article.guid}}" class="black body__text link">
-								{{ news_article.post_title }}<br>
+			<div class="columns small-12 medium-6 large-6 margin-top-40">
+				<div class="padding__wrapper sides__only ten">
+					<p class="title__text">
+						Alerts
+					</p>
+					{% for alert in alerts %}
+						{% set alert = alert|first %}
+							<a href="{{alert.guid}}" class="black body__text link">
+								{{ alert.post_title }}
 							</a>
-							<div class="columns small-12 medium-12 large-12">
-								<div class="columns small-4 medium-4 large-4">
-									<p class="tag__text smaller grey">
-										{{ news_article.date|date("M d, y")|upper }}
-									</p>
-								</div>
-								<div class="columns padding__wrapper small-8 medium-8 large-8 right">
-									<a href="{{news_article.guid}}">
-										<span class="hover-arrow insights red">
-											<img src="{{ hover_arrow }}">
-										</span>
-									</a>	
-								</div>	
-								<span class="insights list-divider"></span>
+						<div class="columns small-12 medium-12 large-12">
+							<div class="columns small-4 medium-4 large-4 right">
+								<p class="tag__text smaller grey">
+									{{ alert.date|date("M d, y")|upper }}
+								</p>
 							</div>
-						{% endfor %}
-						<a class="link red tag__text underline" href="/articles">
-							{{ "see all articles"|upper }}
-						</a>
-					</div>
-				</div>
-				<div class="columns small-12 medium-6 large-6 margin-top-40">
-					<div class="padding__wrapper sides__only ten">
-						<p class="title__text">
-							Alerts
-						</p>
-						{% for alert in alerts %}
-							{% set alert = alert|first %}
-								<a href="{{alert.guid}}" class="black body__text link">
-									{{ alert.post_title }}
-								</a>
-							<div class="columns small-12 medium-12 large-12">
-								<div class="columns small-4 medium-4 large-4 right">
-									<p class="tag__text smaller grey">
-										{{ alert.date|date("M d, y")|upper }}
-									</p>
-								</div>
-								<div class="columns padding__wrapper small-8 medium-8 large-8 right">
-									<a href="{{alert.guid}}">
-										<span class="hover-arrow insights red">
-											<img src="{{ hover_arrow }}">
-										</span>
-									</a>	
-								</div>
-								<span class="insights list-divider"></span>
+							<div class="columns padding__wrapper small-8 medium-8 large-8 right">
+								<a href="{{alert.guid}}">
+									<span class="hover-arrow insights red">
+										<img src="{{ hover_arrow }}">
+									</span>
+								</a>	
 							</div>
-						{% endfor %}
-						<a class="link red tag__text underline" href="/alerts">
-							{{ "see all alerts"|upper }}
-						</a>
-					</div>
+							<span class="insights list-divider"></span>
+						</div>
+					{% endfor %}
+					<a class="link red tag__text underline" href="/alerts">
+						{{ "see all alerts"|upper }}
+					</a>
 				</div>
-					
-				
-				<div class="columns  small-12 medium-12 large-12">
-					<div class="padding__wrapper sides__only forty">
-						<span class="insights list-divider"></span>
-					</div>	
-					<div class="padding__wrapper sides__only forty">
-						<p class="title__text insights__blog">
-							Blogs
-						</p>
-						<div class="insight__blogs--outer-wrapper">
-							{% for blog in blogs %}
-								<div class="small-12 medium-12 large-4 columns end">
-									<div class="insight__blog--wrapper">
-										<img class="insights" src="{{ TimberImage(blog.blog_image).src }}" />
-										<div class="color__block--grey insights">
-											<h4 class="red title__text smaller">
-												{{ blog.blog_title }}
-											</h4>
-											<div class="body__text">
-												{{blog.blog_content_excerpt}}
-											</div>
-											<a href="{{ blog.blog_link_url }}">
-												<span class="hover-arrow insights--blog red">
-													<img src="{{ hover_arrow }}">
-												</span>
-											</a>
-										</div>
-									</div>	
-								</div>	
-							{% endfor %}
-						</div>
-					</div>
-				</div>	
-
-				<div class="columns  small-12 medium-12 large-12">
-					<div class="padding__wrapper sides__only forty">
-						<span class="insights list-divider"></span>
-					</div>	
-					<div class="padding__wrapper sides__only forty">
-						<p class="title__text insights__blog">
-							Publications
-						</p>
-						<div class="insight__blogs--outer-wrapper">
-							{% for publication in publications %}
-								<div class="small-12 medium-12 large-6 columns end">
-									<div class="insight__blog--wrapper">
-										<div class="color__block--grey insights--publication">
-											<span class="tag__text link" data-publication-trigger="{{publication.publication_trigger_id}}">
-												<div >
-													{{publication.publication_title}}
-												</div>
-											</span>
-										</div>
-									</div>	
-								</div>	
-							{% endfor %}
-						</div>
-					</div>
-				</div>		
 			</div>
+				
+			
+			<div class="columns  small-12 medium-12 large-12">
+				<div class="padding__wrapper sides__only forty">
+					<span class="insights list-divider"></span>
+				</div>	
+				<div class="padding__wrapper sides__only forty">
+					<p class="title__text insights__blog">
+						Blogs
+					</p>
+					<div class="insight__blogs--outer-wrapper">
+						{% for blog in blogs %}
+							<div class="small-12 medium-12 large-4 columns end">
+								<div class="insight__blog--wrapper">
+									<img class="insights" src="{{ TimberImage(blog.blog_image).src }}" />
+									<div class="color__block--grey insights">
+										<h4 class="red title__text smaller">
+											{{ blog.blog_title }}
+										</h4>
+										<div class="body__text">
+											{{blog.blog_content_excerpt}}
+										</div>
+										<a href="{{ blog.blog_link_url }}">
+											<span class="hover-arrow insights--blog red">
+												<img src="{{ hover_arrow }}">
+											</span>
+										</a>
+									</div>
+								</div>	
+							</div>	
+						{% endfor %}
+					</div>
+				</div>
+			</div>	
+
+			<div class="columns  small-12 medium-12 large-12">
+				<div class="padding__wrapper sides__only forty">
+					<span class="insights list-divider"></span>
+				</div>	
+				<div class="padding__wrapper sides__only forty">
+					<p class="title__text insights__blog">
+						Publications
+					</p>
+					<div class="insight__blogs--outer-wrapper">
+						{% for publication in publications %}
+							<div class="small-12 medium-12 large-6 columns end">
+								<div class="insight__blog--wrapper">
+									<div class="color__block--grey insights--publication">
+										<span class="tag__text link" data-publication-trigger="{{publication.publication_trigger_id}}">
+											<div >
+												{{publication.publication_title}}
+											</div>
+										</span>
+									</div>
+								</div>	
+							</div>	
+						{% endfor %}
+					</div>
+				</div>
+			</div>		
+		</div>
 	</div>
 </div>	
 

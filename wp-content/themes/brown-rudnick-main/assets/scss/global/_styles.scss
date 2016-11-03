@@ -726,7 +726,7 @@ img.insights {
 .tile__arrow {
     position: absolute;
     bottom: 12px;
-    right: -1px;
+    right: -3px;
     height: 40px;
     width: 64px;
     border: 1px $primary-grey solid;
@@ -963,6 +963,7 @@ button.close__modal {
 	background-color: transparent;
     position: relative;
 	@media screen and (max-width: 768px) {
+    	z-index: 2;
 	    position: absolute;
     	width: 100%;
 		display: none;
