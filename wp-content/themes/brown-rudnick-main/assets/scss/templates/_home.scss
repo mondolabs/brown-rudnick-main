@@ -362,7 +362,6 @@ button.slick-arrow  {
 }
 
 ul.desktop-menu {
-	float: right;
 	padding-top: 34px;
 }
 
@@ -391,11 +390,13 @@ ul.menu li a{
 	padding: 20px 0 10px;
 }
 
+
 ul.desktop__menu--icons-list {
 	margin: 0;
-	position: absolute;
-	right: 40px;
-	top: -10px;
+	float: right;
+	//position: absolute;
+	//right: 40px;
+	//top: -10px;
 	list-style: none;
 	.tag__text {
 		text-transform: uppercase;
@@ -421,13 +422,13 @@ ul.desktop__menu--icons-list {
 	z-index: 1;
 	margin-top: 2%;
 	width: 400%;
-    height: 60px;
-    position: relative;
-    left: -200%;
-    background-color: $primary-grey;
-    top: 0;
-    display: none;
-    margin-bottom: -32px;
+  height: 60px;
+  position: relative;
+  left: -200%;
+  background-color: $primary-grey;
+  top: 0;
+  display: none;
+  margin-bottom: -32px;
 }
 
 
