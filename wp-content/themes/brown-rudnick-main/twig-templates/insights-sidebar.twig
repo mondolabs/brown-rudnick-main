@@ -83,41 +83,45 @@
 		    {% endif %}	
 	    {% endfor %}
 	</div>
+	<div class="hide-for-small-only">
 	<span class="list-divider smaller"></span>
-	<div class="sidebar__wrapper">
-		<button class="sites-button advanced-search inverse full-width" type="button">
-			ADVANCED SEARCH
-		</button>
-	</div>
-	<span class="list-divider smaller"></span>
-	<div class="sidebar__wrapper">
-		<h4 class="title__text smaller insights margin-bottom--0">
-			Subscribe
-		</h4>
-		<form class="relative">
-			<input type="text" placeholder="EMAIL" class="subscribe">
-			</input>
-			<button class="sites-button advanced-search full-width" type="button">
-				SUBSCRIBE
+		<div class="sidebar__wrapper">
+			<button class="sites-button advanced-search inverse full-width" type="button">
+				ADVANCED SEARCH
 			</button>
-		</form>
+		</div>
+		<span class="list-divider smaller"></span>
+		<div class="sidebar__wrapper">
+			<h4 class="title__text smaller insights margin-bottom--0">
+				Subscribe
+			</h4>
+			<form class="relative">
+				<input type="text" placeholder="EMAIL" class="subscribe">
+				</input>
+				<button class="sites-button advanced-search full-width" type="button">
+					SUBSCRIBE
+				</button>
+			</form>
+		</div>
 	</div>
-	<span class="list-divider smaller"></span>
-	<div class="sidebar__wrapper">
-		<h4 class="title__text smaller insights margin-bottom--0">
-			{{ contact_name }}
-		</h4>
-		<p class="tag__text contact margin-bottom--0 font-weight__bold">
-			{{ contact_title|upper }}
-		</p>
-		<span class="list-divider smallest red"></span>
-		<p class="body__text insights">
-			{{ contact_phone_number }}
-		</p>
-		<a class="body__text insights link red" href="mailto:{{contact_email}}"> 
-			<p class="link body__text insights">
-				{{ contact_email }}
+	<div class="hide-for-small-only">
+		<span class="list-divider smaller"></span>
+		<div class="sidebar__wrapper">
+			<h4 class="title__text smaller insights margin-bottom--0">
+				{{ contact_name }}
+			</h4>
+			<p class="tag__text contact margin-bottom--0 font-weight__bold">
+				{{ contact_title|upper }}
 			</p>
-		</a>
-	</div>
+			<span class="list-divider smallest red"></span>
+			<p class="body__text insights">
+				{{ contact_phone_number }}
+			</p>
+			<a class="body__text insights link red" href="mailto:{{contact_email}}"> 
+				<p class="link body__text insights">
+					{{ contact_email }}
+				</p>
+			</a>
+		</div>
+	</div>	
 </div>

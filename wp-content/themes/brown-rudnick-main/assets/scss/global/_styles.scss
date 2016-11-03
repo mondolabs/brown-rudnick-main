@@ -758,11 +758,11 @@ img.insights {
 .mobile__sidebar--expander {
     width: 25px;
     height: 25px;
-	display: inline-block;
-    position: absolute;
-    top: 1px;
-    right: 96px;
+    display: inline-block;
+    position: relative;
     cursor: pointer;
+    float: right;
+    margin-top: -32px;
 	&.top__menu {
 		background-color: $primary-red;
 		right: 15px;
