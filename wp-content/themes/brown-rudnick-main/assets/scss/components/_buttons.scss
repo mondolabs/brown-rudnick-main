@@ -23,10 +23,11 @@ a {
 	    background: $white;
 	    color: $primary-red;
 	    border: 2px solid $primary-red;
-	    &:hover {
+	    &:hover,
+	    &:focus {
 	    	background: $primary-red;
 	    	color: $white;
-	    	border: 2px solid $white;
+    		border: 2px solid $primary-red;
 	    }
 	}
 	&.alerts {

@@ -84,61 +84,53 @@
 				
 			
 			<div class="columns  small-12 medium-12 large-12">
-				<div class="padding__wrapper sides__only forty">
-					<span class="insights list-divider"></span>
-				</div>	
-				<div class="padding__wrapper sides__only forty">
-					<p class="title__text insights__blog">
-						Blogs
-					</p>
-					<div class="insight__blogs--outer-wrapper">
-						{% for blog in blogs %}
-							<div class="small-12 medium-12 large-4 columns end">
-								<div class="insight__blog--wrapper">
-									<img class="insights" src="{{ TimberImage(blog.blog_image).src }}" />
-									<div class="color__block--grey insights">
-										<h4 class="red title__text smaller">
-											{{ blog.blog_title }}
-										</h4>
-										<div class="body__text">
-											{{blog.blog_content_excerpt}}
-										</div>
-										<a href="{{ blog.blog_link_url }}">
-											<span class="hover-arrow insights--blog red">
-												<img src="{{ hover_arrow }}">
-											</span>
-										</a>
+				<span class="insights list-divider"></span>
+				<p class="title__text insights__blog">
+					Blogs
+				</p>
+				<div class="insight__blogs--outer-wrapper">
+					{% for blog in blogs %}
+						<div class="small-12 medium-12 large-4 columns end padding-top-20 padding-bottom-20">
+							<div class="insight__blog--wrapper">
+								<img class="insights" src="{{ TimberImage(blog.blog_image).src }}" />
+								<div class="color__block--grey insights">
+									<h4 class="red title__text smaller">
+										{{ blog.blog_title }}
+									</h4>
+									<div class="body__text">
+										{{blog.blog_content_excerpt}}
 									</div>
-								</div>	
+									<a href="{{ blog.blog_link_url }}">
+										<span class="hover-arrow insights--blog red">
+											<img src="{{ hover_arrow }}">
+										</span>
+									</a>
+								</div>
 							</div>	
-						{% endfor %}
-					</div>
+						</div>	
+					{% endfor %}
 				</div>
 			</div>	
 
 			<div class="columns  small-12 medium-12 large-12">
-				<div class="padding__wrapper sides__only forty">
-					<span class="insights list-divider"></span>
-				</div>	
-				<div class="padding__wrapper sides__only forty">
-					<p class="title__text insights__blog">
-						Publications
-					</p>
-					<div class="insight__blogs--outer-wrapper">
-						{% for publication in publications %}
-							<div class="small-12 medium-12 large-6 columns end">
-								<div class="insight__blog--wrapper">
-									<div class="color__block--grey insights--publication">
-										<span class="tag__text link" data-publication-trigger="{{publication.publication_trigger_id}}">
-											<div >
-												{{publication.publication_title}}
-											</div>
-										</span>
-									</div>
-								</div>	
+				<span class="insights list-divider"></span>
+				<p class="title__text insights__blog">
+					Publications
+				</p>
+				<div class="insight__blogs--outer-wrapper">
+					{% for publication in publications %}
+						<div class="small-12 medium-12 large-6 columns end">
+							<div class="insight__blog--wrapper">
+								<div class="color__block--grey insights--publication">
+									<span class="tag__text link" data-publication-trigger="{{publication.publication_trigger_id}}">
+										<div >
+											{{publication.publication_title}}
+										</div>
+									</span>
+								</div>
 							</div>	
-						{% endfor %}
-					</div>
+						</div>	
+					{% endfor %}
 				</div>
 			</div>		
 		</div>
