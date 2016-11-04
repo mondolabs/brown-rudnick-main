@@ -8524,6 +8524,7 @@ a::after {
       left: 0 !important; } }
 
 .is-dropdown-submenu {
+  top: 125%  !important;
   text-align: center !important;
   background-color: #f0f0f0;
   width: 150vw; }
@@ -8532,7 +8533,7 @@ a::after {
       width: 160vw; } }
   @media screen and (min-width: 1024px) {
     .is-dropdown-submenu li {
-      width: 7% !important;
+      width: 10% !important;
       padding: 0.5%; } }
 
 .is-dropdown-submenu {
@@ -8576,8 +8577,7 @@ a::after {
 
 .icons__container {
   border-bottom: 1px solid #f0f0f0;
-  position: absolute;
-  right: 125px;
+  float: right;
   top: 0;
   width: 625px; }
 
@@ -9649,7 +9649,7 @@ button.slick-arrow {
     height: 450px; } }
 
 .menu__wrapper--desktop {
-  padding: 20px 0px 0px; }
+  padding: 20px 0px 20px; }
 
 ul.desktop-menu {
   padding-top: 34px; }
@@ -9683,7 +9683,9 @@ ul.desktop__menu--icons-list {
   ul.desktop__menu--icons-list .tag__text {
     text-transform: uppercase; }
   ul.desktop__menu--icons-list a {
-    color: #000; }
+    color: #000;
+    letter-spacing: 1.25px;
+    font-size: 10px; }
   ul.desktop__menu--icons-list li {
     display: inline-block;
     padding-right: 20px; }

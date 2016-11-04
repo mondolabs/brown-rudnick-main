@@ -124,6 +124,7 @@
 }
 
 .is-dropdown-submenu {
+  top: 125%  !important;
   text-align: center !important;
   background-color: $primary-grey;
   @include breakpoint(medium){
@@ -132,7 +133,7 @@
   width: 150vw;
   li {
     @media screen and (min-width: 1024px){
-        width: 7%!important;
+        width: 10%!important;
         padding: 0.5%;
     }
   }
@@ -168,8 +169,7 @@
 
 .icons__container {
   border-bottom: 1px solid $primary-grey;
-  position: absolute;
-  right: 125px;
+  float: right;
   top: 0;
   width: 625px;
 }
