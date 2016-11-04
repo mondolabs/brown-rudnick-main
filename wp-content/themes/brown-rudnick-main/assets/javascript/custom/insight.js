@@ -44,7 +44,6 @@ var INSIGHTS = {
 		var selectedEducation = $.url().param('education_query', 'strict') || "";
 		var selectedKeyword = $.url().param('keyword', 'strict') || "";
 
-
 		// Set vars for selects for all search params
 		var dateSelect = $('select#dateSelect');
 		var geographySelect = $('select#geographySelect');
@@ -55,7 +54,6 @@ var INSIGHTS = {
 		var admissionSelect = $('select#admissionSelect');
 		var educationSelect = $('select#educationSelect');
 		var keywordInput = $('input#keywordInput');
-
 
 		// Change value of selects based on url params
 		dateSelect.val(decodeURIComponent(selectedDate));
