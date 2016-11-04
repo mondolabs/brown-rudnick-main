@@ -29,7 +29,7 @@
 					<div class="menu__wrapper--desktop row sr">
 						<div class="logo__wrapper columns large-4 medium-3 ">
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-								<img class="header-logo--mobile" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/BR-logo-for-nav.png">
+								<img class="header-logo--mobile padding-top-50" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/BR-logo-for-nav.png">
 							</a>
 						</div>
 							<?php get_template_part('template-parts/desktop-icons')?>
