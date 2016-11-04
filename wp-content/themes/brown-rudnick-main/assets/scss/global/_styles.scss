@@ -1242,7 +1242,10 @@ button.close__modal {
 
 #mobile__logo__container {
 	width: 225px;
-	padding: 5%;
+	@media screen and (max-width:768px){
+		padding: 5%;
+	}
+	padding: 2%;
 	cursor: pointer;
 }
 

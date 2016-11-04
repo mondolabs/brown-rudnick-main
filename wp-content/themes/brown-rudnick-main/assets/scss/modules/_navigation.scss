@@ -56,6 +56,8 @@
     border: 0;
   }
 
+ 
+
   .dropdown.menu .has-submenu.is-down-arrow a { padding-right: 1rem; }
   .dropdown.menu .has-submenu.is-down-arrow > a::after { border: 0; }
 
@@ -132,6 +134,7 @@
   }
   width: 150vw;
   li {
+    padding: 3%;
     @media screen and (min-width: 1024px){
         width: 10%!important;
         padding: 0.5%;
@@ -172,4 +175,16 @@
   float: right;
   top: 0;
   width: 625px;
+  @media screen and (min-width:1200px){
+    width: 670px;
+  }
+  
+}
+
+
+#menu-nested-pages-1 {
+  &.scrolled {
+    float: right;
+    padding-right: 7%;
+  }
 }

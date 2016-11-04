@@ -377,16 +377,19 @@ ul.desktop__menu--icons-list {
 	li {
 		display: inline-block;
 		padding-right: 20px;
+		padding-bottom: 10px;
 	}
-	// &.scrolled {
-	// 	padding-top: 36px;
-	// }
+	&.scrolled {
+		padding-top: 34px;
+	}
 }
 
 .desktop__menu__icon__single {
-	width: 15px;
+	width: 12px;
 	display: inline-block;
+	vertical-align: middle;
 }
+
 
 .subnav__color-block {
 	z-index: 1;
