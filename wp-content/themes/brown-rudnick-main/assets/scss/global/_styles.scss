@@ -1103,6 +1103,10 @@ button.close__modal {
 	background-color: $primary-grey;
 }
 
+
+.padding-top-50 {
+	padding-top: 50px;
+}
 .padding-top-60 {
 	padding-top: 60px;
 }
@@ -1244,7 +1248,10 @@ button.close__modal {
 
 #mobile__logo__container {
 	width: 225px;
-	padding: 5%;
+	@media screen and (max-width:768px){
+		padding: 5%;
+	}
+	padding: 2%;
 	cursor: pointer;
 }
 

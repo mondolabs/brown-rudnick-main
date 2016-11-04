@@ -29,14 +29,13 @@
 					<div class="menu__wrapper--desktop row sr">
 						<div class="logo__wrapper columns large-4 medium-3 ">
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-								<img class="header-logo--mobile" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/BR-logo-for-nav.png">
+								<img class="header-logo--mobile padding-top-50" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/BR-logo-for-nav.png">
 							</a>
 						</div>
 							<?php get_template_part('template-parts/desktop-icons')?>
 
 						<div class="menu__inner-wrapper--desktop columns large-7 medium-9">
 							<?php desktop_menu(); ?>
-							<span class="subnav__color-block"></span>
 						</div>
 					</div>
 
@@ -45,15 +44,14 @@
 				<div class="menu__outer-wrapper--desktop-on-scroll show-for-large">	
 					<header id="mastheadOnScroll" class="site-header" role="banner">
 						<div class="menu__wrapper--desktop-on-scroll row">
-							<div class="logo__wrapper columns large-4 medium-3">
+							<div class="logo__wrapper columns large-2 medium-3">
 								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-									<img class="header-logo--mobile" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/BR-logo-for-nav.png">
+									<img class="header-logo--mobile" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/BR-Scroll-Logo.png">
 								</a>
 							</div>
-							<?php get_template_part('template-parts/desktop-icons')?>
-							<div class="menu__inner-wrapper--desktop columns large-7 medium-9">								
+							<div class="menu__inner-wrapper--desktop columns large-10 medium-9">
+							<?php get_template_part('template-parts/desktop-icons-scroll')?>
 								<?php desktop_menu(); ?>
-								<span class="subnav__color-block"></span>
 							</div>
 						</div>	
 			

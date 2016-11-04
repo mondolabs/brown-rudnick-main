@@ -1028,6 +1028,9 @@ button.close__modal {
 .full-width-grey {
   background-color: #f0f0f0; }
 
+.padding-top-50 {
+  padding-top: 50px; }
+
 .padding-top-60 {
   padding-top: 60px; }
 
@@ -1147,8 +1150,11 @@ button.close__modal {
 
 #mobile__logo__container {
   width: 225px;
-  padding: 5%;
+  padding: 2%;
   cursor: pointer; }
+  @media screen and (max-width: 768px) {
+    #mobile__logo__container {
+      padding: 5%; } }
 
 .search__people__off__canvas {
   height: 100vh;
@@ -8527,16 +8533,19 @@ a::after {
       left: 0 !important; } }
 
 .is-dropdown-submenu {
+  top: 125%  !important;
   text-align: center !important;
   background-color: #f0f0f0;
   width: 150vw; }
   @media screen and (min-width: 48em) {
     .is-dropdown-submenu {
       width: 160vw; } }
-  @media screen and (min-width: 1024px) {
-    .is-dropdown-submenu li {
-      width: 7% !important;
-      padding: 0.5%; } }
+  .is-dropdown-submenu li {
+    padding: 3%; }
+    @media screen and (min-width: 1024px) {
+      .is-dropdown-submenu li {
+        width: 10% !important;
+        padding: 0.5%; } }
 
 .is-dropdown-submenu {
   -webkit-transform: translateX(-50%);
@@ -8558,9 +8567,37 @@ a::after {
       -ms-transform: translateX(-63%);
           transform: translateX(-63%); }
 
+.first-submenu-item-scroll {
+  -webkit-transform: translateX(-40%);
+      -ms-transform: translateX(-40%);
+          transform: translateX(-40%); }
+
+.before-last-submenu-item-scroll {
+  -webkit-transform: translateX(-43%);
+      -ms-transform: translateX(-43%);
+          transform: translateX(-43%); }
+
+.last-submenu-item-scroll {
+  -webkit-transform: translateX(-53%);
+      -ms-transform: translateX(-53%);
+          transform: translateX(-53%); }
+
 .is-dropdown-submenu li a {
   font-size: 0.75em !important;
   font-weight: 400 !important; }
+
+.icons__container {
+  border-bottom: 1px solid #f0f0f0;
+  float: right;
+  top: 0;
+  width: 625px; }
+  @media screen and (min-width: 1200px) {
+    .icons__container {
+      width: 670px; } }
+
+#menu-nested-pages-1.scrolled {
+  float: right;
+  padding-right: 7%; }
 
 #footer-container {
   max-width: 100%;
@@ -9630,7 +9667,7 @@ button.slick-arrow {
     height: 450px; } }
 
 .menu__wrapper--desktop {
-  padding: 20px 0px 0px; }
+  padding: 20px 0px 20px; }
 
 ul.desktop-menu {
   padding-top: 34px; }
@@ -9664,14 +9701,20 @@ ul.desktop__menu--icons-list {
   ul.desktop__menu--icons-list .tag__text {
     text-transform: uppercase; }
   ul.desktop__menu--icons-list a {
-    color: #000; }
+    color: #000;
+    letter-spacing: 1.25px;
+    font-size: 10px; }
   ul.desktop__menu--icons-list li {
     display: inline-block;
-    padding-right: 20px; }
+    padding-right: 20px;
+    padding-bottom: 10px; }
+  ul.desktop__menu--icons-list.scrolled {
+    padding-top: 34px; }
 
 .desktop__menu__icon__single {
-  width: 15px;
-  display: inline-block; }
+  width: 12px;
+  display: inline-block;
+  vertical-align: middle; }
 
 .subnav__color-block {
   z-index: 1;

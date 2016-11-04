@@ -330,7 +330,7 @@ button.slick-arrow  {
 }
 
 .menu__wrapper--desktop {
-		padding: 20px 0px 0px;
+		padding: 20px 0px 20px;
 }
 
 ul.desktop-menu {
@@ -362,7 +362,6 @@ ul.menu li a{
 	padding: 20px 0 10px;
 }
 
-
 ul.desktop__menu--icons-list {
 	margin: 0;
 	float: right;
@@ -372,20 +371,25 @@ ul.desktop__menu--icons-list {
 	}
 	a {
 		color: $br-black;
+		letter-spacing: 1.25px;
+		font-size: 10px;
 	}
 	li {
 		display: inline-block;
 		padding-right: 20px;
+		padding-bottom: 10px;
 	}
-	// &.scrolled {
-	// 	padding-top: 36px;
-	// }
+	&.scrolled {
+		padding-top: 34px;
+	}
 }
 
 .desktop__menu__icon__single {
-	width: 15px;
+	width: 12px;
 	display: inline-block;
+	vertical-align: middle;
 }
+
 
 .subnav__color-block {
 	z-index: 1;

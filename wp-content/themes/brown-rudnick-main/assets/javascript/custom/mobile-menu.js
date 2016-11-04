@@ -10,15 +10,15 @@ var mobileMenu = {
 			};
 
 			$('#open-mobile-menu').click(function(){
-				$('#search__icon__mobile').toggle();
-				$('#mobile__logo__container').toggle();
+				$('#menu-mobile-menu').slideToggle();
+				$('#search__icon__mobile').slideToggle();
+				$('#mobile__logo__container').slideToggle();
 				$('#open-mobile-menu').toggleClass('mobile-active');
 				$('#open-mobile-menu').toggleClass('close__modal');
 				$('#open-mobile-menu').css({'top':'5px', 'left': '0'});
 				$('.mobile__menu__bottom').toggle();
 				$('body').toggleClass('no-scroll');
-				$('.human-icon').slideToggle();
-				$('#menu-mobile-menu').slideToggle(500);
+				$('.human-icon').slideToggle();			
 				// call check scroll function defined above
 				checkScroll();
 			});
