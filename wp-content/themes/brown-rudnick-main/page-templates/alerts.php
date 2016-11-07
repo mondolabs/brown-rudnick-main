@@ -60,7 +60,6 @@ foreach ( $posts_from_collection as $post_from_collection ) {
   array_push( $dates, strtotime($post_from_collection->post_date));
 };
 $data['dates'] = array_unique($dates);
-var_dump($dates);
 $custom_posts = get_posts($post_type_args);
 $ids = [];
 
