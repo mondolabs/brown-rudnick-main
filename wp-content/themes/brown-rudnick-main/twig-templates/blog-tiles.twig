@@ -41,16 +41,22 @@
 					</h4>
 					<p>
 						{% if featured_first.post_excerpt %}
-							{{ featured_first.post_excerpt|truncate(12) }}
+							{{ featured_first.post_excerpt|truncate(14) }}
 						{% else %}
-							{{ featured_first.post_content|truncate(12) }}
+							{{ featured_first.post_content|truncate(14) }}
 						{% endif %}	
 					</p>
 				</div>
 			</div>	
-			<span class="homepage-arrow featured_first">
-				<a href="{{ featured_first.permalink }}"></a>
-			</span>
+				<a href="{{ featured_first.permalink }}">
+						<span class="tile__arrow">
+							<svg class="long__arrow--svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
+							<title>long arrow</title>
+							<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
+							<polyline class="long__arrow red" points="48 1 56 9 48 17"/>
+							</svg>
+						</span>
+					</a>
 		</div>
 		{% for homepage_post in remaining %}
 			<div class="medium-6 large-4 columns homepage-grid-element relative">
@@ -92,10 +98,16 @@
 							{% endif %}	
 						</p>
 					</div>
-				</div>	
-				<span class="homepage-arrow homepage_post">
-					<a href="{{ homepage_post.permalink }}"></a>
-				</span>
+				</div>					
+					<a href="{{ homepage_post.permalink }}">
+						<span class="tile__arrow">
+							<svg class="long__arrow--svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
+							<title>long arrow</title>
+							<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
+							<polyline class="long__arrow red" points="48 1 56 9 48 17"/>
+							</svg>
+						</span>
+					</a>
 			</div>
 		{% endfor %}	
 	</div>  	

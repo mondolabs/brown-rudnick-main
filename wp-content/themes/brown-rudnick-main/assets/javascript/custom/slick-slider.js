@@ -1,29 +1,24 @@
 var homepage = { 
 	initializeSlider: function () {
 
-		// create SVG
-		var s = Snap("#slider-svg");
-		var line = s.paper.line(0, 0, 2500, 0);
-
-		// set SVG attributes
-		var animateSvg = function() {
-			line.attr({
-				stroke: 'transparent',
-				fill: 'none',
-				strokeWidth: 5,
-				"fill-opacity" : 0
+	var animateSvg = function(){
+			//animate
+			$('#slider-svg').animate({
+				'background-position-x':'-50%'
+			}, 3995, 'linear', function(){
+				$('#slider-svg').css({
+					'background-position-x':'50%'
+				});
 			});
-			// animate SVG line	
-			line.animate({stroke: '#c10819', fill:'none'}, 3900 , mina.linear);
-		
-		};
-		animateSvg();
-		// animate SVG on slide change
+		}
+
+		// // animate SVG on slide change
 		$('.slider-container').on('beforeChange', function(slick, currentSlide, nextSlide){
 			animateSvg();
 		});
 
 		if ( $("body").hasClass("page-template-homepage") ){
+			animateSvg();
 			// start Slick slider
 			$('.slider-container').slick({
 				slide: '.slide',
