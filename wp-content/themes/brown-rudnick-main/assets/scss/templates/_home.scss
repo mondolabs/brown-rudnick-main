@@ -334,7 +334,7 @@ button.slick-arrow  {
 }
 
 ul.desktop-menu {
-	padding-top: 34px;
+	padding-top: 28px;
 }
 
 ul.menu li a{
@@ -359,13 +359,14 @@ ul.menu li a{
 }
 
 .menu__wrapper--desktop-on-scroll {
-	padding: 20px 0 10px;
+	padding: 10px 0 10px;
 }
 
 ul.desktop__menu--icons-list {
 	margin: 0;
 	float: right;
 	list-style: none;
+	padding-top: 28px;
 	.tag__text {
 		text-transform: uppercase;
 	}
@@ -379,9 +380,7 @@ ul.desktop__menu--icons-list {
 		padding-right: 20px;
 		padding-bottom: 10px;
 	}
-	&.scrolled {
-		padding-top: 34px;
-	}
+
 }
 
 .desktop__menu__icon__single {
