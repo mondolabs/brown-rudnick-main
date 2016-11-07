@@ -8568,9 +8568,14 @@ a::after {
           transform: translateX(-63%); }
 
 .first-submenu-item-scroll {
-  -webkit-transform: translateX(-40%);
-      -ms-transform: translateX(-40%);
-          transform: translateX(-40%); }
+  -webkit-transform: translateX(-30%);
+      -ms-transform: translateX(-30%);
+          transform: translateX(-30%); }
+  @media screen and (min-width: 1300px) {
+    .first-submenu-item-scroll {
+      -webkit-transform: translateX(-40%);
+          -ms-transform: translateX(-40%);
+              transform: translateX(-40%); } }
 
 .before-last-submenu-item-scroll {
   -webkit-transform: translateX(-43%);
@@ -9670,7 +9675,7 @@ button.slick-arrow {
   padding: 20px 0px 20px; }
 
 ul.desktop-menu {
-  padding-top: 34px; }
+  padding-top: 28px; }
 
 ul.menu li a {
   color: #0a0a0a;
@@ -9692,12 +9697,13 @@ ul.menu li a {
   border-bottom: none; }
 
 .menu__wrapper--desktop-on-scroll {
-  padding: 20px 0 10px; }
+  padding: 10px 0 10px; }
 
 ul.desktop__menu--icons-list {
   margin: 0;
   float: right;
-  list-style: none; }
+  list-style: none;
+  padding-top: 28px; }
   ul.desktop__menu--icons-list .tag__text {
     text-transform: uppercase; }
   ul.desktop__menu--icons-list a {
@@ -9708,8 +9714,6 @@ ul.desktop__menu--icons-list {
     display: inline-block;
     padding-right: 20px;
     padding-bottom: 10px; }
-  ul.desktop__menu--icons-list.scrolled {
-    padding-top: 34px; }
 
 .desktop__menu__icon__single {
   width: 12px;

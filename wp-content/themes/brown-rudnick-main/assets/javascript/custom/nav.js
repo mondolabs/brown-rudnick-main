@@ -36,7 +36,7 @@ var NAV = {
 		var desktopCheck = $(window).scrollTop() >= NAV.desktopMenu.height();
 		var mobileCheck = $(window).scrollTop() > 250;
 		var check;
-		if ($(document).width() >= 768) {
+		if ($(document).width() >= 640) {
 			check = desktopCheck;
 		} else {
 			check = mobileCheck;

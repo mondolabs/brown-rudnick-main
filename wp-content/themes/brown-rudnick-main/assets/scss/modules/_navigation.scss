@@ -156,7 +156,10 @@
 }
 
 .first-submenu-item-scroll {
-  transform: translateX(-40%);
+  @media screen and (min-width: 1300px){
+    transform: translateX(-40%);
+  }
+  transform: translateX(-30%);
 }
 .before-last-submenu-item-scroll {
   transform: translateX(-43%);
