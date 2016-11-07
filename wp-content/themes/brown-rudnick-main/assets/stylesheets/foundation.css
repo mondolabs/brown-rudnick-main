@@ -8540,12 +8540,13 @@ a::after {
   @media screen and (min-width: 48em) {
     .is-dropdown-submenu {
       width: 160vw; } }
-  .is-dropdown-submenu li {
-    padding: 3%; }
-    @media screen and (min-width: 1024px) {
-      .is-dropdown-submenu li {
-        width: 10% !important;
-        padding: 0.5%; } }
+  @media screen and (min-width: 640px) {
+    .is-dropdown-submenu li {
+      width: 7.5%; } }
+  @media screen and (min-width: 1024px) {
+    .is-dropdown-submenu li {
+      width: 10% !important;
+      padding: 0.5%; } }
 
 .is-dropdown-submenu {
   -webkit-transform: translateX(-50%);
@@ -8601,8 +8602,10 @@ a::after {
       width: 670px; } }
 
 #menu-nested-pages-1.scrolled {
-  float: right;
-  padding-right: 7%; }
+  float: right; }
+  @media screen and (min-width: 1024px) {
+    #menu-nested-pages-1.scrolled {
+      padding-right: 7%; } }
 
 #footer-container {
   max-width: 100%;
