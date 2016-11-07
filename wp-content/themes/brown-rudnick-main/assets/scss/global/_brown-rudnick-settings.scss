@@ -66,8 +66,7 @@ body {
 
 %centeronMobile {
 	text-align: center;
-		@include breakpoint(medium){
-			text-align: left;
-		}
-
+	@include breakpoint(medium){
+		text-align: left;
+	}
 }
