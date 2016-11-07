@@ -35,7 +35,6 @@ $post_type_args = array(
   'posts_per_page' => -1
 );
 
-
 $date = get_query_var('date_query', "");
 
 $year = substr($date, -4 );
