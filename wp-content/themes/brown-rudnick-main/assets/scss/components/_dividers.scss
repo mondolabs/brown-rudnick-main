@@ -53,6 +53,10 @@
 		width: 100%;
 		margin: 20px 0 16px;
 	}
+	&.mobile__centered {
+		margin: 20px auto;
+		width: 80px;
+	}
 }
 
 .page__divider {
