@@ -584,6 +584,17 @@ img.people__details {
 		}
 	}
 }
+
+img.insight__details {
+	max-width: 250px;
+	@media screen and (max-width: 1140px){
+		max-width: 175px;
+	}
+	@media screen and (max-width: 1024px){
+		max-width: 200px;
+	}
+}
+
 .service,
 .bullet {
 	float: left !important;
