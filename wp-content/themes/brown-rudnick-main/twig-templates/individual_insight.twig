@@ -15,7 +15,7 @@
 							<div class="inline__wrapper person padding__right--50">
 								<div class="table__wrapper">
 									<div class="table__inner">
-										<img class="people__details person" src="{{ TimberImage(post.image).src }}"/>
+										<img class="people__details person" src="{{ featured_image_url }}"/>
 									</div>
 								</div>
 							</div>
@@ -174,11 +174,3 @@
 		</div>
 	</div>
 {% endif %}
-
-<script type="text/javascript">
-	{% if featured_image_url %}
-		$(document).ready(function(){
-			$('#featuredImage').backstretch("{{featured_image_url}}");
-		})
-	{% endif %}
-</script>
