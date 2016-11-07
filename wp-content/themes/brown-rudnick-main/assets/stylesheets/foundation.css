@@ -684,6 +684,17 @@ img.insights {
   height: 100%;
   vertical-align: middle; }
 
+#slider-svg {
+  height: 20px;
+  width: 200vw;
+  background: -webkit-gradient(linear, right top, left top, color-stop(50%, #b91628), color-stop(50%, transparent));
+  background: -webkit-linear-gradient(right, #b91628 50%, transparent 50%);
+  background: linear-gradient(to left, #b91628 50%, transparent 50%);
+  -webkit-background-size: 200% 200%;
+          background-size: 200%;
+  background-position-x: 50%;
+  background-position-y: 0; }
+
 .tile__arrow {
   position: absolute;
   bottom: 12px;
@@ -1101,16 +1112,16 @@ button.close__modal {
   bottom: 5%; }
 
 .right-menu-icon {
-  height: 30px;
-  width: 30px; }
+  height: 20px;
+  width: 20px; }
 
 .mobile-active {
   -webkit-background-size: cover;
           background-size: cover;
   background-repeat: no-repeat;
   background-image: url("../../assets/images/br-hamburger-bg.png");
-  height: 30px;
-  width: 30px; }
+  height: 20px;
+  width: 20px; }
 
 .mobile__button__container {
   background-color: white;
@@ -1179,7 +1190,7 @@ button.close__modal {
   position: absolute;
   right: 60px;
   top: 30px;
-  width: 25px;
+  width: 20px;
   z-index: 9999; }
 
 .input-custom-search {
@@ -9541,8 +9552,8 @@ button.arrow {
   display: inline-block;
   text-align: right; }
   .social-icons svg {
-    width: 25px;
-    height: 25px; }
+    width: 20px;
+    height: 20px; }
   .social-icons a {
     padding-left: 7.5%; }
   @media screen and (max-width: 768px) {
@@ -9553,9 +9564,6 @@ button.arrow {
       text-align: center; }
       .social-icons a {
         padding: 5%; } }
-
-#slider-svg {
-  fill: none; }
 
 button.slick-arrow {
   display: none !important; }
@@ -9682,7 +9690,7 @@ button.slick-arrow {
   .slick-slide {
     height: 650px; }
   .homepage-grid-element {
-    height: 450px; } }
+    height: 650px; } }
 
 .menu__wrapper--desktop {
   padding: 20px 0px 20px; }
