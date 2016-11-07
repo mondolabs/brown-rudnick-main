@@ -12,12 +12,22 @@ var homepage = {
 			});
 		}
 
+
+		$('.prev-slider-home').click(function(){
+			$(this).toggleClass('arrow-clicked');
+			animateSvg();
+		});
+
 		// // animate SVG on slide change
 		$('.slider-container').on('beforeChange', function(slick, currentSlide, nextSlide){
 			animateSvg();
 		});
 
+
 		if ( $("body").hasClass("page-template-homepage") ){
+
+	
+
 			animateSvg();
 			// start Slick slider
 			$('.slider-container').slick({
