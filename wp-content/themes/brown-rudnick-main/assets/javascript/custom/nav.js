@@ -37,7 +37,6 @@ var NAV = {
 		var mobileCheck = $(window).scrollTop() > 250;
 		var check;
 		if ($(document).width() >= 640) {
-			console.log($(document).width());
 			check = desktopCheck;
 		} else {
 			check = mobileCheck;
