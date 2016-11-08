@@ -8,6 +8,7 @@ $data = Timber::get_context();
 $data['post'] = new TimberPost();
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
 $data['featured_image_url'] = $data['featured_image_url'][0];
+$data['parent_page'] = "Articles";
 
 var_dump($post)
 

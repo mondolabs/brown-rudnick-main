@@ -9,6 +9,10 @@ $data['post'] = new TimberPost();
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
 $data['featured_image_url'] = $data['featured_image_url'][0];
 $data['related_experiences'] = get_field('related_experiences');
+$data['parent_page_name'] = "Alerts & Bulletins";
+$data['parent_page_url'] = "/alerts";
+
+
 
 ?>
 <html>
