@@ -9722,7 +9722,7 @@ button.slick-arrow {
   .slick-slide {
     height: 650px; }
   .homepage-grid-element {
-    height: 650px; } }
+    height: 400px; } }
 
 .menu__wrapper--desktop {
   padding: 20px 0px 20px; }
@@ -9924,5 +9924,9 @@ span.red__border--top {
   -webkit-transition: color .3s ease-in-out;
   transition: color .3s ease-in-out;
   font-size: 18px; }
+
+.page-template-homepage .title__text {
+  font-family: "Avenir", Helvetica, Arial, sans-serif !important;
+  font-size: 18px !important; }
 
 /*# sourceMappingURL=foundation.css.map */

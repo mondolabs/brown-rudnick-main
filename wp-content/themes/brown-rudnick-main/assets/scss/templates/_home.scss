@@ -323,7 +323,7 @@ button.slick-arrow  {
 		height: 650px;
 	}
 	.homepage-grid-element{
-		height: 650px;
+		height: 400px;
 	}		
 }
 
@@ -557,5 +557,12 @@ span.red__border--top {
 		color: $black;
 		transition: color .3s ease-in-out;
 		font-size: 18px;
+	}
+}
+
+.page-template-homepage {
+	.title__text {
+		font-family: $brfont !important;
+		font-size: 18px !important;
 	}
 }
