@@ -12,8 +12,6 @@ $data['related_experiences'] = get_field('related_experiences');
 $data['parent_page_name'] = "Alerts & Bulletins";
 $data['parent_page_url'] = "/alerts";
 
-
-
 ?>
 <html>
   <head>

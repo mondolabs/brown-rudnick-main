@@ -143,11 +143,17 @@ a {
   -webkit-transition: color .3s ease-in-out;
   transition: color .3s ease-in-out;
   color: #b91628; }
+  a:hover, a:focus {
+    color: #b91628;
+    text-decoration: underline; }
 
 .body__text a {
   -webkit-transition: color .3s ease-in-out;
   transition: color .3s ease-in-out;
   color: #b91628; }
+  .body__text a:hover, .body__text a:focus {
+    color: #b91628;
+    text-decoration: underline; }
 
 .grey__background {
   background-color: #f0f0f0; }
@@ -395,7 +401,8 @@ a.link {
     a.link.red:visited {
       color: #b91628; }
     a.link.red:hover, a.link.red:focus {
-      color: #0a0a0a; }
+      color: #b91628;
+      text-decoration: underline; }
     a.link.red.tile:hover, a.link.red.tile:focus {
       color: #b91628; }
   a.link.inline__link {

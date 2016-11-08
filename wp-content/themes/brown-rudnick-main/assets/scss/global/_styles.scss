@@ -1,11 +1,21 @@
 a {
     transition: color .3s ease-in-out;
     color: $primary-red;
+    &:hover,
+    &:focus {
+    	color: $primary-red;
+    	text-decoration: underline; 
+    }
 }
 
 .body__text a {
     transition: color .3s ease-in-out;
     color: $primary-red;
+    &:hover,
+    &:focus {
+    	color: $primary-red;
+    	text-decoration: underline; 
+    }
 }
 
 &.grey__background {
@@ -341,7 +351,8 @@ a.link {
 		}
 		&:hover,
 		&:focus {
-			color: $black;
+			color: $primary-red;
+			text-decoration: underline;
 		}
 		&.tile {
 			&:hover,
