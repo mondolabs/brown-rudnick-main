@@ -275,6 +275,9 @@ p.subtitle__text {
 .padding__right--50 {
   padding-right: 50px; }
 
+.margin__auto {
+  margin: auto; }
+
 .margin__0 {
   margin: 0; }
 
@@ -398,6 +401,10 @@ h3.title {
 .margin-top-20 {
   margin-top: 20px; }
 
+@media (max-width: 768px) {
+  .mobile-margin-top-20 {
+    margin-top: 20px; } }
+
 .margin-top-40 {
   margin-top: 40px; }
 
@@ -406,6 +413,9 @@ h3.title {
 
 .margin-top-60 {
   margin-top: 60px; }
+  @media screen and (max-width: 768px) {
+    .margin-top-60.desktop-only {
+      margin-top: 0; } }
 
 .margin-bottom-60 {
   margin-bottom: 60px; }
@@ -572,6 +582,15 @@ img.people__details {
         max-width: 300px;
         width: 300px; } }
 
+img.insight__details {
+  max-width: 250px; }
+  @media screen and (max-width: 1140px) {
+    img.insight__details {
+      max-width: 175px; } }
+  @media screen and (max-width: 1024px) {
+    img.insight__details {
+      max-width: 200px; } }
+
 .service,
 .bullet {
   float: left !important;
@@ -654,6 +673,9 @@ img.insights {
 
 .color__block--inner-wrapper {
   padding: 50px; }
+  @media screen and (min-height: 768px) {
+    .color__block--inner-wrapper {
+      padding: 20px; } }
 
 .font-weight__regular {
   font-weight: 400; }
@@ -937,7 +959,8 @@ button.close__modal {
       position: absolute;
       width: 100%;
       display: none;
-      background-color: #f0f0f0; } }
+      background-color: #f0f0f0;
+      top: 40px; } }
 
 #locationMap {
   width: 100%;
@@ -1197,6 +1220,12 @@ button.close__modal {
   text-transform: uppercase;
   font-weight: 800;
   letter-spacing: 2px; }
+
+.insights__bottom--mobile-wrapper {
+  position: relative;
+  height: 500px;
+  padding: 40px;
+  background: #fefefe; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -8795,6 +8824,9 @@ a {
     height: 2px;
     width: 100%;
     margin: 20px 0 16px; }
+  .list-divider.mobile__centered {
+    margin: 20px auto;
+    width: 80px; }
 
 .page__divider {
   height: 2px;

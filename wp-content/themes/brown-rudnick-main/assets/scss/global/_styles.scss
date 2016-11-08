@@ -187,6 +187,10 @@ p.subtitle__text {
 	padding-right: 50px;
 }
 
+.margin__auto {
+	margin: auto;
+}
+
 .margin__0 {
 	margin: 0;
 }
@@ -355,6 +359,12 @@ h3.title {
 	margin-top: 20px;
 }
 
+.mobile-margin-top-20 {
+	@media (max-width: 768px) {
+		margin-top: 20px;
+	}
+}
+
 .margin-top-40 {
 	margin-top: 40px;
 }
@@ -365,6 +375,11 @@ h3.title {
 
 .margin-top-60 {
 	margin-top: 60px;
+	&.desktop-only {
+		@media screen and (max-width: 768px) {
+			margin-top: 0;
+		}
+	}
 }
 .margin-bottom-60 {
 	margin-bottom: 60px;	
@@ -569,6 +584,17 @@ img.people__details {
 		}
 	}
 }
+
+img.insight__details {
+	max-width: 250px;
+	@media screen and (max-width: 1140px){
+		max-width: 175px;
+	}
+	@media screen and (max-width: 1024px){
+		max-width: 200px;
+	}
+}
+
 .service,
 .bullet {
 	float: left !important;
@@ -673,6 +699,9 @@ img.insights {
 
 .color__block--inner-wrapper {
 	padding: 50px;
+    @media screen and (min-height: 768px){
+    	padding: 20px;
+    }
 }
 
 .font-weight__regular {
@@ -970,8 +999,8 @@ button.close__modal {
     	width: 100%;
 		display: none;
     	background-color: $primary-grey;
+		top: 40px;
     }
-
 }
 
 #locationMap {
@@ -1298,3 +1327,10 @@ button.close__modal {
 }
 
 // submit button for contact form
+
+.insights__bottom--mobile-wrapper {
+    position: relative;
+    height: 500px;
+    padding: 40px;
+    background: $white;
+}

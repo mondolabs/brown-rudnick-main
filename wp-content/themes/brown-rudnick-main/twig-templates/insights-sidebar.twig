@@ -30,6 +30,11 @@
 	<span class="list-divider hide-for-small-only"></span>
 	{# MOBILE SIDEBAR LIST DIVIDER #}
 	<span class="list-divider mobile show-for-small-only"></span>
+	<div class="show-for-small-only margin-top-40">
+		<button class="sites-button advanced-search inverse mobile__full--width" type="button">
+			ADVANCED SEARCH
+		</button>
+	</div>
 	
 	<div id="desktopMobileAccordion" class="sidebar-items__wrapper hide-for-small-only">
 	    {% for sidebar_item in sidebar_links %}
@@ -57,7 +62,7 @@
 		    {% endif %}	
 	    {% endfor %}
 	</div>
-	<div id="sidebarMobileAccordion" class="sidebar-items__wrapper show-for-small-only">
+	<div id="sidebarMobileAccordion" class="sidebar-items__wrapper insights show-for-small-only">
 	    {% for sidebar_item in sidebar_links %}
     		{% set link_slug = sidebar_item.link_url|split('/')[4] %}
 			{# Mobile MENU ITEMS #}

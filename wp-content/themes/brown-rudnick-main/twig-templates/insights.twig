@@ -135,7 +135,43 @@
 			</div>		
 		</div>
 	</div>
-</div>	
+</div>
+<div class="grey__background columns small-12 padding__wrapper twenty show-for-small-only">
+	<div class="insights__bottom--mobile-wrapper">
+		<div class="table__wrapper margin__auto">
+			<div class="table__inner">
+				<h4 class="title__text smaller insights margin-bottom--0">
+					Subscribe
+				</h4>
+				<form class="relative">
+					<input type="text" placeholder="EMAIL" class="subscribe">
+					</input>
+					<button class="sites-button advanced-search desktop__full--width" type="button">
+						SUBSCRIBE
+					</button>
+				</form>
+				<span class="list-divider mobile mobile__centered smaller"></span>
+				<div class="text-align__center">
+					<h4 class="title__text smaller insights margin-bottom--0">
+						{{ contact_name }}
+					</h4>
+					<p class="tag__text contact margin-bottom--0 font-weight__bold">
+						{{ contact_title|upper }}
+					</p>
+					<span class="list-divider mobile mobile__centered smallest red"></span>
+					<p class="body__text insights">
+						{{ contact_phone_number }}
+					</p>
+					<a class="body__text insights link red" href="mailto:{{contact_email}}"> 
+						<p class="link body__text insights">
+							{{ contact_email }}
+						</p>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>	
+</div>
 
 <script type="text/javascript">
 	{% if featured_image_url %}

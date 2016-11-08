@@ -1,3 +1,176 @@
-<h1>
-TEST INSIGHT
-</h1>
+<div id="featuredImage" class ="person featured-image__header--image-wrapper">
+
+	{% set header_text_color = "black" %}
+	{# hero header #}
+	<div class="featured-image__header--text-outer-wrapper row relative">
+		<div class="breadcrumb__wrapper {{ header_text_color }}">
+			<a class="breadcrumb__link {{ header_text_color }}" href="/alerts">{{ "back to alerts"|upper }}</a>
+		</div>
+	{# hero header #}
+		<div class="featured-image__header--text-wrapper person">
+			<div class="featured-image__header--text-inner-wrapper person">
+				<div class="people__details--outer-wrapper person">
+					<div class="people__details--inner-wrapper">
+						<div class="columns medium-12 large-12 small-12 relative">
+							<div class="inline__wrapper person padding__right--50">
+								<div class="table__wrapper">
+									<div class="table__inner">
+										<img class="insight__details" src="{{ featured_image_url }}"/>
+									</div>
+								</div>
+							</div>
+							<div class="inline__wrapper person">
+								<div class="table__wrapper">
+									<div class="table__inner">
+										<p class="people__details title__text smaller">
+											{{ post.title }}
+										</p>
+										<span class="people__deatils list-divider red"></span>
+										{% if person.job_title %}	
+											<p class="people__details tag__text">
+												Authors:
+												{% for author in post.authors %}
+													{{ author.first_name }} {{ author.lastst_name }}
+												{% endfor %}
+											</p>
+										{% endif %}	
+									</div>	
+								</div>	
+							</div>	
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>	
+	{# body - with sidebar #}
+<div class="row">
+	<div class="experience__wrapper row body__wrapper columns small-12 medium-12 large-12">
+		<div class="padding__wrapper ten sides__only">
+			<div class="columns show-for-medium-up medium-3 large-2 relative">
+				{% if specialization %}
+				    <p class="tag__text">
+				    	{{ 'Area of Expertise'|upper }}
+				    </p>
+				    <p class="title__text">
+						{{ specialization }}
+				    </p>
+				{% endif %}
+				{% if related_experiences|length > 0 %}
+				    <p class="tag__text">
+				    	{{ 'related experience'|upper }}
+				    </p>
+				    {% for item in related_experiences %}
+			        	{% set experience = item|first %}
+						<div class="sidebar__color-block--outer-wrapper {% if loop.index > 4 %}hidden hidden__exp{% endif %}">
+							<div class="sidebar__color-block--wrapper">
+					        	<a href="{{ experience.guid }}" class="link margin__0 tag__text text-align__center">
+				    	    		{{ experience.post_title|upper }}
+				        		</a>
+				        	</div>
+						</div>
+				    {% endfor %}
+					{% if related_experiences|length > 4 %}
+					    <a id="showMoreRelatedExperiences" class="more link red tag__text underline" href="#more">
+					    	SHOW MORE
+					    </a>
+				    	<span class="expander"></span>
+					{% endif %}    
+				{% endif %}    
+			</div>
+			<div class="columns small-12 medium-9 large-10">
+				<div class="padding__wrapper forty sides__only">
+					<div class="title__text ">
+						{{ "Biography" }}
+					</div>
+				</div>
+				<div class="padding__wrapper forty sides__only">
+					<div class="body__text ">
+						{{ post.post_content }}
+					</div>	
+				</div>
+				<div class="padding__wrapper forty sides__only">
+					<span class="page__divider grey"></span>
+				</div>
+				<div class="padding__wrapper forty sides__only">
+					{% if practice_group_leaders %}
+						<div class="title__text ">
+							{{ practice_header_text }} Group Leaders
+						</div>
+				    	{% for leader in practice_group_leaders %}
+				    		{% set leader = leader|first %}
+							<div class="columns medium-12 large-6 small-12 margin-bottom--20 end">
+								<div class="columns medium-6 large-6 small-12">
+									<img class="people__details person" src="{{ TimberImage(leader.image).src }}" />
+								</div>
+								<div class="columns medium-6 large-6 small-12">
+									<div class="people__details--outer-wrapper person">
+										<div class="people__details--inner-wrapper">
+											<p class="people__details title__text smaller">
+												{{ leader.first_name }} {% if leader.middle_initial %}{{ leader.middle_initial }}. {% endif %} {{ leader.last_name }}
+											</p>
+											{% if leader.title %}	
+												<p class="people__details tag__text">
+													{{ leader.title|upper }}
+												</p>
+											{% endif %}	
+											<span class="people__deatils list-divider red"></span>
+											<p class="people__details body__text">
+												{{ leader.primary_city }}, {{ leader.primary_state }}{% if leader.secondary_city and leader.secondary_state %} | {{ leader.secondary_city }}, {{ leader.secondary_state}} {% endif %} 
+											</p>
+											<p class="people__details body__text">
+												{{ leader.primary_phone_number }}
+											</p>
+											<p class="people__details body__text">
+												{{ leader.email }}
+											</p>
+										</div>
+									</div>	
+								</div>
+							</div>
+						{% endfor %}					
+					{% endif %}
+				</div>
+				{% if related_people|length > 0%}	
+
+					<div class="padding__wrapper forty sides__only">
+						<p class="title__text">
+							Related People
+						</p>
+						{% for person in related_people %}
+							{% set person = person|first %}
+							<div class="columns medium-6 large-6 small-12 person end">
+								<a class="body__text red link margin-bottom--10" href="{{ person.guid }}">
+									{{ person.first_name }} {% if person.middle_initial %}{{ person.middle_initial }}. {% endif %} {{ person.last_name }}
+								</a>
+							</div>	
+						{% endfor %}
+					</div>
+				{% endif %}	
+
+			</div>
+		</div>	
+	</div>
+</div>	
+{% if services|length > 0%}	
+	<div class="grey__background experience__wrapper columns small-12 medium-12 large-12">
+		<div class="row padding__wrapper top-and-bottom sixty">
+			<div class="large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">
+				<div class="padding__wrapper forty sides__only">
+					<p class="title__text">
+						{{ services_header }}
+					</p>
+					{% for service in services %}
+						{% set service = service|first %}
+						<div class="columns medium-6 large-6 small-12 service">
+							<div class="body__text service__text">
+								{{service}}
+							</div>
+						</div>	
+					{% endfor %}
+				</div>	
+			</div>
+		</div>
+	</div>
+{% endif %}
