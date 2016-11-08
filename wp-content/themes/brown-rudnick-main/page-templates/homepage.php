@@ -43,7 +43,7 @@ $alphabet = range('A', 'Z');
               <?php $count = 0; foreach ($alphabet as $letter) { $count++?>
               <div class="columns medium-4 large-4 small-2 <?php if ($count == 26) {?> float-left  <?php };?>letter__link--outer-wrapper">
                 <div class="letter__link--inner-wrapper active">
-                  <a href="<?php echo '/all-people#'.strtolower($letter);?>" data-letter="<?php echo $letter;?>" class="letter__link">
+                  <a href="<?php echo '/all-people#'.$letter;?>" data-letter="<?php echo $letter;?>" class="letter__link">
                     <?php echo $letter;?>
                   </a>
                 </div>

@@ -1,6 +1,5 @@
 var PEOPLE = {
 	listeners: function(){
-		console.log('People js loaded');
 
 		// navigate to letter anchor
 		$('.letter__link').click(function(event) {
@@ -40,7 +39,6 @@ var PEOPLE = {
 		});
 		$('#peopleAdvancedSearchButton').click(function(event) {
 			event.preventDefault();
-			console.log("prevented!");
 			var selects = $('select');
 			var keyword = $("#keywordInput").val() || "";
 			var queryStringBase = location.origin + location.pathname;
@@ -53,7 +51,6 @@ var PEOPLE = {
 					filters.push($(select));
 				}
 			}
-			console.log(filters);
 			// passes the parameters from each of the selected filters
 			for(var i = filters.length - 1; i >= 0; i--) {
 				var paramName = $(filters[i]).attr('name');
@@ -153,7 +150,19 @@ var PEOPLE = {
 				$(this).slideToggle();
       }
 		});
-	}
+	},
+
+
+	scrollToLocationHash: function(){
+		var locationHash = window.location.hash;
+			var hashAnchor = $("div[data-letter-anchor="+ locationHash.replace(/^#+/i, '') +"]");
+			if (hashAnchor.offset() !== undefined) { 
+				$('html,body').animate({
+		          scrollTop: hashAnchor.offset().top - 200
+		        }, 1000);
+		        return false;
+			} 
+		}
 };
 
 
@@ -173,6 +182,7 @@ var PEOPLE = {
 $(document).ready(function(){
 	PEOPLE.listeners();
 	PEOPLE.scrollBackToTop();
+	PEOPLE.scrollToLocationHash();
 	// if ( $(document).width() > 640) {
 	// 	PEOPLE.scrollEvents();
 	// 	$(document).scroll( function(){
