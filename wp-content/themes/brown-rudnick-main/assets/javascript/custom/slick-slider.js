@@ -12,8 +12,6 @@ var homepage = {
 			});
 		}
 
-
-
 		// animate only once on page load
 		var animateSvgOnce = function(){
 			var flag = true;

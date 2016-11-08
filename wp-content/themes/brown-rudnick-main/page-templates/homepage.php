@@ -40,20 +40,17 @@ $alphabet = range('A', 'Z');
           <div class="search__people__off__canvas">
             <p class="title__text">Search People</p>
             <p>Search by last name</p>
-              <?php foreach ($alphabet as $letter) {?>
-              <div class="columns medium-4 large-4 small-2 {% if loop.index == 26 %} float-left   {% endif %} letter__link--outer-wrapper">
-                <div class="letter__link--inner-wrapper {% if loop.first %} active {% endif %}">
-                  <a data-letter="{{letter}}" class="letter__link">
+              <?php $count = 0; foreach ($alphabet as $letter) { $count++?>
+              <div class="columns medium-4 large-4 small-2 <?php if ($count == 26) {?> float-left  <?php };?>letter__link--outer-wrapper">
+                <div class="letter__link--inner-wrapper active">
+                  <a href="<?php echo '/all-people#'.$letter;?>" data-letter="<?php echo $letter;?>" class="letter__link">
                     <?php echo $letter;?>
                   </a>
                 </div>
               </div>            
           <?php }; ?>  
 
-            <div>
-
-            </div>
-             <p>search by keyword</p>    
+             <p>search by keyword</p>  
           </div>
         </div>
         <div class="off-canvas-content" data-off-canvas-content>
