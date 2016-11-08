@@ -5,7 +5,7 @@ var homepage = {
 			//animate after slide change
 			$('#slider-svg').animate({
 				'background-position-x':'-50%'
-			}, 3800, 'linear', function(){
+			}, 8100, 'linear', function(){
 				$('#slider-svg').css({
 					'background-position-x':'50%'
 				});
@@ -20,7 +20,7 @@ var homepage = {
 			if (flag) {
 					$('#slider-svg').animate({
 						'background-position-x':'-50%'
-					}, 3800, 'linear', function(){
+					}, 8100, 'linear', function(){
 						$('#slider-svg').css({
 							'background-position-x':'50%'
 						});
@@ -38,7 +38,7 @@ var homepage = {
 				slidesToShow: 1,
 				slidesToScroll: 1,
 				autoplay: true,
-				autoplaySpeed: 4000,
+				autoplaySpeed: 8000,
 				arrows: true,
 				fade: true,
 				pauseOnHover: false,
