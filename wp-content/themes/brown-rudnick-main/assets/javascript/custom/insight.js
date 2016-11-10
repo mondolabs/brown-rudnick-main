@@ -1,5 +1,8 @@
 var INSIGHTS = {
 	listeners: function(){
+		$('#insightsAdvancedSearch').click(function(event) {
+			INSIGHTS.revealAdvancedSearchModal();
+		});
 		console.log('Insights listeners js loaded');
 		$('select.insight').change(function(event) {
 			var selects = $('select');
@@ -65,6 +68,9 @@ var INSIGHTS = {
 		admissionSelect.val(decodeURIComponent(selectedAdmission));
 		educationSelect.val(decodeURIComponent(selectedEducation));
 		keywordInput.val(decodeURIComponent(selectedKeyword));
+	},
+	revealAdvancedSearchModal: function() {
+		console.log('Show advanced search modal for insights.');
 	}
 }
 

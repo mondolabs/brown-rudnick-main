@@ -6,6 +6,13 @@ a {
     	color: $primary-red;
     	text-decoration: underline; 
     }
+    &.no__underline {
+    	&:hover,
+	    &:focus {
+	    	color: $primary-red;
+	    	text-decoration: none; 
+	    }
+    }
     &.hover__black {
     	color: $black;
 	    &:hover,
@@ -221,15 +228,22 @@ p.subtitle__text {
     &.ten.right__only {
     	padding-right: 10px;
     }
-	&.twenty.right__only {
-    	padding-right: 10px;
-    }
-	&.twenty.left__only {
+	&.ten.left__only {
     	padding-left: 10px;
     }
-   &.twenty {
-   	padding: 20px;
-   }
+	&.twenty.right__only {
+    	padding-right: 20px;
+    }
+	&.twenty.left__only {
+    	padding-left: 20px;
+    }
+	&.twenty {
+		padding: 20px;
+	}
+}
+
+&.padding__left--ten {
+	padding-left: 10px;
 }
 
 .min--height__225 {
@@ -297,6 +311,10 @@ li.list-item__sidebar {
 		letter-spacing: 1.2px;
 		font-weight: 500;
 	}
+}
+
+.list-item__sidebar-ul {
+	padding-bottom: 20px;
 }
 
 .no__border {
@@ -1229,6 +1247,9 @@ button.close__modal {
 	letter-spacing: 2px;
 	font-size: 14px;
 	text-transform: uppercase;
+	&.smaller {
+		font-size: 12px;
+	}
 }
 .bold__wide__spacing {
 		font-weight: 800;
@@ -1260,6 +1281,10 @@ button.close__modal {
 	background-color: $primary-grey;
 }
 
+.no__pad--sides {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
 
 .padding-top-50 {
 	padding-top: 50px;
@@ -1267,6 +1292,11 @@ button.close__modal {
 .padding-top-60 {
 	padding-top: 60px;
 }
+
+.padding-bottom-40 {
+	padding-bottom: 40px;
+}
+
 .padding-bottom-60 {
 	padding-bottom: 60px;
 }
