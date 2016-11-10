@@ -902,7 +902,7 @@ img.insights {
     
     margin: 0 auto 16px;
     transition: all .3s ease-in-out;
-	&.active,
+	&.letter--active,
 	&:hover {
 		background-color: $primary-red;
 		.letter__link {

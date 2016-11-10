@@ -877,9 +877,9 @@ img.insights {
   @media screen and (min-height: 700px) {
     .letter__link--inner-wrapper {
       height: 40px; } }
-  .letter__link--inner-wrapper.active, .letter__link--inner-wrapper:hover {
+  .letter__link--inner-wrapper.letter--active, .letter__link--inner-wrapper:hover {
     background-color: #b91628; }
-    .letter__link--inner-wrapper.active .letter__link, .letter__link--inner-wrapper:hover .letter__link {
+    .letter__link--inner-wrapper.letter--active .letter__link, .letter__link--inner-wrapper:hover .letter__link {
       color: #fefefe; }
 
 .letter__link {

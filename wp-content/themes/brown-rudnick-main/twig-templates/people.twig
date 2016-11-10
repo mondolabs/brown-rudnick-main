@@ -151,7 +151,7 @@
 			<div class="letter__links_wrapper">
 				{% for letter in alphabet %}
 				    <div class="columns medium-4 large-4 small-2 {% if loop.index == 26 %} float-left   {% endif %} letter__link--outer-wrapper">
-				    	<div class="letter__link--inner-wrapper {% if loop.first %} active {% endif %}">
+				    	<div class="letter__link--inner-wrapper {% if loop.first %} letter--active {% endif %}">
 					    	<a data-letter="{{letter}}" class="letter__link">
 					    		{{ letter }}
 					    	</a>

@@ -1,16 +1,14 @@
 var PEOPLE = {
 	listeners: function(){
-
 		// navigate to letter anchor
 		$('.letter__link').click(function(event) {
-			
 			var letterlLinkInnerWrappers = $('.letter__link--inner-wrapper');
 			var letter = $(this).data('letter');
 			var letterAnchor = $("div[data-letter-anchor="+ letter +"]");
 			if (letterAnchor.offset() !== undefined) { 
-				letterlLinkInnerWrappers.removeClass('active');
+				letterlLinkInnerWrappers.removeClass('letter--active');
 				var selectedletterlLinkInnerWrapper = $(this).parent();
-				selectedletterlLinkInnerWrapper.addClass('active');
+				selectedletterlLinkInnerWrapper.addClass('letter--active');
 				$('html,body').animate({
 		          scrollTop: letterAnchor.offset().top - 200
 		        }, 1000);
@@ -18,7 +16,7 @@ var PEOPLE = {
 		        $('.back__to__top').slideToggle();
 		        return false;
 			} else {
-				// handle the case when there is no element with that letter 
+				// no element with that letter 
 				// letter is not clickable
 				letterAnchor.click(function(event){
 					event.preventDefault();
@@ -210,8 +208,8 @@ $(document).ready(function(){
 		for (var i= 0; i < $('.letter__link').length; i++) {
 			var elem = $('.letter__link')[i];
 			if ($.trim($(elem).text()) === $.trim(closestText)) {
-				$('.active').removeClass('active');
-				$(elem).parent().addClass('active');
+				$('.letter--active').removeClass('letter--active');
+				$(elem).parent().addClass('letter--active');
 			}
 		}
 	});
