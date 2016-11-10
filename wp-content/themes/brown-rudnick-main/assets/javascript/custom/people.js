@@ -1,6 +1,5 @@
 var PEOPLE = {
 	listeners: function(){
-		console.log('People js loaded');
 
 		// navigate to letter anchor
 		$('.letter__link').click(function(event) {
@@ -40,7 +39,6 @@ var PEOPLE = {
 		});
 		$('#peopleAdvancedSearchButton').click(function(event) {
 			event.preventDefault();
-			console.log("prevented!");
 			var selects = $('select');
 			var keyword = $("#keywordInput").val() || "";
 			var queryStringBase = location.origin + location.pathname;
@@ -53,7 +51,6 @@ var PEOPLE = {
 					filters.push($(select));
 				}
 			}
-			console.log(filters);
 			// passes the parameters from each of the selected filters
 			for(var i = filters.length - 1; i >= 0; i--) {
 				var paramName = $(filters[i]).attr('name');
@@ -137,11 +134,9 @@ var PEOPLE = {
 	// },
 	revealAdvancedSearch: function(){
 		$('#advancedSearchModal').removeClass('hidden').fadeIn('slow');
-		console.log("advanced search revealed!")
 	},
 	hideAdvancedSearch: function(){
 		$('#advancedSearchModal').addClass('hidden').fadeOut('slow');
-		console.log("advanced search hidden!")
 	},
 
 	scrollBackToTop: function(){
@@ -153,7 +148,18 @@ var PEOPLE = {
 				$(this).slideToggle();
       }
 		});
-	}
+	},
+
+	scrollToLocationHash: function(){
+			var locationHash = window.location.hash;
+			var hashAnchor = $("div[data-letter-anchor="+ locationHash.replace(/^#+/i, '') +"]");
+			if (hashAnchor.offset() !== undefined) { 
+				$('html,body').animate({
+		          scrollTop: hashAnchor.offset().top - 200
+		        }, 1000);
+		        return false;
+			} 
+		}
 };
 
 
@@ -173,6 +179,7 @@ var PEOPLE = {
 $(document).ready(function(){
 	PEOPLE.listeners();
 	PEOPLE.scrollBackToTop();
+	PEOPLE.scrollToLocationHash();
 	// if ( $(document).width() > 640) {
 	// 	PEOPLE.scrollEvents();
 	// 	$(document).scroll( function(){
@@ -188,5 +195,17 @@ $(document).ready(function(){
 				elementToStick.stick_in_parent({ offset_top: headerHeight });
 			} 	
 	}	
+
+	$(document).bind('scroll', function(){
+		var  closestText = $('.sidebar__on-scroll--fixed').nearest('.letter__anchor--indicator').text();
+		for (var i= 0; i < $('.letter__link').length; i++) {
+			var elem = $('.letter__link')[i];
+			if ($.trim($(elem).text()) === $.trim(closestText)) {
+				$('.active').removeClass('active');
+				$(elem).parent().addClass('active');
+			}
+		}
+	});
+
 	$(window).trigger('resize');
 });

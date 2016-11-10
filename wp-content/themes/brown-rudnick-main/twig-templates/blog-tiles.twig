@@ -37,13 +37,13 @@
 						{{ featured_first.post_date|date('m/d/Y') }}
 					</p>
 					<h4 class="homepage-element-body big">
-						{{ featured_first.post_title|truncate(12) }}
+						{{ featured_first.post_title|truncate(8) }}
 					</h4>
 					<p>
 						{% if featured_first.post_excerpt %}
-							{{ featured_first.post_excerpt|truncate(14) }}
+							{{ featured_first.post_excerpt|truncate(8) }}
 						{% else %}
-							{{ featured_first.post_content|truncate(14) }}
+							{{ featured_first.post_content|truncate(8) }}
 						{% endif %}	
 					</p>
 				</div>
@@ -59,14 +59,14 @@
 					</a>
 		</div>
 		{% for homepage_post in remaining %}
-			<div class="medium-6 large-4 columns homepage-grid-element relative">
+			<div class="no__pad medium-6 large-4 columns homepage-grid-element relative">
 				{% if homepage_post.thumbnail %}
 					<div class="hide-for-medium-down large-12 columns homepage-post__image--wrapper" style="background:url({{homepage_post.thumbnail.src}})no-repeat center;">
 					</div>	
 				{% endif %}	
-				<div class="homepage__image--wrapper medium-12 large-12 columns" {% if homepage_post.thumbnail %}style="background-image:url({{homepage_post.thumbnail.src}});"{% endif %}>
+				<div class="no__pad homepage__image--wrapper medium-12 large-12 columns" {% if homepage_post.thumbnail %}style="background-image:url({{homepage_post.thumbnail.src}});"{% endif %}>
 				</div>	
-				<div class="medium-12 large-12 columns relative">
+				<div class="no__pad medium-12 large-12 columns relative">
 				{% if not homepage_post.thumbnail %}
 					<span class="red__border--top"></span>
 				{% endif %}	
@@ -88,7 +88,7 @@
 							{{ homepage_post.post_date|date('m/d/Y') }}
 						</p>
 						<h4 class="homepage-element-body">
-							{{ homepage_post.post_title|truncate(12) }}
+							{{ homepage_post.post_title|truncate(7) }}
 						</h4>
 						<p>
 							{% if homepage_post.post_excerpt %}
