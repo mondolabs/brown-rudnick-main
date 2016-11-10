@@ -43,7 +43,8 @@
 	&.letter__links {
 		margin-top: 21px;
 	}
-	&.about__deatils {
+	&.about__deatils,
+	&.insight__deatils {
 		height: 4px;
 		width: 60px;
 	}
@@ -54,8 +55,10 @@
 		margin: 20px 0 16px;
 	}
 	&.mobile__centered {
-		margin: 20px auto;
-		width: 80px;
+    	@media screen and (max-width: 768px){	
+			margin: 20px auto;
+			width: 80px;
+    	}
 	}
 }
 
@@ -76,7 +79,7 @@
 }
 
 .hiring-divider {
-	width: 80px;
+	width: 20px;
 	border-bottom: solid $primary-red 1px;
 	height: 1px;
 }

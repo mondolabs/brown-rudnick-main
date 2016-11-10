@@ -141,7 +141,19 @@ p.wp-caption-text {
 
 a {
   -webkit-transition: color .3s ease-in-out;
-  transition: color .3s ease-in-out; }
+  transition: color .3s ease-in-out;
+  color: #b91628; }
+  a:hover, a:focus {
+    color: #b91628;
+    text-decoration: underline; }
+
+.body__text a {
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+  color: #b91628; }
+  .body__text a:hover, .body__text a:focus {
+    color: #b91628;
+    text-decoration: underline; }
 
 .grey__background {
   background-color: #f0f0f0; }
@@ -171,6 +183,9 @@ a {
     font-weight: 500; }
   .body__text.black {
     color: #0a0a0a; }
+  @media (max-width: 768px) {
+    .body__text.mobile__centered {
+      text-align: center; } }
 
 .italic {
   font-style: italic; }
@@ -197,6 +212,12 @@ p.subtitle__text {
     @media screen and (max-width: 1140px) {
       .title__text.people__details {
         font-size: 20px; } }
+    @media screen and (max-width: 768px) {
+      .title__text.people__details {
+        text-align: center;
+        max-width: 80%;
+        display: block;
+        margin: auto; } }
   .title__text.red {
     color: #b91628; }
   .title__text.insights__blog {
@@ -226,12 +247,22 @@ p.subtitle__text {
   .tag__text.bigger {
     font-size: 16px; }
 
+@media (max-width: 768px) {
+  .sidebar__color-block--outer-outer-wrapper {
+    display: inline-block;
+    width: calc(50% - 30px);
+    float: left;
+    margin: 15px; } }
+
 .sidebar__color-block--outer-wrapper {
   height: 60px;
   background-color: #f0f0f0;
   display: table;
   width: 100%;
   margin-bottom: 10px; }
+  @media (max-width: 768px) {
+    .sidebar__color-block--outer-wrapper {
+      width: 100%; } }
 
 .sidebar__color-block--wrapper {
   width: 100%;
@@ -274,6 +305,12 @@ p.subtitle__text {
 
 .padding__right--50 {
   padding-right: 50px; }
+
+.padding__right--50-desktop {
+  padding-right: inherit; }
+  @media (min-width: 768px) {
+    .padding__right--50-desktop {
+      padding-right: 50px; } }
 
 .margin__auto {
   margin: auto; }
@@ -364,7 +401,8 @@ a.link {
     a.link.red:visited {
       color: #b91628; }
     a.link.red:hover, a.link.red:focus {
-      color: #0a0a0a; }
+      color: #b91628;
+      text-decoration: underline; }
     a.link.red.tile:hover, a.link.red.tile:focus {
       color: #b91628; }
   a.link.inline__link {
@@ -438,8 +476,12 @@ h3.title {
 .featured-image__header--image-wrapper {
   background-color: #f0f0f0;
   height: 215px; }
-  .featured-image__header--image-wrapper.person {
+  .featured-image__header--image-wrapper.person, .featured-image__header--image-wrapper.insight {
     height: 380px; }
+    @media screen and (max-width: 768px) {
+      .featured-image__header--image-wrapper.person, .featured-image__header--image-wrapper.insight {
+        height: auto;
+        padding: 20px; } }
 
 .featured-image__header--text-wrapper {
   display: table;
@@ -583,13 +625,17 @@ img.people__details {
         width: 300px; } }
 
 img.insight__details {
-  max-width: 250px; }
-  @media screen and (max-width: 1140px) {
+  height: 277px; }
+  @media screen and (max-width: 1200px) {
     img.insight__details {
-      max-width: 175px; } }
-  @media screen and (max-width: 1024px) {
+      height: 250px; } }
+  @media screen and (max-width: 900px) {
     img.insight__details {
-      max-width: 200px; } }
+      max-width: inherit; } }
+  @media screen and (max-width: 768px) {
+    img.insight__details {
+      display: block;
+      margin: 10px auto; } }
 
 .service,
 .bullet {
@@ -655,12 +701,26 @@ img.insights {
   top: 18px;
   position: absolute;
   z-index: 2; }
+  @media screen and (max-width: 768px) {
+    .breadcrumb__wrapper {
+      width: 100%;
+      position: relative;
+      top: inherit;
+      position: block; } }
   .breadcrumb__wrapper a.breadcrumb__link {
     font-size: 10px;
     font-weight: 800;
     cursor: pointer;
     -webkit-transition: color .3s ease-in-out;
     transition: color .3s ease-in-out; }
+    @media screen and (max-width: 768px) {
+      .breadcrumb__wrapper a.breadcrumb__link {
+        text-align: center;
+        position: relative;
+        -webkit-transition: color .3s ease-in-out;
+        transition: color .3s ease-in-out;
+        display: block;
+        margin-bottom: 20px; } }
     .breadcrumb__wrapper a.breadcrumb__link:hover, .breadcrumb__wrapper a.breadcrumb__link:focus {
       color: #b91628; }
 
@@ -692,6 +752,14 @@ img.insights {
     height: 200px; }
   .inline__wrapper.ceo {
     height: 200px; }
+  .inline__wrapper.insight {
+    max-width: 60%;
+    height: 100%; }
+    @media screen and (max-width: 768px) {
+      .inline__wrapper.insight {
+        width: 100%;
+        height: auto;
+        max-width: inherit; } }
 
 .table__wrapper {
   display: table;
@@ -700,11 +768,16 @@ img.insights {
     width: 100%; }
   .table__wrapper.location__map {
     height: 500px; }
+  @media screen and (max-width: 768px) {
+    .table__wrapper.insight, .table__wrapper.person {
+      width: 100%; } }
 
 .table__inner {
   display: table-cell;
   height: 100%;
   vertical-align: middle; }
+  .table__inner.insight, .table__inner.person {
+    width: 100%; }
 
 #slider-svg {
   height: 20px;
@@ -8739,7 +8812,7 @@ a {
   -webkit-box-shadow: none;
           box-shadow: none;
   border: none;
-  padding: 25px 110px;
+  padding: 16px 80px;
   text-transform: uppercase;
   margin: 3% auto;
   letter-spacing: 1.2px;
@@ -8767,7 +8840,7 @@ a {
   @media screen and (max-width: 768px) {
     .sites-button.mobile__full--width {
       display: block;
-      width: 80%;
+      width: 70%;
       margin: 0 auto; } }
 
 @media screen and (max-width: 768px) {
@@ -8823,7 +8896,7 @@ a {
     width: 20px; }
   .list-divider.letter__links {
     margin-top: 21px; }
-  .list-divider.about__deatils {
+  .list-divider.about__deatils, .list-divider.insight__deatils {
     height: 4px;
     width: 60px; }
   .list-divider.mobile {
@@ -8831,9 +8904,10 @@ a {
     height: 2px;
     width: 100%;
     margin: 20px 0 16px; }
-  .list-divider.mobile__centered {
-    margin: 20px auto;
-    width: 80px; }
+  @media screen and (max-width: 768px) {
+    .list-divider.mobile__centered {
+      margin: 20px auto;
+      width: 80px; } }
 
 .page__divider {
   height: 2px;
@@ -8848,7 +8922,7 @@ a {
     display: inline-block; }
 
 .hiring-divider {
-  width: 80px;
+  width: 20px;
   border-bottom: solid #b91628 1px;
   height: 1px; }
 
