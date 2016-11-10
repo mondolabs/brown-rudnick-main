@@ -6,6 +6,24 @@ a {
     	color: $primary-red;
     	text-decoration: underline; 
     }
+    &.hover__black {
+    	color: $black;
+	    &:hover,
+	    &:focus {
+	    	color: $black;
+	    	text-decoration: none; 
+	    }
+
+    }
+}
+
+.arrow__hover--trigger {
+	&:hover,
+	&:focus {
+		svg {
+    		left: 20px;
+    	}
+	}
 }
 
 .body__text a {
@@ -279,6 +297,10 @@ li.list-item__sidebar {
 		letter-spacing: 1.2px;
 		font-weight: 500;
 	}
+}
+
+.no__border {
+	border: none;
 }
 
 .display-block {
@@ -870,6 +892,14 @@ img.insights {
 	&.pro-bono {
 	    bottom: 0;
     	right: 1px;
+	}
+	&.blog {
+		position: absolute;
+	    bottom: -1;
+	    right: -1px;
+	    height: 40px;
+	    width: 64px;
+	    border: 1px $white solid;
 	}
 }
 

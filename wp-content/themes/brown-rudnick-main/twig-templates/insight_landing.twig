@@ -18,15 +18,15 @@
 	<div class="experience__wrapper row body__wrapper columns small-12 medium-12 large-12">
 		{% include '/twig-templates/insights-sidebar.twig' with sidebar %}
 		<div class="columns show-for-medium-up medium-9 large-9 small-12 mobile-margin-top-20">
-			<div class="columns small-12 medium-12 large-12 padding-bottom-60">
+			<div class="columns small-12 medium-12 large-12 no__pad padding-bottom-60">
 				{{ top_content }}
 			</div>
-			<div class="shcolumns small-12 medium-12 large-12 x-large-12">
+			<div class="sh columns small-12 medium-12 large-12 no__pad x-large-12">
 				{{ post.post_content|shortcodes }}
 			</div>
-			<div class="columns small-12 medium-12 large-12 margin-top-60 desktop-only">
+			<div class="columns small-12 medium-12 large-12 no__pad margin-top-60 desktop-only">
 				<div class="no__pad">
-					<div class="columns small-12 medium-12 large-3 x-large-6">
+					<div class="columns small-12 medium-12 large-3 x-large-6 no__pad">
 						<p class="title__text">
 							{{ header_text }}
 						</p>
@@ -94,17 +94,34 @@
 					</div>
 				</div>
 			</div>
-			<div class="columns small-12 medium-12 large-12">
-				<div class="margin-top-60 columns small-12 medium-12 large-12">
+			<div class="columns small-12 medium-12 large-12 no__pad">
+				<div class="margin-top-60 columns small-12 medium-12 large-12 no__pad">
 					{% for insight in insights %}
-						<a class='link' href="{{insight._permalink}}">
-							{{ insight.title }}
-						</a>
-						<p class="tag__text contact margin-top-20 grey font-weight__bold">
-							{{ insight.date|date("M, d Y")  }}
-						</p>
-						<div class="page__divider grey">
-						</div>
+						<table class="no__border">
+							<tbody class="no__border">
+								<tr class="arrow__hover--trigger">
+									<td class="no__pad full__width">
+										<a class="hover__black black" href="{{ insight.permalink }}">
+											{{ insight.title }}<br>
+										</a> 
+										<p class="tag__text grey margin-top-20">
+											{{ insight.date|upper }}
+										</p>
+									</td>
+									<td class="no__pad">
+										<div class="link__arrow--wrapper news">
+											<a href="{{ insight.permalink }}">
+												<svg class="long__arrow--svg news" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
+													<title>long arrow</title>
+													<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
+													<polyline class="long__arrow red" points="48 1 56 9 48 17"/>
+												</svg>
+											</a>	
+										</div>
+									</td>
+								</tr>
+							</tbody>	
+						</table>
 					{% endfor %}
 				</div>	
 			</div>
