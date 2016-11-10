@@ -123,6 +123,9 @@ p.wp-caption-text {
   left: 14px;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out; }
+  .long__arrow--svg.news {
+    height: 40px;
+    width: 80px; }
 
 .long__arrow {
   -webkit-transition: all .3s ease-in-out;
@@ -146,6 +149,17 @@ a {
   a:hover, a:focus {
     color: #b91628;
     text-decoration: underline; }
+  a.no__underline:hover, a.no__underline:focus {
+    color: #b91628;
+    text-decoration: none; }
+  a.hover__black {
+    color: #0a0a0a; }
+    a.hover__black:hover, a.hover__black:focus {
+      color: #0a0a0a;
+      text-decoration: none; }
+
+.arrow__hover--trigger:hover svg, .arrow__hover--trigger:focus svg {
+  left: 20px; }
 
 .body__text a {
   -webkit-transition: color .3s ease-in-out;
@@ -290,12 +304,17 @@ p.subtitle__text {
     padding: 0 40px; }
   .padding__wrapper.ten.right__only {
     padding-right: 10px; }
-  .padding__wrapper.twenty.right__only {
-    padding-right: 10px; }
-  .padding__wrapper.twenty.left__only {
+  .padding__wrapper.ten.left__only {
     padding-left: 10px; }
+  .padding__wrapper.twenty.right__only {
+    padding-right: 20px; }
+  .padding__wrapper.twenty.left__only {
+    padding-left: 20px; }
   .padding__wrapper.twenty {
     padding: 20px; }
+
+.padding__left--ten {
+  padding-left: 10px; }
 
 .min--height__225 {
   min-height: 225px; }
@@ -348,6 +367,12 @@ li.list-item__sidebar a {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   letter-spacing: 1.2px;
   font-weight: 500; }
+
+.list-item__sidebar-ul {
+  padding-bottom: 20px; }
+
+.no__border {
+  border: none; }
 
 .display-block {
   display: block; }
@@ -817,6 +842,13 @@ img.insights {
   .tile__arrow.pro-bono {
     bottom: 0;
     right: 1px; }
+  .tile__arrow.blog {
+    position: absolute;
+    bottom: -1;
+    right: -1px;
+    height: 40px;
+    width: 64px;
+    border: 1px #fefefe solid; }
 
 .experience_expander,
 .job_expander,
@@ -1114,6 +1146,8 @@ button.close__modal {
   letter-spacing: 2px;
   font-size: 14px;
   text-transform: uppercase; }
+  .bold__wide__spacing.smaller, .medium__weight__spacing.smaller {
+    font-size: 12px; }
 
 .bold__wide__spacing {
   font-weight: 800; }
@@ -1139,11 +1173,18 @@ button.close__modal {
 .full-width-grey {
   background-color: #f0f0f0; }
 
+.no__pad--sides {
+  padding-left: 0 !important;
+  padding-right: 0 !important; }
+
 .padding-top-50 {
   padding-top: 50px; }
 
 .padding-top-60 {
   padding-top: 60px; }
+
+.padding-bottom-40 {
+  padding-bottom: 40px; }
 
 .padding-bottom-60 {
   padding-bottom: 60px; }
@@ -1306,6 +1347,21 @@ button.close__modal {
   height: 500px;
   padding: 40px;
   background: #fefefe; }
+
+select.clean___border {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url("../../assets/images/down-carrat.svg") no-repeat;
+  -webkit-background-size: 9px 6px;
+  background-size: 9px 6px;
+  background-position: right -1rem center;
+  -webkit-background-origin: content-box;
+  background-origin: content-box;
+  padding-right: 1.5rem; }
+
+*:focus {
+  outline: none !important; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -8889,7 +8945,7 @@ a {
     margin: 8px 0; }
   .list-divider.insights {
     width: calc(100% - 15px);
-    margin: 40px 0 10px; }
+    margin: -1rem 0 1rem; }
   .list-divider.smaller {
     width: 30px; }
   .list-divider.smallest {
@@ -8908,6 +8964,8 @@ a {
     .list-divider.mobile__centered {
       margin: 20px auto;
       width: 80px; } }
+  .list-divider.full__width {
+    width: 100%; }
 
 .page__divider {
   height: 2px;

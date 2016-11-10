@@ -25,25 +25,33 @@
 						Articles
 					</p>
 					{% for news_article in news_articles %}
-						{% set news_article = news_article|first %}
-						<a href="{{news_article.guid}}" class="black body__text link">
-							{{ news_article.post_title }}<br>
-						</a>
-						<div class="columns small-12 medium-12 large-12">
-							<div class="columns small-4 medium-4 large-4">
-								<p class="tag__text smaller grey">
-									{{ news_article.date|date("M d, y")|upper }}
-								</p>
-							</div>
-							<div class="columns padding__wrapper small-8 medium-8 large-8 right">
-								<a href="{{news_article.guid}}">
-									<span class="hover-arrow insights red">
-										<img src="{{ hover_arrow }}">
-									</span>
-								</a>	
-							</div>	
-							<span class="insights list-divider"></span>
-						</div>
+						{% set news_article = news_article|first %}							
+						<table class="no__border">
+							<tbody class="no__border">
+								<tr class="arrow__hover--trigger">
+									<td class="no__pad full__width">
+										<a class="hover__black black" href="{{news_article.guid}}">
+											{{ news_article.post_title }}<br>
+										</a> 
+										<p class="tag__text grey margin-top-20">
+											{{ news_article.date|date("M d, y")|upper }}
+										</p>
+									</td>
+									<td class="no__pad">
+										<div class="link__arrow--wrapper news">
+											<a href="{{news_article.guid}}">
+												<svg class="long__arrow--svg news" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
+													<title>long arrow</title>
+													<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
+													<polyline class="long__arrow red" points="48 1 56 9 48 17"/>
+												</svg>
+											</a>	
+										</div>
+									</td>
+								</tr>
+							</tbody>	
+						</table>
+						{% if not loop.last %}<span class="insights list-divider"></span>{% endif %}
 					{% endfor %}
 					<a class="link red tag__text underline" href="/articles">
 						{{ "see all articles"|upper }}
@@ -57,24 +65,32 @@
 					</p>
 					{% for alert in alerts %}
 						{% set alert = alert|first %}
-							<a href="{{alert.guid}}" class="black body__text link">
-								{{ alert.post_title }}
-							</a>
-						<div class="columns small-12 medium-12 large-12">
-							<div class="columns small-4 medium-4 large-4 right">
-								<p class="tag__text smaller grey">
-									{{ alert.date|date("M d, y")|upper }}
-								</p>
-							</div>
-							<div class="columns padding__wrapper small-8 medium-8 large-8 right">
-								<a href="{{alert.guid}}">
-									<span class="hover-arrow insights red">
-										<img src="{{ hover_arrow }}">
-									</span>
-								</a>	
-							</div>
-							<span class="insights list-divider"></span>
-						</div>
+						<table class="no__border">
+							<tbody class="no__border">
+								<tr class="arrow__hover--trigger">
+									<td class="no__pad full__width">
+										<a class="hover__black black" href="{{alert.guid}}">
+											{{ alert.post_title }}<br>
+										</a> 
+										<p class="tag__text grey margin-top-20">
+											{{ alert.date|date("M d, y")|upper }}
+										</p>
+									</td>
+									<td class="no__pad">
+										<div class="link__arrow--wrapper news">
+											<a href="{{alert.guid}}">
+												<svg class="long__arrow--svg news" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
+													<title>long arrow</title>
+													<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
+													<polyline class="long__arrow red" points="48 1 56 9 48 17"/>
+												</svg>
+											</a>	
+										</div>
+									</td>
+								</tr>
+							</tbody>	
+						</table>
+						{% if not loop.last %}<span class="insights list-divider"></span>{% endif %}
 					{% endfor %}
 					<a class="link red tag__text underline" href="/alerts">
 						{{ "see all alerts"|upper }}
@@ -84,7 +100,7 @@
 				
 			
 			<div class="columns  small-12 medium-12 large-12">
-				<span class="insights list-divider"></span>
+				<span class="list-divider full__width margin-top-40"></span>
 				<p class="title__text insights__blog">
 					Blogs
 				</p>
@@ -101,8 +117,12 @@
 										{{blog.blog_content_excerpt}}
 									</div>
 									<a href="{{ blog.blog_link_url }}">
-										<span class="hover-arrow insights--blog red">
-											<img src="{{ hover_arrow }}">
+										<span class="tile__arrow blog">
+											<svg class="long__arrow--svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
+												<title>long arrow</title>
+												<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
+												<polyline class="long__arrow red" points="48 1 56 9 48 17"/>
+											</svg>
 										</span>
 									</a>
 								</div>
@@ -113,7 +133,7 @@
 			</div>	
 
 			<div class="columns  small-12 medium-12 large-12">
-				<span class="insights list-divider"></span>
+				<span class="list-divider full__width margin-top-40"></span>
 				<p class="title__text insights__blog">
 					Publications
 				</p>

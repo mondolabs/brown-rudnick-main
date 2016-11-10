@@ -4,6 +4,10 @@
     position: relative;
     left: 14px;
     transition: all .3s ease-in-out;
+	&.news {
+		height: 40px;
+		width: 80px;
+	}
 }
 
 .long__arrow {
