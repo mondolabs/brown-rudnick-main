@@ -1321,6 +1321,17 @@ button.close__modal {
   padding: 40px;
   background: #fefefe; }
 
+select.clean___border {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("../../assets/images/down-carrat.svg") no-repeat;
+  -webkit-background-size: 9px 6px;
+  background-size: 9px 6px;
+  background-position: right -1rem center;
+  -webkit-background-origin: content-box;
+  background-origin: content-box;
+  padding-right: 1.5rem; }
+
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)

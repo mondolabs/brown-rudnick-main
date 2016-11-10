@@ -1454,3 +1454,16 @@ button.close__modal {
     padding: 40px;
     background: $white;
 }
+
+
+select.clean___border {	
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('../../assets/images/down-carrat.svg') no-repeat;
+    -webkit-background-size: 9px 6px;
+    background-size: 9px 6px;
+    background-position: right -1rem center;
+    -webkit-background-origin: content-box;
+    background-origin: content-box;
+    padding-right: 1.5rem;
+}
