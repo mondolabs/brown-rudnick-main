@@ -7,18 +7,20 @@
 			<div class="featured-image__header--text-inner-wrapper">
 				<div class="color__block vellum">
 					<h1 class="page__header {{ header_text_color }}">
-						{{ locations_header_text }}
+						{{ contact_us_header_text }}
 					</h1>
 				</div>
 			</div>
 		</div>	
 	</div>
 </div>
-{{ post.post_content|shortcodes }}
+
+	<div class="columns small-12 medium-12 large-12 x-large-12">
+		{{ post.post_content|shortcodes }}
+	</div>
 
 
-
-<div id="locationsBottomImage">
+<div id="contactUsBottomImage">
 	<div class="row">
 		<div class="table__wrapper pro-bono__banner">
 		    <div class="table__inner pro-bono__banner">
@@ -46,6 +48,7 @@
 </div>
 
 
+
 <script type="text/javascript">
 	{% if banner_image %}
 		$(document).ready(function(){
@@ -54,7 +57,7 @@
 	{% endif %}
 	{% if bottom_banner_image %}
 		$(document).ready(function(){
-			$('#locationsBottomImage').backstretch("{{bottom_banner_image}}");
+			$('#contactUsBottomImage').backstretch("{{bottom_banner_image}}");
 		})
 	{% endif %}
 </script>
