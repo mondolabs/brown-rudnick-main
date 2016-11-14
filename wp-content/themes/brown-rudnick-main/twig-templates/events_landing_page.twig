@@ -18,81 +18,77 @@
 	<div class="experience__wrapper row body__wrapper columns small-12 medium-12 large-12">
 		{% include '/twig-templates/insights-sidebar.twig' with sidebar %}
 		<div class="columns show-for-medium-up medium-9 large-9 small-12 mobile-margin-top-20 no__pad">
-			<div class="columns small-12 medium-12 large-12 no__pad desktop-only margin-top-neg-20">
-				<div class="no__pad">
-					<div class="columns small-12 medium-12 large-3 x-large-6 no__pad">
-						<p class="title__text margin-top-16">
-							Upcoming Events
-						</p>
-					</div>
-					<div class="columns large-2 no__pad padding-left-5 margin__1 text-align__center">
-						<select id="dateSelect" name="date_query" class="clean___border insight inline__text grey__bold__text smaller">
-				            {% set dateValues = [] %}
-				            {% set datePresenters = [] %}
-				            {% for date in dates %}
-				            	{{ date }}
-				                {% set valueFormattedDate = date|date("mY")%}
-				                {% set presentationFormattedDate = date|date("F, Y")%}
-				                {% if valueFormattedDate not in dateValues %}
-				                    {% set dateValues = dateValues|merge([valueFormattedDate]) %}
-				                {% endif %}
-				                {% if presentationFormattedDate not in datePresenters %}
-				                    {% set datePresenters = datePresenters|merge([presentationFormattedDate]) %}
-				                {% endif %}
-				            {% endfor %}
-				            <option value="">
-				            	DATE
-				            </option>
-			                {% for i in datePresenters %}
-			                  <option value='{{ dateValues[loop.index0] }}'>
-			                      {{ datePresenters[loop.index0] }}
-			                  </option>
-			                {% endfor %}
-		            	</select>
-					</div> 
-					<div class="columns large-2 no__pad padding-left-5 margin__1 text-align__center">
-						<select id="geographySelect" name="geography_query" class="clean___border insight inline__text grey__bold__text smaller">
-							<option value="">
-								GEOGRAPHIES
-							</option>
-						{% for geography in geographies %}
-							<option value="{{ geography.slug|upper }}">
-								{{ geography.name|upper }}
+			<div class="columns small-12 medium-12 large-12 no__pad desktop-only margin-bottom--40">	
+				<div class="columns large-2 no__pad">	
+					<p class="title__text">
+						Events
+					</p>
+				</div>	
+				<div class="columns large-2 no__pad padding-left-5 margin__1 text-align__center ">
+					<select id="dateSelect" name="date_query" class="clean___border insight inline__text grey__bold__text smaller">
+			            {% set dateValues = [] %}
+			            {% set datePresenters = [] %}
+			            {% for date in dates %}
+			            	{{ date }}
+			                {% set valueFormattedDate = date|date("mY")%}
+			                {% set presentationFormattedDate = date|date("F, Y")%}
+			                {% if valueFormattedDate not in dateValues %}
+			                    {% set dateValues = dateValues|merge([valueFormattedDate]) %}
+			                {% endif %}
+			                {% if presentationFormattedDate not in datePresenters %}
+			                    {% set datePresenters = datePresenters|merge([presentationFormattedDate]) %}
+			                {% endif %}
+			            {% endfor %}
+			            <option value="">
+			            	DATE
+			            </option>
+		                {% for i in datePresenters %}
+		                  <option value='{{ dateValues[loop.index0] }}'>
+		                      {{ datePresenters[loop.index0] }}
+		                  </option>
+		                {% endfor %}
+	            	</select>
+				</div> 
+				<div class="columns large-2 no__pad padding-left-5 margin__1 text-align__center ">
+					<select id="geographySelect" name="geography_query" class="clean___border insight inline__text grey__bold__text smaller">
+						<option value="">
+							GEOGRAPHIES
+						</option>
+					{% for geography in geographies %}
+						<option value="{{ geography.slug|upper }}">
+							{{ geography.name|upper }}
+						</option>
+					{% endfor %}
+					</select>
+				</div>
+				<div class="columns large-2 no__pad padding-left-5 margin__1 text-align__center ">
+					<select id="industrySelect" name="industry_query" class="clean___border insight inline__text grey__bold__text smaller">
+						<option value="">
+							INDUSTRIES
+						</option>
+						{% for industry in industries %}
+							<option value="{{ industry.slug|upper }}">
+								{{ industry.name|upper }}
 							</option>
 						{% endfor %}
-						</select>
-					</div>
-					<div class="columns large-2 no__pad padding-left-5 margin__1 text-align__center">
-						<select id="industrySelect" name="industry_query" class="clean___border insight inline__text grey__bold__text smaller">
-							<option value="">
-								INDUSTRIES
-							</option>
-							{% for industry in industries %}
-								<option value="{{ industry.slug|upper }}">
-									{{ industry.name|upper }}
-								</option>
-							{% endfor %}
-						</select>
-					</div>
-					<div class="columns large-2 no__pad padding-left-5 float__left margin__1 ">
-						<select id="practiceSelect" name="practice_query" class="clean___border insight inline__text grey__bold__text smaller">
-							<option value="">
-								PRACTICES
-							</option>
-							{% for practice in practices %}
-								<option value="{{ practice.slug|upper }}">
-									{{ practice.name|upper }}
-								</option>
-							{% endfor %}
-						</select>
-					</div>
+					</select>
 				</div>
-			</div>
-			<div class="columns small-12 medium-12 large-12 no__pad">
+				<div class="columns large-2 no__pad padding-left-5 margin__1 float__left">
+					<select id="practiceSelect" name="practice_query" class="clean___border insight inline__text grey__bold__text smaller">
+						<option value="">
+							PRACTICES
+						</option>
+						{% for practice in practices %}
+							<option value="{{ practice.slug|upper }}">
+								{{ practice.name|upper }}
+							</option>
+						{% endfor %}
+					</select>
+				</div>
+			</div>	
+			{% if events %}	
 				<div class="margin-top-20 columns small-12 medium-12 large-12 no__pad">
-					{% set upcoming_events = post.get_field('upcoming_events') %}
-					{% for event in upcoming_events %}
-						{% set event = event|first %}
+					{% for event in events %}
 						<table class="no__border">
 							<tbody class="no__border">
 								<tr class="arrow__hover--trigger">
@@ -121,111 +117,94 @@
 						{% if not loop.last %}<span class="insights list-divider"></span>{% endif %}
 					{% endfor %}
 				</div>	
-			</div>
-			<div class="columns small-12 medium-12 large-12 no__pad desktop-only margin-top-20">
-				<div class="no__pad">
-					<div class="columns small-12 medium-12 large-3 x-large-6 no__pad">
-						<p class="title__text margin-top-16">
-							Past Events
-						</p>
-					</div>
-					<div class="columns large-2 no__pad padding-left-5 margin__1 text-align__center">
-						<select id="dateSelect" name="date_query" class="clean___border insight inline__text grey__bold__text smaller">
-				            {% set dateValues = [] %}
-				            {% set datePresenters = [] %}
-				            {% for date in dates %}
-				            	{{ date }}
-				                {% set valueFormattedDate = date|date("mY")%}
-				                {% set presentationFormattedDate = date|date("F, Y")%}
-				                {% if valueFormattedDate not in dateValues %}
-				                    {% set dateValues = dateValues|merge([valueFormattedDate]) %}
-				                {% endif %}
-				                {% if presentationFormattedDate not in datePresenters %}
-				                    {% set datePresenters = datePresenters|merge([presentationFormattedDate]) %}
-				                {% endif %}
-				            {% endfor %}
-				            <option value="">
-				            	DATE
-				            </option>
-			                {% for i in datePresenters %}
-			                  <option value='{{ dateValues[loop.index0] }}'>
-			                      {{ datePresenters[loop.index0] }}
-			                  </option>
-			                {% endfor %}
-		            	</select>
-					</div> 
-					<div class="columns large-2 no__pad padding-left-5 margin__1 text-align__center">
-						<select id="geographySelect" name="geography_query" class="clean___border insight inline__text grey__bold__text smaller">
-							<option value="">
-								GEOGRAPHIES
-							</option>
-						{% for geography in geographies %}
-							<option value="{{ geography.slug|upper }}">
-								{{ geography.name|upper }}
-							</option>
-						{% endfor %}
-						</select>
-					</div>
-					<div class="columns large-2 no__pad padding-left-5 margin__1 text-align__center">
-						<select id="industrySelect" name="industry_query" class="clean___border insight inline__text grey__bold__text smaller">
-							<option value="">
-								INDUSTRIES
-							</option>
-							{% for industry in industries %}
-								<option value="{{ industry.slug|upper }}">
-									{{ industry.name|upper }}
-								</option>
-							{% endfor %}
-						</select>
-					</div>
-					<div class="columns large-2 no__pad padding-left-5 float__left margin__1 ">
-						<select id="practiceSelect" name="practice_query" class="clean___border insight inline__text grey__bold__text smaller">
-							<option value="">
-								PRACTICES
-							</option>
-							{% for practice in practices %}
-								<option value="{{ practice.slug|upper }}">
-									{{ practice.name|upper }}
-								</option>
-							{% endfor %}
-						</select>
+			{% else %}
+				<div class="columns small-12 medium-12 large-12 no__pad desktop-only margin-top-neg-20">
+					<div class="no__pad">
+						<div class="columns small-12 medium-12 large-3 x-large-6 no__pad">
+							<p class="title__text smaller margin-top-16">
+								Upcoming
+							</p>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="columns small-12 medium-12 large-12 no__pad">
-				<div class="margin-top-20 columns small-12 medium-12 large-12 no__pad">
-					{% set past_events = post.get_field('past_events') %}
-					{% for event in past_events %}
-						{% set event = event|first %}
-						<table class="no__border">
-							<tbody class="no__border">
-								<tr class="arrow__hover--trigger">
-									<td class="no__pad full__width">
-										<a class="hover__black black" href="{{ event.permalink }}">
-											{{ event.title }}<br>
-										</a> 
-										<p class="tag__text grey margin-top-20">
-											{{ event.date|upper }}
-										</p>
-									</td>
-									<td class="no__pad">
-										<div class="link__arrow--wrapper news">
-											<a href="{{ event.permalink }}">
-												<svg class="long__arrow--svg news" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
-													<title>long arrow</title>
-													<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
-													<polyline class="long__arrow red" points="48 1 56 9 48 17"/>
-												</svg>
-											</a>	
-										</div>
-									</td>
-								</tr>
-							</tbody>	
-						</table>
-						{% if not loop.last %}<span class="insights list-divider"></span>{% endif %}
-					{% endfor %}
-				</div>	
-			</div>
+				<div class="columns small-12 medium-12 large-12 no__pad">
+					<div class="margin-top-20 columns small-12 medium-12 large-12 no__pad">
+						{% set upcoming_events = post.get_field('upcoming_events') %}
+						{% for event in upcoming_events %}
+							{% set event = event|first %}
+							<table class="no__border">
+								<tbody class="no__border">
+									<tr class="arrow__hover--trigger">
+										<td class="no__pad full__width">
+											<a class="hover__black black" href="{{ event.permalink }}">
+												{{ event.title }}<br>
+											</a> 
+											<p class="tag__text grey margin-top-20">
+												{{ event.date|upper }}
+											</p>
+										</td>
+										<td class="no__pad">
+											<div class="link__arrow--wrapper news">
+												<a href="{{ event.permalink }}">
+													<svg class="long__arrow--svg news" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
+														<title>long arrow</title>
+														<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
+														<polyline class="long__arrow red" points="48 1 56 9 48 17"/>
+													</svg>
+												</a>	
+											</div>
+										</td>
+									</tr>
+								</tbody>	
+							</table>
+							{% if not loop.last %}<span class="insights list-divider"></span>{% endif %}
+						{% endfor %}
+					</div>	
+				</div>
+				<div class="columns small-12 medium-12 large-12 no__pad desktop-only margin-top-20">
+					<div class="no__pad">
+						<div class="columns small-12 medium-12 large-3 x-large-6 no__pad">
+							<p class="title__text margin-top-16 smaller">
+								Past
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="columns small-12 medium-12 large-12 no__pad">
+					<div class="margin-top-20 columns small-12 medium-12 large-12 no__pad">
+						{% set past_events = post.get_field('past_events') %}
+						{% for event in past_events %}
+							{% set event = event|first %}
+							<table class="no__border">
+								<tbody class="no__border">
+									<tr class="arrow__hover--trigger">
+										<td class="no__pad full__width">
+											<a class="hover__black black" href="{{ event.permalink }}">
+												{{ event.title }}<br>
+											</a> 
+											<p class="tag__text grey margin-top-20">
+												{{ event.date|upper }}
+											</p>
+										</td>
+										<td class="no__pad">
+											<div class="link__arrow--wrapper news">
+												<a href="{{ event.permalink }}">
+													<svg class="long__arrow--svg news" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
+														<title>long arrow</title>
+														<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
+														<polyline class="long__arrow red" points="48 1 56 9 48 17"/>
+													</svg>
+												</a>	
+											</div>
+										</td>
+									</tr>
+								</tbody>	
+							</table>
+							{% if not loop.last %}<span class="insights list-divider"></span>{% endif %}
+						{% endfor %}
+					</div>	
+				</div>
+			{% endif %}
 		</div>
 	</div>
 </div>

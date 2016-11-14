@@ -169,6 +169,12 @@ p.subtitle__text {
 	&.bigger {
 		font-size: 16px;
 	}
+	&.mobile__centered {
+		@media (max-width: 768px) {
+			text-align: center;
+			width: 100%;
+		}
+	}
 }
 
 .sidebar__color-block--outer-outer-wrapper {
@@ -401,7 +407,9 @@ a.link {
 			}
 		}
 	}
-	&.inline__link {
+	&.inline__link,
+	&.inline_link
+	 {
 		display: inline;
 	}
 	&.sidebar__link {
@@ -417,6 +425,13 @@ a.link {
     		&.last-sidebar__link {
     			border: none;
     		}
+		}
+	}
+	&.mobile__centered {
+		@media (max-width: 768px) {
+			text-align: center;
+			width: 100%;
+			display: block;
 		}
 	}
 }
@@ -440,6 +455,10 @@ h3.title {
 
 .margin-bottom--20 {
 	margin-bottom: 20px;
+}
+
+.margin-bottom--40 {
+	margin-bottom: 40px;
 }
 
 .margin-top-20 {
@@ -847,7 +866,7 @@ img.insights {
 		height: 200px;
 	}
 	&.insight {
-		max-width: 60%;
+		max-width: 70%;
 		height: 100%;
     	@media screen and (max-width: 768px){
     		width: 100%;
