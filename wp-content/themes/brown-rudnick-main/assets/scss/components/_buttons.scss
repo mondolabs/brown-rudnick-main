@@ -45,7 +45,20 @@ a {
 			width: 70%;
 			margin: 0 auto;
 		}
-	}	
+	}
+	&.subscribe {
+		width: 100%;
+		padding-left: auto;
+		padding-right: auto;
+	}
+	&.subscribe__content--block {
+	    float: right;
+    	margin-top: -32px;
+		@media screen and (max-width: 768px) {
+			float: left;
+    		margin: 20px 0;
+    	}
+	}
 }
 .advanced-search-container {
 	@media screen and (max-width: 768px) {

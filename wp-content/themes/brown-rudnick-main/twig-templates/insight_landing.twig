@@ -22,7 +22,12 @@
 				{{ top_content }}
 			</div>
 			<div class="no__pad columns small-12 medium-12 large-12 x-large-12">
-				{{ post.post_content|shortcodes }}
+				<p class="title__text">
+					Subscribe to our email list
+				</p>
+				<div class="subscribe__content--wrapper">
+					{{ post.post_content|shortcodes }}
+				</div>
 			</div>
 			<div class="columns small-12 medium-12 large-12 no__pad margin-top-60 desktop-only">
 				<div class="no__pad">
@@ -136,13 +141,8 @@
 				<h4 class="title__text smaller insights margin-bottom--0">
 					Subscribe
 				</h4>
-				<form class="relative">
-					<input type="text" placeholder="EMAIL" class="subscribe">
-					</input>
-					<button class="sites-button advanced-search desktop__full--width" type="button">
-						SUBSCRIBE
-					</button>
-				</form>
+				{% set sidebar = sidebar|first %}
+				{{ sidebar.post_content|shortcodes }}
 				<span class="list-divider mobile mobile__centered smaller"></span>
 				<div class="text-align__center">
 					<h4 class="title__text smaller insights margin-bottom--0">

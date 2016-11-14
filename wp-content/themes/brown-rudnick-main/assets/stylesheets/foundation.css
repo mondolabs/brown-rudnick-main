@@ -464,6 +464,12 @@ h3.title {
 .margin-top-20 {
   margin-top: 20px; }
 
+.margin-top-neg-20 {
+  margin-top: -20px; }
+
+.margin-top-16 {
+  margin-top: 16px; }
+
 @media (max-width: 768px) {
   .mobile-margin-top-20 {
     margin-top: 20px; } }
@@ -8898,6 +8904,17 @@ a {
       display: block;
       width: 70%;
       margin: 0 auto; } }
+  .sites-button.subscribe {
+    width: 100%;
+    padding-left: auto;
+    padding-right: auto; }
+  .sites-button.subscribe__content--block {
+    float: right;
+    margin-top: -32px; }
+    @media screen and (max-width: 768px) {
+      .sites-button.subscribe__content--block {
+        float: left;
+        margin: 20px 0; } }
 
 @media screen and (max-width: 768px) {
   .advanced-search-container {
@@ -9037,6 +9054,13 @@ button.arrow {
   top: 10px;
   right: -14px;
   margin-top: -12px; }
+
+.subscribe__content--wrapper input[type="text"] {
+  width: 60%;
+  float: left; }
+  @media screen and (max-width: 768px) {
+    .subscribe__content--wrapper input[type="text"] {
+      width: 100%; } }
 
 #front-hero {
   background: url("../images/demo/hero-bg-foundation-6-small.svg") bottom center;
