@@ -74,6 +74,8 @@ function custom_insights_query_vars( $vars ) {
   $vars[] = 'date_query';
   $vars[] = 'type_query';
   $vars[] = 'keyword';
+  $vars[] = 'previous-parent';
+  $vars[] = 'previous-slug';
   return $vars;
 }
 

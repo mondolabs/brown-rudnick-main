@@ -36,8 +36,8 @@ var INSIGHTS = {
 
 		});
 		$('button#advancedSearchSubmit').click(function(event) {
-			var selects = $('select.advanced');
-			var queryStringBase = location.origin + "insight-advanced-search-results";
+			var selects = $('.advanced');
+			var queryStringBase = location.origin + "/insights/advanced-search-results";
 			var queryString = "";
 			var filters = [];
 			for (var i = selects.length - 1; i >= 0; i--) {

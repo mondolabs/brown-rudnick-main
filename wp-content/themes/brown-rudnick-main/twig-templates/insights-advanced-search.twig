@@ -83,7 +83,7 @@
 				            </div>
 				        {% endif %}    
 						<div class="columns large-6 medium-6 small-12">
-							<select id="allTypeSelect" name="language_query" class="clean___border inline__text grey__bold__text smaller advanced">
+							<select id="allTypeSelect" name="type_query" class="clean___border inline__text grey__bold__text smaller advanced">
 								<option value="">
 									TYPE
 								</option>
@@ -98,7 +98,10 @@
 								</option>
 							</select>
 			            </div>
-			            <input type="hidden" name="previous-page" value="{% if parent_link %}{{ parent_link }}{{ slug }}{% endif %}/{{ slug }}">
+			            {% if parent %}	
+			            	<input class="advanced" type="hidden" name="previous-parent" value="{{ parent }}">
+			            {% endif %}	
+			            <input class="advanced" type="hidden" name="previous-slug" value="{{ slug }}">
 						<div class="button__wrapper advanced__button columns large-12 small-12 medium-12 ">
 							<button id="advancedSearchSubmit" type="button" class="sites-button">
 								Submit

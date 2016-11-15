@@ -20,12 +20,12 @@ $args = array(
   'numberposts' => 1
 );
 $data['sidebar'] = get_posts($args);
+
 $data['contact_name'] = get_field('contact_name');
 $data['contact_title'] = get_field('contact_title');
 $data['contact_phone_number'] = get_field('contact_phone_number');
 $data['contact_email'] = get_field('contact_email');
-$data['top_content'] = get_field('top_content');
-$data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
+
 $slug = basename(get_permalink());
 $data['slug'] = $slug;
 $data['parent_link'] = get_permalink( $post->post_parent );
@@ -96,6 +96,9 @@ $data['all_practices'] = wp_get_object_terms( $all_ids, 'practice' );
 $data['geographies'] = wp_get_object_terms( $ids, 'geography' );
 $data['industries'] = wp_get_object_terms( $ids, 'industry' );
 $data['practices'] = wp_get_object_terms( $ids, 'practice' );
+	
+$data['previous_parent'] = get_query_var('previous-parent');
+$data['previous_slug'] = get_query_var('previous-slug');
 
 $date_query_term = get_query_var('date_query', "DATE");
 $type = get_query_var('type_query', array('alert', 'article', 'event' ));
@@ -112,7 +115,6 @@ $type =  str_replace("-slash-", " / ", $type);
 $geography =  str_replace("-slash-", " / ", $geography);
 $industry =  str_replace("-slash-", " / ", $industry);
 $practice =  str_replace("-slash-", " / ", $practice);
-
 
 $year_query = intval($year);
 $month_query = intval($month); 
@@ -157,7 +159,6 @@ function sort_objects_by_date($a, $b) {
 }
 
 usort($data['insights'], "sort_objects_by_date");
-$data['insights'] = array_slice($data['insights'], 0, 5 );
 $data['insights'] = array_reverse($data['insights']);
 
 ?>
