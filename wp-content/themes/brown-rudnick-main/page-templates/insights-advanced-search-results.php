@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Alerts
+Template Name: Insights Advanced Search Results
 */
 
 get_header();
