@@ -1,0 +1,1862 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Listo 1.0\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Julien Vasseur <julien@poigneedemainvirile.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: fr_FR\n"
+
+msgctxt "countries"
+msgid "Aruba"
+msgstr "Aruba"
+
+msgctxt "countries"
+msgid "Afghanistan"
+msgstr "Afghanistan"
+
+msgctxt "countries"
+msgid "Angola"
+msgstr "Angola"
+
+msgctxt "countries"
+msgid "Anguilla"
+msgstr "Anguilla"
+
+msgctxt "countries"
+msgid "Åland Islands"
+msgstr "Îles Åland"
+
+msgctxt "countries"
+msgid "Albania"
+msgstr "Albanie"
+
+msgctxt "countries"
+msgid "Andorra"
+msgstr "Andorre"
+
+msgctxt "countries"
+msgid "United Arab Emirates"
+msgstr "Émirats arabes unis"
+
+msgctxt "countries"
+msgid "Argentina"
+msgstr "Argentine"
+
+msgctxt "countries"
+msgid "Armenia"
+msgstr "Arménie"
+
+msgctxt "countries"
+msgid "American Samoa"
+msgstr "Samoa américaines"
+
+msgctxt "countries"
+msgid "Antarctica"
+msgstr "Antarctique"
+
+msgctxt "countries"
+msgid "French Southern Territories"
+msgstr "Terres australes et antarctiques françaises"
+
+msgctxt "countries"
+msgid "Antigua and Barbuda"
+msgstr "Antigua-et-Barbuda"
+
+msgctxt "countries"
+msgid "Australia"
+msgstr "Australie"
+
+msgctxt "countries"
+msgid "Austria"
+msgstr "Autriche"
+
+msgctxt "countries"
+msgid "Azerbaijan"
+msgstr "Azerbaïdjan"
+
+msgctxt "countries"
+msgid "Burundi"
+msgstr "Burundi"
+
+msgctxt "countries"
+msgid "Belgium"
+msgstr "Belgique"
+
+msgctxt "countries"
+msgid "Benin"
+msgstr "Bénin"
+
+msgctxt "countries"
+msgid "Bonaire, Sint Eustatius and Saba"
+msgstr "Pays-Bas caribéens"
+
+msgctxt "countries"
+msgid "Burkina Faso"
+msgstr "Burkina Faso"
+
+msgctxt "countries"
+msgid "Bangladesh"
+msgstr "Bangladesh"
+
+msgctxt "countries"
+msgid "Bulgaria"
+msgstr "Bulgarie"
+
+msgctxt "countries"
+msgid "Bahrain"
+msgstr "Bahreïn"
+
+msgctxt "countries"
+msgid "Bahamas"
+msgstr "Bahamas"
+
+msgctxt "countries"
+msgid "Bosnia and Herzegovina"
+msgstr "Bosnie-Herzégovine"
+
+msgctxt "countries"
+msgid "Saint Barthélemy"
+msgstr "Saint-Barthélemy"
+
+msgctxt "countries"
+msgid "Belarus"
+msgstr "Biélorussie"
+
+msgctxt "countries"
+msgid "Belize"
+msgstr "Belize"
+
+msgctxt "countries"
+msgid "Bermuda"
+msgstr "Bermudes"
+
+msgctxt "countries"
+msgid "Bolivia, Plurinational State of"
+msgstr "Bolivie"
+
+msgctxt "countries"
+msgid "Brazil"
+msgstr "Brésil"
+
+msgctxt "countries"
+msgid "Barbados"
+msgstr "Barbade"
+
+msgctxt "countries"
+msgid "Brunei Darussalam"
+msgstr "Brunei"
+
+msgctxt "countries"
+msgid "Bhutan"
+msgstr "Bhoutan"
+
+msgctxt "countries"
+msgid "Bouvet Island"
+msgstr "Île Bouvet"
+
+msgctxt "countries"
+msgid "Botswana"
+msgstr "Botswana"
+
+msgctxt "countries"
+msgid "Central African Republic"
+msgstr "République centrafricaine"
+
+msgctxt "countries"
+msgid "Canada"
+msgstr "Canada"
+
+msgctxt "countries"
+msgid "Cocos (Keeling) Islands"
+msgstr "Îles Cocos"
+
+msgctxt "countries"
+msgid "Switzerland"
+msgstr "Suisse"
+
+msgctxt "countries"
+msgid "Chile"
+msgstr "Chili"
+
+msgctxt "countries"
+msgid "China"
+msgstr "Chine"
+
+msgctxt "countries"
+msgid "Côte d'Ivoire"
+msgstr "Côte d'Ivoire"
+
+msgctxt "countries"
+msgid "Cameroon"
+msgstr "Cameroun"
+
+msgctxt "countries"
+msgid "Congo, the Democratic Republic of the"
+msgstr "République démocratique du Congo"
+
+msgctxt "countries"
+msgid "Congo"
+msgstr "République du Congo"
+
+msgctxt "countries"
+msgid "Cook Islands"
+msgstr "Îles Cook"
+
+msgctxt "countries"
+msgid "Colombia"
+msgstr "Colombie"
+
+msgctxt "countries"
+msgid "Comoros"
+msgstr "Comores (pays)"
+
+msgctxt "countries"
+msgid "Cape Verde"
+msgstr "Cap-Vert"
+
+msgctxt "countries"
+msgid "Costa Rica"
+msgstr "Costa Rica"
+
+msgctxt "countries"
+msgid "Cuba"
+msgstr "Cuba"
+
+msgctxt "countries"
+msgid "Curaçao"
+msgstr "Curaçao"
+
+msgctxt "countries"
+msgid "Christmas Island"
+msgstr "Île Christmas"
+
+msgctxt "countries"
+msgid "Cayman Islands"
+msgstr "Îles Caïmans"
+
+msgctxt "countries"
+msgid "Cyprus"
+msgstr "Chypre (pays)"
+
+msgctxt "countries"
+msgid "Czech Republic"
+msgstr "République tchèque"
+
+msgctxt "countries"
+msgid "Germany"
+msgstr "Allemagne"
+
+msgctxt "countries"
+msgid "Djibouti"
+msgstr "Djibouti"
+
+msgctxt "countries"
+msgid "Dominica"
+msgstr "Dominique"
+
+msgctxt "countries"
+msgid "Denmark"
+msgstr "Danemark"
+
+msgctxt "countries"
+msgid "Dominican Republic"
+msgstr "République dominicaine"
+
+msgctxt "countries"
+msgid "Algeria"
+msgstr "Algérie"
+
+msgctxt "countries"
+msgid "Ecuador"
+msgstr "Équateur"
+
+msgctxt "countries"
+msgid "Egypt"
+msgstr "Égypte"
+
+msgctxt "countries"
+msgid "Eritrea"
+msgstr "Érythrée"
+
+msgctxt "countries"
+msgid "Western Sahara"
+msgstr "République arabe sahraouie démocratique"
+
+msgctxt "countries"
+msgid "Spain"
+msgstr "Espagne"
+
+msgctxt "countries"
+msgid "Estonia"
+msgstr "Estonie"
+
+msgctxt "countries"
+msgid "Ethiopia"
+msgstr "Éthiopie"
+
+msgctxt "countries"
+msgid "Finland"
+msgstr "Finlande"
+
+msgctxt "countries"
+msgid "Fiji"
+msgstr "Fidji"
+
+msgctxt "countries"
+msgid "Falkland Islands (Malvinas)"
+msgstr "Malouines"
+
+msgctxt "countries"
+msgid "France"
+msgstr "France"
+
+msgctxt "countries"
+msgid "Faroe Islands"
+msgstr "Îles Féroé"
+
+msgctxt "countries"
+msgid "Micronesia, Federated States of"
+msgstr "Micronésie"
+
+msgctxt "countries"
+msgid "Gabon"
+msgstr "Gabon"
+
+msgctxt "countries"
+msgid "United Kingdom"
+msgstr "Royaume-Uni"
+
+msgctxt "countries"
+msgid "Georgia"
+msgstr "Géorgie"
+
+msgctxt "countries"
+msgid "Guernsey"
+msgstr "Guernesey"
+
+msgctxt "countries"
+msgid "Ghana"
+msgstr "Ghana"
+
+msgctxt "countries"
+msgid "Gibraltar"
+msgstr "Gibraltar"
+
+msgctxt "countries"
+msgid "Guinea"
+msgstr "Guinée"
+
+msgctxt "countries"
+msgid "Guadeloupe"
+msgstr "Guadeloupe"
+
+msgctxt "countries"
+msgid "Gambia"
+msgstr "Gambie"
+
+msgctxt "countries"
+msgid "Guinea-Bissau"
+msgstr "Guinée-Bissau"
+
+msgctxt "countries"
+msgid "Equatorial Guinea"
+msgstr "Guinée équatoriale"
+
+msgctxt "countries"
+msgid "Greece"
+msgstr "Grèce"
+
+msgctxt "countries"
+msgid "Grenada"
+msgstr "Grenade"
+
+msgctxt "countries"
+msgid "Greenland"
+msgstr "Groenland"
+
+msgctxt "countries"
+msgid "Guatemala"
+msgstr "Guatemala"
+
+msgctxt "countries"
+msgid "French Guiana"
+msgstr "Guyane"
+
+msgctxt "countries"
+msgid "Guam"
+msgstr "Guam"
+
+msgctxt "countries"
+msgid "Guyana"
+msgstr "Guyana"
+
+msgctxt "countries"
+msgid "Hong Kong"
+msgstr "Hong Kong"
+
+msgctxt "countries"
+msgid "Heard Island and McDonald Islands"
+msgstr "Îles Heard-et-MacDonald"
+
+msgctxt "countries"
+msgid "Honduras"
+msgstr "Honduras"
+
+msgctxt "countries"
+msgid "Croatia"
+msgstr "Croatie"
+
+msgctxt "countries"
+msgid "Haiti"
+msgstr "Haïti"
+
+msgctxt "countries"
+msgid "Hungary"
+msgstr "Hongrie"
+
+msgctxt "countries"
+msgid "Indonesia"
+msgstr "Indonésie"
+
+msgctxt "countries"
+msgid "Isle of Man"
+msgstr "Île de Man"
+
+msgctxt "countries"
+msgid "India"
+msgstr "Inde"
+
+msgctxt "countries"
+msgid "British Indian Ocean Territory"
+msgstr "Territoire britannique de l'océan Indien"
+
+msgctxt "countries"
+msgid "Ireland"
+msgstr "Irlande"
+
+msgctxt "countries"
+msgid "Iran, Islamic Republic of"
+msgstr "Iran"
+
+msgctxt "countries"
+msgid "Iraq"
+msgstr "Irak"
+
+msgctxt "countries"
+msgid "Iceland"
+msgstr "Islande"
+
+msgctxt "countries"
+msgid "Israel"
+msgstr "Israël"
+
+msgctxt "countries"
+msgid "Italy"
+msgstr "Italie"
+
+msgctxt "countries"
+msgid "Jamaica"
+msgstr "Jamaïque"
+
+msgctxt "countries"
+msgid "Jersey"
+msgstr "Jersey"
+
+msgctxt "countries"
+msgid "Jordan"
+msgstr "Jordanie"
+
+msgctxt "countries"
+msgid "Japan"
+msgstr "Japon"
+
+msgctxt "countries"
+msgid "Kazakhstan"
+msgstr "Kazakhstan"
+
+msgctxt "countries"
+msgid "Kenya"
+msgstr "Kenya"
+
+msgctxt "countries"
+msgid "Kyrgyzstan"
+msgstr "Kirghizistan"
+
+msgctxt "countries"
+msgid "Cambodia"
+msgstr "Cambodge"
+
+msgctxt "countries"
+msgid "Kiribati"
+msgstr "Kiribati"
+
+msgctxt "countries"
+msgid "Saint Kitts and Nevis"
+msgstr "Saint-Christophe-et-Niévès"
+
+msgctxt "countries"
+msgid "Korea, Republic of"
+msgstr "Corée du Sud"
+
+msgctxt "countries"
+msgid "Kuwait"
+msgstr "Koweït"
+
+msgctxt "countries"
+msgid "Lao People's Democratic Republic"
+msgstr "Laos"
+
+msgctxt "countries"
+msgid "Lebanon"
+msgstr "Liban"
+
+msgctxt "countries"
+msgid "Liberia"
+msgstr "Liberia"
+
+msgctxt "countries"
+msgid "Libya"
+msgstr "Libye"
+
+msgctxt "countries"
+msgid "Saint Lucia"
+msgstr "Sainte-Lucie"
+
+msgctxt "countries"
+msgid "Liechtenstein"
+msgstr "Liechtenstein"
+
+msgctxt "countries"
+msgid "Sri Lanka"
+msgstr "Sri Lanka"
+
+msgctxt "countries"
+msgid "Lesotho"
+msgstr "Lesotho"
+
+msgctxt "countries"
+msgid "Lithuania"
+msgstr "Lituanie"
+
+msgctxt "countries"
+msgid "Luxembourg"
+msgstr "Luxembourg"
+
+msgctxt "countries"
+msgid "Latvia"
+msgstr "Lettonie"
+
+msgctxt "countries"
+msgid "Macao"
+msgstr "Macao"
+
+msgctxt "countries"
+msgid "Saint Martin (French part)"
+msgstr "Saint-Martin"
+
+msgctxt "countries"
+msgid "Morocco"
+msgstr "Maroc"
+
+msgctxt "countries"
+msgid "Monaco"
+msgstr "Monaco"
+
+msgctxt "countries"
+msgid "Moldova, Republic of"
+msgstr "Moldavie"
+
+msgctxt "countries"
+msgid "Madagascar"
+msgstr "Madagascar"
+
+msgctxt "countries"
+msgid "Maldives"
+msgstr "Maldives"
+
+msgctxt "countries"
+msgid "Mexico"
+msgstr "Mexique"
+
+msgctxt "countries"
+msgid "Marshall Islands"
+msgstr "Îles Marshall"
+
+msgctxt "countries"
+msgid "Macedonia, the former Yugoslav Republic of"
+msgstr "Macédoine"
+
+msgctxt "countries"
+msgid "Mali"
+msgstr "Mali"
+
+msgctxt "countries"
+msgid "Malta"
+msgstr "Malte"
+
+msgctxt "countries"
+msgid "Myanmar"
+msgstr "Birmanie"
+
+msgctxt "countries"
+msgid "Montenegro"
+msgstr "Monténégro"
+
+msgctxt "countries"
+msgid "Mongolia"
+msgstr "Mongolie"
+
+msgctxt "countries"
+msgid "Northern Mariana Islands"
+msgstr "Îles Mariannes du Nord"
+
+msgctxt "countries"
+msgid "Mozambique"
+msgstr "Mozambique"
+
+msgctxt "countries"
+msgid "Mauritania"
+msgstr "Mauritanie"
+
+msgctxt "countries"
+msgid "Montserrat"
+msgstr "Montserrat"
+
+msgctxt "countries"
+msgid "Martinique"
+msgstr "Martinique"
+
+msgctxt "countries"
+msgid "Mauritius"
+msgstr "Maurice"
+
+msgctxt "countries"
+msgid "Malawi"
+msgstr "Malawi"
+
+msgctxt "countries"
+msgid "Malaysia"
+msgstr "Malaisie"
+
+msgctxt "countries"
+msgid "Mayotte"
+msgstr "Mayotte"
+
+msgctxt "countries"
+msgid "Namibia"
+msgstr "Namibie"
+
+msgctxt "countries"
+msgid "New Caledonia"
+msgstr "Nouvelle-Calédonie"
+
+msgctxt "countries"
+msgid "Niger"
+msgstr "Niger"
+
+msgctxt "countries"
+msgid "Norfolk Island"
+msgstr "Île Norfolk"
+
+msgctxt "countries"
+msgid "Nigeria"
+msgstr "Nigeria"
+
+msgctxt "countries"
+msgid "Nicaragua"
+msgstr "Nicaragua"
+
+msgctxt "countries"
+msgid "Niue"
+msgstr "Niue"
+
+msgctxt "countries"
+msgid "Netherlands"
+msgstr "Pays-Bas"
+
+msgctxt "countries"
+msgid "Norway"
+msgstr "Norvège"
+
+msgctxt "countries"
+msgid "Nepal"
+msgstr "Népal"
+
+msgctxt "countries"
+msgid "Nauru"
+msgstr "Nauru"
+
+msgctxt "countries"
+msgid "New Zealand"
+msgstr "Nouvelle-Zélande"
+
+msgctxt "countries"
+msgid "Oman"
+msgstr "Oman"
+
+msgctxt "countries"
+msgid "Pakistan"
+msgstr "Pakistan"
+
+msgctxt "countries"
+msgid "Panama"
+msgstr "Panama"
+
+msgctxt "countries"
+msgid "Pitcairn"
+msgstr "Îles Pitcairn"
+
+msgctxt "countries"
+msgid "Peru"
+msgstr "Pérou"
+
+msgctxt "countries"
+msgid "Philippines"
+msgstr "Philippines"
+
+msgctxt "countries"
+msgid "Palau"
+msgstr "Palaos"
+
+msgctxt "countries"
+msgid "Papua New Guinea"
+msgstr "Papouasie-Nouvelle-Guinée"
+
+msgctxt "countries"
+msgid "Poland"
+msgstr "Pologne"
+
+msgctxt "countries"
+msgid "Puerto Rico"
+msgstr "Porto Rico"
+
+msgctxt "countries"
+msgid "Korea, Democratic People's Republic of"
+msgstr "Corée du Nord"
+
+msgctxt "countries"
+msgid "Portugal"
+msgstr "Portugal"
+
+msgctxt "countries"
+msgid "Paraguay"
+msgstr "Paraguay"
+
+msgctxt "countries"
+msgid "Palestine, State of"
+msgstr "Palestine"
+
+msgctxt "countries"
+msgid "French Polynesia"
+msgstr "Polynésie française"
+
+msgctxt "countries"
+msgid "Qatar"
+msgstr "Qatar"
+
+msgctxt "countries"
+msgid "Réunion"
+msgstr "La Réunion"
+
+msgctxt "countries"
+msgid "Romania"
+msgstr "Roumanie"
+
+msgctxt "countries"
+msgid "Russian Federation"
+msgstr "Russie"
+
+msgctxt "countries"
+msgid "Rwanda"
+msgstr "Rwanda"
+
+msgctxt "countries"
+msgid "Saudi Arabia"
+msgstr "Arabie saoudite"
+
+msgctxt "countries"
+msgid "Sudan"
+msgstr "Soudan"
+
+msgctxt "countries"
+msgid "Senegal"
+msgstr "Sénégal"
+
+msgctxt "countries"
+msgid "Singapore"
+msgstr "Singapour"
+
+msgctxt "countries"
+msgid "South Georgia and the South Sandwich Islands"
+msgstr "Géorgie du Sud-et-les Îles Sandwich du Sud"
+
+msgctxt "countries"
+msgid "Saint Helena, Ascension and Tristan da Cunha"
+msgstr "Sainte-Hélène, Ascension et Tristan da Cunha"
+
+msgctxt "countries"
+msgid "Svalbard and Jan Mayen"
+msgstr "Svalbard et ile Jan Mayen"
+
+msgctxt "countries"
+msgid "Solomon Islands"
+msgstr "Salomon"
+
+msgctxt "countries"
+msgid "Sierra Leone"
+msgstr "Sierra Leone"
+
+msgctxt "countries"
+msgid "El Salvador"
+msgstr "Salvador"
+
+msgctxt "countries"
+msgid "San Marino"
+msgstr "Saint-Marin"
+
+msgctxt "countries"
+msgid "Somalia"
+msgstr "Somalie"
+
+msgctxt "countries"
+msgid "Saint Pierre and Miquelon"
+msgstr "Saint-Pierre-et-Miquelon"
+
+msgctxt "countries"
+msgid "Serbia"
+msgstr "Serbie"
+
+msgctxt "countries"
+msgid "South Sudan"
+msgstr "Soudan du Sud"
+
+msgctxt "countries"
+msgid "Sao Tome and Principe"
+msgstr "Sao Tomé-et-Principe"
+
+msgctxt "countries"
+msgid "Suriname"
+msgstr "Suriname"
+
+msgctxt "countries"
+msgid "Slovakia"
+msgstr "Slovaquie"
+
+msgctxt "countries"
+msgid "Slovenia"
+msgstr "Slovénie"
+
+msgctxt "countries"
+msgid "Sweden"
+msgstr "Suède"
+
+msgctxt "countries"
+msgid "Swaziland"
+msgstr "Swaziland"
+
+msgctxt "countries"
+msgid "Sint Maarten (Dutch part)"
+msgstr "Sint Maarten"
+
+msgctxt "countries"
+msgid "Seychelles"
+msgstr "Seychelles"
+
+msgctxt "countries"
+msgid "Syrian Arab Republic"
+msgstr "Syrie"
+
+msgctxt "countries"
+msgid "Turks and Caicos Islands"
+msgstr "Îles Turques-et-Caïques"
+
+msgctxt "countries"
+msgid "Chad"
+msgstr "Tchad"
+
+msgctxt "countries"
+msgid "Togo"
+msgstr "Togo"
+
+msgctxt "countries"
+msgid "Thailand"
+msgstr "Thaïlande"
+
+msgctxt "countries"
+msgid "Tajikistan"
+msgstr "Tadjikistan"
+
+msgctxt "countries"
+msgid "Tokelau"
+msgstr "Tokelau"
+
+msgctxt "countries"
+msgid "Turkmenistan"
+msgstr "Turkménistan"
+
+msgctxt "countries"
+msgid "Timor-Leste"
+msgstr "Timor oriental"
+
+msgctxt "countries"
+msgid "Tonga"
+msgstr "Tonga"
+
+msgctxt "countries"
+msgid "Trinidad and Tobago"
+msgstr "Trinité-et-Tobago"
+
+msgctxt "countries"
+msgid "Tunisia"
+msgstr "Tunisie"
+
+msgctxt "countries"
+msgid "Turkey"
+msgstr "Turquie"
+
+msgctxt "countries"
+msgid "Tuvalu"
+msgstr "Tuvalu"
+
+msgctxt "countries"
+msgid "Taiwan, Province of China"
+msgstr "Taïwan / République de Chine (Taïwan)"
+
+msgctxt "countries"
+msgid "Tanzania, United Republic of"
+msgstr "Tanzanie"
+
+msgctxt "countries"
+msgid "Uganda"
+msgstr "Ouganda"
+
+msgctxt "countries"
+msgid "Ukraine"
+msgstr "Ukraine"
+
+msgctxt "countries"
+msgid "United States Minor Outlying Islands"
+msgstr "Îles mineures éloignées des États-Unis"
+
+msgctxt "countries"
+msgid "Uruguay"
+msgstr "Uruguay"
+
+msgctxt "countries"
+msgid "United States"
+msgstr "États-Unis"
+
+msgctxt "countries"
+msgid "Uzbekistan"
+msgstr "Ouzbékistan"
+
+msgctxt "countries"
+msgid "Holy See (Vatican City State)"
+msgstr "Saint-Siège (État de la Cité du Vatican)"
+
+msgctxt "countries"
+msgid "Saint Vincent and the Grenadines"
+msgstr "Saint-Vincent-et-les Grenadines"
+
+msgctxt "countries"
+msgid "Venezuela, Bolivarian Republic of"
+msgstr "Venezuela"
+
+msgctxt "countries"
+msgid "Virgin Islands, British"
+msgstr "Îles Vierges britanniques"
+
+msgctxt "countries"
+msgid "Virgin Islands, U.S."
+msgstr "Îles Vierges des États-Unis"
+
+msgctxt "countries"
+msgid "Viet Nam"
+msgstr "Viêt Nam"
+
+msgctxt "countries"
+msgid "Vanuatu"
+msgstr "Vanuatu"
+
+msgctxt "countries"
+msgid "Wallis and Futuna"
+msgstr "Wallis-et-Futuna"
+
+msgctxt "countries"
+msgid "Samoa"
+msgstr "Samoa"
+
+msgctxt "countries"
+msgid "Yemen"
+msgstr "Yémen"
+
+msgctxt "countries"
+msgid "South Africa"
+msgstr "Afrique du Sud"
+
+msgctxt "countries"
+msgid "Zambia"
+msgstr "Zambie"
+
+msgctxt "countries"
+msgid "Zimbabwe"
+msgstr "Zimbabwe"
+
+msgctxt "us_subdivisions"
+msgid "Alaska"
+msgstr "Alaska"
+
+msgctxt "us_subdivisions"
+msgid "Alabama"
+msgstr "Alabama"
+
+msgctxt "us_subdivisions"
+msgid "Arkansas"
+msgstr "Arkansas"
+
+msgctxt "us_subdivisions"
+msgid "American Samoa"
+msgstr "Samoa américaines"
+
+msgctxt "us_subdivisions"
+msgid "Arizona"
+msgstr "Arizona"
+
+msgctxt "us_subdivisions"
+msgid "California"
+msgstr "Californie"
+
+msgctxt "us_subdivisions"
+msgid "Colorado"
+msgstr "Colorado"
+
+msgctxt "us_subdivisions"
+msgid "Connecticut"
+msgstr "Connecticut"
+
+msgctxt "us_subdivisions"
+msgid "District of Columbia"
+msgstr "District de Columbia"
+
+msgctxt "us_subdivisions"
+msgid "Delaware"
+msgstr "Delaware"
+
+msgctxt "us_subdivisions"
+msgid "Florida"
+msgstr "Floride"
+
+msgctxt "us_subdivisions"
+msgid "Georgia"
+msgstr "Géorgie"
+
+msgctxt "us_subdivisions"
+msgid "Guam"
+msgstr "Guam"
+
+msgctxt "us_subdivisions"
+msgid "Hawaii"
+msgstr "Hawaii"
+
+msgctxt "us_subdivisions"
+msgid "Iowa"
+msgstr "Iowa"
+
+msgctxt "us_subdivisions"
+msgid "Idaho"
+msgstr "Idaho"
+
+msgctxt "us_subdivisions"
+msgid "Illinois"
+msgstr "Illinois"
+
+msgctxt "us_subdivisions"
+msgid "Indiana"
+msgstr "Indiana"
+
+msgctxt "us_subdivisions"
+msgid "Kansas"
+msgstr "Kansas"
+
+msgctxt "us_subdivisions"
+msgid "Kentucky"
+msgstr "Kentucky"
+
+msgctxt "us_subdivisions"
+msgid "Louisiana"
+msgstr "Louisiane"
+
+msgctxt "us_subdivisions"
+msgid "Massachusetts"
+msgstr "Massachusetts"
+
+msgctxt "us_subdivisions"
+msgid "Maryland"
+msgstr "Maryland"
+
+msgctxt "us_subdivisions"
+msgid "Maine"
+msgstr "Maine"
+
+msgctxt "us_subdivisions"
+msgid "Michigan"
+msgstr "Michigan"
+
+msgctxt "us_subdivisions"
+msgid "Minnesota"
+msgstr "Minnesota"
+
+msgctxt "us_subdivisions"
+msgid "Missouri"
+msgstr "Missouri"
+
+msgctxt "us_subdivisions"
+msgid "Northern Mariana Islands"
+msgstr "Îles Mariannes du Nord"
+
+msgctxt "us_subdivisions"
+msgid "Mississippi"
+msgstr "Mississippi"
+
+msgctxt "us_subdivisions"
+msgid "Montana"
+msgstr "Montana"
+
+msgctxt "us_subdivisions"
+msgid "North Carolina"
+msgstr "North Carolina"
+
+msgctxt "us_subdivisions"
+msgid "North Dakota"
+msgstr "North Dakota"
+
+msgctxt "us_subdivisions"
+msgid "Nebraska"
+msgstr "Nebraska"
+
+msgctxt "us_subdivisions"
+msgid "New Hampshire"
+msgstr "New Hampshire"
+
+msgctxt "us_subdivisions"
+msgid "New Jersey"
+msgstr "New Jersey"
+
+msgctxt "us_subdivisions"
+msgid "New Mexico"
+msgstr "Nouveau-Mexique"
+
+msgctxt "us_subdivisions"
+msgid "Nevada"
+msgstr "Nevada"
+
+msgctxt "us_subdivisions"
+msgid "New York"
+msgstr "New York"
+
+msgctxt "us_subdivisions"
+msgid "Ohio"
+msgstr "Ohio"
+
+msgctxt "us_subdivisions"
+msgid "Oklahoma"
+msgstr "Oklahoma"
+
+msgctxt "us_subdivisions"
+msgid "Oregon"
+msgstr "Oregon"
+
+msgctxt "us_subdivisions"
+msgid "Pennsylvania"
+msgstr "Pennsylvanie"
+
+msgctxt "us_subdivisions"
+msgid "Puerto Rico"
+msgstr "Porto Rico"
+
+msgctxt "us_subdivisions"
+msgid "Rhode Island"
+msgstr "Rhode Island"
+
+msgctxt "us_subdivisions"
+msgid "South Carolina"
+msgstr "Caroline du Sud"
+
+msgctxt "us_subdivisions"
+msgid "South Dakota"
+msgstr "Dakota du Sud"
+
+msgctxt "us_subdivisions"
+msgid "Tennessee"
+msgstr "Tennessee"
+
+msgctxt "us_subdivisions"
+msgid "Texas"
+msgstr "Texas"
+
+msgctxt "us_subdivisions"
+msgid "United States Minor Outlying Islands"
+msgstr "Îles mineures éloignées des États-Unis"
+
+msgctxt "us_subdivisions"
+msgid "Utah"
+msgstr "Utah"
+
+msgctxt "us_subdivisions"
+msgid "Virginia"
+msgstr "Virginie"
+
+msgctxt "us_subdivisions"
+msgid "Virgin Islands, U.S."
+msgstr "Îles Vierges américaines"
+
+msgctxt "us_subdivisions"
+msgid "Vermont"
+msgstr "Vermont"
+
+msgctxt "us_subdivisions"
+msgid "Washington"
+msgstr "Washington"
+
+msgctxt "us_subdivisions"
+msgid "Wisconsin"
+msgstr "Wisconsin"
+
+msgctxt "us_subdivisions"
+msgid "West Virginia"
+msgstr "Virginie-Occidentale"
+
+msgctxt "us_subdivisions"
+msgid "Wyoming"
+msgstr "Wyoming"
+
+msgctxt "currencies"
+msgid "United Arab Emirates dirham"
+msgstr "Dirham des Émirats arabes unis"
+
+msgctxt "currencies"
+msgid "Afghan afghani"
+msgstr "Afghani"
+
+msgctxt "currencies"
+msgid "Albanian lek"
+msgstr "Lek albanais"
+
+msgctxt "currencies"
+msgid "Armenian dram"
+msgstr "Dram"
+
+msgctxt "currencies"
+msgid "Netherlands Antillean guilder"
+msgstr "Florin des Antilles néerlandaises"
+
+msgctxt "currencies"
+msgid "Angolan kwanza"
+msgstr "Kwanza angolais"
+
+msgctxt "currencies"
+msgid "Argentine peso"
+msgstr "Peso argentin"
+
+msgctxt "currencies"
+msgid "Australian dollar"
+msgstr "Dollar australien"
+
+msgctxt "currencies"
+msgid "Aruban florin"
+msgstr "Florin arubais"
+
+msgctxt "currencies"
+msgid "Azerbaijani manat"
+msgstr "Manat azerbaïdjanais"
+
+msgctxt "currencies"
+msgid "Bosnia and Herzegovina convertible mark"
+msgstr "Mark convertible"
+
+msgctxt "currencies"
+msgid "Barbados dollar"
+msgstr "Dollar barbadien"
+
+msgctxt "currencies"
+msgid "Bangladeshi taka"
+msgstr "Taka"
+
+msgctxt "currencies"
+msgid "Bulgarian lev"
+msgstr "Lev bulgare"
+
+msgctxt "currencies"
+msgid "Bahraini dinar"
+msgstr "Dinar bahreïni"
+
+msgctxt "currencies"
+msgid "Burundian franc"
+msgstr "Franc burundais"
+
+msgctxt "currencies"
+msgid "Bermudian dollar"
+msgstr "Dollar bermudien"
+
+msgctxt "currencies"
+msgid "Brunei dollar"
+msgstr "Dollar de Brunei"
+
+msgctxt "currencies"
+msgid "Boliviano"
+msgstr "Boliviano bolivien"
+
+msgctxt "currencies"
+msgid "Brazilian real"
+msgstr "Réal brésilien"
+
+msgctxt "currencies"
+msgid "Bahamian dollar"
+msgstr "Dollar bahaméen"
+
+msgctxt "currencies"
+msgid "Bhutanese ngultrum"
+msgstr "Ngultrum"
+
+msgctxt "currencies"
+msgid "Botswana pula"
+msgstr "Pula botswanais"
+
+msgctxt "currencies"
+msgid "Belarusian ruble"
+msgstr "Rouble biélorusse"
+
+msgctxt "currencies"
+msgid "Belize dollar"
+msgstr "Dollar bélizien"
+
+msgctxt "currencies"
+msgid "Canadian dollar"
+msgstr "Dollar canadien"
+
+msgctxt "currencies"
+msgid "Congolese franc"
+msgstr "Franc congolais"
+
+msgctxt "currencies"
+msgid "Swiss franc"
+msgstr "Franc suisse"
+
+msgctxt "currencies"
+msgid "Chilean peso"
+msgstr "Peso chilien"
+
+msgctxt "currencies"
+msgid "Chinese yuan"
+msgstr "Yuan"
+
+msgctxt "currencies"
+msgid "Colombian peso"
+msgstr "Peso colombien"
+
+msgctxt "currencies"
+msgid "Costa Rican colon"
+msgstr "Colon costaricien"
+
+msgctxt "currencies"
+msgid "Cuban peso"
+msgstr "Peso cubain"
+
+msgctxt "currencies"
+msgid "Cape Verde escudo"
+msgstr "Escudo cap-verdien"
+
+msgctxt "currencies"
+msgid "Czech koruna"
+msgstr "Couronne tchèque"
+
+msgctxt "currencies"
+msgid "Djiboutian franc"
+msgstr "Franc de Djibouti"
+
+msgctxt "currencies"
+msgid "Danish krone"
+msgstr "Couronne danoise"
+
+msgctxt "currencies"
+msgid "Dominican peso"
+msgstr "Peso dominicain"
+
+msgctxt "currencies"
+msgid "Algerian dinar"
+msgstr "Dinar algérien"
+
+msgctxt "currencies"
+msgid "Egyptian pound"
+msgstr "Livre égyptienne"
+
+msgctxt "currencies"
+msgid "Eritrean nakfa"
+msgstr "Nakfa érythréen"
+
+msgctxt "currencies"
+msgid "Ethiopian birr"
+msgstr "Birr éthiopien"
+
+msgctxt "currencies"
+msgid "Euro"
+msgstr "Euro"
+
+msgctxt "currencies"
+msgid "Fiji dollar"
+msgstr "Dollar de Fidji"
+
+msgctxt "currencies"
+msgid "Falkland Islands pound"
+msgstr "Livre des Îles Malouines"
+
+msgctxt "currencies"
+msgid "Pound sterling"
+msgstr "Livre sterling"
+
+msgctxt "currencies"
+msgid "Georgian lari"
+msgstr "Lari"
+
+msgctxt "currencies"
+msgid "Ghanaian cedi"
+msgstr "Cedi"
+
+msgctxt "currencies"
+msgid "Gibraltar pound"
+msgstr "Livre de Gibraltar"
+
+msgctxt "currencies"
+msgid "Gambian dalasi"
+msgstr "Dalasi gambien"
+
+msgctxt "currencies"
+msgid "Guinean franc"
+msgstr "Franc guinéen"
+
+msgctxt "currencies"
+msgid "Guatemalan quetzal"
+msgstr "Quetzal guatémaltèque"
+
+msgctxt "currencies"
+msgid "Guyanese dollar"
+msgstr "Dollar guyanien"
+
+msgctxt "currencies"
+msgid "Hong Kong dollar"
+msgstr "Dollar de Hong Kong"
+
+msgctxt "currencies"
+msgid "Honduran lempira"
+msgstr "Lempira hondurien"
+
+msgctxt "currencies"
+msgid "Croatian kuna"
+msgstr "Kuna"
+
+msgctxt "currencies"
+msgid "Haitian gourde"
+msgstr "Gourde haïtienne"
+
+msgctxt "currencies"
+msgid "Hungarian forint"
+msgstr "Forint hongrois"
+
+msgctxt "currencies"
+msgid "Indonesian rupiah"
+msgstr "Roupie indonésienne"
+
+msgctxt "currencies"
+msgid "Israeli new shekel"
+msgstr "Shekel"
+
+msgctxt "currencies"
+msgid "Indian rupee"
+msgstr "Roupie indienne"
+
+msgctxt "currencies"
+msgid "Iraqi dinar"
+msgstr "Dinar irakien"
+
+msgctxt "currencies"
+msgid "Iranian rial"
+msgstr "Rial iranien"
+
+msgctxt "currencies"
+msgid "Icelandic króna"
+msgstr "Couronne islandaise"
+
+msgctxt "currencies"
+msgid "Jamaican dollar"
+msgstr "Dollar jamaïcain"
+
+msgctxt "currencies"
+msgid "Jordanian dinar"
+msgstr "Dinar jordanien"
+
+msgctxt "currencies"
+msgid "Japanese yen"
+msgstr "Yen"
+
+msgctxt "currencies"
+msgid "Kenyan shilling"
+msgstr "Shilling kényan"
+
+msgctxt "currencies"
+msgid "Kyrgyzstani som"
+msgstr "Som"
+
+msgctxt "currencies"
+msgid "Cambodian riel"
+msgstr "Riel"
+
+msgctxt "currencies"
+msgid "Comoro franc"
+msgstr "Franc comorien"
+
+msgctxt "currencies"
+msgid "North Korean won"
+msgstr "Won nord-coréen"
+
+msgctxt "currencies"
+msgid "South Korean won"
+msgstr "Won sud-coréen"
+
+msgctxt "currencies"
+msgid "Kuwaiti dinar"
+msgstr "Dinar koweïtien"
+
+msgctxt "currencies"
+msgid "Cayman Islands dollar"
+msgstr "Dollar des îles Caïmans"
+
+msgctxt "currencies"
+msgid "Kazakhstani tenge"
+msgstr "Tenge"
+
+msgctxt "currencies"
+msgid "Lao kip"
+msgstr "Kip"
+
+msgctxt "currencies"
+msgid "Lebanese pound"
+msgstr "Livre libanaise"
+
+msgctxt "currencies"
+msgid "Sri Lankan rupee"
+msgstr "Roupie srilankaise"
+
+msgctxt "currencies"
+msgid "Liberian dollar"
+msgstr "Dollar libérien"
+
+msgctxt "currencies"
+msgid "Lesotho loti"
+msgstr "Loti lesothan"
+
+msgctxt "currencies"
+msgid "Lithuanian litas"
+msgstr "Litas"
+
+msgctxt "currencies"
+msgid "Libyan dinar"
+msgstr "Dinar libyen"
+
+msgctxt "currencies"
+msgid "Moroccan dirham"
+msgstr "Dirham marocain"
+
+msgctxt "currencies"
+msgid "Moldovan leu"
+msgstr "Leu moldave"
+
+msgctxt "currencies"
+msgid "Malagasy ariary"
+msgstr "Ariary malgache"
+
+msgctxt "currencies"
+msgid "Macedonian denar"
+msgstr "Denar"
+
+msgctxt "currencies"
+msgid "Myanma kyat"
+msgstr "Kyat"
+
+msgctxt "currencies"
+msgid "Mongolian tugrik"
+msgstr "Tugrik"
+
+msgctxt "currencies"
+msgid "Macanese pataca"
+msgstr "Pataca"
+
+msgctxt "currencies"
+msgid "Mauritanian ouguiya"
+msgstr "Ouguiya mauritanien"
+
+msgctxt "currencies"
+msgid "Mauritian rupee"
+msgstr "Roupie mauricienne"
+
+msgctxt "currencies"
+msgid "Maldivian rufiyaa"
+msgstr "Rufiyaa"
+
+msgctxt "currencies"
+msgid "Malawian kwacha"
+msgstr "Kwacha malawien"
+
+msgctxt "currencies"
+msgid "Mexican peso"
+msgstr "Peso mexicain"
+
+msgctxt "currencies"
+msgid "Malaysian ringgit"
+msgstr "Ringgit"
+
+msgctxt "currencies"
+msgid "Mozambican metical"
+msgstr "Metical mozambicain"
+
+msgctxt "currencies"
+msgid "Namibian dollar"
+msgstr "Dollar namibien"
+
+msgctxt "currencies"
+msgid "Nigerian naira"
+msgstr "Naira nigérian"
+
+msgctxt "currencies"
+msgid "Nicaraguan córdoba"
+msgstr "Córdoba nicaraguayen"
+
+msgctxt "currencies"
+msgid "Norwegian krone"
+msgstr "Couronne norvégienne"
+
+msgctxt "currencies"
+msgid "Nepalese rupee"
+msgstr "Roupie népalaise"
+
+msgctxt "currencies"
+msgid "New Zealand dollar"
+msgstr "Dollar néo-zélandais"
+
+msgctxt "currencies"
+msgid "Omani rial"
+msgstr "Rial omanais"
+
+msgctxt "currencies"
+msgid "Panamanian balboa"
+msgstr "Balboa panaméen"
+
+msgctxt "currencies"
+msgid "Peruvian nuevo sol"
+msgstr "Nuevo sol péruvien"
+
+msgctxt "currencies"
+msgid "Papua New Guinean kina"
+msgstr "Kina"
+
+msgctxt "currencies"
+msgid "Philippine peso"
+msgstr "Peso philippin"
+
+msgctxt "currencies"
+msgid "Pakistani rupee"
+msgstr "Roupie pakistanaise"
+
+msgctxt "currencies"
+msgid "Polish złoty"
+msgstr "Złoty polonais"
+
+msgctxt "currencies"
+msgid "Paraguayan guaraní"
+msgstr "Guaraní paraguayen"
+
+msgctxt "currencies"
+msgid "Qatari riyal"
+msgstr "Riyal qatari"
+
+msgctxt "currencies"
+msgid "Romanian new leu"
+msgstr "Leu roumain"
+
+msgctxt "currencies"
+msgid "Serbian dinar"
+msgstr "Dinar serbe"
+
+msgctxt "currencies"
+msgid "Russian ruble"
+msgstr "Rouble russe"
+
+msgctxt "currencies"
+msgid "Rwandan franc"
+msgstr "Franc rwandais"
+
+msgctxt "currencies"
+msgid "Saudi riyal"
+msgstr "Riyal saoudien"
+
+msgctxt "currencies"
+msgid "Solomon Islands dollar"
+msgstr "Dollar des îles Salomon"
+
+msgctxt "currencies"
+msgid "Seychelles rupee"
+msgstr "Roupie seychelloise"
+
+msgctxt "currencies"
+msgid "Sudanese pound"
+msgstr "Livre soudanaise"
+
+msgctxt "currencies"
+msgid "Swedish krona/kronor"
+msgstr "Couronne suédoise"
+
+msgctxt "currencies"
+msgid "Singapore dollar"
+msgstr "Dollar de Singapour"
+
+msgctxt "currencies"
+msgid "Saint Helena pound"
+msgstr "Livre de Sainte-Hélène"
+
+msgctxt "currencies"
+msgid "Sierra Leonean leone"
+msgstr "Leone sierra-léonais"
+
+msgctxt "currencies"
+msgid "Somali shilling"
+msgstr "Shilling somalien"
+
+msgctxt "currencies"
+msgid "Surinamese dollar"
+msgstr "Dollar de Surinam"
+
+msgctxt "currencies"
+msgid "South Sudanese pound"
+msgstr "Livre sud-soudanaise"
+
+msgctxt "currencies"
+msgid "São Tomé and Príncipe dobra"
+msgstr "Dobra santoméen"
+
+msgctxt "currencies"
+msgid "Syrian pound"
+msgstr "Livre syrienne"
+
+msgctxt "currencies"
+msgid "Swazi lilangeni"
+msgstr "Lilangeni swazilandais"
+
+msgctxt "currencies"
+msgid "Thai baht"
+msgstr "Baht"
+
+msgctxt "currencies"
+msgid "Tajikistani somoni"
+msgstr "Somoni"
+
+msgctxt "currencies"
+msgid "Turkmenistani manat"
+msgstr "Manat turkmène"
+
+msgctxt "currencies"
+msgid "Tunisian dinar"
+msgstr "Dinar tunisien"
+
+msgctxt "currencies"
+msgid "Tongan paʻanga"
+msgstr "Paʻanga"
+
+msgctxt "currencies"
+msgid "Turkish lira"
+msgstr "Livre turque"
+
+msgctxt "currencies"
+msgid "Trinidad and Tobago dollar"
+msgstr "Dollar trinidadien"
+
+msgctxt "currencies"
+msgid "New Taiwan dollar"
+msgstr "Nouveau dollar de Taïwan"
+
+msgctxt "currencies"
+msgid "Tanzanian shilling"
+msgstr "Shilling tanzanien"
+
+msgctxt "currencies"
+msgid "Ukrainian hryvnia"
+msgstr "Hryvnia"
+
+msgctxt "currencies"
+msgid "Ugandan shilling"
+msgstr "Shilling ougandais"
+
+msgctxt "currencies"
+msgid "United States dollar"
+msgstr "Dollar américain"
+
+msgctxt "currencies"
+msgid "Uruguayan peso"
+msgstr "Peso uruguayen"
+
+msgctxt "currencies"
+msgid "Uzbekistan som"
+msgstr "Sum"
+
+msgctxt "currencies"
+msgid "Venezuelan bolívar"
+msgstr "Bolívar vénézuélien"
+
+msgctxt "currencies"
+msgid "Vietnamese dong"
+msgstr "Dong"
+
+msgctxt "currencies"
+msgid "Vanuatu vatu"
+msgstr "Vatu"
+
+msgctxt "currencies"
+msgid "Samoan tala"
+msgstr "Tala"
+
+msgctxt "currencies"
+msgid "CFA franc BEAC"
+msgstr "Franc CFA"
+
+msgctxt "currencies"
+msgid "East Caribbean dollar"
+msgstr "Dollar des Caraïbes orientales"
+
+msgctxt "currencies"
+msgid "CFA franc BCEAO"
+msgstr "Franc CFA"
+
+msgctxt "currencies"
+msgid "CFP franc (franc Pacifique)"
+msgstr "Franc pacifique"
+
+msgctxt "currencies"
+msgid "Yemeni rial"
+msgstr "Rial yéménite"
+
+msgctxt "currencies"
+msgid "South African rand"
+msgstr "Rand sud-africain"
+
+msgctxt "currencies"
+msgid "Zambian kwacha"
+msgstr "Kwacha zambien"
+
+msgctxt "currencies"
+msgid "Zimbabwe dollar"
+msgstr "Dollar du Zimbabwe"
