@@ -7,7 +7,7 @@
   The Foundation framework is built by Zurb
   Licensed under MIT Open Source
 */
-#locationSelect, .clean___border, .wpcf7-form-control, .wpcf7-select {
+#locationSelect, .clean___border, .wpcf7-form-control, .wpcf7-select, #search-by-keyword, #submit-keyword-search {
   border-left: none !important;
   border-right: none !important;
   border-top: none !important;
@@ -41,7 +41,7 @@ body {
     .arrows-container, .slide-description p, .slide-description h2, .homepage-section-3-title {
       text-align: left; } }
 
-#locationSelect, .clean___border, .wpcf7-form-control, .wpcf7-select {
+#locationSelect, .clean___border, .wpcf7-form-control, .wpcf7-select, #search-by-keyword, #submit-keyword-search {
   border-left: none !important;
   border-right: none !important;
   border-top: none !important;
@@ -991,7 +991,9 @@ img.insights {
   color: #0a0a0a;
   display: table-cell;
   vertical-align: middle;
-  text-align: center; }
+  text-align: center;
+  font-weight: 800;
+  font-size: 12px; }
   .letter__link.active {
     color: #fefefe; }
 
@@ -1271,7 +1273,7 @@ button.close__modal {
   top: 30px;
   width: 25px;
   height: 30px;
-  z-index: 1; }
+  z-index: 0; }
 
 .contact__us__mobile, .locations__mobile {
   height: 80px;
@@ -1308,10 +1310,10 @@ button.close__modal {
     #mobile__logo__container {
       padding: 5%; } }
 
-.search__people__off__canvas {
-  height: 100vh;
-  background-color: #b91628; }
-  .search__people__off__canvas p {
+.search__people__off__canvas, .off-canvas {
+  height: 200vh;
+  background-color: #b91628 !important; }
+  .search__people__off__canvas p, .off-canvas p {
     color: #fefefe;
     text-align: center !important; }
 
@@ -1450,6 +1452,55 @@ select.clean___border {
   overflow-y: auto;
   -webkit-transition: 0.5s;
   transition: 0.5s; }
+
+#search-by-keyword, #submit-keyword-search {
+  background-color: transparent;
+  border-bottom: 1px solid #fefefe !important; }
+
+#submit-keyword-search {
+  text-align: center; }
+
+#search-by-keyword {
+  text-align: left;
+  padding-left: 28px; }
+
+.js-off-canvas-exit {
+  background: rgba(0, 0, 0, 0.75) !important; }
+
+#search__people {
+  text-align: center; }
+
+.search__people__homepage, #submit-keyword-search, #search-by-keyword, #all__people__navigate {
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  font-size: 10px;
+  color: #fefefe; }
+
+#submit-keyword-search {
+  background-color: #fefefe;
+  color: #b91628;
+  width: 100%;
+  border: none !important;
+  padding: 5%; }
+
+#all__people__navigate {
+  text-transform: uppercase;
+  text-decoration: underline;
+  opacity: 0.5; }
+
+#homepage__search__svg {
+  width: 20px;
+  height: 0; }
+
+.off-canvas.position-right {
+  z-index: 9999 !important; }
+
+.close-button {
+  color: #fefefe !important; }
+
+.js-off-canvas-exit.is-visible {
+  z-index: 99999999 !important; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -9682,7 +9733,7 @@ button.arrow {
 .menu__outer-wrapper--desktop-on-scroll {
   position: fixed;
   top: 0;
-  z-index: 2;
+  z-index: 9999;
   width: 100%;
   display: none; }
 
@@ -10154,9 +10205,5 @@ span.red__border--top {
   -webkit-transition: color .3s ease-in-out;
   transition: color .3s ease-in-out;
   font-size: 18px; }
-
-.page-template-homepage .title__text {
-  font-family: "Avenir", Helvetica, Arial, sans-serif !important;
-  font-size: 16px !important; }
 
 /*# sourceMappingURL=foundation.css.map */
