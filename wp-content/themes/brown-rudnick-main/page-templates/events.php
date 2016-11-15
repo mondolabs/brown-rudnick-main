@@ -25,7 +25,9 @@ $data['contact_title'] = get_field('contact_title');
 $data['contact_phone_number'] = get_field('contact_phone_number');
 $data['contact_email'] = get_field('contact_email');
 
+$slug = basename(get_permalink());
 $data['slug'] = $slug;
+$data['parent_link'] = get_permalink( $post->post_parent );
 
 $data['upcoming_events'] = get_field('upcoming_events');
 $data['past_events'] = get_field('past_events');
@@ -53,6 +55,7 @@ $posts_from_collection_args = array(
   'numberposts' => -1,
   'posts_per_page' => -1,
   'orderby' => 'date',
+  'post_status' => array( 'publish', 'future')
 );
 
 $dates = [];
@@ -67,6 +70,30 @@ $ids = [];
 foreach ( $custom_posts as $post ) {
   array_push($ids, $post->ID);
 }
+
+// begin generate options for advanced search fields
+$all_posts_args = array(
+  'post_type' => array('article', 'event', 'alert'),
+  'numberposts' => -1,
+  'posts_per_page' => -1,
+  'orderby' => 'date',
+  'post_status' => array( 'publish', 'future')
+);
+
+$all_dates = [];
+$all_posts = get_posts($all_posts_args);
+$all_ids = [];
+
+foreach ( $all_posts as $all_post ) {
+  array_push( $all_dates, strtotime($all_post->post_date));
+  array_push( $all_ids, $all_post->ID);
+};
+
+$data['all_dates'] = array_unique($all_dates);
+$data['all_geographies'] = wp_get_object_terms( $all_ids, 'geography' );
+$data['all_industries'] = wp_get_object_terms( $all_ids, 'industry' );
+$data['all_practices'] = wp_get_object_terms( $all_ids, 'practice' );
+// end generate options for advanced search fields
 
 $data['geographies'] = wp_get_object_terms( $ids, 'geography' );
 $data['industries'] = wp_get_object_terms( $ids, 'industry' );
@@ -94,6 +121,7 @@ if (($geography !== "GEOGRAPHIES") || ( $industry !== "INDUSTRIES") || ($practic
     'post_type' => 'event',
     'posts_per_page' => -1, 
     'orderby'=>'date',
+    'post_status' => array( 'publish', 'future'),
     'date_query' => array(
       array(
         'column' => "date",

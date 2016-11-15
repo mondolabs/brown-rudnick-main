@@ -1,12 +1,43 @@
 var INSIGHTS = {
 	listeners: function(){
-		$('#insightsAdvancedSearch').click(function(event) {
-			INSIGHTS.revealAdvancedSearchModal();
-		});
+		// $('#insightsAdvancedSearch').click(function(event) {
+		// 	INSIGHTS.revealAdvancedSearchModal();
+		// });
 		console.log('Insights listeners js loaded');
 		$('select.insight').change(function(event) {
 			var selects = $('select');
 			var queryStringBase = location.origin + location.pathname;
+			var queryString = "";
+			var filters = [];
+			for (var i = selects.length - 1; i >= 0; i--) {
+				var select = selects[i];
+				if ( $(select).val().length > 0 &&  $(select).val() !== "" ) {
+					filters.push($(select));
+				}
+			}
+			console.log("filters" + filters);
+			for(var i = filters.length - 1; i >= 0; i--) {
+				var paramName = $(filters[i]).attr('name');
+				var paramValue = $(filters[i]).val();
+				if ( paramValue.length > 0 && i === filters.length - 1 ) {
+					queryString = queryStringBase + "?" + paramName + "=" + paramValue;
+					console.log(queryString);
+				} else if ( paramValue.length > 0 ) {
+					queryString = queryString + "&" + paramName + "=" + paramValue;
+					console.log(queryString);
+				}
+			}
+			// set back the url to the base if there are no queries left
+			if( queryString.length > 0) {
+				window.location.replace(queryString);
+			} else {
+				window.location.replace(queryStringBase);
+			}
+
+		});
+		$('button#advancedSearchSubmit').click(function(event) {
+			var selects = $('select.advanced');
+			var queryStringBase = location.origin + "insight-advanced-search-results";
 			var queryString = "";
 			var filters = [];
 			for (var i = selects.length - 1; i >= 0; i--) {
@@ -57,6 +88,15 @@ var INSIGHTS = {
 		var admissionSelect = $('select#admissionSelect');
 		var educationSelect = $('select#educationSelect');
 		var keywordInput = $('input#keywordInput');
+
+		// Set vars for selects for all advanced search params
+		var dateSelect = $('select#allDateSelect');
+		var geographySelect = $('select#allGeographySelect');
+		var industrySelect = $('select#allIndustrySelect');
+		var practiceSelect = $('select#allPracticeSelect');
+		var dateSelect = $('select#allDateSelect');
+		var typeSelect = $('select#allTypeSelect');
+		var keywordInput = $('input#allKeywordInput');
 
 		// Change value of selects based on url params
 		dateSelect.val(decodeURIComponent(selectedDate));

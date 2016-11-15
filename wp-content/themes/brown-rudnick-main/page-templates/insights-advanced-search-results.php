@@ -11,12 +11,12 @@ $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id
 $data['featured_image_url'] = $data['featured_image_url'][0];
 $data['header_text'] = get_field('header_text');
 $parent = get_page($post->post_parent);
-$parent_name = $parent->post_name;
+$parent_name = "insights";
 $sidebar_slug = $parent_name . '-sidebar';
 $args = array(
   'name'        => $sidebar_slug,
   'post_type'   => 'sidebar',
-  'post_status' => 'publish',
+  'post_status' => array('publish', 'future'),
   'numberposts' => 1
 );
 $data['sidebar'] = get_posts($args);
@@ -98,14 +98,17 @@ $data['industries'] = wp_get_object_terms( $ids, 'industry' );
 $data['practices'] = wp_get_object_terms( $ids, 'practice' );
 
 $date_query_term = get_query_var('date_query', "DATE");
+$type = get_query_var('type_query', array('alert', 'article', 'event' ));
 $geography = get_query_var('geography_query', "GEOGRAPHIES");
 $industry = get_query_var('industry_query', "INDUSTRIES");
 $practice = get_query_var('practice_query', "PRACTICES");
 
+$type =  str_replace("-and-", " & ", $type);
 $geography =  str_replace("-and-", " & ", $geography);
 $industry =  str_replace("-and-", " & ", $industry);
 $practice =  str_replace("-and-", " & ", $practice);
 
+$type =  str_replace("-slash-", " / ", $type);
 $geography =  str_replace("-slash-", " / ", $geography);
 $industry =  str_replace("-slash-", " / ", $industry);
 $practice =  str_replace("-slash-", " / ", $practice);
@@ -114,7 +117,7 @@ $practice =  str_replace("-slash-", " / ", $practice);
 $year_query = intval($year);
 $month_query = intval($month); 
 $insights_args = array(
-  'post_type' => 'alert',
+  'post_type' => $type,
   'posts_per_page' => -1, 
   'orderby'=>'date',
   'date_query' => array(
@@ -142,20 +145,6 @@ if( ($geography !== "GEOGRAPHIES") || ( $industry !== "INDUSTRIES") || ($practic
   }
 }
 
-// if ($date_query_term !== "DATE") {
-//   $year_query = intval($year);
-//   $month_query = intval($month); 
-//   $insights_args['date_query'] = [];
-//   $dates_term_query_array = array(
-//     'column' => 'date',
-//     'year'  => $year_query,
-//     'month' => $month_query,
-//   );
-//   array_push($insights_args['date_query'], $dates_term_query_array );
-// }
-
-// $data['insights'] = new WP_Query($insights_args);
-
 $results = Timber::get_posts($insights_args);
 $data['insights'] = $results;
 $data['insights'] = array_unique($data['insights']);
@@ -179,7 +168,7 @@ $data['insights'] = array_reverse($data['insights']);
   </head>
   <body>
     <div id="page-full-width-homepage" class ="full-width" role="main">
-      <?php Timber::render('/twig-templates/insight_landing.twig', $data); ?>
+      <?php Timber::render('/twig-templates/insights-advanced-search-results.twig', $data); ?>
     </div>  
     <?php do_action( 'foundationpress_after_content' ); ?>
     <?php get_footer(); ?>

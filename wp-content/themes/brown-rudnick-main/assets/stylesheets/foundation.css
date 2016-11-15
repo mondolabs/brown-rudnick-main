@@ -1035,6 +1035,8 @@ img.insights {
     .diversity__modal--outer-wrapper {
       margin: 80px 12px;
       padding: 20px; } }
+  .diversity__modal--outer-wrapper.table__wrapper {
+    height: auto; }
 
 button.close__modal {
   position: absolute;
@@ -8895,7 +8897,8 @@ a {
   border: 2px solid #b91628; }
   .sites-button.advanced-search {
     font-size: 11px;
-    padding: 12px 14px; }
+    padding: 12px 14px;
+    margin: 10px 0 20px; }
   .sites-button.inverse {
     background: #fefefe;
     color: #b91628;

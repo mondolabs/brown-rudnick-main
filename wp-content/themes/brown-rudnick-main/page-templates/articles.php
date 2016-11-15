@@ -7,6 +7,7 @@ get_header();
 
 $data = Timber::get_context();
 $post = new TimberPost();
+$data['post'] = $post;
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
 $data['featured_image_url'] = $data['featured_image_url'][0];
 $data['header_text'] = get_field('header_text');
@@ -40,14 +41,7 @@ $date = get_query_var('date_query', "");
 
 $year = substr($date, -4 );
 $month = substr($date, 0, 2 );
-$posts_args = array(
-  'post_type' => 'article',
-  'numberposts' => -1,
-  'posts_per_page' => -1,
-  'orderby' => 'date',
-);
 
-$data['posts_collection'] = get_posts($posts_args);
 $posts_from_collection_args = array(
   'post_type' => 'article',
   'numberposts' => -1,
@@ -61,7 +55,7 @@ foreach ( $posts_from_collection as $post_from_collection ) {
   array_push( $dates, strtotime($post_from_collection->post_date));
 };
 $data['dates'] = array_unique($dates);
-$custom_posts = get_posts($post_type_args);
+$custom_posts = get_posts($posts_from_collection_args);
 $ids = [];
 
 foreach ( $custom_posts as $post ) {
@@ -71,6 +65,33 @@ foreach ( $custom_posts as $post ) {
 $data['geographies'] = wp_get_object_terms( $ids, 'geography' );
 $data['industries'] = wp_get_object_terms( $ids, 'industry' );
 $data['practices'] = wp_get_object_terms( $ids, 'practice' );
+
+
+
+// begin generate options for advanced search fields
+$all_posts_args = array(
+  'post_type' => array('article', 'event', 'alert'),
+  'numberposts' => -1,
+  'posts_per_page' => -1,
+  'orderby' => 'date',
+  'post_status' => array( 'publish', 'future')
+);
+
+$all_dates = [];
+$all_posts = get_posts($all_posts_args);
+$all_ids = [];
+
+foreach ( $all_posts as $all_post ) {
+  array_push( $all_dates, strtotime($all_post->post_date));
+  array_push( $all_ids, $all_post->ID);
+};
+
+$data['all_dates'] = array_unique($all_dates);
+$data['all_geographies'] = wp_get_object_terms( $all_ids, 'geography' );
+$data['all_industries'] = wp_get_object_terms( $all_ids, 'industry' );
+$data['all_practices'] = wp_get_object_terms( $all_ids, 'practice' );
+
+// end generate options for advanced search fields
 
 $date_query_term = get_query_var('date_query', "DATE");
 $geography = get_query_var('geography_query', "GEOGRAPHIES");

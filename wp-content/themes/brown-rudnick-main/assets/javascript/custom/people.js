@@ -32,7 +32,7 @@ var PEOPLE = {
 		// 		});
 		// 	}
 		// });
-		$('#advancedPeopleSearch').click(function(event) {
+		$('#advancedPeopleSearch, #insightsAdvancedSearch').click(function(event) {
 			PEOPLE.revealAdvancedSearch();
 		});
 		$('#peopleAdvancedSearchButton').click(function(event) {
@@ -136,7 +136,6 @@ var PEOPLE = {
 	hideAdvancedSearch: function(){
 		$('#advancedSearchModal').addClass('hidden').fadeOut('slow');
 	},
-
 	scrollBackToTop: function(){
 		$('.back__to__top').click(function(event){
 			$('html,body').animate({

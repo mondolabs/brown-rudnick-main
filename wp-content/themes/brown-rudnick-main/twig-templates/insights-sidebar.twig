@@ -1,3 +1,4 @@
+{% include '/twig-templates/insights-advanced-search.twig' %}
 <div class="medium-3 large-2 small-12 columns no__pad">
 	{% set sidebar = sidebar|first %}
 	{% if parent_link %}
@@ -89,13 +90,13 @@
 	    {% endfor %}
 	</div>
 	<div class="hide-for-small-only">
-		<span class="list-divider smaller"></span>
+		{# <span class="list-divider smaller"></span> #}
 		<div class="sidebar__wrapper">
-			<button id="insightsAdvancedSearch" class="sites-button advanced-search inverse desktop__full--width" type="button">
+			<button id="insightsAdvancedSearch" class="sites-button advanced-search inverse desktop__full--width margin-bottom--20" type="button">
 				ADVANCED SEARCH
 			</button>
 		</div>
-		<span class="list-divider smaller"></span>
+		{# <span class="list-divider smaller"></span> #}
 		<div class="sidebar__wrapper">
 			<h4 class="title__text smaller insights margin-bottom--0">
 				Subscribe

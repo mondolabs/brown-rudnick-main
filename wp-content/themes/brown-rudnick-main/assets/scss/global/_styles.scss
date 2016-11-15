@@ -1114,6 +1114,9 @@ img.insights {
 		margin: 80px 12px;
 		padding: 20px;
 	}
+	&.table__wrapper {
+		height: auto;
+	}
 }
 
 button.close__modal {
