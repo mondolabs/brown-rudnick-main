@@ -866,8 +866,7 @@ img.insights {
   .accordion_expander.top__menu,
   .mobile__sidebar--expander.top__menu {
     background-color: #b91628;
-    right: 15px;
-    top: 0; }
+    right: 15px; }
     .experience_expander.top__menu:before,
     .job_expander.top__menu:before,
     .accordion_expander.top__menu:before,
@@ -1017,8 +1016,12 @@ img.insights {
   padding: 80px; }
   @media screen and (max-width: 800px) {
     .diversity__modal--outer-wrapper {
-      margin: 80px 12px;
-      padding: 20px; } }
+      margin: 60px 5px;
+      padding: 15px; } }
+  @media screen and (max-height: 400px) {
+    .diversity__modal--outer-wrapper {
+      margin: 0px 5px;
+      padding: 15px; } }
 
 button.close__modal {
   position: absolute;
@@ -1071,7 +1074,7 @@ button.close__modal {
       width: 100%;
       display: none;
       background-color: #f0f0f0;
-      top: 40px; } }
+      top: 100px; } }
 
 #locationMap {
   width: 100%;
@@ -1311,7 +1314,7 @@ button.close__modal {
       padding: 5%; } }
 
 .search__people__off__canvas, .off-canvas {
-  height: 200vh;
+  min-height: 100% !important;
   background-color: #b91628 !important; }
   .search__people__off__canvas p, .off-canvas p {
     color: #fefefe;
@@ -1328,7 +1331,7 @@ button.close__modal {
   background-color: #b91628;
   width: 30px;
   height: 40px;
-  z-index: 99999; }
+  z-index: 1; }
   .back__to__top p {
     margin-top: 5px; }
 
@@ -1501,6 +1504,24 @@ select.clean___border {
 
 .js-off-canvas-exit.is-visible {
   z-index: 99999999 !important; }
+
+.inline__eeoe {
+  width: 400px; }
+
+.eeoe__half {
+  display: inline-block;
+  width: 49%; }
+
+tbody {
+  border: none !important; }
+
+@media screen and (min-width: 48em) {
+  .page-template-staff .job_expander {
+    float: none !important; } }
+
+@media screen and (max-width: 768px) {
+  .people__details--inner-wrapper, .people__image__container {
+    text-align: center; } }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -9082,6 +9103,9 @@ a {
     background-color: #b91628; }
   .list-divider.people__deatils {
     margin: 8px 0; }
+    @media screen and (max-width: 768px) {
+      .list-divider.people__deatils {
+        margin: 8px auto; } }
   .list-divider.insights {
     width: calc(100% - 15px);
     margin: -1rem 0 1rem; }

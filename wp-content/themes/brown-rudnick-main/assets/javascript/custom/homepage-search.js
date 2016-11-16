@@ -1,12 +1,13 @@
 var HomePageSearch = {
 
 	checkScroll:function() {
-		document.body.scrollTop = 0;
-		if ($('body').hasClass('no-scroll')) {
-			disableScroll.on();
-		} else {
-			disableScroll.off();
-		}
+		// leave in case you want to disable scroll
+
+		// if ($('body').hasClass('no-scroll')) {
+		// 	disableScroll.on();
+		// } else {
+		// 	disableScroll.off();
+		// }
 	},
 	openModal: function(){
 		$('.human-icon').click(function(event){			

@@ -29,6 +29,9 @@
 	}
 	&.people__deatils {
 		margin: 8px 0;
+		@media screen and (max-width: 768px){
+			margin: 8px auto;
+		}
 	}
 	&.insights {
 		width: calc(100% - 15px);
