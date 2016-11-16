@@ -32,7 +32,7 @@ var PEOPLE = {
 		// 		});
 		// 	}
 		// });
-		$('#advancedPeopleSearch, #insightsAdvancedSearch').click(function(event) {
+		$('#advancedPeopleSearch, #insightsAdvancedSearch, #advancedMobileSearch').click(function(event) {
 			PEOPLE.revealAdvancedSearch();
 		});
 		$('#peopleAdvancedSearchButton').click(function(event) {

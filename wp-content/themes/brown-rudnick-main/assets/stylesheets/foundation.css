@@ -1037,6 +1037,12 @@ img.insights {
       padding: 20px; } }
   .diversity__modal--outer-wrapper.table__wrapper {
     height: auto; }
+  .diversity__modal--outer-wrapper.advanced-search {
+    width: calc(100% - 200px); }
+    @media screen and (max-width: 800px) {
+      .diversity__modal--outer-wrapper.advanced-search {
+        width: calc(100% - 40px);
+        margin: 100px auto; } }
 
 button.close__modal {
   position: absolute;
