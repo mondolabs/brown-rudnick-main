@@ -194,14 +194,15 @@ $(document).ready(function(){
 	}	
 
 	// prevent submit on enter
-	$(window).keydown(function(e){
-		if (e.keyCode == 13){
-			e.preventDefault();
-			return false;
-		}
-	});
-
-
+	if ( $('body').hasClass('page-template-people') ){
+		$(window).keydown(function(e){
+			if (e.keyCode == 13){
+				e.preventDefault();
+				return false;
+			}
+		});
+	}
+	
 	$(document).bind('scroll', function(){
 		var  closestText = $('.sidebar__on-scroll--fixed').nearest('.letter__anchor--indicator').text();
 		for (var i= 0; i < $('.letter__link').length; i++) {

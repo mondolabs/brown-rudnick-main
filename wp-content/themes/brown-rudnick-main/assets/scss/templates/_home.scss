@@ -3,7 +3,7 @@
 .menu__outer-wrapper--desktop-on-scroll {
     position: fixed;
     top: 0;
-    z-index: 2;
+    z-index: 9999;
     width: 100%;
     display: none;
 }
@@ -208,8 +208,6 @@ button.slick-arrow  {
 	bottom: 10%;
 	width: 80px;
 	height: 80px;
-	//width: 2.5%;
-	//height: 5%;
 	padding: 30px;
 	background: $primary-red url('../images/human-icon.png') no-repeat center;
 	background-size: 40%;
@@ -563,9 +561,9 @@ span.red__border--top {
 	}
 }
 
-.page-template-homepage {
-	.title__text {
-		font-family: $brfont !important;
-		font-size: 16px !important;
-	}
-}
+// .page-template-homepage {
+// 	.title__text {
+// 		font-family: $brfont !important;
+// 		font-size: 16px !important;
+// 	}
+// }

@@ -55,8 +55,6 @@ body {
 .button__absolute {
 	@extend %buttonAbsolute;
 }
-
-
 %greyBold {
 	color: $darker-grey;
 	font-weight: 800;
