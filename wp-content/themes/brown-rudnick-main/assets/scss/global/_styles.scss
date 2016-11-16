@@ -935,7 +935,7 @@ img.insights {
 	&.top__menu {
 		background-color: $primary-red;
 		right: 15px;
-    	top: 0;
+    	//top: 15px;
 		&:before {
 			top: 0;
 			left: 12px;
@@ -1086,8 +1086,13 @@ img.insights {
 	background-color: white;
 	padding: 80px;
 	@media screen and (max-width: 800px) {
-		margin: 80px 12px;
-		padding: 20px;
+		margin: 60px 5px;
+		padding: 15px;
+	}
+	// landscape;
+	@media screen and (max-height: 400px){
+		margin: 0px 5px;
+		padding: 15px;
 	}
 }
 
@@ -1143,7 +1148,7 @@ button.close__modal {
     	width: 100%;
 		display: none;
     	background-color: $primary-grey;
-		top: 40px;
+		top: 100px;
     }
 }
 
@@ -1466,7 +1471,7 @@ button.close__modal {
 	background-color: $primary-red;
 	width: 30px; 
 	height: 40px;
-	z-index: 99999;
+	z-index: 1;
 	p { 
 		margin-top: 5px;
 	}
@@ -1655,4 +1660,29 @@ select.clean___border {
 	&.is-visible {
 			z-index: 99999999 !important;
 		}
+}
+
+.inline__eeoe {
+	width: 400px;
+}
+.eeoe__half {
+	display: inline-block;
+	width: 49%;
+}
+tbody {
+	border: none! important;
+} 
+.page-template-staff {
+	.job_expander {
+		@include breakpoint(medium){
+			float: none !important;
+		}
+	}
+}
+
+
+.people__details--inner-wrapper, .people__image__container {
+	@media screen and (max-width: 768px){
+		text-align: center;
+	}
 }
