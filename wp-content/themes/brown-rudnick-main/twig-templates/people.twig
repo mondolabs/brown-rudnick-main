@@ -11,11 +11,11 @@
 		              SEARCH ALL PEOPLE
 		            </p>
 			        <form id="peopleAdvancedSearch">
-			            <div class="columns large-12 medium-12 small-12">
+			            <div class="columns large-12 medium-12 small-6">
 			              <input id="keywordInput" type="text" name="s" placeholder="Name or Keyword">
 			            </div>
 
-			            <div class="columns large-6 medium-6 small-12">
+			            <div class="columns large-6 medium-6 small-6">
 			            	<select id="geographySelect" name="geography_query" class="clean___border insight inline__text grey__bold__text smaller">
 								<option value="">
 									GEOGRAPHIES
@@ -27,7 +27,7 @@
 								{% endfor %}
 							</select>
 						</div>
-						<div class="columns large-6 medium-6 small-12">	
+						<div class="columns large-6 medium-6 small-6">	
 							<select id="industrySelect" name="industry_query" class="clean___border insight inline__text grey__bold__text smaller">
 								<option value="">
 									INDUSTRIES
@@ -39,7 +39,7 @@
 								{% endfor %}
 							</select>
 						</div>	
-						<div class="columns large-6 medium-6 small-12">
+						<div class="columns large-6 medium-6 small-6">
 							<select id="practiceSelect" name="practice_query" class="clean___border insight inline__text grey__bold__text smaller">
 								<option value="">
 									PRACTICES
@@ -51,7 +51,7 @@
 								{% endfor %}
 							</select>
 			            </div>
-						<div class="columns large-6 medium-6 small-12">
+						<div class="columns large-6 medium-6 small-6">
 							<select id="languageSelect" name="language_query" class="clean___border insight inline__text grey__bold__text smaller">
 								<option value="">
 									LANGUAGES
@@ -63,7 +63,7 @@
 								{% endfor %}
 							</select>
 			            </div>
-						<div class="columns large-6 medium-6 small-12">
+						<div class="columns large-6 medium-6 small-6">
 							<select id="locationSelect" name="location_query" class="clean___border insight inline__text grey__bold__text smaller">
 								<option value="">
 									LOCATIONS
@@ -75,7 +75,7 @@
 								{% endfor %}
 							</select>
 			            </div>
-			            <div class="columns large-6 medium-6 small-12">
+			            <div class="columns large-6 medium-6 small-6">
 							<select id="admissionSelect" name="admission_query" class="clean___border insight inline__text grey__bold__text smaller">
 								<option value="">
 									ADMISSIONS
@@ -87,7 +87,7 @@
 								{% endfor %}
 							</select>
 			            </div>
-			            <div class="columns large-6 medium-6 small-12">
+			            <div class="columns large-6 medium-6 small-6">
 							<select id="educationSelect" name="education_query" class="clean___border insight inline__text grey__bold__text smaller">
 								<option value="">
 									EDUCATION
@@ -99,7 +99,7 @@
 								{% endfor %}
 							</select>
 			            </div>
-						<div class="button__wrapper advanced__button columns large-12 small-12 medium-12 ">
+						<div class="columns large-12 small-12 medium-12 ">
 							<button id="peopleAdvancedSearchButton" type="button" class="sites-button">
 								Submit
 							</button>
@@ -157,12 +157,15 @@
 					    	</a>
 				    	</div>
 				    </div>			    	
-				{% endfor %}    	    
+				{% endfor %}
 			</div>
+			<div class="advanced__button__container small-12" style="text-align: center;">
 				<button id="advancedPeopleSearch" type="button" class="sites-button inverse advanced-search" >
 					Advanced Search
 				</button>
+			</div>    	    
 		</div>	
+
 		<div class="columns no__pad small-12 medium-8 large-10 relative float--right people__details--container">
 			<div class="padding__wrapper forty sides__only">	
 				<div class="columns small-12 medium-12 large-12 relative">
@@ -248,7 +251,7 @@
 													</div>	
 												</div> 
 											</div>
-											<div class="columns small-11 medium-11 large-11 relative">
+											<div class="columns small-10 medium-11 large-11 relative">
 												<span class="page__divider grey inline__block people">
 												</span>
 											</div>	
