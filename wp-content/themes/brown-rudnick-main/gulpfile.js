@@ -72,6 +72,7 @@ var PATHS = {
 
     // Vendor
     'assets/javascript/vendor/*',
+    'assets/javascript/vendor/autogrow/*.js',
     'assets/javascript/vendor/disableScroll/*.js',
     'assets/javascript/vendor/backstretch/backstretch.min.js',
     'assets/javascript/vendor/slick/*.js',
