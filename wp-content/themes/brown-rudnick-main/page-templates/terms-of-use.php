@@ -4,7 +4,8 @@ Template Name: Privacy and terms of use Page
 */
 get_header();
 $data = Timber::get_context();
-
+$data['post'] = $post;
+$data['terms_of_use_header'] = get_field('terms_of_use_header');
 ?>
 
 

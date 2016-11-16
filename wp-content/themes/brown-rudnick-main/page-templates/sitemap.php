@@ -4,7 +4,7 @@ Template Name: Sitemap Page
 */
 get_header();
 $data = Timber::get_context();
-
+$data['sitemap_header_text'] = get_field('sitemap_header_text');
 ?>
 
 <html>
