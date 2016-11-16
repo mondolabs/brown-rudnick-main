@@ -1314,7 +1314,7 @@ button.close__modal {
       padding: 5%; } }
 
 .search__people__off__canvas, .off-canvas {
-  height: 200vh;
+  min-height: 100% !important;
   background-color: #b91628 !important; }
   .search__people__off__canvas p, .off-canvas p {
     color: #fefefe;

@@ -1,0 +1,29 @@
+<div id="featuredImage" class ="featured-image__header--image-wrapper">
+	{% set header_text_color = "black" %}
+	{# hero header #}
+	<div id="featuredImage" class="featured-image__header--text-outer-wrapper row">
+		<div class="featured-image__header--text-wrapper">
+			<div class="featured-image__header--text-inner-wrapper">
+				<div class="color__block vellum">
+					<h1 class="page__header {{ header_text_color }}">
+						{{ missing_page_header_text }}
+					</h1>
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>
+<div class="row body__wrapper small-12 medium-12 large-12">
+    <div class="columns small-12 medium-12 large-12">
+    	<p>{{missing_page_header}}</p>
+    	<p>{{missing_page_paragraph}}</p>
+    	<a href="/" class="sites-button button">Back to Homepage</a>
+	</div>
+</div> 
+<script type="text/javascript">
+	$(document).ready(function(){
+		{% if missing_page_image|length > 0 %}
+			$('#featuredImage').backstretch("{{ missing_page_image }}");
+		{% endif %}
+	})
+</script>

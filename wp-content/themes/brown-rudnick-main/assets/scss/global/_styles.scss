@@ -1454,7 +1454,7 @@ button.close__modal {
 }
 
 .search__people__off__canvas, .off-canvas {
-	height: 200vh;
+	min-height: 100% !important;
 	background-color: $primary-red !important;
 	p {color: $white; text-align: center !important;}
 }
