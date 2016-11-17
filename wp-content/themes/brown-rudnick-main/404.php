@@ -11,6 +11,7 @@ $data['missing_page_header_text'] = get_field('missing_page_header_text');
 $data['missing_page_image'] = get_field('missing_page_image');
 $data['missing_page_header'] = get_field('missing_page_header');
 $data['missing_page_paragraph'] = get_field('missing_page_paragraph');
+$data['home_url'] = get_home_url();
     
 get_header(); ?>
 <html>
