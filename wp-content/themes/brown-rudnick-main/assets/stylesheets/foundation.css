@@ -1103,7 +1103,9 @@ button.close__modal {
     margin: 0 auto; }
 
 .bottom-banner__text--wrapper p {
-  width: 200px; }
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 2px; }
 
 .wide-spacing {
   letter-spacing: 2px; }
