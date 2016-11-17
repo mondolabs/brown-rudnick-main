@@ -1528,6 +1528,32 @@ tbody {
 .off-canvas-wrapper {
   overflow-x: hidden !important; }
 
+.sitemap__heading {
+  color: #b91628;
+  font-family: "adobe-garamond-pro", serif;
+  font-size: 24px; }
+
+.sitemap__heading:hover {
+  color: #000; }
+
+.page-template-sitemap li {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 50px;
+  font-size: 14px;
+  color: #000; }
+
+.page-template-sitemap li:hover {
+  color: #b91628 !important; }
+
+.page-template-sitemap ul {
+  list-style-type: none;
+  margin: 0; }
+
+.page-template-sitemap a:hover {
+  color: #b91628 !important;
+  text-decoration: none !important; }
+
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)

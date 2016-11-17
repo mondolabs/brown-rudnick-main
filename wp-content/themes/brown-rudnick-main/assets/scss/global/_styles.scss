@@ -1697,3 +1697,32 @@ tbody {
 .off-canvas-wrapper {
 	overflow-x: hidden !important;
 }
+
+.sitemap__heading {
+	color: $primary-red;
+	font-family: $brgaramond;
+	font-size: 24px;
+}
+.sitemap__heading:hover {
+	color: $br-black
+}
+.page-template-sitemap {
+	li {
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		line-height: 50px;
+		font-size: 14px;
+		color: $br-black;
+	}
+	li:hover{
+		color: $primary-red !important;
+	}
+	ul {
+		list-style-type: none;
+		margin: 0;
+	}
+	a:hover{
+		color: $primary-red !important;
+		text-decoration: none !important;
+	}
+}

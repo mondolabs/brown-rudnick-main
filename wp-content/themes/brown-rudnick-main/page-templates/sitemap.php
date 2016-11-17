@@ -4,6 +4,8 @@ Template Name: Sitemap Page
 */
 get_header();
 $data = Timber::get_context();
+$data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
+$data['featured_image_url'] = $data['featured_image_url'][0];
 $data['sitemap_header_text'] = get_field('sitemap_header_text');
 $data['post'] = $post;
 
