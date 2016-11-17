@@ -648,6 +648,10 @@ img.people__details {
       img.people__details.person {
         max-width: 300px;
         width: 300px; } }
+    @media screen and (max-width: 768px) {
+      img.people__details.person {
+        max-width: 200px;
+        width: 200px; } }
 
 img.insight__details {
   height: 277px; }
@@ -1099,7 +1103,9 @@ button.close__modal {
     margin: 0 auto; }
 
 .bottom-banner__text--wrapper p {
-  width: 200px; }
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 2px; }
 
 .wide-spacing {
   letter-spacing: 2px; }
@@ -1441,21 +1447,6 @@ select.clean___border {
     right: 8px;
     top: 14px; }
 
-.overlay {
-  display: none;
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  z-index: 99999;
-  left: 0;
-  top: 0;
-  background-color: black;
-  background-color: rgba(0, 0, 0, 0.6);
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-transition: 0.5s;
-  transition: 0.5s; }
-
 #search-by-keyword, #submit-keyword-search {
   background-color: transparent;
   border-bottom: 1px solid #fefefe !important; }
@@ -1519,9 +1510,23 @@ tbody {
   .page-template-staff .job_expander {
     float: none !important; } }
 
+.text__header__larger {
+  font-size: 20px; }
+
+.page-template-terms-of-use ul {
+  list-style-type: none;
+  margin-top: 20px;
+  margin-left: 0; }
+
+.page-template-terms-of-use a {
+  color: #b91628; }
+
 @media screen and (max-width: 768px) {
   .people__details--inner-wrapper, .people__image__container {
     text-align: center; } }
+
+.off-canvas-wrapper {
+  overflow-x: hidden !important; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -9847,7 +9852,6 @@ button.arrow {
   height: 40px; }
 
 #footer {
-  padding: 5% !important;
   width: 100%;
   max-width: inherit !important;
   padding-bottom: 10%;
@@ -9861,7 +9865,8 @@ button.arrow {
   .footer-links a {
     color: #0a0a0a;
     text-transform: uppercase;
-    padding-left: 5%; }
+    padding-left: 5%;
+    font-size: 12px; }
   @media screen and (min-width: 48em) {
     .footer-links a:hover {
       color: #b91628; } }

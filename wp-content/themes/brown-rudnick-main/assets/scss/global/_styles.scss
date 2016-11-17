@@ -675,6 +675,10 @@ img.people__details {
 			max-width: 300px;
 			width: 300px;
 		}
+		@media screen and (max-width: 768px){
+			max-width: 200px;
+			width: 200px;
+		}
 	}
 }
 
@@ -1184,7 +1188,9 @@ button.close__modal {
 
 .bottom-banner__text--wrapper {
 	p {
-		width: 200px;
+		font-size: 16px;
+		font-weight: 800;
+		letter-spacing: 2px;
 	}
 }
 
@@ -1593,20 +1599,6 @@ select.clean___border {
 	}
 }
 
-.overlay {
-	display: none;
-	height: 100%;
-	width: 100%;
-	position: fixed;
-	z-index: 99999;
-	left: 0;
-	top: 0;
-	background-color: rgb(0,0,0);
-	background-color: rgba(0,0,0, 0.6);
-	overflow-x: hidden;
-	overflow-y: auto;
-	transition: 0.5s;
-}
 #search-by-keyword, #submit-keyword-search{
 	background-color: transparent;
 	@extend %cleanBorder;
@@ -1681,8 +1673,27 @@ tbody {
 }
 
 
+.text__header__larger {
+	font-size: 20px;
+}
+
+.page-template-terms-of-use {
+	ul {
+		list-style-type: none;
+		margin-top: 20px;
+		margin-left: 0;
+	}
+	a {
+		color: $primary-red;
+	}
+}
+
 .people__details--inner-wrapper, .people__image__container {
 	@media screen and (max-width: 768px){
 		text-align: center;
 	}
+}
+
+.off-canvas-wrapper {
+	overflow-x: hidden !important;
 }
