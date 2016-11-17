@@ -6,41 +6,28 @@
  * @since FoundationPress 1.0.0
  */
 
-get_header(); ?>
+get_header();
 
-<div id="single-post" role="main">
+$data = Timber::get_context();
+$data['post'] = new TimberPost();
+$data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
+$data['featured_image_url'] = $data['featured_image_url'][0];
+$data['header_text'] = get_field('header_text');
+$parent = get_page($post->post_parent);
+$parent_name = $parent->post_name;
 
-<?php do_action( 'foundationpress_before_content' ); ?>
-<?php while ( have_posts() ) : the_post(); ?>
-	<article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
-		<header>
-			<h1 class="entry-title"><?php the_title(); ?></h1>
-			<?php foundationpress_entry_meta(); ?>
-		</header>
-		<?php do_action( 'foundationpress_post_before_entry_content' ); ?>
-		<div class="entry-content">
+?>
 
-		<?php
-			if ( has_post_thumbnail() ) :
-				the_post_thumbnail();
-			endif;
-		?>
 
-		<?php the_content(); ?>
-		<?php edit_post_link( __( 'Edit', 'foundationpress' ), '<span class="edit-link">', '</span>' ); ?>
-		</div>
-		<footer>
-			<?php wp_link_pages( array('before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ), 'after' => '</p></nav>' ) ); ?>
-			<p><?php the_tags(); ?></p>
-		</footer>
-		<?php the_post_navigation(); ?>
-		<?php do_action( 'foundationpress_post_before_comments' ); ?>
-		<?php comments_template(); ?>
-		<?php do_action( 'foundationpress_post_after_comments' ); ?>
-	</article>
-<?php endwhile;?>
-
-<?php do_action( 'foundationpress_after_content' ); ?>
-<?php get_sidebar(); ?>
-</div>
-<?php get_footer();
+<html>
+  <head>
+    <?php wp_head()?>
+  </head>
+  <body>
+    <div id="page-full-width-homepage" class ="full-width" role="main">
+		<?php Timber::render('/twig-templates/individual-blog-post.twig', $data); ?>
+    	<?php comment_form(); ?>
+    </div>  
+    <?php get_footer(); ?>
+  </body>
+</html>
