@@ -675,6 +675,10 @@ img.people__details {
 			max-width: 300px;
 			width: 300px;
 		}
+		@media screen and (max-width: 768px){
+			max-width: 200px;
+			width: 200px;
+		}
 	}
 }
 

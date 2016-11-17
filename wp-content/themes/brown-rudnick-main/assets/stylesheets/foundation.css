@@ -648,6 +648,10 @@ img.people__details {
       img.people__details.person {
         max-width: 300px;
         width: 300px; } }
+    @media screen and (max-width: 768px) {
+      img.people__details.person {
+        max-width: 200px;
+        width: 200px; } }
 
 img.insight__details {
   height: 277px; }
