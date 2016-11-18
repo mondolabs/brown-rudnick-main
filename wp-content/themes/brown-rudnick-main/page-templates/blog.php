@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Blogs Landing
+Template Name: Blog Landing
 */
 
 get_header();
