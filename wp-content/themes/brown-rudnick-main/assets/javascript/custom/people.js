@@ -24,17 +24,162 @@ var PEOPLE = {
 			}
 			
 		});
-		// $(document).resize(function(event) {
-		// 	if ( $(document).width() > 640) {
-		// 		PEOPLE.scrollEvents();
-		// 		$(document).scroll( function(){
-		// 			PEOPLE.scrollEvents();
-		// 		});
-		// 	}
-		// });
 		$('#advancedPeopleSearch').click(function(event) {
 			PEOPLE.revealAdvancedSearch();
 		});
+
+		$('.tag__canceller').click(function(event) {
+			event.preventDefault();
+	
+			var target = $(this);
+			var queryStringBase = location.origin + location.pathname;
+			var queryString = "";
+		
+			var filters =[];
+			var tags = $('.tag__canceller');
+
+			for (var z = tags.length -1; z >=0; z--){	
+				var tag = tags[z];
+				filters.push(tags[z]);
+			}
+
+			for(var y = filters.length - 1; y >= 0; y--) {
+				var paramVal = $(filters[y]).data().tag;
+				var paramName = $(filters[y]).data().name;
+				var targetVal = target.data().tag;
+				if ( paramName.length > 0 && y === filters.length - 1 ) {
+					queryString = queryStringBase + "?" + paramName + "=" + paramVal;
+					if (queryString.includes(targetVal)){
+						queryString = queryString.replace(targetVal, "");
+					}
+
+				} else if ( paramName.length > 0 ) {
+					queryString = queryString + "&" + paramName + "=" + paramVal;
+					if (queryString.includes(targetVal)){
+						queryString = queryString.replace(targetVal, "");
+					}
+				}
+
+
+				if ( queryString.length > 0) {
+					window.location.replace(queryString);
+				} else {
+					window.location.replace(queryStringBase);
+				}
+				
+			}
+
+
+
+
+
+
+			// var keywordString = $.url().param('keyword', 'strict') || "";
+			// var selectedDate = $.url().param('date_query', 'strict') || "";
+			// var selectedGeography = $.url().param('geography_query', 'strict') || "";
+			// var selectedIndustry = $.url().param('industry_query', 'strict') || "";
+			// var selectedPractice = $.url().param('practice_query', 'strict') || "";
+			// var selectedLanguage = $.url().param('language_query', 'strict') || "";
+			// var selectedLocations = $.url().param('location_query', 'strict') || "";
+			// var selectedAdmission = $.url().param('admission_query', 'strict') || "";
+			// var selectedEducation = $.url().param('education_query', 'strict') || "";
+			// var selectedKeyword = $.url().param('keyword', 'strict') || "";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			var paramsArray = new Array;
+
+			var buildArray = function(string) {
+				if (string.length > 0) {
+					paramsArray.push(string);
+				}
+			}
+
+
+
+
+
+
+
+
+
+
+
+
+
+			var urlReplacer = function(param){
+				var currentUrl = window.location.href;
+				var newUrl;
+				if ( currentUrl.includes(param) ){
+						
+					if (currentUrl.includes('keyword')){
+						newUrl = currentUrl.replace(param, "").replace('keyword', "");
+					}
+					if (currentUrl.includes('date_query')){
+						newUrl = currentUrl.replace(param, "").replace('date_query', "");
+					} 
+					if (currentUrl.includes('geography_query')){
+						newUrl = currentUrl.replace(param, "").replace('geography_query', "");
+					} 
+					if (currentUrl.includes('practice_query')){
+						newUrl = currentUrl.replace(param, "").replace('practice_query', "");
+					} 
+					if (currentUrl.includes('language_query')){
+						newUrl = currentUrl.replace(param, "").replace('language_query', "");
+					} 
+					if (currentUrl.includes('location_query')){
+						newUrl = currentUrl.replace(param, "").replace('location_query', "");
+					} 
+					if (currentUrl.includes('admission_query')){
+						newUrl = currentUrl.replace(param, "").replace('admission_query', "");
+					} 
+					if (currentUrl.includes('education_query')){
+						newUrl = currentUrl.replace(param, "").replace('education_query', "");
+					} 
+				} 
+			
+				console.log(newUrl);
+			}
+
+
+
+
+				// buildArray(keywordString);
+				// buildArray(selectedDate);
+				// buildArray(selectedGeography)
+				// buildArray(selectedIndustry)
+				// buildArray(selectedPractice)
+				// buildArray(selectedLanguage)
+				// buildArray(selectedLocations)
+				// buildArray(selectedAdmission)
+				// buildArray(selectedEducation)
+				// buildArray(selectedKeyword);
+
+
+				// for (var z=0; z <paramsArray.length; z++){
+				// 	urlReplacer(paramsArray[z]);
+				// }
+
+
+
+		});
+
+
 		$('#peopleAdvancedSearchButton').click(function(event) {
 			event.preventDefault();
 			var selects = $('select');
@@ -73,63 +218,6 @@ var PEOPLE = {
 		});
 	},
 	stickySideBar: $('.sidebar__on-scroll--fixed'),
-	// scrollEvents: function(){
-	// 	var heightAdjustment;
-	// 	if ( $('.page-template-people').length > 0 &&  $('.people__details--container').height() > $('.sidebar__on-scroll--fixed').height() ){
-	// 		heightAdjustment = 800;
-	// 	} else {
-	// 		heightAdjustment = 263;
-	// 	}
-	// 	var scrollStopperOffset = $('#masthead').height() + $('.body__wrapper').height() - heightAdjustment;
-	// 	if ( $(window).scrollTop() >= ($('#featuredImage').height()) && $(window).scrollTop() <= scrollStopperOffset ) {
-	// 		PEOPLE.stickSideBar('top');
-	// 	} else if ( $(window).scrollTop() >= scrollStopperOffset ) {
-	// 		PEOPLE.stickSideBar('bottom');
-	// 		console.log('bottom sticker');
-	// 	} else {
-	// 		PEOPLE.unstickSideBar();
-	// 	}
-	// },
-	// stickSideBar: function(location) {
-	// 	var sideBarWidth;
-	// 	if ( location === 'top' ) {	
-	// 		if ( $(window).width() < 1000 ) {
-	// 			sideBarWidth = 'calc(75em / 4)';
-	// 		} else {
-	// 			sideBarWidth = 'calc(75em / 6)';
-	// 		}
-	// 		PEOPLE.stickySideBar.css({
-	// 			position: 'fixed',
-	// 			width: sideBarWidth,
-	// 			top: '160px'
-	// 		});
-	// 	} else {
-	// 		if ( $(window).width() < 1000 ) {
-	// 			sideBarWidth = '25%';
-	// 		} else {
-	// 			sideBarWidth = '16.66667%';
-	// 		}
-	// 		PEOPLE.stickySideBar.css({
-	// 			position: 'absolute',
-	// 			width: sideBarWidth,
-	// 			top: 'initial',
-	// 			bottom: '60px'
-	// 		});
-	// 	}	
-	// },
-	// unstickSideBar: function() {
-	// 	var sideBarWidth;
-	// 	if ( $(window).width() < 1000 ) {
-	// 		sideBarWidth = '25%';
-	// 	} else {
-	// 		sideBarWidth = '16.66667%';
-	// 	}
-	// 	PEOPLE.stickySideBar.css({
-	// 		position: 'relative',
-	// 		width: sideBarWidth,
-	// 		top: 'initial'			
-	// 	});
-	// },
 	revealAdvancedSearch: function(){
 		$('#advancedSearchModal').removeClass('hidden').fadeIn('slow');
 	},
@@ -178,12 +266,6 @@ $(document).ready(function(){
 	PEOPLE.listeners();
 	PEOPLE.scrollBackToTop();
 	PEOPLE.scrollToLocationHash();
-	// if ( $(document).width() > 640) {
-	// 	PEOPLE.scrollEvents();
-	// 	$(document).scroll( function(){
-	// 		PEOPLE.scrollEvents();
-	// 	});
-	// }
 	var headerHeight = $('#mastheadOnScroll').height() + 160;
 	var elementToStick = $('.sidebar__on-scroll--fixed');
 		if ( $('.sidebar__on-scroll--fixed').length > 0){

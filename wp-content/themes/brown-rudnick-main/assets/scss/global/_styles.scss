@@ -1089,7 +1089,7 @@ img.insights {
 	margin: 200px auto;
 	background-color: white;
 	padding: 80px;
-	@media screen and (max-width: 800px) {
+	@media screen and (max-width: 1300px) {
 		margin: 60px 5px;
 		padding: 15px;
 	}
@@ -1706,6 +1706,14 @@ tbody {
 .sitemap__heading:hover {
 	color: $br-black
 }
+
+.search__button__container {
+	text-align: center;
+	@media screen and (min-width: 1300px){
+		text-align: left;
+	}
+}
+
 .page-template-sitemap {
 	li {
 		text-transform: uppercase;

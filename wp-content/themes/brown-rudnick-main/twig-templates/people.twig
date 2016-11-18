@@ -16,7 +16,7 @@
 			            </div>
 
 			            <div class="columns large-6 medium-6 small-6">
-			            	<select id="geographySelect" name="geography_query" class="clean___border insight inline__text grey__bold__text smaller">
+			            	<select id="geographySelect" name="geography_query" class="clean___border inline__text grey__bold__text smaller">
 								<option value="">
 									GEOGRAPHIES
 								</option>
@@ -28,7 +28,7 @@
 							</select>
 						</div>
 						<div class="columns large-6 medium-6 small-6">	
-							<select id="industrySelect" name="industry_query" class="clean___border insight inline__text grey__bold__text smaller">
+							<select id="industrySelect" name="industry_query" class="clean___border inline__text grey__bold__text smaller">
 								<option value="">
 									INDUSTRIES
 								</option>
@@ -40,7 +40,7 @@
 							</select>
 						</div>	
 						<div class="columns large-6 medium-6 small-6">
-							<select id="practiceSelect" name="practice_query" class="clean___border insight inline__text grey__bold__text smaller">
+							<select id="practiceSelect" name="practice_query" class="clean___border inline__text grey__bold__text smaller">
 								<option value="">
 									PRACTICES
 								</option>
@@ -52,7 +52,7 @@
 							</select>
 			            </div>
 						<div class="columns large-6 medium-6 small-6">
-							<select id="languageSelect" name="language_query" class="clean___border insight inline__text grey__bold__text smaller">
+							<select id="languageSelect" name="language_query" class="clean___border inline__text grey__bold__text smaller">
 								<option value="">
 									LANGUAGES
 								</option>
@@ -64,7 +64,7 @@
 							</select>
 			            </div>
 						<div class="columns large-6 medium-6 small-6">
-							<select id="locationSelect" name="location_query" class="clean___border insight inline__text grey__bold__text smaller">
+							<select id="locationSelect" name="location_query" class="clean___border inline__text grey__bold__text smaller">
 								<option value="">
 									LOCATIONS
 								</option>
@@ -76,7 +76,7 @@
 							</select>
 			            </div>
 			            <div class="columns large-6 medium-6 small-6">
-							<select id="admissionSelect" name="admission_query" class="clean___border insight inline__text grey__bold__text smaller">
+							<select id="admissionSelect" name="admission_query" class="clean___border inline__text grey__bold__text smaller">
 								<option value="">
 									ADMISSIONS
 								</option>
@@ -88,7 +88,7 @@
 							</select>
 			            </div>
 			            <div class="columns large-6 medium-6 small-6">
-							<select id="educationSelect" name="education_query" class="clean___border insight inline__text grey__bold__text smaller">
+							<select id="educationSelect" name="education_query" class="clean___border inline__text grey__bold__text smaller">
 								<option value="">
 									EDUCATION
 								</option>
@@ -99,7 +99,7 @@
 								{% endfor %}
 							</select>
 			            </div>
-						<div class="columns large-12 small-12 medium-12 ">
+						<div class="columns large-12 small-12 medium-12 search__button__container">
 							<button id="peopleAdvancedSearchButton" type="button" class="sites-button">
 								Submit
 							</button>
@@ -172,7 +172,7 @@
 							<div class="search-results__tag--outer-wrapper">
 								<div class="search-results__tag--inner-wrapper">
 									geography: {{ geography }}
-									<button class="tag__canceler">
+									<button class="tag__canceller" data-name='geography_query' data-tag={{geography}}>
 										x
 									</button>
 								</div>
@@ -182,7 +182,7 @@
 							<div class="search-results__tag--outer-wrapper">
 								<div class="search-results__tag--inner-wrapper">
 									industry: {{ industry }}
-									<button class="tag__canceler">
+									<button class="tag__canceller" data-name='industry_query' data-tag={{industry}}>
 										x
 									</button>
 								</div>
@@ -192,7 +192,7 @@
 							<div class="search-results__tag--outer-wrapper">
 								<div class="search-results__tag--inner-wrapper">
 									practice: {{ practice }}
-									<button class="tag__canceler">
+									<button class="tag__canceller" data-name='practice_query' data-tag={{ practice}}>
 										x
 									</button>
 								</div>
@@ -202,7 +202,7 @@
 							<div class="search-results__tag--outer-wrapper">
 								<div class="search-results__tag--inner-wrapper">
 									language: {{ language }}
-									<button class="tag__canceler">
+									<button class="tag__canceller" data-name='language_query' data-tag={{ language }}>
 										x
 									</button>
 								</div>
@@ -212,7 +212,7 @@
 							<div class="search-results__tag--outer-wrapper">
 								<div class="search-results__tag--inner-wrapper">
 									admission: {{ admission }}
-									<button class="tag__canceler">
+									<button class="tag__canceller" data-name='admission_query' data-tag={{ admission }}>
 										x
 									</button>
 								</div>
@@ -222,17 +222,24 @@
 							<div class="search-results__tag--outer-wrapper">
 								<div class="search-results__tag--inner-wrapper">
 									education: {{ education }}
-									<button class="tag__canceler">
+									<button class="tag__canceller" data-name='education_query' data-tag={{ education }}>
 										x
 									</button>
 								</div>
 							</div>	
 						{% endif %}	
 					</div>
-						{% if keyword %}
+							{% if keyword %}
 							<p class="title__text">
-								Showing results for your search "{{keyword}}"
+								Search results 
 							</p>
+							 <div>
+							 		<button class="tag__canceller" data-name='keyword' data-tag={{keyword}}>
+							 			x
+							 		</button>
+							 		<p>keyword</p>
+							 		<p class="keyword--container">{{keyword}}</p>
+							 </div>
 						{% endif %}	
 					{% if people|length > 0 %}
 						{% for person in people %}
@@ -302,8 +309,15 @@
 					{% else %}
 						{% if keyword %}
 							<p class="title__text">
-								Showing results for your search "{{keyword}}"
+								Search results 
 							</p>
+							 <div>
+							 		<button class="tag__canceller" data-name='keyword' data-tag={{keyword}}>
+							 			x
+							 		</button>
+							 		<p>keyword</p>
+							 		<p class="keyword--container">{{keyword}}</p>
+							 </div>
 						{% else %}	
 							<p class="title__text">
 								Sorry! We couldn't find any results for your query!
