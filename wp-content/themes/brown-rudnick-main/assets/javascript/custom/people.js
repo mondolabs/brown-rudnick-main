@@ -30,153 +30,49 @@ var PEOPLE = {
 
 		$('.tag__canceller').click(function(event) {
 			event.preventDefault();
-	
 			var target = $(this);
+			var targetVal = target.data().tag;
 			var queryStringBase = location.origin + location.pathname;
-			var queryString = "";
-		
-			var filters =[];
-			var tags = $('.tag__canceller');
+			var queryString = "";		
+			var filters =[
+			$.url().param('date_query', 'strict') || "",
+			$.url().param('geography_query', 'strict') || "",
+			$.url().param('industry_query', 'strict') || "",
+			$.url().param('practice_query', 'strict') || "",
+			$.url().param('language_query', 'strict') || "",
+			$.url().param('location_query', 'strict') || "",
+			$.url().param('admission_query', 'strict') || "",
+			$.url().param('education_query', 'strict') || "",
+			$.url().param('keyword', 'strict') || ""
+			];
 
-			for (var z = tags.length -1; z >=0; z--){	
-				var tag = tags[z];
-				filters.push(tags[z]);
-			}
-
+	
 			for(var y = filters.length - 1; y >= 0; y--) {
-				var paramVal = $(filters[y]).data().tag;
-				var paramName = $(filters[y]).data().name;
-				var targetVal = target.data().tag;
+				var paramVal = filters[y];
+				var paramName = $(filters[y]).data().name;	
 				if ( paramName.length > 0 && y === filters.length - 1 ) {
-					queryString = queryStringBase + "?" + paramName + "=" + paramVal;
-					if (queryString.includes(targetVal)){
-						queryString = queryString.replace(targetVal, "");
-					}
-
+					newUrl = queryString = queryStringBase + "?" + paramName + "=" + paramVal;					
 				} else if ( paramName.length > 0 ) {
-					queryString = queryString + "&" + paramName + "=" + paramVal;
-					if (queryString.includes(targetVal)){
-						queryString = queryString.replace(targetVal, "");
-					}
+					newUrl = queryString + "&" + paramName + "=" + paramVal;
 				}
 
 
-				if ( queryString.length > 0) {
-					window.location.replace(queryString);
-				} else {
-					window.location.replace(queryStringBase);
+
+
+				console.log(targetVal);
+				if (paramVal == targetVal.toUpperCase()) {
+					console.log('match');
 				}
+							
 				
 			}
-
-
-
-
-
-
-			// var keywordString = $.url().param('keyword', 'strict') || "";
-			// var selectedDate = $.url().param('date_query', 'strict') || "";
-			// var selectedGeography = $.url().param('geography_query', 'strict') || "";
-			// var selectedIndustry = $.url().param('industry_query', 'strict') || "";
-			// var selectedPractice = $.url().param('practice_query', 'strict') || "";
-			// var selectedLanguage = $.url().param('language_query', 'strict') || "";
-			// var selectedLocations = $.url().param('location_query', 'strict') || "";
-			// var selectedAdmission = $.url().param('admission_query', 'strict') || "";
-			// var selectedEducation = $.url().param('education_query', 'strict') || "";
-			// var selectedKeyword = $.url().param('keyword', 'strict') || "";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-			var paramsArray = new Array;
-
-			var buildArray = function(string) {
-				if (string.length > 0) {
-					paramsArray.push(string);
-				}
-			}
-
-
-
-
-
-
-
-
-
-
-
-
-
-			var urlReplacer = function(param){
-				var currentUrl = window.location.href;
-				var newUrl;
-				if ( currentUrl.includes(param) ){
-						
-					if (currentUrl.includes('keyword')){
-						newUrl = currentUrl.replace(param, "").replace('keyword', "");
-					}
-					if (currentUrl.includes('date_query')){
-						newUrl = currentUrl.replace(param, "").replace('date_query', "");
-					} 
-					if (currentUrl.includes('geography_query')){
-						newUrl = currentUrl.replace(param, "").replace('geography_query', "");
-					} 
-					if (currentUrl.includes('practice_query')){
-						newUrl = currentUrl.replace(param, "").replace('practice_query', "");
-					} 
-					if (currentUrl.includes('language_query')){
-						newUrl = currentUrl.replace(param, "").replace('language_query', "");
-					} 
-					if (currentUrl.includes('location_query')){
-						newUrl = currentUrl.replace(param, "").replace('location_query', "");
-					} 
-					if (currentUrl.includes('admission_query')){
-						newUrl = currentUrl.replace(param, "").replace('admission_query', "");
-					} 
-					if (currentUrl.includes('education_query')){
-						newUrl = currentUrl.replace(param, "").replace('education_query', "");
-					} 
-				} 
 			
-				console.log(newUrl);
-			}
+			console.log(newUrl);
 
-
-
-
-				// buildArray(keywordString);
-				// buildArray(selectedDate);
-				// buildArray(selectedGeography)
-				// buildArray(selectedIndustry)
-				// buildArray(selectedPractice)
-				// buildArray(selectedLanguage)
-				// buildArray(selectedLocations)
-				// buildArray(selectedAdmission)
-				// buildArray(selectedEducation)
-				// buildArray(selectedKeyword);
-
-
-				// for (var z=0; z <paramsArray.length; z++){
-				// 	urlReplacer(paramsArray[z]);
-				// }
-
-
-
+		// if (newUrl.includes(targetVal)){
+		// 		newUrl = newUrl.replace(paramName, "").replace(targetVal, "");
+		// 		console.log(newUrl);
+		// 	}
 		});
 
 

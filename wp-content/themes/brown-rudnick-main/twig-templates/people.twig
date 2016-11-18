@@ -170,75 +170,141 @@
 					<div>
 						{% if geography %}
 							<div class="search-results__tag--outer-wrapper">
-								<div class="search-results__tag--inner-wrapper">
-									geography: {{ geography }}
-									<button class="tag__canceller" data-name='geography_query' data-tag={{geography}}>
-										x
-									</button>
-								</div>
+								<div class="small-6 medium-6 large-3">
+								<div class="tag__container">
+							 		<div class="tag__half">
+								 		<p class="keyword--title">geography</p>
+								 		<p class="keyword--container">{{ geography }}</p>
+							 		</div>
+							 		<div class="tag__half">
+								 		<button class="tag__canceller" data-name='geography_query' data-tag="{{ geography }}">
+								 			x
+								 		</button>
+							 		</div>
+							 	</div>
+							 </div>
+							</div>	
+						{% endif %}
+						{% if location %}
+							<div class="search-results__tag--outer-wrapper">
+								<div class="small-6 medium-6 large-3">
+								<div class="tag__container">
+							 		<div class="tag__half">
+								 		<p class="keyword--title">location</p>
+								 		<p class="keyword--container">{{ location }}</p>
+							 		</div>
+							 		<div class="tag__half">
+								 		<button class="tag__canceller" data-name='geography_query' data-tag="{{ location}}">
+								 			x
+								 		</button>
+							 		</div>
+							 	</div>
+							 </div>
 							</div>	
 						{% endif %}
 						{% if industry %}
 							<div class="search-results__tag--outer-wrapper">
-								<div class="search-results__tag--inner-wrapper">
-									industry: {{ industry }}
-									<button class="tag__canceller" data-name='industry_query' data-tag={{industry}}>
-										x
-									</button>
-								</div>
+								<div class="small-6 medium-6 large-3">
+									<div class="tag__container">
+								 		<div class="tag__half">
+									 		<p class="keyword--title">industry</p>
+									 		<p class="keyword--container">{{ industry }}</p>
+								 		</div>
+								 		<div class="tag__half">
+									 		<button class="tag__canceller" data-name='industry_query' data-tag="{{ industry }}">
+									 			x
+									 		</button>
+								 		</div>
+								 	</div>
+							 </div>
 							</div>	
 						{% endif %}
 						{% if practice %}
 							<div class="search-results__tag--outer-wrapper">
-								<div class="search-results__tag--inner-wrapper">
-									practice: {{ practice }}
-									<button class="tag__canceller" data-name='practice_query' data-tag={{ practice}}>
-										x
-									</button>
-								</div>
-							</div>	
+								<div class="small-6 medium-6 large-3">
+								<div class="tag__container">
+							 		<div class="tag__half">
+								 		<p class="keyword--title">practice</p>
+								 		<p class="keyword--container">{{ practice }}</p>
+							 		</div>
+							 		<div class="tag__half">
+								 		<button class="tag__canceller" data-name='practice_query' data-tag="{{ practice }}">
+								 			x
+								 		</button>
+							 		</div>
+							 	</div>
+							 </div>
+							</div>
 						{% endif %}
 						{% if language %}
 							<div class="search-results__tag--outer-wrapper">
-								<div class="search-results__tag--inner-wrapper">
-									language: {{ language }}
-									<button class="tag__canceller" data-name='language_query' data-tag={{ language }}>
-										x
-									</button>
-								</div>
+								<div class="small-6 medium-6 large-3">
+								<div class="tag__container">
+							 		<div class="tag__half">
+								 		<p class="keyword--title">language</p>
+								 		<p class="keyword--container">{{ language }}</p>
+							 		</div>
+								 		<div class="tag__half">
+									 		<button class="tag__canceller" data-name='language_query' data-tag="{{ language }}">
+									 			x
+									 		</button>
+								 		</div>
+								 	</div>
+								 </div>
 							</div>	
 						{% endif %}
 						{% if admission %}
 							<div class="search-results__tag--outer-wrapper">
-								<div class="search-results__tag--inner-wrapper">
-									admission: {{ admission }}
-									<button class="tag__canceller" data-name='admission_query' data-tag={{ admission }}>
-										x
-									</button>
-								</div>
+								<div class="small-6 medium-6 large-3">
+								<div class="tag__container">						
+							 		<div class="tag__half">
+								 		<p class="keyword--title">admission</p>
+								 		<p class="keyword--container">{{ admission }}</p>
+							 		</div>
+							 		<div class="tag__half">
+								 		<button class="tag__canceller" data-name='admission_query' data-tag="{{ admission }}">
+								 			x
+								 		</button>
+							 		</div>
+							 	</div>
+							 </div>
 							</div>	
 						{% endif %}
 						{% if education %}
+
 							<div class="search-results__tag--outer-wrapper">
-								<div class="search-results__tag--inner-wrapper">
-									education: {{ education }}
-									<button class="tag__canceller" data-name='education_query' data-tag={{ education }}>
-										x
-									</button>
-								</div>
-							</div>	
+								<div class="small-6 medium-6 large-3">
+								<div class="tag__container">						
+							 		<div class="tag__half">
+								 		<p class="keyword--title">education</p>
+								 		<p class="keyword--container">{{ education }}</p>
+							 		</div>
+							 		<div class="tag__half">
+								 		<button class="tag__canceller" data-name='education_query' data-tag="{{ education }}">
+								 			x
+								 		</button>
+							 		</div>
+							 	</div>
+							 </div>
+							</div>
 						{% endif %}	
 					</div>
 							{% if keyword %}
 							<p class="title__text">
 								Search results 
 							</p>
-							 <div>
-							 		<button class="tag__canceller" data-name='keyword' data-tag={{keyword}}>
-							 			x
-							 		</button>
-							 		<p>keyword</p>
-							 		<p class="keyword--container">{{keyword}}</p>
+							 <div class="small-6 medium-6 large-3">
+							 	<div class="tag__container">
+							 		<div class="tag__half">
+								 		<p class="keyword--title">keyword</p>
+								 		<p class="keyword--container">{{keyword}}</p>
+							 		</div>
+							 		<div class="tag__half">
+								 		<button class="tag__canceller" data-name='keyword' data-tag="{{keyword}}">
+								 			x
+								 		</button>
+							 		</div>
+							 	</div>
 							 </div>
 						{% endif %}	
 					{% if people|length > 0 %}
@@ -311,12 +377,18 @@
 							<p class="title__text">
 								Search results 
 							</p>
-							 <div>
-							 		<button class="tag__canceller" data-name='keyword' data-tag={{keyword}}>
-							 			x
-							 		</button>
-							 		<p>keyword</p>
-							 		<p class="keyword--container">{{keyword}}</p>
+							 <div class="small-6 medium-6 large-3">
+							 	<div class="tag__container">
+							 		<div class="tag__half">
+								 		<p class="keyword--title">keyword</p>
+								 		<p class="keyword--container">{{keyword}}</p>
+							 		</div>
+							 		<div class="tag__half">
+								 		<button class="tag__canceller" data-name='keyword' data-tag="{{keyword}}">
+								 			x
+								 		</button>
+							 		</div>
+							 	</div>
 							 </div>
 						{% else %}	
 							<p class="title__text">
