@@ -21,6 +21,11 @@ $data['tag'] = get_query_var('tag', "");
 $parent = get_page($post->post_parent);
 $parent_name = $parent->post_name;
 
+$data['filtered_by_category'] = true;
+
+$data['parent_name'] = $parent_name;
+$data['parent_link'] = get_permalink( $post->post_parent );
+
 $blog_name = str_replace("-", "_", $parent_name);
 
 $blog_title_category_obj = get_category_by_slug($blog_name);
@@ -58,7 +63,6 @@ usort($data['all_tags_for_blog_posts'], "sort_objects_by_name");
 $slug = basename(get_permalink());
 $data['slug'] = $slug;
 $data['parent_link'] = get_permalink( $post->post_parent );
-
 
 ?>
 

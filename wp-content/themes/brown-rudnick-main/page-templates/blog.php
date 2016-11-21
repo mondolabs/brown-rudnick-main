@@ -26,6 +26,8 @@ $blog_posts_args = array('category_name' => $blog_name, 'numberposts' => -1 );
 
 $data['blog_posts'] = Timber::get_posts($blog_posts_args);
 
+$data['unfiltered'] = true;
+
 $all_tags_for_blog_posts = [];
 $all_dates_for_blog_posts = [];
 

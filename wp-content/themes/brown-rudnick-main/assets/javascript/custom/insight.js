@@ -33,7 +33,6 @@ var INSIGHTS = {
 			} else {
 				window.location.replace(queryStringBase);
 			}
-
 		});
 		$('button#advancedSearchSubmit').click(function(event) {
 			var selects = $('.advanced');
