@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Blog with Category
+Template Name: Blog - Filtered by Category
 */
 
 get_header();
@@ -15,10 +15,15 @@ $data['post'] = new TimberPost();
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
 $data['featured_image_url'] = $data['featured_image_url'][0];
 $data['header_text'] = get_field('header_text');
+
 $parent = get_page($post->post_parent);
 $parent_name = $parent->post_name;
+
+var_dump($parent_name);
+
 $blog_name = $data['post']->slug;
 $blog_name = str_replace("-", "_", $blog_name);
+
 $blog_title_category_obj = get_category_by_slug($blog_name);
 $data['blog_title_category_id'] = $blog_title_category_obj->term_id;
 
