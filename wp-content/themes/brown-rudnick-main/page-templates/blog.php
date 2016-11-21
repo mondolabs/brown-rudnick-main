@@ -31,11 +31,11 @@ $data['unfiltered'] = true;
 $all_tags_for_blog_posts = [];
 $all_dates_for_blog_posts = [];
 
-foreach ($data['blog_posts'] as $k => $v) {
+foreach ($data['blog_posts'] as $kx => $vx) {
+  array_push($all_dates_for_blog_posts, strtotime(($vy->date)));
   $tags  = get_the_tags($v->ID);  
-  array_push($all_dates_for_blog_posts, strtotime(($v->date)));
-  foreach ($tags as $k => $v) {
-    array_push($all_tags_for_blog_posts, strtoupper($v->name));
+  foreach ($tags as $ky => $vy) {
+    array_push($all_tags_for_blog_posts, strtoupper($vy->name));
   }
 }
 
@@ -49,7 +49,8 @@ function sort_objects_by_name($a, $b) {
   return ($a->name < $b->name) ? -1 : 1;
 }
 
-usort($data['all_tags_for_blog_posts'], "sort_objects_by_name");
+$all_tags_for_blog_posts = $data['all_tags_for_blog_posts'];
+usort($all_tags_for_blog_posts, "sort_objects_by_name");
 
 $slug = basename(get_permalink());
 $data['slug'] = $slug;
