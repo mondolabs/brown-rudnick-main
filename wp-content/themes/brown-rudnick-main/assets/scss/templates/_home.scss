@@ -323,11 +323,15 @@ button.slick-arrow  {
 	.slick-slide{
 		height: 650px;
 	}
-	.homepage-grid-element{
-		height: 400px;
-	}		
+	
 }
 
+
+@include breakpoint (medium) {
+	.homepage-grid-element{
+		height: 400px;
+	}	
+}
 .menu__wrapper--desktop {
 		padding: 20px 0px 20px;
 }

@@ -867,7 +867,7 @@ img.insights {
 .tile__arrow {
   position: absolute;
   bottom: 12px;
-  right: -3px;
+  right: 3px;
   height: 40px;
   width: 64px;
   border: 1px #f0f0f0 solid;
@@ -10196,7 +10196,9 @@ button.slick-arrow {
   .prev-slider-home, .next-slider-home {
     width: 30px; }
   .slick-slide {
-    height: 650px; }
+    height: 650px; } }
+
+@media screen and (min-width: 48em) {
   .homepage-grid-element {
     height: 400px; } }
 
