@@ -1588,6 +1588,41 @@ tbody {
   color: #b91628 !important;
   text-decoration: none !important; }
 
+.email-buttons {
+  text-align: center;
+  width: 50%;
+  margin: 0 auto; }
+
+.email-modal-pair {
+  background-color: #b91628;
+  color: #fefefe; }
+
+.email-modal-pair:hover {
+  background-color: #fefefe;
+  color: #b91628;
+  border: 1px solid #b91628; }
+
+.email-modal-pair, .email-modal-pair-reverse {
+  cursor: pointer; }
+
+.email-modal-pair-reverse {
+  background-color: #fefefe;
+  color: #b91628;
+  border: 1px solid #b91628; }
+
+.email-modal-pair-reverse:hover {
+  background-color: #b91628;
+  color: #fefefe; }
+
+.email-modal-button {
+  letter-spacing: 2px;
+  font-size: 12px;
+  font-weight: 800;
+  margin: 0;
+  padding: 5%;
+  vertical-align: middle;
+  text-transform: uppercase; }
+
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
