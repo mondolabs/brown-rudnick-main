@@ -7,7 +7,9 @@ var LOCATIONSEARCHER = {
 			var queryStringBase = location.origin + location.pathname;
 			var queryString = "" + "?job_location_query="+keyword;
 			// reload the page with the keyword as the url
-			window.location.replace(queryString);		
+			if ( $('body').hasClass('page-template-lawyers') || $('body').hasClass('page-template-staff') ){
+				window.location.replace(queryString);	
+			}
 		});
 	},
 	// make select value reflect your most recent search param

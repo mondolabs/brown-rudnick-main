@@ -41,9 +41,9 @@
 					</h4>
 					<p>
 						{% if featured_first.post_excerpt %}
-							{{ featured_first.post_excerpt }}
+							{{ featured_first.post_excerpt|truncate(12)|striptags ~ '' }}
 						{% else %}
-							{{ featured_first.post_content }}
+							{{ featured_first.post_content|truncate(12)|striptags ~ '' }}
 						{% endif %}	
 					</p>
 				</div>
@@ -92,9 +92,9 @@
 						</h4>
 						<p>
 							{% if homepage_post.post_excerpt %}
-								{{ homepage_post.post_excerpt }}
+								{{ homepage_post.post_excerpt|truncate(12)|striptags ~ '' }}
 							{% else %}
-								{{ homepage_post.post_content }}
+								{{ homepage_post.post_content|truncate(12)|striptags ~ '' }}
 							{% endif %}	
 						</p>
 					</div>
