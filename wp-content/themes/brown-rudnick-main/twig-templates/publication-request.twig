@@ -1,1 +1,29 @@
-<p>This is publication request</p>
+<div id="featuredImage" class ="featured-image__header--image-wrapper" >
+	{% set header_text_color = "black" %}
+	{# hero header #}
+	<div class="featured-image__header--text-outer-wrapper row">
+		<div class="featured-image__header--text-wrapper">
+			<div class="featured-image__header--text-inner-wrapper">
+				<div class="color__block vellum">
+					<h1 class="page__header {{ header_text_color }}">
+						{{ pub_request_header_text }}
+					</h1>
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>
+
+
+<p>{{pub_request_excerpt}} </p>
+<p>{{pub_request_title}}</p>
+
+
+
+<div class="row relative z-index__1 padding-bottom-60">
+	<div class="columns small-12 medium-12 large-12 x-large-12">
+		<div class="row">
+			{{ post.post_content|shortcodes }}
+		</div>
+	</div>
+</div>

@@ -701,6 +701,8 @@ img.insight__details {
     position: relative;
     text-align: center;
     height: auto; }
+    .color__block--grey.insights--publication a {
+      color: #000; }
 
 .color__block {
   overflow-wrap: break-word; }

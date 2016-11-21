@@ -544,7 +544,7 @@ h3.title {
     	@include breakpoint(medium){
     		border-left: none;
     	}
-   	
+    	
     }
     &.last {
     	border-right: none;
@@ -738,6 +738,9 @@ img.insight__details {
     	position: relative;
     	text-align: center;
     	height: auto;
+    	a {
+    		color: $br-black;
+    	}
 	}
 }
 
