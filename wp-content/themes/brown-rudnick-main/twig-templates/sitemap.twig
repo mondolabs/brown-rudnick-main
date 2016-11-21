@@ -20,10 +20,10 @@
 	</div>
 </div> 
 
-
-
 <script type="text/javascript">
-	$(document).ready(function(){
-			$('#featuredImage').backstretch("{{ missing_page_image }}");
-	})
+	{% if featured_image_url %}
+		$(document).ready(function(){
+				$('#featuredImage').backstretch("{{featured_image_url}}");
+		});
+	{% endif %}
 </script>
