@@ -6,7 +6,7 @@
 			<div class="featured-image__header--text-inner-wrapper">
 				<div class="color__block vellum">
 					<h1 class="page__header {{ header_text_color }}">
-						{{ header_text }}
+						{{ tag }}
 					</h1>
 				</div>
 			</div>
@@ -93,9 +93,7 @@
 
 	<div class="columns show-for-medium-up medium-9 large-9 small-12 mobile-margin-top-20">
 		<div class="columns small-12 medium-12 large-12 no__pad desktop-only">	
-			<p class="body__text">
-				{{ top_content }}
-			</p>
+			{% set blog_posts = category.get_posts({'numberposts' : -1, 'orderby' : 'date', 'tag' : tag }) %}
 			{% for blog_post in blog_posts %}
 				<div>
 					 {{blog_post.title}}

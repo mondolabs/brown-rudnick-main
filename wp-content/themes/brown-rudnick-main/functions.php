@@ -76,6 +76,7 @@ function custom_insights_query_vars( $vars ) {
   $vars[] = 'keyword';
   $vars[] = 'previous-parent';
   $vars[] = 'previous-slug';
+  $vars[] = 'tag';
   return $vars;
 }
 
