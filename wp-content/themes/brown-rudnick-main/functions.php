@@ -89,6 +89,4 @@ function custom_jobs_query_vars( $vars ) {
 
 // Make all posts commentable
 add_filter('comments_open', '__return_true');
-
-
   

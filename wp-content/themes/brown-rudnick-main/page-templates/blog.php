@@ -5,6 +5,11 @@ Template Name: Blog Landing
 
 get_header();
 
+function flatten_array(array $array) {
+  return iterator_to_array(
+  new \RecursiveIteratorIterator(new \RecursiveArrayIterator($array)));
+}
+
 $data = Timber::get_context();
 $data['post'] = new TimberPost();
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
@@ -12,20 +17,38 @@ $data['featured_image_url'] = $data['featured_image_url'][0];
 $data['header_text'] = get_field('header_text');
 $parent = get_page($post->post_parent);
 $parent_name = $parent->post_name;
-$sidebar_slug = $parent_name . '-sidebar';
-$args = array(
-  'name'        => $sidebar_slug,
-  'post_type'   => 'sidebar',
-  'post_status' => 'publish',
-  'numberposts' => 1
-);
-$data['sidebar'] = get_posts($args);
-$data['contact_name'] = get_field('contact_name');
-$data['contact_title'] = get_field('contact_title');
-$data['contact_phone_number'] = get_field('contact_phone_number');
-$data['contact_email'] = get_field('contact_email');
-$data['top_content'] = get_field('top_content');
-$data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
+$blog_name = $data['post']->slug;
+$blog_name = str_replace("-", "_", $blog_name);
+$blog_title_category_obj = get_category_by_slug($blog_name);
+$data['blog_title_category_id'] = $blog_title_category_obj->term_id;
+
+$blog_posts_args = array('category_name' => $blog_name, 'numberposts' => -1 );
+
+$data['blog_posts'] = Timber::get_posts($blog_posts_args);
+
+$all_tags_for_blog_posts = [];
+$all_dates_for_blog_posts = [];
+
+foreach ($data['blog_posts'] as $k => $v) {
+  $tags  = get_the_tags($v->ID);  
+  array_push($all_dates_for_blog_posts, strtotime(($v->date)));
+  foreach ($tags as $k => $v) {
+    array_push($all_tags_for_blog_posts, strtoupper($v->name));
+  }
+}
+
+$data['all_tags_for_blog_posts'] = array_unique($all_tags_for_blog_posts);
+$data['all_dates_for_blog_posts'] = array_unique($all_dates_for_blog_posts);
+
+function sort_objects_by_name($a, $b) {
+  if($a->name == $b->name){
+    return 0;
+  }
+  return ($a->name < $b->name) ? -1 : 1;
+}
+
+usort($data['all_tags_for_blog_posts'], "sort_objects_by_name");
+
 $slug = basename(get_permalink());
 $data['slug'] = $slug;
 $data['parent_link'] = get_permalink( $post->post_parent );
