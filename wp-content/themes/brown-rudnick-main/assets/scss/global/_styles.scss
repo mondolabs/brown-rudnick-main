@@ -1330,6 +1330,11 @@ button.close__modal {
   	border-bottom: 1px solid #A8A8A8;
 }
 
+.wpcf7-select {
+	cursor: pointer;
+	@extend %selectBackground;
+}
+
 .grey-block-full {
 	background-color: $primary-grey !important; 
 	.white-row {
@@ -1551,16 +1556,7 @@ button.close__modal {
 
 select.clean___border {	
 	cursor: pointer;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background: url('../../assets/images/down-carrat.svg') no-repeat;
-    -webkit-background-size: 9px 6px;
-    background-size: 9px 6px;
-    background-position: right -1rem center;
-    -webkit-background-origin: content-box;
-    background-origin: content-box;
-    padding-right: 1.5rem;
-    padding-left: 0;
+   @extend %selectBackground;
 }
 
 *:focus {
@@ -1750,7 +1746,6 @@ tbody {
 .sitemap__heading:hover {
 	color: $br-black
 }
-
 .search__button__container {
 	text-align: center;
 	@media screen and (min-width: 1300px){
@@ -1803,9 +1798,19 @@ tbody {
 		text-decoration: none !important;
 	}
 }
+
+.email__modal {
+	.modal__text {
+		@media screen and (max-width: 768px){
+			font-size: 12px;
+		}
+	}
+}
 .email-buttons{
 	text-align: center; 
-	width: 50%; 
+	@include breakpoint(medium){
+		width: 50%; 
+	}
 	margin: 0 auto;
 }
 .email-modal-pair {

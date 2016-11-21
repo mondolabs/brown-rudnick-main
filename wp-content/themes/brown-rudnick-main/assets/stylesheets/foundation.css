@@ -41,6 +41,18 @@ body {
     .arrows-container, .slide-description p, .slide-description h2, .homepage-section-3-title {
       text-align: left; } }
 
+.wpcf7-select, select.clean___border {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url("../../assets/images/down-carrat.svg") no-repeat;
+  -webkit-background-size: 9px 6px;
+  background-size: 9px 6px;
+  background-position: right -1rem center;
+  -webkit-background-origin: content-box;
+  background-origin: content-box;
+  padding-right: 1.5rem;
+  padding-left: 0; }
+
 #locationSelect, .clean___border, .wpcf7-form-control, .wpcf7-select, #search-by-keyword, #submit-keyword-search {
   border-left: none !important;
   border-right: none !important;
@@ -74,6 +86,18 @@ body {
   @media screen and (min-width: 40em) {
     .arrows-container, .slide-description p, .slide-description h2, .homepage-section-3-title {
       text-align: left; } }
+
+.wpcf7-select, select.clean___border {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url("../../assets/images/down-carrat.svg") no-repeat;
+  -webkit-background-size: 9px 6px;
+  background-size: 9px 6px;
+  background-position: right -1rem center;
+  -webkit-background-origin: content-box;
+  background-origin: content-box;
+  padding-right: 1.5rem;
+  padding-left: 0; }
 
 /**
  * Foundation for Sites by ZURB
@@ -1205,6 +1229,9 @@ button.close__modal {
 #locationSelect, .clean___border, .wpcf7-form-control, .wpcf7-select {
   border-bottom: 1px solid #A8A8A8; }
 
+.wpcf7-select {
+  cursor: pointer; }
+
 .grey-block-full {
   background-color: #f0f0f0 !important; }
   .grey-block-full .white-row {
@@ -1389,17 +1416,7 @@ button.close__modal {
   background: #fefefe; }
 
 select.clean___border {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background: url("../../assets/images/down-carrat.svg") no-repeat;
-  -webkit-background-size: 9px 6px;
-  background-size: 9px 6px;
-  background-position: right -1rem center;
-  -webkit-background-origin: content-box;
-  background-origin: content-box;
-  padding-right: 1.5rem;
-  padding-left: 0; }
+  cursor: pointer; }
 
 *:focus {
   outline: none !important; }
@@ -1615,10 +1632,16 @@ tbody {
   color: #b91628 !important;
   text-decoration: none !important; }
 
+@media screen and (max-width: 768px) {
+  .email__modal .modal__text {
+    font-size: 12px; } }
+
 .email-buttons {
   text-align: center;
-  width: 50%;
   margin: 0 auto; }
+  @media screen and (min-width: 48em) {
+    .email-buttons {
+      width: 50%; } }
 
 .email-modal-pair {
   background-color: #b91628;
