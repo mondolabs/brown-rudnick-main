@@ -57,22 +57,13 @@ $all_dates_for_blog_posts = [];
 foreach ($data['blog_posts'] as $k => $v) {
   $tags  = get_the_tags($v->ID);  
   array_push($all_dates_for_blog_posts, strtotime(($v->date)));
-  foreach ($tags as $k => $v) {
+  foreach ((array)$tags as $k => $v) {
     array_push($all_tags_for_blog_posts, strtoupper($v->name));
   }
 }
 
 $data['all_tags_for_blog_posts'] = array_unique($all_tags_for_blog_posts);
 $data['all_dates_for_blog_posts'] = array_unique($all_dates_for_blog_posts);
-
-function sort_objects_by_name($a, $b) {
-  if($a->name == $b->name){
-    return 0;
-  }
-  return ($a->name < $b->name) ? -1 : 1;
-}
-
-usort($data['all_tags_for_blog_posts'], "sort_objects_by_name");
 
 $slug = basename(get_permalink());
 $data['slug'] = $slug;
