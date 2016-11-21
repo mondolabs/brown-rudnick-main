@@ -31,26 +31,16 @@ $data['unfiltered'] = true;
 $all_tags_for_blog_posts = [];
 $all_dates_for_blog_posts = [];
 
-foreach ($data['blog_posts'] as $kx => $vx) {
-  array_push($all_dates_for_blog_posts, strtotime(($vx->date)));
-  $tags  = get_the_tags($vx->ID);  
-  foreach ($tags as $ky => $vy) {
-    array_push($all_tags_for_blog_posts, strtoupper($vy->name));
+foreach ($data['blog_posts'] as $key => $value) {
+  array_push($all_dates_for_blog_posts, strtotime(($value->date)));
+  $tags  = get_the_tags($value->ID);  
+  foreach ($tags as $k => $v) {
+    array_push($all_tags_for_blog_posts, strtoupper($v->name));
   }
 }
 
 $data['all_tags_for_blog_posts'] = array_unique($all_tags_for_blog_posts);
 $data['all_dates_for_blog_posts'] = array_unique($all_dates_for_blog_posts);
-
-function sort_objects_by_name($a, $b) {
-  if($a->name == $b->name){
-    return 0;
-  }
-  return ($a->name < $b->name) ? -1 : 1;
-}
-
-$all_tags_for_blog_posts = $data['all_tags_for_blog_posts'];
-usort($all_tags_for_blog_posts, "sort_objects_by_name");
 
 $slug = basename(get_permalink());
 $data['slug'] = $slug;
