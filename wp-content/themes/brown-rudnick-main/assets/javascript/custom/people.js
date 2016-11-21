@@ -12,7 +12,6 @@ var PEOPLE = {
 				$('html,body').animate({
 		          scrollTop: letterAnchor.offset().top - 200
 		        }, 1000);
-		        console.log("Scrolling to " + letter );  
 		        $('.back__to__top').slideToggle();
 		        return false;
 			} else {
@@ -21,9 +20,9 @@ var PEOPLE = {
 				letterAnchor.click(function(event){
 					event.preventDefault();
 				})
-			}
-			
+			}			
 		});
+
 		$('#advancedPeopleSearch').click(function(event) {
 			PEOPLE.revealAdvancedSearch();
 		});
@@ -31,50 +30,17 @@ var PEOPLE = {
 		$('.tag__canceller').click(function(event) {
 			event.preventDefault();
 			var target = $(this);
-			var targetVal = target.data().tag;
-			var queryStringBase = location.origin + location.pathname;
-			var queryString = "";		
-			var filters =[
-			$.url().param('date_query', 'strict') || "",
-			$.url().param('geography_query', 'strict') || "",
-			$.url().param('industry_query', 'strict') || "",
-			$.url().param('practice_query', 'strict') || "",
-			$.url().param('language_query', 'strict') || "",
-			$.url().param('location_query', 'strict') || "",
-			$.url().param('admission_query', 'strict') || "",
-			$.url().param('education_query', 'strict') || "",
-			$.url().param('keyword', 'strict') || ""
-			];
-
-	
-			for(var y = filters.length - 1; y >= 0; y--) {
-				var paramVal = filters[y];
-				var paramName = $(filters[y]).data().name;	
-				if ( paramName.length > 0 && y === filters.length - 1 ) {
-					newUrl = queryString = queryStringBase + "?" + paramName + "=" + paramVal;					
-				} else if ( paramName.length > 0 ) {
-					newUrl = queryString + "&" + paramName + "=" + paramVal;
-				}
-
-
-
-
-				console.log(targetVal);
-				if (paramVal == targetVal.toUpperCase()) {
-					console.log('match');
-				}
-							
-				
+			var targetVal = target.data().tag.toUpperCase();
+			var targetName = target.data().name;
+			var baseRoute = location.origin + location.pathname;
+			var newUrl = window.location.href.replace(targetVal, '').replace(targetName, '');
+			var lastChar = newUrl.substr(newUrl.length - 1);
+			if (lastChar === '=') {
+				window.location.replace(baseRoute);
+			} else {
+				window.location.replace(newUrl);
 			}
-			
-			console.log(newUrl);
-
-		// if (newUrl.includes(targetVal)){
-		// 		newUrl = newUrl.replace(paramName, "").replace(targetVal, "");
-		// 		console.log(newUrl);
-		// 	}
 		});
-
 
 		$('#peopleAdvancedSearchButton').click(function(event) {
 			event.preventDefault();
@@ -109,7 +75,6 @@ var PEOPLE = {
 					queryString = queryString + "?keyword=" + keyword;
 				}
 			}
-			// debugger;
 			window.location.replace(queryString);
 		});
 	},
@@ -138,18 +103,20 @@ var PEOPLE = {
 			if (hashAnchor.offset() !== undefined) { 
 				$('html,body').animate({
 		          scrollTop: hashAnchor.offset().top - 200
-		        }, 1000);
-		        return false;
+		        }, 1000, function(){
+							if ($(window).innerWidth() < 768){
+								$('.back__to__top').show(3000);
+							}
+		        });
+		        return false; 
 			} 
 		}
 };
-
 
 	$(window).on('resize', function(event) {		
 			var headerHeight = $('#mastheadOnScroll').height() + 160;
 			var elementToStick = $('.sidebar__on-scroll--fixed');
 			if ( $('.sidebar__on-scroll--fixed').length > 0 && $(document).width() >= 768 ){
-				console.log("STICKY");
 					elementToStick.css('width', '175px !important');
 					elementToStick.stick_in_parent({ offset_top: headerHeight });
 			}	else {
@@ -165,9 +132,7 @@ $(document).ready(function(){
 	var headerHeight = $('#mastheadOnScroll').height() + 160;
 	var elementToStick = $('.sidebar__on-scroll--fixed');
 		if ( $('.sidebar__on-scroll--fixed').length > 0){
-			console.log("STICKY");
 			if ($(document).width() >= 768) {
-				console.log(headerHeight);
 				elementToStick.stick_in_parent({ offset_top: headerHeight });
 			} 	
 	}	

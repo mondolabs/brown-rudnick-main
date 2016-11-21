@@ -536,8 +536,9 @@ h3.title {
   border: solid 18px #fefefe;
   -webkit-box-shadow: inset 0px 0px 0px 14px #f0f0f0;
   box-shadow: inset 0px 0px 0px 14px #f0f0f0; }
-  .experience-tile__outer-wrapper.first {
-    border-left: none; }
+  @media screen and (min-width: 48em) {
+    .experience-tile__outer-wrapper.first {
+      border-left: none; } }
   .experience-tile__outer-wrapper.last {
     border-right: none; }
   .experience-tile__outer-wrapper.orange {

@@ -541,7 +541,10 @@ h3.title {
     -moz-box-shadow:inset 0px 0px 0px 14px $primary-grey;
     box-shadow:inset 0px 0px 0px 14px $primary-grey;
     &.first {
-    	border-left: none;
+    	@include breakpoint(medium){
+    		border-left: none;
+    	}
+   	
     }
     &.last {
     	border-right: none;
