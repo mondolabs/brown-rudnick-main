@@ -6,41 +6,59 @@
  * @since FoundationPress 1.0.0
  */
 
-get_header(); ?>
+get_header();
 
-<div id="single-post" role="main">
+$data = Timber::get_context();
+$data['post'] = new TimberPost();
+$data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
+$data['featured_image_url'] = $data['featured_image_url'][0];
+$data['header_text'] = get_field('header_text');
+$parent = get_page($post->post_parent);
+$parent_name = $parent->post_name;
 
-<?php do_action( 'foundationpress_before_content' ); ?>
-<?php while ( have_posts() ) : the_post(); ?>
-	<article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
-		<header>
-			<h1 class="entry-title"><?php the_title(); ?></h1>
-			<?php foundationpress_entry_meta(); ?>
-		</header>
-		<?php do_action( 'foundationpress_post_before_entry_content' ); ?>
-		<div class="entry-content">
+?>
 
-		<?php
-			if ( has_post_thumbnail() ) :
-				the_post_thumbnail();
-			endif;
+
+<html>
+  <head>
+    <?php wp_head()?>
+  </head>
+  <body>
+    <div id="page-full-width-homepage" class ="full-width" role="main">
+		<?php Timber::render('/twig-templates/individual-blog-post.twig', $data); ?>
+    		<form action="<?php echo get_option( 'siteurl' ); ?>/wp-comments-post.php" method="post" id="commentform">
+		<p>
+			<label for="author">
+				<?php
+					_e( 'Name', 'foundationpress' ); if ( $req ) { _e( ' (required)', 'foundationpress' ); }
+				?>
+			</label>
+			<input type="text" class="five" name="author" id="author" value="<?php echo esc_attr( $comment_author ); ?>" size="22" tabindex="1" <?php if ( $req ) { echo "aria-required='true'"; } ?>>
+		</p>
+		<p>
+			<label for="email">
+				<?php
+					_e( 'Email (will not be published)', 'foundationpress' ); if ( $req ) { _e( ' (required)', 'foundationpress' ); }
+				?>
+			</label>
+			<input type="text" class="five" name="email" id="email" value="<?php echo esc_attr( $comment_author_email ); ?>" size="22" tabindex="2" <?php if ( $req ) { echo "aria-required='true'"; } ?>>
+		</p>
+		<p>
+			<label for="comment">
+					<?php
+						_e( 'Comment', 'foundationpress' );
+					?>
+			</label>
+			<textarea name="comment" id="comment" tabindex="4"></textarea>
+		</p>
+		<p><input name="submit" class="button" type="submit" id="submit" tabindex="5" value="<?php esc_attr_e( 'Submit', 'foundationpress' ); ?>"></p>
+		<?php comment_id_fields(); ?>
+		<?php do_action( 'comment_form', $post->ID ); ?>
+		<?php $comments = get_comments(); 
+			var_dump($comments);
 		?>
-
-		<?php the_content(); ?>
-		<?php edit_post_link( __( 'Edit', 'foundationpress' ), '<span class="edit-link">', '</span>' ); ?>
-		</div>
-		<footer>
-			<?php wp_link_pages( array('before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ), 'after' => '</p></nav>' ) ); ?>
-			<p><?php the_tags(); ?></p>
-		</footer>
-		<?php the_post_navigation(); ?>
-		<?php do_action( 'foundationpress_post_before_comments' ); ?>
-		<?php comments_template(); ?>
-		<?php do_action( 'foundationpress_post_after_comments' ); ?>
-	</article>
-<?php endwhile;?>
-
-<?php do_action( 'foundationpress_after_content' ); ?>
-<?php get_sidebar(); ?>
-</div>
-<?php get_footer();
+	</form>
+    </div>  
+    <?php get_footer(); ?>
+  </body>
+</html>

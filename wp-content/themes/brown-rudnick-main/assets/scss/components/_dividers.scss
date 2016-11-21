@@ -39,15 +39,18 @@
 	}
 	&.smaller {
 		width: 30px;
+		margin:	10px 0;
 	}
 	&.smallest {
 		width: 20px;
+		margin:	8px 0 10px;
 	}
 	&.letter__links {
 		margin-top: 21px;
 	}
 	&.about__deatils,
-	&.insight__deatils {
+	&.insight__deatils,
+	&.event__deatils {
 		height: 4px;
 		width: 60px;
 	}

@@ -19,7 +19,7 @@
 	<div class="row experience__wrapper body__wrapper columns small-12 medium-12 large-12">
 		{% include '/twig-templates/insights-sidebar.twig' with sidebar %}
 		<div class="columns small-12 medium-9 large-10">
-			<div class="columns small-12 medium-6 large-6 margin-top-40">
+			<div class="columns small-12 medium-6 large-6">
 				<div class="padding__wrapper">
 					<p class="title__text">
 						Articles
@@ -34,7 +34,7 @@
 											{{ news_article.post_title }}<br>
 										</a> 
 										<p class="tag__text grey margin-top-20">
-											{{ news_article.date|date("M d, y")|upper }}
+											{{ news_article.date|date("M d, Y")|upper }}
 										</p>
 									</td>
 									<td class="no__pad">
@@ -58,7 +58,7 @@
 					</a>
 				</div>
 			</div>
-			<div class="columns small-12 medium-6 large-6 margin-top-40">
+			<div class="columns small-12 medium-6 large-6">
 				<div class="padding__wrapper sides__only ten">
 					<p class="title__text">
 						Alerts
@@ -139,7 +139,7 @@
 				</p>
 				<div class="insight__blogs--outer-wrapper">
 					{% for publication in publications %}
-						<div class="small-12 medium-12 large-6 columns end">
+						<div class="small-12 medium-12 large-6 columns end {% if not loop.last %} margin-bottom--20 {% endif %}">
 							<div class="insight__blog--wrapper">
 								<div class="color__block--grey insights--publication">
 									<a href ="{{publication.publication_link}}">
@@ -165,13 +165,8 @@
 				<h4 class="title__text smaller insights margin-bottom--0">
 					Subscribe
 				</h4>
-				<form class="relative">
-					<input type="text" placeholder="EMAIL" class="subscribe">
-					</input>
-					<button class="sites-button advanced-search desktop__full--width" type="button">
-						SUBSCRIBE
-					</button>
-				</form>
+				{% set sidebar = sidebar|first %}
+				{{ sidebar.post_content|shortcodes }}
 				<span class="list-divider mobile mobile__centered smaller"></span>
 				<div class="text-align__center">
 					<h4 class="title__text smaller insights margin-bottom--0">

@@ -1,0 +1,115 @@
+<div id="advancedSearchModal" class="vellum black--vellum modal__background diversity hidden">
+    <div class="row">
+     	<div class="advanced-search diversity__modal--outer-wrapper table__wrapper relative">
+        	<div class="diversity__modal--inner-wrapper table__innner">
+          		<div class="diversity__modal--text-wrapper">
+		            <button class="close__modal cancel"></button>
+		            <p class="title__text text-align__center">
+		              Advanced Search
+		            </p>
+		            <p class="body__text bigger text-align__center wide-spacing">
+		              SEARCH ALL INSIGHTS
+		            </p>
+			        <form id="insightsAdvancedSearch">
+			            <div class="columns large-12 medium-12 small-12">
+			              <input id="allKeywordInput" type="text" name="s" placeholder="Keyword or Author">
+			            </div>
+			            {% if all_dates %}
+	        				<div class="columns large-6 medium-6 small-12">
+								<select id="allDateSelect" name="date_query" class="clean___border inline__text grey__bold__text smaller advanced">
+						            {% set dateValues = [] %}
+						            {% set datePresenters = [] %}
+						            {% for date in all_dates %}
+						                {% set valueFormattedDate = date|date("mY")%}
+						                {% set presentationFormattedDate = date|date("F, Y")%}
+						                {% if valueFormattedDate not in dateValues %}
+						                    {% set dateValues = dateValues|merge([valueFormattedDate]) %}
+						                {% endif %}
+						                {% if presentationFormattedDate not in datePresenters %}
+						                    {% set datePresenters = datePresenters|merge([presentationFormattedDate]) %}
+						                {% endif %}
+						            {% endfor %}
+						            <option value="">
+						            	DATE
+						            </option>
+					                {% for i in datePresenters %}
+					                  <option value='{{ dateValues[loop.index0] }}'>
+					                      {{ datePresenters[loop.index0] }}
+					                  </option>
+					                {% endfor %}
+				            	</select>
+							</div>
+			            {% endif %}	
+						{% if all_geographies %}
+				            <div class="columns large-6 medium-6 small-12">
+				            	<select id="allGeographySelect" name="geography_query" class="clean___border inline__text grey__bold__text smaller advanced">
+									<option value="">
+										GEOGRAPHIES
+									</option>
+									{% for geography in all_geographies %}
+										<option value="{{ geography.slug|upper }}">
+											{{ geography.name|upper }}
+										</option>
+									{% endfor %}
+								</select>
+							</div>
+						{% endif %}	
+						{% if all_industries %}
+							<div class="columns large-6 medium-6 small-12">	
+								<select id="allIndustrySelect" name="industry_query" class="clean___border inline__text grey__bold__text smaller advanced">
+									<option value="">
+										INDUSTRIES
+									</option>
+									{% for industry in all_industries %}
+										<option value="{{ industry.slug|upper }}">
+											{{ industry.name|upper }}
+										</option>
+									{% endfor %}
+								</select>
+							</div>
+						{% endif %}
+						{% if all_practices %}
+							<div class="columns large-6 medium-6 small-12">
+								<select id="allPracticeSelect" name="practice_query" class="clean___border inline__text grey__bold__text smaller advanced">
+									<option value="">
+										PRACTICES
+									</option>
+									{% for practice in all_practices %}
+										<option value="{{ practice.slug|upper }}">
+											{{ practice.name|upper }}
+										</option>
+									{% endfor %}
+								</select>
+				            </div>
+				        {% endif %}    
+						<div class="columns large-6 medium-6 small-12">
+							<select id="allTypeSelect" name="type_query" class="clean___border inline__text grey__bold__text smaller advanced">
+								<option value="">
+									TYPE
+								</option>
+								<option value="alert">
+									Alerts &amp; Bulletins
+								</option>
+								<option value="article">
+									Articles
+								</option>
+								<option value="event">
+									Events
+								</option>
+							</select>
+			            </div>
+			            {% if parent %}	
+			            	<input class="advanced" type="hidden" name="previous-parent" value="{{ parent }}">
+			            {% endif %}	
+			            <input class="advanced" type="hidden" name="previous-slug" value="{{ slug }}">
+						<div class="button__wrapper advanced__button columns large-12 small-12 medium-12 ">
+							<button id="advancedSearchSubmit" type="button" class="sites-button">
+								Submit
+							</button>
+						</div>
+			        </form>    
+         		</div>
+        	</div>  
+     	</div>
+    </div>  
+</div>

@@ -1,3 +1,4 @@
+{% include '/twig-templates/insights-advanced-search.twig' %}
 <div class="medium-3 large-2 small-12 columns no__pad">
 	{% set sidebar = sidebar|first %}
 	{% if parent_link %}
@@ -31,7 +32,7 @@
 	{# MOBILE SIDEBAR LIST DIVIDER #}
 	<span class="list-divider mobile show-for-small-only"></span>
 	<div class="show-for-small-only margin-top-40">
-		<button class="sites-button advanced-search inverse mobile__full--width" type="button">
+		<button id="advancedMobileSearch" class="sites-button advanced-search inverse mobile__full--width" type="button">
 			ADVANCED SEARCH
 		</button>
 	</div>
@@ -89,24 +90,18 @@
 	    {% endfor %}
 	</div>
 	<div class="hide-for-small-only">
-	<span class="list-divider smaller"></span>
+		{# <span class="list-divider smaller"></span> #}
 		<div class="sidebar__wrapper">
-			<button id="insightsAdvancedSearch" class="sites-button advanced-search inverse desktop__full--width" type="button">
+			<button id="insightsAdvancedSearch" class="sites-button advanced-search inverse desktop__full--width margin-bottom--20" type="button">
 				ADVANCED SEARCH
 			</button>
 		</div>
-		<span class="list-divider smaller"></span>
+		{# <span class="list-divider smaller"></span> #}
 		<div class="sidebar__wrapper">
 			<h4 class="title__text smaller insights margin-bottom--0">
 				Subscribe
 			</h4>
-			<form class="relative">
-				<input type="text" placeholder="EMAIL" class="subscribe">
-				</input>
-				<button class="sites-button advanced-search desktop__full--width" type="button">
-					SUBSCRIBE
-				</button>
-			</form>
+			{{ sidebar.post_content|shortcodes }}
 		</div>
 	</div>
 	<div class="hide-for-small-only">

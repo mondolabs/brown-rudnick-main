@@ -72,7 +72,11 @@ function custom_insights_query_vars( $vars ) {
   $vars[] = 'admission_query';
   $vars[] = 'education_query';
   $vars[] = 'date_query';
+  $vars[] = 'type_query';
   $vars[] = 'keyword';
+  $vars[] = 'previous-parent';
+  $vars[] = 'previous-slug';
+  $vars[] = 'tag';
   return $vars;
 }
 
@@ -84,5 +88,6 @@ function custom_jobs_query_vars( $vars ) {
   return $vars;
 }
 
-
+// Make all posts commentable
+add_filter('comments_open', '__return_true');
   

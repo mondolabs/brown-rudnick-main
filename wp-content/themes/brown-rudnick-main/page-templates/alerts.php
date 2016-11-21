@@ -6,7 +6,7 @@ Template Name: Alerts
 get_header();
 
 $data = Timber::get_context();
-$data['post'] = $post;
+$data['post'] = new TimberPost();
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
 $data['featured_image_url'] = $data['featured_image_url'][0];
 $data['header_text'] = get_field('header_text');
@@ -68,6 +68,31 @@ foreach ( $custom_posts as $post ) {
   array_push($ids, $post->ID);
 }
 
+// begin generate options for advanced search fields
+$all_posts_args = array(
+  'post_type' => array('article', 'event', 'alert'),
+  'numberposts' => -1,
+  'posts_per_page' => -1,
+  'orderby' => 'date',
+  'post_status' => array( 'publish', 'future')
+);
+
+$all_dates = [];
+$all_posts = get_posts($all_posts_args);
+$all_ids = [];
+
+foreach ( $all_posts as $all_post ) {
+  array_push( $all_dates, strtotime($all_post->post_date));
+  array_push( $all_ids, $all_post->ID);
+};
+
+$data['all_dates'] = array_unique($all_dates);
+$data['all_geographies'] = wp_get_object_terms( $all_ids, 'geography' );
+$data['all_industries'] = wp_get_object_terms( $all_ids, 'industry' );
+$data['all_practices'] = wp_get_object_terms( $all_ids, 'practice' );
+
+// end generate options for advanced search fields
+
 $data['geographies'] = wp_get_object_terms( $ids, 'geography' );
 $data['industries'] = wp_get_object_terms( $ids, 'industry' );
 $data['practices'] = wp_get_object_terms( $ids, 'practice' );
@@ -116,20 +141,6 @@ if( ($geography !== "GEOGRAPHIES") || ( $industry !== "INDUSTRIES") || ($practic
     array_push($insights_args['tax_query'], $practice_term_query_array );
   }
 }
-
-// if ($date_query_term !== "DATE") {
-//   $year_query = intval($year);
-//   $month_query = intval($month); 
-//   $insights_args['date_query'] = [];
-//   $dates_term_query_array = array(
-//     'column' => 'date',
-//     'year'  => $year_query,
-//     'month' => $month_query,
-//   );
-//   array_push($insights_args['date_query'], $dates_term_query_array );
-// }
-
-// $data['insights'] = new WP_Query($insights_args);
 
 $results = Timber::get_posts($insights_args);
 $data['insights'] = $results;

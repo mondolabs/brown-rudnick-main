@@ -23,7 +23,7 @@ var PEOPLE = {
 			}			
 		});
 
-		$('#advancedPeopleSearch').click(function(event) {
+		$('#advancedPeopleSearch, #insightsAdvancedSearch, #advancedMobileSearch').click(function(event) {
 			PEOPLE.revealAdvancedSearch();
 		});
 
@@ -85,7 +85,6 @@ var PEOPLE = {
 	hideAdvancedSearch: function(){
 		$('#advancedSearchModal').addClass('hidden').fadeOut('slow');
 	},
-
 	scrollBackToTop: function(){
 		$('.back__to__top').click(function(event){
 			$('html,body').animate({

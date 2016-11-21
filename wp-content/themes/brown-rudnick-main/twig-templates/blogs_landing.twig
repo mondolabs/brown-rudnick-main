@@ -1,0 +1,128 @@
+<div id="featuredImage" class ="featured-image__header--image-wrapper">
+	{% set header_text_color = "black" %}
+	{# hero header #}
+	<div class="featured-image__header--text-outer-wrapper row">
+		<div class="featured-image__header--text-wrapper">
+			<div class="featured-image__header--text-inner-wrapper">
+				<div class="color__block vellum">
+					<h1 class="page__header {{ header_text_color }}">
+						{{ tag }}
+					</h1>
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>
+{# body - with sidebar #}
+<div class="experience__wrapper row body__wrapper columns small-12 medium-12 large-12">
+	
+	<div class="medium-3 large-2 small-12 columns no__pad hide-for-small-only">
+		<div class="sidebar__wrapper">
+			<h4 class="title__text smaller insights margin-bottom--0">
+				Subscribe to Our Blogs
+			</h4>
+			{{ post.content|shortcodes }}
+			<span class="list-divider mobile__centered smaller grey"></span>
+			<p class="tag__text medium">
+				CATEGORIES
+			</p>
+			<select id="blogTagSelect" name="tag_query" class="clean___border inline__text grey__bold__text smaller">
+				<option value="">
+					CATEGORIES
+				</option>
+				{% for tag in all_tags_for_blog_posts %}
+					<option value="{{ tag }}">
+						{{ tag }}
+					</option>
+				{% endfor %}
+			</select>
+
+			<div class="hide-for-small-only">
+				<button id="clearCategoriesSidebar" class="desktop__full--width sites-button advanced-search inverse mobile__full--width" type="button">
+					CLEAR CATEGORIES
+				</button>
+			</div>
+			<span class="list-divider mobile__centered smaller grey"></span>
+			<p class="margin-top-20 tag__text medium">
+				ARCHIVES
+			</p>
+			<select id="blogDateSelect" name="date_query" class="clean___border inline__text grey__bold__text smaller">
+	            {% set dateValues = [] %}
+	            {% set datePresenters = [] %}
+	            {% for date in all_dates_for_blog_posts %}
+	            	{{ date }}
+	                {% set valueFormattedDate = date|date("mY")%}
+	                {% set presentationFormattedDate = date|date("F, Y")%}
+	                {% if valueFormattedDate not in dateValues %}
+	                    {% set dateValues = dateValues|merge([valueFormattedDate]) %}
+	                {% endif %}
+	                {% if presentationFormattedDate not in datePresenters %}
+	                    {% set datePresenters = datePresenters|merge([presentationFormattedDate]) %}
+	                {% endif %}
+	            {% endfor %}
+	            <option value="">
+	            	MONTH
+	            </option>
+                {% for i in datePresenters %}
+                  <option value='{{ dateValues[loop.index0] }}'>
+                      {{ datePresenters[loop.index0] }}
+                  </option>
+                {% endfor %}
+        	</select>
+			<span class="list-divider mobile__centered smaller grey"></span>
+			<p class="margin-top-20 tag__text medium">
+				CONTRIBUTORS
+			</p>
+			{% set category = TimberTerm(blog_title_category_id) %}
+			{% set blog_posts = category.get_posts({'numberposts' : -1, 'orderby' : 'date' }) %}
+            {% set authors = [] %}
+
+            {% for blog_post in blog_posts %}
+            	{% for author in blog_post.get_field('blog_authors') %}
+                    {% set authors = authors|merge([author]) %}
+                {% endfor %}
+            {% endfor %}			
+			{% for author in authors %}
+				{% set author = author|first %}
+            	<a class="tag__text red link" href="{{ author.permalink }}">
+              		{{ author.first_name|upper }} {{ author.last_name|upper }} 
+            	</a>
+			{% endfor %}	
+		</div>
+	</div>
+
+	<div class="columns show-for-medium-up medium-9 large-9 small-12 mobile-margin-top-20">
+		<div class="columns small-12 medium-12 large-12 no__pad desktop-only">	
+			{% set blog_posts = category.get_posts({'numberposts' : -1, 'orderby' : 'date', 'tag' : tag }) %}
+			{% for blog_post in blog_posts %}
+				<div>
+					 {{blog_post.title}}
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+
+<div class="grey__background columns small-12 padding__wrapper twenty show-for-small-only">
+	<div class="insights__bottom--mobile-wrapper">
+		<div class="table__wrapper margin__auto">
+			<div class="table__inner">
+				<h4 class="title__text smaller insights margin-bottom--0">
+					Subscribe to our Blogs
+				</h4>
+				{{ post.content|shortcodes }}
+				<span class="list-divider mobile mobile__centered smaller"></span>
+				<p class="">
+				</p>
+			</div>
+		</div>
+	</div>	
+</div>
+
+<script type="text/javascript">
+	{% if featured_image_url %}
+		$(document).ready(function(){
+			$('#featuredImage').backstretch("{{featured_image_url}}");
+		})
+	{% endif %}
+</script>

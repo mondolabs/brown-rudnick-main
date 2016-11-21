@@ -10,7 +10,7 @@ a {
 	font-weight: bold;
 	box-shadow: none;
 	border: none;
-	padding: 16px 80px;
+	padding: 16px 70px;
 	text-transform: uppercase;
     margin: 3% auto;
 	letter-spacing: 1.2px;
@@ -18,7 +18,8 @@ a {
     border: 2px solid $primary-red;
 	&.advanced-search {
 	    font-size: 11px;
-	    padding: 12px 14px;
+	    padding: 18px 16px;
+	    margin: 10px 0 20px;
 	}
 	&.inverse {
 	    background: $white;
@@ -46,7 +47,20 @@ a {
 			width: 70%;
 			margin: 0 auto;
 		}
-	}	
+	}
+	&.subscribe {
+		width: 100%;
+		padding-left: auto;
+		padding-right: auto;
+	}
+	&.subscribe__content--block {
+	    float: right;
+    	margin-top: -32px;
+		@media screen and (max-width: 768px) {
+			float: left;
+    		margin: 20px 0;
+    	}
+	}
 }
 .advanced-search-container {
 	@media screen and (max-width: 768px) {
