@@ -19,8 +19,6 @@ $data['header_text'] = get_field('header_text');
 $parent = get_page($post->post_parent);
 $parent_name = $parent->post_name;
 
-var_dump($parent_name);
-
 $blog_name = $data['post']->slug;
 $blog_name = str_replace("-", "_", $blog_name);
 
