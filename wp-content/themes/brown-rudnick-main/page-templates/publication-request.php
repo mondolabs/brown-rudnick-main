@@ -8,7 +8,9 @@ $data = Timber::get_context();
 $data['post'] = $post;
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
 $data['featured_image_url'] = $data['featured_image_url'][0];
-$data['pub_request_header_text'] = get_field('request_publication_header_text');
+$data['pub_request_header_text'] = get_field('publication_request_header_text');
+$data['pub_request_excerpt'] = get_field('publication_request_excerpt');
+$data['pub_request_title'] = get_the_title();
 ?>
 
 
