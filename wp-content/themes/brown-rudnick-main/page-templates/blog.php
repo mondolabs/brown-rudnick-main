@@ -33,7 +33,7 @@ $all_dates_for_blog_posts = [];
 
 foreach ($data['blog_posts'] as $key => $value) {
   array_push($all_dates_for_blog_posts, strtotime(($value->date)));
-  $tags  = get_the_tags($value->ID);
+  $tags  = get_the_tags($value->ID);  
   foreach ((array)$tags as $k => $v) {
     array_push($all_tags_for_blog_posts, strtoupper($v->name));
   }

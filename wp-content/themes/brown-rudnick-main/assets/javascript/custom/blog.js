@@ -29,7 +29,7 @@ var BLOG = {
 				return false;
 			}
 		});
-		$('#blogDateSelect').change(function(event) {
+		$('#blogDateSelect, #blogDateSelectCenterContent').change(function(event) {
 			var selectedTag = $(this);
 			var selectedTagValue = $(selectedTag).val();
 			if ($(selectedTag).hasClass('unfiltered')) {

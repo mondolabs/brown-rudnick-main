@@ -51,6 +51,9 @@ foreach ($data['blog_posts'] as $k => $v) {
 $data['all_tags_for_blog_posts'] = array_unique($all_tags_for_blog_posts);
 $data['all_dates_for_blog_posts'] = array_unique($all_dates_for_blog_posts);
 
+array_filter($data['all_tags_for_blog_posts'], function($value) { return $value !== ''; });
+array_filter($data['all_dates_for_blog_posts'], function($value) { return $value !== ''; });
+
 $slug = basename(get_permalink());
 $data['slug'] = $slug;
 $data['parent_link'] = get_permalink( $post->post_parent );

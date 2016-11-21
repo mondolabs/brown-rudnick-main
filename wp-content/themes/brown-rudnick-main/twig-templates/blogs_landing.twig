@@ -19,9 +19,14 @@
 							{{ header_text }}
 						</h1>	
 					{% elseif filtered_by_category %}
+						
 						<h1 class="page__header {{ header_text_color }}">
-							{{ tag|capitalize|replace('-', ' ') }}
+							{{ tag.name }}
 						</h1>
+					{% else %}
+						<h1 class="page__header {{ header_text_color }}">
+							Monthly Archives
+						</h1>	
 					{% endif %}	
 				</div>
 			</div>
@@ -52,9 +57,11 @@
 					CATEGORIES
 				</option>
 				{% for tag_option in all_tags_for_blog_posts %}
-					<option value="{{ tag_option }}" {% if tag|upper|replace('-', ' ') == tag_option %}selected="selected"{% endif %}>
-						{{ tag_option }}
-					</option>
+					{% if tag_option != ''%}
+						<option value="{{ tag_option }}" {% if tag|upper|replace('-', ' ') == tag_option %}selected="selected"{% endif %}>
+							{{ tag_option }}
+						</option>
+					{% endif %}	
 				{% endfor %}
 			</select>
 
@@ -118,18 +125,42 @@
 
 	<div class="columns no__pad medium-9 large-9 small-12 mobile-margin-top-20">
 		<div class="columns small-12 medium-12 large-12 no__pad desktop-only">	
-			{% if posts_by_date_args %}	
-				{% set blog_posts = category.get_posts(posts_by_date_args) %}
-			{% else %}
-				{% set blog_posts = category.get_posts({'numberposts' : -1, 'orderby' : 'date', 'tag' : tag }) %}
-			{% endif %}
-			
-			{% for blog_post in blog_posts %}
-				<div>
-					 {{blog_post.title}}
-					 {{blog_post.date}}
-				</div>
-			{% endfor %}
+			{% if monthly_archive %}
+				<div class="row">
+					<p class="title__text">
+						Filtered by Month
+					</p>
+				</div>	
+				<div class="row">
+					<div class="no__pad columns large-12 medium-12 small-12">
+						<div class="no__pad columns large-6 medium-6 small-12 last float-left">
+							<select id="blogDateSelectCenterContent" name="date_query" class="clean___border inline__text grey__bold__text smaller {% if unfiltered %}unfiltered{% endif %}">
+			                {% for i in datePresenters %}
+			                  <option value='{{ dateValues[loop.index0] }}' {% if date_query == dateValues[loop.index0] %}selected="selected"{% endif %}>
+			                      {{ datePresenters[loop.index0] }}
+			                  </option>
+			                {% endfor %}
+							</select>
+						</div>
+					</div>	
+				</div>	
+			{% endif %}	
+			<div class="row">
+				<div class="margin-top-20">
+					{% if posts_by_date_args %}	
+						{% set blog_posts = category.get_posts(posts_by_date_args) %}
+					{% else %}
+						{% set blog_posts = category.get_posts({'numberposts' : -1, 'orderby' : 'date', 'tag' : tag }) %}
+					{% endif %}
+					
+					{% for blog_post in blog_posts %}
+						<div>
+							 {{blog_post.title}}
+							 {{blog_post.date}}
+						</div>
+					{% endfor %}
+				</div>	
+			</div>	
 		</div>
 	</div>
 </div>
