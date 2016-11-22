@@ -1,5 +1,4 @@
 <div id="featuredImage" class ="featured-image__header--image-wrapper" >
-
 	{% set header_text_color = "black" %}
 	{# hero header #}
 	<div class="featured-image__header--text-outer-wrapper row">
@@ -15,26 +14,34 @@
 	</div>
 </div>
 
-<div class="row">
+<div class="row careers__wrapper body__wrapper columns small-12 medium-12 large-12">
+	<div class="human-icon"></div>
 	<div class="columns large-12 medium-12 small-12">
 		{% for location in locations %}
-			<div class="{% if loop.last %} float-left last{% endif %} columns large-4 medium-4 small-6">
+			<div class="{% if loop.last %} float-left last{% endif %} columns large-4 medium-6 small-12 padding-top-20
+padding-bottom-20">
 					<a href="{{ location.link }}">
 					<p class="title__text link">
 						{{ location.title }}
 					</p>
 				</a> 
-				<p class="body__text">
+				<p class="body__text line__height__smaller">
 					{{ location.street_address_line_1 }} {{ location.city }}{% if location.state %}, {{ location.state }}{% endif %} {{ location.zip_code}}
 				</p>
-				<p class="body__text">
+				<p class="body__text line__height__smaller">
 					{{ location.country }}
 				</p>
-				<p class="body__text">
-					{{ location.phone_number }}
+				<p class="body__text line__height__smaller">
+					<div class="desktop__menu__icon__single">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><defs><style>.cls-1{fill:none;stroke:#231f20;stroke-linecap:round;stroke-linejoin:round;stroke-width:4px;}</style></defs><title>phone</title><g id="Layer_2" data-name="Layer 2"><g id="icons"><path class="cls-1" d="M18.17,14.8a4.63,4.63,0,0,0,0-6.54L13.26,3.35a4.63,4.63,0,0,0-6.54,0L4,6a6.93,6.93,0,0,0-.88,8.73A107.57,107.57,0,0,0,33.22,44.84,6.94,6.94,0,0,0,42,44l2.69-2.69a4.63,4.63,0,0,0,0-6.54l-4.91-4.91a4.63,4.63,0,0,0-6.54,0l-1.64,1.64a109.75,109.75,0,0,1-15-15Z"/></g></g></svg>
+					</div>
+						{{ location.phone_number }}
 				</p>
-				<p class="body__text">
-					{{ location.fax_number }}
+				<p class="body__text line__height__smaller">
+					<div class="desktop__menu__icon__single">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49.5 45.5"><defs><style>.cls-1{fill:none;stroke:#231f20;stroke-linecap:round;stroke-linejoin:round;stroke-width:3.5px;}</style></defs><title>Asset 2</title><g id="Layer_2" data-name="Layer 2"><g id="icons"><path class="cls-1" d="M11.75,33.75h-6a4,4,0,0,1-4-4v-12a4,4,0,0,1,4-4h38a4,4,0,0,1,4,4v12a4,4,0,0,1-4,4h-6"/><polyline class="cls-1" points="11.75 12.75 11.75 1.75 31.75 1.75 37.75 7.75 37.75 12.75"/><rect class="cls-1" x="11.75" y="27.75" width="26" height="16"/></g></g></svg>
+					</div>
+						{{ location.fax_number }}
 				</p>	
 			</div>
 		{% endfor %}

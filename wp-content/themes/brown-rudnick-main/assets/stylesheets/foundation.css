@@ -497,6 +497,9 @@ h3.title {
 .margin-bottom--40 {
   margin-bottom: 40px; }
 
+.results__container {
+  min-height: 400px; }
+
 .margin-top-20 {
   margin-top: 20px; }
 
@@ -1702,6 +1705,9 @@ tbody {
     #print--page {
       margin-left: 10px;
       display: inline-block; } }
+
+.line__height__smaller {
+  line-height: 1 !important; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome

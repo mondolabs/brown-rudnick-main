@@ -461,6 +461,10 @@ h3.title {
 	margin-bottom: 40px;
 }
 
+.results__container {
+	min-height: 400px;
+}
+
 .margin-top-20 {
 	margin-top: 20px;
 }
@@ -468,7 +472,6 @@ h3.title {
 .margin-top-neg-20 {
 	margin-top: -20px;
 }
-
 .margin-top-16 {
 	margin-top: 16px;
 }
@@ -1878,4 +1881,7 @@ tbody {
 		display: inline-block;
 	}
 	display: block;
+}
+.line__height__smaller {
+	line-height: 1 !important;
 }
