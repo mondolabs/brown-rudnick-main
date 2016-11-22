@@ -26,7 +26,7 @@ $data['homepage_section_3_header'] = get_field('homepage_section_3_header');
 
 $alphabet = range('A', 'Z');
 ?>
-
+<html>
   <head>
     <?php wp_head()?>
   </head>
