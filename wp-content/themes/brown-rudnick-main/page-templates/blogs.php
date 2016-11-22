@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Blogs Landing Page
+Template Name: Blogs
 */
 
 $data = Timber::get_context();
