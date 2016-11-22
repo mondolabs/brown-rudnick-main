@@ -10,9 +10,14 @@ $post = new TimberPost();
 $data['post'] = $post;
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
 $data['featured_image_url'] = $data['featured_image_url'][0];
+
 $parent = get_page($post->post_parent);
 $parent_name = $parent->post_name;
 $sidebar_slug = $parent_name . '-sidebar';
+$slug = basename(get_permalink());
+$data['slug'] = $slug;
+$data['parent_link'] = get_permalink( $post->post_parent );
+
 $args = array(
   'name'        => $sidebar_slug,
   'post_type'   => 'sidebar',
@@ -25,9 +30,6 @@ $data['contact_title'] = get_field('contact_title');
 $data['contact_phone_number'] = get_field('contact_phone_number');
 $data['contact_email'] = get_field('contact_email');
 
-$slug = basename(get_permalink());
-$data['slug'] = $slug;
-$data['parent_link'] = get_permalink( $post->post_parent );
 
 $data['upcoming_events'] = get_field('upcoming_events');
 $data['past_events'] = get_field('past_events');
