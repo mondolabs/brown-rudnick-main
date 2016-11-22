@@ -255,7 +255,7 @@ if (matchCount(sqliRegex, request.body, request.queryString)):
 if (matchCount(xssRegex, request.body, request.queryString)):
 	failXSS(id=9, category='xss', score=100, description='XSS: Cross Site Scripting')
 
-if (match('/\.(p(h(p|tml)[0-9]?|l|y)|(j|a)sp|aspx|sh|shtml|html?|cgi|htaccess)($|\.)/i', request.fileNames) and currentUserIsNot('administrator', server.empty)):
+if (match('/\.(p(h(p|tml)[0-9]?|l|y)|(j|a)sp|aspx|sh|shtml|html?|cgi|htaccess|user\.ini)($|\.)/i', request.fileNames) and currentUserIsNot('administrator', server.empty)):
 	block(id=11, category='file_upload', description='Malicous File Upload')
 
 if (match('/(^|\/|\\)(\.\.?(\\|\/)+)+wp\-config\.php/i', request.body, request.queryString) and currentUserIsNot('administrator', server.empty)):
