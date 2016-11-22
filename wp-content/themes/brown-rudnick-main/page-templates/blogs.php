@@ -11,7 +11,6 @@ $data['featured_image_url'] = $data['featured_image_url'][0];
 
 $data['blogs'] = get_field('blogs');
 
-
 $sidebar_slug = 'insights-sidebar';
 $args = array(
   'name'        => $sidebar_slug,
