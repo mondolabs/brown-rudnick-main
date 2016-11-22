@@ -1,1 +1,94 @@
-BLOGS TWIG
+<div id="featuredImage" class ="featured-image__header--image-wrapper">
+
+	{% set header_text_color = "black" %}
+	{# hero header #}
+	<div class="featured-image__header--text-outer-wrapper row">
+		<div class="featured-image__header--text-wrapper">
+			<div class="featured-image__header--text-inner-wrapper">
+				<div class="color__block vellum">
+					<h1 class="page__header {{ header_text_color }}">
+						Blog
+					</h1>
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>	
+	{# body - with sidebar #}
+<div class="row">
+	<div class="row experience__wrapper body__wrapper columns small-12 medium-12 large-12">
+		{% include '/twig-templates/insights-sidebar.twig' with sidebar %}
+		<div class="columns small-12 medium-9 large-10">
+			<div class="columns  small-12 medium-12 large-12">
+				<p class="title__text insights__blog">
+					Blogs
+				</p>
+				<div class="insight__blogs--outer-wrapper">
+					{% for blog in blogs %}
+						<div class="small-12 medium-12 large-12 columns end padding-top-20 padding-bottom-20">
+							<div class="insight__blog--wrapper">
+								<img class="insights" src="{{ TimberImage(blog.blog_image).src }}" />
+								<div class="color__block--grey insights">
+									<h4 class="red title__text smaller">
+										{{ blog.blog_title }}
+									</h4>
+									<div class="body__text">
+										{{blog.blog_content_excerpt}}
+									</div>
+									<a href="{{ blog.blog_link_url }}">
+										<span class="tile__arrow blog">
+											<svg class="long__arrow--svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
+												<title>long arrow</title>
+												<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
+												<polyline class="long__arrow red" points="48 1 56 9 48 17"/>
+											</svg>
+										</span>
+									</a>
+								</div>
+							</div>	
+						</div>	
+					{% endfor %}
+				</div>
+			</div>	
+		</div>
+	</div>
+</div>
+<div class="grey__background columns small-12 padding__wrapper twenty show-for-small-only">
+	<div class="insights__bottom--mobile-wrapper">
+		<div class="table__wrapper margin__auto">
+			<div class="table__inner">
+				<h4 class="title__text smaller insights margin-bottom--0">
+					Subscribe
+				</h4>
+				{% set sidebar = sidebar|first %}
+				{{ sidebar.post_content|shortcodes }}
+				<span class="list-divider mobile mobile__centered smaller"></span>
+				<div class="text-align__center">
+					<h4 class="title__text smaller insights margin-bottom--0">
+						{{ contact_name }}
+					</h4>
+					<p class="tag__text contact margin-bottom--0 font-weight__bold">
+						{{ contact_title|upper }}
+					</p>
+					<span class="list-divider mobile mobile__centered smallest red"></span>
+					<p class="body__text insights">
+						{{ contact_phone_number }}
+					</p>
+					<a class="body__text insights link red" href="mailto:{{contact_email}}"> 
+						<p class="link body__text insights">
+							{{ contact_email }}
+						</p>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>	
+</div>
+
+<script type="text/javascript">
+	{% if featured_image_url %}
+		$(document).ready(function(){
+			$('#featuredImage').backstretch("{{featured_image_url}}");
+		})
+	{% endif %}
+</script>

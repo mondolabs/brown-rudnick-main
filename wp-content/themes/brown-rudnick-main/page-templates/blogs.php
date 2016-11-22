@@ -20,6 +20,11 @@ $args = array(
 );
 $data['sidebar'] = get_posts($args);
 
+$data['contact_name'] = get_field('contact_name');
+$data['contact_title'] = get_field('contact_title');
+$data['contact_phone_number'] = get_field('contact_phone_number');
+$data['contact_email'] = get_field('contact_email');
+
 $slug = basename(get_permalink());
 $data['slug'] = $slug;
 

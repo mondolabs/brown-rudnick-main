@@ -43,12 +43,10 @@
 			</h4>
 			{% if unfiltered %}
 				{{ post.content|shortcodes }}
-			{% else %}
-				<div class="hide-for-small-only">
-					{{ post.parent.content|shortcodes }}
-				</div>
+			{% else %}			
+				{{ post.parent.content|shortcodes }}
 			{% endif %}
-			<span class="hide-for-small-only list-divider mobile__centered smaller grey"></span>
+			<span class="hide-for-small-only thick list-divider mobile__centered smaller grey"></span>
 			<p class="tag__text medium mobile__centered">
 				CATEGORIES
 			</p>
@@ -70,7 +68,7 @@
 					CLEAR CATEGORY
 				</button>
 			</div>
-			<span class="list-divider mobile__centered smaller grey"></span>
+			<span class="list-divider mobile__centered smaller grey thick"></span>
 			<p class="margin-top-20 tag__text medium mobile__centered">
 				ARCHIVES
 			</p>
@@ -97,7 +95,7 @@
                   </option>
                 {% endfor %}
         	</select>
-			<span class="list-divider mobile__centered smaller grey"></span>
+			<span class="list-divider mobile__centered smaller thick grey"></span>
 			<p class="margin-top-20 tag__text medium mobile__centered">
 				CONTRIBUTORS
 			</p>
@@ -115,7 +113,7 @@
 			{% for author in authors %}
 				{% set author = author|first %}
 	            <div class="columns large-12 medium-6 small-6 no__pad {% if loop.last %} last float-left {%endif %}">
-	            	<a class="tag__text red link mobile__centered" href="{{ author.permalink }}">
+	            	<a class="tag__text red link" href="{{ author.permalink }}">
 	              		{{ author.first_name|upper }} {% if author.middle_initial %}{{ author.middle_initial }}. {% endif %}{{ author.last_name|upper }} 
 	            	</a>
 	            </div>	
@@ -123,7 +121,7 @@
 		</div>
 	</div>
 
-	<div class="columns no__pad medium-9 large-9 small-12 mobile-margin-top-20">
+	<div class="columns no__pad medium-8 large-9 small-12 mobile-margin-top-20">
 		<div class="columns small-12 medium-12 large-12 no__pad desktop-only">	
 			{% if monthly_archive %}
 				<div class="row">
