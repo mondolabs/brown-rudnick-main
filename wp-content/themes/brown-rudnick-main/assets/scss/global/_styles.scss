@@ -754,6 +754,10 @@ img.insight__details {
 	}
 }
 
+.upper {
+	text-transform: uppercase;
+}
+
 .lawyers-bullet { 
 		float: none !important;
 		display: inline-block !important;
@@ -1060,6 +1064,7 @@ img.insights {
 
 .job_expander {
 	position: relative;
+    top: 20px;
 }
 
 .letter__anchor--indicator {
@@ -1366,6 +1371,9 @@ button.close__modal {
 	padding-right: 0 !important;
 }
 
+.padding-top-0 {
+	padding-top: 0;
+}
 .padding-top-50 {
 	padding-top: 50px;
 }
