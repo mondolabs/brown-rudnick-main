@@ -114,6 +114,7 @@ p.subtitle__text {
 		color: $black;
 		&:hover {
 			color: $primary-red;
+			text-decoration: none;
 		}
 		@media screen and (max-width: 1140px) {
 			font-size: 20px;

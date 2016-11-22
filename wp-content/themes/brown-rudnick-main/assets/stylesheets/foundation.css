@@ -246,7 +246,8 @@ p.subtitle__text {
     margin-bottom: 2px;
     color: #0a0a0a; }
     .title__text.people__details:hover {
-      color: #b91628; }
+      color: #b91628;
+      text-decoration: none; }
     @media screen and (max-width: 1140px) {
       .title__text.people__details {
         font-size: 20px; } }

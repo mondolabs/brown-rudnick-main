@@ -19,10 +19,9 @@ $locations_args = array(
     'posts_per_page'=>-1
 );
 $data['locations'] = Timber::get_posts($locations_args);
-$data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
 $alphabet = range('A', 'Z');
 ?>
-<html>
+<html> 
   <head>
     <?php wp_head()?>
   </head>
@@ -64,7 +63,7 @@ $alphabet = range('A', 'Z');
             </div>
           </div>
           <div class="off-canvas-content" data-off-canvas-content>
-              <div id="page-full-width-homepage" class ="full-width" role="main">
+            <div id="page-full-width-homepage" class ="full-width" role="main">
                 <?php Timber::render('/twig-templates/locations.twig', $data); ?>
                 <?php do_action( 'foundationpress_after_content' ); ?>
                 <?php get_footer(); ?>
