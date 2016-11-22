@@ -28,27 +28,12 @@
 		    </div>	
 	  	</div>
 	</form>
-	<div class ="results__container">
-	{% if results|length > 0 %}
-		{% for result in results %}
-			<p class="title__text smaller normal">
-				<a class="black link inline__link" href="{{ result.link }}">
-					 {{ result.post_title }}
-				</a>
-			</p>
-			<p class="body__text">
-				{{ result.content|striptags|length > 250 ? result.content|striptags|slice(0, 250) ~ '...' : result.content|striptags  }}
-			</p>
-			<span class="page__divider grey">
-			</span>
-		{% endfor %}
-	{% else %}
-		<p class="title__text smaller normal">
-			Sorry! We couldn’t find any results for "{{ search_query }}".
-		</p>
-	{% endif %}
-	</div>
-</div>
+
+
+
+
+
+
 
 
 <script type="text/javascript">

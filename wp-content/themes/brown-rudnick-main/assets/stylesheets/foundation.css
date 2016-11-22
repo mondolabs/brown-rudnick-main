@@ -1710,6 +1710,29 @@ tbody {
 .line__height__smaller {
   line-height: 1 !important; }
 
+.pagination {
+  text-align: center; }
+
+.title__text a {
+  color: #0a0a0a; }
+  .title__text a:hover {
+    color: #0a0a0a; }
+
+a:hover, a:focus {
+  color: #0a0a0a;
+  text-decoration: none; }
+
+.current {
+  background: #b91628; }
+  .current a {
+    color: #fefefe !important; }
+    .current a:hover {
+      background-color: #b91628; }
+
+.next, .prev {
+  color: #fefefe !important;
+  background-color: #b91628; }
+
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -7232,7 +7255,7 @@ body {
       background: #e6e6e6; }
   .pagination .current {
     padding: 0.1875rem 0.625rem;
-    background: #2199e8;
+    background: #b91628;
     color: #fefefe;
     cursor: default; }
   .pagination .disabled {

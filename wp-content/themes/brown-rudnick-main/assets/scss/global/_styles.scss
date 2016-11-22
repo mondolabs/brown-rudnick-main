@@ -1886,3 +1886,35 @@ tbody {
 .line__height__smaller {
 	line-height: 1 !important;
 }
+.pagination {
+	text-align: center;
+}
+.title__text {
+	a {
+		color: $black;
+		&:hover {
+			color: $black;
+		}
+	}
+}
+a:hover, a:focus{
+	color: $black;
+	text-decoration: none;
+}
+.current {
+	a { 
+		color: $white !important; 
+		&:hover {
+			background-color: $primary-red;
+		}
+	}
+	background: $primary-red;
+}
+.next, .prev {
+	color: $white !important;
+	background-color: $primary-red;
+}
+// .entry-content {
+// 	max-height: 100px !important;
+// 	overflow: hidden !important;
+// }
