@@ -528,6 +528,7 @@ h3.title {
 		@media screen and (max-width: 768px) {
 			height: auto;
 			padding: 20px;
+			padding-bottom: 120px;
 		}
 
 	}
@@ -924,7 +925,7 @@ img.insights {
 .tile__arrow {
     position: absolute;
     bottom: 12px;
-    right: -3px;
+    right: 3px;
     height: 40px;
     width: 64px;
     border: 1px $primary-grey solid;
@@ -1330,6 +1331,11 @@ button.close__modal {
   	border-bottom: 1px solid #A8A8A8;
 }
 
+.wpcf7-select {
+	cursor: pointer;
+	@extend %selectBackground;
+}
+
 .grey-block-full {
 	background-color: $primary-grey !important; 
 	.white-row {
@@ -1551,16 +1557,7 @@ button.close__modal {
 
 select.clean___border {	
 	cursor: pointer;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background: url('../../assets/images/down-carrat.svg') no-repeat;
-    -webkit-background-size: 9px 6px;
-    background-size: 9px 6px;
-    background-position: right -1rem center;
-    -webkit-background-origin: content-box;
-    background-origin: content-box;
-    padding-right: 1.5rem;
-    padding-left: 0;
+   @extend %selectBackground;
 }
 
 *:focus {
@@ -1750,7 +1747,6 @@ tbody {
 .sitemap__heading:hover {
 	color: $br-black
 }
-
 .search__button__container {
 	text-align: center;
 	@media screen and (min-width: 1300px){
@@ -1803,9 +1799,19 @@ tbody {
 		text-decoration: none !important;
 	}
 }
+
+.email__modal {
+	.modal__text {
+		@media screen and (max-width: 768px){
+			font-size: 12px;
+		}
+	}
+}
 .email-buttons{
 	text-align: center; 
-	width: 50%; 
+	@include breakpoint(medium){
+		width: 50%; 
+	}
 	margin: 0 auto;
 }
 .email-modal-pair {
@@ -1837,4 +1843,39 @@ tbody {
 	padding: 5%;
 	vertical-align: middle;
 	text-transform: uppercase;
+}
+
+// print stylesheet
+@media print {
+	#search__icon__mobile, #mobile__logo__container, #mastheadOnScroll, #masthead, svg, #mobile-menu, .menu__wrapper--desktop, ul, .header-logo--mobile, .logo__wrapper, .breadcrumb__link, #related-experience-heading, #people-sidebar, header, footer, .sites-button {
+		display: none !important;
+	}
+	img {
+		max-width: 200px;
+		display: block;
+	}
+}
+#download--vcard {
+	@media screen and (max-width: 768px){
+		display: inline-block;
+	}
+	&:hover, &:focus {
+		color: $white;
+	}
+}
+.inactive--letter{
+	background-color: $white;
+	a { 
+		color: $primary-grey
+	};
+}
+.inactive--letter:hover {
+	background-color: $primary-grey;
+}
+#print--page {
+	@include breakpoint(medium){
+		margin-left: 10px;
+		display: inline-block;
+	}
+	display: block;
 }

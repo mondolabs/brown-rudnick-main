@@ -96,6 +96,25 @@ var PEOPLE = {
 		});
 	},
 
+	inactiveLetter: function(){
+		var anchors = $('.letter__anchor--indicator');
+		var letterLinks = $('.letter__link');
+		var alphabet =["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+		for (var a = 0; a <alphabet.length; a++){
+			if ($(".letter__anchor--indicator[data-letter-anchor*='"+alphabet[a]+"']").length === 0 ){
+				$(".letter__link[data-letter*='"+alphabet[a]+"']").parent().addClass('inactive--letter');
+			} 
+		}
+
+
+	},
+
+	printPage: function(){
+		$('#print--page').click(function(){
+			window.print();
+		});
+	},
+
 	scrollToLocationHash: function(){
 			var locationHash = window.location.hash;
 			var hashAnchor = $("div[data-letter-anchor="+ locationHash.replace(/^#+/i, '') +"]");
@@ -128,6 +147,9 @@ $(document).ready(function(){
 	PEOPLE.listeners();
 	PEOPLE.scrollBackToTop();
 	PEOPLE.scrollToLocationHash();
+	PEOPLE.printPage();
+	PEOPLE.inactiveLetter();
+
 	var headerHeight = $('#mastheadOnScroll').height() + 160;
 	var elementToStick = $('.sidebar__on-scroll--fixed');
 		if ( $('.sidebar__on-scroll--fixed').length > 0){
