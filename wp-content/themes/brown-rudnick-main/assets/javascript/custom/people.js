@@ -120,13 +120,13 @@ var PEOPLE = {
 			var hashAnchor = $("div[data-letter-anchor="+ locationHash.replace(/^#+/i, '') +"]");
 			if (hashAnchor.offset() !== undefined) { 
 				$('html,body').animate({
-		          scrollTop: hashAnchor.offset().top - 200
-		        }, 1000, function(){
-							if ($(window).innerWidth() < 768){
-								$('.back__to__top').show(3000);
-							}
-		        });
-		        return false; 
+	          scrollTop: hashAnchor.offset().top - 200
+	        }, 1000, function(){
+						if ($(window).innerWidth() < 768){
+							$('.back__to__top').show(3000);
+						}
+	        });
+	        return false; 
 			} 
 		}
 };

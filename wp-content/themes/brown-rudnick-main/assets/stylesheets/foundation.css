@@ -246,7 +246,8 @@ p.subtitle__text {
     margin-bottom: 2px;
     color: #0a0a0a; }
     .title__text.people__details:hover {
-      color: #b91628; }
+      color: #b91628;
+      text-decoration: none; }
     @media screen and (max-width: 1140px) {
       .title__text.people__details {
         font-size: 20px; } }
@@ -496,6 +497,9 @@ h3.title {
 
 .margin-bottom--40 {
   margin-bottom: 40px; }
+
+.results__container {
+  min-height: 400px; }
 
 .margin-top-20 {
   margin-top: 20px; }
@@ -779,7 +783,7 @@ img.insights {
   @media screen and (max-width: 768px) {
     .breadcrumb__wrapper {
       width: 100%;
-      position: relative;
+      position: absolute;
       top: inherit;
       position: block; } }
   .breadcrumb__wrapper a.breadcrumb__link {
@@ -1702,6 +1706,32 @@ tbody {
     #print--page {
       margin-left: 10px;
       display: inline-block; } }
+
+.line__height__smaller {
+  line-height: 1 !important; }
+
+.pagination {
+  text-align: center; }
+
+.title__text a {
+  color: #0a0a0a; }
+  .title__text a:hover {
+    color: #0a0a0a; }
+
+a:hover, a:focus {
+  color: #0a0a0a;
+  text-decoration: none; }
+
+.current {
+  background: #b91628; }
+  .current a {
+    color: #fefefe !important; }
+    .current a:hover {
+      background-color: #b91628; }
+
+.next, .prev {
+  color: #fefefe !important;
+  background-color: #b91628; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -7225,7 +7255,7 @@ body {
       background: #e6e6e6; }
   .pagination .current {
     padding: 0.1875rem 0.625rem;
-    background: #2199e8;
+    background: #b91628;
     color: #fefefe;
     cursor: default; }
   .pagination .disabled {
