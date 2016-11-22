@@ -65,11 +65,11 @@
 				{% endfor %}
 			</select>
 
-{# 			<div class="hide-for-small-only">
+			<div class="hide-for-small-only">
 				<button id="clearCategoriesSidebar" class="desktop__full--width sites-button advanced-search inverse mobile__full--width" type="button">
-					CLEAR CATEGORIES
+					CLEAR CATEGORY
 				</button>
-			</div> #}
+			</div>
 			<span class="list-divider mobile__centered smaller grey"></span>
 			<p class="margin-top-20 tag__text medium mobile__centered">
 				ARCHIVES
@@ -115,7 +115,7 @@
 			{% for author in authors %}
 				{% set author = author|first %}
 	            <div class="columns large-12 medium-6 small-6 no__pad {% if loop.last %} last float-left {%endif %}">
-	            	<a class="tag__text red link" href="{{ author.permalink }}">
+	            	<a class="tag__text red link mobile__centered" href="{{ author.permalink }}">
 	              		{{ author.first_name|upper }} {% if author.middle_initial %}{{ author.middle_initial }}. {% endif %}{{ author.last_name|upper }} 
 	            	</a>
 	            </div>	
@@ -154,10 +154,26 @@
 					{% endif %}
 					
 					{% for blog_post in blog_posts %}
-						<div>
-							 {{blog_post.title}}
-							 {{blog_post.date}}
+						<div class="blog-post__list-item--wrapper">
+							{% if blog_post.thumbnail %}
+								<img class="blog-post__list-item--image" src="{{ blog_post.thumbnail.src }}">
+							{% endif %}
+							<div class="inline__wrapper mobile__centered">
+								<p class="title__text smaller mobile__centered">
+									<a class="link black" href="{{ blog_post.permalink }}">
+										{{blog_post.title}}	
+									</a>
+								</p>
+								<p class="body__text smaller mobile__centered">
+									BY {{blog_post.author|upper}}
+								</p>
+								<span class="list-divider mobile__centered red smaller thick"></span>
+								<p class="tag__text grey mobile__centered">
+									{{ blog_post.date }}
+								</p>
+							</div>	
 						</div>
+						<span class="page__divider grey thin"></span>
 					{% endfor %}
 				</div>	
 			</div>	
@@ -178,8 +194,6 @@
 					{{ post.parent.content|shortcodes }}
 				{% endif %}
 				<span class="list-divider mobile mobile__centered smaller"></span>
-				<p class="">
-				</p>
 			</div>
 		</div>
 	</div>	
