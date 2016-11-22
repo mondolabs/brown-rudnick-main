@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Blog - Filtered by Category
+Template Name: Blog - Monthly Archive
 */
 
 get_header();
