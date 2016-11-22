@@ -779,7 +779,7 @@ img.insights {
   @media screen and (max-width: 768px) {
     .breadcrumb__wrapper {
       width: 100%;
-      position: relative;
+      position: absolute;
       top: inherit;
       position: block; } }
   .breadcrumb__wrapper a.breadcrumb__link {

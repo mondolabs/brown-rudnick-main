@@ -813,7 +813,7 @@ img.insights {
 	z-index: 2;
 	@media screen and (max-width: 768px) {
 		width: 100%;
-		position: relative;
+		position: absolute;
 		top: inherit;
 		position: block;
 	}
