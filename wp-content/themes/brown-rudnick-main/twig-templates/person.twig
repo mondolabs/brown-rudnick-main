@@ -40,7 +40,14 @@
 										<p class="people__details body__text">
 											{{ person.email }}
 										</p>
-										<a href="{{card_title}}" download>v Card</a>
+										<div class="margin-top-20">
+												<a class="sites-button" id="download--vcard" href="{{card_title}}" download>
+													v Card
+												</a>
+												<a class="sites-button inverse" id="print--page">
+													Print
+												</a>
+										</div>
 									</div>	
 								</div>	
 							</div>	
@@ -55,7 +62,7 @@
 <div class="row">
 	<div class="experience__wrapper row body__wrapper columns small-12 medium-12 large-12">
 		<div class="padding__wrapper ten sides__only">
-			<div class="columns show-for-medium-up medium-3 large-2 relative">
+			<div  class="columns show-for-medium-up medium-3 large-2 relative">
 				{% if specialization %}
 				    <p class="tag__text">
 				    	{{ 'Area of Expertise'|upper }}
@@ -65,12 +72,12 @@
 				    </p>
 				{% endif %}
 				{% if related_experiences|length > 0 %}
-				    <p class="tag__text">
+				    <p id="related-experience-heading" class="tag__text">
 				    	{{ 'related experience'|upper }}
 				    </p>
 				    {% for item in related_experiences %}
 			        	{% set experience = item|first %}
-						<div class="sidebar__color-block--outer-wrapper {% if loop.index > 4 %}hidden hidden__exp{% endif %}">
+						<div id="people-sidebar"  class="sidebar__color-block--outer-wrapper {% if loop.index > 4 %}hidden hidden__exp{% endif %}">
 							<div class="sidebar__color-block--wrapper">
 					        	<a href="{{ experience.guid }}" class="link margin__0 tag__text text-align__center">
 				    	    		{{ experience.post_title|upper }}
@@ -201,11 +208,11 @@
 		            	If you would like to discuss becoming a client, please contact one of Brown Rudnick's attorneys to arrange for a meeting or telephone conference. Thank you for your interst in Brown Rudnick.
 		            </p>
 		            <div class="email-buttons">
-			            <div class="div__half email-modal-pair">
-			            	<p class="email-modal-button" id="email-modal-close" >agree</p>
+			            <div class="div__half">
+			            	<p class="sites-button" id="email-modal-close" >agree</p>
 			          	</div>
-			            <div class="div__half email-modal-pair-reverse">
-			            	<p class="email-modal-button" id="redirectBack">disagree</p>
+			            <div class="div__half ">
+			            	<p class="sites-button inverse" id="redirectBack">disagree</p>
 			            </div>
 		          	</div>
          		</div>

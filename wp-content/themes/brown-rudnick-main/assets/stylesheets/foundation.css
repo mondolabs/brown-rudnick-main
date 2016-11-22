@@ -548,7 +548,8 @@ h3.title {
     @media screen and (max-width: 768px) {
       .featured-image__header--image-wrapper.person, .featured-image__header--image-wrapper.insight {
         height: auto;
-        padding: 20px; } }
+        padding: 20px;
+        padding-bottom: 120px; } }
 
 .featured-image__header--text-wrapper {
   display: table;
@@ -1672,6 +1673,35 @@ tbody {
   padding: 5%;
   vertical-align: middle;
   text-transform: uppercase; }
+
+@media print {
+  #search__icon__mobile, #mobile__logo__container, #mastheadOnScroll, #masthead, svg, #mobile-menu, .menu__wrapper--desktop, ul, .header-logo--mobile, .logo__wrapper, .breadcrumb__link, #related-experience-heading, #people-sidebar, header, footer, .sites-button {
+    display: none !important; }
+  img {
+    max-width: 200px;
+    display: block; } }
+
+@media screen and (max-width: 768px) {
+  #download--vcard {
+    display: inline-block; } }
+
+#download--vcard:hover, #download--vcard:focus {
+  color: #fefefe; }
+
+.inactive--letter {
+  background-color: #fefefe; }
+  .inactive--letter a {
+    color: #f0f0f0; }
+
+.inactive--letter:hover {
+  background-color: #f0f0f0; }
+
+#print--page {
+  display: block; }
+  @media screen and (min-width: 48em) {
+    #print--page {
+      margin-left: 10px;
+      display: inline-block; } }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome

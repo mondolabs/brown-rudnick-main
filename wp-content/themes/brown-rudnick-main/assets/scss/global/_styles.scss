@@ -528,6 +528,7 @@ h3.title {
 		@media screen and (max-width: 768px) {
 			height: auto;
 			padding: 20px;
+			padding-bottom: 120px;
 		}
 
 	}
@@ -1842,4 +1843,39 @@ tbody {
 	padding: 5%;
 	vertical-align: middle;
 	text-transform: uppercase;
+}
+
+// print stylesheet
+@media print {
+	#search__icon__mobile, #mobile__logo__container, #mastheadOnScroll, #masthead, svg, #mobile-menu, .menu__wrapper--desktop, ul, .header-logo--mobile, .logo__wrapper, .breadcrumb__link, #related-experience-heading, #people-sidebar, header, footer, .sites-button {
+		display: none !important;
+	}
+	img {
+		max-width: 200px;
+		display: block;
+	}
+}
+#download--vcard {
+	@media screen and (max-width: 768px){
+		display: inline-block;
+	}
+	&:hover, &:focus {
+		color: $white;
+	}
+}
+.inactive--letter{
+	background-color: $white;
+	a { 
+		color: $primary-grey
+	};
+}
+.inactive--letter:hover {
+	background-color: $primary-grey;
+}
+#print--page {
+	@include breakpoint(medium){
+		margin-left: 10px;
+		display: inline-block;
+	}
+	display: block;
 }
