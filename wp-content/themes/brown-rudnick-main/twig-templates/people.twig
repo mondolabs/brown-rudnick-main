@@ -276,6 +276,11 @@
 						{% endif %}	
 					</div>
 					{% if people|length > 0 %}
+						{% if geography or location or industry or practice or language or admission or education or keyword %}
+							<p class="title__text">
+								Search results 
+							</p>
+						{% endif  %}	
 						{% for person in people %}
 							{% set first_letter_of_last = person.last_name|slice(0,1)|upper %}
 							{% set previous_item = people[ loop.index0 - 1] %}
@@ -283,11 +288,6 @@
 								{% if letter|upper == first_letter_of_last|upper %}	
 									{% if previous_item.last_name|slice(0,1) != person.last_name|slice(0,1) %}
 										<div class="columns small-12 medium-12 large-12 relative">
-											{% if geography or location or industry or practice or language or admission or education or keyword %}
-												<p class="title__text">
-													Search results 
-												</p>
-											{% endif  %}	
 											<div class="columns small-1 medium-1 large-1 relative">
 												<div data-letter-anchor="{{ letter }}" class="letter__anchor--indicator">
 													<div class="letter__anchor--inner-indicator">
