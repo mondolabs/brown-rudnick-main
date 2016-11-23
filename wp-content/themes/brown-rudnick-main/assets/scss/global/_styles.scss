@@ -1228,8 +1228,11 @@ button.close__modal {
     	z-index: 2;
 	    position: absolute;
     	width: 100%;
-			display: none;
+		display: none;
     	background-color: $primary-grey;
+    	&.insights {
+    		top: 40px;
+    	}
     }
 }
 
@@ -1974,3 +1977,10 @@ a:hover, a:focus{
 // 	max-height: 100px !important;
 // 	overflow: hidden !important;
 // }
+
+
+.margin-top-40--mobile {
+	@media screen and (max-width: 768px) {
+		margin-top: 40px;
+	}
+}

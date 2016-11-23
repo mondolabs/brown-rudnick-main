@@ -11,6 +11,7 @@ $data['banner_image'] = get_field('banner_image');
 $data['bottom_banner_image'] = get_field('bottom_banner_image');
 $data['bottom_banner_header_text'] = get_field('bottom_banner_header_text');
 $data['bottom_banner_content_text'] = get_field('bottom_banner_content_text');
+$data['locations_bottom_banner_link_url'] = get_field('locations_bottom_banner_link_url');
 $locations_args = 
 $locations_args = array(
     'post_type' =>  'location',
