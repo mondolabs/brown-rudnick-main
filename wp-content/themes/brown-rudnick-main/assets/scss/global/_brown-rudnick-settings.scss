@@ -68,3 +68,22 @@ body {
 		text-align: left;
 	}
 }
+
+%selectBackground {
+	-webkit-appearance: none;
+  -moz-appearance: none;
+  background: url('../../assets/images/down-carrat.svg') no-repeat;
+  -webkit-background-size: 9px 6px;
+  background-size: 9px 6px;
+  background-position: right -1rem center;
+  -webkit-background-origin: content-box;
+  background-origin: content-box;
+  padding-right: 1.5rem;
+  padding-left: 0;
+}
+
+%breadCrumbwrapper {
+	@media screen and (min-width: 768px) and (max-width:1224px) {
+		padding-left: 3%;
+	}
+}

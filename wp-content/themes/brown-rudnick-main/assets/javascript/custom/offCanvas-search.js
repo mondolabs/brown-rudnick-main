@@ -1,8 +1,7 @@
-var HomePageSearch = {
+var offCanvasSearch = {
 
 	checkScroll:function() {
 		// leave in case you want to disable scroll
-
 		// if ($('body').hasClass('no-scroll')) {
 		// 	disableScroll.on();
 		// } else {
@@ -12,28 +11,24 @@ var HomePageSearch = {
 	openModal: function(){
 		$('.human-icon').click(function(event){			
 			$('body').toggleClass('no-scroll');
-			HomePageSearch.checkScroll();
+			offCanvasSearch.checkScroll();
 		});
 	},
-
 	outsideClick:function(){
 			$('.js-off-canvas-exit').click(function(event){
 				$('body').toggleClass('no-scroll');
-				HomePageSearch.checkScroll();
+				offCanvasSearch.checkScroll();
 			});
 	},
-
-
 	closeModal: function(){
 		$('.close-button').click(function(event){
 			$('body').toggleClass('no-scroll');
-			HomePageSearch.checkScroll();
+			offCanvasSearch.checkScroll();
 		
 		});
 	},
 
 	submit: function(){
-		if ( $("body").hasClass("page-template-homepage") ){
 			$(function(){
 				$('#search__people').submit(function(event){
 					event.preventDefault();
@@ -41,16 +36,12 @@ var HomePageSearch = {
 					window.location.replace('/all-people/?keyword='+keyword);
 				});
 			});
-		}
 	}
 }; 
 
-
 $(document).ready(function(){
-	if ( $('body').hasClass('page-template-homepage') ){
-		HomePageSearch.submit();
-		HomePageSearch.openModal();
-		HomePageSearch.closeModal();
-		HomePageSearch.outsideClick();
-	}
+		offCanvasSearch.submit();
+		offCanvasSearch.openModal();
+		offCanvasSearch.closeModal();
+		offCanvasSearch.outsideClick();
 });

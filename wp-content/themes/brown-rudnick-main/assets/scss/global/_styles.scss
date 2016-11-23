@@ -115,6 +115,7 @@ p.subtitle__text {
 		color: $black;
 		&:hover {
 			color: $primary-red;
+			text-decoration: none;
 		}
 		@media screen and (max-width: 1140px) {
 			font-size: 20px;
@@ -476,6 +477,10 @@ h3.title {
 	margin-bottom: 40px;
 }
 
+.results__container {
+	min-height: 400px;
+}
+
 .margin-top-20 {
 	margin-top: 20px;
 }
@@ -483,7 +488,6 @@ h3.title {
 .margin-top-neg-20 {
 	margin-top: -20px;
 }
-
 .margin-top-16 {
 	margin-top: 16px;
 }
@@ -543,6 +547,7 @@ h3.title {
 		@media screen and (max-width: 768px) {
 			height: auto;
 			padding: 20px;
+			padding-bottom: 120px;
 		}
 
 	}
@@ -825,15 +830,19 @@ img.insights {
 	margin-left: -10px;
 }
 
+.featured-image__header--text-wrapper, .breadcrumb__wrapper, .sidebar__wrapper {
+	@extend %breadCrumbwrapper;
+}
 .breadcrumb__wrapper {
 	top: 18px;
 	position: absolute;
 	z-index: 2;
 	@media screen and (max-width: 768px) {
 		width: 100%;
-		position: relative;
+		position: absolute;
 		top: inherit;
 		position: block;
+
 	}
 	a.breadcrumb__link {
 		font-size: 10px;
@@ -948,7 +957,7 @@ img.insights {
 .tile__arrow {
     position: absolute;
     bottom: 12px;
-    right: -3px;
+    right: 3px;
     height: 40px;
     width: 64px;
     border: 1px $primary-grey solid;
@@ -1218,9 +1227,8 @@ button.close__modal {
     	z-index: 2;
 	    position: absolute;
     	width: 100%;
-		display: none;
+			display: none;
     	background-color: $primary-grey;
-		top: 100px;
     }
 }
 
@@ -1353,6 +1361,11 @@ button.close__modal {
 #locationSelect, .clean___border, .wpcf7-form-control, .wpcf7-select {
 	@extend %cleanBorder;
   	border-bottom: 1px solid #A8A8A8;
+}
+
+.wpcf7-select {
+	cursor: pointer;
+	@extend %selectBackground;
 }
 
 .grey-block-full {
@@ -1579,16 +1592,7 @@ button.close__modal {
 
 select.clean___border {	
 	cursor: pointer;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background: url('../../assets/images/down-carrat.svg') no-repeat;
-    -webkit-background-size: 9px 6px;
-    background-size: 9px 6px;
-    background-position: right -1rem center;
-    -webkit-background-origin: content-box;
-    background-origin: content-box;
-    padding-right: 1.5rem;
-    padding-left: 0;
+   @extend %selectBackground;
 }
 
 *:focus {
@@ -1670,7 +1674,16 @@ select.clean___border {
 		top: 14px;
 	}
 }
-
+.tag__container {
+	min-width: 250px;
+	display: inline-block;
+	@media screen and (max-width:1024px){
+		margin: 2% auto;
+	}
+	@media screen and (max-width:768px){		
+		display: block;
+	}
+}
 #search-by-keyword, #submit-keyword-search{
 	background-color: transparent;
 	@extend %cleanBorder;
@@ -1778,7 +1791,6 @@ tbody {
 .sitemap__heading:hover {
 	color: $br-black
 }
-
 .search__button__container {
 	text-align: center;
 	@media screen and (min-width: 1300px){
@@ -1831,9 +1843,19 @@ tbody {
 		text-decoration: none !important;
 	}
 }
+
+.email__modal {
+	.modal__text {
+		@media screen and (max-width: 768px){
+			font-size: 12px;
+		}
+	}
+}
 .email-buttons{
 	text-align: center; 
-	width: 50%; 
+	@include breakpoint(medium){
+		width: 50%; 
+	}
 	margin: 0 auto;
 }
 .email-modal-pair {
@@ -1882,3 +1904,72 @@ tbody {
 .line-height-1 {
 	line-height: 1;
 } 
+// print stylesheet
+@media print {
+	#search__icon__mobile, #mobile__logo__container, #mastheadOnScroll, #masthead, svg, #mobile-menu, .menu__wrapper--desktop, ul, .header-logo--mobile, .logo__wrapper, .breadcrumb__link, #related-experience-heading, #people-sidebar, header, footer, .sites-button {
+		display: none !important;
+	}
+	img {
+		max-width: 200px;
+		display: block;
+	}
+}
+#download--vcard {
+	@media screen and (max-width: 768px){
+		display: inline-block;
+	}
+	&:hover, &:focus {
+		color: $white;
+	}
+}
+.inactive--letter{
+	background-color: $white;
+	a { 
+		color: $primary-grey
+	};
+}
+.inactive--letter:hover {
+	background-color: $primary-grey;
+}
+#print--page {
+	@include breakpoint(medium){
+		margin-left: 10px;
+		display: inline-block;
+	}
+	display: block;
+}
+.line__height__smaller {
+	line-height: 1 !important;
+}
+.pagination {
+	text-align: center;
+}
+.title__text {
+	a {
+		color: $black;
+		&:hover {
+			color: $black;
+		}
+	}
+}
+a:hover, a:focus{
+	color: $black;
+	text-decoration: none;
+}
+.current {
+	a { 
+		color: $white !important; 
+		&:hover {
+			background-color: $primary-red;
+		}
+	}
+	background: $primary-red;
+}
+.next, .prev {
+	color: $white !important;
+	background-color: $primary-red;
+}
+// .entry-content {
+// 	max-height: 100px !important;
+// 	overflow: hidden !important;
+// }
