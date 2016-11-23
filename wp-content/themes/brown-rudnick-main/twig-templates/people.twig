@@ -14,7 +14,6 @@
 			            <div class="columns large-12 medium-12 small-6">
 			              <input id="keywordInput" type="text" name="s" placeholder="Name or Keyword">
 			            </div>
-
 			            <div class="columns large-6 medium-6 small-6">
 			            	<select id="geographySelect" name="geography_query" class="clean___border inline__text grey__bold__text smaller">
 								<option value="">
@@ -284,9 +283,11 @@
 								{% if letter|upper == first_letter_of_last|upper %}	
 									{% if previous_item.last_name|slice(0,1) != person.last_name|slice(0,1) %}
 										<div class="columns small-12 medium-12 large-12 relative">
-											<p class="title__text">
-												Search results 
-											</p>
+											{% if geography or location or industry or practice or language or admission or education or keyword %}
+												<p class="title__text">
+													Search results 
+												</p>
+											{% endif  %}	
 											<div class="columns small-1 medium-1 large-1 relative">
 												<div data-letter-anchor="{{ letter }}" class="letter__anchor--indicator">
 													<div class="letter__anchor--inner-indicator">
@@ -361,3 +362,6 @@
 		})
 	{% endif %}
 </script>
+
+
+
