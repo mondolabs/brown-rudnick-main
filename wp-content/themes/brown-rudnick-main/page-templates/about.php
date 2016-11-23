@@ -10,6 +10,8 @@ $practice_posts_args = array(
     'order' => 'ASC',
     'posts_per_page'=>-1
 );
+$data['about_header_text'] = get_field('about_header_text');
+
 $post = new TimberPost();
 $data['post'] = $post;
 
