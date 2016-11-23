@@ -131,18 +131,6 @@ var PEOPLE = {
 		}
 };
 
-	$(window).on('resize', function(event) {		
-			var headerHeight = $('#mastheadOnScroll').height() + 160;
-			var elementToStick = $('.sidebar__on-scroll--fixed');
-			if ( $('.sidebar__on-scroll--fixed').length > 0 && $(document).width() >= 768 ){
-					elementToStick.css('width', '175px !important');
-					elementToStick.stick_in_parent({ offset_top: headerHeight });
-			}	else {
-				elementToStick.trigger("sticky_kit:detach");
-			}	
-
-	});
-
 $(document).ready(function(){
 	PEOPLE.listeners();
 	PEOPLE.scrollBackToTop();
@@ -150,9 +138,20 @@ $(document).ready(function(){
 	PEOPLE.printPage();
 	PEOPLE.inactiveLetter();
 
+	$(window).on('resize', function(event) {		
+		var headerHeight = $('#mastheadOnScroll').height() + 160;
+		var elementToStick = PEOPLE.stickySideBar;
+		if ( $('.sidebar__on-scroll--fixed').length > 0 && $(document).width() >= 768 ){
+			elementToStick.stick_in_parent({ offset_top: headerHeight });
+		}	else {
+			console.log("resized and small")
+			elementToStick.trigger("sticky_kit:detach");
+		}	
+	});
+
 	var headerHeight = $('#mastheadOnScroll').height() + 160;
 	var elementToStick = $('.sidebar__on-scroll--fixed');
-		if ( $('.sidebar__on-scroll--fixed').length > 0){
+		if ( PEOPLE.stickySideBar.length > 0){
 			if ($(document).width() >= 768) {
 				elementToStick.stick_in_parent({ offset_top: headerHeight });
 			} 	
