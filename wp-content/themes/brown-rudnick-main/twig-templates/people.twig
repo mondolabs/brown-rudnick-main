@@ -264,9 +264,7 @@
 							 </div>
 						{% endif %}	
 						{% if keyword %}
-							<p class="title__text">
-								Search results 
-							</p>
+
 							 <div class="tag__container small-6 medium-6 large-3">
 							 		<div class="tag__half">
 								 		<p class="keyword--title">keyword</p>
@@ -288,6 +286,9 @@
 								{% if letter|upper == first_letter_of_last|upper %}	
 									{% if previous_item.last_name|slice(0,1) != person.last_name|slice(0,1) %}
 										<div class="columns small-12 medium-12 large-12 relative">
+											<p class="title__text">
+												Search results 
+											</p>
 											<div class="columns small-1 medium-1 large-1 relative">
 												<div data-letter-anchor="{{ letter }}" class="letter__anchor--indicator">
 													<div class="letter__anchor--inner-indicator">
