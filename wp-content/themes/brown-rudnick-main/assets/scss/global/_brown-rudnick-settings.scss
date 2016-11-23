@@ -81,3 +81,9 @@ body {
   padding-right: 1.5rem;
   padding-left: 0;
 }
+
+%breadCrumbwrapper {
+	@media screen and (min-width: 768px) and (max-width:1224px) {
+		padding-left: 3%;
+	}
+}

@@ -53,6 +53,10 @@ body {
   padding-right: 1.5rem;
   padding-left: 0; }
 
+@media screen and (min-width: 768px) and (max-width: 1224px) {
+  .featured-image__header--text-wrapper, .breadcrumb__wrapper, .sidebar__wrapper {
+    padding-left: 3%; } }
+
 #locationSelect, .clean___border, .wpcf7-form-control, .wpcf7-select, #search-by-keyword, #submit-keyword-search {
   border-left: none !important;
   border-right: none !important;
@@ -98,6 +102,10 @@ body {
   background-origin: content-box;
   padding-right: 1.5rem;
   padding-left: 0; }
+
+@media screen and (min-width: 768px) and (max-width: 1224px) {
+  .featured-image__header--text-wrapper, .breadcrumb__wrapper, .sidebar__wrapper {
+    padding-left: 3%; } }
 
 /**
  * Foundation for Sites by ZURB
@@ -1135,8 +1143,7 @@ button.close__modal {
       position: absolute;
       width: 100%;
       display: none;
-      background-color: #f0f0f0;
-      top: 100px; } }
+      background-color: #f0f0f0; } }
 
 #locationMap {
   width: 100%;
@@ -1498,6 +1505,16 @@ select.clean___border {
             transform: rotate(-45deg);
     right: 8px;
     top: 14px; }
+
+.tag__container {
+  min-width: 250px;
+  display: inline-block; }
+  @media screen and (max-width: 1024px) {
+    .tag__container {
+      margin: 2% auto; } }
+  @media screen and (max-width: 768px) {
+    .tag__container {
+      display: block; } }
 
 #search-by-keyword, #submit-keyword-search {
   background-color: transparent;
