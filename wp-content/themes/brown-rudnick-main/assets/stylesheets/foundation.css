@@ -14,7 +14,7 @@
   -webkit-box-shadow: none !important;
           box-shadow: none !important; }
 
-body {
+body, h5 {
   font-family: "Avenir", Helvetica, Arial, sans-serif !important; }
 
 @media screen and (max-width: 768px) {
@@ -41,7 +41,7 @@ body {
     .home-button-container, .arrows-container, .slide-description p, .slide-description h2, .homepage-section-3-title {
       text-align: left; } }
 
-.wpcf7-select, select.clean___border {
+.career--select, .wpcf7-select, select.clean___border {
   -webkit-appearance: none;
   -moz-appearance: none;
   background: url("../../assets/images/down-carrat.svg") no-repeat;
@@ -64,7 +64,7 @@ body {
   -webkit-box-shadow: none !important;
           box-shadow: none !important; }
 
-body {
+body, h5 {
   font-family: "Avenir", Helvetica, Arial, sans-serif !important; }
 
 @media screen and (max-width: 768px) {
@@ -91,7 +91,7 @@ body {
     .home-button-container, .arrows-container, .slide-description p, .slide-description h2, .homepage-section-3-title {
       text-align: left; } }
 
-.wpcf7-select, select.clean___border {
+.career--select, .wpcf7-select, select.clean___border {
   -webkit-appearance: none;
   -moz-appearance: none;
   background: url("../../assets/images/down-carrat.svg") no-repeat;
