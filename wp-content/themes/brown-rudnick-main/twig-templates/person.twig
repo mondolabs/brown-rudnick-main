@@ -67,7 +67,7 @@
 				    <p class="tag__text">
 				    	{{ 'Area of Expertise'|upper }}
 				    </p>
-				    <p class="title__text">
+				    <p class="title__text smaller margin-bottom--20">
 						{{ specialization }}
 				    </p>
 				{% endif %}
@@ -94,103 +94,263 @@
 				{% endif %}    
 			</div>
 			<div class="columns small-12 medium-9 large-10">
-				<div class="padding__wrapper forty sides__only">
-					<div class="title__text ">
-						{{ "Biography" }}
-					</div>
+				<div class="title__text">
+					{{ "Biography" }}
 				</div>
-				<div class="padding__wrapper forty sides__only">
-					<div class="body__text ">
-						{{ person.post_content }}
+				<div class="body__text ">
+					{{ person.post_content }}
+				</div>	
+				<span class="page__divider grey"></span>
+				{# Awards images #}
+				{% if person.award_images %}
+					<p class="title__text">
+						Awards
+					</p>
+					<div class="row">
+						{% for award_image in person.get_field('award_images') %}
+							<div class="columns small-4 medium-3 large-3 float-left">
+								{% set award_image = award_image|first %}
+								<img src="{{ award_image }}">
+							</div>
+						{% endfor %}
 					</div>	
-				</div>
-				<div class="padding__wrapper forty sides__only">
 					<span class="page__divider grey"></span>
-				</div>
-				<div class="padding__wrapper forty sides__only">
-					{% if practice_group_leaders %}
-						<div class="title__text ">
-							{{ practice_header_text }} Group Leaders
-						</div>
-				    	{% for leader in practice_group_leaders %}
-				    		{% set leader = leader|first %}
-							<div class="columns medium-12 large-6 small-12 margin-bottom--20 end">
-								<div class="columns medium-6 large-6 small-12">
-									<img class="people__details person" src="{{ TimberImage(leader.image).src }}" />
-								</div>
-								<div class="columns medium-6 large-6 small-12">
-									<div class="people__details--outer-wrapper person">
-										<div class="people__details--inner-wrapper">
-											<p class="people__details title__text smaller">
-												{{ leader.first_name }} {% if leader.middle_initial %}{{ leader.middle_initial }}. {% endif %} {{ leader.last_name }}
-											</p>
-											{% if leader.title %}	
-												<p class="people__details tag__text">
-													{{ leader.title|upper }}
-												</p>
-											{% endif %}	
-											<span class="people__deatils list-divider red"></span>
-											<p class="people__details body__text">
-												{{ leader.primary_city }}, {{ leader.primary_state }}{% if leader.secondary_city and leader.secondary_state %} | {{ leader.secondary_city }}, {{ leader.secondary_state}} {% endif %} 
-											</p>
-											<p class="people__details body__text">
-												{{ leader.primary_phone_number }}
-											</p>
-											<p class="people__details body__text">
-												{{ leader.email }}
-											</p>
+				{% endif %}
+
+				{# Representation Matters #}
+				{% if person.representation_matters %}
+					<p class="title__text">
+						Representation
+					</p>
+					<div class="negative__side-margins--15">
+						{% for representation in person.get_field('representation_matters') %}
+						<div class="columns small-12 medium-12 large-12">
+							<p clas="body__text">
+								{{representation.header}}		
+							</p>
+								{% for bullet in representation.representation %}
+									{% set bullet = bullet|first %}
+									<div class="bullet representation{% if loop.index > 5 %} hidden {% else %} first__five {% endif %}">
+										<div class="body__text bullet__text">
+											{{ bullet }}
 										</div>
 									</div>	
-								</div>
+								{% endfor %}
 							</div>
-						{% endfor %}					
-					{% endif %}
-				</div>
-				{% if related_people|length > 0%}	
-
-					<div class="padding__wrapper forty sides__only">
-						<p class="title__text">
-							Related People
-						</p>
-						{% for person in related_people %}
-							{% set person = person|first %}
-							<div class="columns medium-6 large-6 small-12 person end">
-								<a class="body__text red link margin-bottom--10" href="{{ person.guid }}">
-									{{ person.first_name }} {% if person.middle_initial %}{{ person.middle_initial }}. {% endif %} {{ person.last_name }}
-								</a>
-							</div>	
+							{% if representation.representation|length > 5 %}
+								<div class="columns small-12 medium-12 large-12">
+									<a id="personRepresentationExpander" href="" class="link red tag__text underline collapsed">
+										SHOW MORE
+									</a>
+								</div>	
+							{% endif %}
 						{% endfor %}
-					</div>
-				{% endif %}	
-
+					</div>	
+				{% endif %}
 			</div>
 		</div>	
 	</div>
 </div>	
-{% if services|length > 0%}	
+{% if person.education|length > 0 or person.bar_admission|length > 0 %}	
 	<div class="grey__background experience__wrapper columns small-12 medium-12 large-12">
 		<div class="row padding__wrapper top-and-bottom sixty">
-			<div class="large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">
-				<div class="padding__wrapper forty sides__only">
-					<p class="title__text">
-						{{ services_header }}
-					</p>
-					{% for service in services %}
-						{% set service = service|first %}
-						<div class="columns medium-6 large-6 small-12 service">
-							<div class="body__text service__text">
-								{{service}}
+			<div class="no__pad large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">
+				{% if person.education|length > 0 %}
+					<div class="columns small-12 medium-6 large-6">
+						<p class="title__text">
+							{{ "Education" }}
+						</p>
+						{% for school in person.get_field('education') %}
+							{% set school = school|first %}
+							<div class="no__pad columns small-12 medium-12 large-12 bullet">
+								<div class="body__text bullet__text">
+									{{school}}
+								</div>
+							</div>	
+						{% endfor %}
+					</div>	
+				{% endif %}
+				{% if person.bar_admission|length > 0 %}
+					<div class="columns small-12 medium-6 large-6">
+						<p class="title__text">
+							{{ "Bar Admissions" }}
+						</p>
+						{% for bar in person.get_field('bar_admission') %}
+							{% set bar = bar|first %}							
+							<div class="no__pad columns small-12 medium-12 large-12 bullet">
+								<div class="body__text bullet__text">
+									{{bar}}
+								</div>
 							</div>
-						</div>	
-					{% endfor %}
-				</div>	
+						{% endfor %}
+					</div>	
+				{% endif %}
 			</div>
 		</div>
 	</div>
 {% endif %}
 
+{% if person.publications|length > 0 and person.publications|first != 0 %}	
+	<div class="columns small-12 medium-12 large-12">
+		<div class="row">
+			<div class="no__pad large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">	
+				{% set publications = person.get_field('publications') %}
+				<table class="margin-top-40 no__borders">
+					<tr class="gray__underline">
+						<td class="title__text smaller">
+							{{ "Publications" }}
+						</td>
+						<td>
+							<span class="person__details--expander top__menu accordion" data-show-target="personPublicationDetails" ></span>
+						</td>
+					</tr>
+					{% for publication in publications %}
+						<tr class="hidden hidden__person-publication--details">
+							<td class="" colspan="5">
+								{{ publication.publication }}
+							</td>
+						</tr>
+					{% endfor %}	
+				</table>
+			</div>	
+		</div>
+	</div>
+{% endif %}	
 
+{% if person.speaking_engagements|length > 0 and person.speaking_engagements|first != 0%}	
+	<div class="columns small-12 medium-12 large-12">
+		<div class="row">
+			<div class="no__pad large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">	
+				{% set speaking_engagements = person.get_field('speaking_engagements') %}
+				<table class="no__borders">
+					<tr class="gray__underline">
+						<td class="title__text smaller">
+							{{ "Speaking Engagements" }}
+						</td>
+						<td>
+							<span class="person__details--expander top__menu accordion" data-show-target="personPublicationDetails" ></span>
+						</td>
+					</tr>
+					{% for speaking_engagement in speaking_engagements %}
+						<tr class="hidden hidden__person-publication--details">
+							<td class="" colspan="5">
+								{{ speaking_engagement.engagement }}
+							</td>
+						</tr>
+					{% endfor %}	
+				</table>
+			</div>	
+		</div>
+	</div>
+{% endif %}	
 
+{% if person.professional_affiliations|length > 0 and person.professional_affiliations|first != 0 %}	
+	<div class="columns small-12 medium-12 large-12">
+		<div class="row">
+			<div class="no__pad large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">	
+				{% set professional_affiliations = person.get_field('professional_affiliations') %}
+				<table class="no__borders">
+					<tr class="gray__underline">
+						<td class="title__text smaller">
+							{{ "Professional Affiliations" }}
+						</td>
+						<td>
+							<span class="person__details--expander top__menu accordion" data-show-target="personPublicationDetails" ></span>
+						</td>
+					</tr>
+					{% for affiliation in professional_affiliations %}
+						<tr class="hidden hidden__person-publication--details">
+							<td class="" colspan="5">
+								{{ affiliation.affiliation }}
+							</td>
+						</tr>
+					{% endfor %}	
+				</table>
+			</div>	
+		</div>
+	</div>
+{% endif %}	
+
+{% if person.professional_memberships|length > 0 and person.professional_memberships|first != 0 %}	
+	<div class="columns small-12 medium-12 large-12">
+		<div class="row">
+			<div class="no__pad large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">	
+				{% set professional_memberships = person.get_field('professional_memberships') %}
+				<table class="no__borders">
+					<tr class="gray__underline">
+						<td class="title__text smaller">
+							{{ "Professional Membership" }}
+						</td>
+						<td>
+							<span class="person__details--expander top__menu accordion" data-show-target="personPublicationDetails" ></span>
+						</td>
+					</tr>
+					{% for professional_membership in professional_memberships %}
+						<tr class="hidden hidden__person-publication--details">
+							<td class="" colspan="5">
+								{{ professional_membership.professional_membership }}
+							</td>
+						</tr>
+					{% endfor %}	
+				</table>
+			</div>	
+		</div>
+	</div>
+{% endif %}	
+
+{% if person.community_involvement|length > 0 and person.community_involvement|first != 0 %}	
+	<div class="columns small-12 medium-12 large-12">
+		<div class="row">
+			<div class="no__pad large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">	
+				{% set community_involvement = person.get_field('community_involvement') %}
+				<table class="no__borders">
+					<tr class="gray__underline">
+						<td class="title__text smaller">
+							{{ "Community Involvement" }}
+						</td>
+						<td>
+							<span class="person__details--expander top__menu accordion" data-show-target="personPublicationDetails" ></span>
+						</td>
+					</tr>
+					{% for involvement in community_involvement %}
+						<tr class="hidden hidden__person-publication--details">
+							<td class="" colspan="5">
+								{{ involvement.involvement }}
+							</td>
+						</tr>
+					{% endfor %}	
+				</table>
+			</div>	
+		</div>
+	</div>
+{% endif %}	
+
+{% if person.firm_activities|length > 0 and person.firm_activities|first != 0 %}	
+	<div class="columns small-12 medium-12 large-12">
+		<div class="row">
+			<div class="no__pad large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">	
+				{% set firm_activities = person.get_field('firm_activities') %}
+				<table class="no__borders">
+					<tr class="gray__underline">
+						<td class="title__text smaller">
+							{{ "Firm Activities" }}
+						</td>
+						<td>
+							<span class="person__details--expander top__menu accordion" data-show-target="personPublicationDetails" ></span>
+						</td>
+					</tr>
+					{% for activity in firm_activities %}
+						<tr class="hidden hidden__person-publication--details">
+							<td class="" colspan="5">
+								{{ activity.activity }}
+							</td>
+						</tr>
+					{% endfor %}	
+				</table>
+			</div>	
+		</div>
+	</div>
+{% endif %}	
 
 
 <div id="emailModal" class="vellum black--vellum modal__background diversity hidden">
