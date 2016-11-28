@@ -3,7 +3,6 @@
 Template Name: Summer Program
 */
 
-get_header();
 $data = Timber::get_context();
 $data['post'] = new TimberPost();
 
@@ -58,47 +57,46 @@ $hiring_schedule = get_field('hiring_schedule');
     <?php wp_head()?>
   </head>
   <body>
-     <div class="vellum black--vellum modal__background diversity hidden">
-      <div class="row">
-        <div class="diversity__modal--outer-wrapper table__wrapper relative">
-          <div class="diversity__modal--inner-wrapper table__innner">
-            <div class="diversity__modal--text-wrapper">
-              <button class="close__modal cancel">
-                
-              </button>
-              <p class="title__text text-align__center">
-                2015 Schedule
-              </p>
-              <p class="body__text text-align__center">
-                As part of our fall recruiting outreach, we visit a select group of schools and engage in on-campus interviews with top candidates.
-              </p>
-               <div class="div__half document__link">
-                <p class="float__left">school</p>
-              </div> 
-              <div class="div__half document__link">
-                <p class="float__right no__margin">oci date</p>
+    <?php get_template_part('template-parts/off-canvas-search')?>
+           <div class="vellum black--vellum modal__background diversity hidden">
+            <div class="row">
+              <div class="diversity__modal--outer-wrapper table__wrapper relative">
+                <div class="diversity__modal--inner-wrapper table__innner">
+                  <div class="diversity__modal--text-wrapper">
+                    <button class="close__modal cancel">
+                      
+                    </button>
+                    <p class="title__text text-align__center">
+                      2015 Schedule
+                    </p>
+                    <p class="body__text text-align__center">
+                      As part of our fall recruiting outreach, we visit a select group of schools and engage in on-campus interviews with top candidates.
+                    </p>
+                     <div class="div__half document__link">
+                      <p class="float__left">school</p>
+                    </div> 
+                    <div class="div__half document__link">
+                      <p class="float__right no__margin">oci date</p>
+                    </div>
+                     <?php foreach ($hiring_schedule as $key) { ?>
+                        <?php 
+                          $count = 0;
+                          foreach($key as $dog) { ?>                  
+                          <div class="div__half "><p class="<?php if (++$count%2) { echo "float__left title__text smaller"; } else { echo "float__right bold__wide__spacing"; }?>"><?php echo $dog;?></p></div>
+                        <?php }?>                 
+                      <?php }?>            
+                  </div>
+                </div>  
               </div>
-               <?php foreach ($hiring_schedule as $key) { ?>
-                  <?php 
-                    $count = 0;
-                    foreach($key as $dog) { ?>                  
-                    <div class="div__half "><p class="<?php if (++$count%2) { echo "float__left title__text smaller"; } else { echo "float__right bold__wide__spacing"; }?>"><?php echo $dog;?></p></div>
-                  <?php }?>                 
-                <?php }?>
-
-                 
-      
-               
-            </div>
-          </div>  
+            </div>  
+          </div>
+          <div id="page-full-width-homepage" class =" full-width" role="main">
+            <?php Timber::render('/twig-templates/summer_program.twig', $data); ?>      
+            <?php do_action( 'foundationpress_after_content' ); ?>
+            <?php get_footer(); ?>
+          </div>
         </div>
-      </div>  
+      </div>
     </div>
-
-    <div id="page-full-width-homepage" class =" full-width" role="main">
-      <?php Timber::render('/twig-templates/summer_program.twig', $data); ?>
-    </div>  
-    <?php do_action( 'foundationpress_after_content' ); ?>
-    <?php get_footer(); ?>
   </body>
 </html>

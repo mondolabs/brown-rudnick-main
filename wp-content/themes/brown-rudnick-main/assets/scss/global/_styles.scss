@@ -1138,8 +1138,10 @@ img.insights {
 		background-color: $primary-red;
 		.letter__link {
 			color: $white;
-			&:hover{
-				color: $primary-red;
+			&.offcanvas--letter--link {
+				&:hover{
+					color: $primary-red;
+				}
 			}
 		}
 	}
@@ -1330,10 +1332,13 @@ button.close__modal {
 .clear {
 	@extend %clearDiv;
 }
+.no-bottom-border {
+	border-bottom: none!important;
+}
 .job__openings__title{
 	font-family: $brgaramond;
 }
-.job__opening {
+.job__opening, .job__description__body {
 	border-bottom: solid 2px $primary-grey;
 }
 .jobs__table {
@@ -1590,8 +1595,18 @@ button.close__modal {
 .search__people__off__canvas, .off-canvas {
 	min-height: 100% !important;
 	background-color: $primary-red !important;
-	p {color: $white; text-align: center !important;}
+	p {
+		color: $white; 
+		text-align: center !important;
+	}
+	.close-button {
+		position: absolute;
+		left: 40px;
+		top: 25px;
+	}
 }
+
+
 .ceo--bottom {
 	@media screen and (max-width: 500px){
 		text-align: center;
@@ -1807,15 +1822,15 @@ select.clean___border {
 tbody {
 	border: none! important;
 } 
-.page-template-staff {
+
+// job expander does not float in certain pages
+.page-template-staff, .page-template-london-trainee {
 	.job_expander {
 		@include breakpoint(medium){
 			float: none !important;
 		}
 	}
 }
-
-
 .text__header__larger {
 	font-size: 20px;
 }
@@ -2027,11 +2042,6 @@ a:hover, a:focus{
 	color: $white !important;
 	background-color: $primary-red;
 }
-// .entry-content {
-// 	max-height: 100px !important;
-// 	overflow: hidden !important;
-// }
-
 
 .margin-top-40--mobile {
 	@media screen and (max-width: 768px) {
@@ -2043,6 +2053,12 @@ tr.gray__underline {
 	border-bottom: 1px solid $medium-gray;
 }
 
+<<<<<<< HEAD
 textarea#comment {
 	height: 200px;
+=======
+#search__people__letter__grid {
+	max-width: 80%;
+	margin: 0 auto;
+>>>>>>> 733090ad131a4b89ea350491fa51aa4c80ee6b73
 }

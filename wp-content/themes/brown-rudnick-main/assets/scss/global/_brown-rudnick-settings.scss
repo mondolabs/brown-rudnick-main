@@ -1,10 +1,7 @@
 //  Brown Rudnick Brand Settings
 //  -----------------------------
 //
-//  Table of Contents:
-//
-//   1. Brand Colors
-//	 2. Typography
+//  Table of Contents
 
 // 1. Brand Colors
 // ---------------
@@ -27,17 +24,12 @@ $light-grey-three: #a7a7a7;
 $very-light-grey: #fbfbfb;
 $darker-grey-two: #c9c9c9;
 
-// no borders for various elements
-%cleanBorder {
-    border-left: none !important;
-    border-right: none !important;
-    border-top: none !important;
-    box-shadow: none !important;
-}
 
-body, h5 {
+body {
 	font-family: $brfont !important;
 }
+
+// general purpose variables
 
 // footer elements on mobile
 %footerMobile {
@@ -46,6 +38,16 @@ body, h5 {
 		margin: 0 auto;
 	}
 }
+
+// no borders for various elements
+%cleanBorder {
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    box-shadow: none !important;
+}
+
+
 %buttonAbsolute{
 	@include breakpoint(medium){
 		position: absolute !important;
@@ -89,3 +91,5 @@ body, h5 {
 		padding-left: 3%;
 	}
 }
+
+
