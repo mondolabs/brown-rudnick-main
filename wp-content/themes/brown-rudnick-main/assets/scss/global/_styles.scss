@@ -1543,7 +1543,21 @@ button.close__modal {
 	background-color: $primary-red !important;
 	p {color: $white; text-align: center !important;}
 }
-
+.ceo--bottom {
+	@media screen and (max-width: 500px){
+		text-align: center;
+	}
+	.list-divider{
+		@media screen and (max-width:550px){
+			margin: 20px auto;
+		}
+	}
+	.padding__right--50{
+		@media screen and (max-width: 550px){
+			padding: 0!important;
+		}
+	}
+}
 .advanced__button {
 	text-align: center;
 }

@@ -1410,6 +1410,18 @@ button.close__modal {
     color: #fefefe;
     text-align: center !important; }
 
+@media screen and (max-width: 500px) {
+  .ceo--bottom {
+    text-align: center; } }
+
+@media screen and (max-width: 550px) {
+  .ceo--bottom .list-divider {
+    margin: 20px auto; } }
+
+@media screen and (max-width: 550px) {
+  .ceo--bottom .padding__right--50 {
+    padding: 0 !important; } }
+
 .advanced__button {
   text-align: center; }
 
