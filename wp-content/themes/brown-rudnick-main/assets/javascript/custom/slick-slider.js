@@ -26,7 +26,6 @@ var homepage = {
 					});
 			}
 		}
-	
 
 
 		if ( $("body").hasClass("page-template-homepage") ){

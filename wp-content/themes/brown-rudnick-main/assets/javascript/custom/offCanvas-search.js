@@ -1,19 +1,21 @@
 var offCanvasSearch = {
 
 	checkScroll:function() {
-		// leave in case you want to disable scroll
-		// if ($('body').hasClass('no-scroll')) {
-		// 	disableScroll.on();
-		// } else {
-		// 	disableScroll.off();
-		// }
+		// disable scroll on mobile only
+		if ($('body').hasClass('no-scroll') && ($(window).innerWidth() <= 768)) {
+			disableScroll.on();
+		} else {
+			disableScroll.off();
+		}
 	},
+	// check for scroll prevent
 	openModal: function(){
 		$('.human-icon').click(function(event){			
 			$('body').toggleClass('no-scroll');
 			offCanvasSearch.checkScroll();
 		});
 	},
+	// remove scroll prevent
 	outsideClick:function(){
 			$('.js-off-canvas-exit').click(function(event){
 				$('body').toggleClass('no-scroll');
@@ -24,10 +26,9 @@ var offCanvasSearch = {
 		$('.close-button').click(function(event){
 			$('body').toggleClass('no-scroll');
 			offCanvasSearch.checkScroll();
-		
 		});
 	},
-
+	// submit search by keyword
 	submit: function(){
 			$(function(){
 				$('#search__people').submit(function(event){

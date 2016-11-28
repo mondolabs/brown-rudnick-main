@@ -57,7 +57,7 @@ var PEOPLE = {
 		$('#advancedPeopleSearch, #insightsAdvancedSearch, #advancedMobileSearch').click(function(event) {
 			PEOPLE.revealAdvancedSearch();
 		});
-
+		// removes tags from search results
 		$('.tag__canceller').click(function(event) {
 			event.preventDefault();
 			var target = $(this);
@@ -72,7 +72,7 @@ var PEOPLE = {
 				window.location.replace(newUrl);
 			}
 		});
-
+		// applies filters based on select options
 		$('#peopleAdvancedSearchButton').click(function(event) {
 			event.preventDefault();
 			var selects = $('select');
@@ -116,6 +116,7 @@ var PEOPLE = {
 	hideAdvancedSearch: function(){
 		$('#advancedSearchModal').addClass('hidden').fadeOut('slow');
 	},
+	// back to top of page
 	scrollBackToTop: function(){
 		$('.back__to__top').click(function(event){
 			$('html,body').animate({
@@ -127,6 +128,8 @@ var PEOPLE = {
 		});
 	},
 
+	// searches DOM for results with specific letter 
+	// toggles inactive class for letters with no results
 	inactiveLetter: function(){
 		var anchors = $('.letter__anchor--indicator');
 		var letterLinks = $('.letter__link');
@@ -142,6 +145,7 @@ var PEOPLE = {
 			window.print();
 		});
 	},
+	// scrolls to location hash with letter marker from all off-canvas searches
 	scrollToLocationHash: function(){
 			var locationHash = window.location.hash;
 			var hashAnchor = $("div[data-letter-anchor="+ locationHash.replace(/^#+/i, '') +"]");
@@ -164,7 +168,7 @@ $(document).ready(function(){
 	PEOPLE.scrollToLocationHash();
 	PEOPLE.printPage();
 	PEOPLE.inactiveLetter();
-
+	// sticky elements -- unstuck on resize of browser / device
 	$(window).on('resize', function(event) {		
 		var headerHeight = $('#mastheadOnScroll').height() + 160;
 		var elementToStick = PEOPLE.stickySideBar;
@@ -184,7 +188,7 @@ $(document).ready(function(){
 			} 	
 	}	
 
-	// prevent submit on enter
+	// prevent submit on enter for advanced search
 	if ( $('body').hasClass('page-template-people') ){
 		$(window).keydown(function(e){
 			if (e.keyCode == 13){
@@ -193,7 +197,8 @@ $(document).ready(function(){
 			}
 		});
 	}
-	
+
+	// find closest element with marker letter and assigns class to it
 	$(document).bind('scroll', function(){
 		var  closestText = $('.sidebar__on-scroll--fixed').nearest('.letter__anchor--indicator').text();
 		for (var i= 0; i < $('.letter__link').length; i++) {
