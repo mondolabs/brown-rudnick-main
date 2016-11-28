@@ -972,6 +972,13 @@ img.insights {
     position: absolute;
     bottom: 12px;
     right: 3px;
+    &.home__page {
+    	bottom: 0px;
+    	right: 0px;
+    }
+    &.careers__arrow{
+    	right: -2px;
+    }
     height: 40px;
     width: 64px;
     border: 1px $primary-grey solid;
@@ -1131,6 +1138,9 @@ img.insights {
 		background-color: $primary-red;
 		.letter__link {
 			color: $white;
+			&:hover{
+				color: $primary-red;
+			}
 		}
 	}
 }
@@ -1381,6 +1391,9 @@ button.close__modal {
   	border-bottom: 1px solid #A8A8A8;
 }
 
+.career--select {
+	@extend %selectBackground;
+}
 .wpcf7-select {
 	cursor: pointer;
 	@extend %selectBackground;
@@ -1476,9 +1489,10 @@ button.close__modal {
 #menu-mobile-menu {
 	display: none;
 	height: 100vh !important;
-	overflow: hidden;
+	//overflow: hidden;
 	z-index: 9999;
 	text-align: center;
+	padding-top: 50px;
 	li {
 		@media screen and (min-height: 450px){
 			margin: 7.5%;
@@ -1492,14 +1506,16 @@ button.close__modal {
 	}
 }
 
-
+.mobile__menu__wrapper{
+	position: relative;
+}
 
 .mobile__menu__bottom {
 	display: none;
 	position: absolute;
-	bottom: 0;
 	width: 100%;
-	bottom: 5%;
+	bottom: 0px;
+	background-color:$very-light-grey;
 }
 .right-menu-icon{
 	height: 20px;
@@ -1538,11 +1554,21 @@ button.close__modal {
 .one__half {
 	display: inline-block;
 	width: 49%;
+	&.left{
+		border-right: 1px solid $darker-grey-two;
+	}
+	a{
+		&:hover, :focus{
+			color: $primary-red;
+		}
+	}
 	p {
 		text-align: center;
 		text-transform: uppercase;
-		font-size: 14px;
-		font-weight: 600;
+		font-size: 12px;
+		margin-top: 15px;
+		letter-spacing: 1.5px;
+		font-weight: 500;
 	}
 	svg {
 		max-height: 40px;
@@ -1566,7 +1592,21 @@ button.close__modal {
 	background-color: $primary-red !important;
 	p {color: $white; text-align: center !important;}
 }
-
+.ceo--bottom {
+	@media screen and (max-width: 500px){
+		text-align: center;
+	}
+	.list-divider{
+		@media screen and (max-width:550px){
+			margin: 20px auto;
+		}
+	}
+	.padding__right--50{
+		@media screen and (max-width: 550px){
+			padding: 0!important;
+		}
+	}
+}
 .advanced__button {
 	text-align: center;
 }
