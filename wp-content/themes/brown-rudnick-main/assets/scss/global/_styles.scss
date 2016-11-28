@@ -2042,3 +2042,7 @@ a:hover, a:focus{
 tr.gray__underline {
 	border-bottom: 1px solid $medium-gray;
 }
+
+textarea#comment {
+	height: 200px;
+}
