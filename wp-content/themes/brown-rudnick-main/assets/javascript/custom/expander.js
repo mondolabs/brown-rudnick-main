@@ -17,6 +17,7 @@ var EXPANDER = {
 		$('.job_expander').click(function(event) {
 			var expander = $(this);
 			var hiddenJobDescripton = $(expander).parent().parent().next('tr').find('td');
+			$(this).parent().parent().toggleClass('no-bottom-border');
 			$(hiddenJobDescripton).slideToggle(400);
 			$(expander).toggleClass('expanded');
 		});

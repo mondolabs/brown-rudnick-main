@@ -7,20 +7,20 @@
   The Foundation framework is built by Zurb
   Licensed under MIT Open Source
 */
-#locationSelect, .clean___border, .wpcf7-form-control, .wpcf7-select, #search-by-keyword, #submit-keyword-search {
-  border-left: none !important;
-  border-right: none !important;
-  border-top: none !important;
-  -webkit-box-shadow: none !important;
-          box-shadow: none !important; }
-
-body, h5 {
+body {
   font-family: "Avenir", Helvetica, Arial, sans-serif !important; }
 
 @media screen and (max-width: 768px) {
   .footer-logo > a, .footer-links > a {
     display: table;
     margin: 0 auto; } }
+
+#locationSelect, .clean___border, .wpcf7-form-control, .wpcf7-select, #search-by-keyword, #submit-keyword-search {
+  border-left: none !important;
+  border-right: none !important;
+  border-top: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important; }
 
 @media screen and (min-width: 40em) {
   .button__absolute {
@@ -57,20 +57,20 @@ body, h5 {
   .featured-image__header--text-wrapper, .breadcrumb__wrapper, .sidebar__wrapper {
     padding-left: 3%; } }
 
-#locationSelect, .clean___border, .wpcf7-form-control, .wpcf7-select, #search-by-keyword, #submit-keyword-search {
-  border-left: none !important;
-  border-right: none !important;
-  border-top: none !important;
-  -webkit-box-shadow: none !important;
-          box-shadow: none !important; }
-
-body, h5 {
+body {
   font-family: "Avenir", Helvetica, Arial, sans-serif !important; }
 
 @media screen and (max-width: 768px) {
   .footer-logo > a, .footer-links > a {
     display: table;
     margin: 0 auto; } }
+
+#locationSelect, .clean___border, .wpcf7-form-control, .wpcf7-select, #search-by-keyword, #submit-keyword-search {
+  border-left: none !important;
+  border-right: none !important;
+  border-top: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important; }
 
 @media screen and (min-width: 40em) {
   .button__absolute {
@@ -1093,7 +1093,7 @@ img.insights {
     background-color: #b91628; }
     .letter__link--inner-wrapper.letter--active .letter__link, .letter__link--inner-wrapper:hover .letter__link {
       color: #fefefe; }
-      .letter__link--inner-wrapper.letter--active .letter__link:hover, .letter__link--inner-wrapper:hover .letter__link:hover {
+      .letter__link--inner-wrapper.letter--active .letter__link.offcanvas--letter--link:hover, .letter__link--inner-wrapper:hover .letter__link.offcanvas--letter--link:hover {
         color: #b91628; }
 
 .letter__link {
@@ -1246,10 +1246,13 @@ button.close__modal {
   padding-right: 50px;
   padding-bottom: 50px; }
 
+.no-bottom-border {
+  border-bottom: none !important; }
+
 .job__openings__title {
   font-family: "adobe-garamond-pro", serif; }
 
-.job__opening {
+.job__opening, .job__description__body {
   border-bottom: solid 2px #f0f0f0; }
 
 .jobs__table {
@@ -1455,6 +1458,10 @@ button.close__modal {
   .search__people__off__canvas p, .off-canvas p {
     color: #fefefe;
     text-align: center !important; }
+  .search__people__off__canvas .close-button, .off-canvas .close-button {
+    position: absolute;
+    left: 40px;
+    top: 25px; }
 
 @media screen and (max-width: 500px) {
   .ceo--bottom {
@@ -1650,7 +1657,7 @@ tbody {
   border: none !important; }
 
 @media screen and (min-width: 48em) {
-  .page-template-staff .job_expander {
+  .page-template-staff .job_expander, .page-template-london-trainee .job_expander {
     float: none !important; } }
 
 .text__header__larger {
@@ -1844,6 +1851,10 @@ a:hover, a:focus {
 
 tr.gray__underline {
   border-bottom: 1px solid #cacaca; }
+
+#search__people__letter__grid {
+  max-width: 80%;
+  margin: 0 auto; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -7194,21 +7205,21 @@ body {
   [data-whatinput='mouse'] .off-canvas {
     outline: 0; }
   .off-canvas.position-left {
-    left: -250px;
+    left: -350px;
     top: 0;
-    width: 250px; }
+    width: 350px; }
     .is-open-left {
-      -webkit-transform: translateX(250px);
-          -ms-transform: translateX(250px);
-              transform: translateX(250px); }
+      -webkit-transform: translateX(350px);
+          -ms-transform: translateX(350px);
+              transform: translateX(350px); }
   .off-canvas.position-right {
-    right: -250px;
+    right: -350px;
     top: 0;
-    width: 250px; }
+    width: 350px; }
     .is-open-right {
-      -webkit-transform: translateX(-250px);
-          -ms-transform: translateX(-250px);
-              transform: translateX(-250px); }
+      -webkit-transform: translateX(-350px);
+          -ms-transform: translateX(-350px);
+              transform: translateX(-350px); }
 
 @media screen and (min-width: 48em) {
   .position-left.reveal-for-medium {
@@ -7216,13 +7227,13 @@ body {
     z-index: auto;
     position: fixed; }
     .position-left.reveal-for-medium ~ .off-canvas-content {
-      margin-left: 250px; }
+      margin-left: 350px; }
   .position-right.reveal-for-medium {
     right: 0;
     z-index: auto;
     position: fixed; }
     .position-right.reveal-for-medium ~ .off-canvas-content {
-      margin-right: 250px; } }
+      margin-right: 350px; } }
 
 @media screen and (min-width: 64em) {
   .position-left.reveal-for-large {
@@ -7230,13 +7241,13 @@ body {
     z-index: auto;
     position: fixed; }
     .position-left.reveal-for-large ~ .off-canvas-content {
-      margin-left: 250px; }
+      margin-left: 350px; }
   .position-right.reveal-for-large {
     right: 0;
     z-index: auto;
     position: fixed; }
     .position-right.reveal-for-large ~ .off-canvas-content {
-      margin-right: 250px; } }
+      margin-right: 350px; } }
 
 @media screen and (min-width: 75em) {
   .position-left.reveal-for-xlarge {
@@ -7244,13 +7255,13 @@ body {
     z-index: auto;
     position: fixed; }
     .position-left.reveal-for-xlarge ~ .off-canvas-content {
-      margin-left: 250px; }
+      margin-left: 350px; }
   .position-right.reveal-for-xlarge {
     right: 0;
     z-index: auto;
     position: fixed; }
     .position-right.reveal-for-xlarge ~ .off-canvas-content {
-      margin-right: 250px; } }
+      margin-right: 350px; } }
 
 @media screen and (min-width: 90em) {
   .position-left.reveal-for-xxlarge {
@@ -7258,13 +7269,13 @@ body {
     z-index: auto;
     position: fixed; }
     .position-left.reveal-for-xxlarge ~ .off-canvas-content {
-      margin-left: 250px; }
+      margin-left: 350px; }
   .position-right.reveal-for-xxlarge {
     right: 0;
     z-index: auto;
     position: fixed; }
     .position-right.reveal-for-xxlarge ~ .off-canvas-content {
-      margin-right: 250px; } }
+      margin-right: 350px; } }
 
 .orbit {
   position: relative; }
