@@ -1203,10 +1203,13 @@ button.close__modal {
   padding-right: 50px;
   padding-bottom: 50px; }
 
+.no-bottom-border {
+  border-bottom: none !important; }
+
 .job__openings__title {
   font-family: "adobe-garamond-pro", serif; }
 
-.job__opening {
+.job__opening, .job__description__body {
   border-bottom: solid 2px #f0f0f0; }
 
 .jobs__table {
@@ -1604,7 +1607,7 @@ tbody {
   border: none !important; }
 
 @media screen and (min-width: 48em) {
-  .page-template-staff .job_expander {
+  .page-template-staff .job_expander, .page-template-london-trainee .job_expander, .page-template-lawyers .job_expander {
     float: none !important; } }
 
 .text__header__larger {
