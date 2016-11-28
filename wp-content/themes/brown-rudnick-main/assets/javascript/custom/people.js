@@ -105,16 +105,12 @@ var PEOPLE = {
 				$(".letter__link[data-letter*='"+alphabet[a]+"']").parent().addClass('inactive--letter');
 			} 
 		}
-
-
 	},
-
 	printPage: function(){
 		$('#print--page').click(function(){
 			window.print();
 		});
 	},
-
 	scrollToLocationHash: function(){
 			var locationHash = window.location.hash;
 			var hashAnchor = $("div[data-letter-anchor="+ locationHash.replace(/^#+/i, '') +"]");

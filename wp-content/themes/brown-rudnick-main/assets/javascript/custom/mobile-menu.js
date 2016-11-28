@@ -18,7 +18,7 @@ var mobileMenu = {
 				$('#open-mobile-menu').css({'top':'5px', 'left': '0'});
 				$('.mobile__menu__bottom').toggle();
 				$('body').toggleClass('no-scroll');
-				$('.human-icon').slideToggle();			
+				$('.human-icon').slideToggle();		
 				// call check scroll function defined above
 				checkScroll();
 			});

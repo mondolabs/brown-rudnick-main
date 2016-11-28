@@ -17,10 +17,10 @@
 	</head>
 	<body <?php body_class(); ?> >
 		<?php do_action( 'foundationpress_after_body' ); ?>
-
-
-			<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) == 'topbar' ) : ?>		
+			<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) == 'topbar' ) : ?>	
+			<div class="mobile__menu__wrapper">	
 				<?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
+			</div>
 			<?php endif; ?>
 			
 			<?php do_action( 'foundationpress_layout_start' ); ?>
@@ -33,8 +33,7 @@
 							</a>
 						</div>
 							<?php get_template_part('template-parts/desktop-icons')?>
-
-						<div class="menu__inner-wrapper--desktop columns large-7 medium-9">
+						<div class="menu__inner-wrapper--desktop columns large-7 medium-9 desktop__menu__wrapper">
 							<?php desktop_menu(); ?>
 						</div>
 					</div>
