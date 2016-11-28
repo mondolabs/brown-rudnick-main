@@ -1,5 +1,18 @@
 var PEOPLE = {
 	listeners: function(){
+
+		// email contact modal click events
+		$('#no-email-modal-close').click(function(event){
+			$('#emailModal').addClass('hidden').fadeOut('slow');
+		}),
+		$('#email-modal-close').click(function(event){
+			$('#emailModal').addClass('hidden').fadeOut('slow');
+		}),
+		$('.email--people--link').click(function(event){
+			event.preventDefault();
+			$('#emailModal').removeClass('hidden').fadeIn('slow');
+			$('#email-modal-close').attr('href', 'mailto:' + $(this)[0].innerText);
+		}),
 		// navigate to letter anchor
 		$('.letter__link').click(function(event) {
 			var letterlLinkInnerWrappers = $('.letter__link--inner-wrapper');
