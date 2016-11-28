@@ -1,6 +1,5 @@
 var PEOPLE = {
 	listeners: function(){
-<<<<<<< HEAD
 		
 		$('#personRepresentationExpander').click(function(event) {
 			event.preventDefault();
@@ -18,7 +17,6 @@ var PEOPLE = {
 			}
 			$(this).toggleClass('collapsed');
 		});
-=======
 
 		// email contact modal click events
 		$('#no-email-modal-close').click(function(event){
@@ -32,7 +30,7 @@ var PEOPLE = {
 			$('#emailModal').removeClass('hidden').fadeIn('slow');
 			$('#email-modal-close').attr('href', 'mailto:' + $(this)[0].innerText);
 		}),
->>>>>>> d2a2a13aa8df2ba04d1ca17bc2cdca131da8c983
+
 		// navigate to letter anchor
 		$('.letter__link').click(function(event) {
 			var letterlLinkInnerWrappers = $('.letter__link--inner-wrapper');
