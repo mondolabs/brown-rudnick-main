@@ -24,27 +24,27 @@
 			</p>
 		</div>
 		{% set accordions = post.get_field('accordions') %}
-				<table class="margin-bottom-60 margin-top-60 no__borders">
-					{% for accordion in accordions %}
-					{% set accordion = accordion|first|first %}
-					<tr>
-						<td class="title__text smaller">
-							{{ accordion.accordion_header }}
-						</td>
-						<td>
-							<span class="job_expander top__menu accordion" data-show-target="jobOpeningAdditionalDetails" ></span>
-						</td>
-					</tr>
-					<tr class="hidden__job--description">
-						<td class="hidden" colspan="5">
-							{{ accordion.accordion_text }}
-						</td>
-					</tr>
-				{% endfor %}
-			</table>
-			<p class="body__text margin-top-20">
-				{{ middle_text_content }}
-			</p>
+		<table class="margin-bottom-60 margin-top-60 no__borders">
+			{% for accordion in accordions %}
+				{% set accordion = accordion|first|first %}
+				<tr class="gray__underline">
+					<td class="title__text smaller">
+						{{ accordion.accordion_header }}
+					</td>
+					<td>
+						<span class="job_expander top__menu accordion" data-show-target="jobOpeningAdditionalDetails" ></span>
+					</td>
+				</tr>
+				<tr class="hidden__job--description">
+					<td class="hidden" colspan="5">
+						{{ accordion.accordion_text }}
+					</td>
+				</tr>
+			{% endfor %}
+		</table>
+		<p class="body__text margin-top-20">
+			{{ middle_text_content }}
+		</p>
 
 		<div class="columns small-12 medium-12 large-12 relative no__pad margin-top-20">
 			<div class="people__details--outer-wrapper person">

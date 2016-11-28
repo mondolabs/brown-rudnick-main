@@ -43,12 +43,10 @@
 			</h4>
 			{% if unfiltered %}
 				{{ post.content|shortcodes }}
-			{% else %}
-				<div class="hide-for-small-only">
-					{{ post.parent.content|shortcodes }}
-				</div>
+			{% else %}			
+				{{ post.parent.content|shortcodes }}
 			{% endif %}
-			<span class="hide-for-small-only list-divider mobile__centered smaller grey"></span>
+			<span class="hide-for-small-only thick list-divider mobile__centered smaller grey"></span>
 			<p class="tag__text medium mobile__centered">
 				CATEGORIES
 			</p>
@@ -65,12 +63,12 @@
 				{% endfor %}
 			</select>
 
-{# 			<div class="hide-for-small-only">
+			<div class="hide-for-small-only">
 				<button id="clearCategoriesSidebar" class="desktop__full--width sites-button advanced-search inverse mobile__full--width" type="button">
-					CLEAR CATEGORIES
+					CLEAR CATEGORY
 				</button>
-			</div> #}
-			<span class="list-divider mobile__centered smaller grey"></span>
+			</div>
+			<span class="list-divider mobile__centered smaller grey thick"></span>
 			<p class="margin-top-20 tag__text medium mobile__centered">
 				ARCHIVES
 			</p>
@@ -97,7 +95,7 @@
                   </option>
                 {% endfor %}
         	</select>
-			<span class="list-divider mobile__centered smaller grey"></span>
+			<span class="list-divider mobile__centered smaller thick grey"></span>
 			<p class="margin-top-20 tag__text medium mobile__centered">
 				CONTRIBUTORS
 			</p>
@@ -123,7 +121,7 @@
 		</div>
 	</div>
 
-	<div class="columns no__pad medium-9 large-9 small-12 mobile-margin-top-20">
+	<div class="columns no__pad medium-8 large-9 small-12 mobile-margin-top-20">
 		<div class="columns small-12 medium-12 large-12 no__pad desktop-only">	
 			{% if monthly_archive %}
 				<div class="row">
@@ -154,10 +152,26 @@
 					{% endif %}
 					
 					{% for blog_post in blog_posts %}
-						<div>
-							 {{blog_post.title}}
-							 {{blog_post.date}}
+						<div class="blog-post__list-item--wrapper">
+							{% if blog_post.thumbnail %}
+								<img class="blog-post__list-item--image" src="{{ blog_post.thumbnail.src }}">
+							{% endif %}
+							<div class="inline__wrapper mobile__centered">
+								<p class="title__text smaller mobile__centered">
+									<a class="link black" href="{{ blog_post.permalink }}">
+										{{blog_post.title}}	
+									</a>
+								</p>
+								<p class="body__text smaller mobile__centered">
+									BY {{blog_post.author|upper}}
+								</p>
+								<span class="list-divider mobile__centered red smaller thick"></span>
+								<p class="tag__text grey mobile__centered">
+									{{ blog_post.date }}
+								</p>
+							</div>	
 						</div>
+						<span class="page__divider grey thin"></span>
 					{% endfor %}
 				</div>	
 			</div>	
@@ -178,8 +192,6 @@
 					{{ post.parent.content|shortcodes }}
 				{% endif %}
 				<span class="list-divider mobile mobile__centered smaller"></span>
-				<p class="">
-				</p>
 			</div>
 		</div>
 	</div>	

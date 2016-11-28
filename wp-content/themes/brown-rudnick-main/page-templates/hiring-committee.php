@@ -2,12 +2,9 @@
 /*
 Template Name: Hiring Committee Page
 */
-get_header();
-
 $data = Timber::get_context();
 $post = new TimberPost();
 $data['post'] = $post;
-
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
 $data['featured_image_url'] = $data['featured_image_url'][0];
 
@@ -37,10 +34,14 @@ $data['hiring_committee_members'] = array_unique($data['hiring_committee_members
     <?php wp_head()?>
   </head>
   <body>
-    <div id="page-full-width-homepage" class ="full-width" role="main">
-      <?php Timber::render('/twig-templates/hiring-committee.twig', $data); ?>
-    </div>  
-    <?php do_action( 'foundationpress_after_content' ); ?>
-    <?php get_footer(); ?>
+    <?php get_template_part('template-parts/off-canvas-search')?>
+          <div id="page-full-width-homepage" class ="full-width" role="main">
+            <?php Timber::render('/twig-templates/hiring-committee.twig', $data); ?>     
+            <?php do_action( 'foundationpress_after_content' ); ?>
+            <?php get_footer(); ?>
+          </div> 
+        </div> 
+      </div> 
+    </div> 
   </body>
 </html>

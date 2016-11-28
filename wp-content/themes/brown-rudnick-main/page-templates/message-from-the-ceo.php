@@ -2,7 +2,6 @@
 /*
 Template Name: Message From the CEO
 */
-get_header();
 $data = Timber::get_context();
 $post = new TimberPost();
 $data['post'] = $post;
@@ -31,10 +30,14 @@ $data['parent_link'] = get_permalink( $post->post_parent );
     <?php wp_head()?>
   </head>
   <body>
-    <div id="page-full-width-homepage" class ="full-width" role="main">
-      <?php Timber::render('/twig-templates/message-from-the-ceo.twig', $data); ?>
+    <?php get_template_part('template-parts/off-canvas-search')?>
+          <div id="page-full-width-homepage" class ="full-width" role="main">
+            <?php Timber::render('/twig-templates/message-from-the-ceo.twig', $data); ?>    
+            <?php do_action( 'foundationpress_after_content' ); ?>
+            <?php get_footer(); ?>
+          </div>  
+        </div>  
+      </div>  
     </div>  
-    <?php do_action( 'foundationpress_after_content' ); ?>
-    <?php get_footer(); ?>
   </body>
 </html>

@@ -29,6 +29,12 @@ var EXPANDER = {
 			console.log('expanded');
 			$(expander).toggleClass('expanded');
 		});
+		$('.person__details--expander').click(function(event) {
+			var expander = $(this);
+			var hiddenPersonDetails = $(expander).parent().parent().parent().find('.hidden__person-publication--details');
+			$(hiddenPersonDetails).toggle();
+			$(expander).toggleClass('expanded');
+		});
 
 	}
 }

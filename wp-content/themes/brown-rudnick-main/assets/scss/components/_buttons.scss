@@ -20,6 +20,9 @@ a {
 	    font-size: 11px;
 	    padding: 18px 16px;
 	    margin: 10px 0 20px;
+		@media screen and (max-width: 768px) {
+		    margin: 60px 0 20px;
+	    }
 	}
 	&.inverse {
 	    background: $white;
@@ -43,9 +46,9 @@ a {
 	}
 	&.mobile__full--width {
 		@media screen and (max-width: 768px) {
-			display: block;
-			width: 70%;
-			margin: 0 auto;
+		    display: block;
+		    width: 70%;
+		    margin: 0 auto 30px;
 		}
 	}
 	&.subscribe {

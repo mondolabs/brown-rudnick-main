@@ -1,5 +1,22 @@
 var PEOPLE = {
 	listeners: function(){
+		
+		$('#personRepresentationExpander').click(function(event) {
+			event.preventDefault();
+			var bullets = $('.bullet.representation');
+			for (var i = bullets.length - 1; i >= 0; i--) {
+				var bullet = bullets[i]
+				if( !$(bullet).hasClass('first__five') ) {
+					$(bullet).toggleClass('hidden');
+				}
+			}
+			if ( $(this).hasClass('collapsed') ) {
+				$(this).text('SHOW LESS');
+			} else {
+				$(this).text('SHOW MORE');
+			}
+			$(this).toggleClass('collapsed');
+		});
 
 		// email contact modal click events
 		$('#no-email-modal-close').click(function(event){
@@ -13,6 +30,7 @@ var PEOPLE = {
 			$('#emailModal').removeClass('hidden').fadeIn('slow');
 			$('#email-modal-close').attr('href', 'mailto:' + $(this)[0].innerText);
 		}),
+
 		// navigate to letter anchor
 		$('.letter__link').click(function(event) {
 			var letterlLinkInnerWrappers = $('.letter__link--inner-wrapper');
@@ -140,18 +158,6 @@ var PEOPLE = {
 		}
 };
 
-	$(window).on('resize', function(event) {		
-			var headerHeight = $('#mastheadOnScroll').height() + 160;
-			var elementToStick = $('.sidebar__on-scroll--fixed');
-			if ( $('.sidebar__on-scroll--fixed').length > 0 && $(document).width() >= 768 ){
-					elementToStick.css('width', '175px !important');
-					elementToStick.stick_in_parent({ offset_top: headerHeight });
-			}	else {
-				elementToStick.trigger("sticky_kit:detach");
-			}	
-
-	});
-
 $(document).ready(function(){
 	PEOPLE.listeners();
 	PEOPLE.scrollBackToTop();
@@ -159,9 +165,20 @@ $(document).ready(function(){
 	PEOPLE.printPage();
 	PEOPLE.inactiveLetter();
 
+	$(window).on('resize', function(event) {		
+		var headerHeight = $('#mastheadOnScroll').height() + 160;
+		var elementToStick = PEOPLE.stickySideBar;
+		if ( $('.sidebar__on-scroll--fixed').length > 0 && $(document).width() >= 768 ){
+			elementToStick.stick_in_parent({ offset_top: headerHeight });
+		}	else {
+			console.log("resized and small")
+			elementToStick.trigger("sticky_kit:detach");
+		}	
+	});
+
 	var headerHeight = $('#mastheadOnScroll').height() + 160;
 	var elementToStick = $('.sidebar__on-scroll--fixed');
-		if ( $('.sidebar__on-scroll--fixed').length > 0){
+		if ( PEOPLE.stickySideBar.length > 0){
 			if ($(document).width() >= 768) {
 				elementToStick.stick_in_parent({ offset_top: headerHeight });
 			} 	

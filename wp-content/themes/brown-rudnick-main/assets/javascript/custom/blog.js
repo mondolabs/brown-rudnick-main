@@ -57,16 +57,16 @@ var BLOG = {
 				return false;
 			}
 		});
-		// $('#clearCategoriesSidebar').click(function(event) {
-		// 	var url = $.url();
-		// 	if (Object.getOwnPropertyNames(url.param()).length > 0){
-		// 		var segments = url.segment();
-		// 		var newUrl = "/" + [segments[0],segments[1]].join('/');
-		// 		window.location.replace(newUrl);
-		// 	} else {
-		// 		return false;
-		// 	}
-		// });
+		$('#clearCategoriesSidebar').click(function(event) {
+			var url = $.url();
+			if (Object.getOwnPropertyNames(url.param()).length > 0){
+				var segments = url.segment();
+				var newUrl = "/" + [segments[0],segments[1]].join('/');
+				window.location.replace(newUrl);
+			} else {
+				return false;
+			}
+		});
 	}
 }
 

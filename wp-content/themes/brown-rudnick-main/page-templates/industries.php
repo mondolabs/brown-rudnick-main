@@ -2,7 +2,6 @@
 /*
 Template Name: Industries
 */
-get_header();
 $data = Timber::get_context();
 $industries_posts_args = array(
     'post_type' =>  'industry',
@@ -26,10 +25,7 @@ $data['sidebar'] = get_posts($args);
 $data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
 $slug = basename(get_permalink());
 $data['slug'] = $slug;
-
 $data['parent_link'] = get_permalink( $post->post_parent );
-
-
 ?>
 
 <html>
@@ -37,10 +33,14 @@ $data['parent_link'] = get_permalink( $post->post_parent );
     <?php wp_head()?>
   </head>
   <body>
-    <div id="page-full-width-homepage" class ="full-width" role="main">
-      <?php Timber::render('/twig-templates/experience_landing.twig', $data); ?>
+    <?php get_template_part('template-parts/off-canvas-search')?>
+          <div id="page-full-width-homepage" class ="full-width" role="main">
+            <?php Timber::render('/twig-templates/experience_landing.twig', $data); ?>   
+            <?php do_action( 'foundationpress_after_content' ); ?>
+            <?php get_footer(); ?>
+          </div>  
+        </div>  
+      </div>  
     </div>  
-    <?php do_action( 'foundationpress_after_content' ); ?>
-    <?php get_footer(); ?>
   </body>
 </html>

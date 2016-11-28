@@ -3,8 +3,6 @@
 Template Name: Blog Landing
 */
 
-get_header();
-
 function flatten_array(array $array) {
   return iterator_to_array(
   new \RecursiveIteratorIterator(new \RecursiveArrayIterator($array)));
@@ -194,10 +192,15 @@ $data['insights'] = array_reverse($data['insights']);
     <?php wp_head()?>
   </head>
   <body>
-    <div id="page-full-width-homepage" class ="full-width" role="main">
-      <?php Timber::render('/twig-templates/blogs_landing.twig', $data); ?>
+        <?php get_template_part('template-parts/off-canvas-search')?>
+          <div id="page-full-width-homepage" class ="full-width" role="main">
+            <?php Timber::render('/twig-templates/blogs_landing.twig', $data); ?>
+          
+          <?php do_action( 'foundationpress_after_content' ); ?>
+          <?php get_footer(); ?>
+          </div>  
+        </div>  
+      </div>  
     </div>  
-    <?php do_action( 'foundationpress_after_content' ); ?>
-    <?php get_footer(); ?>
   </body>
 </html>

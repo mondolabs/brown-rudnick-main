@@ -69,6 +69,9 @@
 	&.full__width {
 		width: 100%;
 	}
+	&.thick {
+		height: 2px;
+	}
 }
 
 .page__divider {
@@ -84,6 +87,9 @@
     }
 	&.inline__block {
 		display: inline-block;
+	}
+	&.thin {
+		height: 1px;
 	}
 }
 

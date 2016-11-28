@@ -14,12 +14,11 @@
 	</div>
 </div>
 
-<div class="row careers__wrapper body__wrapper columns small-12 medium-12 large-12">
+<div class="row careers__wrapper body__wrapper columns small-12 medium-12 large-12 no__pad">
 	<div class="human-icon" data-toggle="offCanvas"></div>
-	<div class="columns large-12 medium-12 small-12">
+	<div class="columns large-12 medium-12 small-12 no__pad">
 		{% for location in locations %}
-			<div class="{% if loop.last %} float-left last{% endif %} columns large-4 medium-6 small-12 padding-top-20
-padding-bottom-20">
+			<div class="{% if loop.last %} float-left last{% endif %} columns large-4 medium-6 small-12 padding__wrapper top-and-bottom__only--20">
 					<a href="{{ location.link }}">
 					<p class="title__text link">
 						{{ location.title }}

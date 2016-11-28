@@ -86,6 +86,7 @@ a {
 	&.mobile__centered {
 		@media (max-width: 768px) {
 			text-align: center;
+			width: 100%;
 		}
 	}
 }
@@ -140,6 +141,17 @@ p.subtitle__text {
 	}
 	&.normal {
     	font-style: normal;
+	}
+	&.mobile__centered {
+		@media (max-width: 768px) {
+			text-align: center;
+			width: 100%;
+		}
+	}
+	&.people__details {
+		@media (max-width: 768px) {
+			width: 100%;
+		}	
 	}
 }
 
@@ -246,6 +258,9 @@ p.subtitle__text {
     }
 	&.twenty {
 		padding: 20px;
+	}
+	&.top-and-bottom__only--20 {
+		padding: 20px 0;
 	}
 }
 
@@ -381,6 +396,14 @@ a.link {
 	cursor: pointer;
 	display: block;
     transition: color .3s ease-in-out;
+	&.black {
+		color: $br-black;
+		&:hover,
+		&:focus {
+			color: $br-black;
+			text-decoration: none;
+		}		
+	}
 	&:hover,
 	&:focus {
 		color: $primary-red;
@@ -503,6 +526,11 @@ h3.title {
 	margin-bottom: 60px;	
 }
 
+.negative__side-margins--15 {
+	margin-left: -15px;
+	margin-right: -15px;
+}
+
 .black {
 	color: $br-black;
 }
@@ -573,13 +601,14 @@ h3.title {
     -moz-box-shadow:inset 0px 0px 0px 14px $primary-grey;
     box-shadow:inset 0px 0px 0px 14px $primary-grey;
     &.first {
-    	@include breakpoint(medium){
+    	@include breakpoint(medium) {
     		border-left: none;
     	}
-    	
     }
     &.last {
-    	border-right: none;
+    	@include breakpoint(medium) {
+    		border-right: none;
+    	}	
     }
 	&.orange {
 		background-color: orange;
@@ -744,6 +773,10 @@ img.insight__details {
 	}
 }
 
+.upper {
+	text-transform: uppercase;
+}
+
 .lawyers-bullet { 
 		float: none !important;
 		display: inline-block !important;
@@ -893,6 +926,11 @@ img.insights {
     		max-width: inherit;
     	}
 	}
+	&.mobile__centered {
+		@media (max-width: 768px) {
+			width: 100%;
+		}
+	}
 }
 
 .table__wrapper {
@@ -977,7 +1015,8 @@ img.insights {
 .experience_expander, 
 .job_expander,
 .accordion_expander,
-.mobile__sidebar--expander {
+.mobile__sidebar--expander,
+.person__details--expander {
     width: 25px;
     height: 25px;
     display: inline-block;
@@ -988,7 +1027,7 @@ img.insights {
 	&.top__menu {
 		background-color: $primary-red;
 		right: 15px;
-    	//top: 15px;
+    	top: 20px;
 		&:before {
 			top: 0;
 			left: 12px;
@@ -1056,6 +1095,7 @@ img.insights {
 
 .job_expander {
 	position: relative;
+    top: 20px;
 }
 
 .letter__anchor--indicator {
@@ -1098,8 +1138,10 @@ img.insights {
 		background-color: $primary-red;
 		.letter__link {
 			color: $white;
-			&:hover{
-				color: $primary-red;
+			&.offcanvas--letter--link {
+				&:hover{
+					color: $primary-red;
+				}
 			}
 		}
 	}
@@ -1212,8 +1254,11 @@ button.close__modal {
     	z-index: 2;
 	    position: absolute;
     	width: 100%;
-			display: none;
+		display: none;
     	background-color: $primary-grey;
+    	&.insights {
+    		top: 40px;
+    	}
     }
 }
 
@@ -1375,6 +1420,9 @@ button.close__modal {
 	padding-right: 0 !important;
 }
 
+.padding-top-0 {
+	padding-top: 0;
+}
 .padding-top-50 {
 	padding-top: 50px;
 }
@@ -1547,8 +1595,18 @@ button.close__modal {
 .search__people__off__canvas, .off-canvas {
 	min-height: 100% !important;
 	background-color: $primary-red !important;
-	p {color: $white; text-align: center !important;}
+	p {
+		color: $white; 
+		text-align: center !important;
+	}
+	.close-button {
+		position: absolute;
+		left: 40px;
+		top: 25px;
+	}
 }
+
+
 .ceo--bottom {
 	@media screen and (max-width: 500px){
 		text-align: center;
@@ -1766,15 +1824,13 @@ tbody {
 } 
 
 // job expander does not float in certain pages
-.page-template-staff, .page-template-london-trainee, .page-template-lawyers {
+.page-template-staff, .page-template-london-trainee {
 	.job_expander {
 		@include breakpoint(medium){
 			float: none !important;
 		}
 	}
 }
-
-
 .text__header__larger {
 	font-size: 20px;
 }
@@ -1906,6 +1962,21 @@ tbody {
 	text-transform: uppercase;
 }
 
+.blog-post__list-item--image {
+	max-height: 220px;
+	display: inline-block;
+	width: auto;
+	padding-right: 20px;
+	@media screen and (max-width: 768px) {
+	    padding: 0px;
+    	display: block;
+    	margin: 20px auto;
+	}
+}
+
+.line-height-1 {
+	line-height: 1;
+} 
 // print stylesheet
 @media print {
 	#search__icon__mobile, #mobile__logo__container, #mastheadOnScroll, #masthead, svg, #mobile-menu, .menu__wrapper--desktop, ul, .header-logo--mobile, .logo__wrapper, .breadcrumb__link, #related-experience-heading, #people-sidebar, header, footer, .sites-button {
@@ -1971,7 +2042,18 @@ a:hover, a:focus{
 	color: $white !important;
 	background-color: $primary-red;
 }
-// .entry-content {
-// 	max-height: 100px !important;
-// 	overflow: hidden !important;
-// }
+
+.margin-top-40--mobile {
+	@media screen and (max-width: 768px) {
+		margin-top: 40px;
+	}
+}
+
+tr.gray__underline {
+	border-bottom: 1px solid $medium-gray;
+}
+
+#search__people__letter__grid {
+	max-width: 80%;
+	margin: 0 auto;
+}

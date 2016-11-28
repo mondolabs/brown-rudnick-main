@@ -14,7 +14,6 @@
 			            <div class="columns large-12 medium-12 small-6">
 			              <input id="keywordInput" type="text" name="s" placeholder="Name or Keyword">
 			            </div>
-
 			            <div class="columns large-6 medium-6 small-6">
 			            	<select id="geographySelect" name="geography_query" class="clean___border inline__text grey__bold__text smaller">
 								<option value="">
@@ -166,11 +165,10 @@
 
 		<div class="columns no__pad small-12 medium-8 large-10 relative float--right people__details--container">
 			<div class="padding__wrapper forty sides__only">	
-				<div class="columns small-12 medium-12 large-12 relative">
+				<div class="columns small-12 medium-12 large-12 relative margin-bottom--20">
 					<div>
 						{% if geography %}
-								<div class="small-6 medium-6 large-3">
-								<div class="tag__container">
+								<div class="tag__container small-6 medium-6 large-3">
 							 		<div class="tag__half">
 								 		<p class="keyword--title">geography</p>
 								 		<p class="keyword--container">{{ geography }}</p>
@@ -181,7 +179,6 @@
 								 		</button>
 							 		</div>
 							 	</div>
-							 </div>
 						{% endif %}
 						{% if location %}
 								<div class="tag__container small-6 medium-6 large-3">
@@ -263,11 +260,8 @@
 							 		</div>
 							 </div>
 						{% endif %}	
-					</div>
-							{% if keyword %}
-							<p class="title__text">
-								Search results 
-							</p>
+						{% if keyword %}
+
 							 <div class="tag__container small-6 medium-6 large-3">
 							 		<div class="tag__half">
 								 		<p class="keyword--title">keyword</p>
@@ -280,7 +274,13 @@
 							 		</div>
 							 </div>
 						{% endif %}	
+					</div>
 					{% if people|length > 0 %}
+						{% if geography or location or industry or practice or language or admission or education or keyword %}
+							<p class="title__text">
+								Search results 
+							</p>
+						{% endif  %}	
 						{% for person in people %}
 							{% set first_letter_of_last = person.last_name|slice(0,1)|upper %}
 							{% set previous_item = people[ loop.index0 - 1] %}
@@ -346,26 +346,9 @@
 							{% endfor %}
 						{% endfor %}
 					{% else %}
-						{% if keyword %}
-							<p class="title__text">
-								Search results 
-							</p>
-							 <div class="tag__container small-6 medium-6 large-3">
-							 		<div class="tag__half">
-								 		<p class="keyword--title">keyword</p>
-								 		<p class="keyword--container">{{keyword}}</p>
-							 		</div>
-							 		<div class="tag__half">
-								 		<button class="tag__canceller" data-name='keyword' data-tag="{{keyword}}">
-								 			x
-								 		</button>
-							 		</div>
-							 	</div>
-						{% else %}	
-							<p class="title__text">
-								Sorry! We couldn't find any results for your query!
-							</p>
-						{% endif %}	
+						<p class="title__text">
+							Sorry! We couldn't find any results for your query!
+						</p>
 					{% endif %}
 				</div>
 			</div>	
@@ -411,3 +394,6 @@
 		})
 	{% endif %}
 </script>
+
+
+

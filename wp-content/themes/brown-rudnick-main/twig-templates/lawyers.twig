@@ -68,55 +68,55 @@
 				<div class="columns small-12 medium-12 large-12 relative">
 					<table border ="0" class="table__white">
 						<tr class="job__opening table__legend">
-									<td class="document__link">
-										position
-									</td>
-									<td class="document__link">
-										date
-									</td class="document__link">
-									<td class="document__link">
-									    office
-									</td>
-									<td>
+								<td class="document__link">
+									position
+								</td>
+								<td class="document__link">
+									date
+								</td class="document__link">
+								<td class="document__link">
+								    office
+								</td>
+								<td>
 
-									</td>
+								</td>
 							</tr>
 						{% endif %}
 						{% for opportunity in job_opportunities %}
 							<tr class="job__opening">
-									<td class="job__openings__title title__text smaller">
-										{{ opportunity.position }}
-									</td>
-									<td class="font-weight__bold wide-spacing body__text smaller">
-										{{ opportunity.start_date|date("m/d/Y") }}
-									</td>
-									<td class="font-weight__bold wide-spacing body__text smaller">
-									    {{ opportunity.offices|upper }}
-									</td>
-									<td>
-										<span class="job_expander top__menu job_opening" data-show-target="jobOpeningAdditionalDetails" ></span>
-									</td>
+								<td class="job__openings__title title__text smaller">
+									{{ opportunity.position }}
+								</td>
+								<td class="font-weight__bold wide-spacing body__text smaller">
+									{{ opportunity.start_date|date("m/d/Y") }}
+								</td>
+								<td class="font-weight__bold wide-spacing body__text smaller">
+								    {{ opportunity.offices|upper }}
+								</td>
+								<td>
+									<span class="job_expander top__menu job_opening" data-show-target="jobOpeningAdditionalDetails" ></span>
+								</td>
 							</tr>
 							<tr class="hidden__job--description ">
-									<td class="hidden job__description__body" colspan="5">
-									{% if opportunity.department %}							
-										<h5 class="margin-bottom--20 margin-top-20">Department</h5>
-										{{ opportunity.department }}
-									{% endif %}
-									{% if opportunity.position_description %}							
-										<h5 class="margin-bottom--20 margin-top-20">Position</h5>
-										{{ opportunity.position_description }}
-									{% endif %}
-									{% if opportunity.qualifications_description %}							
-										<h5 class="margin-bottom--20 margin-top-20">Qualifications</h5>
-										{{ opportunity.qualifications_description }}
-									{% endif %}
-									{% if opportunity.job_description_file%}
-										<h5 class="margin-bottom--20 margin-top-20">Qualifications</h5>
-										<a class="document__link" href="{{ job_opening.get_field('job_description_file') }}">View pdf</a>
-									{% endif %}
-										<p class="margin-bottom--20 margin-top-20">{{bottom_banner_text}}</p>
-									</td>
+								<td class="hidden job__description__body" colspan="5">
+								{% if opportunity.department %}							
+									<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Department</p>
+									{{ opportunity.department }}
+								{% endif %}
+								{% if opportunity.position_description %}							
+									<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Position</p>
+									{{ opportunity.position_description }}
+								{% endif %}
+								{% if opportunity.qualifications_description %}							
+									<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Qualifications</p>
+									{{ opportunity.qualifications_description }}
+								{% endif %}
+								{% if opportunity.job_description_file%}
+									<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Qualifications</p>
+									<a class="document__link" href="{{ job_opening.get_field('job_description_file') }}">View pdf</a>
+								{% endif %}
+									<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">{{bottom_banner_text}}</p>
+								</td>
 								</tr>
 							<br>
 						{% endfor %}
@@ -135,7 +135,7 @@
 								{% for job_location in job_openings_list %}
 									{# CONDITIONAL CHECK MADE TO ADAPT TO WASHINGTON, DC STRING PARSING #}
 									{% if location|replace({'-': ' '}) in job_location.location|upper or location|replace({'-': ', ', 'DC':'D.C.'}) in job_location.location|upper %}
-										<tr class="job__opening">
+										<tr class="job__opening table__legend">
 											<td class="job__openings__title title__text smaller">
 												{{ job_opening.position }}
 											</td>
@@ -151,23 +151,23 @@
 										</tr>
 										<tr class="hidden__job--description">
 											<td class="hidden job__description__body" colspan="5">
-											{% if job_opening.department %}							
-												<h5 class="margin-bottom--20 margin-top-20">Department</h5>
+											{% if job_opening.department %}
+												<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Department</p>
 												{{ job_opening.department }}
 											{% endif %}
-											{% if job_opening.position_description %}							
-												<h5 class="margin-bottom--20 margin-top-20">Position</h5>
+											{% if job_opening.position_description %}	
+												<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Position</p>
 												{{ job_opening.position_description }}
 											{% endif %}
-											{% if job_opening.qualifications_description %}							
-												<h5 class="margin-bottom--20 margin-top-20">Qualifications</h5>
+											{% if job_opening.qualifications_description %}	
+												<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Qualifications</p>
 												{{ job_opening.qualifications_description }}
 											{% endif %}
 											{% if job_opening.job_description_file%}
-												<h5 class="margin-bottom--20 margin-top-20">Qualifications</h5>
+												<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Qualifications</p>
 												<a class="document__link" href="{{ job_opening.get_field('job_description_file') }}">View pdf</a>
 											{% endif %}
-												<p class="margin-bottom--20 margin-top-20">{{bottom_banner_text}}</p>
+												<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">{{bottom_banner_text}}</p>
 											</td>
 										</tr>
 									{% endif %}

@@ -2,8 +2,6 @@
 /*
 Template Name: Law Students
 */
-
-get_header();
 $data = Timber::get_context();
 $data['post'] = new TimberPost();
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
@@ -39,8 +37,6 @@ foreach ( $job_opening_posts as $post ) {
   array_push($ids, $post->ID);
 }
 $data['locations'] = wp_get_object_terms( $ids, 'locations' );
-
-
 ?>
 
 <html>
@@ -48,10 +44,14 @@ $data['locations'] = wp_get_object_terms( $ids, 'locations' );
     <?php wp_head()?>
   </head>
   <body>
-    <div id="page-full-width-homepage" class ="full-width" role="main">
-      <?php Timber::render('/twig-templates/law-students.twig', $data); ?>
-    </div>  
-    <?php do_action( 'foundationpress_after_content' ); ?>
-    <?php get_footer(); ?>
+    <?php get_template_part('template-parts/off-canvas-search')?>
+          <div id="page-full-width-homepage" class ="full-width" role="main">
+            <?php Timber::render('/twig-templates/law-students.twig', $data); ?> 
+            <?php do_action( 'foundationpress_after_content' ); ?>
+            <?php get_footer(); ?>
+          </div> 
+        </div> 
+      </div> 
+    </div> 
   </body>
 </html>

@@ -36,3 +36,8 @@ footer {
 	
 }
 
+.footer-logo {
+	@media screen and (max-width: 768px) {
+		padding-top: 70px;
+	}
+}
