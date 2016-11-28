@@ -49,7 +49,7 @@
 
 			<div class="columns small-12 medium-12 large-12 relative">
 				<div class="small-6 medium-3 large-3 float--right">
-					<select id="locationSelect" name="location_query" class="inline__text document__link">
+					<select id="locationSelect" name="location_query" class="inline__text document__link career--select">
 						<option class="document__link" value="">
 							OFFICE
 						</option>
@@ -128,7 +128,7 @@
 		{% if location %}
 				<div class="columns small-12 medium-12 large-12 relative">
 						{% set job_openings = post.get_field('lawyers_job_openings') %}
-						<table border ="none" class="table__white">
+						<table border ="0" class="table__white">
 							{% for job_opening in job_openings %}
 								{% set job_opening = job_opening|first %}
 								{% set job_openings_list = job_opening.get_field('locations') %}					
@@ -245,7 +245,7 @@
 		    <div class="table__inner pro-bono__banner">
 		        <div class="color-block__wrapper large-7 medium-8 small-12 float--right">
 		          <div class="color__block white relative lawyers__text title__text smaller">
-		            		<p>{{bottom_banner_text}}</p>
+		            		<p class=>{{bottom_banner_text}}</p>
 		          </div>  
 		        </div>
 	        </div>
@@ -253,7 +253,33 @@
 	</div>	
 </div>	
 
-
+<div id="emailModal" class="vellum black--vellum modal__background diversity hidden">
+    <div class="row">
+     	<div class="diversity__modal--outer-wrapper table__wrapper relative">
+        	<div class="diversity__modal--inner-wrapper table__innner">
+          		<div class="diversity__modal--text-wrapper email__modal">
+		            <p class="title__text text-align__center">
+		              Notice
+		            </p>
+		            <p class="modal__text">
+		              You understand and agree that transmitting information to Brown Rudnick by e-mail does not establish an attorney-client relationship. By clicking the "Agree" link below, you acknowledge that (i) Brown Rudnick has no obligation to maintain the confidentiality of any information you submit to Brown Rudnick unless Brown Rudnick already represents you or Brown Rudnick later agrees to represent you; thus, if you are not a client, information you submit to Brown Rudnick by e-mail may be disclosed to others and (ii) you have read and understand the Brown Rudnick Terms of Use and Privacy Policy and that you agree to be bound by the terms and conditions of such Terms of Use and Privacy Policy.
+		            </p>
+		            <p class="modal__text">
+		            	If you would like to discuss becoming a client, please contact one of Brown Rudnick's attorneys to arrange for a meeting or telephone conference. Thank you for your interest in Brown Rudnick.
+		            </p>
+		            <div class="email-buttons">
+			            <div class="div__half">
+			            	<a id="email-modal-close"><p class="sites-button">agree</p></a>
+			          	</div>
+			            <div class="div__half ">
+			            	<a id="no-email-modal-close"><p class="sites-button inverse">disagree</p></a>
+			            </div>
+		          	</div>
+         		</div>
+        	</div>  
+     	</div>
+    </div>  
+</div>
 
 
 <script type="text/javascript">
