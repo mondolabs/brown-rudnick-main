@@ -286,7 +286,7 @@
 							{% set previous_item = people[ loop.index0 - 1] %}
 							{% for letter in alphabet %}
 								{% if letter|upper == first_letter_of_last|upper %}	
-									{% if previous_item.last_name|slice(0,1) != person.last_name|slice(0,1) %}
+									{% if previous_item.last_name|slice(0,1)|upper != person.last_name|slice(0,1)|upper %}
 										<div class="columns small-12 medium-12 large-12 relative">
 											<div class="columns small-1 medium-1 large-1 relative">
 												<div data-letter-anchor="{{ letter }}" class="letter__anchor--indicator">

@@ -38,7 +38,9 @@
 											{{ person.primary_phone_number }}
 										</p>
 										<p class="people__details body__text">
-											{{ person.email }}
+											<a href="mailto:{{person.email}}" class="email--people--link red link inline__link body__text people__details">
+												{{ person.email }}
+											</a>
 										</p>
 										<div class="margin-top-20">
 												<a class="sites-button" id="download--vcard" href="{{card_title}}" download>
