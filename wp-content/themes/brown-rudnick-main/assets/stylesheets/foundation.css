@@ -35,10 +35,10 @@ body {
   text-transform: uppercase;
   letter-spacing: 2px; }
 
-.arrows-container, .slide-description p, .slide-description h2, .homepage-section-3-title {
+.home-button-container, .arrows-container, .slide-description p, .slide-description h2, .homepage-section-3-title {
   text-align: center; }
   @media screen and (min-width: 40em) {
-    .arrows-container, .slide-description p, .slide-description h2, .homepage-section-3-title {
+    .home-button-container, .arrows-container, .slide-description p, .slide-description h2, .homepage-section-3-title {
       text-align: left; } }
 
 .wpcf7-select, select.clean___border {
@@ -85,10 +85,10 @@ body {
   text-transform: uppercase;
   letter-spacing: 2px; }
 
-.arrows-container, .slide-description p, .slide-description h2, .homepage-section-3-title {
+.home-button-container, .arrows-container, .slide-description p, .slide-description h2, .homepage-section-3-title {
   text-align: center; }
   @media screen and (min-width: 40em) {
-    .arrows-container, .slide-description p, .slide-description h2, .homepage-section-3-title {
+    .home-button-container, .arrows-container, .slide-description p, .slide-description h2, .homepage-section-3-title {
       text-align: left; } }
 
 .wpcf7-select, select.clean___border {
@@ -892,6 +892,11 @@ img.insights {
   -webkit-background-size: 200% 100%;
           background-size: 200% 100%;
   background-position: left bottom; }
+  .tile__arrow.home__page {
+    bottom: 0px;
+    right: 0px; }
+  .tile__arrow.careers__arrow {
+    right: -2px; }
   .tile__arrow img {
     display: block;
     position: relative;
@@ -1047,6 +1052,8 @@ img.insights {
     background-color: #b91628; }
     .letter__link--inner-wrapper.letter--active .letter__link, .letter__link--inner-wrapper:hover .letter__link {
       color: #fefefe; }
+      .letter__link--inner-wrapper.letter--active .letter__link:hover, .letter__link--inner-wrapper:hover .letter__link:hover {
+        color: #b91628; }
 
 .letter__link {
   color: #0a0a0a;
@@ -1312,9 +1319,9 @@ button.close__modal {
 #menu-mobile-menu {
   display: none;
   height: 100vh !important;
-  overflow: hidden;
   z-index: 9999;
-  text-align: center; }
+  text-align: center;
+  padding-top: 50px; }
   #menu-mobile-menu li {
     margin: 1%; }
     @media screen and (min-height: 450px) {
@@ -1324,12 +1331,15 @@ button.close__modal {
       font-size: 18px;
       letter-spacing: 2px; }
 
+.mobile__menu__wrapper {
+  position: relative; }
+
 .mobile__menu__bottom {
   display: none;
   position: absolute;
-  bottom: 0;
   width: 100%;
-  bottom: 5%; }
+  bottom: 0px;
+  background-color: #fbfbfb; }
 
 .right-menu-icon {
   height: 20px;
@@ -1369,11 +1379,17 @@ button.close__modal {
 .one__half {
   display: inline-block;
   width: 49%; }
+  .one__half.left {
+    border-right: 1px solid #c9c9c9; }
+  .one__half a:hover, .one__half a :focus {
+    color: #b91628; }
   .one__half p {
     text-align: center;
     text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 600; }
+    font-size: 12px;
+    margin-top: 15px;
+    letter-spacing: 1.5px;
+    font-weight: 500; }
   .one__half svg {
     max-height: 40px; }
   .one__half a {
@@ -1393,6 +1409,18 @@ button.close__modal {
   .search__people__off__canvas p, .off-canvas p {
     color: #fefefe;
     text-align: center !important; }
+
+@media screen and (max-width: 500px) {
+  .ceo--bottom {
+    text-align: center; } }
+
+@media screen and (max-width: 550px) {
+  .ceo--bottom .list-divider {
+    margin: 20px auto; } }
+
+@media screen and (max-width: 550px) {
+  .ceo--bottom .padding__right--50 {
+    padding: 0 !important; } }
 
 .advanced__button {
   text-align: center; }
@@ -10171,13 +10199,17 @@ button.slick-arrow {
   position: fixed;
   right: 10%;
   bottom: 10%;
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
   padding: 30px;
   background: #b91628 url("../images/human-icon.png") no-repeat center;
   -webkit-background-size: 40% 40%;
           background-size: 40%;
   z-index: 999; }
+  @media screen and (min-width: 48em) {
+    .human-icon {
+      width: 80px;
+      height: 80px; } }
   @media screen and (max-width: 768px) {
     .human-icon {
       bottom: 20%; } }
@@ -10212,7 +10244,7 @@ button.slick-arrow {
   cursor: pointer; }
   @media screen and (min-width: 48em) {
     .prev-slider-home, .next-slider-home {
-      margin: 25px; } }
+      margin: 15px; } }
 
 .homepage-slider-title {
   color: #fefefe; }
@@ -10284,6 +10316,10 @@ button.slick-arrow {
 
 ul.desktop-menu {
   padding-top: 28px; }
+
+#menu-nested-pages {
+  display: table !important;
+  width: 107% !important; }
 
 ul.menu li a {
   color: #0a0a0a;
