@@ -1154,7 +1154,8 @@ img.insights {
     text-align: center;
     font-weight: 800;
     font-size: 12px;
-	&.active {
+	&.active,
+	&.white {
 		color: $white;
 	}
 }

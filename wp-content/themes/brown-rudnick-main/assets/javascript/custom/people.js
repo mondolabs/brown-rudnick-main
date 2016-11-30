@@ -196,15 +196,8 @@ $(document).ready(function(){
 			}
 		});
 	}
-	var lastScrollTop = 0;
 	$(document).bind('scroll', function(){
-	   var st = $(this).scrollTop();
-	   if (st > lastScrollTop){
-			var  closestText = $('.sidebar__on-scroll--fixed').nearest('.letter__anchor--inner-indicator').last().text();
-	   } else {
-			var  closestText = $('.sidebar__on-scroll--fixed').nearest('.letter__anchor--inner-indicator').first().text();
-	   }
-	   lastScrollTop = st;
+		var  closestText = $('.sidebar__on-scroll--fixed').nearest('.letter__anchor--inner-indicator').text();
 		for (var i= 0; i < $('.letter__link').length; i++) {
 			var elem = $('.letter__link')[i];
 			if ($.trim($(elem).text()) === $.trim(closestText)) {
