@@ -146,19 +146,29 @@ var PEOPLE = {
 		});
 	},
 	scrollToLocationHash: function(){
-			var locationHash = window.location.hash;
-			var hashAnchor = $("div[data-letter-anchor="+ locationHash.replace(/^#+/i, '') +"]");
-			if (hashAnchor.offset() !== undefined) { 
-				$('html,body').animate({
-	          scrollTop: hashAnchor.offset().top - 200
-	        }, 1000, function(){
-						if ($(window).innerWidth() < 768){
-							$('.back__to__top').show(3000);
-						}
-	        });
-	        return false; 
-			} 
+		var locationHash = window.location.hash;
+		var hashAnchor = $("div[data-letter-anchor="+ locationHash.replace(/^#+/i, '') +"]");
+		if (hashAnchor.offset() !== undefined) { 
+			$('html,body').animate({
+          scrollTop: hashAnchor.offset().top - 200
+        }, 1000, function(){
+					if ($(window).innerWidth() < 768){
+						$('.back__to__top').show(3000);
+					}
+        });
+        return false; 
+		} 
+	},
+	closestLetter: function(){
+		var  closestText = $('.sidebar__on-scroll--fixed').nearest('.letter__anchor--inner-indicator').text();
+		for (var i= 0; i < $('.letter__link').length; i++) {
+			var elem = $('.letter__link')[i];
+			if ($.trim($(elem).text()) === $.trim(closestText)) {
+				$('.letter--active').removeClass('letter--active');
+				$(elem).parent().addClass('letter--active');
+			}
 		}
+	}
 };
 
 $(document).ready(function(){
@@ -197,15 +207,8 @@ $(document).ready(function(){
 		});
 	}
 	$(document).bind('scroll', function(){
-		var  closestText = $('.sidebar__on-scroll--fixed').nearest('.letter__anchor--inner-indicator').text();
-		for (var i= 0; i < $('.letter__link').length; i++) {
-			var elem = $('.letter__link')[i];
-			if ($.trim($(elem).text()) === $.trim(closestText)) {
-				$('.letter--active').removeClass('letter--active');
-				$(elem).parent().addClass('letter--active');
-			}
-		}
+		PEOPLE.closestLetter();
 	});
-
 	$(window).trigger('resize');
+	PEOPLE.closestLetter();
 });

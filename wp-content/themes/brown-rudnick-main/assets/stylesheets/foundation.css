@@ -1096,14 +1096,17 @@ img.insights {
       .letter__link--inner-wrapper.letter--active .letter__link.offcanvas--letter--link:hover, .letter__link--inner-wrapper:hover .letter__link.offcanvas--letter--link:hover {
         color: #b91628; }
 
-.letter__link {
+.letter__link,
+.letter__divider {
   color: #0a0a0a;
   display: table-cell;
   vertical-align: middle;
   text-align: center;
   font-weight: 800;
   font-size: 12px; }
-  .letter__link.active, .letter__link.white {
+  .letter__link.active, .letter__link.white,
+  .letter__divider.active,
+  .letter__divider.white {
     color: #fefefe; }
 
 .about__bullets--wrapper.white__background {

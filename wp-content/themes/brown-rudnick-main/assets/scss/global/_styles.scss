@@ -1147,7 +1147,8 @@ img.insights {
 	}
 }
 
-.letter__link {
+.letter__link,
+.letter__divider {
 	color: $black;
     display: table-cell;
     vertical-align: middle;
