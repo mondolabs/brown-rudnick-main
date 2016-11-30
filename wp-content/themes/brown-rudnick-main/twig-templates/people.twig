@@ -281,27 +281,26 @@
 								Search results 
 							</p>
 						{% endif  %}	
-						{% for person in people %}
-							{% set first_letter_of_last = person.last_name|slice(0,1)|upper %}
-							{% set previous_item = people[ loop.index0 - 1] %}
-							{% for letter in alphabet %}
-								{% if letter|upper == first_letter_of_last|upper %}	
-									{% if previous_item.last_name|slice(0,1)|upper != person.last_name|slice(0,1)|upper %}
-										<div class="columns small-12 medium-12 large-12 relative">
-											<div class="columns small-1 medium-1 large-1 relative">
-												<div data-letter-anchor="{{ letter }}" class="letter__anchor--indicator">
-													<div class="letter__anchor--inner-indicator">
-														{{ letter }}
-													</div>	
-												</div> 
-											</div>
-											<div class="columns small-10 medium-11 large-11 relative">
-												<span class="page__divider grey inline__block people">
-												</span>
-											</div>	
+						{% for letter in alphabet %}
+							<div class="columns small-12 medium-12 large-12 relative">
+								<div class="columns small-1 medium-1 large-1 relative">
+									<div data-letter-anchor="{{ letter }}" class="letter__anchor--indicator">
+										<div class="letter__anchor--inner-indicator">
+											{{ letter }}
 										</div>	
-									{% endif %}
-									<div class="columns medium-12 large-6 small-12 min--height__225 end">
+									</div> 
+								</div>
+								<div class="columns small-10 medium-11 large-11 relative">
+									<span class="page__divider grey inline__block people">
+									</span>
+								</div>	
+							</div>
+							{% set letter_counter = 0 %}
+							{% for person in people %}
+								{% set first_letter_of_last = person.last_name|slice(0,1)|upper %}
+								{% if letter|upper == first_letter_of_last|upper %}
+									{% set letter_counter = letter_counter + 1 %}
+									<div data-letter="{{letter}}" class="person__wrapper columns medium-12 large-6 small-12 min--height__225 end">
 										<div class="columns medium-6 large-6 small-12">
 											<div class="people__image__container">
 												<img class="people__details" src="{{ TimberImage(person.image).src }}" />
@@ -311,7 +310,6 @@
 											<div class="people__details--outer-wrapper">
 												<div class="people__details--inner-wrapper">
 													<a href="{{ person._permalink }}" class="people__details title__text smaller">
-														{# {{ person.first_name }} {% if person.middle_initial %}{{ person.middle_initial }}. {% endif %} {{ person.last_name }} #}
 														{% if person.last_name %} 
 															{{person.last_name}}, 
 														{% endif %} 
@@ -342,8 +340,8 @@
 											</div>	
 										</div>
 									</div>
-								{% endif %}	
-							{% endfor %}
+								{% endif %}
+							{% endfor %}	
 						{% endfor %}
 					{% else %}
 						<p class="title__text">

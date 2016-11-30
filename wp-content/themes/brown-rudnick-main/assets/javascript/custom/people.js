@@ -36,6 +36,9 @@ var PEOPLE = {
 			var letterlLinkInnerWrappers = $('.letter__link--inner-wrapper');
 			var letter = $(this).data('letter');
 			var letterAnchor = $("div[data-letter-anchor="+ letter +"]");
+			if ($(this).parent().hasClass('inactive--letter')) {
+				return false;
+			}
 			if (letterAnchor.offset() !== undefined) { 
 				letterlLinkInnerWrappers.removeClass('letter--active');
 				var selectedletterlLinkInnerWrapper = $(this).parent();
@@ -128,13 +131,13 @@ var PEOPLE = {
 	},
 
 	inactiveLetter: function(){
-		var anchors = $('.letter__anchor--indicator');
 		var letterLinks = $('.letter__link');
 		var alphabet =["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-		for (var a = 0; a <alphabet.length; a++){
-			if ($(".letter__anchor--indicator[data-letter-anchor*='"+alphabet[a]+"']").length === 0 ){
-				$(".letter__link[data-letter*='"+alphabet[a]+"']").parent().addClass('inactive--letter');
-			} 
+		for (var i = 0; i <alphabet.length; i++){
+			if ($(".person__wrapper[data-letter*='"+alphabet[i]+"']").length === 0 ){
+				$(".letter__anchor--indicator[data-letter-anchor*='"+alphabet[i]+"']").parent().parent().hide();
+				$(".letter__link[data-letter*='"+alphabet[i]+"']").parent().addClass('inactive--letter');
+			}
 		}
 	},
 	printPage: function(){
