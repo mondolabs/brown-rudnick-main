@@ -1969,6 +1969,13 @@ textarea#comment {
 tr {
   background-color: #fefefe !important; }
 
+#enter-search-replace p {
+  color: #a7a6a6;
+  letter-spacing: 3px;
+  font-weight: 800;
+  font-size: 14px;
+  padding-left: 9px; }
+
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)

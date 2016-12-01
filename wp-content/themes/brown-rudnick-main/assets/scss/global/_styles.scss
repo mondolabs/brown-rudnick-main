@@ -2110,8 +2110,16 @@ textarea#comment {
 		}	
 	}
 }
-
-
 tr {
 	background-color: $white !important;
+}
+
+#enter-search-replace {
+	p {
+		color: $darker-grey;
+		letter-spacing: $letter-spacing-global;
+		font-weight: 800;
+		font-size: 14px;
+		padding-left: 9px;
+	}
 }
