@@ -1799,7 +1799,7 @@ select.clean___border {
 	width: 100%;
 	border: none !important;
 	padding: 5%;
-
+	@extend %globalHover;
 }
 #all__people__navigate {
 	text-transform: uppercase;
