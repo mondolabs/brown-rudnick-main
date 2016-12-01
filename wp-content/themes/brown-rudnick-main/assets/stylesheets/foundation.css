@@ -991,8 +991,8 @@ img.insights {
   background: -webkit-gradient(linear, right top, left top, color-stop(50%, #b91628), color-stop(50%, transparent));
   background: -webkit-linear-gradient(right, #b91628 50%, transparent 50%);
   background: linear-gradient(to left, #b91628 50%, transparent 50%);
-  -webkit-background-size: 200% 100%;
-          background-size: 200% 100%;
+  -webkit-background-size: 210% 100%;
+          background-size: 210% 100%;
   background-position: left bottom; }
   .tile__arrow.home__page {
     bottom: 0px;
