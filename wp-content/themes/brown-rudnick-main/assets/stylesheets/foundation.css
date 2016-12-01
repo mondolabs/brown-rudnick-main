@@ -53,9 +53,45 @@ body {
   padding-right: 1.5rem;
   padding-left: 0; }
 
+.sites-button {
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out; }
+  .sites-button:hover {
+    color: #b91628;
+    background: transparent;
+    border: 1px solid #b91628; }
+
+#submit-keyword-search {
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out; }
+  #submit-keyword-search:hover {
+    color: #fff;
+    background: transparent;
+    border: 1px solid #fff !important; }
+
 @media screen and (min-width: 768px) and (max-width: 1224px) {
   .featured-image__header--text-wrapper, .breadcrumb__wrapper, .sidebar__wrapper {
     padding-left: 3%; } }
+
+.cls-1 {
+  fill: none;
+  stroke: #231f20;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+  stroke-linejoin: round;
+  stroke-width: 5px; }
+
+.cls-2 {
+  fill: #231f20;
+  stroke-width: 5px;
+  stroke-linecap: round; }
+
+.arrows-svg {
+  fill: none;
+  stroke: #231f20;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3px; }
 
 body {
   font-family: "Avenir", Helvetica, Arial, sans-serif !important; }
@@ -103,9 +139,45 @@ body {
   padding-right: 1.5rem;
   padding-left: 0; }
 
+.sites-button {
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out; }
+  .sites-button:hover {
+    color: #b91628;
+    background: transparent;
+    border: 1px solid #b91628; }
+
+#submit-keyword-search {
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out; }
+  #submit-keyword-search:hover {
+    color: #fff;
+    background: transparent;
+    border: 1px solid #fff !important; }
+
 @media screen and (min-width: 768px) and (max-width: 1224px) {
   .featured-image__header--text-wrapper, .breadcrumb__wrapper, .sidebar__wrapper {
     padding-left: 3%; } }
+
+.cls-1 {
+  fill: none;
+  stroke: #231f20;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+  stroke-linejoin: round;
+  stroke-width: 5px; }
+
+.cls-2 {
+  fill: #231f20;
+  stroke-width: 5px;
+  stroke-linecap: round; }
+
+.arrows-svg {
+  fill: none;
+  stroke: #231f20;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3px; }
 
 /**
  * Foundation for Sites by ZURB
@@ -412,7 +484,7 @@ li.list-item__sidebar a {
   line-height: 2.2;
   text-transform: uppercase;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
-  letter-spacing: 1.2px;
+  letter-spacing: 3px;
   font-weight: 500; }
 
 .list-item__sidebar-ul {
@@ -653,6 +725,9 @@ h3.title {
       padding: 20px; } }
   .color-block.vellum {
     background-color: rgba(255, 255, 255, 0.8); }
+  @media screen and (max-width: 1350px) {
+    .color-block.homepage--bottom--block {
+      padding: 40px; } }
 
 .color-block__experience {
   height: 100px;
@@ -682,7 +757,7 @@ a.experience__link {
   font-size: 11px;
   text-transform: uppercase;
   font-weight: 900;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   line-height: 1.8;
   margin-top: 2px; }
 
@@ -1223,10 +1298,10 @@ button.close__modal {
 .bottom-banner__text--wrapper p {
   font-size: 16px;
   font-weight: 800;
-  letter-spacing: 2px; }
+  letter-spacing: 3px; }
 
 .wide-spacing {
-  letter-spacing: 2px; }
+  letter-spacing: 3px; }
 
 .tester {
   height: 250px; }
@@ -1275,7 +1350,7 @@ button.close__modal {
   font-size: 12px; }
 
 .bold__wide__spacing, .medium__weight__spacing {
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   font-size: 14px;
   text-transform: uppercase; }
   .bold__wide__spacing.smaller, .medium__weight__spacing.smaller {
@@ -1381,7 +1456,7 @@ button.close__modal {
         margin: 7.5%; } }
     #menu-mobile-menu li a {
       font-size: 18px;
-      letter-spacing: 2px; }
+      letter-spacing: 3px; }
 
 .mobile__menu__wrapper {
   position: relative; }
@@ -1440,7 +1515,7 @@ button.close__modal {
     text-transform: uppercase;
     font-size: 12px;
     margin-top: 15px;
-    letter-spacing: 1.5px;
+    letter-spacing: 3px;
     font-weight: 500; }
   .one__half svg {
     max-height: 40px; }
@@ -1503,7 +1578,7 @@ button.close__modal {
 .input-custom-search {
   text-transform: uppercase;
   font-weight: 800;
-  letter-spacing: 2px; }
+  letter-spacing: 3px; }
 
 .insights__bottom--mobile-wrapper {
   position: relative;
@@ -1531,7 +1606,7 @@ select.clean___border {
   padding: 16px 80px;
   text-transform: uppercase;
   margin: 3% auto;
-  letter-spacing: 1.2px;
+  letter-spacing: 3px;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
   border: 2px solid #b91628; }
@@ -1542,7 +1617,7 @@ select.clean___border {
 .wpcf7-text, .wpcf7-select, .wpcf7-textarea {
   color: #f0f0f0;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   font-weight: 800;
   font-size: 10px !important;
   margin-top: 20px !important; }
@@ -1620,7 +1695,7 @@ select.clean___border {
 .search__people__homepage, #submit-keyword-search, #search-by-keyword, #all__people__navigate {
   text-transform: uppercase;
   font-weight: 800;
-  letter-spacing: 1.5px;
+  letter-spacing: 3px;
   font-size: 10px;
   color: #fefefe; }
 
@@ -1717,12 +1792,12 @@ tbody {
   text-transform: uppercase;
   font-weight: 800;
   font-size: 10px;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   color: #a7a6a6; }
 
 .page-template-sitemap li {
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   line-height: 50px;
   font-size: 14px;
   color: #000; }
@@ -1771,7 +1846,7 @@ tbody {
   color: #fefefe; }
 
 .email-modal-button {
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   font-size: 12px;
   font-weight: 800;
   margin: 0;
@@ -1867,6 +1942,13 @@ textarea#comment {
 #search__people__letter__grid {
   max-width: 80%;
   margin: 0 auto; }
+
+.reverse--button span {
+  display: block;
+  height: 30px;
+  width: 30px;
+  background-color: #fefefe;
+  color: #b91628; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -9452,7 +9534,7 @@ a {
   width: 30%;
   display: block; }
   .slide-description-heading.red {
-    border-bottom: 3px solid #b91628; }
+    border-bottom: 2px solid #b91628; }
   @media screen and (max-width: 640px) {
     .slide-description-heading {
       margin-left: 10px; } }
@@ -10203,9 +10285,11 @@ button.arrow {
 .desktop-menu a {
   word-break: keep-all !important; }
 
-@media screen and (max-width: 768px) {
-  .footer-links > a {
-    padding-left: 0; } }
+.footer-links > a {
+  letter-spacing: 3px; }
+  @media screen and (max-width: 768px) {
+    .footer-links > a {
+      padding-left: 0; } }
 
 .footer-logo {
   margin-top: 40px;
@@ -10434,7 +10518,7 @@ ul.menu li a {
   transition: width 2s, height 2s, background-color 2s, -webkit-transform 2s;
   transition: width 2s, height 2s, background-color 2s, transform 2s;
   transition: width 2s, height 2s, background-color 2s, transform 2s, -webkit-transform 2s;
-  letter-spacing: 1.2px; }
+  letter-spacing: 3px; }
   ul.menu li a:after {
     border: none !important; }
   ul.menu li a:hover {
@@ -10456,7 +10540,7 @@ ul.desktop__menu--icons-list {
     text-transform: uppercase; }
   ul.desktop__menu--icons-list a {
     color: #000;
-    letter-spacing: 1.25px;
+    letter-spacing: 3px;
     font-size: 10px; }
   ul.desktop__menu--icons-list li {
     display: inline-block;
@@ -10509,13 +10593,14 @@ ul.desktop__menu--icons-list {
   font-weight: bold;
   font-size: 14px;
   line-height: 1.5;
-  letter-spacing: 1.0px;
+  letter-spacing: 3px;
   margin-bottom: 14px; }
 
 .homepage-date {
   font-size: 12px;
   font-weight: bold;
-  color: #f0f0f0; }
+  opacity: 0.4;
+  color: #0a0a0a; }
 
 .homepage-arrow {
   border-top: 1px solid #f0f0f0;
@@ -10549,7 +10634,7 @@ span.red__border--top {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   font-size: 22px;
   color: #0a0a0a;
-  letter-spacing: 1.6px; }
+  letter-spacing: 3px; }
 
 @media screen and (min-width: 48em) {
   .public-interest-learn-more {
@@ -10573,7 +10658,7 @@ span.red__border--top {
     font-family: "Avenir", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     margin: 0;
-    letter-spacing: 1.5px;
+    letter-spacing: 3px;
     font-weight: 500;
     font-size: 25px; }
 

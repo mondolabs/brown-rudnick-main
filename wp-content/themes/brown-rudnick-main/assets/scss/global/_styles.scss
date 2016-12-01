@@ -330,7 +330,7 @@ li.list-item__sidebar {
 		line-height: 2.2;
 		text-transform: uppercase;
 		font-family: $brfont;
-		letter-spacing: 1.2px;
+		letter-spacing: $letter-spacing-global;
 		font-weight: 500;
 	}
 }
@@ -656,6 +656,12 @@ h3.title {
 	&.vellum {
 		background-color: rgba(255, 255, 255, .8);
 	}
+	&.homepage--bottom--block{
+		@media screen and (max-width: 1350px) {
+			padding: 40px;
+		}
+
+	}
 }
 
 .color-block__experience {
@@ -690,7 +696,7 @@ a.experience__link {
 	font-size: 11px;
 	text-transform: uppercase;
 	font-weight: 900;
-	letter-spacing: 2px;
+	letter-spacing: $letter-spacing-global;
 	line-height: 1.8;
 	margin-top: 2px;
 }
@@ -1298,12 +1304,12 @@ button.close__modal {
 	p {
 		font-size: 16px;
 		font-weight: 800;
-		letter-spacing: 2px;
+		letter-spacing: $letter-spacing-global;
 	}
 }
 
 .wide-spacing {
-	letter-spacing: 2px;
+	letter-spacing: $letter-spacing-global;
 }
 
 .tester{
@@ -1372,7 +1378,7 @@ button.close__modal {
 }
 // general application font
 .bold__wide__spacing, .medium__weight__spacing {
-	letter-spacing: 2px;
+	letter-spacing: $letter-spacing-global;
 	font-size: 14px;
 	text-transform: uppercase;
 	&.smaller {
@@ -1507,7 +1513,7 @@ button.close__modal {
 			margin: 1%;
 		a {
 			font-size: 18px;
-			letter-spacing: 2px;
+			letter-spacing: $letter-spacing-global;
 		}
 
 	}
@@ -1574,7 +1580,7 @@ button.close__modal {
 		text-transform: uppercase;
 		font-size: 12px;
 		margin-top: 15px;
-		letter-spacing: 1.5px;
+		letter-spacing: $letter-spacing-global;
 		font-weight: 500;
 	}
 	svg {
@@ -1652,7 +1658,7 @@ button.close__modal {
 .input-custom-search {
 	text-transform: uppercase;
 	font-weight: 800;
-	letter-spacing: 2px;
+	letter-spacing: $letter-spacing-global;
 }
 
 // submit button for contact form
@@ -1691,7 +1697,7 @@ select.clean___border {
 	padding: 16px 80px;
 	text-transform: uppercase;
 	margin: 3% auto;
-	letter-spacing: 1.2px;
+	letter-spacing: $letter-spacing-global;
 	transition: all .3s ease-in-out;
 	border: 2px solid $primary-red;
 }
@@ -1702,7 +1708,7 @@ select.clean___border {
 .wpcf7-text, .wpcf7-select, .wpcf7-textarea {
 	color: $primary-grey;
 	text-transform: uppercase;
-	letter-spacing: 2px;
+	letter-spacing: $letter-spacing-global;
 	font-weight: 800;
 	font-size: 10px !important;
 	margin-top: 20px !important;
@@ -1780,7 +1786,7 @@ select.clean___border {
 .search__people__homepage,  #submit-keyword-search, #search-by-keyword, #all__people__navigate {
 	text-transform: uppercase;
 	font-weight: 800;
-	letter-spacing: 1.5px;
+	letter-spacing: $letter-spacing-global;
 	font-size: 10px;
 	color: $white;
 }
@@ -1790,6 +1796,7 @@ select.clean___border {
 	width: 100%;
 	border: none !important;
 	padding: 5%;
+	@extend %globalHover;
 }
 #all__people__navigate {
 	text-transform: uppercase;
@@ -1895,13 +1902,13 @@ tbody {
 	text-transform: uppercase;
 	font-weight: 800;
 	font-size: 10px;
-	letter-spacing: 2px;
+	letter-spacing: $letter-spacing-global;
 	color: $darker-grey;
 }
 .page-template-sitemap {
 	li {
 		text-transform: uppercase;
-		letter-spacing: 2px;
+		letter-spacing: $letter-spacing-global;
 		line-height: 50px;
 		font-size: 14px;
 		color: $br-black;
@@ -1955,7 +1962,7 @@ tbody {
 	color: $white;
 }
 .email-modal-button {
-	letter-spacing: 2px;
+	letter-spacing: $letter-spacing-global;
 	font-size: 12px;
 	font-weight: 800;
 	margin: 0;
@@ -2065,8 +2072,16 @@ tr.gray__underline {
 textarea#comment {
 	height: 200px;
 }
-	
 #search__people__letter__grid {
 	max-width: 80%;
 	margin: 0 auto;
+}
+.reverse--button {
+	span{
+		display: block;
+		height: 30px;
+		width: 30px;
+		background-color: $white;
+		color: $primary-red;
+	}
 }

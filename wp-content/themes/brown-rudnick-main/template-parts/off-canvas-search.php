@@ -13,7 +13,7 @@ $alphabet = range('A', 'Z');
         <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
           <?php get_header();?>
           <div class="off-canvas position-right search__people__off__canvas__container" id="offCanvas" data-off-canvas data-position="right" data-options="sticky_on: large">
-             <button class="close-button" aria-label="Close menu" type="button" data-close>
+             <button class="close-button reverse--button" aria-label="Close menu" type="button" data-close>
               <span aria-hidden="true">&times;</span>
             </button>
             <div class="search__people__off__canvas">

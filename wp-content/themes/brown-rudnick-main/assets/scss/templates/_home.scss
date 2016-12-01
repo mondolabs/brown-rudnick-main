@@ -84,6 +84,7 @@
 }
 
 .footer-links > a { 
+	letter-spacing: $letter-spacing-global;
 	@media screen and (max-width: 768px){
 		padding-left: 0;
 	}
@@ -360,7 +361,7 @@ ul.menu li a{
 	text-transform: uppercase;
     -webkit-transition: width 2s, height 2s, background-color 2s, -webkit-transform 2s;
 	transition: width 2s, height 2s, background-color 2s, transform 2s;
-	letter-spacing: 1.2px;
+	letter-spacing: $letter-spacing-global;
 	&:after {
 		border: none !important;
 	}
@@ -388,7 +389,7 @@ ul.desktop__menu--icons-list {
 	}
 	a {
 		color: $br-black;
-		letter-spacing: 1.25px;
+		letter-spacing: $letter-spacing-global;
 		font-size: 10px;
 	}
 	li {
@@ -450,14 +451,15 @@ ul.desktop__menu--icons-list {
 	font-weight: bold;
 	font-size: 14px;
 	line-height: 1.5;
-	letter-spacing: 1.0px;
+	letter-spacing: $letter-spacing-global;
 	margin-bottom: 14px;
 }
 
 .homepage-date {
 	font-size: 12px;
 	font-weight: bold;
-	color: $primary-grey;
+	opacity: 0.4;
+	color: $black;
 }
 
 
@@ -498,7 +500,7 @@ span.red__border--top {
 	font-family: $brfont;
 	font-size: 22px;
 	color: $black;
-	letter-spacing: 1.6px;
+	letter-spacing: $letter-spacing-global;
 	@extend %centeronMobile;
 }
 
@@ -525,7 +527,7 @@ span.red__border--top {
 			font-family: $brfont;
 	    text-transform: uppercase;
 	    margin: 0;
-	    letter-spacing: 1.5px;
+	    letter-spacing: $letter-spacing-global;
 	    font-weight: 500;
 	    font-size: 25px;
 	}

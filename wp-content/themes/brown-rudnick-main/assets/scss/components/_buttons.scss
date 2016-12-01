@@ -12,10 +12,10 @@ a {
 	border: none;
 	padding: 16px 70px;
 	text-transform: uppercase;
-    margin: 3% auto;
+  margin: 3% auto;
 	letter-spacing: 1.2px;
-    transition: all .3s ease-in-out;
-    border: 2px solid $primary-red;
+  transition: all .3s ease-in-out;
+  border: 2px solid $primary-red;
 	&.advanced-search {
 	    font-size: 11px;
 	    padding: 18px 16px;
@@ -64,6 +64,7 @@ a {
     		margin: 20px 0;
     	}
 	}
+	@extend %globalHoverRed;
 }
 .advanced-search-container {
 	@media screen and (max-width: 768px) {

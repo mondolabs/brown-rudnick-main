@@ -23,7 +23,8 @@ $br-black: #000;
 $light-grey-three: #a7a7a7;
 $very-light-grey: #fbfbfb;
 $darker-grey-two: #c9c9c9;
-
+$svg-stroke: #231f20;
+$letter-spacing-global: 3px;
 
 body {
 	font-family: $brfont !important;
@@ -85,11 +86,47 @@ body {
   padding-right: 1.5rem;
   padding-left: 0;
 }
+%globalHoverRed {
+		transition: all .5s ease-in-out;
+	&:hover{
+		color: $primary-red;
+		background: transparent;
+		border: 1px solid $primary-red;
+	}
+}
+%globalHover {
+	transition: all .5s ease-in-out;
+	&:hover{
+		color: $white;
+		background: transparent;
+		border: 1px solid $white !important;
+	}
+}
+
 
 %breadCrumbwrapper {
 	@media screen and (min-width: 768px) and (max-width:1224px) {
 		padding-left: 3%;
 	}
 }
-
-
+//SVG PATH DEFS
+.cls-1	{
+	fill:none;
+	stroke:$svg-stroke;
+	stroke-linecap:round;
+	stroke-miterlimit:10;
+	stroke-linejoin:round;
+	stroke-width:5px;
+	}
+.cls-2 {
+	fill:$svg-stroke; 
+	stroke-width:5px;
+	stroke-linecap:round;
+}
+.arrows-svg {
+	fill:none;
+	stroke:$svg-stroke;
+	stroke-linecap:round;
+	stroke-linejoin:round;
+	stroke-width:3px;
+}

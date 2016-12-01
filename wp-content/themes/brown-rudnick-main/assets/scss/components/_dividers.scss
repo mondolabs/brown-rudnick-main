@@ -11,7 +11,7 @@
 	width: 30%;
 	display: block;
 	&.red {
-		border-bottom: 3px solid $primary-red;
+		border-bottom: 2px solid $primary-red;
 	}
 	@media screen and (max-width: 640px) {
 		margin-left: 10px;
