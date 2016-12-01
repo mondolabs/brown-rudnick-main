@@ -11,7 +11,7 @@ $data['featured_image_url'] = $data['featured_image_url'][0];
 $data['related_experiences'] = get_field('related_experiences');
 $data['parent_page_name'] = "Events";
 $data['parent_page_url'] = "/events";
-
+$data['breadcrumb_color'] = get_field('breadcrumb_color');
 ?>
 <html>
   <head>

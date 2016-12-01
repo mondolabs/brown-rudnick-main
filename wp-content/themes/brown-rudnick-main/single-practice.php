@@ -17,9 +17,7 @@ $data['practice_group_leaders'] = get_field('practice_group_leaders');
 $data['related_people'] = get_field('practice_related_people');
 $data['services_header'] = get_field('services_header');
 $data['services'] = get_field('services');
-
-$test = $data['headlines'];
-
+$data['breadcrumb_color'] = get_field('breadcrumb_color');
 ?>
 <html>
   <head>

@@ -17,6 +17,7 @@ $data['geography_group_leaders'] = get_field('geography_group_leaders');
 $data['related_people'] = get_field('related_people');
 $data['services_header'] = get_field('services_header');
 $data['services'] = get_field('services');
+$data['breadcrumb_color'] = get_field('breadcrumb_color');
 
 ?>
 <html>

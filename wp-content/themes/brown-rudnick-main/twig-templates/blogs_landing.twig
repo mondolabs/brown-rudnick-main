@@ -3,12 +3,12 @@
 	{# hero header #}
 	<div class="featured-image__header--text-outer-wrapper row relative">
 		{% if not unfiltered %}
-			<div class="breadcrumb__wrapper {{ header_text_color }}">
-				<a class="breadcrumb__link {{ header_text_color }}" href="{{parent_link}}">BACK TO {{ parent_name|upper|replace('-', ' ') }}</a>
+			<div class="breadcrumb__wrapper {{ breadcrumb_color }}">
+				<a class="breadcrumb__link {{ breadcrumb_color }}" href="{{parent_link}}">BACK TO {{ parent_name|upper|replace('-', ' ') }}</a>
 			</div>
 		{% else %}	
-			<div class="breadcrumb__wrapper {{ header_text_color }}">
-				<a class="breadcrumb__link {{ header_text_color }}" href="/insights">BACK TO INSIGHTS</a>
+			<div class="breadcrumb__wrapper {{ breadcrumb_color }}">
+				<a class="breadcrumb__link {{ breadcrumb_color }}" href="/insights">BACK TO INSIGHTS</a>
 			</div>
 		{% endif %}	
 		<div class="featured-image__header--text-wrapper">
