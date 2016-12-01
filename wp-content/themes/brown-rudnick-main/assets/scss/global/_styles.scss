@@ -1343,7 +1343,10 @@ button.close__modal {
 	@extend %clearDiv;
 }
 .no-bottom-border {
-	border-bottom: none!important;
+	border-bottom: none !important;
+}
+.bottom-border-table {
+	border-bottom: 1px solid $medium-gray !important;
 }
 .job__openings__title{
 	font-family: $brgaramond;
@@ -2103,4 +2106,9 @@ textarea#comment {
 			top: -5px;
 		}	
 	}
+}
+
+
+tr {
+	background-color: $white !important;
 }

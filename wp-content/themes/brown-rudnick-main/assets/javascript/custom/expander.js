@@ -14,6 +14,7 @@ var EXPANDER = {
 				$('#showMoreRelatedExperiences').removeClass('less').addClass('more').text("SHOW MORE");
 			}
 		});
+		// $('.person__details--expander').
 		$('.job_expander').click(function(event) {
 			var expander = $(this);
 			var hiddenJobDescripton = $(expander).parent().parent().next('tr').find('td');
@@ -32,6 +33,10 @@ var EXPANDER = {
 		$('.person__details--expander').click(function(event) {
 			var expander = $(this);
 			var hiddenPersonDetails = $(expander).parent().parent().parent().find('.hidden__person-publication--details');
+			$(this).parent().parent().toggleClass('no-bottom-border');
+			var length = $(this).parent().parent().siblings().length;
+			var lastSibling = $(this).parent().parent().siblings()[length-1];
+			$(lastSibling).toggleClass('bottom-border-table');
 			$(hiddenPersonDetails).toggle();
 			$(expander).toggleClass('expanded');
 		});

@@ -1328,6 +1328,9 @@ button.close__modal {
 .no-bottom-border {
   border-bottom: none !important; }
 
+.bottom-border-table {
+  border-bottom: 1px solid #cacaca !important; }
+
 .job__openings__title {
   font-family: "adobe-garamond-pro", serif; }
 
@@ -1959,6 +1962,9 @@ textarea#comment {
 
 .single-people .person__details--expander:after {
   top: -5px; }
+
+tr {
+  background-color: #fefefe !important; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
