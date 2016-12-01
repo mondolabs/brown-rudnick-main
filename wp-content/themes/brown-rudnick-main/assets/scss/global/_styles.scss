@@ -1147,14 +1147,16 @@ img.insights {
 	}
 }
 
-.letter__link {
+.letter__link,
+.letter__divider {
 	color: $black;
     display: table-cell;
     vertical-align: middle;
     text-align: center;
     font-weight: 800;
     font-size: 12px;
-	&.active {
+	&.active,
+	&.white {
 		color: $white;
 	}
 }
@@ -2060,6 +2062,10 @@ tr.gray__underline {
 	border-bottom: 1px solid $medium-gray;
 }
 
+textarea#comment {
+	height: 200px;
+}
+	
 #search__people__letter__grid {
 	max-width: 80%;
 	margin: 0 auto;

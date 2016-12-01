@@ -48,7 +48,9 @@
 			</div>
 		</div>	
 	</div>
-</div>	
+</div>
+
+
 	{# body - with sidebar #}
 <div class="row">
 	<div class="no__pad columns small-12 medium-12 large-12 margin-bottom--40 margin-top-40">
@@ -57,3 +59,60 @@
 		</div>
 	</div>
 </div>
+
+<div class="grey__background experience__wrapper columns small-12 medium-12 large-12">
+	<div class="row padding__wrapper top-and-bottom sixty">
+		<div class="no__pad columns large-12 medium-12 small-12">
+			<p class="title__text">
+				Comments
+			</p>
+			{% if comments|length > 0 %}
+				{% for comment in comments %}
+					<div class="{% if loop.first %}{% else %} margin-top-20 {% endif %}no__pad columns large-12 medium-12 small-12">
+						<p class="tag__text inline__text">
+							<span class="tag__text black inline__text">
+								{{ comment.comment_author|upper }}
+							</span>	
+							<span class="tag__text grey inline__text">
+								{{ comment.date|date('m/d/y') }}
+							</span>
+						</p>
+						<p class="body__text">
+							{{ comment.comment_content }}
+						</p>
+						<span class="page__divider white"></span>
+					</div>	
+				{% endfor %}	
+			{% endif %}
+			<div class="no__pad columns small-12 medium-12 large-12">
+				<p class="title__text">
+					Add Comment
+				</p>
+			</div>
+			<form action="{{site.url}}/wp-comments-post.php" method="post" id="commentform">
+	            <div clas="row">
+	            	<div class="comment__form--half">
+		                <p>
+		                    <label for="author">{{__('Name','timber-foundation')}}</label>
+		                    <input type="text" class="five" name="author" id="author" value="{{comment_author|e}}" size="22" tabindex="1" aria-required='true' />
+		                </p>
+	            	</div>  
+	            </div>
+    	        <div class="no__pad columns small-12 medium-12 large-12">    
+	                <p>
+	                    <label for="comment">{{__('Comment', 'timber-foundation')}}</label>
+	                    <textarea name="comment" id="comment" tabindex="3"></textarea>
+	                </p>
+                	<p>
+                		<input name="submit" class="sites-button" type="submit"  tabindex="5" value="{{__('POST','timber-foundation')|e}}">
+                	</p>
+	            </div>   
+                {{fn('comment_id_fields')}}
+                {% do action( 'comment_form', post.id ) %}
+            </form>
+		</div>
+	</div>
+</div>
+
+
+

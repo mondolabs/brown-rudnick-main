@@ -91,6 +91,9 @@
 	&.thin {
 		height: 1px;
 	}
+	&.white {
+		background-color: $white;
+	}
 }
 
 .hiring-divider {

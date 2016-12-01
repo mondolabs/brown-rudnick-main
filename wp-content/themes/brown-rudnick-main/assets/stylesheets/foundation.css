@@ -1096,14 +1096,17 @@ img.insights {
       .letter__link--inner-wrapper.letter--active .letter__link.offcanvas--letter--link:hover, .letter__link--inner-wrapper:hover .letter__link.offcanvas--letter--link:hover {
         color: #b91628; }
 
-.letter__link {
+.letter__link,
+.letter__divider {
   color: #0a0a0a;
   display: table-cell;
   vertical-align: middle;
   text-align: center;
   font-weight: 800;
   font-size: 12px; }
-  .letter__link.active {
+  .letter__link.active, .letter__link.white,
+  .letter__divider.active,
+  .letter__divider.white {
     color: #fefefe; }
 
 .about__bullets--wrapper.white__background {
@@ -1857,6 +1860,9 @@ a:hover, a:focus {
 
 tr.gray__underline {
   border-bottom: 1px solid #cacaca; }
+
+textarea#comment {
+  height: 200px; }
 
 #search__people__letter__grid {
   max-width: 80%;
@@ -9505,6 +9511,8 @@ a {
     display: inline-block; }
   .page__divider.thin {
     height: 1px; }
+  .page__divider.white {
+    background-color: #fefefe; }
 
 .hiring-divider {
   width: 20px;
@@ -10442,7 +10450,8 @@ ul.desktop__menu--icons-list {
   margin: 0;
   float: right;
   list-style: none;
-  padding-top: 28px; }
+  padding-top: 28px;
+  position: relative; }
   ul.desktop__menu--icons-list .tag__text {
     text-transform: uppercase; }
   ul.desktop__menu--icons-list a {
@@ -10451,7 +10460,7 @@ ul.desktop__menu--icons-list {
     font-size: 10px; }
   ul.desktop__menu--icons-list li {
     display: inline-block;
-    padding-right: 20px;
+    padding-left: 20px;
     padding-bottom: 10px; }
 
 .desktop__menu__icon__single {

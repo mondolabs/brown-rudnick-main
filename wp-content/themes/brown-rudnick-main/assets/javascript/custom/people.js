@@ -36,6 +36,9 @@ var PEOPLE = {
 			var letterlLinkInnerWrappers = $('.letter__link--inner-wrapper');
 			var letter = $(this).data('letter');
 			var letterAnchor = $("div[data-letter-anchor="+ letter +"]");
+			if ($(this).parent().hasClass('inactive--letter')) {
+				return false;
+			}
 			if (letterAnchor.offset() !== undefined) { 
 				letterlLinkInnerWrappers.removeClass('letter--active');
 				var selectedletterlLinkInnerWrapper = $(this).parent();
@@ -131,13 +134,13 @@ var PEOPLE = {
 	// searches DOM for results with specific letter 
 	// toggles inactive class for letters with no results
 	inactiveLetter: function(){
-		var anchors = $('.letter__anchor--indicator');
 		var letterLinks = $('.letter__link');
 		var alphabet =["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-		for (var a = 0; a <alphabet.length; a++){
-			if ($(".letter__anchor--indicator[data-letter-anchor*='"+alphabet[a]+"']").length === 0 ){
-				$(".letter__link[data-letter*='"+alphabet[a]+"']").parent().addClass('inactive--letter');
-			} 
+		for (var i = 0; i <alphabet.length; i++){
+			if ($(".person__wrapper[data-letter*='"+alphabet[i]+"']").length === 0 ){
+				$(".letter__anchor--indicator[data-letter-anchor*='"+alphabet[i]+"']").parent().parent().hide();
+				$(".letter__link[data-letter*='"+alphabet[i]+"']").parent().addClass('inactive--letter');
+			}
 		}
 	},
 	printPage: function(){
@@ -147,19 +150,29 @@ var PEOPLE = {
 	},
 	// scrolls to location hash with letter marker from all off-canvas searches
 	scrollToLocationHash: function(){
-			var locationHash = window.location.hash;
-			var hashAnchor = $("div[data-letter-anchor="+ locationHash.replace(/^#+/i, '') +"]");
-			if (hashAnchor.offset() !== undefined) { 
-				$('html,body').animate({
-	          scrollTop: hashAnchor.offset().top - 200
-	        }, 1000, function(){
-						if ($(window).innerWidth() < 768){
-							$('.back__to__top').show(3000);
-						}
-	        });
-	        return false; 
-			} 
+		var locationHash = window.location.hash;
+		var hashAnchor = $("div[data-letter-anchor="+ locationHash.replace(/^#+/i, '') +"]");
+		if (hashAnchor.offset() !== undefined) { 
+			$('html,body').animate({
+          scrollTop: hashAnchor.offset().top - 200
+        }, 1000, function(){
+					if ($(window).innerWidth() < 768){
+						$('.back__to__top').show(3000);
+					}
+        });
+        return false; 
+		} 
+	},
+	closestLetter: function(){
+		var  closestText = $('.sidebar__on-scroll--fixed').nearest('.letter__anchor--inner-indicator').text();
+		for (var i= 0; i < $('.letter__link').length; i++) {
+			var elem = $('.letter__link')[i];
+			if ($.trim($(elem).text()) === $.trim(closestText)) {
+				$('.letter--active').removeClass('letter--active');
+				$(elem).parent().addClass('letter--active');
+			}
 		}
+	}
 };
 
 $(document).ready(function(){
@@ -200,15 +213,8 @@ $(document).ready(function(){
 
 	// find closest element with marker letter and assigns class to it
 	$(document).bind('scroll', function(){
-		var  closestText = $('.sidebar__on-scroll--fixed').nearest('.letter__anchor--indicator').text();
-		for (var i= 0; i < $('.letter__link').length; i++) {
-			var elem = $('.letter__link')[i];
-			if ($.trim($(elem).text()) === $.trim(closestText)) {
-				$('.letter--active').removeClass('letter--active');
-				$(elem).parent().addClass('letter--active');
-			}
-		}
+		PEOPLE.closestLetter();
 	});
-
 	$(window).trigger('resize');
+	PEOPLE.closestLetter();
 });

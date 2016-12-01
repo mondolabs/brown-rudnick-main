@@ -278,7 +278,6 @@ if( ($geography !== "") || ( $industry !== "") || ($practice !== "") || ($langua
 $data['people'] = Timber::get_posts($people_args);
 $data['people'] = array_unique($data['people']);
 
-
 ?>
 
 <html>
