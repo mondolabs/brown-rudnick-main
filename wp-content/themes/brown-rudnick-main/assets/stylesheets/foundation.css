@@ -553,7 +553,7 @@ a.link {
       color: #b91628; }
     a.link.red:hover, a.link.red:focus {
       color: #b91628;
-      text-decoration: underline; }
+      text-decoration: none; }
     a.link.red.tile:hover, a.link.red.tile:focus {
       color: #b91628; }
   a.link.inline__link, a.link.inline_link {

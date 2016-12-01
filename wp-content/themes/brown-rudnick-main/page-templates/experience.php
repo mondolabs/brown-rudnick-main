@@ -17,7 +17,6 @@ $args = array(
   'numberposts' => 1
 );
 $data['sidebar'] = get_posts($args);
-
 $data['experience_tile_one'] = get_field('experience_tile_one');
 $data['experience_tile_two'] = get_field('experience_tile_two');
 $data['experience_tile_three'] = get_field('experience_tile_three');

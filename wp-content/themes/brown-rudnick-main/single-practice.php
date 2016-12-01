@@ -18,6 +18,8 @@ $data['related_people'] = get_field('practice_related_people');
 $data['services_header'] = get_field('services_header');
 $data['services'] = get_field('services');
 
+$test = $data['headlines'];
+
 ?>
 <html>
   <head>

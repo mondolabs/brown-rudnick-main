@@ -424,7 +424,7 @@ a.link {
 		&:hover,
 		&:focus {
 			color: $primary-red;
-			text-decoration: underline;
+			text-decoration: none;
 		}
 		&.tile {
 			&:hover,

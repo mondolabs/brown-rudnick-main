@@ -27,6 +27,7 @@ var PEOPLE = {
 		}),
 		$('.email--people--link').click(function(event){
 			event.preventDefault();
+			console.log('click');
 			$('#emailModal').removeClass('hidden').fadeIn('slow');
 			$('#email-modal-close').attr('href', 'mailto:' + $(this)[0].innerText);
 		}),

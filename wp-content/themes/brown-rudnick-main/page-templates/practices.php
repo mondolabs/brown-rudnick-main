@@ -22,7 +22,6 @@ $args = array(
   'numberposts' => 1
 );
 $data['sidebar'] = get_posts($args);
-$data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
 $slug = basename(get_permalink());
 $data['slug'] = $slug;
 $data['parent_link'] = get_permalink( $post->post_parent );
