@@ -188,7 +188,6 @@ $(document).ready(function(){
 		if ( $('.sidebar__on-scroll--fixed').length > 0 && $(document).width() >= 768 ){
 			elementToStick.stick_in_parent({ offset_top: headerHeight });
 		}	else {
-			console.log("resized and small")
 			elementToStick.trigger("sticky_kit:detach");
 		}	
 	});
@@ -200,7 +199,6 @@ $(document).ready(function(){
 				elementToStick.stick_in_parent({ offset_top: headerHeight });
 			} 	
 	}	
-
 	// prevent submit on enter for advanced search
 	if ( $('body').hasClass('page-template-people') ){
 		$(window).keydown(function(e){

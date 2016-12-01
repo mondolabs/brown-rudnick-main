@@ -17,7 +17,7 @@ var emailContact = {
 }
 
 $(document).ready(function(){
-	if ( $('body').hasClass('page-template-publication-request') || $('body').hasClass('single-people') ) {
+	if ( $('body').hasClass('page-template-publication-request') ) {
 		emailContact.revealNotice();
 		emailContact.hideNotice();
 		emailContact.leavePage();

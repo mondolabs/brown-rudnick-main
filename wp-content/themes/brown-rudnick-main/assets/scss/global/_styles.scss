@@ -218,7 +218,9 @@ p.subtitle__text {
     a.link {
     	padding-left: 10px;
     	padding-right: 10px;
-    }
+    	line-height: 1.2em;
+    	letter-spacing: $letter-spacing-global; 
+    }	
 }
 
 .padding__wrapper {
@@ -886,7 +888,7 @@ img.insights {
 
 .color__block--outer-wrapper {
 	position: relative;
-    height: 100%;
+    //height: 100%;
     display: inline-block;
     &.white__bg {
     	background-color: $white;
@@ -1035,12 +1037,12 @@ img.insights {
 		right: 15px;
     	top: 20px;
 		&:before {
-			top: 0;
+			top: 7px;
 			left: 12px;
 			background-color: $white;
 		}
 		&:after {
-			top: -4px;
+			top: 2px;
 			left: 7px;
 			background-color: $white;
 
@@ -1700,6 +1702,7 @@ select.clean___border {
 	letter-spacing: $letter-spacing-global;
 	transition: all .3s ease-in-out;
 	border: 2px solid $primary-red;
+	@extend %globalHoverRed;
 }
 
 #submit-contact-us {
@@ -1796,7 +1799,7 @@ select.clean___border {
 	width: 100%;
 	border: none !important;
 	padding: 5%;
-	@extend %globalHover;
+
 }
 #all__people__navigate {
 	text-transform: uppercase;
@@ -2000,7 +2003,7 @@ tbody {
 	@media screen and (max-width: 768px){
 		display: inline-block;
 	}
-	&:hover, &:focus {
+	&:focus {
 		color: $white;
 	}
 }
@@ -2021,7 +2024,7 @@ tbody {
 	&:hover {
 		color: $primary-red;
 	}
-	background: transparent;
+	background: $primary-grey;
 	display: block;
 	padding: 14px 0px;
 	width: 80px;
@@ -2083,5 +2086,21 @@ textarea#comment {
 		width: 30px;
 		background-color: $white;
 		color: $primary-red;
+	}
+}
+
+.bottom--banner--image--wrapper {
+	height: 325px !important;
+}
+
+
+.single-people {
+	.person__details--expander {
+		&:before{
+			top: 0px;
+		}
+		&:after{
+			top: -5px;
+		}	
 	}
 }

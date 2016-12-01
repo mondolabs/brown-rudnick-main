@@ -53,21 +53,13 @@ body {
   padding-right: 1.5rem;
   padding-left: 0; }
 
-.sites-button {
+.wpcf7-submit, .sites-button {
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out; }
-  .sites-button:hover {
+  .wpcf7-submit:hover, .sites-button:hover {
     color: #b91628;
     background: transparent;
-    border: 1px solid #b91628; }
-
-#submit-keyword-search {
-  -webkit-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out; }
-  #submit-keyword-search:hover {
-    color: #fff;
-    background: transparent;
-    border: 1px solid #fff !important; }
+    border: 1px solid #b91628 !important; }
 
 @media screen and (min-width: 768px) and (max-width: 1224px) {
   .featured-image__header--text-wrapper, .breadcrumb__wrapper, .sidebar__wrapper {
@@ -139,21 +131,13 @@ body {
   padding-right: 1.5rem;
   padding-left: 0; }
 
-.sites-button {
+.wpcf7-submit, .sites-button {
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out; }
-  .sites-button:hover {
+  .wpcf7-submit:hover, .sites-button:hover {
     color: #b91628;
     background: transparent;
-    border: 1px solid #b91628; }
-
-#submit-keyword-search {
-  -webkit-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out; }
-  #submit-keyword-search:hover {
-    color: #fff;
-    background: transparent;
-    border: 1px solid #fff !important; }
+    border: 1px solid #b91628 !important; }
 
 @media screen and (min-width: 768px) and (max-width: 1224px) {
   .featured-image__header--text-wrapper, .breadcrumb__wrapper, .sidebar__wrapper {
@@ -401,7 +385,9 @@ p.subtitle__text {
   vertical-align: middle; }
   .sidebar__color-block--wrapper a.link {
     padding-left: 10px;
-    padding-right: 10px; }
+    padding-right: 10px;
+    line-height: 1.2em;
+    letter-spacing: 3px; }
 
 .padding__wrapper {
   display: block;
@@ -911,7 +897,6 @@ img.insights {
 
 .color__block--outer-wrapper {
   position: relative;
-  height: 100%;
   display: inline-block; }
   .color__block--outer-wrapper.white__bg {
     background-color: #fefefe; }
@@ -1043,7 +1028,7 @@ img.insights {
     .accordion_expander.top__menu:before,
     .mobile__sidebar--expander.top__menu:before,
     .person__details--expander.top__menu:before {
-      top: 0;
+      top: 7px;
       left: 12px;
       background-color: #fefefe; }
     .experience_expander.top__menu:after,
@@ -1051,7 +1036,7 @@ img.insights {
     .accordion_expander.top__menu:after,
     .mobile__sidebar--expander.top__menu:after,
     .person__details--expander.top__menu:after {
-      top: -4px;
+      top: 2px;
       left: 7px;
       background-color: #fefefe; }
   .experience_expander:hover:after, .experience_expander:hover:before,
@@ -1879,7 +1864,7 @@ tbody {
   #download--vcard {
     display: inline-block; } }
 
-#download--vcard:hover, #download--vcard:focus {
+#download--vcard:focus {
   color: #fefefe; }
 
 .inactive--letter {
@@ -1891,7 +1876,7 @@ tbody {
   background-color: #f0f0f0; }
 
 #print--page {
-  background: transparent;
+  background: #f0f0f0;
   display: block;
   padding: 14px 0px;
   width: 80px;
@@ -1949,6 +1934,15 @@ textarea#comment {
   width: 30px;
   background-color: #fefefe;
   color: #b91628; }
+
+.bottom--banner--image--wrapper {
+  height: 325px !important; }
+
+.single-people .person__details--expander:before {
+  top: 0px; }
+
+.single-people .person__details--expander:after {
+  top: -5px; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome

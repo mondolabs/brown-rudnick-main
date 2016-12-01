@@ -91,7 +91,7 @@ body {
 	&:hover{
 		color: $primary-red;
 		background: transparent;
-		border: 1px solid $primary-red;
+		border: 1px solid $primary-red !important;
 	}
 }
 %globalHover {
