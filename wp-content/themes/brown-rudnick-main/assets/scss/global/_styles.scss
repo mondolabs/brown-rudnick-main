@@ -866,8 +866,7 @@ img.insights {
 		width: 100%;
 		position: absolute;
 		top: inherit;
-		position: block;
-
+		margin-bottom: 20px;
 	}
 	a.breadcrumb__link {
 		font-size: 10px;
@@ -952,6 +951,11 @@ img.insights {
 	}
 	&.location__map {
 		height: 500px;
+	}
+	&.person__wrapper {
+		@media screen and (max-width: 768px){
+			margin-top: 15px;
+		}
 	}
 	&.insight,
 	&.person {

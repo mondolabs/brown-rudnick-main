@@ -13,7 +13,7 @@
 					<div class="people__details--inner-wrapper">
 						<div class="columns medium-12 large-12 small-12 relative">
 							<div class="inline__wrapper person padding__right--50-desktop">
-								<div class="table__wrapper">
+								<div class="table__wrapper person__wrapper">
 									<div class="table__inner">
 											<img class="people__details person" src="{{ TimberImage(person.image).src }}"/>
 									</div>
@@ -30,7 +30,7 @@
 												{{ person.job_title|upper }}
 											</p>
 										{% endif %}	
-										<span class="people__deatils list-divider red"></span>
+										<span class="people__details list-divider red"></span>
 										<p class="people__details body__text">
 											{{ person.primary_city }}, {{ person.primary_state }}{% if person.secondary_city and person.secondary_state %} | {{ person.secondary_city }}, {{ person.secondary_state}} {% endif %} 
 										</p>

@@ -896,7 +896,7 @@ img.insights {
       width: 100%;
       position: absolute;
       top: inherit;
-      position: block; } }
+      margin-bottom: 20px; } }
   .breadcrumb__wrapper a.breadcrumb__link {
     font-size: 10px;
     font-weight: 800;
@@ -960,6 +960,9 @@ img.insights {
     width: 100%; }
   .table__wrapper.location__map {
     height: 500px; }
+  @media screen and (max-width: 768px) {
+    .table__wrapper.person__wrapper {
+      margin-top: 15px; } }
   @media screen and (max-width: 768px) {
     .table__wrapper.insight, .table__wrapper.person {
       width: 100%; } }
