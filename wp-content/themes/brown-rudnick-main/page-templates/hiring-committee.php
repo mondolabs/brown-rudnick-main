@@ -7,8 +7,8 @@ $post = new TimberPost();
 $data['post'] = $post;
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
 $data['featured_image_url'] = $data['featured_image_url'][0];
-
 $data['header_text'] = get_field('header_text');
+$data['breadcrumb_color'] = get_field('breadcrumb_color');
 
 $args = array(
     'post_type' =>  'people',

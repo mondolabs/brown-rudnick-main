@@ -31,6 +31,7 @@ $data['summer_first_paragraph'] = get_field('summer_first_paragraph');
 $data['summer_recruitment_committee_title'] = get_field('summer_recruitment_committee_title');
 $data['tile_paragraph_one'] = get_field('tile_paragraph_one');
 $data['tile_paragraph_two'] = get_field('tile_paragraph_two');
+$data['breadcrumb_color'] = get_field('breadcrumb_color');
 
 $args = array(
     'post_type' =>  'people',

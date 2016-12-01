@@ -1,10 +1,11 @@
 <div id="featuredImage" class ="featured-image__header--image-wrapper">
-
+  {% set breadcrumb_color = location.breadcrumb_color %}
+  {{breadcrumb_color}}
   {% set header_text_color = "black" %}
   {# hero header #}
   <div class="featured-image__header--text-outer-wrapper row relative">
-    <div class="breadcrumb__wrapper {{ breadcrumb_color }}">
-      <a class="breadcrumb__link {{ breadcrumb_color }}" href="/all-locations">{{ "locations"|upper }}</a>
+    <div class="breadcrumb__wrapper {{ breadcrumb_color_location }}">
+      <a class="breadcrumb__link {{ breadcrumb_color_location }}" href="/all-locations">{{ "locations"|upper }}</a>
     </div>
   {# hero header #}
     <div class="featured-image__header--text-wrapper">

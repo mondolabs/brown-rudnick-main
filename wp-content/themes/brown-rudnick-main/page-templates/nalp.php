@@ -20,7 +20,7 @@ $data['middle_text_content'] = get_field('middle_text_content');
 $data['nalp_report_banner_header'] = get_field('nalp_report_banner_header');
 $data['nalp_report_banner_text_content'] = get_field('nalp_report_banner_text_content');
 $data['nalp_bottom_banner_image'] = get_field('nalp_bottom_banner_image');
-
+$data['breadcrumb_color'] = get_field('breadcrumb_color');
 ?>
 
 <html>
