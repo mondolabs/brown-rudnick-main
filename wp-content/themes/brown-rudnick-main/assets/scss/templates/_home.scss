@@ -382,6 +382,7 @@ ul.desktop__menu--icons-list {
 	float: right;
 	list-style: none;
 	padding-top: 28px;
+	position: relative;
 	.tag__text {
 		text-transform: uppercase;
 	}
@@ -392,7 +393,7 @@ ul.desktop__menu--icons-list {
 	}
 	li {
 		display: inline-block;
-		padding-right: 20px;
+		padding-left: 20px;
 		padding-bottom: 10px;
 	}
 
