@@ -67,20 +67,19 @@ var PATHS = {
     // Snap SVG
     'assets/javascript/vendor/snap/snap.svg.js',
 
-    // Scroll reveal
-    'assets/javascript/vendor/scrollreveal/scrollreveal.js',
-
     // Include your own custom scripts (located in the custom folder)
     'assets/javascript/custom/*.js',
 
     // Vendor
     'assets/javascript/vendor/*',
+    'assets/javascript/vendor/autogrow/*.js',
     'assets/javascript/vendor/disableScroll/*.js',
     'assets/javascript/vendor/backstretch/backstretch.min.js',
     'assets/javascript/vendor/slick/*.js',
     'assets/javascript/vendor/purl/*.js',
     'assets/javascript/vendor/cookies/*.js',
     'assets/javascript/vendor/sticky-kit/*.js', 
+    'assets/javascript/vendor/jquery-nearest/*.js',
   ],
   phpcs: [
     '**/*.php',

@@ -1,4 +1,4 @@
-div.wpcf7 {
+/*div.wpcf7 {
 	margin: 0;
 	padding: 0;
 }
@@ -35,9 +35,9 @@ div.wpcf7-validation-errors {
 	border: 2px solid #f7e700;
 }
 
-.wpcf7-form-control-wrap {
+/*.wpcf7-form-control-wrap {
 	position: relative;
-}
+}*/
 
 span.wpcf7-not-valid-tip {
 	color: #f00;

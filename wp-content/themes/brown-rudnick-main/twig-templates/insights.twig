@@ -19,62 +19,78 @@
 	<div class="row experience__wrapper body__wrapper columns small-12 medium-12 large-12">
 		{% include '/twig-templates/insights-sidebar.twig' with sidebar %}
 		<div class="columns small-12 medium-9 large-10">
-			<div class="columns small-12 medium-6 large-6 margin-top-40">
+			<div class="columns small-12 medium-6 large-6">
 				<div class="padding__wrapper">
 					<p class="title__text">
 						Articles
 					</p>
 					{% for news_article in news_articles %}
-						{% set news_article = news_article|first %}
-						<a href="{{news_article.guid}}" class="black body__text link">
-							{{ news_article.post_title }}<br>
-						</a>
-						<div class="columns small-12 medium-12 large-12">
-							<div class="columns small-4 medium-4 large-4">
-								<p class="tag__text smaller grey">
-									{{ news_article.date|date("M d, y")|upper }}
-								</p>
-							</div>
-							<div class="columns padding__wrapper small-8 medium-8 large-8 right">
-								<a href="{{news_article.guid}}">
-									<span class="hover-arrow insights red">
-										<img src="{{ hover_arrow }}">
-									</span>
-								</a>	
-							</div>	
-							<span class="insights list-divider"></span>
-						</div>
+						{% set news_article = news_article|first %}							
+						<table class="no__border">
+							<tbody class="no__border">
+								<tr class="arrow__hover--trigger">
+									<td class="no__pad full__width">
+										<a class="hover__black black" href="{{news_article.guid}}">
+											{{ news_article.post_title }}<br>
+										</a> 
+										<p class="tag__text grey margin-top-20">
+											{{ news_article.date|date("M d, Y")|upper }}
+										</p>
+									</td>
+									<td class="no__pad">
+										<div class="link__arrow--wrapper news">
+											<a href="{{news_article.guid}}">
+												<svg class="long__arrow--svg news" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
+													<title>long arrow</title>
+													<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
+													<polyline class="long__arrow red" points="48 1 56 9 48 17"/>
+												</svg>
+											</a>	
+										</div>
+									</td>
+								</tr>
+							</tbody>	
+						</table>
+						{% if not loop.last %}<span class="insights list-divider"></span>{% endif %}
 					{% endfor %}
 					<a class="link red tag__text underline" href="/articles">
 						{{ "see all articles"|upper }}
 					</a>
 				</div>
 			</div>
-			<div class="columns small-12 medium-6 large-6 margin-top-40">
-				<div class="padding__wrapper sides__only ten">
+			<div class="columns small-12 medium-6 large-6">
+				<div class="padding__wrapper sides__only ten margin-top-40--mobile">
 					<p class="title__text">
 						Alerts
 					</p>
 					{% for alert in alerts %}
 						{% set alert = alert|first %}
-							<a href="{{alert.guid}}" class="black body__text link">
-								{{ alert.post_title }}
-							</a>
-						<div class="columns small-12 medium-12 large-12">
-							<div class="columns small-4 medium-4 large-4 right">
-								<p class="tag__text smaller grey">
-									{{ alert.date|date("M d, y")|upper }}
-								</p>
-							</div>
-							<div class="columns padding__wrapper small-8 medium-8 large-8 right">
-								<a href="{{alert.guid}}">
-									<span class="hover-arrow insights red">
-										<img src="{{ hover_arrow }}">
-									</span>
-								</a>	
-							</div>
-							<span class="insights list-divider"></span>
-						</div>
+						<table class="no__border">
+							<tbody class="no__border">
+								<tr class="arrow__hover--trigger">
+									<td class="no__pad full__width">
+										<a class="hover__black black" href="{{alert.guid}}">
+											{{ alert.post_title }}<br>
+										</a> 
+										<p class="tag__text grey margin-top-20">
+											{{ alert.date|date("M d, y")|upper }}
+										</p>
+									</td>
+									<td class="no__pad">
+										<div class="link__arrow--wrapper news">
+											<a href="{{alert.guid}}">
+												<svg class="long__arrow--svg news" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
+													<title>long arrow</title>
+													<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
+													<polyline class="long__arrow red" points="48 1 56 9 48 17"/>
+												</svg>
+											</a>	
+										</div>
+									</td>
+								</tr>
+							</tbody>	
+						</table>
+						{% if not loop.last %}<span class="insights list-divider"></span>{% endif %}
 					{% endfor %}
 					<a class="link red tag__text underline" href="/alerts">
 						{{ "see all alerts"|upper }}
@@ -84,7 +100,7 @@
 				
 			
 			<div class="columns  small-12 medium-12 large-12">
-				<span class="insights list-divider"></span>
+				<span class="list-divider full__width margin-top-40"></span>
 				<p class="title__text insights__blog">
 					Blogs
 				</p>
@@ -101,8 +117,12 @@
 										{{blog.blog_content_excerpt}}
 									</div>
 									<a href="{{ blog.blog_link_url }}">
-										<span class="hover-arrow insights--blog red">
-											<img src="{{ hover_arrow }}">
+										<span class="tile__arrow blog">
+											<svg class="long__arrow--svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
+												<title>long arrow</title>
+												<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
+												<polyline class="long__arrow red" points="48 1 56 9 48 17"/>
+											</svg>
 										</span>
 									</a>
 								</div>
@@ -113,20 +133,22 @@
 			</div>	
 
 			<div class="columns  small-12 medium-12 large-12">
-				<span class="insights list-divider"></span>
+				<span class="list-divider full__width margin-top-40"></span>
 				<p class="title__text insights__blog">
 					Publications
 				</p>
 				<div class="insight__blogs--outer-wrapper">
 					{% for publication in publications %}
-						<div class="small-12 medium-12 large-6 columns end">
+						<div class="small-12 medium-12 large-6 columns end {% if not loop.last %} margin-bottom--20 {% endif %}">
 							<div class="insight__blog--wrapper">
 								<div class="color__block--grey insights--publication">
-									<span class="tag__text link" data-publication-trigger="{{publication.publication_trigger_id}}">
-										<div >
-											{{publication.publication_title}}
-										</div>
-									</span>
+									<a href ="{{publication.publication_link}}">
+										<span class="tag__text link" data-publication-trigger="{{publication.publication_trigger_id}}">
+											<div >
+												{{publication.publication_title}}
+											</div>
+										</span>
+									</a>
 								</div>
 							</div>	
 						</div>	
@@ -135,7 +157,65 @@
 			</div>		
 		</div>
 	</div>
-</div>	
+</div>
+<div class="grey__background columns small-12 padding__wrapper twenty show-for-small-only">
+	<div class="insights__bottom--mobile-wrapper">
+		<div class="table__wrapper margin__auto">
+			<div class="table__inner">
+				<h4 class="title__text smaller insights margin-bottom--0">
+					Subscribe
+				</h4>
+				{% set sidebar = sidebar|first %}
+				<span class="list-divider mobile mobile__centered smaller"></span>
+				<div class="text-align__center">
+					<h4 class="title__text smaller insights margin-bottom--0">
+						{{ contact_name }}
+					</h4>
+					<p class="tag__text contact margin-bottom--0 font-weight__bold">
+						{{ contact_title|upper }}
+					</p>
+					<span class="list-divider mobile mobile__centered smallest red"></span>
+					<p class="body__text insights">
+						{{ contact_phone_number }}
+					</p>
+					<a class="body__text insights link red" href="mailto:{{contact_email}}"> 
+						<p class="link body__text insights">
+							{{ contact_email }}
+						</p>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>	
+</div>
+
+<div id="emailModal" class="vellum black--vellum modal__background diversity hidden">
+    <div class="row">
+     	<div class="diversity__modal--outer-wrapper table__wrapper relative">
+        	<div class="diversity__modal--inner-wrapper table__innner">
+          		<div class="diversity__modal--text-wrapper email__modal">
+		            <p class="title__text text-align__center">
+		              Notice
+		            </p>
+		            <p class="modal__text">
+		              You understand and agree that transmitting information to Brown Rudnick by e-mail does not establish an attorney-client relationship. By clicking the "Agree" link below, you acknowledge that (i) Brown Rudnick has no obligation to maintain the confidentiality of any information you submit to Brown Rudnick unless Brown Rudnick already represents you or Brown Rudnick later agrees to represent you; thus, if you are not a client, information you submit to Brown Rudnick by e-mail may be disclosed to others and (ii) you have read and understand the Brown Rudnick Terms of Use and Privacy Policy and that you agree to be bound by the terms and conditions of such Terms of Use and Privacy Policy.
+		            </p>
+		            <p class="modal__text">
+		            	If you would like to discuss becoming a client, please contact one of Brown Rudnick's attorneys to arrange for a meeting or telephone conference. Thank you for your interest in Brown Rudnick.
+		            </p>
+		            <div class="email-buttons">
+			            <div class="div__half">
+			            	<a id="email-modal-close"><p class="sites-button">agree</p></a>
+			          	</div>
+			            <div class="div__half ">
+			            	<a id="no-email-modal-close"><p class="sites-button inverse">disagree</p></a>
+			            </div>
+		          	</div>
+         		</div>
+        	</div>  
+     	</div>
+    </div>  
+</div>
 
 <script type="text/javascript">
 	{% if featured_image_url %}

@@ -1,0 +1,28 @@
+<div id="featuredImage" class ="featured-image__header--image-wrapper">
+
+	{% set header_text_color = "black" %}
+	{# hero header #}
+	<div class="featured-image__header--text-outer-wrapper row relative">
+		<div class="breadcrumb__wrapper {{ header_text_color }}">
+		</div>
+	{# hero header #}
+		<div class="featured-image__header--text-wrapper">
+			<div class="featured-image__header--text-inner-wrapper">
+				<div class="color__block vellum">
+					<h1 class="page__header {{ header_text_color }}">
+						{{ terms_of_use_header }}
+					</h1>
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>	
+
+
+<div class="row">
+	<div class="experience__wrapper row body__wrapper columns small-12 medium-12 large-12">
+		<div class="columns">
+			{{post.post_content}}
+		</div>
+	</div>
+</div>

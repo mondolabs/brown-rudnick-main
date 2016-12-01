@@ -1,0 +1,206 @@
+<div id="featuredImage" class ="featured-image__header--image-wrapper">
+	{% set header_text_color = "black" %}
+	{# hero header #}
+	<div class="featured-image__header--text-outer-wrapper row relative">
+		{% if not unfiltered %}
+			<div class="breadcrumb__wrapper {{ header_text_color }}">
+				<a class="breadcrumb__link {{ header_text_color }}" href="{{parent_link}}">BACK TO {{ parent_name|upper|replace('-', ' ') }}</a>
+			</div>
+		{% else %}	
+			<div class="breadcrumb__wrapper {{ header_text_color }}">
+				<a class="breadcrumb__link {{ header_text_color }}" href="/insights">BACK TO INSIGHTS</a>
+			</div>
+		{% endif %}	
+		<div class="featured-image__header--text-wrapper">
+			<div class="featured-image__header--text-inner-wrapper">
+				<div class="color__block vellum">
+					{% if unfiltered %}
+						<h1 class="page__header {{ header_text_color }}">
+							{{ header_text }}
+						</h1>	
+					{% elseif filtered_by_category %}
+						
+						<h1 class="page__header {{ header_text_color }}">
+							{{ tag.name }}
+						</h1>
+					{% else %}
+						<h1 class="page__header {{ header_text_color }}">
+							Monthly Archives
+						</h1>	
+					{% endif %}	
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>
+{# body - with sidebar #}
+<div class="experience__wrapper row body__wrapper columns small-12 medium-12 large-12">
+	
+	<div class="medium-3 large-2 small-12 columns no__pad">
+		<div class="sidebar__wrapper">
+			<h4 class="title__text smaller insights hide-for-small-only margin-bottom--0">
+				Subscribe to Our Blogs
+			</h4>
+			{% if unfiltered %}
+				{{ post.content|shortcodes }}
+			{% else %}			
+				{{ post.parent.content|shortcodes }}
+			{% endif %}
+			<span class="hide-for-small-only thick list-divider mobile__centered smaller grey"></span>
+			<p class="tag__text medium mobile__centered">
+				CATEGORIES
+			</p>
+			<select id="blogTagSelect" name="tag_query" class="clean___border inline__text grey__bold__text smaller {% if unfiltered %}unfiltered{% endif %} {% if monthly_archive %} monthly-archive {% endif %}">
+				<option value="">
+					CATEGORIES
+				</option>
+				{% for tag_option in all_tags_for_blog_posts %}
+					{% if tag_option != ''%}
+						<option value="{{ tag_option }}" {% if tag|upper|replace('-', ' ') == tag_option %}selected="selected"{% endif %}>
+							{{ tag_option }}
+						</option>
+					{% endif %}	
+				{% endfor %}
+			</select>
+
+			<div class="hide-for-small-only">
+				<button id="clearCategoriesSidebar" class="desktop__full--width sites-button advanced-search inverse mobile__full--width" type="button">
+					CLEAR CATEGORY
+				</button>
+			</div>
+			<span class="list-divider mobile__centered smaller grey thick"></span>
+			<p class="margin-top-20 tag__text medium mobile__centered">
+				ARCHIVES
+			</p>
+			<select id="blogDateSelect" name="date_query" class="clean___border inline__text grey__bold__text smaller {% if unfiltered %}unfiltered{% endif %} {% if filtered_by_category %} filtered-by-category {% endif %}">
+	            {% set dateValues = [] %}
+	            {% set datePresenters = [] %}
+	            {% for date in all_dates_for_blog_posts %}
+	            	{{ date }}
+	                {% set valueFormattedDate = date|date("mY")%}
+	                {% set presentationFormattedDate = date|date("F, Y")%}
+	                {% if valueFormattedDate not in dateValues %}
+	                    {% set dateValues = dateValues|merge([valueFormattedDate]) %}
+	                {% endif %}
+	                {% if presentationFormattedDate not in datePresenters %}
+	                    {% set datePresenters = datePresenters|merge([presentationFormattedDate]) %}
+	                {% endif %}
+	            {% endfor %}
+	            <option value="">
+	            	MONTH
+	            </option>
+                {% for i in datePresenters %}
+                  <option value='{{ dateValues[loop.index0] }}' {% if date_query == dateValues[loop.index0] %}selected="selected"{% endif %}>
+                      {{ datePresenters[loop.index0] }}
+                  </option>
+                {% endfor %}
+        	</select>
+			<span class="list-divider mobile__centered smaller thick grey"></span>
+			<p class="margin-top-20 tag__text medium mobile__centered">
+				CONTRIBUTORS
+			</p>
+			{% set category = TimberTerm(blog_title_category_id) %}
+			{% set blog_posts = category.get_posts({'numberposts' : -1, 'orderby' : 'date' }) %}
+            {% set authors = [] %}
+
+            {% for blog_post in blog_posts %}
+            	{% for author in blog_post.get_field('blog_authors') %}
+                    {% if author not in authors %}
+                    	{% set authors = authors|merge([author]) %}
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}		
+			{% for author in authors %}
+				{% set author = author|first %}
+	            <div class="columns large-12 medium-6 small-6 no__pad {% if loop.last %} last float-left {%endif %}">
+	            	<a class="tag__text red link" href="{{ author.permalink }}">
+	              		{{ author.first_name|upper }} {% if author.middle_initial %}{{ author.middle_initial }}. {% endif %}{{ author.last_name|upper }} 
+	            	</a>
+	            </div>	
+			{% endfor %}	
+		</div>
+	</div>
+
+	<div class="columns no__pad medium-8 large-9 small-12 mobile-margin-top-20">
+		<div class="columns small-12 medium-12 large-12 no__pad desktop-only">	
+			{% if monthly_archive %}
+				<div class="row">
+					<p class="title__text">
+						Filtered by Month
+					</p>
+				</div>	
+				<div class="row">
+					<div class="no__pad columns large-12 medium-12 small-12">
+						<div class="no__pad columns large-6 medium-6 small-12 last float-left">
+							<select id="blogDateSelectCenterContent" name="date_query" class="clean___border inline__text grey__bold__text smaller {% if unfiltered %}unfiltered{% endif %}">
+			                {% for i in datePresenters %}
+			                  <option value='{{ dateValues[loop.index0] }}' {% if date_query == dateValues[loop.index0] %}selected="selected"{% endif %}>
+			                      {{ datePresenters[loop.index0] }}
+			                  </option>
+			                {% endfor %}
+							</select>
+						</div>
+					</div>	
+				</div>	
+			{% endif %}	
+			<div class="row">
+				<div class="margin-top-20">
+					{% if posts_by_date_args %}	
+						{% set blog_posts = category.get_posts(posts_by_date_args) %}
+					{% else %}
+						{% set blog_posts = category.get_posts({'numberposts' : -1, 'orderby' : 'date', 'tag' : tag }) %}
+					{% endif %}
+					
+					{% for blog_post in blog_posts %}
+						<div class="blog-post__list-item--wrapper">
+							{% if blog_post.thumbnail %}
+								<img class="blog-post__list-item--image" src="{{ blog_post.thumbnail.src }}">
+							{% endif %}
+							<div class="inline__wrapper mobile__centered">
+								<p class="title__text smaller mobile__centered">
+									<a class="link black" href="{{ blog_post.permalink }}">
+										{{blog_post.title}}	
+									</a>
+								</p>
+								<p class="body__text smaller mobile__centered">
+									BY {{blog_post.author|upper}}
+								</p>
+								<span class="list-divider mobile__centered red smaller thick"></span>
+								<p class="tag__text grey mobile__centered">
+									{{ blog_post.date }}
+								</p>
+							</div>	
+						</div>
+						<span class="page__divider grey thin"></span>
+					{% endfor %}
+				</div>	
+			</div>	
+		</div>
+	</div>
+</div>
+
+<div class="grey__background columns small-12 padding__wrapper twenty show-for-small-only">
+	<div class="insights__bottom--mobile-wrapper">
+		<div class="table__wrapper margin__auto">
+			<div class="table__inner">
+				<h4 class="title__text smaller insights margin-bottom--0">
+					Subscribe to our Blogs
+				</h4>
+				{% if unfiltered %}
+					{{ post.content|shortcodes }}
+				{% else %}
+					{{ post.parent.content|shortcodes }}
+				{% endif %}
+				<span class="list-divider mobile mobile__centered smaller"></span>
+			</div>
+		</div>
+	</div>	
+</div>
+
+<script type="text/javascript">
+	{% if featured_image_url %}
+		$(document).ready(function(){
+			$('#featuredImage').backstretch("{{featured_image_url}}");
+		})
+	{% endif %}
+</script>

@@ -2,7 +2,6 @@
 /*
 Template Name: Professional Development
 */
-get_header();
 $data = Timber::get_context();
 $data['post'] = new TimberPost();
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
@@ -36,10 +35,14 @@ $data['slug'] = $slug;
     <?php wp_head()?>
   </head>
   <body>
-    <div id="page-full-width-homepage" class ="full-width" role="main">
-      <?php Timber::render('/twig-templates/professional-development.twig', $data); ?>
-    </div>  
-    <?php do_action( 'foundationpress_after_content' ); ?>
-    <?php get_footer(); ?>
+    <?php get_template_part('template-parts/off-canvas-search')?>
+          <div id="page-full-width-homepage" class ="full-width" role="main">
+            <?php Timber::render('/twig-templates/professional-development.twig', $data); ?>     
+            <?php do_action( 'foundationpress_after_content' ); ?>
+            <?php get_footer(); ?>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

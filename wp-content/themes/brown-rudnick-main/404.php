@@ -6,29 +6,25 @@
  * @since FoundationPress 1.0.0
  */
 
+$data = Timber::get_context();
+$data['missing_page_header_text'] = get_field('missing_page_header_text');
+$data['missing_page_image'] = get_field('missing_page_image');
+$data['missing_page_header'] = get_field('missing_page_header');
+$data['missing_page_paragraph'] = get_field('missing_page_paragraph');
+$data['home_url'] = get_home_url();
+    
 get_header(); ?>
+<html>
+  <head>
+    <?php wp_head()?>
+  </head>
+  <body>
+	  <div id="page-full-width-homepage" class ="full-width" role="main">
+	  	<?php Timber::render('/twig-templates/404.twig', $data); ?>
+	  </div>
+		<?php do_action( 'foundationpress_after_content' ); ?>
+		<?php get_footer();?>
+  </body>
+</html>
 
-<div class="row">
-	<div class="small-12 large-8 columns" role="main">
 
-		<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
-			<header>
-				<h1 class="entry-title"><?php _e( 'File Not Found', 'foundationpress' ); ?></h1>
-			</header>
-			<div class="entry-content">
-				<div class="error">
-					<p class="bottom"><?php _e( 'The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.', 'foundationpress' ); ?></p>
-				</div>
-				<p><?php _e( 'Please try the following:', 'foundationpress' ); ?></p>
-				<ul>
-					<li><?php _e( 'Check your spelling', 'foundationpress' ); ?></li>
-					<li><?php printf( __( 'Return to the <a href="%s">home page</a>', 'foundationpress' ), home_url() ); ?></li>
-					<li><?php _e( 'Click the <a href="javascript:history.back()">Back</a> button', 'foundationpress' ); ?></li>
-				</ul>
-			</div>
-		</article>
-
-	</div>
-	<?php get_sidebar(); ?>
-</div>
-<?php get_footer();

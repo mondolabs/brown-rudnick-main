@@ -29,21 +29,28 @@
 	}
 	&.people__deatils {
 		margin: 8px 0;
+		@media screen and (max-width: 768px){
+			margin: 8px auto;
+		}
 	}
 	&.insights {
 		width: calc(100% - 15px);
-		margin: 40px 0 10px;
+	    margin: -1rem 0 1rem;
 	}
 	&.smaller {
 		width: 30px;
+		margin:	10px 0;
 	}
 	&.smallest {
 		width: 20px;
+		margin:	8px 0 10px;
 	}
 	&.letter__links {
 		margin-top: 21px;
 	}
-	&.about__deatils {
+	&.about__deatils,
+	&.insight__deatils,
+	&.event__deatils {
 		height: 4px;
 		width: 60px;
 	}
@@ -52,6 +59,18 @@
 		height: 2px;
 		width: 100%;
 		margin: 20px 0 16px;
+	}
+	&.mobile__centered {
+    	@media screen and (max-width: 768px){	
+			margin: 20px auto;
+			width: 80px;
+    	}
+	}
+	&.full__width {
+		width: 100%;
+	}
+	&.thick {
+		height: 2px;
 	}
 }
 
@@ -69,10 +88,13 @@
 	&.inline__block {
 		display: inline-block;
 	}
+	&.thin {
+		height: 1px;
+	}
 }
 
 .hiring-divider {
-	width: 80px;
+	width: 20px;
 	border-bottom: solid $primary-red 1px;
 	height: 1px;
 }

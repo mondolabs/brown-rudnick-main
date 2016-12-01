@@ -36,7 +36,7 @@ var NAV = {
 		var desktopCheck = $(window).scrollTop() >= NAV.desktopMenu.height();
 		var mobileCheck = $(window).scrollTop() > 250;
 		var check;
-		if ($(document).width() >= 768) {
+		if ($(document).width() >= 640) {
 			check = desktopCheck;
 		} else {
 			check = mobileCheck;
@@ -58,7 +58,9 @@ var NAV = {
 		$('.is-dropdown-submenu:eq(2)' ).addClass('before-last-submenu-item');
 		$('.is-dropdown-submenu:eq(3)' ).addClass('last-submenu-item');
 		// for scroll menu
+
 		$('.is-dropdown-submenu:eq(4)' ).addClass('first-submenu-item-scroll');
+			$('.is-dropdown-submenu:eq(5)' ).addClass('middle-submenu-item-scroll');
 		$('.is-dropdown-submenu:eq(6)' ).addClass('before-last-submenu-item-scroll');
 		$('.is-dropdown-submenu:eq(7)' ).addClass('last-submenu-item-scroll');
 	}

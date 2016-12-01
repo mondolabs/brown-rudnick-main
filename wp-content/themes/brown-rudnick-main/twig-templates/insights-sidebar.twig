@@ -1,16 +1,17 @@
-<div class="medium-3 large-2 small-12 columns no__pad">
+{% include '/twig-templates/insights-advanced-search.twig' %}
+<div class="medium-3 large-2 small-12 columns sidebar__wrapper">
 	{% set sidebar = sidebar|first %}
 	{% if parent_link %}
 		{# DESKTOP SIDEBAR HEADER #}
-		<a href="{{ parent_link }}" class="{% if slug == sidebar.sidebar_header|lower %}red{% endif %} title__text smaller hide-for-small-only list__header">
+		<a href="{{ parent_link }}" class="no__underline {% if slug == sidebar.sidebar_header|lower %}red{% endif %} title__text smaller hide-for-small-only list__header">
 			{{ sidebar.sidebar_header }}
 		</a>
 		{# MOBILE SIDEBAR HEADER #}
 		<div class="padding__wrapper twenty sides__only">
-			<a href="{{ parent_link }}" class="show-for-small-only {% if slug == header_link_slug %}red{% endif %} mobile list__header">
+			<a href="{{ parent_link }}" class="no__underline show-for-small-only {% if slug == header_link_slug %}red{% endif %} mobile list__header">
 				{{ sidebar.sidebar_header }}
 			</a>
-		</div>	
+		</div>
 	{% else %}
 		{# DESKTOP SIDEBAR HEADER #}
 		<h4 class="{% if slug == sidebar.sidebar_header|lower  %}red{% endif %} title__text smaller hide-for-small-only list__header">
@@ -30,19 +31,24 @@
 	<span class="list-divider hide-for-small-only"></span>
 	{# MOBILE SIDEBAR LIST DIVIDER #}
 	<span class="list-divider mobile show-for-small-only"></span>
+	<div class="show-for-small-only margin-top-40">
+		<button id="advancedMobileSearch" class="sites-button advanced-search inverse mobile__full--width" type="button">
+			ADVANCED SEARCH
+		</button>
+	</div>
 	
 	<div id="desktopMobileAccordion" class="sidebar-items__wrapper hide-for-small-only">
 	    {% for sidebar_item in sidebar_links %}
     		{% set link_slug = sidebar_item.link_url|split('/')[4] %}
 			{# DESKTOP MENU ITEMS #}
 	    	{% if sidebar_item.has_sub_links %}
-				<a class="sidebar__link medium__weight__spacin hide-for-small-only accordion__trigger link" data-trigger-target="blogsSidebarAccordion">
+				<a class="{% if slug == "blogs" %} red {% endif %}sidebar__link medium__weight__spacing hide-for-small-only accordion__trigger link" data-trigger-target="blogsSidebarAccordion">
 					{{ sidebar_item.link_text|upper }}
 				</a>
-				<ul id="blogsSidebarAccordion" class="hidden list-style__none hide-for-small-only">
+				<ul id="blogsSidebarAccordion" class="hidden list-style__none hide-for-small-only list-item__sidebar-ul">
 					{% for sidebar_submenu_item in sidebar_item.sidebar_sub_links %}
 						<li class="list-item__sidebar">
-							<a class="medium__weight__spacing link text-align__center" href="{{ sidebar_submenu_item.sidebar_sub_link_url }}" >
+							<a class="medium__weight__spacing link padding__left--ten smaller" href="{{ sidebar_submenu_item.sidebar_sub_link_url }}" >
 								{{ sidebar_submenu_item.sidebar_sub_link_text }}
 							</a>
 						</li>
@@ -57,7 +63,7 @@
 		    {% endif %}	
 	    {% endfor %}
 	</div>
-	<div id="sidebarMobileAccordion" class="sidebar-items__wrapper show-for-small-only">
+	<div id="sidebarMobileAccordion" class="sidebar-items__wrapper insights show-for-small-only">
 	    {% for sidebar_item in sidebar_links %}
     		{% set link_slug = sidebar_item.link_url|split('/')[4] %}
 			{# Mobile MENU ITEMS #}
@@ -84,24 +90,18 @@
 	    {% endfor %}
 	</div>
 	<div class="hide-for-small-only">
-	<span class="list-divider smaller"></span>
+		{# <span class="list-divider smaller"></span> #}
 		<div class="sidebar__wrapper">
-			<button class="sites-button advanced-search inverse desktop__full--width" type="button">
+			<button id="insightsAdvancedSearch" class="sites-button advanced-search inverse desktop__full--width margin-bottom--20" type="button">
 				ADVANCED SEARCH
 			</button>
 		</div>
-		<span class="list-divider smaller"></span>
+		{# <span class="list-divider smaller"></span> #}
 		<div class="sidebar__wrapper">
 			<h4 class="title__text smaller insights margin-bottom--0">
 				Subscribe
 			</h4>
-			<form class="relative">
-				<input type="text" placeholder="EMAIL" class="subscribe">
-				</input>
-				<button class="sites-button advanced-search desktop__full--width" type="button">
-					SUBSCRIBE
-				</button>
-			</form>
+			{{ sidebar.post_content|shortcodes }}
 		</div>
 	</div>
 	<div class="hide-for-small-only">
@@ -117,7 +117,7 @@
 			<p class="body__text insights">
 				{{ contact_phone_number }}
 			</p>
-			<a class="body__text insights link red" href="mailto:{{contact_email}}"> 
+			<a class="body__text insights link email--people--link red" href="mailto:{{contact_email}}"> 
 				<p class="link body__text insights">
 					{{ contact_email }}
 				</p>

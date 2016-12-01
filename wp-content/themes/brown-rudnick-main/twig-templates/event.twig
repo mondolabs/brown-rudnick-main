@@ -1,0 +1,172 @@
+<div id="featuredImage" class ="insight featured-image__header--image-wrapper">
+
+	{% set header_text_color = "black" %}
+	{# hero header #}
+	<div class="featured-image__header--text-outer-wrapper row relative">
+		<div class="breadcrumb__wrapper {{ header_text_color }}">
+			<a class="breadcrumb__link {{ header_text_color }}" href="{{parent_page_url}}">BACK TO {{ parent_page_name|upper }}</a>
+		</div>
+	{# hero header #}
+		<div class="featured-image__header--text-wrapper person">
+			<div class="featured-image__header--text-inner-wrapper person">
+				<div class="people__details--outer-wrapper person">
+					<div class="people__details--inner-wrapper">
+						<div class="no__pad columns medium-12 large-12 small-12 relative">
+							<div class="inline__wrapper insight padding__right--50-desktop insight">
+								<div class="insight table__wrapper">
+									<div class="table__inner">
+										<img class="insight__details" src="{{ featured_image_url }}"/>
+									</div>
+								</div>
+							</div>
+							<div class="inline__wrapper insight">
+								<div class="table__wrapper insight">
+									<div class="table__inner">
+										<p class="people__details title__text insight mobile__centered">
+											{{ post.title }}
+										</p>
+										<span class="event__deatils list-divider red mobile__centered"></span>
+											<p class="body__text mobile__centered">
+											Date: {{ post.presentation_date  }}<br>
+											{% if post.time %}
+												Time: {{ post.time }}<br>
+											{% endif %}
+											{% if post.location %}
+												Location: {{ post.location }}<br>
+											{% endif %}
+										</p>
+										{% if post.rsvp_email %}
+											<p class="tag__text margin__0 mobile__centered">
+												RSVP
+											</p>
+											<span class="smaller list-divider red mobile__centered"></span>
+											<a class="red inline__link link mobile__centered" href="mailto:{{post.rsvp_email}}">
+												{{ post.rsvp_email}}
+											</a>
+										{% endif %}	
+									</div>	
+								</div>	
+							</div>	
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>	
+	{# body - with sidebar #}
+<div class="row">
+	<div class="experience__wrapper row body__wrapper columns small-12 medium-12 large-12">
+		<div class="medium-3 large-2 small-12 sidebar__on-scroll--fixed columns no__pad">
+			{% if related_experiences|length > 0 %}
+			    <p class="tag__text">
+			    	{{ 'related experience'|upper }}
+			    </p>
+			    {% for item in related_experiences %}
+		        	{% set experience = item|first %}
+					<div class="sidebar__color-block--outer-outer-wrapper">	
+						<div class="sidebar__color-block--outer-wrapper {% if loop.index > 4 %}hidden hidden__exp{% endif %}">
+							<div class="sidebar__color-block--wrapper">
+					        	<a href="{{ experience.guid }}" class="link margin__0 tag__text text-align__center">
+				    	    		{{ experience.post_title|upper }}
+				        		</a>
+				        	</div>
+						</div>
+					</div>	
+			    {% endfor %}
+				{% if related_experiences|length > 4 %}
+				    <a id="showMoreRelatedExperiences" class="more link red tag__text underline" href="#more">
+				    	SHOW MORE
+				    </a>
+			    	<span class="expander"></span>
+				{% endif %}    
+			{% endif %}    
+		</div>
+		<div class="columns small-12 medium-9 large-10">
+			<div class="padding__wrapper forty sides__only">
+				<div class="body__text ">
+					{{ post.post_content }}
+					{% if post.digital_file %}
+						<br>
+						For more information:<br>
+						{% set digital_file = post.get_field('digital_file')%}
+						<button class="mobile__full--width sites-button" type="submit" onclick="window.open('{{ digital_file }}')">Download</button>
+					{% endif %}
+				</div>	
+			</div>
+			<div class="padding__wrapper forty sides__only">
+				<span class="page__divider grey"></span>
+			</div>
+			<div class="padding__wrapper forty sides__only">
+				{% if practice_group_leaders %}
+					<div class="title__text ">
+						{{ practice_header_text }} Group Leaders
+					</div>
+			    	{% for leader in practice_group_leaders %}
+			    		{% set leader = leader|first %}
+						<div class="columns medium-12 large-6 small-12 margin-bottom--20 end">
+							<div class="columns medium-6 large-6 small-12">
+								<img class="people__details person" src="{{ TimberImage(leader.image).src }}" />
+							</div>
+							<div class="columns medium-6 large-6 small-12">
+								<div class="people__details--outer-wrapper person">
+									<div class="people__details--inner-wrapper">
+										<p class="people__details title__text smaller">
+											{{ leader.first_name }} {% if leader.middle_initial %}{{ leader.middle_initial }}. {% endif %} {{ leader.last_name }}
+										</p>
+										{% if leader.title %}	
+											<p class="people__details tag__text">
+												{{ leader.title|upper }}
+											</p>
+										{% endif %}	
+										<span class="people__deatils list-divider red"></span>
+										<p class="people__details body__text">
+											{{ leader.primary_city }}, {{ leader.primary_state }}{% if leader.secondary_city and leader.secondary_state %} | {{ leader.secondary_city }}, {{ leader.secondary_state}} {% endif %} 
+										</p>
+										<p class="people__details body__text">
+											{{ leader.primary_phone_number }}
+										</p>
+										<p class="people__details body__text">
+											{{ leader.email }}
+										</p>
+									</div>
+								</div>	
+							</div>
+						</div>
+					{% endfor %}					
+				{% endif %}
+			</div>
+			{% if post.contacts %}	
+
+				<div class="padding__wrapper forty sides__only">
+					<p class="body__text">
+						{{ "for questions or more information, please contact:"|upper }}
+					</p>
+					{% set contacts = post.get_field('contacts') %}
+					{% for contact in contacts %}
+						{% set contact = contact|first %}
+						<div class="no__pad medium-unstack small-12 medium-4 large-4 columns margin-top-20 margin-bottom--20 float__left">
+							<p class="title__text smaller">
+								{{ contact.first_name}} {{ contact.middle_initial }} {{contact.last_name}}
+							</p>
+							<div class="hiring-divider margin-bottom--20"></div>
+							{% if  contact.primary_phone_number %}
+								<p class="body__text">
+									P: {{contact.primary_phone_number}}
+								</p>
+							{% endif %}
+							{% if  contact.fax_number %}
+								<p class="body__text">
+									F: {{ contact.fax_number }}
+								</p>
+							{% endif %}
+							<a class="red inline__link link">
+								{{contact.email}}
+							</a>
+						</div>	
+					{% endfor %}
+				</div>
+			{% endif %}	
+		</div>
+	</div>
+</div>

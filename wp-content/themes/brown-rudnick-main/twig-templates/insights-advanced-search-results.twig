@@ -1,0 +1,129 @@
+<div id="featuredImage" class ="featured-image__header--image-wrapper">
+	{% set header_text_color = "black" %}
+
+	{% if previous_parent and previous_slug != 'advanced-search-results' %}
+		{% set previous_page = "/"~previous_parent~"/"~previous_slug %}
+	{% elseif previous_slug != 'advanced-search-results' %}
+		{% set previous_page = "/"~previous_slug %}
+	{% else %}
+		{% set previous_page = "/insights" %}
+	{% endif %}
+
+	{% if previous_slug == 'advanced-search-results' %}
+		{% set slug_presenter = 'insights'%}
+	{% else %}
+		{% set slug_presenter = previous_slug %}
+	{% endif  %}
+	{# hero header #}
+	<div class="featured-image__header--text-outer-wrapper row relative">
+		<div class="breadcrumb__wrapper {{ header_text_color }}">
+			<a class="breadcrumb__link {{ header_text_color }}" href="{{ previous_page }}">BACK TO {{ slug_presenter|upper }}</a>
+		</div>
+		<div class="featured-image__header--text-wrapper">
+			<div class="featured-image__header--text-inner-wrapper">
+				<div class="color__block vellum">
+					<h1 class="page__header {{ header_text_color }}">
+						{{ "Insights" }}
+					</h1>
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>
+{# body - with sidebar #}
+<div class="row">
+	<div class="experience__wrapper row body__wrapper columns small-12 medium-12 large-12">
+		{% include '/twig-templates/insights-sidebar.twig' with sidebar %}
+		<div class="columns show-for-medium-up medium-9 large-9 small-12 mobile-margin-top-20">
+			<div class="columns small-12 medium-12 large-12 no__pad desktop-only">
+				<div class="no__pad">
+					<div class="columns small-12 medium-12 large-6 x-large-6 no__pad">
+						<p class="title__text">
+							{{ "Advanced Search Results" }}
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="columns small-12 medium-12 large-12 no__pad">
+				<div class="margin-top-60 columns small-12 medium-12 large-12 no__pad">
+					{% if insights|length <= 0 %}
+						<p class="title__text smaller">
+							Your query returned no results.
+						</p>
+					{% else %}
+						<p class="title__text smaller">
+							Total number of results: {{insights|length}}
+						</p>
+						{% for insight in insights %}
+							<table class="no__border">
+								<tbody class="no__border">
+									<tr class="arrow__hover--trigger">
+										<td class="no__pad full__width">
+											<a class="hover__black black" href="{{ insight.permalink }}">
+												{{ insight.title }}<br>
+											</a> 
+											<p class="tag__text grey margin-top-20">
+												{{ insight.date|upper }}
+											</p>
+										</td>
+										<td class="no__pad">
+											<div class="link__arrow--wrapper news">
+												<a href="{{ insight.permalink }}">
+													<svg class="long__arrow--svg news" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
+														<title>long arrow</title>
+														<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
+														<polyline class="long__arrow red" points="48 1 56 9 48 17"/>
+													</svg>
+												</a>	
+											</div>
+										</td>
+									</tr>
+								</tbody>	
+							</table>
+							{% if not loop.last %}<span class="insights list-divider"></span>{% endif %}
+						{% endfor %}
+					{% endif %}	
+				</div>	
+			</div>
+		</div>
+	</div>
+</div>
+<div class="grey__background columns small-12 padding__wrapper twenty show-for-small-only">
+	<div class="insights__bottom--mobile-wrapper">
+		<div class="table__wrapper margin__auto">
+			<div class="table__inner">
+				<h4 class="title__text smaller insights margin-bottom--0">
+					Subscribe
+				</h4>
+				{% set sidebar = sidebar|first %}
+				{{ sidebar.post_content|shortcodes }}
+				<span class="list-divider mobile mobile__centered smaller"></span>
+				<div class="text-align__center">
+					<h4 class="title__text smaller insights margin-bottom--0">
+						{{ contact_name }}
+					</h4>
+					<p class="tag__text contact margin-bottom--0 font-weight__bold">
+						{{ contact_title|upper }}
+					</p>
+					<span class="list-divider mobile mobile__centered smallest red"></span>
+					<p class="body__text insights">
+						{{ contact_phone_number }}
+					</p>
+					<a class="body__text insights link red" href="mailto:{{contact_email}}"> 
+						<p class="link body__text insights">
+							{{ contact_email }}
+						</p>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>	
+</div>
+
+<script type="text/javascript">
+	{% if featured_image_url %}
+		$(document).ready(function(){
+			$('#featuredImage').backstretch("{{featured_image_url}}");
+		})
+	{% endif %}
+</script>

@@ -5,7 +5,7 @@
  */
 ?>
 
-	<ul class="desktop__menu--icons-list scrolled show-for-large">
+	<ul class="desktop__menu--icons-list scrolled show-for-medium">
 		<li class="tag__text">
 			<a href="/contact-us/">
 			<div class="desktop__menu__icon__single">

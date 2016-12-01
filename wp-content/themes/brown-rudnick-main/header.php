@@ -17,10 +17,10 @@
 	</head>
 	<body <?php body_class(); ?> >
 		<?php do_action( 'foundationpress_after_body' ); ?>
-
-
-			<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) == 'topbar' ) : ?>		
+			<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) == 'topbar' ) : ?>	
+			<div class="mobile__menu__wrapper">	
 				<?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
+			</div>
 			<?php endif; ?>
 			
 			<?php do_action( 'foundationpress_layout_start' ); ?>
@@ -29,12 +29,11 @@
 					<div class="menu__wrapper--desktop row sr">
 						<div class="logo__wrapper columns large-4 medium-3 ">
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-								<img class="header-logo--mobile padding-top-50" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/BR-logo-for-nav.png">
+								<img class="header-logo--mobile" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/BR-logo-for-nav.png">
 							</a>
 						</div>
 							<?php get_template_part('template-parts/desktop-icons')?>
-
-						<div class="menu__inner-wrapper--desktop columns large-7 medium-9">
+						<div class="menu__inner-wrapper--desktop columns large-7 medium-9 desktop__menu__wrapper">
 							<?php desktop_menu(); ?>
 						</div>
 					</div>

@@ -37,30 +37,36 @@
 						{{ featured_first.post_date|date('m/d/Y') }}
 					</p>
 					<h4 class="homepage-element-body big">
-						{{ featured_first.post_title|truncate(12) }}
+						{{ featured_first.post_title }}
 					</h4>
 					<p>
 						{% if featured_first.post_excerpt %}
-							{{ featured_first.post_excerpt|truncate(12) }}
+							{{ featured_first.post_excerpt|truncate(12)|striptags ~ '' }}
 						{% else %}
-							{{ featured_first.post_content|truncate(12) }}
+							{{ featured_first.post_content|truncate(12)|striptags ~ '' }}
 						{% endif %}	
 					</p>
 				</div>
 			</div>	
-			<span class="homepage-arrow featured_first">
-				<a href="{{ featured_first.permalink }}"></a>
-			</span>
+				<a href="{{ featured_first.permalink }}">
+						<span class="tile__arrow home__page">
+							<svg class="long__arrow--svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
+							<title>long arrow</title>
+							<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
+							<polyline class="long__arrow red" points="48 1 56 9 48 17"/>
+							</svg>
+						</span>
+					</a>
 		</div>
 		{% for homepage_post in remaining %}
-			<div class="medium-6 large-4 columns homepage-grid-element relative">
+			<div class="no__pad medium-6 large-4 columns homepage-grid-element relative">
 				{% if homepage_post.thumbnail %}
 					<div class="hide-for-medium-down large-12 columns homepage-post__image--wrapper" style="background:url({{homepage_post.thumbnail.src}})no-repeat center;">
 					</div>	
 				{% endif %}	
-				<div class="homepage__image--wrapper medium-12 large-12 columns" {% if homepage_post.thumbnail %}style="background-image:url({{homepage_post.thumbnail.src}});"{% endif %}>
+				<div class="no__pad homepage__image--wrapper medium-12 large-12 columns" {% if homepage_post.thumbnail %}style="background-image:url({{homepage_post.thumbnail.src}});"{% endif %}>
 				</div>	
-				<div class="medium-12 large-12 columns relative">
+				<div class="no__pad medium-12 large-12 columns relative">
 				{% if not homepage_post.thumbnail %}
 					<span class="red__border--top"></span>
 				{% endif %}	
@@ -82,20 +88,26 @@
 							{{ homepage_post.post_date|date('m/d/Y') }}
 						</p>
 						<h4 class="homepage-element-body">
-							{{ homepage_post.post_title|truncate(12) }}
+							{{ homepage_post.post_title|truncate(7) }}
 						</h4>
 						<p>
 							{% if homepage_post.post_excerpt %}
-								{{ homepage_post.post_excerpt|truncate(12) }}
+								{{ homepage_post.post_excerpt|truncate(12)|striptags ~ '' }}
 							{% else %}
-								{{ homepage_post.post_content|truncate(12) }}
+								{{ homepage_post.post_content|truncate(12)|striptags ~ '' }}
 							{% endif %}	
 						</p>
 					</div>
-				</div>	
-				<span class="homepage-arrow homepage_post">
-					<a href="{{ homepage_post.permalink }}"></a>
-				</span>
+				</div>					
+					<a href="{{ homepage_post.permalink }}">
+						<span class="tile__arrow home__page">
+							<svg class="long__arrow--svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
+							<title>long arrow</title>
+							<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
+							<polyline class="long__arrow red" points="48 1 56 9 48 17"/>
+							</svg>
+						</span>
+					</a>
 			</div>
 		{% endfor %}	
 	</div>  	

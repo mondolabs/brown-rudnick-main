@@ -57,6 +57,7 @@ add_filter('upload_mimes', 'custom_upload_mimes');
 function custom_upload_mimes ( $existing_mimes=array() ) {
 	// add your extension to the array
 	$existing_mimes['vcf'] = 'text/x-vcard';
+  $existing_mimes['svg'] = 'image/svg+xml';
 	return $existing_mimes;
 }
 
@@ -71,7 +72,11 @@ function custom_insights_query_vars( $vars ) {
   $vars[] = 'admission_query';
   $vars[] = 'education_query';
   $vars[] = 'date_query';
+  $vars[] = 'type_query';
   $vars[] = 'keyword';
+  $vars[] = 'previous-parent';
+  $vars[] = 'previous-slug';
+  $vars[] = 'tag';
   return $vars;
 }
 
@@ -83,5 +88,6 @@ function custom_jobs_query_vars( $vars ) {
   return $vars;
 }
 
-
+// Make all posts commentable
+add_filter('comments_open', '__return_true');
   

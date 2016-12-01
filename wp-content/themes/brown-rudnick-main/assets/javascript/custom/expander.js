@@ -17,6 +17,7 @@ var EXPANDER = {
 		$('.job_expander').click(function(event) {
 			var expander = $(this);
 			var hiddenJobDescripton = $(expander).parent().parent().next('tr').find('td');
+			$(this).parent().parent().toggleClass('no-bottom-border');
 			$(hiddenJobDescripton).slideToggle(400);
 			$(expander).toggleClass('expanded');
 		});
@@ -26,6 +27,12 @@ var EXPANDER = {
 			var hiddenMenuItems = $('#'+triggerId);
 			$(hiddenMenuItems).slideToggle(400);
 			console.log('expanded');
+			$(expander).toggleClass('expanded');
+		});
+		$('.person__details--expander').click(function(event) {
+			var expander = $(this);
+			var hiddenPersonDetails = $(expander).parent().parent().parent().find('.hidden__person-publication--details');
+			$(hiddenPersonDetails).toggle();
 			$(expander).toggleClass('expanded');
 		});
 

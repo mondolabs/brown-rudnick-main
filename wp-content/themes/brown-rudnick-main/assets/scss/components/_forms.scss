@@ -25,3 +25,13 @@ button.arrow {
     right: -14px;
     margin-top: -12px;
 }
+
+.subscribe__content--wrapper {
+	input[type="text"] {
+		width: 60%;
+		float: left;
+		@media screen and (max-width: 768px) {
+			width: 100%;
+		}
+	}
+}

@@ -1,0 +1,69 @@
+<div id="featuredImage" class ="featured-image__header--image-wrapper" >
+	{% set header_text_color = "black" %}
+	{# hero header #}
+	<div class="featured-image__header--text-outer-wrapper row">
+		<div class="featured-image__header--text-wrapper">
+			<div class="featured-image__header--text-inner-wrapper">
+				<div class="color__block vellum">
+					<h1 class="page__header {{ header_text_color }}">
+						{{ contact_us_header_text }}
+					</h1>
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>
+<div class="row relative z-index__1 padding-bottom-60">
+	<div class="columns small-12 medium-12 large-12 x-large-12">
+		<div class="row">
+			{{ post.post_content|shortcodes }}
+		</div>
+	</div>
+</div>
+
+
+
+
+<div id="lawyersBannerImage">
+	<div class="row">
+		<div class="color-block__wrapper large-6 medium-8 small-12 float--right">
+			<div class="color__block white relative">
+			<div class="slide-description">
+				<h4 class="tag__text bigger red">
+					{{ bottom_banner_header_text|upper }}
+				</h4>
+			</div>
+			<span class="list-divider about__details red"></span>
+			<p class="title__text black">
+			{{ bottom_banner_content_text }}
+			</p>
+			<a href="{{ locations_bottom_banner_link_url }}">
+				<span class="tile__arrow pro-bono">
+					<svg class="long__arrow--svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
+					<title>long arrow</title>
+					<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
+					<polyline class="long__arrow red" points="48 1 56 9 48 17"/>
+					</svg>
+				</span>
+			</a>
+			</div>
+		</div>     
+	</div>
+</div>
+
+
+
+
+
+<script type="text/javascript">
+	{% if featured_image_url %}
+		$(document).ready(function(){
+			$('#featuredImage').backstretch("{{featured_image_url}}");
+		})
+	{% endif %}
+	{% if bottom_banner_image|length > 0 %}
+		$(document).ready(function(){
+			$('#lawyersBannerImage').backstretch('{{bottom_banner_image}}');
+		})
+	{% endif %}
+</script>

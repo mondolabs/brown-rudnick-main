@@ -3,7 +3,7 @@
 .menu__outer-wrapper--desktop-on-scroll {
     position: fixed;
     top: 0;
-    z-index: 2;
+    z-index: 9999;
     width: 100%;
     display: none;
 }
@@ -109,7 +109,6 @@
 	height: 40px;
 }
 #footer {
-	padding: 5%!important;
 	width: 100%;
 	max-width : inherit !important;
 	padding-bottom: 10%;
@@ -126,6 +125,7 @@
 		color: $black; 
 		text-transform: uppercase;
 		padding-left: 5%;
+		font-size: 12px;
 	}
 	@include breakpoint(medium){
 		a:hover{
@@ -153,13 +153,16 @@
 
 // svg container
 .slider-svg {
-	height: 19px;
+	height: 20px;
+	margin-top: -20px;
+	position: relative;
+	z-index: 10;
 }
 .social-icons {
 	// svg icons on footer
 	svg { 
-		width: 25px; 
-		height: 25px; 
+		width: 20px; 
+		height: 20px; 
 	}
 	display: inline-block;
 	text-align: right;
@@ -177,9 +180,7 @@
 	}
 }
 
- #slider-svg {
- 	fill: none;
- }
+
    
 button.slick-arrow  {
 	display: none !important;
@@ -205,10 +206,12 @@ button.slick-arrow  {
 	position: fixed;
 	right: 10%;
 	bottom: 10%;
-	width: 80px;
-	height: 80px;
-	//width: 2.5%;
-	//height: 5%;
+	@include breakpoint(medium){
+		width: 80px;
+		height: 80px;
+	}
+	width: 40px;
+	height: 40px;
 	padding: 30px;
 	background: $primary-red url('../images/human-icon.png') no-repeat center;
 	background-size: 40%;
@@ -248,9 +251,11 @@ button.slick-arrow  {
 	margin: 7px;
 	cursor: pointer;
 	@include breakpoint(medium){
-		margin: 25px;
-	}
-	
+		margin: 15px;
+	}	
+}
+.home-button-container {
+	@extend %centeronMobile; 
 }
 .arrows-container {
 	@extend %centeronMobile;
@@ -324,17 +329,27 @@ button.slick-arrow  {
 	.slick-slide{
 		height: 650px;
 	}
-	.homepage-grid-element{
-		height: 450px;
-	}		
+	
 }
 
+
+@include breakpoint (medium) {
+	.homepage-grid-element{
+		height: 400px;
+	}	
+}
 .menu__wrapper--desktop {
 		padding: 20px 0px 20px;
 }
 
 ul.desktop-menu {
-	padding-top: 34px;
+	padding-top: 28px;
+}
+
+// increase width of menu to align with icons on top right
+#menu-nested-pages {
+	display: table !important;
+	width: 107% !important;
 }
 
 ul.menu li a{
@@ -359,13 +374,14 @@ ul.menu li a{
 }
 
 .menu__wrapper--desktop-on-scroll {
-	padding: 20px 0 10px;
+	padding: 10px 0 10px;
 }
 
 ul.desktop__menu--icons-list {
 	margin: 0;
 	float: right;
 	list-style: none;
+	padding-top: 28px;
 	.tag__text {
 		text-transform: uppercase;
 	}
@@ -379,9 +395,7 @@ ul.desktop__menu--icons-list {
 		padding-right: 20px;
 		padding-bottom: 10px;
 	}
-	&.scrolled {
-		padding-top: 34px;
-	}
+
 }
 
 .desktop__menu__icon__single {
@@ -547,7 +561,7 @@ span.red__border--top {
 	padding-bottom: 60PX;
 }
 .menu li {
-	z-index:99999;
+	z-index: 1;
 }
 .test-content {
 	display: none; 
@@ -562,3 +576,10 @@ span.red__border--top {
 		font-size: 18px;
 	}
 }
+
+// .page-template-homepage {
+// 	.title__text {
+// 		font-family: $brfont !important;
+// 		font-size: 16px !important;
+// 	}
+// }

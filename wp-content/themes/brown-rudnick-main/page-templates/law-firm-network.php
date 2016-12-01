@@ -2,7 +2,6 @@
 /*
 Template Name: Law Firm Network Page
 */
-get_header();
 $data = Timber::get_context();
 $practice_posts_args = array(
     'post_type' =>  'practice',
@@ -32,19 +31,21 @@ $data['bullet_section_notice'] = get_field('bullet_section_notice');
 $slug = basename(get_permalink());
 $data['slug'] = $slug;
 $data['parent_link'] = get_permalink( $post->post_parent );
-
 ?>
-
 <html>
   <head>
     <?php wp_head()?>
   </head>
   <body>
-    <div id="page-full-width-homepage" class ="full-width" role="main">
-      <?php Timber::render('/twig-templates/law-firm-network.twig', $data); ?>
+    <?php get_template_part('template-parts/off-canvas-search')?>
+          <div id="page-full-width-homepage" class ="full-width" role="main">
+            <?php Timber::render('/twig-templates/law-firm-network.twig', $data); ?>   
+            <?php do_action( 'foundationpress_after_content' ); ?>
+            <?php get_footer(); ?>
+          </div>  
+        </div>  
+      </div>  
     </div>  
-    <?php do_action( 'foundationpress_after_content' ); ?>
-    <?php get_footer(); ?>
   </body>
 </html>
 
