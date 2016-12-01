@@ -2,11 +2,11 @@ var offCanvasSearch = {
 
 	checkScroll:function() {
 		// disable scroll on mobile only
-		if ($('body').hasClass('no-scroll') && ($(window).innerWidth() <= 768)) {
-			disableScroll.on();
-		} else {
-			disableScroll.off();
-		}
+		// if ($('body').hasClass('no-scroll') && ($(window).innerWidth() <= 768)) {
+		// 	disableScroll.on();
+		// } else {
+		// 	disableScroll.off();
+		// }
 	},
 	// check for scroll prevent
 	openModal: function(){
