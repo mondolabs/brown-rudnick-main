@@ -14,7 +14,6 @@ var EXPANDER = {
 				$('#showMoreRelatedExperiences').removeClass('less').addClass('more').text("SHOW MORE");
 			}
 		});
-		// $('.person__details--expander').
 		$('.job_expander').click(function(event) {
 			var expander = $(this);
 			var hiddenJobDescripton = $(expander).parent().parent().next('tr').find('td');
@@ -30,6 +29,7 @@ var EXPANDER = {
 			console.log('expanded');
 			$(expander).toggleClass('expanded');
 		});
+		// expand people details
 		$('.person__details--expander').click(function(event) {
 			var expander = $(this);
 			var hiddenPersonDetails = $(expander).parent().parent().parent().find('.hidden__person-publication--details');
