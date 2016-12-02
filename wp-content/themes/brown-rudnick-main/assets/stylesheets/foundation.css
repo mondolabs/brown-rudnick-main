@@ -806,8 +806,8 @@ img.people__details {
         width: 300px; } }
     @media screen and (max-width: 768px) {
       img.people__details.person {
-        max-width: 200px;
-        width: 200px; } }
+        max-width: 180px;
+        width: 180px; } }
 
 img.insight__details {
   height: 277px; }
@@ -1791,7 +1791,7 @@ tbody {
 .tag__half {
   display: inline-block;
   width: 49%;
-  padding: 5%;
+  padding: 3%;
   vertical-align: middle; }
 
 .keyword--title {
@@ -1958,6 +1958,14 @@ textarea#comment {
 
 .bottom--banner--image--wrapper {
   height: 325px !important; }
+
+@media screen and (max-width: 768px) {
+  .single-people .featured-image__header--image-wrapper {
+    height: 80% !important; } }
+
+@media screen and (min-width: 48em) {
+  .single-people .featured-image__header--text-inner-wrapper {
+    vertical-align: middle; } }
 
 .single-people .person__details--expander:before {
   top: 0px; }
