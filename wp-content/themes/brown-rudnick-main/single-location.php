@@ -2,8 +2,6 @@
 /*
 Template Name: Single Location Page
 */
-
-get_header();
 $data = Timber::get_context();
 $data['post']= new TimberPost();
 $data['location'] = new TimberPost();
@@ -17,10 +15,14 @@ $data['color'] = get_field('breadcrumb_color_location');
     <?php wp_head()?>
   </head>
   <body>
-    <div id="page-full-width-homepage" class ="full-width" role="main">
-      <?php Timber::render('/twig-templates/location.twig', $data); ?>
-    </div>  
-    <?php do_action( 'foundationpress_after_content' ); ?>
-    <?php get_footer(); ?>
+    <?php get_template_part('template-parts/off-canvas-search')?>
+          <div id="page-full-width-homepage" class ="full-width" role="main">
+            <?php Timber::render('/twig-templates/location.twig', $data); ?>      
+            <?php do_action( 'foundationpress_after_content' ); ?>
+            <?php get_footer(); ?>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

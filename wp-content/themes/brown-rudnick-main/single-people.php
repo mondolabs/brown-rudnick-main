@@ -2,9 +2,6 @@
 /*
 Template Name: Single People Page
 */
-
-get_header();
-
 $data = Timber::get_context();
 $data['person'] = new TimberPost();
 $data['specialization'] = get_field('specialization');
@@ -20,10 +17,14 @@ $data['breadcrumb_color'] = get_field('breadcrumb_color');
     <?php wp_head()?>
   </head>
   <body>
-    <div id="page-full-width-homepage" class ="full-width" role="main">
-      <?php Timber::render('/twig-templates/person.twig', $data); ?>
+    <?php get_template_part('template-parts/off-canvas-search')?>
+          <div id="page-full-width-homepage" class ="full-width" role="main">
+            <?php Timber::render('/twig-templates/person.twig', $data); ?>   
+            <?php do_action( 'foundationpress_after_content' ); ?>
+            <?php get_footer(); ?>
+          </div>  
+        </div>  
+      </div>  
     </div>  
-    <?php do_action( 'foundationpress_after_content' ); ?>
-    <?php get_footer(); ?>
   </body>
 </html>
