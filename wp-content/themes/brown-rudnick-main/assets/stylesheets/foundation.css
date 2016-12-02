@@ -1967,8 +1967,9 @@ textarea#comment {
 
 @media screen and (max-width: 768px) {
   td {
-    padding: 0.5% !important;
-    font-size: 14px !important; } }
+    padding: 1% !important; }
+    td .job_expander {
+      right: 0 !important; } }
 
 tr {
   background-color: #fefefe !important; }
