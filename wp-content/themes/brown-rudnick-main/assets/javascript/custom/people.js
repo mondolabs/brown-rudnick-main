@@ -135,13 +135,15 @@ var PEOPLE = {
 	// searches DOM for results with specific letter 
 	// toggles inactive class for letters with no results
 	inactiveLetter: function(){
-		var letterLinks = $('.letter__link');
-		var alphabet =["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-		for (var i = 0; i <alphabet.length; i++){
-			if ($(".person__wrapper[data-letter*='"+alphabet[i]+"']").length === 0 ){
-				$(".letter__anchor--indicator[data-letter-anchor*='"+alphabet[i]+"']").parent().parent().hide();
-				$(".letter__link[data-letter*='"+alphabet[i]+"']").parent().removeClass('letter--active');
-				$(".letter__link[data-letter*='"+alphabet[i]+"']").parent().addClass('inactive--letter');
+		if ($('body').hasClass('page-template-people')){
+			var letterLinks = $('.letter__link');
+			var alphabet =["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+			for (var i = 0; i <alphabet.length; i++){
+				if ($(".person__wrapper[data-letter*='"+alphabet[i]+"']").length === 0 ){
+					$(".letter__anchor--indicator[data-letter-anchor*='"+alphabet[i]+"']").parent().parent().hide();
+					$(".letter__link[data-letter*='"+alphabet[i]+"']").parent().removeClass('letter--active');
+					$(".letter__link[data-letter*='"+alphabet[i]+"']").parent().addClass('inactive--letter');
+				}
 			}
 		}
 	},
