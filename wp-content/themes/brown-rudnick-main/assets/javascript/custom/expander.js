@@ -16,9 +16,10 @@ var EXPANDER = {
 		});
 		$('.job_expander').click(function(event) {
 			var expander = $(this);
-			var hiddenJobDescripton = $(expander).parent().parent().next('tr').find('td');
+			var hiddenJobDescription = $(expander).parent().parent().next('tr').find('td');
 			$(this).parent().parent().toggleClass('no-bottom-border');
-			$(hiddenJobDescripton).slideToggle(400);
+			$(hiddenJobDescription).toggleClass('bottom-border-table');
+			$(hiddenJobDescription).slideToggle(400);
 			$(expander).toggleClass('expanded');
 		});
 		$('.mobile__sidebar--expander').click(function(event) {
@@ -26,7 +27,6 @@ var EXPANDER = {
 			var triggerId = $(expander).data('show-target');
 			var hiddenMenuItems = $('#'+triggerId);
 			$(hiddenMenuItems).slideToggle(400);
-			console.log('expanded');
 			$(expander).toggleClass('expanded');
 		});
 		// expand people details
@@ -37,7 +37,7 @@ var EXPANDER = {
 			var length = $(this).parent().parent().siblings().length;
 			var lastSibling = $(this).parent().parent().siblings()[length-1];
 			$(lastSibling).toggleClass('bottom-border-table');
-			$(hiddenPersonDetails).toggle();
+			$(hiddenPersonDetails).slideToggle(400);
 			$(expander).toggleClass('expanded');
 		});
 

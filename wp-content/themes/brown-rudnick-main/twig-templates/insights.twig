@@ -165,6 +165,9 @@
 				<h4 class="title__text smaller insights margin-bottom--0">
 					Subscribe
 				</h4>
+				<div class="subscribe__content--wrapper show-for-small-only">
+					{{ post.post_content|shortcodes }}
+				</div>
 				{% set sidebar = sidebar|first %}
 				<span class="list-divider mobile mobile__centered smaller"></span>
 				<div class="text-align__center">

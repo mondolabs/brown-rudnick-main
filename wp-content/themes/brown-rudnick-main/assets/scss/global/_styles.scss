@@ -867,6 +867,7 @@ img.insights {
 		position: absolute;
 		top: inherit;
 		margin-bottom: 20px;
+		margin-left: 20px;
 	}
 	a.breadcrumb__link {
 		font-size: 10px;
@@ -878,7 +879,7 @@ img.insights {
 		    position: relative;
 		    -webkit-transition: color .3s ease-in-out;
 		    transition: color .3s ease-in-out;
-		    display: block;
+		    display: inline-block;
 		    margin-bottom: 20px;
 		}
 		&:hover,
@@ -1148,6 +1149,11 @@ img.insights {
     
     margin: 0 auto 16px;
     transition: all .3s ease-in-out;
+  &.offcanvas--letter--link--wrapper {
+  	&:hover {
+  		background-color: $white;
+  	}
+  }
 	&.letter--active,
 	&:hover {
 		background-color: $primary-red;
@@ -1761,6 +1767,7 @@ select.clean___border {
 .tag__container {
 	min-width: 250px;
 	display: inline-block;
+	margin: 1%;
 	@media screen and (max-width:1024px){
 		margin: 2% auto;
 	}

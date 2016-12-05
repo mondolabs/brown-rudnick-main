@@ -1,3 +1,7 @@
+// String.prototype.replaceAt = function(index, character) {
+//     return this.substr(0, index) + character + this.substr(index+character.length);
+// }
+
 var PEOPLE = {
 	listeners: function(){
 		
@@ -68,13 +72,21 @@ var PEOPLE = {
 			var targetVal = target.data().tag.toUpperCase();
 			var targetName = target.data().name;
 			var baseRoute = location.origin + location.pathname;
-			var newUrl = window.location.href.replace(targetVal, '').replace(targetName, '');
-			var lastChar = newUrl.substr(newUrl.length - 1);
-			if (lastChar === '=') {
-				window.location.replace(baseRoute);
-			} else {
-				window.location.replace(newUrl);
+			var currentUrl = window.location.href;
+			var newUrl = currentUrl.replace(targetVal, '').replace(targetName, '');
+			if (newUrl.substr(newUrl.length - 1) === '='){
+				newUrl = newUrl.slice(0, -1);				
 			}
+			if (newUrl.substr(newUrl.length - 1) === '?'){
+				newUrl = newUrl.slice(0, -1);
+			}
+			if (newUrl.substr(newUrl.length - 1) === '&'){
+				newUrl = newUrl.slice(0, -1);
+			}	
+			if ( (  !(newUrl.includes('query'))  && !(newUrl.includes('keyword')) )   && newUrl.length > baseRoute.length ){
+				newUrl = baseRoute;
+			}
+			window.location.replace(newUrl);
 		});
 		// applies filters based on select options
 		$('#peopleAdvancedSearchButton').click(function(event) {

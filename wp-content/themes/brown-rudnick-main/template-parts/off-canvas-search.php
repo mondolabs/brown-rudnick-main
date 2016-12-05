@@ -22,7 +22,7 @@ $alphabet = range('A', 'Z');
               <p class="search__people__homepage">Search by last name</p>
                 <?php $count = 0; foreach ($alphabet as $letter) { $count++?>
                 <div class="columns medium-3 large-3 small-3 <?php if ($count == 26) {?> float-left  <?php };?>letter__link--outer-wrapper">
-                  <div class="letter__link--inner-wrapper letter--active">
+                  <div class="letter__link--inner-wrapper letter--active offcanvas--letter--link--wrapper">
                     <a href="<?php echo '/all-people#'.$letter;?>" data-letter="<?php echo $letter;?>" class="offcanvas--letter--link letter__link">
                       <?php echo $letter;?>
                     </a>
