@@ -83,9 +83,9 @@ var PEOPLE = {
 			if (newUrl.substr(newUrl.length - 1) === '&'){
 				newUrl = newUrl.slice(0, -1);
 			}	
-			if ( (  !(newUrl.includes('query'))  && !(newUrl.includes('keyword')) )   && newUrl.length > baseRoute.length ){
-				newUrl = baseRoute;
-			}
+			// if ( (  !(newUrl.includes('query'))  && !(newUrl.includes('keyword')) )   && newUrl.length > baseRoute.length ){
+			// 	newUrl = baseRoute;
+			// }
 			window.location.replace(newUrl);
 		});
 		// applies filters based on select options
