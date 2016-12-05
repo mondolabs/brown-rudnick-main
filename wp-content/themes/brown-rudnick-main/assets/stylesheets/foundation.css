@@ -9416,10 +9416,12 @@ a::after {
   border-bottom: 1px solid #f0f0f0;
   float: right;
   top: 0;
-  width: 625px; }
+  width: 625px;
+  height: 62.5px; }
   @media screen and (min-width: 1200px) {
     .icons__container {
-      width: 670px; } }
+      width: 670px;
+      height: 67px; } }
 
 #menu-nested-pages-1.scrolled {
   float: right; }
@@ -10276,7 +10278,8 @@ button.arrow {
 #mastheadOnScroll {
   position: relative;
   -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
-          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); }
+          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  height: 90px; }
 
 .top-right-icon-group {
   text-align: right;
