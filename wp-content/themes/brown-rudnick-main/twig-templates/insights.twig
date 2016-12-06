@@ -110,9 +110,11 @@
 							<div class="insight__blog--wrapper">
 								<img class="insights" src="{{ TimberImage(blog.blog_image).src }}" />
 								<div class="color__block--grey insights">
-									<h4 class="red title__text smaller">
-										{{ blog.blog_title }}
-									</h4>
+									<a href="{{ blog.blog_link_url }}">
+										<h4 class="red title__text smaller">
+											{{ blog.blog_title }}
+										</h4>
+									</a>
 									<div class="body__text">
 										{{blog.blog_content_excerpt}}
 									</div>
