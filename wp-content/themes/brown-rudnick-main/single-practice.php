@@ -2,8 +2,6 @@
 /*
 Template Name: Single Practice Page
 */
-get_header();
-
 $data = Timber::get_context();
 $data['post'] = $post;
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
