@@ -24,10 +24,14 @@ $data['breadcrumb_color'] = get_field('breadcrumb_color');
     <?php wp_head()?>
   </head>
   <body>
-    <div id="page-full-width-homepage" class ="full-width" role="main">
-      <?php Timber::render('/twig-templates/practice.twig', $data); ?>
-    </div>  
-    <?php do_action( 'foundationpress_after_content' ); ?>
-    <?php get_footer(); ?>
+  <?php get_template_part('template-parts/off-canvas-search')?>
+          <div id="page-full-width-homepage" class ="full-width" role="main">
+            <?php Timber::render('/twig-templates/practice.twig', $data); ?>
+          </div>  
+        <?php do_action( 'foundationpress_after_content' ); ?>
+        <?php get_footer(); ?>
+        </div> 
+      </div> 
+    </div> 
   </body>
 </html>
