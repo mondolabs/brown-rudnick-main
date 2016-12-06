@@ -907,6 +907,8 @@ img.insights {
     -webkit-transition: color .3s ease-in-out;
     transition: color .3s ease-in-out;
     color: #000; }
+    .breadcrumb__wrapper a.breadcrumb__link.white {
+      color: #fefefe; }
     @media screen and (max-width: 768px) {
       .breadcrumb__wrapper a.breadcrumb__link {
         text-align: center;

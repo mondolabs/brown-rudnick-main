@@ -877,6 +877,9 @@ img.insights {
 		cursor: pointer;
 		transition: color .3s ease-in-out;
 		color: $br-black;
+		&.white {
+			color: $white;
+		}
 		@media screen and (max-width: 768px) {
 			text-align: center;
 		    position: relative;
