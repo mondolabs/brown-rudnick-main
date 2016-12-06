@@ -5,10 +5,6 @@
   @include show-for(medium);
 }
 
-// #mobile-menu, .title-bar {
-//   @include hide-for(medium);
-// }
-
 /* Mobile menu */
 
 .off-canvas {
@@ -187,10 +183,10 @@
   border-bottom: 1px solid $primary-grey;
   float: right;
   top: 0;
-  width: 625px;
+  width: 712px;
   height: 62.5px;
   @media screen and (min-width:1200px){
-    width: 670px;
+    width: 768px;
     height: 67px;
   }
   
@@ -209,3 +205,5 @@
     padding-right: 25px !important;
   }
 }
+
+

@@ -4,10 +4,11 @@
  *
  */
 ?>
+
 <div class="footer-logo">
 	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="header-logo--mobile" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/Black-Red-Logo.png"></a>
 </div>
-<div class="footer-links bold__wide__spacing">
+<div class="footer-links">
 	<a href="/contact-us/">Contact us</a>
 	<a href="http://alumni-brownrudnick.com">Candidate Portal</a>
 	<a href="/terms-of-use/">Terms of Use</a>
@@ -30,6 +31,6 @@
  </a>
 </div>
  <div class="footer-message">
-	<p> &copy; 2016 Brown Rudnick. Attorney advertising.</p>
-	<p> Prior results do not guarantee a similar outcome.</p>
+	<p> &copy; 2016 Brown Rudnick LLP. Attorney advertising.</p>
+	<p> All Rights Reserved.</p>
 </div>
