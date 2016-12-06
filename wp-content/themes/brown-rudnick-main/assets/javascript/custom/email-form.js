@@ -17,7 +17,7 @@ var emailContact = {
 }
 
 $(document).ready(function(){
-	if ( $('body').hasClass('page-template-publication-request') ) {
+	if ( $('body').hasClass('page-template-publication-request') || $('body').hasClass('page-template-contact-us') ) {
 		emailContact.revealNotice();
 		emailContact.hideNotice();
 		emailContact.leavePage();

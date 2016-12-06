@@ -356,39 +356,6 @@
 	</div>
 {% endif %}	
 
-{% if person.awards_and_honors|length > 0 and person.firm_activities|first != 0 %}	
-
-	HAS AWARDS AND HONORS
-	<div class="columns small-12 medium-12 large-12">
-		<div class="row">
-			<div class="no__pad large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">	
-				{% set awards_and_honors = person.get_field('awards_and_honors') %}
-				<table class="no__borders">
-					<tr class="gray__underline">
-						<td class="title__text smaller">
-							{{ "Awards and Honors" }}
-						</td>
-						<td>
-							<span class="person__details--expander top__menu accordion" data-show-target="personPublicationDetails" ></span>
-						</td>
-					</tr>
-					{% for award in awards_and_honors %}
-						<tr class="hidden hidden__person-publication--details">
-							<td class="" colspan="5">
-								{{ award.header }}
-							</td>
-							{% for honor in award.honor %}
-								{{honor}}
-							{% endfor %}		
-						</tr>
-					{% endfor %}	
-				</table>
-			</div>	
-		</div>
-	</div>
-{% endif %}	
-
-
 <div id="emailModal" class="vellum black--vellum modal__background diversity hidden">
     <div class="row">
      	<div class="diversity__modal--outer-wrapper table__wrapper relative">
