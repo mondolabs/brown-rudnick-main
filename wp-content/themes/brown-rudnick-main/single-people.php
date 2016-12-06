@@ -12,6 +12,7 @@ $card = get_field('v_card');
 $data['card_url'] = $card;
 $data['awards_and_honors']= get_field('awards_and_honors');
 // $data['card_title'] = $card['filename'];
+var_dump($data['awards_honors']);
 $data['breadcrumb_color'] = get_field('breadcrumb_color');
 ?>
 <html>

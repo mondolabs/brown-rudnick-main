@@ -127,12 +127,12 @@
 					<div class="negative__side-margins--15">
 						{% for representation in person.get_field('representation_matters') %}
 						<div class="columns small-12 medium-12 large-12">
-							<p clas="body__text">
+							<p class="body__text">
 								{{representation.header}}		
 							</p>
 								{% for bullet in representation.representation %}
 									{% set bullet = bullet|first %}
-									<div class="bullet representation{% if loop.index > 5 %} hidden {% else %} first__five {% endif %}">
+									<div class="bullet padding-top-10 padding-bottom-10 representation{% if loop.index > 5 %} hidden {% else %} first__five {% endif %}">
 										<div class="body__text bullet__text">
 											{{ bullet }}
 										</div>
@@ -158,7 +158,7 @@
 {% if person.education|length > 0 or person.bar_admission|length > 0 %}	
 	<div class="grey__background experience__wrapper columns small-12 medium-12 large-12">
 		<div class="row padding__wrapper top-and-bottom sixty">
-			<div class="no__pad large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">
+			<div class="padding-top-20 padding-bottom-20 large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">
 				{% if person.education|length > 0 %}
 					<div class="columns small-12 medium-6 large-6">
 						<p class="title__text">
@@ -166,7 +166,7 @@
 						</p>
 						{% for school in person.get_field('education') %}
 							{% set school = school|first %}
-							<div class="no__pad columns small-12 medium-12 large-12 bullet">
+							<div class="padding-top-10 padding-bottom-10 small-12 medium-12 large-12 bullet">
 								<div class="body__text bullet__text">
 									{{school}}
 								</div>
@@ -181,7 +181,7 @@
 						</p>
 						{% for bar in person.get_field('bar_admission') %}
 							{% set bar = bar|first %}							
-							<div class="no__pad columns small-12 medium-12 large-12 bullet">
+							<div class="padding-top-10 padding-bottom-10 small-12 medium-12 large-12 bullet">
 								<div class="body__text bullet__text">
 									{{bar}}
 								</div>
@@ -197,7 +197,7 @@
 {% if person.publications|length > 0 and person.publications|first != 0 %}	
 	<div class="columns small-12 medium-12 large-12">
 		<div class="row">
-			<div class="no__pad large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">	
+			<div class="large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">	
 				{% set publications = person.get_field('publications') %}
 				<table class="margin-top-40 no__borders">
 					<tr class="gray__underline">
@@ -224,7 +224,7 @@
 {% if person.speaking_engagements|length > 0 and person.speaking_engagements|first != 0%}	
 	<div class="columns small-12 medium-12 large-12">
 		<div class="row">
-			<div class="no__pad large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">	
+			<div class="large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">	
 				{% set speaking_engagements = person.get_field('speaking_engagements') %}
 				<table class="no__borders">
 					<tr class="gray__underline">
@@ -251,7 +251,7 @@
 {% if person.professional_affiliations|length > 0 and person.professional_affiliations|first != 0 %}	
 	<div class="columns small-12 medium-12 large-12">
 		<div class="row">
-			<div class="no__pad large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">	
+			<div class="large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">	
 				{% set professional_affiliations = person.get_field('professional_affiliations') %}
 				<table class="no__borders">
 					<tr class="gray__underline">
@@ -275,10 +275,40 @@
 	</div>
 {% endif %}	
 
+{% if person.awards_honors|length > 0 and person.awards_honors|first != 0%}
+		<div class="columns small-12 medium-12 large-12">
+		<div class="row">
+			<div class="large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">	
+				{% set awards_and_honors = person.get_field('awards_honors') %}
+				<table class="no__borders">
+					<tr class="gray__underline">
+						<td class="title__text smaller">
+							{{ "Awards and Honors" }}
+						</td>
+						<td>
+							<span class="person__details--expander top__menu accordion" data-show-target="personPublicationDetails" ></span>
+						</td>
+					</tr>
+					{% for award in awards_and_honors %}
+						<tr class="hidden hidden__person-publication--details">
+							<td class="" colspan="5">
+								{{ award.award_content }}
+							</td>
+						</tr>
+					{% endfor %}	
+				</table>
+			</div>	
+		</div>
+	</div>
+
+
+
+{% endif %}
+
 {% if person.professional_memberships|length > 0 and person.professional_memberships|first != 0 %}	
 	<div class="columns small-12 medium-12 large-12">
 		<div class="row">
-			<div class="no__pad large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">	
+			<div class="large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">	
 				{% set professional_memberships = person.get_field('professional_memberships') %}
 				<table class="no__borders">
 					<tr class="gray__underline">
@@ -305,7 +335,7 @@
 {% if person.community_involvement|length > 0 and person.community_involvement|first != 0 %}	
 	<div class="columns small-12 medium-12 large-12">
 		<div class="row">
-			<div class="no__pad large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">	
+			<div class="large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">	
 				{% set community_involvement = person.get_field('community_involvement') %}
 				<table class="no__borders">
 					<tr class="gray__underline">
@@ -332,7 +362,7 @@
 {% if person.firm_activities|length > 0 and person.firm_activities|first != 0 %}	
 	<div class="columns small-12 medium-12 large-12">
 		<div class="row">
-			<div class="no__pad large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">	
+			<div class="large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">	
 				{% set firm_activities = person.get_field('firm_activities') %}
 				<table class="no__borders">
 					<tr class="gray__underline">
@@ -355,6 +385,8 @@
 		</div>
 	</div>
 {% endif %}	
+
+
 
 <div id="emailModal" class="vellum black--vellum modal__background diversity hidden">
     <div class="row">

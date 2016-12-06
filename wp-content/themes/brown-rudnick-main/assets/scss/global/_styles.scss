@@ -774,7 +774,11 @@ img.insight__details {
 .service,
 .bullet {
 	float: left !important;
-	min-height: 50px;
+	padding-left: 0;
+	padding-right: 0;
+	// &.representation {
+	// 	min-height: 50px;
+	// }
 	&:before {
 		content: " ";
 		height: 8px;
@@ -1462,6 +1466,13 @@ button.close__modal {
 
 .padding-bottom-60 {
 	padding-bottom: 60px;
+}
+
+.padding-top-10 {
+	padding-top: 10px;
+}
+.padding-bottom-10 {
+	padding-bottom: 10px;
 }
 
 .padding-top-20 {
