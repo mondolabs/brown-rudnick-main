@@ -1065,7 +1065,7 @@ img.insights {
     .accordion_expander.top__menu:after,
     .mobile__sidebar--expander.top__menu:after,
     .person__details--expander.top__menu:after {
-      top: 2px;
+      top: 3px;
       left: 7px;
       background-color: #fefefe; }
   .experience_expander:hover:after, .experience_expander:hover:before,

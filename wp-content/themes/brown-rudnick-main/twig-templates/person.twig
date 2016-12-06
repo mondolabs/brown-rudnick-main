@@ -78,11 +78,11 @@
 				    	{{ 'related experience'|upper }}
 				    </p>
 				    {% for item in related_experiences %}
+			        		{{item.post_title}}
 			        	{% set experience = item|first %}
-			        		{{item.guid}}
 						<div id="people-sidebar"  class="sidebar__color-block--outer-wrapper {% if loop.index > 4 %}hidden hidden__exp{% endif %}">
 							<div class="sidebar__color-block--wrapper">
-					        	<a href="{{ experience.permalink }}" class="link margin__0 tag__text text-align__center">
+					        	<a href="{{TimberPost(experience).link}}" class="link margin__0 tag__text text-align__center">
 				    	    		{{ experience.post_title|upper }}
 				        		</a>
 				        	</div>
