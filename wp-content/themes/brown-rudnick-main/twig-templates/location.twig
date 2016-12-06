@@ -20,16 +20,15 @@
   </div>
 </div>
 
-<div class="row body__wrapper small-12 medium-12 large-12">
-    <div class="columns small-12 medium-12 large-12">
-      <p class="title__text">
-        About
-      </p>
-      <p class="body__text">
-        {{ location.content }}
-      </p>
-    </div>
-</div> 
+{% if location.content|length > 0 %}
+  <div class="row body__wrapper small-12 medium-12 large-12">
+      <div class="columns small-12 medium-12 large-12">
+        <p class="body__text">
+          {{ location.content }}
+        </p>
+      </div>
+  </div> 
+{% endif %}
 
 <div class="map__wrapper relative">
   {# map container #}
@@ -79,7 +78,6 @@
   function initMap() {
     var latitude = {{ location.latitude }};
     var longitude = {{ location.longitude }};
-    console.log(longitude);
     if ( $(window).width() > 1000 ) {
       var longitudeOffset = .007;
     } else {

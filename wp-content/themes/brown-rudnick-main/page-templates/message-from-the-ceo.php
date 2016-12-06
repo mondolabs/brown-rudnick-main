@@ -22,7 +22,7 @@ $data['ceo_title'] = get_field('ceo_title');
 $slug = basename(get_permalink());
 $data['slug'] = $slug;
 $data['parent_link'] = get_permalink( $post->post_parent );
-
+$data['ceo_url'] = get_field('ceo_url');
 ?>
 
 <html>
