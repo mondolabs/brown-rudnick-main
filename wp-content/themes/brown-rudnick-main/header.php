@@ -37,7 +37,7 @@
 					</a>
 				</div>
 					<?php get_template_part('template-parts/desktop-icons')?>
-				<div class="menu__inner-wrapper--desktop columns large-7 medium-9 desktop__menu__wrapper">
+				<div class="menu__inner-wrapper--desktop columns large-8 medium-9 desktop__menu__wrapper">
 					<?php desktop_menu(); ?>
 				</div>
 			</div>

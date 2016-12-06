@@ -9437,6 +9437,10 @@ a::after {
   #menu-nested-pages-1.scrolled {
     padding-right: 7%; } }
 
+@media screen and (max-width: 1200px) {
+  .menu__inner-wrapper--desktop {
+    padding-right: 25px !important; } }
+
 footer {
   -webkit-box-shadow: 0 -5px 5px -5px rgba(0, 0, 0, 0.2);
           box-shadow: 0 -5px 5px -5px rgba(0, 0, 0, 0.2); }
