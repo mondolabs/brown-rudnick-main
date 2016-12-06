@@ -826,7 +826,8 @@ img.insight__details {
 .bullet {
   float: left !important;
   padding-left: 0;
-  padding-right: 0; }
+  padding-right: 0;
+  min-height: 30px; }
   .service:before,
   .bullet:before {
     content: " ";
@@ -904,13 +905,15 @@ img.insights {
     font-weight: 800;
     cursor: pointer;
     -webkit-transition: color .3s ease-in-out;
-    transition: color .3s ease-in-out; }
+    transition: color .3s ease-in-out;
+    color: #000; }
     @media screen and (max-width: 768px) {
       .breadcrumb__wrapper a.breadcrumb__link {
         text-align: center;
         position: relative;
         -webkit-transition: color .3s ease-in-out;
-        transition: color .3s ease-in-out;
+        -webkit-transition: color .3s ease-in-50px;
+        transition: color .3s ease-in-50px;
         display: inline-block;
         margin-bottom: 20px; } }
     .breadcrumb__wrapper a.breadcrumb__link:hover, .breadcrumb__wrapper a.breadcrumb__link:focus {

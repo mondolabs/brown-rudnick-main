@@ -27,6 +27,8 @@ $data['benefits_header'] = get_field('benefits_header');
 $data['lawyers_benefits'] = get_field('lawyers_benefits');
 $data['bottom_banner_text'] = get_field('bottom_banner_text');
 $data['bottom_banner_image'] = get_field('bottom_banner_image');
+$data['job_description_file'] = get_field('job_description_file');
+
 
 $slug = basename(get_permalink());
 $data['slug'] = $slug;

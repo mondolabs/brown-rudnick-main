@@ -20,6 +20,44 @@
   </div>
 </div>
 
+  <div class="map__wrapper relative">
+    {# map container #}
+    <div id="locationMap">
+
+    </div>
+
+    <div class="row relative">
+      <div class="table__wrapper full__width location__map">
+        <div class="table__inner">
+            <div class="color-block__wrapper large-4 medium-6 small-12 map">
+              <div class="color__block white relative">
+                <div class="slide-description">
+                  <h4 class="tag__text bigger red">
+                      {{ "address"|upper }}
+                  </h4>
+                </div>
+                <span class="list-divider about__deatils red"></span>
+                <p class="body__text black">
+                  {{ location.street_address_line_1 }} {{ location.city }}{% if location.state %}, {{ location.state }}{% endif %} {{ location.zip_code}}
+                </p>
+                <p class="body__text black">
+                  {{ location.country }}
+                </p>
+                <p class="body__text black">
+                  {{ location.phone_number }}
+                </p>
+                <p class="body__text black">
+                  {{ location.fax_number }}
+                </p>    
+              </div>  
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+  
 {% if location.content|length > 0 %}
   <div class="row body__wrapper small-12 medium-12 large-12">
       <div class="columns small-12 medium-12 large-12">
@@ -29,43 +67,6 @@
       </div>
   </div> 
 {% endif %}
-
-<div class="map__wrapper relative">
-  {# map container #}
-  <div id="locationMap">
-
-  </div>
-
-  <div class="row relative">
-    <div class="table__wrapper full__width location__map">
-      <div class="table__inner">
-          <div class="color-block__wrapper large-4 medium-6 small-12 map">
-            <div class="color__block white relative">
-              <div class="slide-description">
-                <h4 class="tag__text bigger red">
-                    {{ "address"|upper }}
-                </h4>
-              </div>
-              <span class="list-divider about__deatils red"></span>
-              <p class="body__text black">
-                {{ location.street_address_line_1 }} {{ location.city }}{% if location.state %}, {{ location.state }}{% endif %} {{ location.zip_code}}
-              </p>
-              <p class="body__text black">
-                {{ location.country }}
-              </p>
-              <p class="body__text black">
-                {{ location.phone_number }}
-              </p>
-              <p class="body__text black">
-                {{ location.fax_number }}
-              </p>    
-            </div>  
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <script type="text/javascript">
   {% if featured_image_url %}

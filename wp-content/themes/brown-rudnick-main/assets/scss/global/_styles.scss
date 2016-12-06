@@ -776,9 +776,7 @@ img.insight__details {
 	float: left !important;
 	padding-left: 0;
 	padding-right: 0;
-	// &.representation {
-	// 	min-height: 50px;
-	// }
+	min-height: 30px;
 	&:before {
 		content: " ";
 		height: 8px;
@@ -878,11 +876,12 @@ img.insights {
 		font-weight: 800;
 		cursor: pointer;
 		transition: color .3s ease-in-out;
+		color: $br-black;
 		@media screen and (max-width: 768px) {
 			text-align: center;
 		    position: relative;
 		    -webkit-transition: color .3s ease-in-out;
-		    transition: color .3s ease-in-out;
+		    transition: color .3s ease-in-50px;
 		    display: inline-block;
 		    margin-bottom: 20px;
 		}

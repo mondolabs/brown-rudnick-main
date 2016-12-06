@@ -111,9 +111,10 @@
 									<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Qualifications</p>
 									{{ opportunity.qualifications_description }}
 								{% endif %}
-								{% if opportunity.job_description_file%}
+								{% if opportunity.job_description_file %}
+									{% set description_url = opportunity.get_field('job_description_file') %}
 									<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Qualifications</p>
-									<a class="document__link" href="{{ job_opening.get_field('job_description_file') }}">View pdf</a>
+									<a class="document__link" target="_blank" href="{{ description_url }}">View pdf</a>
 								{% endif %}
 									<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">{{bottom_banner_text}}</p>
 								</td>
@@ -163,9 +164,14 @@
 												<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Qualifications</p>
 												{{ job_opening.qualifications_description }}
 											{% endif %}
-											{% if job_opening.job_description_file%}
+
+											
+											{% if job_opening.job_description_file %}
+
+												{% set description_url = job_opening.get_field('job_description_file') %}
+
 												<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Qualifications</p>
-												<a class="document__link" href="{{ job_opening.get_field('job_description_file') }}">View pdf</a>
+												<a class="document__link" target="_blank" href="{{ description_url }}">View pdf</a>
 											{% endif %}
 												<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">{{bottom_banner_text}}</p>
 											</td>
