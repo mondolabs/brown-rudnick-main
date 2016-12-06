@@ -2112,12 +2112,12 @@ textarea#comment {
 			vertical-align: middle;
 		}
 	}
-	.person__details--expander {
+	&.person__details--expander {
 		&:before{
-			top: 0px;
+			top: 7px;
 		}
 		&:after{
-			top: -5px;
+			top: 2px;
 		}	
 	}
 }
