@@ -30,7 +30,7 @@ body {
     margin-left: 40px !important; } }
 
 .job__description__body h5, .job__description__body .document__link, .grey__bold__text, .document__link {
-  color: #a7a6a6;
+  color: #A9A9A9;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 2px; }
@@ -116,7 +116,7 @@ body {
     margin-left: 40px !important; } }
 
 .job__description__body h5, .job__description__body .document__link, .grey__bold__text, .document__link {
-  color: #a7a6a6;
+  color: #A9A9A9;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 2px; }
@@ -366,7 +366,7 @@ p.subtitle__text {
   .tag__text.smaller {
     font-size: 10px; }
   .tag__text.grey {
-    color: #a7a6a6; }
+    color: #A9A9A9; }
   .tag__text.red {
     color: #b91628; }
   .tag__text.contact {
@@ -829,7 +829,7 @@ img.insight__details {
   float: left !important;
   padding-left: 0;
   padding-right: 0;
-  min-height: 30px; }
+  min-height: 50px; }
   .service:before,
   .bullet:before {
     content: " ";
@@ -1359,7 +1359,7 @@ button.close__modal {
   border-collapse: collapse; }
 
 .job__description__body .document__link {
-  color: #bcbcbc; }
+  color: #a7a6a6; }
 
 .job__description__body .document__link:hover {
   color: #bcbcbc; }
@@ -1638,7 +1638,7 @@ select.clean___border {
   text-align: center; }
 
 .wpcf7-text, .wpcf7-select, .wpcf7-textarea {
-  color: #f0f0f0;
+  color: #A9A9A9;
   text-transform: uppercase;
   letter-spacing: 3px;
   font-weight: 800;
@@ -1817,7 +1817,7 @@ tbody {
   font-weight: 800;
   font-size: 10px;
   letter-spacing: 3px;
-  color: #a7a6a6; }
+  color: #A9A9A9; }
 
 .page-template-sitemap li {
   text-transform: uppercase;
@@ -2001,7 +2001,7 @@ tr {
   background-color: #fefefe !important; }
 
 #enter-search-replace p {
-  color: #a7a6a6;
+  color: #A9A9A9;
   letter-spacing: 3px;
   font-weight: 800;
   font-size: 14px;
@@ -2010,6 +2010,9 @@ tr {
 .wpcf7-textarea {
   margin-left: 1%;
   margin-right: 1%; }
+
+.sidebar__on-scroll--fixed {
+  z-index: 9999; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -9453,7 +9456,6 @@ a::after {
   max-width: 100%;
   width: 100%;
   margin: 0 auto;
-  border-top: 1px solid #ccc;
   margin-top: 3.75rem; }
 
 .footer-message {
@@ -9764,7 +9766,7 @@ input[type="text"] {
     box-shadow: none;
     -webkit-box-shadow: none;
     border: none;
-    border-bottom: 2px solid #a7a6a6;
+    border-bottom: 2px solid #A9A9A9;
     box-shadow: none; }
 
 button.arrow {
