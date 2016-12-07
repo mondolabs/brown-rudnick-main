@@ -28,7 +28,6 @@
 			    </p>
 			    {% for item in headlines %}
 		        	{% set headline =  item|first %}	        		
-		        		{{headline.post_title}}
 		        		{% if headline.has_external_link %}
 				        	<a href="{{ headline.external_link}}" class="link tag__text">
 				        		{{ headline.post_title|upper }}
