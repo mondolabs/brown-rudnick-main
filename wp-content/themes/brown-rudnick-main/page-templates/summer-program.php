@@ -33,6 +33,7 @@ $data['tile_paragraph_one'] = get_field('tile_paragraph_one');
 $data['tile_paragraph_two'] = get_field('tile_paragraph_two');
 $data['breadcrumb_color'] = get_field('breadcrumb_color');
 
+$data['committee_sub_members'] = get_field('committee_sub_members');
 $args = array(
     'post_type' =>  'people',
     'posts_per_page'=>-1,

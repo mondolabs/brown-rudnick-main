@@ -54,8 +54,15 @@
 				</div>
 			{% endfor %}
 		</div>
+			{% for sub_member in committee_sub_members %}	
+				<p class="title__text">{{ sub_member.member_name}}</p>
+				<p class="bold__wide__spacing">{{ sub_member.member_title}}</p>
+			{% endfor %}
 		</div>
+	
 	</div>
+
+
 
 	<div class="row columns padding-top-20 padding-bottom-20 white-row row margin-top-60 z-index__1">
 		<div class="columns">
