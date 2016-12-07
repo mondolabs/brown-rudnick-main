@@ -22,24 +22,102 @@
 			<div class="columns small-12 medium-6 large-6">
 				<div class="padding__wrapper">
 					<p class="title__text">
-						Articles
+						Press Releases
 					</p>
-					{% for news_article in news_articles %}
-						{% set news_article = news_article|first %}							
+					{% for press_releases in press_releasess %}
+						{% set press_releases = press_releases|first %}							
 						<table class="no__border">
 							<tbody class="no__border">
 								<tr class="arrow__hover--trigger">
 									<td class="no__pad full__width">
-										<a class="hover__black black" href="{{news_article.guid}}">
-											{{ news_article.post_title }}<br>
+										<a class="hover__black black" href="{{press_releases.guid}}">
+											{{ press_releases.post_title }}<br>
 										</a> 
 										<p class="tag__text grey margin-top-20">
-											{{ news_article.date|date("M d, Y")|upper }}
+											{{ press_releases.date|date("M d, Y")|upper }}
 										</p>
 									</td>
 									<td class="no__pad">
 										<div class="link__arrow--wrapper news">
-											<a href="{{news_article.guid}}">
+											<a href="{{press_releases.guid}}">
+												<svg class="long__arrow--svg news" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
+													<title>long arrow</title>
+													<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
+													<polyline class="long__arrow red" points="48 1 56 9 48 17"/>
+												</svg>
+											</a>	
+										</div>
+									</td>
+								</tr>
+							</tbody>	
+						</table>
+						{% if not loop.last %}<span class="insights list-divider"></span>{% endif %}
+					{% endfor %}
+					<a class="link red tag__text underline" href="/press-releases">
+						{{ "see all press releases"|upper }}
+					</a>
+				</div>
+			</div>
+			<div class="columns small-12 medium-6 large-6">
+				<div class="padding__wrapper sides__only ten margin-top-40--mobile">
+					<p class="title__text">
+						Firm News
+					</p>
+					{% for news_post in news_posts %}
+						{% set news_post = news_post|first %}
+						<table class="no__border">
+							<tbody class="no__border">
+								<tr class="arrow__hover--trigger">
+									<td class="no__pad full__width">
+										<a class="hover__black black" href="{{news_post.guid}}">
+											{{ news_post.post_title }}<br>
+										</a> 
+										<p class="tag__text grey margin-top-20">
+											{{ news_post.date|date("M d, y")|upper }}
+										</p>
+									</td>
+									<td class="no__pad">
+										<div class="link__arrow--wrapper news">
+											<a href="{{news_post.guid}}">
+												<svg class="long__arrow--svg news" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
+													<title>long arrow</title>
+													<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
+													<polyline class="long__arrow red" points="48 1 56 9 48 17"/>
+												</svg>
+											</a>	
+										</div>
+									</td>
+								</tr>
+							</tbody>	
+						</table>
+						{% if not loop.last %}<span class="insights list-divider"></span>{% endif %}
+					{% endfor %}
+					<a class="link red tag__text underline" href="/firm-news">
+						{{ "see all firm news"|upper }}
+					</a>
+				</div>
+			</div>
+			<div class="columns small-12 medium-6 large-6">
+				<div class="padding__wrapper">
+					<p class="title__text">
+						Articles
+					</p>
+					{% for article in articles %}
+						{% set article = article|first %}							
+						<table class="no__border">
+							<tbody class="no__border">
+								<tr class="arrow__hover--trigger">
+									<td class="no__pad full__width">
+										<a class="hover__black black" href="{{article.guid}}">
+											{{ article.post_title }}<br>
+										</a> 
+										<p class="tag__text grey margin-top-20">
+											{{ article.date|date("M d, Y")|upper }}
+										</p>
+									</td>
+									<td class="no__pad">
+										<div class="link__arrow--wrapper news">
+											<a href="{{article.guid}}">
 												<svg class="long__arrow--svg news" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
 													<title>long arrow</title>
 													<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
