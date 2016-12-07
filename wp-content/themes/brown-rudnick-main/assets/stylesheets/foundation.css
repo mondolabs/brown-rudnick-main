@@ -225,6 +225,8 @@ p.wp-caption-text {
   top: 14px;
   position: relative;
   left: 14px;
+  height: 20px;
+  width: 60px;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out; }
   .long__arrow--svg.news {

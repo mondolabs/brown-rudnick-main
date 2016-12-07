@@ -31,8 +31,9 @@
 												Authors:
 												{% set authors = post.get_field('br_authors')%}
 												{% for author in authors %}
-													{% set author = author|first %}
-														{{ author.first_name }} {{ author.last_name }}{% if not loop.last %},{% endif %}
+
+													{% set author = author|first %}														
+														<a href="{{author.link}}">{{ author.first_name }} {{ author.last_name }}</a>{% if not loop.last %},{% endif %}
 												{% endfor %}
 											</p>
 										{% endif %}	
