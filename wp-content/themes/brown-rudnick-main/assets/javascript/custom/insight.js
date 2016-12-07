@@ -95,7 +95,7 @@ var INSIGHTS = {
 		var allPracticeSelect = $('select#allPracticeSelect');
 		var allDateSelect = $('select#allDateSelect');
 		var allTypeSelect = $('select#allTypeSelect');
-		var allKeywordInput = $('input#allKeywordInput');
+		var allKeywordInput = $('input#allKeywordInput').text();
 
 		// Change value of selects based on url params
 		dateSelect.val(decodeURIComponent(selectedDate));
