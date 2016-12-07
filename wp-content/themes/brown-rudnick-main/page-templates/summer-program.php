@@ -60,7 +60,7 @@ $hiring_schedule = get_field('hiring_schedule');
   </head>
   <body>
     <?php get_template_part('template-parts/off-canvas-search')?>
-           <div class="vellum black--vellum modal__background diversity hidden">
+           <div id="summer-hiring-schedule" class="vellum black--vellum modal__background diversity hidden">
             <div class="row">
               <div class="diversity__modal--outer-wrapper table__wrapper relative">
                 <div class="diversity__modal--inner-wrapper table__innner">
