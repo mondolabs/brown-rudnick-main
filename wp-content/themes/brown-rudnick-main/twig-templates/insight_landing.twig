@@ -102,11 +102,12 @@
 			<div class="columns small-12 medium-12 large-12 no__pad">
 				<div class="margin-top-60 columns small-12 medium-12 large-12 no__pad">
 					{% for insight in insights %}
+						{% set insight_url = insight.permalink %}
 						<table class="no__border">
 							<tbody class="no__border">
 								<tr class="arrow__hover--trigger">
 									<td class="no__pad full__width">
-										<a class="hover__black black" href="{{ insight.permalink }}">
+										<a class="hover__black black" href="{{ insight_url }}">
 											{{ insight.title }}<br>
 										</a> 
 										<p class="tag__text grey margin-top-20">
@@ -115,7 +116,7 @@
 									</td>
 									<td class="no__pad">
 										<div class="link__arrow--wrapper news">
-											<a href="{{ insight.link }}">
+											<a href="{{ insight_url }}">
 												<svg class="long__arrow--svg news" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
 													<title>long arrow</title>
 													<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
