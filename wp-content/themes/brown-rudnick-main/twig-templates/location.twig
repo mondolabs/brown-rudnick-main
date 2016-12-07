@@ -19,6 +19,15 @@
     </div>  
   </div>
 </div>
+{% if location.about_section|length > 0 %}
+  <div class="row body__wrapper small-12 medium-12 large-12">
+      <div class="columns small-12 medium-12 large-12">
+        <p class="body__text">
+          {{ location.about_section_body }}
+        </p>
+      </div>
+  </div> 
+{% endif %}
 
   <div class="map__wrapper relative">
     {# map container #}
