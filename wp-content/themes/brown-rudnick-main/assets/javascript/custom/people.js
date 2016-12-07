@@ -203,7 +203,7 @@ $(document).ready(function(){
 	$(window).on('resize', function(event) {		
 		var headerHeight = $('#mastheadOnScroll').height() + 160;
 		var elementToStick = PEOPLE.stickySideBar;
-		if ( $('.sidebar__on-scroll--fixed').length > 0 && $(document).width() >= 768 ){
+		if ( $('.sidebar__on-scroll--fixed').length > 0 && $(document).width() >= 750 ){
 			elementToStick.stick_in_parent({ offset_top: headerHeight });
 		}	else {
 			elementToStick.trigger("sticky_kit:detach");
@@ -213,7 +213,7 @@ $(document).ready(function(){
 	var headerHeight = $('#mastheadOnScroll').height() + 160;
 	var elementToStick = $('.sidebar__on-scroll--fixed');
 		if ( PEOPLE.stickySideBar.length > 0){
-			if ($(document).width() >= 768) {
+			if ($(document).width() >= 750) {
 				elementToStick.stick_in_parent({ offset_top: headerHeight });
 			} 	
 	}	
