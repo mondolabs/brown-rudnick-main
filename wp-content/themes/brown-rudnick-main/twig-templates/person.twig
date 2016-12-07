@@ -216,8 +216,8 @@
 					</tr>
 					{% for publication in publications %}
 						<tr class="hidden hidden__person-publication--details">
-							<td class="" colspan="5">
-								{{ publication.publication }}
+							<td class="bullet " colspan="5">
+								<div class="body__text bullet__text">{{ publication.publication }}</div>
 							</td>
 						</tr>
 					{% endfor %}	
@@ -243,8 +243,10 @@
 					</tr>
 					{% for speaking_engagement in speaking_engagements %}
 						<tr class="hidden hidden__person-publication--details">
-							<td class="" colspan="5">
-								{{ speaking_engagement.engagement }}
+							<td class="bullet" colspan="5">
+								<div class="body__text bullet__text">
+									{{ speaking_engagement.engagement }}
+								</div>
 							</td>
 						</tr>
 					{% endfor %}	
@@ -270,8 +272,10 @@
 					</tr>
 					{% for affiliation in professional_affiliations %}
 						<tr class="hidden hidden__person-publication--details">
-							<td class="" colspan="5">
-								{{ affiliation.affiliation }}
+							<td class="bullet" colspan="5">
+								<div class="body__text bullet__text">
+									{{ affiliation.affiliation }}
+								</div>
 							</td>
 						</tr>
 					{% endfor %}	
@@ -297,8 +301,10 @@
 					</tr>
 					{% for award in awards_and_honors %}
 						<tr class="hidden hidden__person-publication--details">
-							<td class="" colspan="5">
-								{{ award.award_content }}
+							<td class="bullet" colspan="5">
+								<div class="body__text bullet__text">
+									{{ award.award_content }}
+								</div>
 							</td>
 						</tr>
 					{% endfor %}	
@@ -327,8 +333,10 @@
 					</tr>
 					{% for professional_membership in professional_memberships %}
 						<tr class="hidden hidden__person-publication--details">
-							<td class="" colspan="5">
-								{{ professional_membership.professional_membership }}
+							<td class="bullet" colspan="5">
+								<div class="body__text bullet__text">
+									{{ professional_membership.professional_membership }}
+								</div>
 							</td>
 						</tr>
 					{% endfor %}	
@@ -354,8 +362,10 @@
 					</tr>
 					{% for involvement in community_involvement %}
 						<tr class="hidden hidden__person-publication--details">
-							<td class="" colspan="5">
-								{{ involvement.involvement }}
+							<td class="bullet" colspan="5">
+								<div class="body__text bullet__text">
+									{{ involvement.involvement }}
+								</div>
 							</td>
 						</tr>
 					{% endfor %}	
@@ -381,8 +391,10 @@
 					</tr>
 					{% for activity in firm_activities %}
 						<tr class="hidden hidden__person-publication--details">
-							<td class="" colspan="5">
-								{{ activity.activity }}
+							<td class="bullet" colspan="5">
+								<div class="body__text bullet__text">
+									{{ activity.activity }}
+								</div>
 							</td>
 						</tr>
 					{% endfor %}	
