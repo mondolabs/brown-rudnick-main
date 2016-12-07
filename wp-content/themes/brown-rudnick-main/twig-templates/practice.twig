@@ -34,7 +34,8 @@
 				        		{{ headline.post_title|upper }}
 				        	</a>
 	        			{% else %}
-				        	<a href="{{ headline.guid}}" class="red link tag__text">
+
+				        	<a href="{{TimberPost(headline).link}}" class="red link tag__text">
 				        		{{ headline.post_title|upper }}
 				        	</a>
 		        		{% endif %}
@@ -89,9 +90,11 @@
 							<div class="columns medium-6 large-6 small-12">
 								<div class="people__details--outer-wrapper">
 									<div class="people__details--inner-wrapper">
+										<a class="link" href="{{TimberPost(leader).link}}">
 										<p class="people__details title__text smaller">
 											{{ leader.first_name }} {% if leader.middle_initial %}{{ leader.middle_initial }}. {% endif %} {{ leader.last_name }}
 										</p>
+									</a>
 										{% if leader.title %}	
 											<p class="people__details tag__text">
 												{{ leader.title|upper }}
@@ -104,7 +107,8 @@
 										<p class="people__details body__text">
 											{{ leader.primary_phone_number }}
 										</p>
-										<a class="email--people--link red link inline__link body__text people__details">											
+
+										<a href="mailto: {{ leader.email }}" class="email--people--link red link inline__link body__text people__details">											
 												{{ leader.email }}
 										</a>
 									</div>
@@ -114,7 +118,7 @@
 					{% endfor %}					
 				{% endif %}
 			</div>
-			{% if related_people|length > 0%}	
+			{% if related_people|length > 0 %}	
 
 				<div style="padding: 0 40px;">
 					<p class="title__text">
@@ -122,8 +126,8 @@
 					</p>
 					{% for person in related_people %}
 						{% set person = person|first %}
-						<div class="columns medium-6 large-6 small-12 person end">
-							<a class="body__text red link margin-bottom--10" href="{{ person.guid }}">
+						<div class="columns medium-6 large-6 small-12 person end">						
+							<a class="body__text red link margin-bottom--10" href="{{ TimberPost(person).link }}">
 								{{ person.first_name }} {% if person.middle_initial %}{{ person.middle_initial }}. {% endif %} {{ person.last_name }}
 							</a>
 						</div>	
