@@ -76,6 +76,7 @@ var INSIGHTS = {
 		var selectedAdmission = $.url().param('admission_query', 'strict') || "";
 		var selectedEducation = $.url().param('education_query', 'strict') || "";
 		var selectedKeyword = $.url().param('keyword', 'strict') || "";
+		var selectedType = $.url().param('type_query', 'strict') || "";
 
 		// Set vars for selects for all search params
 		var dateSelect = $('select#dateSelect');
@@ -95,8 +96,8 @@ var INSIGHTS = {
 		var allPracticeSelect = $('select#allPracticeSelect');
 		var allDateSelect = $('select#allDateSelect');
 		var allTypeSelect = $('select#allTypeSelect');
-		var allKeywordInput = $('input#allKeywordInput').text();
-
+		var allKeywordInput = $('input#allKeywordInput');
+	
 		// Change value of selects based on url params
 		dateSelect.val(decodeURIComponent(selectedDate));
 		geographySelect.val(decodeURIComponent(selectedGeography));
@@ -111,8 +112,8 @@ var INSIGHTS = {
 		allGeographySelect.val(decodeURIComponent(selectedGeography));
 		allIndustrySelect.val(decodeURIComponent(selectedIndustry));
 		allPracticeSelect.val(decodeURIComponent(selectedPractice));
-		allTypeSelect.val(decodeURIComponent(selectedKeyword));
-		allKeywordInput.val(decodeURIComponent(allTypeSelect));
+		allTypeSelect.val(decodeURIComponent(selectedType));
+		allKeywordInput.val(decodeURIComponent(selectedKeyword));
 	},
 	revealAdvancedSearchModal: function() {
 		console.log('Show advanced search modal for insights.');
