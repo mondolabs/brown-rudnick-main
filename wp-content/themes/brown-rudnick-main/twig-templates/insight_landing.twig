@@ -61,42 +61,48 @@
 			                {% endfor %}
 		            	</select>
 					</div> 
-					<div class="columns large-2 no__pad padding-left-5 margin__1 text-align__center">
-						<select id="geographySelect" name="geography_query" class="clean___border insight inline__text grey__bold__text smaller">
-							<option value="">
-								GEOGRAPHIES
-							</option>
-						{% for geography in geographies %}
-							<option value="{{ geography.slug|upper }}">
-								{{ geography.name|upper }}
-							</option>
-						{% endfor %}
-						</select>
-					</div>
-					<div class="columns large-2 no__pad padding-left-5 margin__1 text-align__center">
-						<select id="industrySelect" name="industry_query" class="clean___border insight inline__text grey__bold__text smaller">
-							<option value="">
-								INDUSTRIES
-							</option>
-							{% for industry in industries %}
-								<option value="{{ industry.slug|upper }}">
-									{{ industry.name|upper }}
+					{% if geographies and geographies|length >= 1 %}	
+						<div class="columns large-2 no__pad padding-left-5 margin__1 text-align__center">
+							<select id="geographySelect" name="geography_query" class="clean___border insight inline__text grey__bold__text smaller">
+								<option value="">
+									GEOGRAPHIES
+								</option>
+							{% for geography in geographies %}
+								<option value="{{ geography.slug|upper }}">
+									{{ geography.name|upper }}
 								</option>
 							{% endfor %}
-						</select>
-					</div>
-					<div class="columns large-2 no__pad padding-left-5 float__left margin__1 ">
-						<select id="practiceSelect" name="practice_query" class="clean___border insight inline__text grey__bold__text smaller">
-							<option value="">
-								PRACTICES
-							</option>
-							{% for practice in practices %}
-								<option value="{{ practice.slug|upper }}">
-									{{ practice.name|upper }}
+							</select>
+						</div>
+					{% endif %}
+					{% if industries and industries|length >= 1 %}	
+						<div class="columns large-2 no__pad padding-left-5 margin__1 text-align__center">
+							<select id="industrySelect" name="industry_query" class="clean___border insight inline__text grey__bold__text smaller">
+								<option value="">
+									INDUSTRIES
 								</option>
-							{% endfor %}
-						</select>
-					</div>
+								{% for industry in industries %}
+									<option value="{{ industry.slug|upper }}">
+										{{ industry.name|upper }}
+									</option>
+								{% endfor %}
+							</select>
+						</div>
+					{% endif %}	
+					{% if practices and practices|length >= 1 %}	
+						<div class="columns large-2 no__pad padding-left-5 margin__1 ">
+							<select id="practiceSelect" name="practice_query" class="clean___border insight inline__text grey__bold__text smaller">
+								<option value="">
+									PRACTICES
+								</option>
+								{% for practice in practices %}
+									<option value="{{ practice.slug|upper }}">
+										{{ practice.name|upper }}
+									</option>
+								{% endfor %}
+							</select>
+						</div>
+					{% endif %}	
 				</div>
 			</div>
 			<div class="columns small-12 medium-12 large-12 no__pad">

@@ -149,7 +149,10 @@
   transform: translateX(-40%);
 }
 .before-last-submenu-item {
-  transform: translateX(-53%);
+  transform: translateX(-55%);
+  @media screen and (max-width: 1200px){
+    transform: translateX(-58%);
+  }
 }
 .last-submenu-item {
   transform: translateX(-63%);
