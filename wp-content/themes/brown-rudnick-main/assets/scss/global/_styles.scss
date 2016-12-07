@@ -776,7 +776,7 @@ img.insight__details {
 	float: left !important;
 	padding-left: 0;
 	padding-right: 0;
-	min-height: 30px;
+	min-height: 50px;
 	&:before {
 		content: " ";
 		height: 8px;
@@ -1382,7 +1382,7 @@ button.close__modal {
 		@extend %greyBold;
 	}
 	.document__link {
-		color: #bcbcbc;
+		color: #a7a6a6;
 	}
 	.document__link:hover {
 		color: #bcbcbc;
@@ -1728,7 +1728,7 @@ select.clean___border {
 	text-align: center;
 }
 .wpcf7-text, .wpcf7-select, .wpcf7-textarea {
-	color: $primary-grey;
+	color: $darker-grey;
 	text-transform: uppercase;
 	letter-spacing: $letter-spacing-global;
 	font-weight: 800;
@@ -2159,4 +2159,8 @@ tr {
 .wpcf7-textarea {
 	margin-left: 1%;
 	margin-right: 1%;
+}
+
+.sidebar__on-scroll--fixed {
+	z-index: 9999;
 }
