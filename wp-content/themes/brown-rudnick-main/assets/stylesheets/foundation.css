@@ -2012,7 +2012,7 @@ tr {
   margin-right: 1%; }
 
 .sidebar__on-scroll--fixed {
-  z-index: 9999; }
+  z-index: 9; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -9673,6 +9673,8 @@ a {
   background-color: #f0f0f0;
   width: 80px;
   margin: 20px 0 16px; }
+  .list-divider.white {
+    background-color: #fefefe; }
   .list-divider.red {
     background-color: #b91628; }
   .list-divider.people__details {
@@ -9707,6 +9709,8 @@ a {
     width: 100%; }
   .list-divider.thick {
     height: 2px; }
+  .list-divider.clear__both {
+    clear: both; }
 
 .page__divider {
   height: 2px;
