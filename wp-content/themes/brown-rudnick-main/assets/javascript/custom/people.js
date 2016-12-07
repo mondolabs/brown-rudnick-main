@@ -5,6 +5,23 @@
 var PEOPLE = {
 	listeners: function(){
 		
+		$('.personRepresentationExpander').click(function(event) {
+			event.preventDefault();
+			var bullets = $('.bullet.representation');
+			for (var i = bullets.length - 1; i >= 0; i--) {
+				var bullet = bullets[i]
+				if( !$(bullet).hasClass('first__five') ) {
+					$(bullet).toggleClass('hidden');
+				}
+			}
+			if ( $(this).hasClass('collapsed') ) {
+				$(this).text('SHOW LESS');
+			} else {
+				$(this).text('SHOW MORE');
+			}
+			$(this).toggleClass('collapsed');
+		});
+
 		$('#personRepresentationExpander').click(function(event) {
 			event.preventDefault();
 			var bullets = $('.bullet.representation');

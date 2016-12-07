@@ -1054,6 +1054,13 @@ img.insights {
     background-color: #b91628;
     right: 15px;
     top: 20px; }
+    @media screen and (max-width: 768px) {
+      .experience_expander.top__menu,
+      .job_expander.top__menu,
+      .accordion_expander.top__menu,
+      .mobile__sidebar--expander.top__menu,
+      .person__details--expander.top__menu {
+        top: 3px; } }
     .experience_expander.top__menu:before,
     .job_expander.top__menu:before,
     .accordion_expander.top__menu:before,

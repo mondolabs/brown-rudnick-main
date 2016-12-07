@@ -1049,7 +1049,10 @@ img.insights {
 	&.top__menu {
 		background-color: $primary-red;
 		right: 15px;
-    	top: 20px;
+		top: 20px;
+		@media screen and(max-width:768px) {
+    	top: 3px;
+		}
 		&:before {
 			top: 7px;
 			left: 12px;
