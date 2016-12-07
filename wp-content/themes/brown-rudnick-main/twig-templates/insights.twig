@@ -18,28 +18,28 @@
 <div class="row">
 	<div class="row experience__wrapper body__wrapper columns small-12 medium-12 large-12">
 		{% include '/twig-templates/insights-sidebar.twig' with sidebar %}
-		<div class="columns small-12 medium-9 large-10">
+		<div class="columns small-12 medium-9 large-10 margin-bottom--40">
 			<div class="columns small-12 medium-6 large-6">
 				<div class="padding__wrapper">
 					<p class="title__text">
 						Press Releases
 					</p>
-					{% for press_releases in press_releasess %}
-						{% set press_releases = press_releases|first %}							
+					{% for press_release in press_releases %}
+						{% set press_release = press_release|first %}							
 						<table class="no__border">
 							<tbody class="no__border">
 								<tr class="arrow__hover--trigger">
 									<td class="no__pad full__width">
-										<a class="hover__black black" href="{{press_releases.guid}}">
-											{{ press_releases.post_title }}<br>
+										<a class="hover__black black" href="{{press_release.guid}}">
+											{{ press_release.post_title }}<br>
 										</a> 
 										<p class="tag__text grey margin-top-20">
-											{{ press_releases.date|date("M d, Y")|upper }}
+											{{ press_release.date|date("M d, Y")|upper }}
 										</p>
 									</td>
 									<td class="no__pad">
 										<div class="link__arrow--wrapper news">
-											<a href="{{press_releases.guid}}">
+											<a href="{{press_release.guid}}">
 												<svg class="long__arrow--svg news" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
 													<title>long arrow</title>
 													<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
@@ -97,6 +97,9 @@
 					</a>
 				</div>
 			</div>
+		</div>
+		<div class="columns small-12 medium-9 large-10 margin-bottom--20">
+			<span class="list-divider full__width margin-top-20 margin-bottom--20"></span>
 			<div class="columns small-12 medium-6 large-6">
 				<div class="padding__wrapper">
 					<p class="title__text">
@@ -175,8 +178,8 @@
 					</a>
 				</div>
 			</div>
-				
-			
+		</div>
+		<div class="columns small-12 medium-9 large-10">
 			<div class="columns  small-12 medium-12 large-12">
 				<span class="list-divider full__width margin-top-40"></span>
 				<p class="title__text insights__blog">
