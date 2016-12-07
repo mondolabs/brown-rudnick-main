@@ -19,10 +19,10 @@ $args = array(
 );
 $data['sidebar'] = get_posts($args);
 
-$data['news_articles'] = get_field('articles');
+$data['articles'] = get_field('articles');
 $data['alerts'] = get_field('alerts');
 $data['press_releases'] = get_field('press_releases');
-$data['news_posts'] = get_field('news_posts');
+$data['news_posts'] = get_field('firm_news');
 $data['blogs'] = get_field('blogs');
 
 $data['contact_name'] = get_field('contact_name');

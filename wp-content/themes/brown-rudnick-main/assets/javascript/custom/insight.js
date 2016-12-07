@@ -5,7 +5,7 @@ var INSIGHTS = {
 		// });
 		console.log('Insights listeners js loaded');
 		$('select.insight').change(function(event) {
-			var selects = $('select');
+			var selects = $('select.insight');
 			var queryStringBase = location.origin + location.pathname;
 			var queryString = "";
 			var filters = [];
