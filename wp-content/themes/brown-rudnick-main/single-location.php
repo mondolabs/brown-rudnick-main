@@ -9,6 +9,8 @@ $data['related_people'] = get_field('related_people');
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
 $data['featured_image_url'] = $data['featured_image_url'][0];
 $data['color'] = get_field('breadcrumb_color_location');
+$data['about_section_header'] = get_field('about_section_header');
+$data['about_section']= get_field('about_section_body');
 ?>
 <html>
   <head>
