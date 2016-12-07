@@ -329,7 +329,8 @@
 														{{ person.primary_city }}, {{ person.primary_state }}{% if person.secondary_city and person.secondary_state %} | {{ person.secondary_city }}, {{ person.secondary_state}} {% endif %} 
 													</p>
 													<p class="people__details body__text">
-														{{ person.primary_phone_number }}
+
+														{% if person.primary_country_code and person.primary_country_code != '1' %}+{{ person.primary_country_code}}{% else %}+1{% endif %}.{{ person.primary_phone_number }}
 													</p>
 													<a href="mailto:{{person.email}}" class="email--people--link red link inline__link body__text people__details">
 														{{ person.email }}
