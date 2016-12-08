@@ -12,13 +12,15 @@
 				<div class="people__details--outer-wrapper person">
 					<div class="people__details--inner-wrapper">
 						<div class="no__pad columns medium-12 large-12 small-12 relative">
-							<div class="inline__wrapper insight padding__right--50-desktop insight">
-								<div class="insight table__wrapper">
-									<div class="table__inner">
-										<img class="insight__details" src="{{ featured_image_url }}"/>
+							{% if featured_image_url %}	
+								<div class="inline__wrapper insight padding__right--50-desktop insight">
+									<div class="insight table__wrapper">
+										<div class="table__inner">
+											<img class="insight__details" src="{{ featured_image_url }}"/>
+										</div>
 									</div>
 								</div>
-							</div>
+							{% endif %}	
 							<div class="inline__wrapper insight">
 								<div class="table__wrapper insight">
 									<div class="table__inner">

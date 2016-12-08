@@ -5,6 +5,7 @@ Template Name: Single Location Page
 $data = Timber::get_context();
 $data['post']= new TimberPost();
 $data['location'] = new TimberPost();
+$data['about_section_header'] = get_field('about_section_header');
 $data['related_people'] = get_field('related_people');
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
 $data['featured_image_url'] = $data['featured_image_url'][0];

@@ -19,15 +19,17 @@
     </div>  
   </div>
 </div>
-{% if location.about_section|length > 0 %}
   <div class="row body__wrapper small-12 medium-12 large-12">
       <div class="columns small-12 medium-12 large-12">
-        <p class="body__text">
-          {{ location.about_section_body }}
+        <p class="title__text">
+          {{about_section_header}}
+        </p> 
+        <p class="body__text">          
+          {{ about_section}}
         </p>
       </div>
   </div> 
-{% endif %}
+
 
   <div class="map__wrapper relative">
     {# map container #}
@@ -65,7 +67,6 @@
       </div>
   </div>
 
-
   
 {% if location.content|length > 0 %}
   <div class="row body__wrapper small-12 medium-12 large-12">
@@ -76,6 +77,20 @@
       </div>
   </div> 
 {% endif %}
+
+{% if related_people|length > 0 %}
+  <div class="row body__wrapper small-12 medium-10 large-10">
+      <p class="title__text">Related People</p>
+      {% for item in related_people %}
+        <div class="columns small-12 medium-4 large-4 padding-top-10 padding-bottom-10 {% if loop.last %} float__left {% endif %}">
+        {% set person = item|first %}  
+         <a class="link red" href="{{TimberPost(person).link}}">{{ person.post_title }}</a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
+
 
 <script type="text/javascript">
   {% if featured_image_url %}
