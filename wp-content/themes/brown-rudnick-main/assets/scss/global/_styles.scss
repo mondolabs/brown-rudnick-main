@@ -23,7 +23,9 @@ a {
 
     }
 }
-
+.logo--print--only {
+	display: none;
+}
 .arrow__hover--trigger {
 	&:hover,
 	&:focus {
@@ -2014,16 +2016,43 @@ tbody {
 .line-height-1 {
 	line-height: 1;
 } 
+
+
 // print stylesheet
 @media print {
-	#search__icon__mobile, #mobile__logo__container, #mastheadOnScroll, #masthead, svg, #mobile-menu, .menu__wrapper--desktop, ul, .header-logo--mobile, .logo__wrapper, .breadcrumb__link, #related-experience-heading, #people-sidebar, header, footer, .sites-button {
+	 svg, #mobile-menu, ul, .breadcrumb__link, #related-experience-heading, #people-sidebar, #search__icon__mobile, #mobile__logo__container, .sites-button, footer, .menu, .dropdown .desktop-menu, .menu a, .logo__wrapper a, .link a, .icons__container, .padding__right--50-desktop, {
 		display: none !important;
 	}
-	img {
-		max-width: 200px;
+	.personRepresentationExpander {
+		
+	}
+	#featuredImage {
+		height: 300px !important;
+	}
+	.logo__wrapper {
 		display: block;
 	}
+	.inline__wrapper, .table__wrapper, #first--inline--wrapper  {
+		display: block !important;
+		height: auto !important;
+	}
+	img {
+		width: 200px !important;
+		display: block !important;
+	}
+	.featured-image__header--image-wrapper {
+		height: 50px !important;
+		display: block !important;
+	}
+	.hidden__person-publication--details {
+		display: table-row;
+	}
+	.logo--print--only {
+		position: absolute;
+		top: 5px;
+	}
 }
+
 #download--vcard {
 	@media screen and (max-width: 768px){
 		display: inline-block;

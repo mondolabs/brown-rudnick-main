@@ -6,14 +6,13 @@ $data = Timber::get_context();
 $data['person'] = new TimberPost();
 $data['specialization'] = get_field('specialization');
 $data['related_experiences'] = get_field('related_experiences');
-
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
 $data['featured_image_url'] = $data['featured_image_url'][0];
 $card = get_field('v_card');
 $data['card_url'] = $card;
 $data['awards_and_honors']= get_field('awards_and_honors');
-// $data['card_title'] = $card['filename'];
 $data['breadcrumb_color'] = get_field('breadcrumb_color');
+$data['print_logo_url'] = get_home_url() . '/wp-content/themes/brown-rudnick-main/assets/images/BR-logo-for-nav.png';
 ?>
 <html>
   <head>
