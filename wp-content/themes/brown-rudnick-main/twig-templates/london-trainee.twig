@@ -47,6 +47,23 @@
 	</div>
 </div>
 
+
+
+
+<div class="row columns relative z-index__1">
+	<div class="row careers__wrapper body__wrapper columns small-12 medium-12 large-12">
+		<div class="columns margin-bottom-60">
+			<p class="title__text">Meet our trainees</p>
+			{% for a in trainee_info %}
+				<img src="{{a.trainee_image}}">
+				<p class="title__text smaller">{{a.trainee_name}}</p>
+				<p class="body__text">{{a.trainee_background}}</p>
+				<p class="body__text">{{a.trainee_experience}}</p>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+
 <div id="traineeImage" class="scroll-stopper bottom--banner--image--wrapper">
 	<div class="row">
 		<div class="table__wrapper pro-bono__banner">
