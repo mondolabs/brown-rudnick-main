@@ -24,6 +24,8 @@
 						<p class="homepage-header-text">
 							{% if featured_first.post_type == 'news' %}
 								IN THE NEWS
+							{% elseif featured_first.post_type == 'article' %}
+								ARTICLE
 							{% elseif featured_first.post_type == 'event' %}
 								EVENTS
 							{% elseif featured_first.post_type == 'alert' %}
@@ -77,6 +79,8 @@
 							<p class="homepage-header-text">
 								{% if homepage_post.post_type == 'news' %}
 									IN THE NEWS
+								{% elseif featured_first.post_type == 'article' %}
+									ARTICLE
 								{% elseif homepage_post.post_type == 'event' %}
 									EVENTS
 								{% elseif homepage_post.post_type == 'alert' %}
