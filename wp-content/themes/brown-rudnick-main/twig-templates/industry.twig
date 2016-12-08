@@ -1,9 +1,10 @@
 <div id="featuredImage" class ="featured-image__header--image-wrapper">
-	{% set header_text_color = "black" %}
+
+	{% set header_text_color = 'black' %}
 	{# hero header #}
 	<div class="featured-image__header--text-outer-wrapper row relative">
 		<div class="breadcrumb__wrapper {{ breadcrumb_color }}">
-			<a class="breadcrumb__link {{ breadcrumb_color }}" href="/experience">{{ "experience"|upper }}</a> / <a class="breadcrumb__link {{ breadcrumb_color }}" href="/industries">{{ "industries"|upper }}</a>
+			<a class="breadcrumb__link {{ breadcrumb_color }}" href="/experience">{{ "experience"|upper }}</a> / <a class="breadcrumb__link {{ breadcrumb_color }}" href="/practice">{{ "practice"|upper }}</a>
 		</div>
 	{# hero header #}
 		<div class="featured-image__header--text-wrapper">
@@ -20,18 +21,19 @@
 	{# body - with sidebar #}
 <div class="row">
 	<div class="experience__wrapper row body__wrapper columns small-12 medium-12 large-12">
-		<div class="columns show-for-medium-up medium-3 large-2">
+		<div class="columns show-for-medium-up medium-3 large-2 relative">
 			{% if headlines|length >= 1 %}
 			    <p class="tag__text">
 			    	{{ 'headlines'|upper }}
 			    </p>
 			    {% for item in headlines %}
-		        	{% set headline = item|first %}
+		        	{% set headline =  item|first %}	        		
 		        		{% if headline.has_external_link %}
 				        	<a href="{{ headline.external_link}}" class="link tag__text">
 				        		{{ headline.post_title|upper }}
 				        	</a>
-	        			{% else %}        				
+	        			{% else %}
+
 				        	<a href="{{TimberPost(headline).link}}" class="red link tag__text">
 				        		{{ headline.post_title|upper }}
 				        	</a>
@@ -57,7 +59,7 @@
 			    	SHOW MORE
 			    </a>
 			    <span class="expander"></span>
-			{% endif %}   
+			{% endif %}    
 		</div>
 		<div class="columns small-12 medium-9 large-10">
 			<div class="padding__wrapper forty sides__only">
@@ -91,21 +93,26 @@
 										<p class="people__details title__text smaller">
 											{{ leader.first_name }} {% if leader.middle_initial %}{{ leader.middle_initial }}. {% endif %} {{ leader.last_name }}
 										</p>
-										</a>	
+									</a>
 										{% if leader.title %}	
 											<p class="people__details tag__text">
 												{{ leader.title|upper }}
 											</p>
 										{% endif %}	
-										<span class="people__deatils list-divider red"></span>
+										<span class="people__details list-divider red"></span>
 										<p class="people__details body__text">
 											{{ leader.primary_city }}, {{ leader.primary_state }}{% if leader.secondary_city and leader.secondary_state %} | {{ leader.secondary_city }}, {{ leader.secondary_state}} {% endif %} 
 										</p>
 										<p class="people__details body__text">
-											{{ leader.phone_number }}
+											{% if leader.primary_country_code and leader.primary_country_code != '1' %}+{{ leader.primary_country_code}}{% else %}+1{% endif %}.{{ leader.primary_phone_number }}
 										</p>
-										<a href="mailto:{{leader.email}}" class="email--people--link red link inline__link body__text people__details">
-											{{ leader.email }}
+										{% if leader.secondary_phone_number %}
+											<p class="people__details body__text">
+												{% if leader.secondary_country_code and leader.secondary_country_code != '1' %}+{{ leader.secondary_country_code}}{% else %}+1{% endif %}.{{ leader.secondary_phone_number }}
+											</p>
+										{% endif %}
+										<a href="mailto: {{ leader.email }}" class="email--people--link red link inline__link body__text people__details">								
+												{{ leader.email }}
 										</a>
 									</div>
 								</div>	
@@ -115,15 +122,14 @@
 				{% endif %}
 			</div>
 			{% if related_people|length > 0 %}	
-
-				<div style="padding: 0 40px;">
+				<div class="small-12 medium-12 large-12 float__left">
 					<p class="title__text">
 						Related People
 					</p>
 					{% for person in related_people %}
 						{% set person = person|first %}
-						<div class="columns medium-6 large-6 small-12 person end">
-							<a class="body__text red link margin-bottom--10" href="{{TimberPost(person).link}}">
+						<div class="columns medium-6 large-6 small-12 person end">						
+							<a class="body__text red link margin-bottom--10" href="{{ TimberPost(person).link }}">
 								{{ person.first_name }} {% if person.middle_initial %}{{ person.middle_initial }}. {% endif %} {{ person.last_name }}
 							</a>
 						</div>	
@@ -156,6 +162,7 @@
 {% endif %}
 
 
+
 <div id="emailModal" class="vellum black--vellum modal__background diversity hidden">
     <div class="row">
      	<div class="diversity__modal--outer-wrapper table__wrapper relative">
@@ -168,7 +175,7 @@
 		              You understand and agree that transmitting information to Brown Rudnick by e-mail does not establish an attorney-client relationship. By clicking the "Agree" link below, you acknowledge that (i) Brown Rudnick has no obligation to maintain the confidentiality of any information you submit to Brown Rudnick unless Brown Rudnick already represents you or Brown Rudnick later agrees to represent you; thus, if you are not a client, information you submit to Brown Rudnick by e-mail may be disclosed to others and (ii) you have read and understand the Brown Rudnick Terms of Use and Privacy Policy and that you agree to be bound by the terms and conditions of such Terms of Use and Privacy Policy.
 		            </p>
 		            <p class="modal__text">
-		            	If you would like to discuss becoming a client, please contact one of Brown Rudnick's attorneys to arrange for a meeting or telephone conference. Thank you for your interst in Brown Rudnick.
+		            	If you would like to discuss becoming a client, please contact one of Brown Rudnick's attorneys to arrange for a meeting or telephone conference. Thank you for your interest in Brown Rudnick.
 		            </p>
 		            <div class="email-buttons">
 			            <div class="div__half">
@@ -183,6 +190,7 @@
      	</div>
     </div>  
 </div>
+
 
 <script type="text/javascript">
 	{% if featured_image_url %}
