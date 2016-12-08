@@ -1,0 +1,139 @@
+<div id="featuredImage" class ="featured-image__header--image-wrapper" >
+	{% set header_text_color = "black" %}
+	{# hero header #}
+	<div class="featured-image__header--text-outer-wrapper row">
+		<div class="featured-image__header--text-wrapper">
+			<div class="featured-image__header--text-inner-wrapper">
+				<div class="color__block vellum">
+					<h1 class="page__header {{ header_text_color }}">
+						{{ header_text }}
+					</h1>
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>
+
+{# body - with sidebar #}
+<div class="row white-row relative z-index__1 ">
+	<div class="row careers__wrapper body__wrapper columns small-12 medium-12 large-12">
+		{% include '/twig-templates/sidebar.twig' with sidebar %}
+		<div class="columns small-12 medium-9 large-10 float--right relative">
+			<div class="columns small-12 medium-12 large-12 relative">
+				<p class="title__text">
+					{{ top_text_header }}
+				</p>
+
+				<p class="body__text">
+					{{ top_text_content }}
+				</p>
+			</div>
+			<div class="columns small-12 medium-12 large-12 relative">
+				<div class="page__divider grey"></div>
+			</div>
+			{# this table APPEARS IF THERE IS NOT A SEARCH QUERY #}
+			{% if job_opportunities|length > 0 %}
+				<div class="columns small-12 medium-12 large-12 relative">
+					<table border ="0" class="table__white">
+						<tr class="job__opening table__legend">
+								<td class="document__link">
+									position
+								</td>
+								<td class="document__link">
+									date
+								</td class="document__link">
+								<td class="document__link">
+								    office
+								</td>
+								<td>
+
+								</td>
+							</tr>
+						{% endif %}
+						{% for opportunity in job_opportunities %}
+							<tr class="job__opening">
+								<td class="job__openings__title title__text smaller">
+									{{ opportunity.position }}
+								</td>
+								<td class="font-weight__bold wide-spacing body__text smaller">
+									{{ opportunity.start_date|date("m/d/Y") }}
+								</td>
+								<td class="font-weight__bold wide-spacing body__text smaller">
+								    {{ opportunity.offices|upper }}
+								</td>
+								<td>
+									<span class="job_expander top__menu job_opening" data-show-target="jobOpeningAdditionalDetails" ></span>
+								</td>
+							</tr>
+							<tr class="hidden__job--description ">
+								<td class="hidden job__description__body" colspan="5">
+								{% if opportunity.department %}							
+									<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Department</p>
+									{{ opportunity.department }}
+								{% endif %}
+								{% if opportunity.position_description %}							
+									<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Position</p>
+									{{ opportunity.position_description }}
+								{% endif %}
+								{% if opportunity.qualifications_description %}							
+									<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Qualifications</p>
+									{{ opportunity.qualifications_description }}
+								{% endif %}
+								{% if opportunity.job_description_file %}
+									{% set description_url = opportunity.get_field('job_description_file') %}
+									<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Download Description</p>
+									<a class="document__link" target="_blank" href="{{ description_url }}">View pdf</a>
+								{% endif %}
+									<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">{{bottom_banner_text}}</p>
+								</td>
+								</tr>
+							<br>
+						{% endfor %}
+					</table>
+				</div>
+			</div>	
+		</div>	
+	</div>	
+</div>
+
+<div id="emailModal" class="vellum black--vellum modal__background diversity hidden">
+    <div class="row">
+     	<div class="diversity__modal--outer-wrapper table__wrapper relative">
+        	<div class="diversity__modal--inner-wrapper table__innner">
+          		<div class="diversity__modal--text-wrapper email__modal">
+		            <p class="title__text text-align__center">
+		              Notice
+		            </p>
+		            <p class="modal__text">
+		              You understand and agree that transmitting information to Brown Rudnick by e-mail does not establish an attorney-client relationship. By clicking the "Agree" link below, you acknowledge that (i) Brown Rudnick has no obligation to maintain the confidentiality of any information you submit to Brown Rudnick unless Brown Rudnick already represents you or Brown Rudnick later agrees to represent you; thus, if you are not a client, information you submit to Brown Rudnick by e-mail may be disclosed to others and (ii) you have read and understand the Brown Rudnick Terms of Use and Privacy Policy and that you agree to be bound by the terms and conditions of such Terms of Use and Privacy Policy.
+		            </p>
+		            <p class="modal__text">
+		            	If you would like to discuss becoming a client, please contact one of Brown Rudnick's attorneys to arrange for a meeting or telephone conference. Thank you for your interest in Brown Rudnick.
+		            </p>
+		            <div class="email-buttons">
+			            <div class="div__half">
+			            	<a id="email-modal-close"><p class="sites-button">agree</p></a>
+			          	</div>
+			            <div class="div__half ">
+			            	<a id="no-email-modal-close"><p class="sites-button inverse">disagree</p></a>
+			            </div>
+		          	</div>
+         		</div>
+        	</div>  
+     	</div>
+    </div>  
+</div>
+
+
+<script type="text/javascript">
+	{% if featured_image_url %}
+		$(document).ready(function(){
+			$('#featuredImage').backstretch("{{featured_image_url}}");
+		})
+	{% endif %}
+	{% if featured_image_url|length > 0 %}
+		$(document).ready(function(){
+			$('#lawyersBannerImage').backstretch("{{ bottom_banner_image }}");
+		})
+	{% endif %}
+</script>
