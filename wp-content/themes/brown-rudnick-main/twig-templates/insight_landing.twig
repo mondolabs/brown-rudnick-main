@@ -105,6 +105,7 @@
 					{% endif %}	
 				</div>
 			</div>
+			
 			<div class="columns small-12 medium-12 large-12 no__pad">
 				<div class="margin-top-60 columns small-12 medium-12 large-12 no__pad">
 					{% for insight in insights %}
@@ -116,6 +117,15 @@
 										<a class="hover__black black" href="{{ insight_url }}">
 											{{ insight.title }}<br>
 										</a> 
+										{% if insight.get_field('br_authors')|length > 0 %}
+											{% for author in insight.get_field('br_authors') %}
+												{% set author = author|first %}
+												<a class="link inline__link " href="{{ TimberPost(author.id).link }}">
+													{{ author.first_name }} {{ author.last_name }}
+												</a>
+												{% if loop.index > 0 and not loop.last %}, {% endif %}
+											{% endfor %}
+										{% endif %}
 										<p class="tag__text grey margin-top-20">
 											{{ insight.date|upper }}
 										</p>

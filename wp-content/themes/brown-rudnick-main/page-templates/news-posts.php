@@ -137,6 +137,7 @@ $results = Timber::get_posts($insights_args);
 $data['insights'] = $results;
 $data['insights'] = array_unique($data['insights']);
 
+
 function sort_objects_by_date($a, $b) {
   if($a->date == $b->date){
     return 0;

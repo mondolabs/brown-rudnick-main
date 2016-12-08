@@ -30,7 +30,7 @@
 							<tbody class="no__border">
 								<tr class="arrow__hover--trigger">
 									<td class="no__pad full__width">
-										<a class="hover__black black" href="{{press_releases.guid}}">
+										<a class="hover__black black" href="{{TimberPost(press_releases).link}}">
 											{{ press_releases.post_title }}<br>
 										</a> 
 										<p class="tag__text grey margin-top-20">
@@ -39,7 +39,7 @@
 									</td>
 									<td class="no__pad">
 										<div class="link__arrow--wrapper news">
-											<a href="{{press_releases.guid}}">
+											<a href="{{TimberPost(press_releases).link}}">
 												<svg class="long__arrow--svg news" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
 													<title>long arrow</title>
 													<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
@@ -69,7 +69,7 @@
 							<tbody class="no__border">
 								<tr class="arrow__hover--trigger">
 									<td class="no__pad full__width">
-										<a class="hover__black black" href="{{news_post.guid}}">
+										<a class="hover__black black" href="{{ TimberPost(news_post).link }}">
 											{{ news_post.post_title }}<br>
 										</a> 
 										<p class="tag__text grey margin-top-20">
@@ -78,7 +78,7 @@
 									</td>
 									<td class="no__pad">
 										<div class="link__arrow--wrapper news">
-											<a href="{{news_post.guid}}">
+											<a href="{{ TimberPost(news_post).link }}">
 												<svg class="long__arrow--svg news" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
 													<title>long arrow</title>
 													<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
@@ -108,7 +108,7 @@
 							<tbody class="no__border">
 								<tr class="arrow__hover--trigger">
 									<td class="no__pad full__width">
-										<a class="hover__black black" href="{{article.guid}}">
+										<a class="hover__black black" href="{{TimberPost(article).link}}">
 											{{ article.post_title }}<br>
 										</a> 
 										<p class="tag__text grey margin-top-20">
@@ -117,7 +117,7 @@
 									</td>
 									<td class="no__pad">
 										<div class="link__arrow--wrapper news">
-											<a href="{{article.guid}}">
+											<a href="{{TimberPost(article).link}}">
 												<svg class="long__arrow--svg news" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
 													<title>long arrow</title>
 													<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
@@ -147,7 +147,7 @@
 							<tbody class="no__border">
 								<tr class="arrow__hover--trigger">
 									<td class="no__pad full__width">
-										<a class="hover__black black" href="{{alert.guid}}">
+										<a class="hover__black black" href="{{ TimberPost(alert).link }}">
 											{{ alert.post_title }}<br>
 										</a> 
 										<p class="tag__text grey margin-top-20">
@@ -156,7 +156,7 @@
 									</td>
 									<td class="no__pad">
 										<div class="link__arrow--wrapper news">
-											<a href="{{alert.guid}}">
+											<a href="{{ TimberPost(alert).link }}">
 												<svg class="long__arrow--svg news" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
 													<title>long arrow</title>
 													<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
