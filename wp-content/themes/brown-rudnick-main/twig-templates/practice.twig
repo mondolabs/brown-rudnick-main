@@ -104,9 +104,13 @@
 											{{ leader.primary_city }}, {{ leader.primary_state }}{% if leader.secondary_city and leader.secondary_state %} | {{ leader.secondary_city }}, {{ leader.secondary_state}} {% endif %} 
 										</p>
 										<p class="people__details body__text">
-											{{ leader.primary_phone_number }}
+											{% if leader.primary_country_code and leader.primary_country_code != '1' %}+{{ leader.primary_country_code}}{% else %}+1{% endif %}.{{ leader.primary_phone_number }}
 										</p>
-
+										{% if leader.secondary_phone_number %}
+											<p class="people__details body__text">
+												{% if leader.secondary_country_code and leader.secondary_country_code != '1' %}+{{ leader.secondary_country_code}}{% else %}+1{% endif %}.{{ leader.secondary_phone_number }}
+											</p>
+										{% endif %}
 										<a href="mailto: {{ leader.email }}" class="email--people--link red link inline__link body__text people__details">											
 												{{ leader.email }}
 										</a>
