@@ -1235,7 +1235,6 @@ img.insights {
   padding: 80px; }
   @media screen and (max-width: 1300px) {
     .diversity__modal--outer-wrapper {
-      margin: 100px 5px;
       padding: 15px; } }
   @media screen and (max-height: 400px) {
     .diversity__modal--outer-wrapper {
@@ -9388,7 +9387,7 @@ a::after {
       left: 0 !important; } }
 
 .is-dropdown-submenu {
-  top: 125%  !important;
+  top: 54px  !important;
   text-align: center !important;
   background-color: #f0f0f0;
   width: 150vw; }
@@ -10386,7 +10385,7 @@ button.arrow {
   position: relative;
   -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
           box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
-  height: 90px; }
+  height: 92px; }
 
 .top-right-icon-group {
   text-align: right;

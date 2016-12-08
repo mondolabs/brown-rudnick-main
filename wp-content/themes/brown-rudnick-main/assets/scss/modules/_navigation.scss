@@ -122,7 +122,7 @@
 }
 
 .is-dropdown-submenu {
-  top: 125%  !important;
+  top: 54px  !important;
   text-align: center !important;
   background-color: $primary-grey;
   @include breakpoint(medium){
@@ -208,5 +208,7 @@
     padding-right: 25px !important;
   }
 }
+
+
 
 
