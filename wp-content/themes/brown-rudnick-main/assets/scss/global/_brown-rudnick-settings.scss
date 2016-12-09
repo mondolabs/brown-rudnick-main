@@ -86,6 +86,7 @@ body {
   padding-right: 1.5rem;
   padding-left: 0;
 }
+
 %globalHoverRed {
 		transition: all .5s ease-in-out;
 	&:hover{
@@ -94,6 +95,7 @@ body {
 		border: 1px solid $primary-red !important;
 	}
 }
+
 %globalHover {
 	transition: all .5s ease-in-out;
 	&:hover{
@@ -103,12 +105,12 @@ body {
 	}
 }
 
-
 %breadCrumbwrapper {
 	@media screen and (min-width: 768px) and (max-width:1224px) {
 		padding-left: 3%;
 	}
 }
+
 //SVG PATH DEFS
 .cls-1	{
 	fill:none;

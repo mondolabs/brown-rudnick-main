@@ -1650,12 +1650,106 @@ select.clean___border {
   text-align: center; }
 
 .wpcf7-text, .wpcf7-select, .wpcf7-textarea {
-  color: #A9A9A9;
+  color: #000;
   text-transform: uppercase;
   letter-spacing: 3px;
   font-weight: 800;
   font-size: 10px !important;
   margin-top: 20px !important; }
+
+input.input-custom-search::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #000; }
+
+input.input-custom-search:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #000;
+  opacity: 1; }
+
+input.input-custom-search::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #000;
+  opacity: 1; }
+
+input.wpcf7-email::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #000; }
+
+input.input-custom-search:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #000; }
+
+input[type="text"].wpcf7-text::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #000; }
+
+input[type="text"].wpcf7-text:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #000;
+  opacity: 1; }
+
+input[type="text"].wpcf7-text::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #000;
+  opacity: 1; }
+
+input[type="text"].wpcf7-text:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #000; }
+
+textarea.wpcf7-textarea::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #000; }
+
+textarea.wpcf7-textarea-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #000;
+  opacity: 1; }
+
+textarea.wpcf7-textarea::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #000;
+  opacity: 1; }
+
+textarea.wpcf7-textarea:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #000; }
+
+input[type="text"].wpcf7-text::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #000; }
+
+input[type="text"].wpcf7-text:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #000;
+  opacity: 1; }
+
+input[type="text"].wpcf7-text::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #000;
+  opacity: 1; }
+
+input[type="text"].wpcf7-text:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #000; }
+
+input.wpcf7-email:-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #000; }
+
+input.wpcf7-email:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #000;
+  opacity: 1; }
+
+input.wpcf7-email::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #000;
+  opacity: 1; }
+
+input.wpcf7-email:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #000; }
 
 #wpcf7-f2354-o1 {
   margin-top: 60px; }
@@ -2028,7 +2122,7 @@ tr {
   background-color: #fefefe !important; }
 
 #enter-search-replace p {
-  color: #A9A9A9;
+  color: #000;
   letter-spacing: 3px;
   font-weight: 800;
   font-size: 14px;
