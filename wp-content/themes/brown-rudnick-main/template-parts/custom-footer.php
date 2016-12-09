@@ -23,7 +23,7 @@
  	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.7 33.08"><title>twitter</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M0,29.32a23.63,23.63,0,0,0,12.8,3.75C28.3,33.08,37.06,20,36.53,8.24A17,17,0,0,0,40.7,3.91a16.68,16.68,0,0,1-4.8,1.31A8.37,8.37,0,0,0,39.57.61a16.7,16.7,0,0,1-5.3,2A8.36,8.36,0,0,0,20,10.25,23.7,23.7,0,0,1,2.83,1.53,8.36,8.36,0,0,0,5.42,12.68a8.32,8.32,0,0,1-3.78-1,8.36,8.36,0,0,0,6.7,8.29,8.37,8.37,0,0,1-3.77.14,8.36,8.36,0,0,0,7.8,5.8A16.78,16.78,0,0,1,0,29.32Z"/></g></g></svg>
  	
  </a>
- <a href="<?php bloginfo('rss2_url'); ?>" title="<?php _e('Syndicate this site using RSS'); ?>" target="_blank">
+ <a href="/rss-feeds/" target="_blank">
  	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38.46 38.51"><title>rss</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M0,0V7.72a30.67,30.67,0,0,1,21.7,9,30.67,30.67,0,0,1,9,21.75h7.72A38.6,38.6,0,0,0,0,0Z"/><circle cx="5.21" cy="33.3" r="5.21"/><path d="M0,13.12v7.72A17.87,17.87,0,0,1,17.66,38.51h7.72A25.57,25.57,0,0,0,0,13.12Z"/></g></g></svg>
  </a>
  <a href="https://www.youtube.com/channel/UC6WoCd43UGypgz6I3FrUOxw" target="_blank">
