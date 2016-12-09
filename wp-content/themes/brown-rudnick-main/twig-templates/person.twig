@@ -43,9 +43,8 @@
 											</p>
 										{% endif %}
 										{% if person.fax_number %}
-											<p class="people__details body__text">Fax Number:</p>
 											<p class="people__details body__text">
-												{% if person.fax_country_code and person.fax_country_code != '1' %}+{{ person.fax_country_code}}{% else %}+1{% endif %}.{{ person.fax_number }}
+												Fax Number: {% if person.fax_country_code and person.fax_country_code != '1' %}+{{ person.fax_country_code}}{% else %}+1{% endif %}.{{ person.fax_number }}
 											</p>
 										{% endif %}
 										<p class="people__details body__text">
