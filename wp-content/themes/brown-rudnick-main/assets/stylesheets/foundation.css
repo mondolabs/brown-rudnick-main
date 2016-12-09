@@ -2120,6 +2120,11 @@ textarea#comment {
 tr {
   background-color: #fefefe !important; }
 
+.page-template-blog .inline__wrapper {
+  max-width: 70%;
+  vertical-align: middle;
+  display: inline-block; }
+
 #enter-search-replace p {
   color: #000;
   letter-spacing: 3px;

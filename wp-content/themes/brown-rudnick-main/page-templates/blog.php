@@ -19,9 +19,7 @@ $blog_name = $data['post']->slug;
 $blog_name = str_replace("-", "_", $blog_name);
 $blog_title_category_obj = get_category_by_slug($blog_name);
 $data['blog_title_category_id'] = $blog_title_category_obj->term_id;
-
 $blog_posts_args = array('category_name' => $blog_name, 'numberposts' => -1 );
-
 $data['blog_posts'] = Timber::get_posts($blog_posts_args);
 
 $data['unfiltered'] = true;

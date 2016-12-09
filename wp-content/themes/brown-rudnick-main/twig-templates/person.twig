@@ -31,9 +31,11 @@
 											</p>
 										{% endif %}	
 										<span class="people__details list-divider red"></span>
-										<p class="people__details body__text">
-											{{ person.primary_city }}, {{ person.primary_state }}{% if person.secondary_city and person.secondary_state %} | {{ person.secondary_city }}, {{ person.secondary_state}} {% endif %} 
-										</p>
+										{% if person.locations|length > 0 %}
+											{% for location in person.get_field('locations')%}
+												<a class="link inline__link" href="{{TimberPost(location.specific_location).link}}"><p class="people__details inline__text body__text">{{location.specific_location}}</p></a>{% if loop.index > 0 and not loop.last %} |{% endif %}
+											{% endfor %}
+										{% endif %}
 										<p class="people__details body__text">
 											{% if person.primary_country_code and person.primary_country_code != '1' %}+{{ person.primary_country_code}}{% else %}+1{% endif %}.{{ person.primary_phone_number }}
 										</p>
@@ -164,6 +166,8 @@
 		</div>	
 	</div>
 </div>	
+
+
 
 
 {% if person.education|length > 0 or person.bar_admission|length > 0 %}	

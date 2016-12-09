@@ -162,9 +162,16 @@
 										{{blog_post.title}}	
 									</a>
 								</p>
-								<p class="body__text smaller mobile__centered">
-									BY {{blog_post.author|upper}}
-								</p>
+								{% if blog_post.blog_authors %}	
+											<p class="body__text smaller mobile__centered">
+												BY
+												{% set authors = blog_post.get_field('blog_authors')%}
+												{% for author in authors %}
+													{% set author = author|first %}
+														<a href="{{ TimberPost(author).link}}">{{ author.first_name|upper }} {{ author.last_name|upper }}{% if not loop.last %},{% endif %}</a>
+												{% endfor %}
+											</p>
+								{% endif %}
 								<span class="list-divider mobile__centered red smaller thick"></span>
 								<p class="tag__text grey mobile__centered">
 									{{ blog_post.date }}
