@@ -205,6 +205,32 @@
 	</div>
 {% endif %}
 
+
+{% if person.languages|length > 0 %}	
+	<div class="grey__background experience__wrapper columns small-12 medium-12 large-12">
+		<div class="row padding__wrapper top-and-bottom sixty">
+			<div class="padding-top-20 padding-bottom-20 large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">		
+					<div class="columns small-12 medium-6 large-6">
+						<p class="title__text">
+							{{ "Languages" }}
+						</p>	
+						{% for dog in person.get_field('languages') %}
+							{% set cat = dog|first %}
+							<div class="padding-top-10 padding-bottom-10 small-12 medium-12 large-12 bullet">
+										<div class="body__text bullet__text">
+											{{cat}}
+										</div>
+									</div>
+							</div>			
+						{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endif %}
+
+
+
 {% if person.publications|length > 0 and person.publications|first != 0 %}	
 	<div class="columns small-12 medium-12 large-12">
 		<div class="row">
