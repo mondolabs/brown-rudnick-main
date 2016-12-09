@@ -12,10 +12,10 @@ $data['featured_image_url'] = $data['featured_image_url'][0];
 $data['header_text'] = get_field('header_text');
 $parent = get_page($post->post_parent);
 $parent_name = $parent->post_name;
+$data['parent_page_url'] = '/insights';
+$data['parent_page_name'] = 'insights';
 $comments = get_comments($post); 
 $data['comments'] = $comments;
-
-
 ?>
 
 
