@@ -14,9 +14,9 @@ var EXPANDER = {
 				$('#showMoreRelatedExperiences').removeClass('less').addClass('more').text("SHOW MORE");
 			}
 		});
-		$('.job_expander, .job__expander__title').click(function(event) {
+		$(".job_expander, .job__openings__title, .job__expander__title").click(function(event) {
 			var hiddenJobDescription;
-			var parent;
+			var parent;			
 			var expander = $(this);
 			if ( $(this).hasClass('job_expander') ) {
 				parent = $(this).parent().parent();
@@ -26,11 +26,9 @@ var EXPANDER = {
 				hiddenJobDescription = $(expander).parent().next('tr').find('td');			
 			}
 			parent.toggleClass('no-bottom-border');
+			expander.toggleClass('expanded');
 			$(hiddenJobDescription).toggleClass('bottom-border-table');
 			$(hiddenJobDescription).slideToggle(400);
-			if(!$(expander).hasClass('expanded')){
-				$(expander).toggleClass('expanded');
-			}
 		});
 		$('.mobile__sidebar--expander').click(function(event) {
 			var expander = $(this);

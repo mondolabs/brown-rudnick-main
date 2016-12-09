@@ -42,6 +42,11 @@
 												{% if person.secondary_country_code and person.secondary_country_code != '1' %}+{{ person.secondary_country_code}}{% else %}+1{% endif %}.{{ person.secondary_phone_number }}
 											</p>
 										{% endif %}
+										{% if person.fax_number %}
+											<p class="people__details body__text">
+												{% if person.fax_country_code and person.fax_country_code != '1' %}+{{ person.fax_country_code}}{% else %}+1{% endif %}.{{ person.fax_number }}
+											</p>
+										{% endif %}
 										<p class="people__details body__text">
 											<a href="mailto:{{person.email}}" class="email--people--link red link inline__link body__text people__details">
 												{{ person.email }}
