@@ -9,11 +9,11 @@
 	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="header-logo--mobile" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/Black-Red-Logo.png"></a>
 </div>
 <div class="footer-links">
-	<a href="/contact-us/">Contact us</a>
-	<a href="http://alumni-brownrudnick.com">Candidate Portal</a>
-	<a href="/terms-of-use/">Terms of Use</a>
-	<a href="/privacy-policy/">Privacy</a>
-	<a href="/sitemap/">Sitemap</a>
+	<a target="_blank" href="/contact-us/">Contact us</a>
+	<a target="_blank" href="http://alumni-brownrudnick.com">Candidate Portal</a>
+	<a target="_blank" href="/terms-of-use/">Terms of Use</a>
+	<a target="_blank" href="/privacy-policy/">Privacy</a>
+	<a target="_blank" href="/sitemap/">Sitemap</a>
 </div>
 <div class="social-icons">
  <a href="https://www.facebook.com/Brown-Rudnick-LLP-283665665070333/" target="_blank">
