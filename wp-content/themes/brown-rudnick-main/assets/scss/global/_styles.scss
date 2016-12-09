@@ -565,9 +565,8 @@ h3.title {
 	&.insight {
 		height: 380px;
 		@media screen and (max-width: 768px) {
-			height: auto;
+			height: 750px;
 			padding: 20px;
-			padding-bottom: 120px;
 		}
 
 	}
@@ -2227,8 +2226,8 @@ textarea#comment {
 
 .single-people {
 	.featured-image__header--image-wrapper {
-		@media screen and (max-width: 768px){
-			height: 80% !important;
+		@media screen and (min-width: 461px) and (max-width: 768px){
+			height: 600px !important
 		}
 	}
 	.featured-image__header--text-inner-wrapper {
@@ -2258,6 +2257,11 @@ td {
 tr {
 	background-color: $white !important;
 }
+
+
+
+
+
 #enter-search-replace {
 	p {
 		color: $br-black;

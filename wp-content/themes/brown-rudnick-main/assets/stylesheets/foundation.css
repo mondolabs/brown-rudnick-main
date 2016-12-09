@@ -660,9 +660,8 @@ h3.title {
     height: 380px; }
     @media screen and (max-width: 768px) {
       .featured-image__header--image-wrapper.person, .featured-image__header--image-wrapper.insight {
-        height: auto;
-        padding: 20px;
-        padding-bottom: 120px; } }
+        height: 750px;
+        padding: 20px; } }
 
 .padding---left--twenty {
   padding-left: 20px; }
@@ -2098,9 +2097,9 @@ textarea#comment {
 .bottom--banner--image--wrapper {
   height: 325px !important; }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 461px) and (max-width: 768px) {
   .single-people .featured-image__header--image-wrapper {
-    height: 80% !important; } }
+    height: 600px !important; } }
 
 @media screen and (min-width: 48em) {
   .single-people .featured-image__header--text-inner-wrapper {

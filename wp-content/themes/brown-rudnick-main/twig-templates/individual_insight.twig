@@ -28,12 +28,11 @@
 											{{ post.title }}
 										</p>
 										{% if post.br_authors %}	
-										<span class="insight__deatils list-divider red mobile__centered"></span>
+										<span class="insight__details list-divider red mobile__centered"></span>
 											<p class="body__text mobile__centered">
 												Authors:
 												{% set authors = post.get_field('br_authors')%}
 												{% for author in authors %}
-
 													{% set author = author|first %}														
 														<a href="{{author.link}}">{{ author.first_name }} {{ author.last_name }}</a>{% if not loop.last %},{% endif %}
 												{% endfor %}
