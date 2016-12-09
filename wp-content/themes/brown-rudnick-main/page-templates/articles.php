@@ -135,20 +135,6 @@ if( ($geography !== "GEOGRAPHIES") || ( $industry !== "INDUSTRIES") || ($practic
   }
 }
 
-// if ($date_query_term !== "DATE") {
-//   $year_query = intval($year);
-//   $month_query = intval($month); 
-//   $insights_args['date_query'] = [];
-//   $dates_term_query_array = array(
-//     'column' => 'date',
-//     'year'  => $year_query,
-//     'month' => $month_query,
-//   );
-//   array_push($insights_args['date_query'], $dates_term_query_array );
-// }
-
-// $data['insights'] = new WP_Query($insights_args);
-
 $results = Timber::get_posts($insights_args);
 $data['insights'] = $results;
 $data['insights'] = array_unique($data['insights']);

@@ -10,7 +10,6 @@ $data['related_experiences'] = get_field('related_experiences');
 $data['parent_page_name'] = "Firm News";
 $data['parent_page_url'] = "/firm-news";
 $data['breadcrumb_color'] = get_field('breadcrumb_color');
-
 ?>
 <html>
   <head>
