@@ -1925,21 +1925,21 @@ tbody {
   letter-spacing: 3px;
   color: #A9A9A9; }
 
-.page-template-sitemap li {
+.page-template-sitemap li, .page-template-terms-of-use li {
   text-transform: uppercase;
   letter-spacing: 3px;
   line-height: 50px;
   font-size: 14px;
   color: #000; }
 
-.page-template-sitemap li:hover {
+.page-template-sitemap li:hover, .page-template-terms-of-use li:hover {
   color: #b91628 !important; }
 
-.page-template-sitemap ul {
+.page-template-sitemap ul, .page-template-terms-of-use ul {
   list-style-type: none;
   margin: 0; }
 
-.page-template-sitemap a:hover {
+.page-template-sitemap a:hover, .page-template-terms-of-use a:hover {
   color: #b91628 !important;
   text-decoration: none !important; }
 
