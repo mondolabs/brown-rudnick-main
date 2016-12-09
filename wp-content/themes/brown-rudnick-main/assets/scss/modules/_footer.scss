@@ -51,6 +51,7 @@
 #footer-container {
   background-color: $white;
   margin-top: 0;
+  clear: both;
 }
 
 .footer__spacer {
@@ -95,8 +96,8 @@
 .social-icons {
 	// svg icons on footer
 	svg { 
-		width: 14px; 
-		height: 14px; 
+		width: 25px; 
+		height: 25px; 
 	}
 	display: inline-block;
 	text-align: right;

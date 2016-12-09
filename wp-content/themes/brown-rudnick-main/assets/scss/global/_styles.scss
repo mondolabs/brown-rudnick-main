@@ -67,7 +67,7 @@ a {
 	&.service__text,
 	&.bullet__text {
 		margin-left: 30px;
-		margin-top: -8px;
+		margin-top: -10px;
 	}
 	&.insight,
 	&.insights {
@@ -788,6 +788,9 @@ img.insight__details {
 		background-color: $primary-red;
 	}
 }
+.representation {
+	clear: both;
+}
 
 .upper {
 	text-transform: uppercase;
@@ -866,7 +869,7 @@ img.insights {
 .breadcrumb__wrapper {
 	top: 18px;
 	position: absolute;
-	z-index: 2;
+	z-index: 0;
 	@media screen and (max-width: 768px) {
 		width: 100%;
 		position: absolute;
