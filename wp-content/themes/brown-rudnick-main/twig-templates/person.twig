@@ -162,6 +162,37 @@
 						{% endfor %}
 					</div>	
 				{% endif %}
+
+
+				{% if person.representation_matters_secondary %}
+					<div class="negative__side-margins--15">
+						{% for representation in person.get_field('representation_matters_secondary') %}
+						<div class="columns small-12 medium-12 large-12">
+							<p class="body__text">
+								{{representation.secondary_header}}		
+							</p>
+								{% for bullet in representation.secondary_representation %}
+									{% set bullet = bullet|first %}
+									<div class="bullet padding-top-10 padding-bottom-10 representation{% if loop.index > 5 %} hidden {% else %} first__five {% endif %}">
+										<div class="body__text bullet__text">
+											{{ bullet }}
+										</div>
+									</div>	
+								{% endfor %}
+							</div>
+							{% if representation.representation_secondary|length > 5 %}
+								<div class="columns small-12 medium-12 large-12">
+									<a href="" class="personRepresentationExpander link red tag__text underline collapsed">
+										SHOW MORE
+									</a>
+								</div>	
+							{% endif %}
+						{% endfor %}
+					</div>	
+				{% endif %}
+
+
+
 			</div>
 		</div>	
 	</div>
