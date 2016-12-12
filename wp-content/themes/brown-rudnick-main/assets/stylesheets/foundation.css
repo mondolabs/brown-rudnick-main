@@ -1312,7 +1312,6 @@ button.close__modal {
 .full__width {
   width: 100%; }
   .full__width.location__map {
-    position: absolute;
     bottom: 0; }
 
 .bottom-banner__cta--outer-wrapper {

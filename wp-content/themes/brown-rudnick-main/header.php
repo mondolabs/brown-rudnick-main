@@ -52,7 +52,7 @@
 						</a>
 					</div>
 					<div class="menu__inner-wrapper--desktop columns large-10 medium-9">
-					<?php get_template_part('template-parts/desktop-icons-scroll')?>
+						<?php get_template_part('template-parts/desktop-icons-scroll')?>
 						<?php desktop_menu(); ?>
 					</div>
 				</div>		
