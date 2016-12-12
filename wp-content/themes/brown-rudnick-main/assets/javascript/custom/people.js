@@ -8,7 +8,6 @@ var PEOPLE = {
 		$('.personRepresentationExpander').click(function(event) {
 			event.preventDefault();
 			var bullets = $('.bullet.representation');
-			console.log(bullets);
 			for (var i = bullets.length - 1; i >= 0; i--) {
 				var bullet = bullets[i]
 				if( !$(bullet).hasClass('first__five') ) {
@@ -22,6 +21,24 @@ var PEOPLE = {
 			}
 			$(this).toggleClass('collapsed');
 		});
+
+		$('.personRepresentationExpanderSecondary').click(function(event){
+			event.preventDefault();
+			var bullets = $('.bullet.representation');
+			for (var i = bullets.length - 1; i >= 0; i--) {
+				var bullet = bullets[i]
+				if( !$(bullet).hasClass('first__five__secondary') ) {
+					$(bullet).toggleClass('hidden');
+				}
+			}
+			if ( $(this).hasClass('collapsed') ) {
+				$(this).text('SHOW LESS');
+			} else {
+				$(this).text('SHOW MORE');
+			}
+			$(this).toggleClass('collapsed');
+
+		})
 
 
 		// email contact modal click events
