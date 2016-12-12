@@ -16,6 +16,11 @@ $data['related_people'] = get_field('related_people');
 $data['services_header'] = get_field('services_header');
 $data['services'] = get_field('services');
 $data['breadcrumb_color'] = get_field('breadcrumb_color');
+$data['related_people'] = get_field('geography_related_people');
+$data['contact_us'] = get_field('contact_us');
+$data['news_and_resources'] = get_field('geography_related_news_and_resources');
+
+
 
 ?>
 <html>
