@@ -80,6 +80,8 @@ var PATHS = {
     'assets/javascript/vendor/cookies/*.js',
     'assets/javascript/vendor/sticky-kit/*.js', 
     'assets/javascript/vendor/jquery-nearest/*.js',
+    'assets/javascript/vendor/md5/*.js',
+    'assets/javascript/vendor/cookies/*.js',
   ],
   phpcs: [
     '**/*.php',

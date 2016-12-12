@@ -2296,3 +2296,15 @@ tr {
 .sidebar__on-scroll--fixed {
 	z-index: 9;
 }
+
+#cookies-notification{
+    text-align: center;   
+    text-transform: none;
+    display: none;
+    background-color: $white;
+    width: 100%;
+    padding: 2%;
+}
+#set-cookies {
+	margin: 2%;
+}

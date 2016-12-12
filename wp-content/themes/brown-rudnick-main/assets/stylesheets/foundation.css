@@ -2147,6 +2147,17 @@ tr {
 .sidebar__on-scroll--fixed {
   z-index: 9; }
 
+#cookies-notification {
+  text-align: center;
+  text-transform: none;
+  display: none;
+  background-color: #fefefe;
+  width: 100%;
+  padding: 2%; }
+
+#set-cookies {
+  margin: 2%; }
+
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)

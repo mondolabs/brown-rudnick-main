@@ -21,7 +21,14 @@
 	</head>
 	<body <?php body_class(); ?> >
 		<?php do_action( 'foundationpress_after_body' ); ?>
-		<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) == 'topbar' ) : ?>	
+
+		<div id="cookies-notification">
+			<h1 class="title__text">Cookie Notification</h1>
+			<p class="body__text">We use cookies on our website. Please click the 'Read More' link below to view our Cookie Policy, how we use them on our site and how to change your cookie settings. By continuing to use this site you consent to our use of cookies in accordance with our Cookie Policy. You may delete and block all cookies from this site, but parts of the site will not work. To find out more about cookies on this website, see our <a href='/cookie-notification/'>Read more ...</a></p>
+			<p><input type="checkbox" id="set-cookies">Accept cookie</p>
+		</div>
+
+		<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) == 'topbar' ) : ?>		
 		<div class="mobile__menu__wrapper">	
 			<?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
 		</div>
@@ -29,6 +36,8 @@
 		
 		<?php do_action( 'foundationpress_layout_start' ); ?>
 
+
+		
 		<header id="masthead" class="site-header show-for-large" role="banner">
 			<div class="menu__wrapper--desktop row sr">
 				<div class="logo__wrapper columns large-4 medium-3 ">
@@ -58,6 +67,8 @@
 				</div>		
 			</header>
 		</div>	
+
+
 
 	<?php do_action( 'foundationpress_after_header' ); ?>
 
