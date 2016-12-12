@@ -123,9 +123,7 @@
 											{% for author in insight.get_field('br_authors') %}
 												{% set author = author|first %}
 												<a class="link inline__link " href="{{ TimberPost(author.id).link }}">
-													{{ author.first_name }} {{ author.last_name }}
-												</a>
-												{% if loop.index > 0 and not loop.last %}, {% endif %}
+													{{ author.first_name }} {% if author.middle_initial %} {{ author.middle_initial }}. {% endif %} {{ author.last_name }}</a>{% if loop.index > 0 and not loop.last %}, {% endif %}
 											{% endfor %}
 										</p>
 										{% endif %}

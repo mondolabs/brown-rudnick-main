@@ -31,7 +31,7 @@
 								<tr class="arrow__hover--trigger">
 									<td class="no__pad full__width">
 										<a class="hover__black black" href="{{TimberPost(press_release).link}}">
-											{{ press_release.post_title }}<br>
+											{{ press_release.post_title|truncate(10) }}<br>
 										</a> 
 										<p class="tag__text grey margin-top-20">
 											{{ press_release.date|date("M, d, Y")|upper }}
@@ -70,7 +70,7 @@
 								<tr class="arrow__hover--trigger">
 									<td class="no__pad full__width">
 										<a class="hover__black black" href="{{ TimberPost(news_post).link }}">
-											{{ news_post.post_title }}<br>
+											{{ news_post.post_title|truncate(10) }}<br>
 										</a> 
 										<p class="tag__text grey margin-top-20">
 											{{ news_post.date|date("M d, Y")|upper }}
@@ -112,7 +112,7 @@
 								<tr class="arrow__hover--trigger">
 									<td class="no__pad full__width">
 										<a class="hover__black black" href="{{TimberPost(article).link}}">
-											{{ article.post_title }}<br>
+											{{ article.post_title|truncate(10) }}<br>
 										</a> 
 										<p class="tag__text grey margin-top-20">
 											{{ article.date|date("M d, Y")|upper }}
@@ -151,7 +151,7 @@
 								<tr class="arrow__hover--trigger">
 									<td class="no__pad full__width">
 										<a class="hover__black black" href="{{ TimberPost(alert).link }}">
-											{{ alert.post_title }}<br>
+											{{ alert.post_title|truncate(10) }}<br>
 										</a> 
 										<p class="tag__text grey margin-top-20">
 											{{ alert.date|date("M d, Y")|upper }}
@@ -193,7 +193,7 @@
 								<div class="color__block--grey insights">
 									<a href="{{ blog.blog_link_url }}">
 										<h4 class="red title__text smaller">
-											{{ blog.blog_title }}
+											{{ blog.blog_title|truncate(10) }}
 										</h4>
 									</a>
 									<div class="body__text">
@@ -228,7 +228,7 @@
 									<a href ="{{publication.publication_link}}">
 										<span class="tag__text link" data-publication-trigger="{{publication.publication_trigger_id}}">
 											<div >
-												{{publication.publication_title}}
+												{{publication.publication_title|truncate(10)}}
 											</div>
 										</span>
 									</a>
