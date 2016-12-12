@@ -322,6 +322,39 @@
 	</div>
 {% endif %}	
 
+{% if person.future_speaking_engagements|length > 0 and person.future_speaking_engagements|first != 0 %}	
+	<div class="columns small-12 medium-12 large-12">
+		<div class="row">
+			<div class="large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">	
+				{% set future_speaking_engagements_list = person.get_field('future_speaking_engagements') %}
+				<table class="no__borders">
+					<tr class="gray__underline">
+						<td class="title__text smaller">
+							{{ "Future Speaking Engagements" }}
+						</td>
+						<td>
+							<span class="person__details--expander top__menu accordion" data-show-target="personPublicationDetails" ></span>
+						</td>
+					</tr>
+					{% for future_engagement in future_speaking_engagements_list %}
+						<tr class="hidden hidden__person-publication--details">
+							<td class="bullet" colspan="5">
+								<div class="body__text bullet__text">
+									{{ future_engagement.engagement }}
+								</div>
+							</td>
+						</tr>
+					{% endfor %}	
+				</table>
+			</div>	
+		</div>
+	</div>
+{% endif %}	
+
+
+
+
+
 {% if person.professional_affiliations|length > 0 and person.professional_affiliations|first != 0 %}	
 	<div class="columns small-12 medium-12 large-12">
 		<div class="row">
@@ -351,11 +384,11 @@
 	</div>
 {% endif %}	
 
-{% if person.awards_honors|length > 0 and person.awards_honors|first != 0%}
+{% if person.awards_and_honors|length > 0 and person.awards_and_honors|first != 0%}
 		<div class="columns small-12 medium-12 large-12">
 		<div class="row">
 			<div class="large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">	
-				{% set awards_and_honors = person.get_field('awards_honors') %}
+				{% set awards_and_honors = person.get_field('awards_and_honors') %}
 				<table class="no__borders">
 					<tr class="gray__underline">
 						<td class="title__text smaller">
