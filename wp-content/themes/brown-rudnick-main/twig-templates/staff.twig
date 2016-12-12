@@ -162,7 +162,6 @@
 								{% set job_opening = job_opening|first %}
 								{% set job_openings_list = job_opening.get_field('locations') %}
 								{% for job_location in job_openings_list %}
-									{{job_location.location}}
 									{# CONDITIONAL CHECK MADE TO ADAPT TO WASHINGTON, DC STRING PARSING #}
 									{% if location|replace({'-': ' '}) in job_location.location|upper or location|replace({'-': ', ', 'DC':'D.C.'}) in job_location.location|upper %}
 										<tr class="job__opening">
