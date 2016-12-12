@@ -121,6 +121,25 @@
 					{% endfor %}					
 				{% endif %}
 			</div>
+
+
+			{% if contact_us|length > 0 %}	
+				<div style="padding: 0 40px;">
+					<p class="title__text">
+						Contact Us
+					</p>
+					{% for contact in contact_us %}
+						{% set contact = contact|first %}
+						<div class="columns medium-6 large-6 small-12 person end">						
+							<a class="body__text red link margin-bottom--10" href="{{ TimberPost(contact).link }}">
+								{{ contact.first_name }} {% if contact.middle_initial %}{{ contact.middle_initial }}. {% endif %} {{ contact.last_name }}
+							</a>
+						</div>	
+					{% endfor %}
+				</div>
+			{% endif %}	
+
+
 			{% if related_people|length > 0 %}	
 				<div style="padding: 0 40px;">
 					<p class="title__text">
