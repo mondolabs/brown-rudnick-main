@@ -170,12 +170,10 @@
 												<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Qualifications</p>
 												{{ job_opening.qualifications_description }}
 											{% endif %}
-
-											
+										
 											{% if job_opening.job_description_file %}
 
 												{% set description_url = job_opening.get_field('job_description_file') %}
-
 												<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Download Description</p>
 												<a class="document__link" target="_blank" href="{{ description_url }}">View pdf</a>
 											{% endif %}
