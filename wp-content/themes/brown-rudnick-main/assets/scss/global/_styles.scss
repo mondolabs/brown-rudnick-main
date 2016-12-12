@@ -610,6 +610,11 @@ h3.title {
 	}
 	&.reduced--size {
 		font-size: 50px;
+		@media screen and (max-width: 1155px) {
+			font-size: 32.5px;
+			padding-left: 10px;
+		}
+		
 	}
 }
 

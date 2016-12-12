@@ -696,6 +696,10 @@ h3.title {
       padding-left: 10px; } }
   .page__header.reduced--size {
     font-size: 50px; }
+    @media screen and (max-width: 1155px) {
+      .page__header.reduced--size {
+        font-size: 32.5px;
+        padding-left: 10px; } }
 
 .experience-tile__outer-wrapper {
   height: 240px;
