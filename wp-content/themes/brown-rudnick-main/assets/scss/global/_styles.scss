@@ -103,6 +103,11 @@ p.subtitle__text {
 	margin-bottom: 20px;
 }
 
+insights__title {
+	display: block !important;
+	min-height: 80px !important;
+}
+
 .title__text {
 	font-family: $brgaramond;
 	font-size: 30px;
@@ -112,6 +117,9 @@ p.subtitle__text {
 	&.smaller {
 		font-size: 24px;
 	}
+	&.blog__title__text {
+		font-size: 22px;
+	} 
 	&.people__details {
 		margin-bottom: 2px;
 		color: $black;

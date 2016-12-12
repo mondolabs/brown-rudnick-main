@@ -319,6 +319,10 @@ p.subtitle__text {
   font-size: 24px;
   margin-bottom: 20px; }
 
+insights__title {
+  display: block !important;
+  min-height: 80px !important; }
+
 .title__text {
   font-family: "adobe-garamond-pro", serif;
   font-size: 30px;
@@ -328,6 +332,8 @@ p.subtitle__text {
   transition: color .3s ease-in-out; }
   .title__text.smaller {
     font-size: 24px; }
+  .title__text.blog__title__text {
+    font-size: 22px; }
   .title__text.people__details {
     margin-bottom: 2px;
     color: #0a0a0a; }

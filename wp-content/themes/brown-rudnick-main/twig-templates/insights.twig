@@ -30,7 +30,7 @@
 							<tbody class="no__border">
 								<tr class="arrow__hover--trigger">
 									<td class="no__pad full__width">
-										<a class="hover__black black" href="{{TimberPost(press_release).link}}">
+										<a class="hover__black black insights__title" href="{{TimberPost(press_release).link}}">
 											{{ press_release.post_title|truncate(10) }}<br>
 										</a> 
 										<p class="tag__text grey margin-top-20">
@@ -69,7 +69,7 @@
 							<tbody class="no__border">
 								<tr class="arrow__hover--trigger">
 									<td class="no__pad full__width">
-										<a class="hover__black black" href="{{ TimberPost(news_post).link }}">
+										<a class="hover__black black insights__title" href="{{ TimberPost(news_post).link }}">
 											{{ news_post.post_title|truncate(10) }}<br>
 										</a> 
 										<p class="tag__text grey margin-top-20">
@@ -111,7 +111,7 @@
 							<tbody class="no__border">
 								<tr class="arrow__hover--trigger">
 									<td class="no__pad full__width">
-										<a class="hover__black black" href="{{TimberPost(article).link}}">
+										<a class="hover__black black insights__title" href="{{TimberPost(article).link}}">
 											{{ article.post_title|truncate(10) }}<br>
 										</a> 
 										<p class="tag__text grey margin-top-20">
@@ -150,7 +150,7 @@
 							<tbody class="no__border">
 								<tr class="arrow__hover--trigger">
 									<td class="no__pad full__width">
-										<a class="hover__black black" href="{{ TimberPost(alert).link }}">
+										<a class="hover__black black insights__title" href="{{ TimberPost(alert).link }}">
 											{{ alert.post_title|truncate(10) }}<br>
 										</a> 
 										<p class="tag__text grey margin-top-20">
@@ -192,7 +192,7 @@
 								<img class="insights" src="{{ TimberImage(blog.blog_image).src }}" />
 								<div class="color__block--grey insights">
 									<a href="{{ blog.blog_link_url }}">
-										<h4 class="red title__text smaller">
+										<h4 class="red title__text smaller blog__title__text">
 											{{ blog.blog_title|truncate(10) }}
 										</h4>
 									</a>

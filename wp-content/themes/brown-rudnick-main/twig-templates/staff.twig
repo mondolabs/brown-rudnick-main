@@ -74,7 +74,7 @@
 
 			<div class="columns small-12 medium-12 large-12 relative">
 				<div class="small-6 medium-3 large-3 float--right">
-					<select id="locationSelect" name="location_query" class="inline__text document__link">
+					<select id="locationSelect" name="location_query" class="inline__text document__link black">
 						<option class="document__link" value="">
 							OFFICE
 						</option>
@@ -93,13 +93,13 @@
 				<div class="columns small-12 medium-12 large-12 relative">
 					<table border ="0" class="table__white">
 						<tr class="job__opening table__legend">
-									<td class="document__link">
+									<td class="document__link black">
 										position
 									</td>
-									<td class="document__link">
+									<td class="document__link black">
 										date
 									</td class="document__link">
-									<td class="document__link">
+									<td class="document__link black">
 									    office
 									</td>
 									<td>
@@ -116,7 +116,10 @@
 										{{ opportunity.start_date|date("m/d/Y") }}
 									</td>
 									<td class="font-weight__bold wide-spacing body__text smaller">
-									    {{ opportunity.offices|upper }}
+											{% set offices = opportunity.get_field('locations') %}
+											{% for x in offices %}
+												<a class="link inline__link" href="{{TimberPost(x.location).link}}" target="_blank">{{ x.location|upper }}</a>
+											{% endfor %}	
 									</td>
 									<td>
 										<span class="job_expander top__menu job_opening" data-show-target="jobOpeningAdditionalDetails" ></span>
@@ -161,14 +164,17 @@
 									{# CONDITIONAL CHECK MADE TO ADAPT TO WASHINGTON, DC STRING PARSING #}
 									{% if location|replace({'-': ' '}) in job_location.location|upper or location|replace({'-': ', ', 'DC':'D.C.'}) in job_location.location|upper %}
 										<tr class="job__opening">
-											<td class="job__openings__title title__text smaller">
+											<td class="job__openings__title title__text smaller black">
 												{{ job_opening.position }}
 											</td>
-											<td class="font-weight__bold wide-spacing body__text smaller">
+											<td class="font-weight__bold wide-spacing body__text smaller black">
 												{{ job_opening.start_date|date("m/d/Y") }}
 											</td>
-											<td class="font-weight__bold wide-spacing body__text smaller">
-											    {{ job_opening.offices|upper }}
+											<td class="font-weight__bold wide-spacing body__text smaller black">
+											{% set offices = job_opening.get_field('locations') %}
+												{% for x in offices %}
+													<a class="link inline__link" href="{{TimberPost(x.location).link}}" target="_blank">{{ x.location|upper }}</a>
+												{% endfor %}	
 											</td>
 											<td>
 												<span class="job_expander top__menu job_opening" data-show-target="jobOpeningAdditionalDetails" ></span>
