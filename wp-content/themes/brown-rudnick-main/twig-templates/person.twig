@@ -249,14 +249,13 @@
 						<p class="title__text">
 							{{ "Languages" }}
 						</p>	
-						{% for dog in person.get_field('languages') %}
-							{% set cat = dog|first %}
+						{% for language in person.get_field('languages') %}
+							{% set specific_language = language|first %}
 							<div class="padding-top-10 padding-bottom-10 small-12 medium-12 large-12 bullet">
 										<div class="body__text bullet__text">
-											{{cat}}
+											{{specific_language}}
 										</div>
-									</div>
-							</div>			
+							</div>
 						{% endfor %}
 				</div>
 			</div>
