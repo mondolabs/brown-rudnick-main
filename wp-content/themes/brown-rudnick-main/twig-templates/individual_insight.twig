@@ -117,7 +117,7 @@
 											{{ leader.primary_city }}, {{ leader.primary_state }}{% if leader.secondary_city and leader.secondary_state %} | {{ leader.secondary_city }}, {{ leader.secondary_state}} {% endif %} 
 										</p>
 										<p class="people__details body__text">
-											{{ leader.primary_phone_number }}
+											{% if leader.primary_country_code and leader.primary_country_code != '1' %}+{{ leader.primary_country_code}}{% else %}+1{% endif %}.{{ leader.primary_phone_number }}
 										</p>
 										<p class="people__details body__text">
 											{{ leader.email }}
@@ -139,18 +139,19 @@
 					{% for contact in contacts %}
 						{% set contact = contact|first %}
 						<div class="no__pad medium-unstack small-12 medium-4 large-4 columns margin-top-20 margin-bottom--20 float__left">
-							<p class="title__text smaller">
-								{{ contact.first_name}} {{ contact.middle_initial }} {{contact.last_name}}
+							<a class="link red" href="{{ TimberPost(contact).link}}"><p class="title__text smaller">
+								{{ contact.first_name}} {% if contact.middle_initial %} {{ contact.middle_initial }}.{% endif %} {{contact.last_name}}
 							</p>
+						</a>
 							<div class="hiring-divider margin-bottom--20"></div>
 							{% if  contact.primary_phone_number %}
 								<p class="body__text">
-									P: {{contact.primary_phone_number}}
+									P: {% if contact.primary_country_code and contact.primary_country_code != '1' %}+{{ contact.primary_country_code}}{% else %}+1{% endif %}.{{ contact.primary_phone_number }}
 								</p>
 							{% endif %}
 							{% if  contact.fax_number %}
 								<p class="body__text">
-									F: {{ contact.fax_number }}
+									F: {% if contact.primary_country_code and contact.primary_country_code != '1' %}+{{ contact.primary_country_code}}{% else %}+1{% endif %}.{{ contact.fax_number }}
 								</p>
 							{% endif %}
 							<a class="red email--people--link inline__link link">
