@@ -112,7 +112,7 @@
 			{% for author in authors %}
 				{% set author = author|first %}
 	            <div class="columns large-12 medium-6 small-6 no__pad {% if loop.last %} last float-left {%endif %}">
-	            	<a class="tag__text red link" href="{{ author.permalink }}">
+	            	<a class="tag__text red link" href="{{ TimberPost(author).link }}">
 	              		{{ author.first_name|upper }} {% if author.middle_initial %}{{ author.middle_initial }}. {% endif %}{{ author.last_name|upper }} 
 	            	</a>
 	            </div>	
@@ -157,7 +157,7 @@
 							{% endif %}
 							<div class="inline__wrapper mobile__centered">
 								<p class="title__text smaller mobile__centered">
-									<a class="link black" href="{{ blog_post.permalink }}">
+									<a class="link black" href="{{ TimberPost(blog_post).link}}">
 										{{blog_post.title}}	
 									</a>
 								</p>
