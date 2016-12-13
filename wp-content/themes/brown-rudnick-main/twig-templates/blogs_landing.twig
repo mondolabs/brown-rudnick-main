@@ -18,10 +18,9 @@
 						<h1 class="page__header {{ header_text_color }}">
 							{{ header_text }}
 						</h1>	
-					{% elseif filtered_by_category %}
-						
+					{% elseif filtered_by_category %}						
 						<h1 class="page__header {{ header_text_color }}">
-							{{ tag.name }}
+							{{ tag }}
 						</h1>
 					{% else %}
 						<h1 class="page__header {{ header_text_color }}">
