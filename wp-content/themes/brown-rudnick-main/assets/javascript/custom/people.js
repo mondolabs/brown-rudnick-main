@@ -3,7 +3,7 @@ var PEOPLE = {
 		
 		$('.personRepresentationExpander').click(function(event) {
 			event.preventDefault();
-			var bullets = $('.bullet.representation');
+			var bullets = $('.bullet__primary.representation');
 			for (var i = bullets.length - 1; i >= 0; i--) {
 				var bullet = bullets[i]
 				if( !$(bullet).hasClass('first__five') ) {
@@ -20,19 +20,19 @@ var PEOPLE = {
 
 		$('.personRepresentationExpanderSecondary').click(function(event){
 			event.preventDefault();
-			var bullets = $('.bullet.representation');
+			var bullets = $('.bullet__secondary.representation');
 			for (var i = bullets.length - 1; i >= 0; i--) {
 				var bullet = bullets[i]
 				if( !$(bullet).hasClass('first__five__secondary') ) {
 					$(bullet).toggleClass('hidden');
 				}
 			}
-			if ( $(this).hasClass('collapsed') ) {
+			if ( $(this).hasClass('collapsed__secondary') ) {
 				$(this).text('SHOW LESS');
 			} else {
 				$(this).text('SHOW MORE');
 			}
-			$(this).toggleClass('collapsed');
+			$(this).toggleClass('collapsed__secondary');
 
 		})
 
