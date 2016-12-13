@@ -20,7 +20,7 @@
 						</h1>	
 					{% elseif filtered_by_category %}						
 						<h1 class="page__header {{ header_text_color }}">
-							{{ tag }}
+							{{ tag|replace({'-' : ' ' })|title }}
 						</h1>
 					{% else %}
 						<h1 class="page__header {{ header_text_color }}">
