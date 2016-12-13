@@ -2,6 +2,11 @@
 /*
 Template Name: Insights Advanced Search Results
 */
+global $paged;
+  if (!isset($paged) || !$paged){
+      $paged = 1;
+  }
+
 $data = Timber::get_context();
 $data['post'] = new TimberPost();
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
@@ -30,7 +35,8 @@ $data['parent_link'] = get_permalink( $post->post_parent );
 $post_type_args = array(
   'post_type' => 'alert',
   'numberposts' => -1,
-  'posts_per_page' => -1
+  'posts_per_page' => 5,
+  'paged'=> $paged
 );
 
 $date = get_query_var('date_query', "");
@@ -117,7 +123,8 @@ $year_query = intval($year);
 $month_query = intval($month); 
 $insights_args = array(
   'post_type' => $type,
-  'posts_per_page' => -1, 
+  'posts_per_page' => 5,
+  'paged' => $paged, 
   'orderby'=>'date',
   'date_query' => array(
     array(
@@ -144,6 +151,10 @@ if( ($geography !== "GEOGRAPHIES") || ( $industry !== "INDUSTRIES") || ($practic
   }
 }
 
+// for pagination
+
+query_posts($insights_args);
+
 $results = Timber::get_posts($insights_args);
 $data['insights'] = $results;
 $data['insights'] = array_unique($data['insights']);
@@ -157,6 +168,7 @@ function sort_objects_by_date($a, $b) {
 
 usort($data['insights'], "sort_objects_by_date");
 $data['insights'] = array_reverse($data['insights']);
+$data['pagination'] = Timber::get_pagination();
 
 ?>
 

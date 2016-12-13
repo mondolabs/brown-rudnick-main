@@ -7,6 +7,7 @@ var INSIGHTS = {
 		$('select.insight').change(function(event) {
 			var selects = $('select.insight');
 			var queryStringBase = location.origin + location.pathname;
+			console.log(queryStringBase);
 			var queryString = "";
 			var filters = [];
 			for (var i = selects.length - 1; i >= 0; i--) {
