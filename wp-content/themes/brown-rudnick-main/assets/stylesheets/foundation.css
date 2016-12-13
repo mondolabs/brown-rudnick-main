@@ -917,6 +917,9 @@ img.insight__details {
       .color__block.float__right {
         float: right !important; } }
 
+.float__none {
+  float: none !important; }
+
 img.insights {
   width: 100%; }
 
@@ -1950,21 +1953,39 @@ tbody {
   letter-spacing: 3px;
   color: #A9A9A9; }
 
-.page-template-sitemap li, .page-template-terms-of-use li {
+.page-template-sitemap li {
   text-transform: uppercase;
   letter-spacing: 3px;
   line-height: 50px;
   font-size: 14px;
   color: #000; }
 
-.page-template-sitemap li:hover, .page-template-terms-of-use li:hover {
+.page-template-sitemap li:hover {
   color: #b91628 !important; }
 
-.page-template-sitemap ul, .page-template-terms-of-use ul {
+.page-template-sitemap ul {
   list-style-type: none;
   margin: 0; }
 
-.page-template-sitemap a:hover, .page-template-terms-of-use a:hover {
+.page-template-sitemap a:hover {
+  color: #b91628 !important;
+  text-decoration: none !important; }
+
+.page-template-terms-of-use.rss-feeds li {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  line-height: 50px;
+  font-size: 14px;
+  color: #000; }
+
+.page-template-terms-of-use.rss-feeds li:hover {
+  color: #b91628 !important; }
+
+.page-template-terms-of-use.rss-feeds ul {
+  list-style-type: none;
+  margin: 0; }
+
+.page-template-terms-of-use.rss-feeds a:hover {
   color: #b91628 !important;
   text-decoration: none !important; }
 

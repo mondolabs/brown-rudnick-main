@@ -877,6 +877,9 @@ img.insight__details {
 
 }
 
+.float__none {
+	float: none !important;
+}
 img.insights {
 	width: 100%;
 }
@@ -2037,7 +2040,7 @@ tbody {
 	letter-spacing: $letter-spacing-global;
 	color: $darker-grey;
 }
-.page-template-sitemap, .page-template-terms-of-use {
+.page-template-sitemap {
 	li {
 		text-transform: uppercase;
 		letter-spacing: $letter-spacing-global;
@@ -2057,6 +2060,31 @@ tbody {
 		text-decoration: none !important;
 	}
 }
+
+
+.page-template-terms-of-use {
+	&.rss-feeds {
+		li {
+		text-transform: uppercase;
+		letter-spacing: $letter-spacing-global;
+		line-height: 50px;
+		font-size: 14px;
+		color: $br-black;
+	}
+	li:hover{
+		color: $primary-red !important;
+	}
+	ul {
+		list-style-type: none;
+		margin: 0;
+	}
+	a:hover{
+		color: $primary-red !important;
+		text-decoration: none !important;
+	}
+	}
+}
+
 
 .email__modal {
 	.modal__text {

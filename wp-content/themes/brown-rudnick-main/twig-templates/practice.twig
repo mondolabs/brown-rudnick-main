@@ -83,7 +83,7 @@
 					</div>
 			    	{% for leader in practice_group_leaders %}
 			    		{% set leader = leader|first %}
-						<div class="columns medium-12 large-6 small-12 margin-bottom--20 end">
+						<div class="columns medium-12 large-6 small-12 margin-bottom--20 end {% if practice_group_leaders|length == 1 %} float__none {% endif %}">
 							<div class="columns medium-6 large-6 small-12">
 								<img class="people__details" src="{{ TimberImage(leader.image).src }}" />
 							</div>
@@ -125,7 +125,7 @@
 
 
 			{% if contact_us|length > 0 %}	
-				<div style="padding: 0 40px;">
+				<div style="padding: 0 40px; clear: both;">
 					<p class="title__text">
 						Contact Us
 					</p>
@@ -142,7 +142,7 @@
 
 
 			{% if related_people|length > 0 %}	
-				<div style="padding: 0 40px;">
+				<div style="padding: 0 40px; clear: both;">
 					<p class="title__text">
 						Related People
 					</p>
