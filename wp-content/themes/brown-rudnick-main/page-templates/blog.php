@@ -8,6 +8,12 @@ global $paged;
       $paged = 1;
   }
 
+
+
+global $wp;
+$current_url = home_url(add_query_arg(array(),$wp->request));
+$data['link_url'] = $current_url;
+
 function flatten_array(array $array) {
   return iterator_to_array(
   new \RecursiveIteratorIterator(new \RecursiveArrayIterator($array)));
@@ -197,7 +203,6 @@ $data['insights'] = array_slice($data['insights'], 0, 5 );
 $data['insights'] = array_reverse($data['insights']);
 $data['breadcrumb_color'] = get_field('breadcrumb_color');
 $data['pagination'] = Timber::get_pagination();
-
 
 ?>
 

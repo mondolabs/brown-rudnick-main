@@ -112,6 +112,11 @@ body {
 }
 
 //SVG PATH DEFS
+
+
+#facebook-share, #rss-share, #twitter-path, #linkedin-1 {
+	fill:$primary-red;
+}
 .cls-1	{
 	fill:none;
 	stroke:$svg-stroke;

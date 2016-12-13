@@ -73,6 +73,9 @@ body {
   .featured-image__header--text-wrapper, .breadcrumb__wrapper, .sidebar__wrapper {
     padding-left: 3%; } }
 
+#facebook-share, #rss-share, #twitter-path, #linkedin-1 {
+  fill: #b91628; }
+
 .cls-1 {
   fill: none;
   stroke: #231f20;
@@ -158,6 +161,9 @@ body {
 @media screen and (min-width: 768px) and (max-width: 1224px) {
   .featured-image__header--text-wrapper, .breadcrumb__wrapper, .sidebar__wrapper {
     padding-left: 3%; } }
+
+#facebook-share, #rss-share, #twitter-path, #linkedin-1 {
+  fill: #b91628; }
 
 .cls-1 {
   fill: none;
@@ -885,6 +891,12 @@ img.insight__details {
     height: auto; }
     .color__block--grey.insights--publication a {
       color: #000; }
+
+.align__left {
+  text-align: center !important; }
+  @media screen and (min-width: 48em) {
+    .align__left {
+      text-align: left !important; } }
 
 .color__block {
   overflow-wrap: break-word; }
@@ -2163,6 +2175,16 @@ tr {
 
 #set-cookies {
   margin: 2%; }
+
+.single-post .social-share a {
+  padding: 2%; }
+
+.social-share {
+  margin: 0 auto;
+  width: 100% !important; }
+  .social-share svg {
+    width: 20px !important;
+    height: 20px !important; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome

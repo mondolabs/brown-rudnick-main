@@ -844,6 +844,13 @@ img.insight__details {
 	}
 }
 
+.align__left {
+	@include breakpoint(medium){
+		text-align: left !important;
+	}
+	text-align: center !important;
+}
+
 .color__block {
 	overflow-wrap: break-word;
 	&.vellum {
@@ -2315,4 +2322,22 @@ tr {
 }
 #set-cookies {
 	margin: 2%;
+}
+
+
+.single-post {
+	.social-share {
+		a {
+			padding: 2%;
+		}
+	}
+}
+.social-share {
+
+	margin: 0 auto;
+	width: 100% !important;
+	svg {
+		width: 20px !important;
+		height: 20px !important;
+	}
 }
