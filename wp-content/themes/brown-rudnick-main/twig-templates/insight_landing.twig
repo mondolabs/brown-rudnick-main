@@ -112,14 +112,6 @@
 
 			<div class="columns small-12 medium-12 large-12 no__pad">
 				<div class="margin-top-60 columns small-12 medium-12 large-12 no__pad">
-					
-
-
-
-
-
-
-
 					{% for insight in insights %}
 						{% set insight_url = insight.link %}
 						<table class="no__border">
@@ -159,10 +151,7 @@
 						</table>
 						{% if not loop.last %}<span class="insights list-divider"></span>{% endif %}
 					{% endfor %}
-				
-
 					<div class="pagination-centered">
-					   
 					    <ul class="pagination">
 					    		 {% if pagination.prev %}
 					        	<li><a href="{{pagination.prev.link}}" class="prev {{pagination.prev.link|length ? '' : 'invisible'}}"> << </a></li>
@@ -182,11 +171,6 @@
 					    {% endif %}
 					    </ul>
 					</div>
-
-
-
-
-
 				</div>	
 			</div>
 		</div>

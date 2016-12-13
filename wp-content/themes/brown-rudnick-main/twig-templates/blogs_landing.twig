@@ -148,7 +148,7 @@
 					{% if posts_by_date_args %}	
 						{% set blog_posts = category.get_posts(posts_by_date_args) %}
 					{% else %}
-						{% set blog_posts = category.get_posts({'numberposts' : -1, 'orderby' : 'date', 'tag' : tag }) %}
+						{% set blog_posts = category.get_posts({'numberposts' : -1, 'orderby' : 'date', 'tag' : tag, 'posts_per_page': 5, 'paged': 1 }) %}
 					{% endif %}
 					
 					{% for blog_post in blog_posts %}
@@ -178,9 +178,31 @@
 								</p>
 							</div>	
 						</div>
+
 						<span class="page__divider grey thin"></span>
 					{% endfor %}
-				</div>	
+				</div>
+						<div class="pagination-centered">
+					   
+					    <ul class="pagination">
+					    		 {% if pagination.prev %}
+					        	<li><a href="{{pagination.prev.link}}" class="prev {{pagination.prev.link|length ? '' : 'invisible'}}"> << </a></li>
+					    		{% endif %}
+					        {% for page in pagination.pages %}
+					            <li>
+					                {% if page.link %}
+					                    <a href="{{page.link}}" class="{{page.class}}">{{page.title}}</a>
+					                {% else %}
+					                    <a class="{{page.class}}">{{page.title}}</a>
+					                {% endif %}
+					            </li>
+					        {% endfor %}
+					    
+					    {% if pagination.next %}
+					        <li><a href="{{pagination.next.link}}" class="next {{pagination.next.link|length ? '' : 'invisible'}}"> >> </a></li>
+					    {% endif %}
+					    </ul>
+					</div>	
 			</div>	
 		</div>
 	</div>
