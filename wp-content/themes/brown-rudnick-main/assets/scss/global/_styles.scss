@@ -2369,3 +2369,11 @@ tr {
 		height: 20px !important;
 	}
 }
+
+.responsive__text {
+	&.large {
+		@media screen and (max-width: 768px){
+			font-size: 26px;
+		}
+	}
+}
