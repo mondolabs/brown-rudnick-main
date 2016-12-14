@@ -33,6 +33,7 @@ $data['tile_paragraph_one'] = get_field('tile_paragraph_one');
 $data['tile_paragraph_two'] = get_field('tile_paragraph_two');
 $data['breadcrumb_color'] = get_field('breadcrumb_color');
 
+$data['committee_sub_members'] = get_field('committee_sub_members');
 $args = array(
     'post_type' =>  'people',
     'posts_per_page'=>-1,
@@ -59,7 +60,7 @@ $hiring_schedule = get_field('hiring_schedule');
   </head>
   <body>
     <?php get_template_part('template-parts/off-canvas-search')?>
-           <div class="vellum black--vellum modal__background diversity hidden">
+           <div id="summer-hiring-schedule" class="vellum black--vellum modal__background diversity hidden">
             <div class="row">
               <div class="diversity__modal--outer-wrapper table__wrapper relative">
                 <div class="diversity__modal--inner-wrapper table__innner">

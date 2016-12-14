@@ -24,6 +24,8 @@
 						<p class="homepage-header-text">
 							{% if featured_first.post_type == 'news' %}
 								IN THE NEWS
+							{% elseif featured_first.post_type == 'article' %}
+								ARTICLE
 							{% elseif featured_first.post_type == 'event' %}
 								EVENTS
 							{% elseif featured_first.post_type == 'alert' %}
@@ -36,7 +38,7 @@
 					<p class="homepage-date">
 						{{ featured_first.post_date|date('m/d/Y') }}
 					</p>
-					<a class="link" href="{{ featured_first.permalink }}">
+					<a class="link" href="{{ TimberPost(featured_first).link }}">
 						<h4 class="homepage-element-body big">
 							{{ featured_first.post_title }}
 						</h4>
@@ -50,7 +52,7 @@
 					</p>
 				</div>
 			</div>	
-				<a class="link" href="{{ featured_first.permalink }}">
+				<a class="link" href="{{ TimberPost(featured_first).link }}">
 						<span class="tile__arrow home__page">
 							<svg class="long__arrow--svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
 							<title>long arrow</title>
@@ -77,6 +79,8 @@
 							<p class="homepage-header-text">
 								{% if homepage_post.post_type == 'news' %}
 									IN THE NEWS
+								{% elseif featured_first.post_type == 'article' %}
+									ARTICLE
 								{% elseif homepage_post.post_type == 'event' %}
 									EVENTS
 								{% elseif homepage_post.post_type == 'alert' %}
@@ -89,7 +93,7 @@
 						<p class="homepage-date">
 							{{ homepage_post.post_date|date('m/d/Y') }}
 						</p>
-						<a class="link" href="{{ homepage_post.permalink }}">
+						<a class="link" href="{{ TimberPost(homepage_post).link }}">
 							<h4 class="homepage-element-body">
 								{{ homepage_post.post_title|truncate(7) }}
 							</h4>
@@ -103,7 +107,7 @@
 						</p>
 					</div>
 				</div>					
-					<a href="{{ homepage_post.permalink }}">
+					<a href="{{ TimberPost(homepage_post).link }}">
 						<span class="tile__arrow home__page">
 							<svg class="long__arrow--svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
 							<title>long arrow</title>

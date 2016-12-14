@@ -16,6 +16,7 @@ $data['related_people'] = get_field('practice_related_people');
 $data['services_header'] = get_field('services_header');
 $data['services'] = get_field('services');
 $data['breadcrumb_color'] = get_field('breadcrumb_color');
+$data['contact_us'] = get_field('contact_us');
 ?>
 <html>
   <head>

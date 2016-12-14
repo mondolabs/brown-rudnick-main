@@ -25,6 +25,8 @@ $data['pro_bono_bottom_banner_image'] = get_field('pro_bono_bottom_banner_image'
 $slug = basename(get_permalink());
 $data['slug'] = $slug;
 $data['parent_link'] = get_permalink( $post->post_parent );
+$data['center_link_url'] = get_field('center_link_url');
+
 
 ?>
 

@@ -2,6 +2,10 @@
 /*
 Template Name: Events
 */
+global $paged;
+  if (!isset($paged) || !$paged){
+      $paged = 1;
+  }
 
 $data = Timber::get_context();
 $post = new TimberPost();
@@ -35,7 +39,8 @@ $data['past_events'] = get_field('past_events');
 $post_type_args = array(
   'post_type' => 'event',
   'numberposts' => -1,
-  'posts_per_page' => -1
+  'posts_per_page' => 5,
+  'paged'=> $paged
 );
 
 $date = get_query_var('date_query', "");
@@ -119,7 +124,8 @@ if (($geography !== "GEOGRAPHIES") || ( $industry !== "INDUSTRIES") || ($practic
   $month_query = intval($month); 
   $events_args = array(
     'post_type' => 'event',
-    'posts_per_page' => -1, 
+    'posts_per_page' => 5,
+    'paged'=> $paged, 
     'orderby'=>'date',
     'post_status' => array( 'publish', 'future'),
     'date_query' => array(
@@ -132,6 +138,7 @@ if (($geography !== "GEOGRAPHIES") || ( $industry !== "INDUSTRIES") || ($practic
   );
 
   if( ($geography !== "GEOGRAPHIES") || ( $industry !== "INDUSTRIES") || ($practice !=="PRACTICES")  ) {
+    $events_args["paged"] = 0;
     $events_args["tax_query"] = array( 'relation' => 'AND' );
     if ( $geography !== "GEOGRAPHIES" ) {
       $geography_term_query_array = array('taxonomy' => 'geography', 'field' => 'slug', 'terms' => array( $geography));
@@ -147,6 +154,9 @@ if (($geography !== "GEOGRAPHIES") || ( $industry !== "INDUSTRIES") || ($practic
     }
   }
 
+  // for pagination
+  query_posts($events_args);
+
   $results = Timber::get_posts($events_args);
   $data['events'] = $results;
   $data['events'] = array_unique($data['events']);
@@ -161,7 +171,7 @@ if (($geography !== "GEOGRAPHIES") || ( $industry !== "INDUSTRIES") || ($practic
   usort($data['events'], "sort_objects_by_date");
   $data['events'] = array_slice($data['events'], 0, 5 );
   $data['events'] = array_reverse($data['events']);
-
+  $data['pagination'] = Timber::get_pagination();
 }
 
 ?>

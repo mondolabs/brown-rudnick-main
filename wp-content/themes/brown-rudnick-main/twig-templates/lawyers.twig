@@ -49,7 +49,7 @@
 
 			<div class="columns small-12 medium-12 large-12 relative">
 				<div class="small-6 medium-3 large-3 float--right">
-					<select id="locationSelect" name="location_query" class="inline__text document__link career--select">
+					<select id="locationSelect" name="location_query" class="inline__text document__link career--select black">
 						<option class="document__link" value="">
 							OFFICE
 						</option>
@@ -68,13 +68,13 @@
 				<div class="columns small-12 medium-12 large-12 relative">
 					<table border ="0" class="table__white">
 						<tr class="job__opening table__legend">
-								<td class="document__link">
+								<td class="document__link black">
 									position
 								</td>
-								<td class="document__link">
+								<td class="document__link black">
 									date
 								</td class="document__link">
-								<td class="document__link">
+								<td class="document__link black">
 								    office
 								</td>
 								<td>
@@ -84,14 +84,17 @@
 						{% endif %}
 						{% for opportunity in job_opportunities %}
 							<tr class="job__opening">
-								<td class="job__openings__title title__text smaller">
+								<td class="job__openings__title title__text smaller job__expander__title">
 									{{ opportunity.position }}
 								</td>
 								<td class="font-weight__bold wide-spacing body__text smaller">
 									{{ opportunity.start_date|date("m/d/Y") }}
 								</td>
 								<td class="font-weight__bold wide-spacing body__text smaller">
-								    {{ opportunity.offices|upper }}
+								    {% set offices = opportunity.get_field('locations') %}
+												{% for x in offices %}
+													<a class="link inline__link" href="{{TimberPost(x.location).link}}" target="_blank">{{ x.location|upper }}</a>
+												{% endfor %}
 								</td>
 								<td>
 									<span class="job_expander top__menu job_opening" data-show-target="jobOpeningAdditionalDetails" ></span>
@@ -114,7 +117,7 @@
 								{% if opportunity.job_description_file %}
 									{% set description_url = opportunity.get_field('job_description_file') %}
 									<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Qualifications</p>
-									<a class="document__link" target="_blank" href="{{ description_url }}">View pdf</a>
+									<a class="document__link" target="_blank" href="{{ job_opening.get_field('job_description_file') }}">View pdf</a>
 								{% endif %}
 									<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">{{bottom_banner_text}}</p>
 								</td>
@@ -144,7 +147,10 @@
 												{{ job_opening.start_date|date("m/d/Y") }}
 											</td>
 											<td class="font-weight__bold wide-spacing body__text smaller">
-											    {{ job_opening.offices|upper }}
+												{% set offices = job_opening.get_field('locations') %}
+												{% for x in offices %}
+													<a class="link inline__link" href="{{TimberPost(x.location).link}}" target="_blank">{{ x.location|upper }}</a>
+												{% endfor %}
 											</td>
 											<td>
 												<span class="job_expander top__menu job_opening" data-show-target="jobOpeningAdditionalDetails" ></span>
@@ -164,12 +170,10 @@
 												<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Qualifications</p>
 												{{ job_opening.qualifications_description }}
 											{% endif %}
-
-											
+										
 											{% if job_opening.job_description_file %}
 
 												{% set description_url = job_opening.get_field('job_description_file') %}
-
 												<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Download Description</p>
 												<a class="document__link" target="_blank" href="{{ description_url }}">View pdf</a>
 											{% endif %}
@@ -186,9 +190,8 @@
 
 		<div class="experience__wrapper columns small-12 medium-12 large-12">
 			<div class="row padding__wrapper top-and-bottom">
-				<div class="large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">
-					<div class="color__block--outer-wrapper white__bg">
-						<div class="color__block--inner-wrapper">
+				<div class="large-offset-2 medium-offset-3 columns large-10 medium-8 small-12">
+					<div class="color__block--outer-wrapper white__bg columns padding-top-20">
 							<p class="title__text">
 								{{ features_header }}
 							</p>
@@ -211,14 +214,12 @@
 						</div>
 					</div>
 				</div>
-			</div>
 		</div>
 
 		<div class="experience__wrapper columns small-12 medium-12 large-12">
 			<div class="row padding__wrapper top-and-bottom">
 				<div class="large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">
-					<div class="color__block--outer-wrapper white__bg">
-						<div class="color__block--inner-wrapper">
+					<div class="color__block--outer-wrapper white__bg columns padding-top-20">
 							<p class="title__text">
 								{{ benefits_header }}
 							</p>
@@ -242,7 +243,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
 </div>
 
 <div id="lawyersBannerImage" class="scroll-stopper bottom--banner--image--wrapper">

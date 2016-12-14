@@ -1,13 +1,9 @@
-// String.prototype.replaceAt = function(index, character) {
-//     return this.substr(0, index) + character + this.substr(index+character.length);
-// }
-
 var PEOPLE = {
 	listeners: function(){
 		
-		$('#personRepresentationExpander').click(function(event) {
+		$('.personRepresentationExpander').click(function(event) {
 			event.preventDefault();
-			var bullets = $('.bullet.representation');
+			var bullets = $('.bullet__primary.representation');
 			for (var i = bullets.length - 1; i >= 0; i--) {
 				var bullet = bullets[i]
 				if( !$(bullet).hasClass('first__five') ) {
@@ -22,6 +18,25 @@ var PEOPLE = {
 			$(this).toggleClass('collapsed');
 		});
 
+		$('.personRepresentationExpanderSecondary').click(function(event){
+			event.preventDefault();
+			var bullets = $('.bullet__secondary.representation');
+			for (var i = bullets.length - 1; i >= 0; i--) {
+				var bullet = bullets[i]
+				if( !$(bullet).hasClass('first__five__secondary') ) {
+					$(bullet).toggleClass('hidden');
+				}
+			}
+			if ( $(this).hasClass('collapsed__secondary') ) {
+				$(this).text('SHOW LESS');
+			} else {
+				$(this).text('SHOW MORE');
+			}
+			$(this).toggleClass('collapsed__secondary');
+
+		})
+
+
 		// email contact modal click events
 		$('#no-email-modal-close').click(function(event){
 			$('#emailModal').addClass('hidden').fadeOut('slow');
@@ -31,7 +46,6 @@ var PEOPLE = {
 		}),
 		$('.email--people--link').click(function(event){
 			event.preventDefault();
-			console.log('click');
 			$('#emailModal').removeClass('hidden').fadeIn('slow');
 			$('#email-modal-close').attr('href', 'mailto:' + $(this)[0].innerText);
 		}),
@@ -204,7 +218,7 @@ $(document).ready(function(){
 	$(window).on('resize', function(event) {		
 		var headerHeight = $('#mastheadOnScroll').height() + 160;
 		var elementToStick = PEOPLE.stickySideBar;
-		if ( $('.sidebar__on-scroll--fixed').length > 0 && $(document).width() >= 768 ){
+		if ( $('.sidebar__on-scroll--fixed').length > 0 && $(document).width() >= 750 ){
 			elementToStick.stick_in_parent({ offset_top: headerHeight });
 		}	else {
 			elementToStick.trigger("sticky_kit:detach");
@@ -214,7 +228,7 @@ $(document).ready(function(){
 	var headerHeight = $('#mastheadOnScroll').height() + 160;
 	var elementToStick = $('.sidebar__on-scroll--fixed');
 		if ( PEOPLE.stickySideBar.length > 0){
-			if ($(document).width() >= 768) {
+			if ($(document).width() >= 750) {
 				elementToStick.stick_in_parent({ offset_top: headerHeight });
 			} 	
 	}	

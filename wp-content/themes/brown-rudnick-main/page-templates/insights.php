@@ -34,7 +34,7 @@ $data['publications'] = get_field('publications');
 
 // begin generate options for advanced search fields
 $all_posts_args = array(
-  'post_type' => array('article', 'event', 'alert'),
+  'post_type' => array('article', 'event', 'alert', 'press-releases', 'news-posts'),
   'numberposts' => -1,
   'posts_per_page' => -1,
   'orderby' => 'date',

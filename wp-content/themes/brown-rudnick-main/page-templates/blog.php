@@ -3,6 +3,17 @@
 Template Name: Blog Landing
 */
 
+global $paged;
+  if (!isset($paged) || !$paged){
+      $paged = 1;
+  }
+
+
+
+global $wp;
+$current_url = home_url(add_query_arg(array(),$wp->request));
+$data['link_url'] = $current_url;
+
 function flatten_array(array $array) {
   return iterator_to_array(
   new \RecursiveIteratorIterator(new \RecursiveArrayIterator($array)));
@@ -19,9 +30,7 @@ $blog_name = $data['post']->slug;
 $blog_name = str_replace("-", "_", $blog_name);
 $blog_title_category_obj = get_category_by_slug($blog_name);
 $data['blog_title_category_id'] = $blog_title_category_obj->term_id;
-
 $blog_posts_args = array('category_name' => $blog_name, 'numberposts' => -1 );
-
 $data['blog_posts'] = Timber::get_posts($blog_posts_args);
 
 $data['unfiltered'] = true;
@@ -47,7 +56,8 @@ $data['parent_link'] = get_permalink( $post->post_parent );
 $post_type_args = array(
   'post_type' => 'alert',
   'numberposts' => -1,
-  'posts_per_page' => -1
+  'posts_per_page' => 5,
+  'paged'=> $paged
 );
 
 $date = get_query_var('date_query', "");
@@ -129,7 +139,8 @@ $year_query = intval($year);
 $month_query = intval($month); 
 $insights_args = array(
   'post_type' => 'alert',
-  'posts_per_page' => -1, 
+  'posts_per_page' => 5,
+  'paged'=>$paged, 
   'orderby'=>'date',
   'date_query' => array(
     array(
@@ -141,6 +152,7 @@ $insights_args = array(
 );
 
 if( ($geography !== "GEOGRAPHIES") || ( $industry !== "INDUSTRIES") || ($practice !=="PRACTICES")  ) {
+  $insights_args["paged"] = 0;
   $insights_args["tax_query"] = array( 'relation' => 'AND' );
   if ( $geography !== "GEOGRAPHIES" ) {
     $geography_term_query_array = array('taxonomy' => 'geography', 'field' => 'slug', 'terms' => array( $geography));
@@ -156,19 +168,24 @@ if( ($geography !== "GEOGRAPHIES") || ( $industry !== "INDUSTRIES") || ($practic
   }
 }
 
-// if ($date_query_term !== "DATE") {
-//   $year_query = intval($year);
-//   $month_query = intval($month); 
-//   $insights_args['date_query'] = [];
-//   $dates_term_query_array = array(
-//     'column' => 'date',
-//     'year'  => $year_query,
-//     'month' => $month_query,
-//   );
-//   array_push($insights_args['date_query'], $dates_term_query_array );
-// }
+if ($date_query_term !== "DATE") {
+  $year_query = intval($year);
+  $month_query = intval($month); 
+  $insights_args['date_query'] = [];
+  $dates_term_query_array = array(
+    'column' => 'date',
+    'year'  => $year_query,
+    'month' => $month_query,
+  );
+  array_push($insights_args['date_query'], $dates_term_query_array );
+}
 
 // $data['insights'] = new WP_Query($insights_args);
+
+
+// for pagination
+query_posts($insights_args);
+
 
 $results = Timber::get_posts($insights_args);
 $data['insights'] = $results;
@@ -185,6 +202,7 @@ usort($data['insights'], "sort_objects_by_date");
 $data['insights'] = array_slice($data['insights'], 0, 5 );
 $data['insights'] = array_reverse($data['insights']);
 $data['breadcrumb_color'] = get_field('breadcrumb_color');
+$data['pagination'] = Timber::get_pagination();
 
 ?>
 

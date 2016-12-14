@@ -47,6 +47,34 @@
 	</div>
 </div>
 
+
+
+
+<div class="row columns relative z-index__1">
+	<div class="row careers__wrapper body__wrapper columns small-12 medium-12 large-12">
+		<div class="columns margin-bottom-60">		
+			<div class="columns">
+				<p class="title__text">Meet our trainees</p>
+				<p class="body__text">{{trainee_testimonials}}
+					{% for x in post.get_field('trainee_lawyers') %}
+						{% set y = x|first %}
+							<a class="link inline__link red" target="_blank" href="{{TimberPost(y).link}}">{{y}}</a>{% if not loop.last and loop.index > 0 %},{% endif %}
+					{% endfor %}
+				</p>
+			</div>
+			{% for a in trainee_info %}
+				<div class="columns margin-bottom-60">
+					<img class="people__details" src="{{a.trainee_image}}">
+					<p class="title__text smaller">{{a.trainee_name}}</p>
+					<p class="body__text">{{a.trainee_background}}</p>
+					<p class="body__text">{{a.trainee_experience}}</p>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+
+
 <div id="traineeImage" class="scroll-stopper bottom--banner--image--wrapper">
 	<div class="row">
 		<div class="table__wrapper pro-bono__banner">

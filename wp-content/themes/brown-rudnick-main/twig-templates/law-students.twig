@@ -60,9 +60,10 @@
 						<div class="inline__wrapper ceo">
 							<div class="table__wrapper">
 								<div class="table__inner">
-									<p class="people__details title__text smaller">
+									<a href="{{ TimberPost(ceo).link }}"><p class="people__details title__text smaller">
 										{{ ceo.first_name }} {% if ceo.middle_initial %}{{ ceo.middle_initial }}. {% endif %} {{ ceo.last_name }}
 									</p>
+									</a>
 									{% if ceo.job_title %}	
 										<p class="people__details tag__text">
 											{{ ceo.job_title|upper }}
@@ -75,9 +76,9 @@
 									<p class="people__details body__text">
 										{{ ceo.primary_phone_number }}
 									</p>
-									<p class="people__details body__text">
+									<a href="mailto:{{ceo.email}}" class="email--people--link link red people__details body__text">
 										{{ ceo.email }}
-									</p>
+									</a>
 								</div>	
 							</div>	
 						</div>	

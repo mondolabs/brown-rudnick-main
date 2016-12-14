@@ -3,6 +3,8 @@
 Template Name: Blog - Filtered by Category
 */
 
+
+
 function flatten_array(array $array) {
   return iterator_to_array(
   new \RecursiveIteratorIterator(new \RecursiveArrayIterator($array)));

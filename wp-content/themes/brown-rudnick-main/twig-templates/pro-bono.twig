@@ -35,16 +35,23 @@
 		    <div class="table__inner pro-bono__banner">
 		        <div class="color-block__wrapper large-6 medium-8 small-12 float--right">
 		          <div class="color__block white relative">
+
 		            	<h4 class="tag__text bigger red">
 		                	{{ pro_bono_bottom_banner_header|upper }}
 		            	</h4>
-					<span class="list-divider about__deatils red"></span>
+					<span class="list-divider about__details red"></span>
+							<a href="{{ center_link_url }}" target="_blank">
 		            <p class="title__text black">
 		            	{{ pro_bono_bottom_banner_text_content }}
 		            </p>
-					<a href="{{ pro_bono_bottom_banner_link_url }}">
+		          </a>
+					<a href="{{ center_link_url }}" target="_blank">
 						<span class="tile__arrow pro-bono">
-							<img src="{{hover_arrow}}">
+							<svg class="long__arrow--svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
+							<title>long arrow</title>
+							<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
+							<polyline class="long__arrow red" points="48 1 56 9 48 17"/>
+							</svg>
 						</span>
 					</a>     
 		          </div>  

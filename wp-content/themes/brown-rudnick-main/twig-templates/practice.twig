@@ -10,7 +10,8 @@
 		<div class="featured-image__header--text-wrapper">
 			<div class="featured-image__header--text-inner-wrapper">
 				<div class="color__block vellum">
-					<h1 class="page__header {{ header_text_color }}">
+
+					<h1 class="page__header {{ header_text_color }} {% if practice_header_text == "White Collar Defense & Government Investigations"  %} reduced--size {% endif %}">
 						{{ practice_header_text }}
 					</h1>
 				</div>
@@ -82,7 +83,7 @@
 					</div>
 			    	{% for leader in practice_group_leaders %}
 			    		{% set leader = leader|first %}
-						<div class="columns medium-12 large-6 small-12 margin-bottom--20 end">
+						<div class="columns medium-12 large-6 small-12 margin-bottom--20 end {% if practice_group_leaders|length == 1 %} float__none {% endif %}">
 							<div class="columns medium-6 large-6 small-12">
 								<img class="people__details" src="{{ TimberImage(leader.image).src }}" />
 							</div>
@@ -104,9 +105,13 @@
 											{{ leader.primary_city }}, {{ leader.primary_state }}{% if leader.secondary_city and leader.secondary_state %} | {{ leader.secondary_city }}, {{ leader.secondary_state}} {% endif %} 
 										</p>
 										<p class="people__details body__text">
-											{{ leader.primary_phone_number }}
+											{% if leader.primary_country_code and leader.primary_country_code != '1' %}+{{ leader.primary_country_code}}{% else %}+1{% endif %}.{{ leader.primary_phone_number }}
 										</p>
-
+										{% if leader.secondary_phone_number %}
+											<p class="people__details body__text">
+												{% if leader.secondary_country_code and leader.secondary_country_code != '1' %}+{{ leader.secondary_country_code}}{% else %}+1{% endif %}.{{ leader.secondary_phone_number }}
+											</p>
+										{% endif %}
 										<a href="mailto: {{ leader.email }}" class="email--people--link red link inline__link body__text people__details">											
 												{{ leader.email }}
 										</a>
@@ -117,9 +122,27 @@
 					{% endfor %}					
 				{% endif %}
 			</div>
-			{% if related_people|length > 0 %}	
 
-				<div style="padding: 0 40px;">
+
+			{% if contact_us|length > 0 %}	
+				<div style="padding: 0 40px; clear: both;">
+					<p class="title__text">
+						Contact Us
+					</p>
+					{% for contact in contact_us %}
+						{% set contact = contact|first %}
+						<div class="columns medium-6 large-6 small-12 person end">						
+							<a class="body__text red link margin-bottom--10" href="{{ TimberPost(contact).link }}">
+								{{ contact.first_name }} {% if contact.middle_initial %}{{ contact.middle_initial }}. {% endif %} {{ contact.last_name }}
+							</a>
+						</div>	
+					{% endfor %}
+				</div>
+			{% endif %}	
+
+
+			{% if related_people|length > 0 %}	
+				<div style="padding: 0 40px; clear: both;">
 					<p class="title__text">
 						Related People
 					</p>

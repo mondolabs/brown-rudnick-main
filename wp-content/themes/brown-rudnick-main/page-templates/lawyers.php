@@ -28,8 +28,6 @@ $data['lawyers_benefits'] = get_field('lawyers_benefits');
 $data['bottom_banner_text'] = get_field('bottom_banner_text');
 $data['bottom_banner_image'] = get_field('bottom_banner_image');
 $data['job_description_file'] = get_field('job_description_file');
-
-
 $slug = basename(get_permalink());
 $data['slug'] = $slug;
 
@@ -45,7 +43,7 @@ foreach ( $job_opening_posts as $post ) {
 }
 $data['job_opportunities'] = Timber::get_posts($post_type_args);
 // get custom post type object taxonomy with the IDs
-$data['locations'] = wp_get_object_terms( $ids, 'locations' );
+$data['job_locations'] = wp_get_object_terms( $ids, 'locations' );
 // filter the location when we reload the page
 $data['location'] = get_query_var('job_location_query', "");
 ?>

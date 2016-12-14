@@ -69,7 +69,7 @@
 .post-navigation:before,
 .post-navigation:after {
 	content: "";
-    	display: table;
+  display: table;
 }
 .post-navigation:after {
 	clear:both;
@@ -116,13 +116,14 @@
 
 .is-dropdown-submenu{
   border: none;
+  z-index: 999999;
   @media screen and (max-width: 1024px){
     left: 0 !important;
   }
 }
 
 .is-dropdown-submenu {
-  top: 54px  !important;
+  top: 50px  !important;
   text-align: center !important;
   background-color: $primary-grey;
   @include breakpoint(medium){
@@ -186,7 +187,7 @@
   border-bottom: 1px solid $primary-grey;
   float: right;
   top: 0;
-  width: 712px;
+  width: 675px;
   height: 62.5px;
   @media screen and (min-width:1200px){
     width: 768px;

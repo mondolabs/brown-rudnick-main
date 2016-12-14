@@ -24,6 +24,9 @@
 	background-color: $primary-grey;
 	width: 80px;
 	margin:	20px 0 16px;
+	&.white{
+		background-color: $white;
+	}
 	&.red {
 		background-color: $primary-red;
 	}
@@ -71,6 +74,9 @@
 	}
 	&.thick {
 		height: 2px;
+	}
+	&.clear__both {
+		clear: both;
 	}
 }
 

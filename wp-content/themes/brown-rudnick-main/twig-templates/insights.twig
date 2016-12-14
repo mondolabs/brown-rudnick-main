@@ -30,16 +30,16 @@
 							<tbody class="no__border">
 								<tr class="arrow__hover--trigger">
 									<td class="no__pad full__width">
-										<a class="hover__black black" href="{{press_release.guid}}">
-											{{ press_release.post_title }}<br>
+										<a class="hover__black black insights__title" href="{{TimberPost(press_release).link}}">
+											{{ press_release.post_title|truncate(10) }}<br>
 										</a> 
 										<p class="tag__text grey margin-top-20">
-											{{ press_release.date|date("M d, Y")|upper }}
+											{{ press_release.date|date("M, d, Y")|upper }}
 										</p>
 									</td>
 									<td class="no__pad">
 										<div class="link__arrow--wrapper news">
-											<a href="{{press_release.guid}}">
+											<a href="{{TimberPost(press_release).link}}">
 												<svg class="long__arrow--svg news" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
 													<title>long arrow</title>
 													<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
@@ -69,16 +69,16 @@
 							<tbody class="no__border">
 								<tr class="arrow__hover--trigger">
 									<td class="no__pad full__width">
-										<a class="hover__black black" href="{{news_post.guid}}">
-											{{ news_post.post_title }}<br>
+										<a class="hover__black black insights__title" href="{{ TimberPost(news_post).link }}">
+											{{ news_post.post_title|truncate(10) }}<br>
 										</a> 
 										<p class="tag__text grey margin-top-20">
-											{{ news_post.date|date("M d, y")|upper }}
+											{{ news_post.date|date("M d, Y")|upper }}
 										</p>
 									</td>
 									<td class="no__pad">
 										<div class="link__arrow--wrapper news">
-											<a href="{{news_post.guid}}">
+											<a href="{{ TimberPost(news_post).link }}">
 												<svg class="long__arrow--svg news" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
 													<title>long arrow</title>
 													<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
@@ -111,8 +111,8 @@
 							<tbody class="no__border">
 								<tr class="arrow__hover--trigger">
 									<td class="no__pad full__width">
-										<a class="hover__black black" href="{{article.guid}}">
-											{{ article.post_title }}<br>
+										<a class="hover__black black insights__title" href="{{TimberPost(article).link}}">
+											{{ article.post_title|truncate(10) }}<br>
 										</a> 
 										<p class="tag__text grey margin-top-20">
 											{{ article.date|date("M d, Y")|upper }}
@@ -120,7 +120,7 @@
 									</td>
 									<td class="no__pad">
 										<div class="link__arrow--wrapper news">
-											<a href="{{article.guid}}">
+											<a href="{{TimberPost(article).link}}">
 												<svg class="long__arrow--svg news" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
 													<title>long arrow</title>
 													<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
@@ -150,16 +150,16 @@
 							<tbody class="no__border">
 								<tr class="arrow__hover--trigger">
 									<td class="no__pad full__width">
-										<a class="hover__black black" href="{{alert.guid}}">
-											{{ alert.post_title }}<br>
+										<a class="hover__black black insights__title" href="{{ TimberPost(alert).link }}">
+											{{ alert.post_title|truncate(10) }}<br>
 										</a> 
 										<p class="tag__text grey margin-top-20">
-											{{ alert.date|date("M d, y")|upper }}
+											{{ alert.date|date("M d, Y")|upper }}
 										</p>
 									</td>
 									<td class="no__pad">
 										<div class="link__arrow--wrapper news">
-											<a href="{{alert.guid}}">
+											<a href="{{ TimberPost(alert).link }}">
 												<svg class="long__arrow--svg news" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
 													<title>long arrow</title>
 													<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
@@ -192,8 +192,8 @@
 								<img class="insights" src="{{ TimberImage(blog.blog_image).src }}" />
 								<div class="color__block--grey insights">
 									<a href="{{ blog.blog_link_url }}">
-										<h4 class="red title__text smaller">
-											{{ blog.blog_title }}
+										<h4 class="red title__text smaller blog__title__text">
+											{{ blog.blog_title|truncate(10) }}
 										</h4>
 									</a>
 									<div class="body__text">
@@ -228,7 +228,7 @@
 									<a href ="{{publication.publication_link}}">
 										<span class="tag__text link" data-publication-trigger="{{publication.publication_trigger_id}}">
 											<div >
-												{{publication.publication_title}}
+												{{publication.publication_title|truncate(10)}}
 											</div>
 										</span>
 									</a>

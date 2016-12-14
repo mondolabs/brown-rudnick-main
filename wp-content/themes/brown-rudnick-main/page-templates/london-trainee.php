@@ -16,6 +16,9 @@ $data['trainee_bottom_banner_text'] = get_field('trainee_bottom_banner_text');
 $data['trainee_bottom_banner_header'] = get_field('trainee_bottom_banner_header');
 $data['trainee_bottom_banner_image'] = get_field('trainee_bottom_banner_image');
 $data['breadcrumb_color'] = get_field('breadcrumb_color');
+$data['trainee_info'] = get_field('meet_our_trainees');
+$data['trainee_testimonials'] = get_field('trainee_testimonials');
+$data['trainee_lawyers'] = get_field('trainee_lawyers');
 ?>
 
 <html>
