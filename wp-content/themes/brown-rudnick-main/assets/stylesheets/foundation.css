@@ -1259,7 +1259,7 @@ img.insights {
     background-color: rgba(0, 0, 0, 0.7); }
 
 .diversity__modal--outer-wrapper {
-  margin: 200px auto;
+  margin: 100px 5px auto;
   background-color: white;
   padding: 80px; }
   @media screen and (max-width: 1300px) {
@@ -1998,7 +1998,7 @@ tbody {
 
 @media screen and (max-width: 768px) {
   .email__modal .modal__text {
-    font-size: 12px; } }
+    font-size: 10px; } }
 
 .email-buttons {
   text-align: center;
