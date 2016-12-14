@@ -296,50 +296,52 @@
 							{% set letter_counter = 0 %}
 							{% for person in people %}
 								{% set first_letter_of_last = person.last_name|slice(0,1)|upper %}
-								{% if letter|upper == first_letter_of_last|upper %}
-									{% set letter_counter = letter_counter + 1 %}
-									<div data-letter="{{letter}}" class="person__wrapper columns medium-12 large-6 small-12 min--height__225 end">
-										<div class="columns medium-6 large-6 small-12">
-											<div class="people__image__container">
-												<img class="people__details" src="{{ TimberImage(person.image).src }}" />
+								{% if not person.is_alternative_language_page  %}	
+									{% if letter|upper == first_letter_of_last|upper %}
+										{% set letter_counter = letter_counter + 1 %}
+										<div data-letter="{{letter}}" class="person__wrapper columns medium-12 large-6 small-12 min--height__225 end">
+											<div class="columns medium-6 large-6 small-12">
+												<div class="people__image__container">
+													<img class="people__details" src="{{ TimberImage(person.image).src }}" />
+												</div>
+											</div>
+											<div class="columns medium-6 large-6 small-12">
+												<div class="people__details--outer-wrapper">
+													<div class="people__details--inner-wrapper">
+														<a href="{{ person._permalink }}" class="people__details title__text smaller">
+															{% if person.last_name %} 
+																{{person.last_name}}, 
+															{% endif %} 
+															{% if person.first_name %}
+																{{ person.first_name}}
+															{% endif %} 
+															{% if person.middle_initial %}
+																{{ person.middle_initial }}.
+															{% endif %}
+														</a>
+
+														{% if person.title %}	
+															<p class="people__details tag__text">
+																{{ person.job_title|upper }}
+															</p>
+														{% endif %}	
+
+														<span class="people__details list-divider red"></span>
+														<p class="people__details body__text">
+															{{ person.primary_city }}, {{ person.primary_state }}{% if person.secondary_city and person.secondary_state %} | {{ person.secondary_city }}, {{ person.secondary_state}} {% endif %} 
+														</p>
+														<p class="people__details body__text">
+															{% if person.primary_country_code and person.primary_country_code != '1' %}+{{ person.primary_country_code}}{% else %}+1{% endif %}.{{ person.primary_phone_number }}
+														</p>
+														<a href="mailto:{{person.email}}" class="email--people--link red link inline__link body__text people__details">
+															{{ person.email }}
+														</a>
+													</div>
+												</div>	
 											</div>
 										</div>
-										<div class="columns medium-6 large-6 small-12">
-											<div class="people__details--outer-wrapper">
-												<div class="people__details--inner-wrapper">
-													<a href="{{ person._permalink }}" class="people__details title__text smaller">
-														{% if person.last_name %} 
-															{{person.last_name}}, 
-														{% endif %} 
-														{% if person.first_name %}
-															{{ person.first_name}}
-														{% endif %} 
-														{% if person.middle_initial %}
-															{{ person.middle_initial }}.
-														{% endif %}
-													</a>
-
-													{% if person.title %}	
-														<p class="people__details tag__text">
-															{{ person.job_title|upper }}
-														</p>
-													{% endif %}	
-
-													<span class="people__details list-divider red"></span>
-													<p class="people__details body__text">
-														{{ person.primary_city }}, {{ person.primary_state }}{% if person.secondary_city and person.secondary_state %} | {{ person.secondary_city }}, {{ person.secondary_state}} {% endif %} 
-													</p>
-													<p class="people__details body__text">
-														{% if person.primary_country_code and person.primary_country_code != '1' %}+{{ person.primary_country_code}}{% else %}+1{% endif %}.{{ person.primary_phone_number }}
-													</p>
-													<a href="mailto:{{person.email}}" class="email--people--link red link inline__link body__text people__details">
-														{{ person.email }}
-													</a>
-												</div>
-											</div>	
-										</div>
-									</div>
-								{% endif %}
+									{% endif %}
+								{% endif %}	
 							{% endfor %}	
 						{% endfor %}
 					{% else %}
