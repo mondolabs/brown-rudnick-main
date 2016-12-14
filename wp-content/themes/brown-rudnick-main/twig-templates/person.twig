@@ -513,7 +513,8 @@
 		<div class="row">
 			<div class="large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">
 				<span>
-					<strong>Please <a href="{{ person.alternative_language_page_link }}" class="inline__link link red">click here</a> for full bio in {{person.alternative_language}}</strong>
+					{% set link = person.get_field('alternative_language_page_link') %}
+					<strong>Please <a href="{{ link }}" class="inline__link link red">click here</a> for full bio in {{person.alternative_language}}</strong>
 				</span>
 			</div>
 		</div>		
