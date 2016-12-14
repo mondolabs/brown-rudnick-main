@@ -1565,6 +1565,7 @@ button.close__modal {
 	//overflow: hidden;
 	z-index: 9999;
 	text-align: center;
+
 	@media screen and (max-width: 450px){
 		padding-top: 50px;
 	}
@@ -1577,6 +1578,9 @@ button.close__modal {
 		a {
 			font-size: 18px;
 			letter-spacing: $letter-spacing-global;
+			@media screen and (max-height: 320px){
+				line-height: .4em;
+			}
 		}
 
 	}
@@ -1630,7 +1634,6 @@ button.close__modal {
 .one__half {
 	display: inline-block;
 	width: 49%;
-	padding-top: 20px;
 	padding-bottom: 40px;
 	&.left{
 		border-right: 1px solid $darker-grey-two;

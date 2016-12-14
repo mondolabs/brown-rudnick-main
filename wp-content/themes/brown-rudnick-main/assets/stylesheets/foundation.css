@@ -1526,6 +1526,9 @@ button.close__modal {
     #menu-mobile-menu li a {
       font-size: 18px;
       letter-spacing: 3px; }
+      @media screen and (max-height: 320px) {
+        #menu-mobile-menu li a {
+          line-height: .4em; } }
 
 .mobile__menu__wrapper {
   position: relative; }
@@ -1575,7 +1578,6 @@ button.close__modal {
 .one__half {
   display: inline-block;
   width: 49%;
-  padding-top: 20px;
   padding-bottom: 40px; }
   .one__half.left {
     border-right: 1px solid #c9c9c9; }
