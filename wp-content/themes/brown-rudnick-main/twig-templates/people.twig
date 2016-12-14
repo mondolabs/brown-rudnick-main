@@ -296,7 +296,7 @@
 							{% set letter_counter = 0 %}
 							{% for person in people %}
 								{% set first_letter_of_last = person.last_name|slice(0,1)|upper %}
-								{% if not person.is_alternative_language_page %}	
+								{% if not person.is_alternative_language_page  %}	
 									{% if letter|upper == first_letter_of_last|upper %}
 										{% set letter_counter = letter_counter + 1 %}
 										<div data-letter="{{letter}}" class="person__wrapper columns medium-12 large-6 small-12 min--height__225 end">
