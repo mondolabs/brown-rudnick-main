@@ -10935,10 +10935,10 @@ span.red__border--top {
   font-size: 26px;
   line-height: 1.5; }
   .homepage-slider-title.big, .homepage-element-body.big {
-    font-size: 40px; }
+    font-size: 26px; }
     @media screen and (min-width: 48em) {
       .homepage-slider-title.big, .homepage-element-body.big {
-        font-size: 26px; } }
+        font-size: 40px; } }
 
 .homepage-slider-title {
   margin-bottom: 3%; }
