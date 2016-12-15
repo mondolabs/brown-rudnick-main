@@ -2063,25 +2063,25 @@ tbody {
 
 
 .page-template-terms-of-use {
-	&.rss-feeds {
+	.rss-feeds {
 		li {
 		text-transform: uppercase;
 		letter-spacing: $letter-spacing-global;
 		line-height: 50px;
 		font-size: 14px;
 		color: $br-black;
-	}
-	li:hover{
-		color: $primary-red !important;
-	}
-	ul {
-		list-style-type: none;
-		margin: 0;
-	}
-	a:hover{
-		color: $primary-red !important;
-		text-decoration: none !important;
-	}
+		}
+		li:hover{
+			color: $primary-red !important;
+		}
+		ul {
+			list-style-type: none;
+			margin: 0;
+		}
+		a:hover{
+			color: $primary-red !important;
+			text-decoration: none !important;
+		}
 	}
 }
 
