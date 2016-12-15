@@ -10863,7 +10863,7 @@ ul.desktop__menu--icons-list {
   -webkit-background-size: cover;
           background-size: cover; }
   .homepage__image--wrapper.featured__blog {
-    height: 25%;
+    height: 90px;
     max-height: none;
     -webkit-background-size: cover;
             background-size: cover;
