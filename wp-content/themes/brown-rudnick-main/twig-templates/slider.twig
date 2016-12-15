@@ -11,7 +11,10 @@
 				         	<div class="slide-description">
 				            	<h2 class="homepage-slider-title">{{item.homepage_slider_title}}</h2>
 				            	<div class="slide-description-heading"></div>
-				            	<p class="body-text hero">
+				            	<p class="body-text hero hide-for-small-only">
+						    				{{ item.homepage_slider_description | truncate(60) }}
+						        	</p>
+				            	<p class="body-text hero show-for-small-only">
 						    				{{ item.homepage_slider_description | truncate(40) }}
 						        	</p>
 			            </div>				        	
