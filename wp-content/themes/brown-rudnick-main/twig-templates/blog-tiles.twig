@@ -12,7 +12,7 @@
 
 		<div class="no__pad medium-6 large-8 columns homepage-grid-element white__background featured__first featured-blog__grid relative">
 			{% if featured_first.thumbnail %}
-				<div class="homepage__image--wrapper  large-3 columns featured__blog" style="background-image:url({{featured_first.thumbnail.src}});">
+				<div class="homepage__image--wrapper hide-for-small hide-for-medium large-3 columns featured__blog" style="background-image:url({{featured_first.thumbnail.src}});">
 				</div>	
 			{% endif %}	
 			<div class="no__pad medium-12 white__background homepage-grid-element {% if not featured_first.thumbnail %}large-12{% else %}large-9{% endif %} columns">
