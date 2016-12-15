@@ -347,7 +347,7 @@ ul.desktop__menu--icons-list {
 	background-size: cover;
 	&.featured__blog {
 		height: 25%;
-		@include breakpoint(medium){
+		@include breakpoint(large){
 			height: 100%;
 		}		
 		max-height: none;

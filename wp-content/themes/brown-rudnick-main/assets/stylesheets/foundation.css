@@ -10868,7 +10868,7 @@ ul.desktop__menu--icons-list {
     -webkit-background-size: cover;
             background-size: cover;
     background-position-x: 75%; }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 64em) {
       .homepage__image--wrapper.featured__blog {
         height: 100%; } }
 
