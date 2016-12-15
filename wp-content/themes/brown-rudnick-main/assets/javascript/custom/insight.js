@@ -7,7 +7,6 @@ var INSIGHTS = {
 		$('select.insight').change(function(event) {
 			var selects = $('select.insight');
 			var queryStringBase = location.origin + location.pathname;
-			console.log(queryStringBase);
 			var queryString = "";
 			var filters = [];
 			for (var i = selects.length - 1; i >= 0; i--) {
@@ -16,7 +15,7 @@ var INSIGHTS = {
 					filters.push($(select));
 				}
 			}
-			console.log("filters" + filters);
+
 			for(var i = filters.length - 1; i >= 0; i--) {
 				var paramName = $(filters[i]).attr('name');
 				var paramValue = $(filters[i]).val();
@@ -37,6 +36,7 @@ var INSIGHTS = {
 		});
 		$('button#advancedSearchSubmit').click(function(event) {
 			var selects = $('.advanced');
+			var keyword = $("#allKeywordInput").val() || "";
 			var queryStringBase = location.origin + "/insights/advanced-search-results";
 			var queryString = "";
 			var filters = [];
@@ -46,10 +46,14 @@ var INSIGHTS = {
 					filters.push($(select));
 				}
 			}
-			console.log("filters" + filters);
+
+			console.log(filters);
+
 			for(var i = filters.length - 1; i >= 0; i--) {
 				var paramName = $(filters[i]).attr('name');
 				var paramValue = $(filters[i]).val();
+				console.log(paramName);
+				console.log(paramValue);
 				if ( paramValue.length > 0 && i === filters.length - 1 ) {
 					queryString = queryStringBase + "?" + paramName + "=" + paramValue;
 					console.log(queryString);
@@ -58,12 +62,25 @@ var INSIGHTS = {
 					console.log(queryString);
 				}
 			}
-			// set back the url to the base if there are no queries left
+		
+			if ( queryString.length > 0 ){
+				if ( keyword.length > 0 ) {
+					queryString = queryString + "&keyword=" + keyword;
+				}
+			} else {
+				if ( keyword.length > 0 ) {
+					queryString = queryString + "?keyword=" + keyword;
+				}
+			}
+
+			console.log(queryString);
+
 			if( queryString.length > 0) {
 				window.location.replace(queryString);
 			} else {
 				window.location.replace(queryStringBase);
 			}
+
 		});
 	},
 	onLoad: function(){

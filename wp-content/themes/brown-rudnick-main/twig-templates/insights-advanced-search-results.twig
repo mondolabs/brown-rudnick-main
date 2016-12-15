@@ -52,7 +52,7 @@
 						</p>
 					{% else %}
 						<p class="title__text smaller">
-							Total number of results: {{insights|length}}
+							Total number of results: {{ total_results }}
 						</p>
 						{% for insight in insights %}
 							<table class="no__border">
@@ -84,28 +84,13 @@
 
 							{% if not loop.last %}<span class="insights list-divider"></span>{% endif %}
 						{% endfor %}
+					
+
+
+
 					{% endif %}
 
-					<div class="pagination-centered">					   
-					    <ul class="pagination">
-					    		 {% if pagination.prev %}
-					        	<li><a href="{{pagination.prev.link}}" class="prev {{pagination.prev.link|length ? '' : 'invisible'}}">Prev</a></li>
-					    		{% endif %}
-					        {% for page in pagination.pages %}
-					            <li>
-					                {% if page.link %}
-					                    <a href="{{page.link}}" class="{{page.class}}">{{page.title}}</a>
-					                {% else %}
-					                    <a class="{{page.class}}">{{page.title}}</a>
-					                {% endif %}
-					            </li>
-					        {% endfor %}
-					    
-					    {% if pagination.next %}
-					        <li><a href="{{pagination.next.link}}" class="next {{pagination.next.link|length ? '' : 'invisible'}}">Next</a></li>
-					    {% endif %}
-					    </ul>
-						</div>	
+			
 				</div>	
 			</div>
 		</div>
