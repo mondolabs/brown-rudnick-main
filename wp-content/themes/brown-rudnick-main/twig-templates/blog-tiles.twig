@@ -10,7 +10,7 @@
 		{% set featured_first = featured_posts[0] %}
 		{% set remaining = [ featured_posts[1], featured_posts[2], featured_posts[3], featured_posts[4] ] %}
 
-		<div class="no__pad medium-6 large-8 columns white__background featured__first featured-blog__grid relative">
+		<div class="no__pad medium-6 large-8 columns homepage-grid-element white__background featured__first featured-blog__grid relative">
 			{% if featured_first.thumbnail %}
 				<div class="homepage__image--wrapper hide-for-medium-down large-3 columns featured__blog" style="background-image:url({{featured_first.thumbnail.src}});">
 				</div>	
