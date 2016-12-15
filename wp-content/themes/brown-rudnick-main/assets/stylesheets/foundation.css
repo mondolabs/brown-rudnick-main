@@ -1579,7 +1579,8 @@ button.close__modal {
 .one__half {
   display: inline-block;
   width: 49%;
-  padding-bottom: 40px; }
+  padding-bottom: 40px;
+  text-align: center; }
   .one__half.left {
     border-right: 1px solid #c9c9c9; }
   .one__half a:hover, .one__half a :focus {
@@ -9728,6 +9729,7 @@ a::after {
   display: inline-block;
   width: 66.6%;
   margin: 0 auto;
+  padding: 20px;
   text-align: center;
   vertical-align: middle; }
   .footer-links a {
