@@ -2232,6 +2232,11 @@ tr {
   .responsive__text.large {
     font-size: 26px; } }
 
+.white__background {
+  background-color: #fefefe; }
+  .white__background.featured__first {
+    margin-top: 10px; }
+
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
