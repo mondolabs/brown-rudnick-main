@@ -349,10 +349,11 @@ ul.desktop__menu--icons-list {
 		height: 25%;
 		@include breakpoint(large){
 			height: 100%;
+			background-position-x: 75%; 
 		}		
 		max-height: none;
 		background-size: cover;
-		background-position-x: 75%; 
+		background-position: center; 
 	}	
 }
 

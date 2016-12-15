@@ -10867,10 +10867,11 @@ ul.desktop__menu--icons-list {
     max-height: none;
     -webkit-background-size: cover;
             background-size: cover;
-    background-position-x: 75%; }
+    background-position: center; }
     @media screen and (min-width: 64em) {
       .homepage__image--wrapper.featured__blog {
-        height: 100%; } }
+        height: 100%;
+        background-position-x: 75%; } }
 
 .homepage-header-container {
   border-bottom: 2px solid #f0f0f0;
