@@ -12,7 +12,7 @@
 
 		<div class="no__pad medium-6 large-8 columns homepage-grid-element white__background featured__first featured-blog__grid relative">
 			{% if featured_first.thumbnail %}
-				<div class="homepage__image--wrapper hide-for-medium-down large-3 columns featured__blog" style="background-image:url({{featured_first.thumbnail.src}});">
+				<div class="homepage__image--wrapper show-for-large-only large-3 columns featured__blog" style="background-image:url({{featured_first.thumbnail.src}});">
 				</div>	
 			{% endif %}	
 			<div class="no__pad medium-12 white__background homepage-grid-element {% if not featured_first.thumbnail %}large-12{% else %}large-9{% endif %} columns">
@@ -65,7 +65,7 @@
 		{% for homepage_post in remaining %}
 			<div class="no__pad medium-6 large-4 columns homepage-grid-element relative">
 				{% if homepage_post.thumbnail %}
-					<div class="hide-for-medium-down large-12 columns homepage-post__image--wrapper" style="background:url({{homepage_post.thumbnail.src}})no-repeat center;">
+					<div class="show-for-large-only large-12 columns homepage-post__image--wrapper" style="background:url({{homepage_post.thumbnail.src}})no-repeat center;">
 					</div>	
 				{% endif %}	
 				<div class="no__pad homepage__image--wrapper medium-12 large-12 columns" {% if homepage_post.thumbnail %}style="background-image:url({{homepage_post.thumbnail.src}});"{% endif %}>
