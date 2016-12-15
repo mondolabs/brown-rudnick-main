@@ -228,11 +228,11 @@ p.wp-caption-text {
 
 .long__arrow--svg {
   max-width: 80px;
-  top: 14px;
+  top: 10px;
   position: relative;
-  left: 14px;
+  left: 10px;
   height: 20px;
-  width: 60px;
+  width: 40px;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out; }
   .long__arrow--svg.news {
@@ -9754,7 +9754,7 @@ a::after {
     width: 25px;
     height: 25px; }
   .social-icons a {
-    padding-left: 7.5%; }
+    padding-left: 10px; }
   @media screen and (max-width: 768px) {
     .social-icons {
       display: table;
