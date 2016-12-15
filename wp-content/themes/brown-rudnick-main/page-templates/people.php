@@ -42,6 +42,8 @@ $admission = get_query_var('admission_query', "");
 $education = get_query_var('education_query', "");
 $keyword = get_query_var('keyword');
 
+$keyword_array = explode(' ', $keyword);
+
 $geography =  str_replace("-and-", " & ", $geography);
 $industry =  str_replace("-and-", " & ", $industry);
 $practice =  str_replace("-and-", " & ", $practice);
@@ -68,6 +70,9 @@ $data['admission'] = str_replace("-AND-", " & ", $admission);
 $data['education'] = str_replace("-AND-", " & ", $education);
 $data['keyword'] = str_replace("-AND-", " & ", $keyword);
 
+
+
+
 $data['geography'] = ucwords(strtolower($data['geography']));
 $data['industry'] = ucwords(strtolower($data['industry']));
 $data['practice'] = ucwords(strtolower($data['practice']));
@@ -80,158 +85,159 @@ $data['keyword'] = $data['keyword'];
 if ( $keyword !== "" ) {
   $people_args = array( 
     'post_type' =>  'people',
-    'orderby' => 'meta_value',
-    'meta_key'  => 'last_name',
     'order' => 'ASC',
     'posts_per_page'=>-1,
-    'meta_query' => array(
-    'relation' => 'OR',
-      array(
-        'key' => 'first_name ',
-        'value' => $keyword,
-        'compare' => 'LIKE',
-      ),  
-      array(
-        'key' => 'last_name',
-        'value' => $keyword,
-        'compare' => 'LIKE',
-      ),  
-      array(
-        'key' => 'middle_initial',
-        'value' => $keyword,
-        'compare' => 'LIKE',
-      ),  
-      array(
-        'key' => 'title',
-        'value' => $keyword,
-        'compare' => 'LIKE',
-      ),  
-      array(
-        'key' => 'job_title',
-        'value' => $keyword,
-        'compare' => 'LIKE',
-      ),  
-      array(
-        'key' => 'specialization',
-        'value' => $keyword,
-        'compare' => 'LIKE',
-      ),  
-      array(
-        'key' => 'primary_city',
-        'value' => $keyword,
-        'compare' => 'LIKE',
-      ),  
-      array(
-        'key' => 'primary_state',
-        'value' => $keyword,
-        'compare' => 'LIKE',
-      ),  
-      array(
-        'key' => 'secondary_city',
-        'value' => $keyword,
-        'compare' => 'LIKE',
-      ),  
-      array(
-        'key' => 'secondary_state',
-        'value' => $keyword,
-        'compare' => 'LIKE',
-      ),  
-      array(
-        'key' => 'primary_phone_number',
-        'value' => $keyword,
-        'compare' => 'LIKE',
-      ),  
-      array(
-        'key' => 'secondary_phone_number',
-        'value' => $keyword,
-        'compare' => 'LIKE',
-      ),  
-      array(
-        'key' => 'fax_number',
-        'value' => $keyword,
-        'compare' => 'LIKE',
-      ),  
-      array(
-        'key' => 'primary_country_code',
-        'value' => $keyword,
-        'compare' => 'LIKE',
-      ),  
-      array(
-        'key' => 'secondary_country_code',
-        'value' => $keyword,
-        'compare' => 'LIKE',
-      ),  
-      array(
-        'key' => 'fax_country_code',
-        'value' => $keyword,
-        'compare' => 'LIKE',
-      ),  
-      array(
-        'key' => 'email',
-        'value' => $keyword,
-        'compare' => 'LIKE',
-      ),  
-      array(
-        'key' => 'education',
-        'value' => $keyword,
-        'compare' => 'LIKE',
-      ),  
-      array(
-        'key' => 'language',
-        'value' => $keyword,
-        'compare' => 'LIKE',
-      ),  
-      array(
-        'key' => 'related_experience',
-        'value' => $keyword,
-        'compare' => 'LIKE',
-      ),  
-      array(
-        'key' => 'cases',
-        'value' => $keyword,
-        'compare' => 'LIKE',
-      ),  
-      array(
-        'key' => 'publication',
-        'value' => $keyword,
-        'compare' => 'LIKE',
-      ),  
-      array(
-        'key' => 'engagement',
-        'value' => $keyword,
-        'compare' => 'LIKE',
-      ),  
-      array(
-        'key' => 'affiliation',
-        'value' => $keyword,
-        'compare' => 'LIKE',
-      ),  
-      array(
-        'key' => 'professional_memberships',
-        'value' => $keyword,
-        'compare' => 'LIKE',
-      ),  
-      array(
-        'key' => 'involvement',
-        'value' => $keyword,
-        'compare' => 'LIKE',
-      ),  
-      array(
-        'key' => 'firm_activities',
-        'value' => $keyword,
-        'compare' => 'LIKE',
-      ),  
-      array(
-        'key' => 'bar',
-        'value' => $keyword,
-        'compare' => 'LIKE',
-      ),  
-      array(
-        'key' => 'honor',
-        'value' => $keyword,
-        'compare' => 'LIKE',
-      ),  
-    )
+    's'=> $keyword,
+    'sentence'=> true,
+    'exact'=> false,
+    // 'meta_query' => array(
+    // 'relation' => 'OR',
+    //   array(
+    //     'key' => 'first_name ',
+    //     'value' => $keyword,
+    //     'compare' => 'LIKE',
+    //   ),  
+    //   array(
+    //     'key' => 'last_name',
+    //     'value' => $keyword,
+    //     'compare' => 'LIKE',
+    //   ),  
+    //   array(
+    //     'key' => 'middle_initial',
+    //     'value' => $keyword,
+    //     'compare' => 'LIKE',
+    //   ),  
+    //   array(
+    //     'key' => 'title',
+    //     'value' => $keyword,
+    //     'compare' => 'LIKE',
+    //   ),  
+    //   array(
+    //     'key' => 'job_title',
+    //     'value' => $keyword,
+    //     'compare' => 'LIKE',
+    //   ),  
+    //   array(
+    //     'key' => 'specialization',
+    //     'value' => $keyword,
+    //     'compare' => 'LIKE',
+    //   ),  
+    //   array(
+    //     'key' => 'primary_city',
+    //     'value' => $keyword,
+    //     'compare' => 'LIKE',
+    //   ),  
+    //   array(
+    //     'key' => 'primary_state',
+    //     'value' => $keyword,
+    //     'compare' => 'LIKE',
+    //   ),  
+    //   array(
+    //     'key' => 'secondary_city',
+    //     'value' => $keyword,
+    //     'compare' => 'LIKE',
+    //   ),  
+    //   array(
+    //     'key' => 'secondary_state',
+    //     'value' => $keyword,
+    //     'compare' => 'LIKE',
+    //   ),  
+    //   array(
+    //     'key' => 'primary_phone_number',
+    //     'value' => $keyword,
+    //     'compare' => 'LIKE',
+    //   ),  
+    //   array(
+    //     'key' => 'secondary_phone_number',
+    //     'value' => $keyword,
+    //     'compare' => 'LIKE',
+    //   ),  
+    //   array(
+    //     'key' => 'fax_number',
+    //     'value' => $keyword,
+    //     'compare' => 'LIKE',
+    //   ),  
+    //   array(
+    //     'key' => 'primary_country_code',
+    //     'value' => $keyword,
+    //     'compare' => 'LIKE',
+    //   ),  
+    //   array(
+    //     'key' => 'secondary_country_code',
+    //     'value' => $keyword,
+    //     'compare' => 'LIKE',
+    //   ),  
+    //   array(
+    //     'key' => 'fax_country_code',
+    //     'value' => $keyword,
+    //     'compare' => 'LIKE',
+    //   ),  
+    //   array(
+    //     'key' => 'email',
+    //     'value' => $keyword,
+    //     'compare' => 'LIKE',
+    //   ),  
+    //   array(
+    //     'key' => 'education',
+    //     'value' => $keyword,
+    //     'compare' => 'LIKE',
+    //   ),  
+    //   array(
+    //     'key' => 'language',
+    //     'value' => $keyword,
+    //     'compare' => 'LIKE',
+    //   ),  
+    //   array(
+    //     'key' => 'related_experience',
+    //     'value' => $keyword,
+    //     'compare' => 'LIKE',
+    //   ),  
+    //   array(
+    //     'key' => 'cases',
+    //     'value' => $keyword,
+    //     'compare' => 'LIKE',
+    //   ),  
+    //   array(
+    //     'key' => 'publication',
+    //     'value' => $keyword,
+    //     'compare' => 'LIKE',
+    //   ),  
+    //   array(
+    //     'key' => 'engagement',
+    //     'value' => $keyword,
+    //     'compare' => 'LIKE',
+    //   ),  
+    //   array(
+    //     'key' => 'affiliation',
+    //     'value' => $keyword,
+    //     'compare' => 'LIKE',
+    //   ),  
+    //   array(
+    //     'key' => 'professional_memberships',
+    //     'value' => $keyword,
+    //     'compare' => 'LIKE',
+    //   ),  
+    //   array(
+    //     'key' => 'involvement',
+    //     'value' => $keyword,
+    //     'compare' => 'LIKE',
+    //   ),  
+    //   array(
+    //     'key' => 'firm_activities',
+    //     'value' => $keyword,
+    //     'compare' => 'LIKE',
+    //   ),  
+    //   array(
+    //     'key' => 'bar',
+    //     'value' => $keyword,
+    //     'compare' => 'LIKE',
+    //   ),  
+    //   array(
+    //     'key' => 'honor',
+    //     'value' => $keyword,
+    //     'compare' => 'LIKE',
+    //   ),  
+    // )
   );
 } else {
   $people_args = array(

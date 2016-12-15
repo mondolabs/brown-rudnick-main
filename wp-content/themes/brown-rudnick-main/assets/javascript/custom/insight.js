@@ -47,22 +47,18 @@ var INSIGHTS = {
 				}
 			}
 
-			console.log(filters);
-
 			for(var i = filters.length - 1; i >= 0; i--) {
 				var paramName = $(filters[i]).attr('name');
 				var paramValue = $(filters[i]).val();
-				console.log(paramName);
-				console.log(paramValue);
 				if ( paramValue.length > 0 && i === filters.length - 1 ) {
 					queryString = queryStringBase + "?" + paramName + "=" + paramValue;
-					console.log(queryString);
 				} else if ( paramValue.length > 0 ) {
 					queryString = queryString + "&" + paramName + "=" + paramValue;
-					console.log(queryString);
 				}
 			}
-		
+
+			var keyword = keyword.replace(' ', '-')
+
 			if ( queryString.length > 0 ){
 				if ( keyword.length > 0 ) {
 					queryString = queryString + "&keyword=" + keyword;
@@ -72,10 +68,7 @@ var INSIGHTS = {
 					queryString = queryString + "?keyword=" + keyword;
 				}
 			}
-
-			console.log(queryString);
-
-			if( queryString.length > 0) {
+			if ( queryString.length > 0) {
 				window.location.replace(queryString);
 			} else {
 				window.location.replace(queryStringBase);

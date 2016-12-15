@@ -233,7 +233,7 @@ $(document).ready(function(){
 			} 	
 	}	
 	// prevent submit on enter for advanced search
-	if ( $('body').hasClass('page-template-people') ){
+	if ( $('body').hasClass('page-template-people') || $('body').hasClass('search-results') || $('body').hasClass('search')  ){
 		$(window).keydown(function(e){
 			if (e.keyCode == 13){
 				e.preventDefault();

@@ -110,10 +110,16 @@ $industry = get_query_var('industry_query', "INDUSTRIES");
 $practice = get_query_var('practice_query', "PRACTICES");
 $keyword = get_query_var('keyword');
 
+
+
 $type =  str_replace("-and-", " & ", $type);
 $geography =  str_replace("-and-", " & ", $geography);
 $industry =  str_replace("-and-", " & ", $industry);
 $practice =  str_replace("-and-", " & ", $practice);
+
+// clean up keyword search
+$keyword = str_replace("-", " ", $keyword);
+$keyword = str_replace("%20", " ", $keyword);
 
 $type =  str_replace("-slash-", " / ", $type);
 $geography =  str_replace("-slash-", " / ", $geography);
@@ -154,6 +160,7 @@ if( ($geography !== "GEOGRAPHIES") || ( $industry !== "INDUSTRIES") || ($practic
   }
 }
 
+
 // for pagination
 
 query_posts($insights_args);
@@ -172,7 +179,6 @@ function sort_objects_by_date($a, $b) {
 
 usort($data['insights'], "sort_objects_by_date");
 $data['insights'] = array_reverse($data['insights']);
-$data['pagination'] = Timber::get_pagination();
 
 ?>
 
