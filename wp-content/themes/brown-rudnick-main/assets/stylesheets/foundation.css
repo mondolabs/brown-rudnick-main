@@ -10965,7 +10965,7 @@ span.red__border--top {
   line-height: 1.5; }
   .homepage-slider-title.big, .homepage-element-body.big {
     font-size: 26px; }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 1200px) {
       .homepage-slider-title.big, .homepage-element-body.big {
         font-size: 40px; } }
 

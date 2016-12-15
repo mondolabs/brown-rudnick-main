@@ -461,7 +461,7 @@ span.red__border--top {
 	line-height: 1.5;
 	&.big {
 		font-size: 26px;
-		@include breakpoint(medium) {
+		@media screen and (min-width: 1200px) {
 			font-size: 40px;
 		}
 	}	
