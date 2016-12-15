@@ -1244,7 +1244,7 @@ img.insights {
 }
 
 .diversity__modal--outer-wrapper {
-	margin: 200px auto;
+	margin: 100px 5px auto;
 	background-color: white;
 	padding: 80px;
 	@media screen and (max-width: 1300px) {
@@ -1565,7 +1565,11 @@ button.close__modal {
 	//overflow: hidden;
 	z-index: 9999;
 	text-align: center;
-	padding-top: 50px;
+
+	@media screen and (max-width: 450px){
+		padding-top: 50px;
+	}
+	
 	li {
 		@media screen and (min-height: 450px){
 			margin: 7.5%;
@@ -1574,6 +1578,9 @@ button.close__modal {
 		a {
 			font-size: 18px;
 			letter-spacing: $letter-spacing-global;
+			@media screen and (max-height: 320px){
+				line-height: .4em;
+			}
 		}
 
 	}
@@ -1608,7 +1615,10 @@ button.close__modal {
     top: 30px;
     width: 25px;
     height: 30px;
-    z-index: 0;
+    &.mobile-container-open {
+    	z-index: 999999 !important;
+    }
+    
 }
 
 .contact__us__mobile, .locations__mobile {
@@ -1627,6 +1637,7 @@ button.close__modal {
 .one__half {
 	display: inline-block;
 	width: 49%;
+	padding-bottom: 40px;
 	&.left{
 		border-right: 1px solid $darker-grey-two;
 	}
@@ -2089,7 +2100,7 @@ tbody {
 .email__modal {
 	.modal__text {
 		@media screen and (max-width: 768px){
-			font-size: 12px;
+			font-size: 10px;
 		}
 	}
 }
@@ -2367,5 +2378,31 @@ tr {
 	svg {
 		width: 20px !important;
 		height: 20px !important;
+	}
+}
+
+#open-mobile-menu {
+	&.open {
+		position: fixed;
+		top: 15px;
+		right: 20px;
+	}
+}
+#mobile-menu {
+	&.open {
+				position: fixed !important;
+				top: 0 !important;
+				bottom: 0 !important;
+				width: 100% !important;
+				background-color: $white !important;
+				z-index: 99999 !important;
+	}
+}
+
+.responsive__text {
+	&.large {
+		@media screen and (max-width: 768px){
+			font-size: 26px;
+		}
 	}
 }

@@ -460,9 +460,9 @@ span.red__border--top {
 	font-size: 26px;
 	line-height: 1.5;
 	&.big {
-		font-size: 40px;
+		font-size: 26px;
 		@include breakpoint(medium) {
-			font-size: 26px;	
+			font-size: 40px;
 		}
 	}	
 }
