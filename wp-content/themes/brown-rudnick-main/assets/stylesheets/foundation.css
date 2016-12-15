@@ -740,6 +740,9 @@ h3.title {
     .color-block__wrapper {
       padding: 30px; } }
   @media screen and (max-width: 575px) {
+    .color-block__wrapper.homepage--slider {
+      padding: 20px 20px; } }
+  @media screen and (max-width: 575px) {
     .color-block__wrapper {
       padding: 80px 20px; } }
   .color-block__wrapper.map {
