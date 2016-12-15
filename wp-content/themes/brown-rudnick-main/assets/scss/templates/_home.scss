@@ -212,9 +212,9 @@ button.slick-arrow  {
 	}
 }
 .homepage-grid-element {
-	border-style: solid;
-	border-width: 10px;
-	border-color: $primary-grey;
+	border-style: solid !important;
+	border-width: 10px !important;
+	border-color: $primary-grey !important;
 	background-color: $white;
 	margin: 0 auto;
 	@media screen and (max-width: 768px){

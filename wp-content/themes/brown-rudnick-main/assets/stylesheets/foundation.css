@@ -10752,9 +10752,9 @@ button.slick-arrow {
         max-width: 300px; } }
 
 .homepage-grid-element {
-  border-style: solid;
-  border-width: 10px;
-  border-color: #f0f0f0;
+  border-style: solid !important;
+  border-width: 10px !important;
+  border-color: #f0f0f0 !important;
   background-color: #fefefe;
   margin: 0 auto; }
   @media screen and (max-width: 768px) {
