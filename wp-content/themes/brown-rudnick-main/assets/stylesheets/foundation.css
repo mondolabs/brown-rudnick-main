@@ -336,6 +336,9 @@ insights__title {
   color: #0a0a0a;
   -webkit-transition: color .3s ease-in-out;
   transition: color .3s ease-in-out; }
+  @media screen and (max-width: 768px) {
+    .title__text.insights__landing {
+      font-size: 22px; } }
   .title__text.smaller {
     font-size: 24px; }
   .title__text.blog__title__text {
