@@ -2430,8 +2430,13 @@ tr {
 
 .responsive__text {
 	&.large {
-		@media screen and (max-width: 768px){
+		@media screen and (max-width: 769px){
 			font-size: 26px;
+		}
+	}
+	&.medium {
+		@media screen and (max-width: 769px){
+			font-size: 23px;
 		}
 	}
 }

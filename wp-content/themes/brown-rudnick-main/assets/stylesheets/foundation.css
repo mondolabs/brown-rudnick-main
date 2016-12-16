@@ -2242,9 +2242,13 @@ tr {
   background-color: #fefefe !important;
   z-index: 99999 !important; }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .responsive__text.large {
     font-size: 26px; } }
+
+@media screen and (max-width: 769px) {
+  .responsive__text.medium {
+    font-size: 23px; } }
 
 .white__background {
   background-color: #fefefe; }

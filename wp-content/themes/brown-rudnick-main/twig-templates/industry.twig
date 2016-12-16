@@ -69,14 +69,14 @@
 			    <span class="expander"></span>
 			{% endif %}    
 		</div>
-		<div class="columns small-12 medium-9 large-10">
+		<div class="columns small-12 medium-9 large-10 margin-top-20">
 			<div class="padding__wrapper forty sides__only">
-				<div class="title__text ">
+				<div class="title__text responsive__text medium">
 					{{ text_content_top }}
 				</div>
 			</div>
 			<div class="padding__wrapper forty sides__only">
-				<div class="body__text ">
+				<div class="body__text">
 					{{ post.post_content }}
 				</div>	
 			</div>
@@ -85,7 +85,7 @@
 			</div>
 			<div class="paddforty sides__only">
 				{% if industry_group_leaders %}
-					<div class="title__text ">
+					<div class="title__text responsive__text medium">
 						{{ industry_header_text }} Group Leaders
 					</div>
 			    	{% for leader in industry_group_leaders %}
@@ -133,7 +133,7 @@
 			</div>
 			{% if related_people|length > 0 %}	
 				<div class="small-12 medium-12 large-12 float__left">
-					<p class="title__text">
+					<p class="title__text responsive__text medium">
 						Related People
 					</p>
 					{% for person in related_people %}
@@ -154,7 +154,7 @@
 		<div class="row padding__wrapper top-and-bottom sixty">
 			<div class="large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">
 				<div class="padding__wrapper forty sides__only">
-					<p class="title__text">
+					<p class="title__text responsive__text medium">
 						{{ services_header }}
 					</p>
 					{% for service in services %}
@@ -178,7 +178,7 @@
      	<div class="diversity__modal--outer-wrapper table__wrapper relative">
         	<div class="diversity__modal--inner-wrapper table__innner">
           		<div class="diversity__modal--text-wrapper email__modal">
-		            <p class="title__text text-align__center">
+		            <p class="title__text text-align__center responsive__text medium">
 		              Notice
 		            </p>
 		            <p class="modal__text">
