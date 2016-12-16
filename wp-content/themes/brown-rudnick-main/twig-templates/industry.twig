@@ -27,17 +27,25 @@
 			    	{{ 'headlines'|upper }}
 			    </p>
 			    {% for item in headlines %}
-		        	{% set headline =  item|first %}	        		
-		        		{% if headline.has_external_link %}
-				        	<a href="{{ headline.external_link}}" class="link tag__text">
-				        		{{ headline.post_title|upper }}
-				        	</a>
-	        			{% else %}
-
-				        	<a href="{{TimberPost(headline).link}}" class="red link tag__text">
-				        		{{ headline.post_title|upper }}
-				        	</a>
-		        		{% endif %}
+		        	{% set headline =  item|first %}
+	        		{% if headline.has_external_link %}
+			        	<a href="{{ headline.external_link}}" class="link tag__text">
+			        		{{ headline.post_title|upper }}
+			        	</a>
+			        	<br>
+        			{% else %}
+			        	<a href="{{TimberPost(headline).link}}" class="red link tag__text">
+			        		{{ headline.post_title|upper }}
+			        	</a>
+			        	<br>
+	        		{% endif %}
+			    {% endfor %}
+			{% endif %}
+			{% if headline_files|length >= 1 %}
+			    {% for headline in headline_files %}
+		        	<a target="_blank" href="{{ headline.headline_file_link }}" class="red link tag__text link tag__text">
+		        		{{ headline.headline_file_title|upper }}
+		        	</a>
 		        	<br>
 			    {% endfor %}
 			{% endif %}
