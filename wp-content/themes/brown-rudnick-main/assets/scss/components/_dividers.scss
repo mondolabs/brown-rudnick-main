@@ -30,6 +30,11 @@
 	&.red {
 		background-color: $primary-red;
 	}
+	&.about__details {
+		@media screen and (max-width: 768px){
+			margin: 20px auto;
+		}
+	}
 	&.people__details {
 		margin: 8px 0;
 		@media screen and (max-width: 768px){

@@ -667,7 +667,7 @@ h3.title {
 		}
 	}
 	@media screen and (max-width: 575px) {
-		padding: 80px 20px; 
+		padding: 0; 
 	}
 	&.map {
 		padding: 0;
@@ -864,7 +864,10 @@ img.insight__details {
 	}
 	&.white {
 		background-color: rgba(255,255,255,1);
-    		padding: 12px 48px;	
+		padding: 15px;
+		@include breakpoint(medium){
+			padding: 12px 48px;	
+		}		
 	}
 	&.title__text {
 		font-size: 16px;
@@ -1267,7 +1270,7 @@ img.insights {
 		width: calc(100% - 200px);
 		@media screen and (max-width: 800px) {
 			width: calc(100% - 40px);
-			margin: 100px auto;
+			margin: 20px auto;
 		}
 	}
 }

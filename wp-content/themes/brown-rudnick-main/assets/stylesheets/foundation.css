@@ -744,7 +744,7 @@ h3.title {
       padding: 20px 20px; } }
   @media screen and (max-width: 575px) {
     .color-block__wrapper {
-      padding: 80px 20px; } }
+      padding: 0; } }
   .color-block__wrapper.map {
     padding: 0; }
 
@@ -908,7 +908,10 @@ img.insight__details {
     padding: 12px 48px; }
   .color__block.white {
     background-color: white;
-    padding: 12px 48px; }
+    padding: 15px; }
+    @media screen and (min-width: 48em) {
+      .color__block.white {
+        padding: 12px 48px; } }
   .color__block.title__text {
     font-size: 16px; }
     @media screen and (min-width: 48em) {
@@ -1279,7 +1282,7 @@ img.insights {
     @media screen and (max-width: 800px) {
       .diversity__modal--outer-wrapper.advanced-search {
         width: calc(100% - 40px);
-        margin: 100px auto; } }
+        margin: 20px auto; } }
 
 button.close__modal {
   position: absolute;
@@ -9904,6 +9907,9 @@ a {
     background-color: #fefefe; }
   .list-divider.red {
     background-color: #b91628; }
+  @media screen and (max-width: 768px) {
+    .list-divider.about__details {
+      margin: 20px auto; } }
   .list-divider.people__details {
     margin: 8px 0; }
     @media screen and (max-width: 768px) {
