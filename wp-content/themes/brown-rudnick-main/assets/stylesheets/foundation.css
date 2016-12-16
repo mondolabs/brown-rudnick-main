@@ -9827,6 +9827,9 @@ a {
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
   border: 2px solid #b91628; }
+  @media screen and (max-width: 768px) {
+    .sites-button.people-page-button {
+      padding: 5px !important; } }
   .sites-button.advanced-search {
     font-size: 11px;
     padding: 18px 16px;
