@@ -161,14 +161,14 @@
 				{% if person.representation_matters_secondary %}
 					<div class="negative__side-margins--15">
 						{% for representation in person.get_field('representation_matters_secondary') %}
-						<div class="columns small-12 medium-12 large-12">
+						<div class="columns small-12 medium-12 large-12" data-equalizer="bullet">
 							<p class="body__text">
 								{{representation.secondary_header}}		
 							</p>
 								{% for bullet in representation.secondary_representation %}
 									{% set bullet = bullet|first %}
 									<div class="bullet bullet__secondary padding-top-10 padding-bottom-10 representation">
-										<div class="body__text bullet__text">
+										<div class="body__text bullet__text" data-equalizer-watch="bullet">
 											{{ bullet }}
 										</div>
 									</div>	

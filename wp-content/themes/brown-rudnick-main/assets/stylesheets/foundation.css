@@ -299,9 +299,18 @@ a {
   .body__text.people__details {
     margin-bottom: 2px;
     font-size: 14px; }
+  .body__text.prof--development {
+    margin-left: 20px;
+    margin-top: -30px !important; }
+    @media screen and (min-width: 48.0625em) {
+      .body__text.prof--development {
+        margin-left: 30px; } }
   .body__text.service__text, .body__text.bullet__text {
-    margin-left: 30px;
+    margin-left: 20px;
     margin-top: -10px; }
+    @media screen and (min-width: 48.0625em) {
+      .body__text.service__text, .body__text.bullet__text {
+        margin-left: 30px; } }
   .body__text.insight, .body__text.insights {
     margin-bottom: 0; }
   .body__text.insights.link {
