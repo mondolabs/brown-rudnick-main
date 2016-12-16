@@ -1,12 +1,21 @@
 var INSIGHTS = {
 	listeners: function(){
-		// $('#insightsAdvancedSearch').click(function(event) {
-		// 	INSIGHTS.revealAdvancedSearchModal();
-		// });
-		console.log('Insights listeners js loaded');
+		$('#insightsAdvancedSearch').click(function(event) {
+			INSIGHTS.revealAdvancedSearchModal();
+		});
 		$('select.insight').change(function(event) {
 			var selects = $('select.insight');
-			var queryStringBase = location.origin + location.pathname;
+			var slugs = location.pathname;
+			if (slugs.split('/').length <= 4) {
+				var queryStringBase = location.origin + location.pathname;
+			} else {
+				var slugsArray = slugs.split('/');
+				slugsArray.splice(0,1);
+				var length = slugsArray.length - 1;
+				var newSlugsArray = slugsArray.splice(0,2).join('/')
+				var slugsWithNoPages = '/' + newSlugsArray + '/';
+				var queryStringBase = location.origin + slugsWithNoPages;		
+			}
 			var queryString = "";
 			var filters = [];
 			for (var i = selects.length - 1; i >= 0; i--) {
@@ -15,16 +24,13 @@ var INSIGHTS = {
 					filters.push($(select));
 				}
 			}
-
 			for(var i = filters.length - 1; i >= 0; i--) {
 				var paramName = $(filters[i]).attr('name');
 				var paramValue = $(filters[i]).val();
 				if ( paramValue.length > 0 && i === filters.length - 1 ) {
 					queryString = queryStringBase + "?" + paramName + "=" + paramValue;
-					console.log(queryString);
 				} else if ( paramValue.length > 0 ) {
 					queryString = queryString + "&" + paramName + "=" + paramValue;
-					console.log(queryString);
 				}
 			}
 			// set back the url to the base if there are no queries left
@@ -34,6 +40,7 @@ var INSIGHTS = {
 				window.location.replace(queryStringBase);
 			}
 		});
+
 		$('button#advancedSearchSubmit').click(function(event) {
 			var selects = $('.advanced');
 			var keyword = $("#allKeywordInput").val() || "";

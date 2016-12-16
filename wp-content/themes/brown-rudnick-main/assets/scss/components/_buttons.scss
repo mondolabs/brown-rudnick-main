@@ -58,8 +58,11 @@ a {
 	}
 	&.subscribe {
 		width: 100%;
-		padding-left: auto;
-		padding-right: auto;
+		padding-left: 10px;
+		padding-right: 10px;
+		@media screen and (max-width: 768px){
+			padding: 10px !important;
+		}
 	}
 	&.subscribe__content--block {
 	    float: right;

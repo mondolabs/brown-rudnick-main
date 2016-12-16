@@ -111,7 +111,7 @@ body {
   -webkit-box-shadow: none !important;
           box-shadow: none !important; }
 
-@media screen and (min-width: 40em) {
+@media screen and (min-width: 48.0625em) {
   .button__absolute {
     position: absolute !important;
     margin-bottom: 0 !important;
@@ -126,7 +126,7 @@ body {
 
 .home-button-container, .arrows-container, .slide-description p, .slide-description h2, .homepage-section-3-title {
   text-align: center; }
-  @media screen and (min-width: 40em) {
+  @media screen and (min-width: 48.0625em) {
     .home-button-container, .arrows-container, .slide-description p, .slide-description h2, .homepage-section-3-title {
       text-align: left; } }
 
@@ -425,6 +425,10 @@ insights__title {
     line-height: 1.2em;
     letter-spacing: 3px; }
 
+.sidebar__wrapper {
+  word-wrap: break-word;
+  -ms-word-wrap: break-word; }
+
 .padding__wrapper {
   display: block;
   position: relative; }
@@ -715,10 +719,10 @@ h3.title {
   border: solid 18px #fefefe;
   -webkit-box-shadow: inset 0px 0px 0px 14px #f0f0f0;
   box-shadow: inset 0px 0px 0px 14px #f0f0f0; }
-  @media screen and (min-width: 48em) {
+  @media screen and (min-width: 1025px) {
     .experience-tile__outer-wrapper.first {
       border-left: none; } }
-  @media screen and (min-width: 48em) {
+  @media screen and (min-width: 1025px) {
     .experience-tile__outer-wrapper.last {
       border-right: none; } }
   .experience-tile__outer-wrapper.orange {
@@ -900,7 +904,7 @@ img.insight__details {
 
 .align__left {
   text-align: center !important; }
-  @media screen and (min-width: 48em) {
+  @media screen and (min-width: 48.0625em) {
     .align__left {
       text-align: left !important; } }
 
@@ -912,22 +916,19 @@ img.insight__details {
   .color__block.white {
     background-color: white;
     padding: 15px; }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
       .color__block.white {
         padding: 12px 48px; } }
   .color__block.title__text {
     font-size: 16px; }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
       .color__block.title__text {
         font-size: 24px; } }
   .color__block.float__right {
     float: none !important; }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
       .color__block.float__right {
         float: right !important; } }
-
-.float__none {
-  float: none !important; }
 
 img.insights {
   width: 100%; }
@@ -1515,6 +1516,10 @@ button.close__modal {
 .float__left {
   float: left !important; }
 
+@media screen and (max-width: 1023px) {
+  .float__none {
+    float: none !important; } }
+
 .div__half {
   width: 49%;
   display: inline-block; }
@@ -1909,7 +1914,7 @@ input.wpcf7-email:-ms-input-placeholder {
 tbody {
   border: none !important; }
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 48.0625em) {
   .page-template-staff .job_expander, .page-template-london-trainee .job_expander {
     float: none !important; } }
 
@@ -2013,7 +2018,7 @@ tbody {
 .email-buttons {
   text-align: center;
   margin: 0 auto; }
-  @media screen and (min-width: 48em) {
+  @media screen and (min-width: 48.0625em) {
     .email-buttons {
       width: 50%; } }
 
@@ -2104,7 +2109,7 @@ tbody {
   padding: 14px 0px;
   width: 80px;
   text-align: center; }
-  @media screen and (min-width: 48em) {
+  @media screen and (min-width: 48.0625em) {
     #print--page {
       margin-left: 10px;
       display: inline-block; } }
@@ -2165,7 +2170,7 @@ textarea#comment {
   .single-people .featured-image__header--image-wrapper {
     height: 600px !important; } }
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 48.0625em) {
   .single-people .featured-image__header--text-inner-wrapper {
     vertical-align: middle; } }
 
@@ -4755,7 +4760,7 @@ th {
   padding: 0; }
 
 .foundation-mq {
-  font-family: "small=0em&medium=48em&large=64em&xlarge=75em&xxlarge=90em"; }
+  font-family: "small=0em&medium=48.0625em&large=64em&xlarge=75em&xxlarge=90em"; }
 
 html {
   font-size: 100%;
@@ -4839,7 +4844,7 @@ button {
     max-width: none;
     margin-left: -0.625rem;
     margin-right: -0.625rem; }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
       .row .row {
         margin-left: -0.9375rem;
         margin-right: -0.9375rem; } }
@@ -4857,7 +4862,7 @@ button {
   float: left;
   padding-left: 0.625rem;
   padding-right: 0.625rem; }
-  @media screen and (min-width: 48em) {
+  @media screen and (min-width: 48.0625em) {
     .column, .columns {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
@@ -5140,7 +5145,7 @@ button {
   margin-right: 0;
   float: left; }
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 48.0625em) {
   .medium-1 {
     width: 8.33333%; }
   .medium-push-1 {
@@ -6059,7 +6064,7 @@ h5 {
 h6 {
   font-size: 1rem; }
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 48.0625em) {
   h1 {
     font-size: 3rem; }
   h2 {
@@ -6188,7 +6193,7 @@ kbd {
 .text-justify {
   text-align: justify; }
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 48.0625em) {
   .medium-text-left {
     text-align: left; }
   .medium-text-right {
@@ -6904,7 +6909,7 @@ input[type="range"] {
     width: 100%; }
     .button-group.stacked .button:last-child, .button-group.stacked-for-small .button:last-child, .button-group.stacked-for-medium .button:last-child {
       margin-bottom: 0; }
-  @media screen and (min-width: 48em) {
+  @media screen and (min-width: 48.0625em) {
     .button-group.stacked-for-small .button {
       width: auto;
       margin-bottom: 0; } }
@@ -6912,7 +6917,7 @@ input[type="range"] {
     .button-group.stacked-for-medium .button {
       width: auto;
       margin-bottom: 0; } }
-  @media screen and (max-width: 47.9375em) {
+  @media screen and (max-width: 48em) {
     .button-group.stacked-for-small.expanded {
       display: block; }
       .button-group.stacked-for-small.expanded .button {
@@ -7108,7 +7113,7 @@ input[type="range"] {
   border-left-style: solid;
   border-right-width: 0; }
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 48.0625em) {
   .dropdown.menu.medium-horizontal > li.opens-left > .is-dropdown-submenu {
     top: 100%; }
   .dropdown.menu.medium-horizontal > li.opens-right > .is-dropdown-submenu {
@@ -7401,7 +7406,7 @@ input[type="range"] {
   display: block; }
   .media-object img {
     max-width: none; }
-  @media screen and (max-width: 47.9375em) {
+  @media screen and (max-width: 48em) {
     .media-object.stack-for-small .media-object-section {
       padding: 0;
       padding-bottom: 1rem;
@@ -7458,7 +7463,7 @@ input[type="range"] {
     z-index: 99999; }
   .menu.vertical > li {
     display: block; }
-  @media screen and (min-width: 48em) {
+  @media screen and (min-width: 48.0625em) {
     .menu.medium-horizontal > li {
       display: table-cell;
       z-index: 99999; }
@@ -7609,7 +7614,7 @@ body {
           -ms-transform: translateX(-350px);
               transform: translateX(-350px); }
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 48.0625em) {
   .position-left.reveal-for-medium {
     left: 0;
     z-index: auto;
@@ -7752,7 +7757,7 @@ body {
     display: none; }
     .pagination li:last-child, .pagination li:first-child {
       display: inline-block; }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
       .pagination li {
         display: inline-block; } }
   .pagination a,
@@ -8047,7 +8052,7 @@ html.is-reveal-open body {
   overflow-y: auto; }
   [data-whatinput='mouse'] .reveal {
     outline: 0; }
-  @media screen and (min-width: 48em) {
+  @media screen and (min-width: 48.0625em) {
     .reveal {
       min-height: 0; } }
   .reveal .column, .reveal .columns,
@@ -8055,26 +8060,26 @@ html.is-reveal-open body {
     min-width: 0; }
   .reveal > :last-child {
     margin-bottom: 0; }
-  @media screen and (min-width: 48em) {
+  @media screen and (min-width: 48.0625em) {
     .reveal {
       width: 600px;
       max-width: 75rem; } }
-  @media screen and (min-width: 48em) {
+  @media screen and (min-width: 48.0625em) {
     .reveal .reveal {
       left: auto;
       right: auto;
       margin: 0 auto; } }
   .reveal.collapse {
     padding: 0; }
-  @media screen and (min-width: 48em) {
+  @media screen and (min-width: 48.0625em) {
     .reveal.tiny {
       width: 30%;
       max-width: 75rem; } }
-  @media screen and (min-width: 48em) {
+  @media screen and (min-width: 48.0625em) {
     .reveal.small {
       width: 50%;
       max-width: 75rem; } }
-  @media screen and (min-width: 48em) {
+  @media screen and (min-width: 48.0625em) {
     .reveal.large {
       width: 90%;
       max-width: 75rem; } }
@@ -8089,7 +8094,7 @@ html.is-reveal-open body {
     margin-left: 0;
     border: 0;
     border-radius: 0; }
-  @media screen and (max-width: 47.9375em) {
+  @media screen and (max-width: 48em) {
     .reveal {
       top: 0;
       left: 0;
@@ -8487,7 +8492,7 @@ table.hover tr:nth-of-type(even):hover {
   .top-bar .top-bar-left,
   .top-bar .top-bar-right {
     width: 100%; }
-  @media screen and (min-width: 48em) {
+  @media screen and (min-width: 48.0625em) {
     .top-bar .top-bar-left,
     .top-bar .top-bar-right {
       width: auto; } }
@@ -8523,27 +8528,27 @@ table.hover tr:nth-of-type(even):hover {
 .invisible {
   visibility: hidden; }
 
-@media screen and (max-width: 47.9375em) {
+@media screen and (max-width: 48em) {
   .hide-for-small-only {
     display: none !important; } }
 
-@media screen and (max-width: 0em), screen and (min-width: 48em) {
+@media screen and (max-width: 0em), screen and (min-width: 48.0625em) {
   .show-for-small-only {
     display: none !important; } }
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 48.0625em) {
   .hide-for-medium {
     display: none !important; } }
 
-@media screen and (max-width: 47.9375em) {
+@media screen and (max-width: 48em) {
   .show-for-medium {
     display: none !important; } }
 
-@media screen and (min-width: 48em) and (max-width: 63.9375em) {
+@media screen and (min-width: 48.0625em) and (max-width: 63.9375em) {
   .hide-for-medium-only {
     display: none !important; } }
 
-@media screen and (max-width: 47.9375em), screen and (min-width: 64em) {
+@media screen and (max-width: 48em), screen and (min-width: 64em) {
   .show-for-medium-only {
     display: none !important; } }
 
@@ -9484,7 +9489,7 @@ table.hover tr:nth-of-type(even):hover {
   Add your scss files below to structure your project styles
 */
 /* Navigation breakpoints */
-@media screen and (max-width: 47.9375em) {
+@media screen and (max-width: 48em) {
   .desktop-menu, .top-bar-left {
     display: none !important; } }
 
@@ -9595,7 +9600,7 @@ a::after {
   text-align: center !important;
   background-color: #f0f0f0;
   width: 150vw; }
-  @media screen and (min-width: 48em) {
+  @media screen and (min-width: 48.0625em) {
     .is-dropdown-submenu {
       width: 160vw; } }
   @media screen and (min-width: 640px) {
@@ -9630,6 +9635,11 @@ a::after {
   -webkit-transform: translateX(-63%);
       -ms-transform: translateX(-63%);
           transform: translateX(-63%); }
+  @media screen and (max-width: 1025px) {
+    .last-submenu-item {
+      -webkit-transform: translateX(-67%);
+          -ms-transform: translateX(-67%);
+              transform: translateX(-67%); } }
 
 .first-submenu-item-scroll {
   -webkit-transform: translateX(-30%);
@@ -9660,6 +9670,11 @@ a::after {
   -webkit-transform: translateX(-53%);
       -ms-transform: translateX(-53%);
           transform: translateX(-53%); }
+  @media screen and (max-width: 1024px) {
+    .last-submenu-item-scroll {
+      -webkit-transform: translateX(-55%);
+          -ms-transform: translateX(-55%);
+              transform: translateX(-55%); } }
 
 .is-dropdown-submenu li a {
   font-size: 0.75em !important;
@@ -9669,20 +9684,22 @@ a::after {
   border-bottom: 1px solid #f0f0f0;
   float: right;
   top: 0;
-  width: 675px;
+  width: 670px;
   height: 62.5px; }
   @media screen and (min-width: 1200px) {
     .icons__container {
       width: 768px;
       height: 67px; } }
 
-@media screen and (min-width: 1024px) {
-  #menu-nested-pages-1.scrolled {
-    padding-right: 7%; } }
+#menu-nested-pages-1.scrolled {
+  padding-top: 28px; }
+  @media screen and (min-width: 1024px) {
+    #menu-nested-pages-1.scrolled {
+      padding-right: 7%; } }
 
 @media screen and (max-width: 1200px) {
   .menu__inner-wrapper--desktop {
-    padding-right: 25px !important; } }
+    padding-right: 10px !important; } }
 
 #footer {
   -webkit-box-shadow: 0 -5px 5px -5px rgba(0, 0, 0, 0.2);
@@ -9752,7 +9769,7 @@ a::after {
     padding: 2%;
     font-size: 11px;
     line-height: 4em; }
-  @media screen and (min-width: 48em) {
+  @media screen and (min-width: 48.0625em) {
     .footer-links a:hover {
       color: #b91628; } }
   @media screen and (max-width: 768px) {
@@ -9783,24 +9800,24 @@ a::after {
   float: left;
   padding-left: 0.625rem;
   padding-right: 0.625rem; }
-  @media screen and (min-width: 48em) {
+  @media screen and (min-width: 48.0625em) {
     .sidebar {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
   .sidebar:last-child:not(:first-child) {
     float: right; }
-  @media screen and (min-width: 48em) {
+  @media screen and (min-width: 48.0625em) {
     .sidebar {
       width: 33.33333%;
       float: left;
       padding-left: 0.625rem;
       padding-right: 0.625rem;
       margin-top: 1rem; } }
-  @media screen and (min-width: 48em) and (min-width: 48em) {
+  @media screen and (min-width: 48.0625em) and (min-width: 48.0625em) {
     .sidebar {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
-  @media screen and (min-width: 48em) {
+  @media screen and (min-width: 48.0625em) {
       .sidebar:last-child:not(:first-child) {
         float: right; } }
 
@@ -9859,8 +9876,11 @@ a {
       margin: 0 auto 30px; } }
   .sites-button.subscribe {
     width: 100%;
-    padding-left: auto;
-    padding-right: auto; }
+    padding-left: 10px;
+    padding-right: 10px; }
+    @media screen and (max-width: 768px) {
+      .sites-button.subscribe {
+        padding: 10px !important; } }
   .sites-button.subscribe__content--block {
     float: right;
     margin-top: -32px; }
@@ -9885,7 +9905,7 @@ a {
 .no-featured-image-set {
   height: 1rem !important; }
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 48.0625em) {
   #featured-hero {
     height: 25rem; } }
 
@@ -10053,7 +10073,7 @@ button.arrow {
       display: table; }
     #front-hero .marketing::after {
       clear: both; }
-  @media screen and (min-width: 48em) {
+  @media screen and (min-width: 48.0625em) {
     #front-hero {
       background: url("../images/demo/hero-bg-foundation-6-large.svg") bottom center;
       -webkit-background-size: cover;
@@ -10068,13 +10088,13 @@ button.arrow {
     padding-right: 0.625rem;
     position: relative;
     left: -41.66667%; }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
       #front-hero #watch {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
     #front-hero #watch:last-child:not(:first-child) {
       float: right; }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
       #front-hero #watch {
         width: 100%;
         float: left;
@@ -10082,11 +10102,11 @@ button.arrow {
         padding-right: 0.625rem;
         position: relative;
         left: 0%; } }
-  @media screen and (min-width: 48em) and (min-width: 48em) {
+  @media screen and (min-width: 48.0625em) and (min-width: 48.0625em) {
     #front-hero #watch {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
         #front-hero #watch:last-child:not(:first-child) {
           float: right; } }
     #front-hero #watch section {
@@ -10119,31 +10139,31 @@ button.arrow {
     float: left;
     padding-left: 0.625rem;
     padding-right: 0.625rem; }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
       #front-hero .tagline {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
     #front-hero .tagline:last-child:not(:first-child) {
       float: right; }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
       #front-hero .tagline {
         width: 41.66667%;
         float: left;
         padding-left: 0.625rem;
         padding-right: 0.625rem;
         padding-top: 6rem; } }
-  @media screen and (min-width: 48em) and (min-width: 48em) {
+  @media screen and (min-width: 48.0625em) and (min-width: 48.0625em) {
     #front-hero .tagline {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
         #front-hero .tagline:last-child:not(:first-child) {
           float: right; } }
   #front-hero h1 {
     color: #fff;
     font-weight: 500;
     font-size: 2.2rem; }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
       #front-hero h1 {
         font-size: 2.875rem; } }
   #front-hero h4 {
@@ -10167,24 +10187,24 @@ button.arrow {
     float: left;
     padding-left: 0.625rem;
     padding-right: 0.625rem; }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
       .intro .fp-intro {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
     .intro .fp-intro:last-child:not(:first-child) {
       float: right; }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
       .intro .fp-intro {
         width: 83.33333%;
         float: left;
         padding-left: 0.625rem;
         padding-right: 0.625rem;
         margin-left: 8.33333%; } }
-  @media screen and (min-width: 48em) and (min-width: 48em) {
+  @media screen and (min-width: 48.0625em) and (min-width: 48.0625em) {
     .intro .fp-intro {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
         .intro .fp-intro:last-child:not(:first-child) {
           float: right; }
         .intro .fp-intro h2 {
@@ -10212,7 +10232,7 @@ button.arrow {
     padding-right: 0.625rem;
     -webkit-box-sizing: border-box;
             box-sizing: border-box; }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
       .section-divider hr {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
@@ -10234,7 +10254,7 @@ button.arrow {
     float: left;
     padding-left: 0.625rem;
     padding-right: 0.625rem; }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
       .benefits header {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
@@ -10254,7 +10274,7 @@ button.arrow {
     float: left;
     padding-left: 0.625rem;
     padding-right: 0.625rem; }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
       .benefits .semantic,
       .benefits .responsive,
       .benefits .customizable,
@@ -10266,7 +10286,7 @@ button.arrow {
     .benefits .customizable:last-child:not(:first-child),
     .benefits .professional:last-child:not(:first-child) {
       float: right; }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
       .benefits .semantic,
       .benefits .responsive,
       .benefits .customizable,
@@ -10275,14 +10295,14 @@ button.arrow {
         float: left;
         padding-left: 0.625rem;
         padding-right: 0.625rem; } }
-  @media screen and (min-width: 48em) and (min-width: 48em) {
+  @media screen and (min-width: 48.0625em) and (min-width: 48.0625em) {
     .benefits .semantic,
     .benefits .responsive,
     .benefits .customizable,
     .benefits .professional {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
         .benefits .semantic:last-child:not(:first-child),
         .benefits .responsive:last-child:not(:first-child),
         .benefits .customizable:last-child:not(:first-child),
@@ -10320,7 +10340,7 @@ button.arrow {
       display: table; }
     .benefits .why-foundation::after {
       clear: both; }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
       .benefits .why-foundation {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
@@ -10342,7 +10362,7 @@ button.arrow {
     float: left;
     padding-left: 0.625rem;
     padding-right: 0.625rem; }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
       #kitchen-sink header {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
@@ -10358,7 +10378,7 @@ button.arrow {
     padding-right: 0.625rem; }
     #kitchen-sink #components hr {
       margin: 3rem 0; }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
       #kitchen-sink #components {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
@@ -10370,7 +10390,7 @@ button.arrow {
         float: left;
         padding-left: 0.625rem;
         padding-right: 0.625rem; } }
-  @media screen and (min-width: 64em) and (min-width: 48em) {
+  @media screen and (min-width: 64em) and (min-width: 48.0625em) {
     #kitchen-sink #components {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
@@ -10387,7 +10407,7 @@ button.arrow {
         padding-right: 0.625rem;
         display: block;
         float: right; } }
-  @media screen and (min-width: 64em) and (min-width: 48em) {
+  @media screen and (min-width: 64em) and (min-width: 48.0625em) {
     #kitchen-sink #kitchen-sink-nav {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
@@ -10445,23 +10465,23 @@ button.arrow {
     float: left;
     padding-left: 0.625rem;
     padding-right: 0.625rem; }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
       #page .main-content {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
     #page .main-content:last-child:not(:first-child) {
       float: right; }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
       #page .main-content {
         width: 66.66667%;
         float: left;
         padding-left: 0.625rem;
         padding-right: 0.625rem; } }
-  @media screen and (min-width: 48em) and (min-width: 48em) {
+  @media screen and (min-width: 48.0625em) and (min-width: 48.0625em) {
     #page .main-content {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
         #page .main-content:last-child:not(:first-child) {
           float: right; } }
 
@@ -10480,13 +10500,13 @@ button.arrow {
     float: left;
     padding-left: 0.625rem;
     padding-right: 0.625rem; }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
       #page-sidebar-left .main-content {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
     #page-sidebar-left .main-content:last-child:not(:first-child) {
       float: right; }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
       #page-sidebar-left .main-content {
         width: 66.66667%;
         float: left;
@@ -10494,11 +10514,11 @@ button.arrow {
         padding-right: 0.625rem;
         position: relative;
         left: 33.33333%; } }
-  @media screen and (min-width: 48em) and (min-width: 48em) {
+  @media screen and (min-width: 48.0625em) and (min-width: 48.0625em) {
     #page-sidebar-left .main-content {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
         #page-sidebar-left .main-content:last-child:not(:first-child) {
           float: right; } }
   #page-sidebar-left .sidebar {
@@ -10506,13 +10526,13 @@ button.arrow {
     float: left;
     padding-left: 0.625rem;
     padding-right: 0.625rem; }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
       #page-sidebar-left .sidebar {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
     #page-sidebar-left .sidebar:last-child:not(:first-child) {
       float: right; }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
       #page-sidebar-left .sidebar {
         width: 33.33333%;
         float: left;
@@ -10521,11 +10541,11 @@ button.arrow {
         position: relative;
         left: -66.66667%;
         margin-top: 1rem; } }
-  @media screen and (min-width: 48em) and (min-width: 48em) {
+  @media screen and (min-width: 48.0625em) and (min-width: 48.0625em) {
     #page-sidebar-left .sidebar {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
         #page-sidebar-left .sidebar:last-child:not(:first-child) {
           float: right; } }
 
@@ -10544,7 +10564,7 @@ button.arrow {
     float: left;
     padding-left: 0.625rem;
     padding-right: 0.625rem; }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
       #page-full-width .main-content {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
@@ -10566,23 +10586,23 @@ button.arrow {
     float: left;
     padding-left: 0.625rem;
     padding-right: 0.625rem; }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
       #single-post .main-content {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
     #single-post .main-content:last-child:not(:first-child) {
       float: right; }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
       #single-post .main-content {
         width: 66.66667%;
         float: left;
         padding-left: 0.625rem;
         padding-right: 0.625rem; } }
-  @media screen and (min-width: 48em) and (min-width: 48em) {
+  @media screen and (min-width: 48.0625em) and (min-width: 48.0625em) {
     #single-post .main-content {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 48.0625em) {
         #single-post .main-content:last-child:not(:first-child) {
           float: right; } }
 
@@ -10699,7 +10719,7 @@ button.slick-arrow {
   -webkit-background-size: 40% 40%;
           background-size: 40%;
   z-index: 999; }
-  @media screen and (min-width: 48em) {
+  @media screen and (min-width: 48.0625em) {
     .human-icon {
       width: 80px;
       height: 80px; } }
@@ -10735,7 +10755,7 @@ button.slick-arrow {
   display: inline-block;
   margin: 7px;
   cursor: pointer; }
-  @media screen and (min-width: 48em) {
+  @media screen and (min-width: 48.0625em) {
     .prev-slider-home, .next-slider-home {
       margin: 15px; } }
 
@@ -10757,7 +10777,7 @@ button.slick-arrow {
   -webkit-background-size: cover;
           background-size: cover;
   overflow: hidden; }
-  @media screen and (min-width: 48em) {
+  @media screen and (min-width: 48.0625em) {
     .homepage-full {
       height: 500px; } }
   .homepage-full img {
@@ -10800,19 +10820,16 @@ button.slick-arrow {
   .slick-slide {
     height: 650px; } }
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 48.0625em) {
   .homepage-grid-element {
     height: 500px; } }
 
 .menu__wrapper--desktop {
   padding: 20px 0px 20px; }
 
-ul.desktop-menu {
-  padding-top: 28px; }
-
 #menu-nested-pages {
   display: table !important;
-  width: 107% !important; }
+  width: 100% !important; }
 
 ul.menu li a {
   color: #0a0a0a;
@@ -10824,7 +10841,7 @@ ul.menu li a {
   transition: width 2s, height 2s, background-color 2s, -webkit-transform 2s;
   transition: width 2s, height 2s, background-color 2s, transform 2s;
   transition: width 2s, height 2s, background-color 2s, transform 2s, -webkit-transform 2s;
-  letter-spacing: 3px; }
+  letter-spacing: 2.85px; }
   ul.menu li a:after {
     border: none !important; }
   ul.menu li a:hover {
@@ -10946,7 +10963,7 @@ span.red__border--top {
   color: #0a0a0a;
   letter-spacing: 3px; }
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 48.0625em) {
   .public-interest-learn-more {
     max-height: 600px;
     background-color: #fefefe;
@@ -10982,11 +10999,6 @@ span.red__border--top {
   font-family: "adobe-garamond-pro", serif;
   font-size: 26px;
   line-height: 1.5; }
-  .homepage-slider-title.big, .homepage-element-body.big {
-    font-size: 26px; }
-    @media screen and (min-width: 1200px) {
-      .homepage-slider-title.big, .homepage-element-body.big {
-        font-size: 40px; } }
 
 .homepage-slider-title {
   margin-bottom: 3%; }

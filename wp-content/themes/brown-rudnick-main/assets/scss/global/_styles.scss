@@ -238,6 +238,11 @@ insights__title {
     }	
 }
 
+.sidebar__wrapper {
+	word-wrap: break-word;
+	-ms-word-wrap: break-word;
+}
+
 .padding__wrapper {
     display: block;
     position: relative;
@@ -630,12 +635,12 @@ h3.title {
     -moz-box-shadow:inset 0px 0px 0px 14px $primary-grey;
     box-shadow:inset 0px 0px 0px 14px $primary-grey;
     &.first {
-    	@include breakpoint(medium) {
+    	@media screen and (min-width: 1025px) {
     		border-left: none;
     	}
     }
     &.last {
-    	@include breakpoint(medium) {
+    	@media screen and (min-width: 1025px) {
     		border-right: none;
     	}	
     }
@@ -890,9 +895,7 @@ img.insight__details {
 
 }
 
-.float__none {
-	float: none !important;
-}
+
 img.insights {
 	width: 100%;
 }
@@ -1562,12 +1565,21 @@ button.close__modal {
 	}
 }
 
+// edge float cases that are inconvenient
 .float__right {
 	float:right !important;
 }
 .float__left {
 	float:left !important;
 }
+// to correct float of insights select floating left on /insights/... pages
+.float__none {
+	@media screen and (max-width: 1023px){
+		float: none !important;
+	}
+}
+
+
 .div__half {
 	width:49%; display: inline-block;
 }
@@ -1775,6 +1787,9 @@ select.clean___border {
 	box-shadow: none;
 	border: none;
 	padding: 16px 80px;
+	// @media screen and (max-width: 768px){
+	// 	padding: 10px !important;
+	// }
 	text-transform: uppercase;
 	margin: 3% auto;
 	letter-spacing: $letter-spacing-global;
