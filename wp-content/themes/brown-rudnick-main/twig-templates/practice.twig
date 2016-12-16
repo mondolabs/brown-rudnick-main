@@ -27,14 +27,14 @@
 			    <p class="tag__text">
 			    	{{ 'headlines'|upper }}
 			    </p>
-			    {% for item in headlines %}
-		        	{% set headline =  item|first %}
+			    {% for headline in headlines %}
 	        		{% if headline.has_external_link %}
-			        	<a href="{{ headline.external_link}}" class="link tag__text">
+			        	<a href="{{ headline.external_link}}" class="red link tag__text">
 			        		{{ headline.external_title|upper }}
 			        	</a>
 			        	<br>
         			{% else %}
+		        		{% set headline =  headline|first %}
 			        	<a href="{{TimberPost(headline).link}}" class="red link tag__text">
 			        		{{ headline.post_title|upper }}
 			        	</a>
