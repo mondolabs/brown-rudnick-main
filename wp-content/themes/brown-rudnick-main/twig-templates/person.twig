@@ -367,7 +367,7 @@
 		<div class="columns small-12 medium-12 large-12">
 		<div class="row">
 			<div class="large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">	
-				{% set awards_and_honors = person.get_field('awards_and_honors') %}
+				{% set awards_honors = person.get_field('awards_honors') %}
 				<table class="no__borders">
 					<tr class="gray__underline">
 						<td class="title__text smaller accordion-trigger">
@@ -377,7 +377,7 @@
 							<span class="person__details--expander top__menu accordion" data-show-target="personPublicationDetails" ></span>
 						</td>
 					</tr>
-					{% for award in awards_and_honors %}
+					{% for award in awards_honors %}
 						<tr class="hidden hidden__person-publication--details">
 							<td class="bullet" colspan="5">
 								<div class="body__text bullet__text">
