@@ -2227,6 +2227,12 @@ textarea#comment {
     td .job_expander {
       right: 0 !important; } }
 
+@media screen and (max-width: 320px) {
+  td {
+    padding: 0.5% !important; }
+    td .job_expander {
+      right: 1px !important; } }
+
 tr {
   background-color: #fefefe !important; }
 
@@ -2291,9 +2297,10 @@ tr {
   .responsive__text.medium {
     font-size: 23px; } }
 
-@media screen and (max-width: 769px) {
-  .responsive__text.small {
-    font-size: 13.5px !important; } }
+@media screen and (max-width: 320px) {
+  .responsive__text.smallest {
+    font-size: 11.5px !important;
+    letter-spacing: 0.5px !important; } }
 
 .white__background {
   background-color: #fefefe; }
