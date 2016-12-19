@@ -26,28 +26,28 @@
 			    <p class="tag__text">
 			    	{{ 'headlines'|upper }}
 			    </p>
-			    {% for headline in headlines %}
-	        		{% if headline.has_external_link %}
-			        	<a href="{{ headline.external_link}}" class="red link tag__text">
-			        		{{ headline.external_title|upper }}
-			        	</a>
-			        	<br>
-        			{% else %}
-		        		{% set headline =  headline|first %}
-			        	<a href="{{TimberPost(headline).link}}" class="red link tag__text">
-			        		{{ headline.post_title|upper }}
-			        	</a>
-			        	<br>
-	        		{% endif %}
+			    {% for item in headlines %}
+		        	{% set headline =  item|first %}	        		
+		        		{% if headline.has_external_link %}
+					        <div class="{% if loop.index > 3 %}hidden hidden_headline hidden__exp{% endif %}">
+					        	<a href="{{ headline.external_link}}" class="link tag__text">
+					        		{{ headline.post_title|upper }}
+					        	</a>
+					        </div>	
+	        			{% else %}
+	        				<div class="{% if loop.index > 3 %}hidden hidden_headline hidden__exp{% endif %}">
+					        	<a href="{{TimberPost(headline).link}}" class="red link tag__text">
+					        		{{ headline.post_title|upper }}
+					        	</a>
+					        </div>	
+		        		{% endif %}
+		        	<br class="{% if loop.index > 3 %}hidden hidden_headline hidden__exp{% endif %}">
 			    {% endfor %}
-			{% endif %}
-			{% if headline_files|length >= 1 %}
-			    {% for headline in headline_files %}
-		        	<a target="_blank" href="{{ headline.headline_file_link }}" class="red link tag__text link tag__text">
-		        		{{ headline.headline_file_title|upper }}
-		        	</a>
-		        	<br>
-			    {% endfor %}
+				{% if loop.length > 3 %} 
+				    <a id="showMoreHeadlines" class="padding-bottom-40 more link red tag__text underline" href="#more">
+			    		SHOW MORE
+				    </a>
+				{% endif %}
 			{% endif %}
 			{% if related_experience %}
 			    <p class="tag__text">
@@ -131,7 +131,47 @@
 					{% endfor %}					
 				{% endif %}
 			</div>
+			{% if contact_us|length > 0 %}	
+				<div class="columns medium-12 large-12 small-12">
+					<div class="columns medium-12 large-12 small-12">
+						<div class="padding__wrapper sides__only">	
+							<div class="columns medium-12 large-12 small-12">
+								<p class="title__text">
+									Contact Us
+								</p>
+							</div>	
+							{% for contact in contact_us %}
+								{% set contact = contact|first %}
+								<div class="columns medium-6 large-6 small-12 person end">						
+									<a class="body__text red link margin-bottom--10" href="{{ TimberPost(contact).link }}">
+										{{ contact.first_name }} {% if contact.middle_initial %}{{ contact.middle_initial }}. {% endif %} {{ contact.last_name }}
+									</a>
+								</div>
+							{% endfor %}
+						</div>	
+					</div>	
+				</div>
+			{% endif %}
+
 			{% if related_people|length > 0 %}	
+<<<<<<< HEAD
+				<div class="columns medium-12 large-12 small-12">
+					<div class="columns medium-12 large-12 small-12">
+						<div class="padding__wrapper sides__only">	
+							<div class="columns medium-12 large-12 small-12">
+								<p class="title__text">
+									Related People
+								</p>
+							</div>	
+							{% for person in related_people %}
+								{% set person = person|first %}
+								<div class="columns medium-6 large-6 small-12 person end">
+									<a class="body__text red link margin-bottom--10" href="{{ TimberPost(person).link }}">
+										{{ person.first_name }} {% if person.middle_initial %}{{ person.middle_initial }}. {% endif %} {{ person.last_name }}
+									</a>
+								</div>
+							{% endfor %}
+=======
 				<div class="small-12 medium-12 large-12 float__left">
 					<p class="title__text responsive__text medium">
 						Related People
@@ -142,10 +182,33 @@
 							<a class="body__text red link margin-bottom--10" href="{{ TimberPost(person).link }}">
 								{{ person.first_name }} {% if person.middle_initial %}{{ person.middle_initial }}. {% endif %} {{ person.last_name }}
 							</a>
+>>>>>>> master
 						</div>	
-					{% endfor %}
+					</div>	
+				</div>	
+			{% endif %}
+
+			{% if news_and_resources|length > 0 %}	
+				<div class="columns medium-12 large-12 small-12">
+					<div class="columns medium-12 large-12 small-12">
+						<div class="padding__wrapper sides__only">	
+							<div class="columns medium-12 large-12 small-12">
+								<p class="title__text">
+									Related People
+								</p>
+							</div>	
+							{% for item in news_and_resources %}
+								{% set item = item|first %}
+								<div class="columns medium-6 large-6 small-12 person end">						
+									<a class="body__text red link margin-bottom--10" href="{{ TimberPost(item).link }}">
+										{{ item.geography_related_news_and_resources_post }}
+									</a>
+								</div>	
+							{% endfor %}
+						</div>	
+					</div>	
 				</div>
-			{% endif %}	
+			{% endif %}
 		</div>
 	</div>
 </div>	
