@@ -122,7 +122,6 @@
 			</div>
 
 			{% if contact_us|length > 0 %}	
-<<<<<<< HEAD
 				<div class="columns medium-12 large-12 small-12">
 					<div class="columns medium-12 large-12 small-12">
 						<div class="padding__wrapper sides__only">	
@@ -139,18 +138,6 @@
 									</a>
 								</div>
 							{% endfor %}
-=======
-				<div style="padding: 0 40px;">
-					<p class="title__text responsive__text medium">
-						Contact Us
-					</p>
-					{% for contact in contact_us %}
-						{% set contact = contact|first %}
-						<div class="columns medium-6 large-6 small-12 person end">						
-							<a class="body__text red link margin-bottom--10" href="{{ TimberPost(contact).link }}">
-								{{ contact.first_name }} {% if contact.middle_initial %}{{ contact.middle_initial }}. {% endif %} {{ contact.last_name }}
-							</a>
->>>>>>> master
 						</div>	
 					</div>	
 				</div>
@@ -174,19 +161,7 @@
 									</a>
 								</div>
 							{% endfor %}
-=======
-				<div style="padding: 0 40px;" class="margin-bottom-forty">
-					<p class="title__text responsive__text medium">
-						Related People
-					</p>
-					{% for person in related_people %}
-						{% set person = person|first %}
-						<div class="columns medium-6 large-6 small-12 person end">						
-							<a class="body__text red link margin-bottom--10" href="{{ TimberPost(person).link }}">
-								{{ person.first_name }} {% if person.middle_initial %}{{ person.middle_initial }}. {% endif %} {{ person.last_name }}
-							</a>
->>>>>>> master
-						</div>	
+						</div>
 					</div>	
 				</div>	
 			{% endif %}
