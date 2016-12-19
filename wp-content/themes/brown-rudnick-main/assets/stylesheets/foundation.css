@@ -7,6 +7,9 @@
   The Foundation framework is built by Zurb
   Licensed under MIT Open Source
 */
+sup {
+  line-height: 1 !important; }
+
 body {
   font-family: "Avenir", Helvetica, Arial, sans-serif !important; }
 
@@ -95,6 +98,9 @@ body {
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 3px; }
+
+sup {
+  line-height: 1 !important; }
 
 body {
   font-family: "Avenir", Helvetica, Arial, sans-serif !important; }
