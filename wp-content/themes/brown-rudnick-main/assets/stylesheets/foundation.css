@@ -1120,7 +1120,6 @@ img.insights {
   position: relative;
   cursor: pointer;
   float: right;
-  height: 22px;
   margin-top: -32px; }
   .experience_expander.top__menu,
   .job_expander.top__menu,
@@ -2298,10 +2297,13 @@ tr {
   .responsive__text.medium {
     font-size: 23px; } }
 
+.responsive__text .inline__link {
+  display: block !important; }
+
 @media screen and (max-width: 450px) {
   .responsive__text.smallest {
-    font-size: 11.5px !important;
-    letter-spacing: 0.5px !important; } }
+    font-size: 13.5px !important;
+    letter-spacing: 0.25px !important; } }
 
 @media screen and (max-width: 320px) {
   .job__mobile {

@@ -493,6 +493,8 @@ a.link {
 	}
 }
 
+
+
 h3.title {
 	font-size: 24px;
 	font-family: $brgaramond;
@@ -1118,7 +1120,6 @@ img.insights {
     position: relative;
     cursor: pointer;
     float: right;
-    height: 22px;
     margin-top: -32px;
 	&.top__menu {
 		background-color: $primary-red;
@@ -2478,10 +2479,13 @@ tr {
 			font-size: 23px;
 		}
 	}
+	.inline__link {
+		display: block !important;
+	}
 	&.smallest {
 		@media screen and (max-width: 450px){
-			font-size: 11.5px !important;
-			letter-spacing: 0.5px !important;
+			font-size: 13.5px !important;
+			letter-spacing: 0.25px !important;
 		}
 	}
 }
