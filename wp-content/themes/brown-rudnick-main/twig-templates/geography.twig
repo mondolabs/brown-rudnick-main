@@ -42,19 +42,6 @@
 					        </div>	
 		        		{% endif %}
 		        	<br class="{% if loop.index > 3 %}hidden hidden_headline hidden__exp{% endif %}">
-			    {% for headline in headlines %}
-	        		{% if headline.has_external_link %}
-			        	<a href="{{ headline.external_link}}" class="red link tag__text">
-			        		{{ headline.external_title|upper }}
-			        	</a>
-			        	<br>
-        			{% else %}
-		        		{% set headline =  headline|first %}
-			        	<a href="{{TimberPost(headline).link}}" class="red link tag__text">
-			        		{{ headline.post_title|upper }}
-			        	</a>
-			        	<br>
-	        		{% endif %}
 			    {% endfor %}
 			{% endif %}
 			{% if related_experience|length > 0 %}
