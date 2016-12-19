@@ -145,6 +145,10 @@ if( ($geography !== "GEOGRAPHIES") || ( $industry !== "INDUSTRIES") || ($practic
 query_posts($insights_args);
 
 $results = Timber::get_posts($insights_args);
+
+$query = new WP_Query($insights_args);
+
+$data['total_results'] = $query->found_posts;
 $data['insights'] = $results;
 $data['insights'] = array_unique($data['insights']);
 function sort_objects_by_date($a, $b) {
