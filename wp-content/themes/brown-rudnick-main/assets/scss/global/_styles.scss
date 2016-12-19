@@ -75,6 +75,7 @@ a {
 	&.bullet__text {
 		margin-left: 20px;
 		margin-top: -10px;
+		margin-bottom: 20px;
 		@include breakpoint(medium){
 			margin-left: 30px;
 		}
@@ -832,6 +833,10 @@ img.insight__details {
 	clear: both;
 }
 
+.clear__left {
+	clear: both !important;
+}
+
 .upper {
 	text-transform: uppercase;
 }
@@ -1112,13 +1117,18 @@ img.insights {
     position: relative;
     cursor: pointer;
     float: right;
+    height: 22px;
     margin-top: -32px;
 	&.top__menu {
 		background-color: $primary-red;
 		right: 15px;
 		top: 20px;
+		@-moz-document url-prefix() {
+			top: 10px;
+		}
 		@media screen and(max-width:768px) {
     	top: 3px;
+    	margin-top: -7px;
 		}
 		&:before {
 			top: 7px;
@@ -1453,6 +1463,7 @@ button.close__modal {
 	.document__link {
 		color: #a7a6a6;
 	}
+
 	.document__link:hover {
 		color: #bcbcbc;
 	}
@@ -2461,7 +2472,13 @@ tr {
 			font-size: 23px;
 		}
 	}
+	&.small {
+		@media screen and (max-width: 769px){
+			font-size: 13.5px !important;
+		}
+	}
 }
+
 .white__background {
 	background-color: $white;
 
