@@ -26,6 +26,10 @@ $darker-grey-two: #c9c9c9;
 $svg-stroke: #231f20;
 $letter-spacing-global: 3px;
 
+sup {
+	line-height: 1 !important;
+}
+
 body {
 	font-family: $brfont !important;
 }

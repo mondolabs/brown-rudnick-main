@@ -130,7 +130,7 @@
 			$('#featuredImage').backstretch("{{featured_image_url}}");
 		})
 	{% endif %}
-	{% if featured_image_url|length > 0 %}
+	{% if bottom_banner_image %}
 		$(document).ready(function(){
 			$('#lawyersBannerImage').backstretch("{{ bottom_banner_image }}");
 		})
