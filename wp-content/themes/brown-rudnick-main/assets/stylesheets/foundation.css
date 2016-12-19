@@ -877,7 +877,8 @@ img.insight__details {
 .bullet {
   float: left !important;
   padding-left: 0;
-  padding-right: 0; }
+  padding-right: 0;
+  padding-top: 10px; }
   .service:before,
   .bullet:before {
     content: " ";
