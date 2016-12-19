@@ -1570,7 +1570,7 @@ button.close__modal {
   text-align: center; }
   @media screen and (max-width: 450px) {
     #menu-mobile-menu {
-      padding-top: 50px; } }
+      padding-top: 25px; } }
   #menu-mobile-menu li {
     margin: 1%; }
     @media screen and (min-height: 450px) {
@@ -1581,7 +1581,7 @@ button.close__modal {
       letter-spacing: 3px; }
       @media screen and (max-height: 320px) {
         #menu-mobile-menu li a {
-          line-height: .4em; } }
+          line-height: .2em; } }
 
 .mobile__menu__wrapper {
   position: relative; }

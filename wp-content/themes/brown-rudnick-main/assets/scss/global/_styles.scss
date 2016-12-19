@@ -1624,7 +1624,7 @@ button.close__modal {
 	text-align: center;
 
 	@media screen and (max-width: 450px){
-		padding-top: 50px;
+		padding-top: 25px;
 	}
 	
 	li {
@@ -1636,7 +1636,7 @@ button.close__modal {
 			font-size: 18px;
 			letter-spacing: $letter-spacing-global;
 			@media screen and (max-height: 320px){
-				line-height: .4em;
+				line-height: .2em;
 			}
 		}
 
