@@ -93,4 +93,10 @@ add_filter('comments_open', '__return_true');
 
 add_theme_support( 'title-tag' );
 
+// form validation 
+
+
+
+
+
   

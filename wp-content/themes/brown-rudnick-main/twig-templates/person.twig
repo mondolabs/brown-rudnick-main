@@ -121,11 +121,11 @@
 					<p class="title__text">
 						Awards
 					</p>
-					<div class="row">
+					<div class="row text-align__center">
 						{% for award_image in person.get_field('award_images') %}
-							<div class="columns small-4 medium-3 large-3 float-left">
+							<div class="columns small-6 medium-6 large-3 {% if not loop.last %} float-left {% else %} float__none  {% endif %} ">
 								{% set award_image = award_image|first %}
-								<img src="{{ award_image }}">
+								<img src="{{ award_image }}" class="margin-top-20">
 							</div>
 						{% endfor %}
 					</div>	
