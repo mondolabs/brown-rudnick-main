@@ -2298,10 +2298,14 @@ tr {
   .responsive__text.medium {
     font-size: 23px; } }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 450px) {
   .responsive__text.smallest {
     font-size: 11.5px !important;
     letter-spacing: 0.5px !important; } }
+
+@media screen and (max-width: 320px) {
+  .job__mobile {
+    display: block !important; } }
 
 .white__background {
   background-color: #fefefe; }

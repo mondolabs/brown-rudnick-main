@@ -2479,7 +2479,7 @@ tr {
 		}
 	}
 	&.smallest {
-		@media screen and (max-width: 320px){
+		@media screen and (max-width: 450px){
 			font-size: 11.5px !important;
 			letter-spacing: 0.5px !important;
 		}
@@ -2488,7 +2488,7 @@ tr {
 
 @media screen and (max-width: 320px){
 	.job__mobile {
-		//display: block !important;
+		display: block !important;
 	}
 }
 
