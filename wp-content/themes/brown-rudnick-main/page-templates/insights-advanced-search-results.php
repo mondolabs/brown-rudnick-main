@@ -108,11 +108,18 @@ $type = get_query_var('type_query', array('alert', 'article', 'event' ));
 $geography = get_query_var('geography_query', "GEOGRAPHIES");
 $industry = get_query_var('industry_query', "INDUSTRIES");
 $practice = get_query_var('practice_query', "PRACTICES");
+$keyword = get_query_var('keyword');
+
+
 
 $type =  str_replace("-and-", " & ", $type);
 $geography =  str_replace("-and-", " & ", $geography);
 $industry =  str_replace("-and-", " & ", $industry);
 $practice =  str_replace("-and-", " & ", $practice);
+
+// clean up keyword search
+$keyword = str_replace("-", " ", $keyword);
+$keyword = str_replace("%20", " ", $keyword);
 
 $type =  str_replace("-slash-", " / ", $type);
 $geography =  str_replace("-slash-", " / ", $geography);
@@ -123,8 +130,7 @@ $year_query = intval($year);
 $month_query = intval($month); 
 $insights_args = array(
   'post_type' => $type,
-  'posts_per_page' => 5,
-  'paged' => $paged, 
+  'posts_per_page' => -1,
   'orderby'=>'date',
   'date_query' => array(
     array(
@@ -135,7 +141,7 @@ $insights_args = array(
   )
 );
 
-if( ($geography !== "GEOGRAPHIES") || ( $industry !== "INDUSTRIES") || ($practice !=="PRACTICES")  ) {
+if( ($geography !== "GEOGRAPHIES") || ( $industry !== "INDUSTRIES") || ($practice !=="PRACTICES") ||  ($keyword !== "") ) {
   $insights_args["tax_query"] = array( 'relation' => 'AND' );
   if ( $geography !== "GEOGRAPHIES" ) {
     $geography_term_query_array = array('taxonomy' => 'geography', 'field' => 'slug', 'terms' => array( $geography));
@@ -149,12 +155,17 @@ if( ($geography !== "GEOGRAPHIES") || ( $industry !== "INDUSTRIES") || ($practic
     $practice_term_query_array = array('taxonomy' => 'practice', 'field' => 'slug', 'terms' => array( $practice));
     array_push($insights_args['tax_query'], $practice_term_query_array );
   }
+  if ( $keyword !== "" ) {
+    $insights_args['s'] = $keyword;
+  }
 }
+
 
 // for pagination
 
 query_posts($insights_args);
-
+$test = new WP_Query($insights_args);
+$data['total_results'] = $test->found_posts;
 $results = Timber::get_posts($insights_args);
 $data['insights'] = $results;
 $data['insights'] = array_unique($data['insights']);
@@ -168,7 +179,6 @@ function sort_objects_by_date($a, $b) {
 
 usort($data['insights'], "sort_objects_by_date");
 $data['insights'] = array_reverse($data['insights']);
-$data['pagination'] = Timber::get_pagination();
 
 ?>
 

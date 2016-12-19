@@ -16,6 +16,11 @@ a {
 	letter-spacing: 1.2px;
   transition: all .3s ease-in-out;
   border: 2px solid $primary-red;
+ &.people-page-button {
+ 	@media screen and (max-width: 768px){
+ 		padding: 5px !important;
+ 	}
+ }
 	&.advanced-search {
 	    font-size: 11px;
 	    padding: 18px 16px;
@@ -53,8 +58,11 @@ a {
 	}
 	&.subscribe {
 		width: 100%;
-		padding-left: auto;
-		padding-right: auto;
+		padding-left: 10px;
+		padding-right: 10px;
+		@media screen and (max-width: 768px){
+			padding: 10px !important;
+		}
 	}
 	&.subscribe__content--block {
 	    float: right;

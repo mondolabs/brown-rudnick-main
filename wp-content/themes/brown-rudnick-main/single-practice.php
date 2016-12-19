@@ -10,6 +10,7 @@ $data['practice_header_text'] = get_field('practice_header_text');
 $data['text_content_top'] = get_field('text_content_top');
 $data['text_content_body'] = get_field('text_content_body');
 $data['headlines'] = get_field('headlines');
+$data['headline_files'] = get_field('headline_files');
 $data['related_experience'] = get_field('related_experience');
 $data['practice_group_leaders'] = get_field('practice_group_leaders');
 $data['related_people'] = get_field('practice_related_people');

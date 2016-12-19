@@ -18,11 +18,8 @@
 	<div class="experience__wrapper row body__wrapper columns small-12 medium-12 large-12">
 		{% include '/twig-templates/insights-sidebar.twig' with sidebar %}
 		<div class="columns show-for-medium-up medium-9 large-9 small-12 mobile-margin-top-20">
-			<div class="columns small-12 medium-12 large-12 no__pad--sides padding-bottom-40">
-				{{ top_content }}
-			</div>
 			<div class="no__pad columns small-12 medium-12 large-12 x-large-12">
-				<p class="title__text">
+				<p class="title__text insights__landing">
 					Subscribe to our email list
 				</p>
 				<div class="subscribe__content--wrapper">
@@ -32,7 +29,7 @@
 			<div class="columns small-12 medium-12 large-12 no__pad margin-top-60 desktop-only">
 				<div class="no__pad">
 					<div class="columns small-12 medium-12 large-3 x-large-6 no__pad">
-						<p class="title__text">
+						<p class="title__text insights__landing">
 							{{ header_text }}
 						</p>
 					</div>
@@ -90,7 +87,7 @@
 						</div>
 					{% endif %}	
 					{% if practices and practices|length >= 1 %}	
-						<div class="columns large-2 no__pad padding-left-5 margin__1 ">
+						<div class="columns large-2 no__pad padding-left-5 margin__1 float__none">
 							<select id="practiceSelect" name="practice_query" class="clean___border insight inline__text grey__bold__text smaller">
 								<option value="">
 									PRACTICES
@@ -106,12 +103,16 @@
 				</div>
 			</div>
 
-
-
-
-
 			<div class="columns small-12 medium-12 large-12 no__pad">
 				<div class="margin-top-60 columns small-12 medium-12 large-12 no__pad">
+					{% if insights|length <= 0 %}
+						<p class="title__text smaller">
+							Your query returned no results.
+						</p>
+					{% else %}
+						<p class="title__text smaller">
+							Total number of results: {{ total_results }}
+						</p>
 					{% for insight in insights %}
 						{% set insight_url = insight.link %}
 						<table class="no__border">
@@ -151,6 +152,7 @@
 						</table>
 						{% if not loop.last %}<span class="insights list-divider"></span>{% endif %}
 					{% endfor %}
+				{% endif %}
 					<div class="pagination-centered">
 					    <ul class="pagination">
 					    		 {% if pagination.prev %}

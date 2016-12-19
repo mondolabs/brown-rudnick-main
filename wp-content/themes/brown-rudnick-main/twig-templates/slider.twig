@@ -6,17 +6,22 @@
         <div class="slide" style="background-image:url({{item.homepage_slider_image.url}});">
          	<div class="slide__content--outer-wrapper">
          		<div class="slide__content--inner-wrapper">
-					<div class="color-block__wrapper large-8 medium-10 small-12">
+					<div class="color-block__wrapper homepage--slider large-8 medium-10 small-12">
 				        <div class="color-block vellum">
 				         	<div class="slide-description">
 				            	<h2 class="homepage-slider-title">{{item.homepage_slider_title}}</h2>
 				            	<div class="slide-description-heading"></div>
-				            	<p class="body-text hero">
-						    				{{ item.homepage_slider_description | truncate(60) }}
-						        	</p>
-			            </div>
-				    			
-				        	
+				            	<div class="show-for-small-only">
+					            	<p class="body-text hero">
+							    				{{ item.homepage_slider_description | truncate(40) }}
+							        	</p>
+						        	</div>
+						        	<div class="hide-for-small-only">
+					            	<p class="body-text hero">
+							    				{{ item.homepage_slider_description | truncate(60) }}
+							        	</p>
+						        	</div>
+			            </div>				        	
 				        	<div class="home-button-container">
 				        		<a href="{{item.homepage_slider_cta_link}}">
 					        		<button class="home-button sites-button">

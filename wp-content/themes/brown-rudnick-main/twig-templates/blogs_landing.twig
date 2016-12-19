@@ -99,10 +99,10 @@
 				CONTRIBUTORS
 			</p>
 			{% set category = TimberTerm(blog_title_category_id) %}
-			{% set blog_posts = category.get_posts({'numberposts' : -1, 'orderby' : 'date' }) %}
+			{% set sidebar_blog_posts = category.get_posts({'numberposts' : -1, 'orderby' : 'date' }) %}
             {% set authors = [] %}
-            {% for blog_post in blog_posts %}
-            	{% for author in blog_post.get_field('blog_authors') %}
+            {% for sidebar_blog_post in sidebar_blog_posts %}
+            	{% for author in sidebar_blog_post.get_field('blog_authors') %}
                     {% if author not in authors %}
                     	{% set authors = authors|merge([author]) %}
                     {% endif %}
@@ -164,11 +164,11 @@
 			{% endif %}	
 			<div class="row">
 				<div class="margin-top-20">
-					{% if posts_by_date_args %}	
+			{# 		{% if posts_by_date_args %}	
 						{% set blog_posts = category.get_posts(posts_by_date_args) %}
 					{% else %}
 						{% set blog_posts = category.get_posts({'numberposts' : -1, 'orderby' : 'date', 'tag' : tag, 'posts_per_page': 5, 'paged': 1 }) %}
-					{% endif %}
+					{% endif %} #}
 					
 					{% for blog_post in blog_posts %}
 						<div class="blog-post__list-item--wrapper">

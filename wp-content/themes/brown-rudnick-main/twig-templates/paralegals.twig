@@ -52,7 +52,7 @@
 						{% endif %}
 						{% for opportunity in job_opportunities %}
 							<tr class="job__opening">
-								<td class="job__openings__title title__text smaller">
+								<td class="job__openings__title title__text smaller accordion-trigger">
 									{{ opportunity.position }}
 								</td>
 								<td class="font-weight__bold wide-spacing body__text smaller">
@@ -124,14 +124,13 @@
     </div>  
 </div>
 
-
 <script type="text/javascript">
 	{% if featured_image_url %}
 		$(document).ready(function(){
 			$('#featuredImage').backstretch("{{featured_image_url}}");
 		})
 	{% endif %}
-	{% if featured_image_url|length > 0 %}
+	{% if bottom_banner_image %}
 		$(document).ready(function(){
 			$('#lawyersBannerImage').backstretch("{{ bottom_banner_image }}");
 		})

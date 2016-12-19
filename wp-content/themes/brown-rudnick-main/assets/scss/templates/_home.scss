@@ -212,9 +212,9 @@ button.slick-arrow  {
 	}
 }
 .homepage-grid-element {
-	border-style: solid;
-	border-width: 10px;
-	border-color: $primary-grey;
+	border-style: solid !important;
+	border-width: 10px !important;
+	border-color: $primary-grey !important;
 	background-color: $white;
 	margin: 0 auto;
 	@media screen and (max-width: 768px){
@@ -253,21 +253,21 @@ button.slick-arrow  {
 
 @include breakpoint (medium) {
 	.homepage-grid-element{
-		height: 400px;
+		height: 500px;
 	}	
 }
 .menu__wrapper--desktop {
 		padding: 20px 0px 20px;
 }
 
-ul.desktop-menu {
-	padding-top: 28px;
-}
+// ul.desktop-menu {
+// 	padding-top: 28px;
+// }
 
 // increase width of menu to align with icons on top right
 #menu-nested-pages {
 	display: table !important;
-	width: 107% !important;
+	width: 100% !important;
 }
 
 ul.menu li a{
@@ -278,7 +278,7 @@ ul.menu li a{
 	text-transform: uppercase;
     -webkit-transition: width 2s, height 2s, background-color 2s, -webkit-transform 2s;
 	transition: width 2s, height 2s, background-color 2s, transform 2s;
-	letter-spacing: $letter-spacing-global;
+	letter-spacing: 2.85px;
 	&:after {
 		border: none !important;
 	}
@@ -346,10 +346,14 @@ ul.desktop__menu--icons-list {
 	max-height: 100px;
 	background-size: cover;
 	&.featured__blog {
-		height: 100%;
+		height: 90px;
+		@include breakpoint(large){
+			height: 100%;
+			background-position-x: 75%; 
+		}		
 		max-height: none;
 		background-size: cover;
-		background-position-x: 75%; 
+		background-position: center; 
 	}	
 }
 
@@ -458,13 +462,7 @@ span.red__border--top {
 .homepage-slider-title, .homepage-element-body {
 	font-family: $brgaramond;
 	font-size: 26px;
-	line-height: 1.5;
-	&.big {
-		font-size: 40px;
-		@include breakpoint(medium) {
-			font-size: 26px;	
-		}
-	}	
+	line-height: 1.5;	
 }
 .homepage-slider-title{
 	margin-bottom: 3%;

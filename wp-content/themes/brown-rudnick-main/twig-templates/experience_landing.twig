@@ -19,6 +19,7 @@
 	<div class="columns show-for-medium-up medium-9 large-10">
 		<div class="row">
 			{% for experience in experiences %}
+				{% if not experience.is_alternative_language_page %}
 				<div class="columns large-6 medium-6 xlarge-4 small-12 {% if loop.last %}last float-left{% endif %}">
 					<div class="color-block__experience">
 						<div class="color-block__experience--inner-wrapper">
@@ -29,7 +30,8 @@
 							</div>	
 						</div>
 					</div>	
-				</div>	
+				</div>
+				{% endif %}	
 			{% endfor %}
 		</div>
 	</div>

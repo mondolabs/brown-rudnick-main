@@ -10,12 +10,12 @@
 		{% set featured_first = featured_posts[0] %}
 		{% set remaining = [ featured_posts[1], featured_posts[2], featured_posts[3], featured_posts[4] ] %}
 
-		<div class="no__pad medium-6 large-8 columns homepage-grid-element featured-blog__grid relative">
+		<div class="no__pad medium-6 large-8 columns homepage-grid-element white__background no__pad featured__first featured-blog__grid relative">
 			{% if featured_first.thumbnail %}
 				<div class="homepage__image--wrapper hide-for-medium-down large-3 columns featured__blog" style="background-image:url({{featured_first.thumbnail.src}});">
 				</div>	
 			{% endif %}	
-			<div class="no__pad medium-12 {% if not featured_first.thumbnail %}large-12{% else %}large-9{% endif %} columns">
+			<div class="no__pad medium-12 white__background {% if not featured_first.thumbnail %}large-12{% else %}large-9{% endif %} columns">
 				{% if not featured_first.thumbnail %}
 					<span class="red__border--top"></span>
 				{% endif %}	
@@ -39,7 +39,7 @@
 						{{ featured_first.post_date|date('m/d/Y') }}
 					</p>
 					<a class="link" href="{{ TimberPost(featured_first).link }}">
-						<h4 class="homepage-element-body big">
+						<h4 class="homepage-element-body">
 							{{ featured_first.post_title }}
 						</h4>
 					</a>

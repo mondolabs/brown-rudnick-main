@@ -156,6 +156,9 @@
   }
 }
 .last-submenu-item {
+  @media screen and (max-width: 1025px){
+    transform: translateX(-67%);
+  }
   transform: translateX(-63%);
 }
 
@@ -175,6 +178,9 @@
   transform: translateX(-40%);
 }
 .last-submenu-item-scroll {
+  @media screen and (max-width: 1024px){
+    transform: translateX(-55%);
+  }
   transform: translateX(-53%);
 }
 
@@ -187,7 +193,7 @@
   border-bottom: 1px solid $primary-grey;
   float: right;
   top: 0;
-  width: 675px;
+  width: 670px;
   height: 62.5px;
   @media screen and (min-width:1200px){
     width: 768px;
@@ -198,6 +204,7 @@
 #menu-nested-pages-1 {
   &.scrolled {
     //float: right;
+    padding-top: 28px;
     @media screen and (min-width: 1024px){
       padding-right: 7%;
     }
@@ -206,7 +213,7 @@
 
 .menu__inner-wrapper--desktop{
   @media screen and (max-width: 1200px){
-    padding-right: 25px !important;
+    padding-right: 10px !important;
   }
 }
 
