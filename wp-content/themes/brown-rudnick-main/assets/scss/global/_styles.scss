@@ -984,9 +984,17 @@ img.insights {
 
 .inline__wrapper {
 	display: inline-block;
+	&.blog__titles {
+		@media screen and (min-width: 768px){
+			max-width: 50%;
+		}
+		@include breakpoint(large){
+			max-width: 70%;
+		}
+		vertical-align: middle;
+	}
 	&.person {
 		height: 200px;
-		// margin-top: -40px;
 	}
 	&.ceo {
 		height: 200px;
@@ -1006,7 +1014,9 @@ img.insights {
 		}
 	}
 }
-
+.float__none {
+	float: none !important;
+}
 .table__wrapper {
 	display: table;
 	height: 100%;
@@ -2268,6 +2278,9 @@ tbody {
 }
 .pagination {
 	text-align: center;
+	li {
+		display: inline-block !important;
+	}
 }
 .title__text {
 	a {

@@ -175,7 +175,7 @@
 							{% if blog_post.thumbnail %}
 								<img class="blog-post__list-item--image" src="{{ blog_post.thumbnail.src }}">
 							{% endif %}
-							<div class="inline__wrapper mobile__centered">
+							<div class="inline__wrapper mobile__centered {% if blog_post.thumbnail %} blog__titles {% endif %}">
 								<p class="title__text smaller mobile__centered">
 									<a class="link black" href="{{ TimberPost(blog_post).link}}">
 										{{blog_post.title}}	
