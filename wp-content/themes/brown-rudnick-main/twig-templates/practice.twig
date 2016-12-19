@@ -27,7 +27,6 @@
 			    <p class="tag__text">
 			    	{{ 'headlines'|upper }}
 			    </p>
-<<<<<<< HEAD
 			    {% for item in headlines %}
 		        	{% set headline =  item|first %}	        		
 		        		{% if headline.has_external_link %}
@@ -44,7 +43,7 @@
 					        </div>	
 		        		{% endif %}
 		        	<br class="{% if loop.index > 3 %}hidden hidden_headline hidden__exp{% endif %}">
-=======
+
 			    {% for headline in headlines %}
 	        		{% if headline.has_external_link %}
 			        	<a href="{{ headline.external_link}}" class="red link tag__text">
@@ -59,18 +58,6 @@
 			        	<br>
 	        		{% endif %}
 			    {% endfor %}
-			{% endif %}
-			{% if headline_files|length >= 1 %}
-			    {% for headline in headline_files %}
-		        	<a target="_blank" href="{{ headline.headline_file_link }}" class="red link tag__text link tag__text">
-		        		{{ headline.headline_file_title|upper }}
-		        	</a>
-		        	<br>
->>>>>>> master
-			    {% endfor %}
-			    <a id="showMoreHeadlines" class="padding-bottom-40 more link red tag__text underline" href="#more">
-		    		SHOW MORE
-			    </a>
 			{% endif %}
 			{% if related_experience %}
 			    <p class="tag__text">
