@@ -114,15 +114,12 @@
     display: inline-block !important;
 }
 
-.is-dropdown-submenu{
+.is-dropdown-submenu {
   border: none;
   z-index: 999999;
   @media screen and (max-width: 1024px){
     left: 0 !important;
   }
-}
-
-.is-dropdown-submenu {
   top: 50px  !important;
   text-align: center !important;
   background-color: $primary-grey;
@@ -134,7 +131,9 @@
     //padding: 3%;
     @media screen and (min-width: 640px){
       width: 7.5%;
-
+      a {
+        padding-right: 1.25rem !important;
+      }
     }
     @media screen and (min-width: 1024px){
         width: 10%!important;
@@ -159,7 +158,7 @@
   @media screen and (max-width: 1025px){
     transform: translateX(-67%);
   }
-  transform: translateX(-63%);
+  transform: translateX(-61%);
 }
 
 .first-submenu-item-scroll {

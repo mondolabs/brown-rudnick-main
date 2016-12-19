@@ -9621,22 +9621,22 @@ a::after {
 
 .is-dropdown-submenu {
   border: none;
-  z-index: 999999; }
-  @media screen and (max-width: 1024px) {
-    .is-dropdown-submenu {
-      left: 0 !important; } }
-
-.is-dropdown-submenu {
+  z-index: 999999;
   top: 50px  !important;
   text-align: center !important;
   background-color: #f0f0f0;
   width: 150vw; }
+  @media screen and (max-width: 1024px) {
+    .is-dropdown-submenu {
+      left: 0 !important; } }
   @media screen and (min-width: 48.0625em) {
     .is-dropdown-submenu {
       width: 160vw; } }
   @media screen and (min-width: 640px) {
     .is-dropdown-submenu li {
-      width: 7.5%; } }
+      width: 7.5%; }
+      .is-dropdown-submenu li a {
+        padding-right: 1.25rem !important; } }
   @media screen and (min-width: 1024px) {
     .is-dropdown-submenu li {
       width: 10% !important;
@@ -9663,9 +9663,9 @@ a::after {
               transform: translateX(-58%); } }
 
 .last-submenu-item {
-  -webkit-transform: translateX(-63%);
-      -ms-transform: translateX(-63%);
-          transform: translateX(-63%); }
+  -webkit-transform: translateX(-61%);
+      -ms-transform: translateX(-61%);
+          transform: translateX(-61%); }
   @media screen and (max-width: 1025px) {
     .last-submenu-item {
       -webkit-transform: translateX(-67%);
@@ -10861,6 +10861,9 @@ button.slick-arrow {
 #menu-nested-pages {
   display: table !important;
   width: 100% !important; }
+  @media screen and (max-width: 1035px) {
+    #menu-nested-pages li > a {
+      padding-right: 1.25rem !important; } }
 
 ul.menu li a {
   color: #0a0a0a;
