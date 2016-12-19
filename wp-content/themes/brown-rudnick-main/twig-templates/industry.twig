@@ -43,9 +43,11 @@
 		        		{% endif %}
 		        	<br class="{% if loop.index > 3 %}hidden hidden_headline hidden__exp{% endif %}">
 			    {% endfor %}
-			    <a id="showMoreHeadlines" class="padding-bottom-40 more link red tag__text underline" href="#more">
-		    		SHOW MORE
-			    </a>
+				{% if loop.length > 3 %} 
+				    <a id="showMoreHeadlines" class="padding-bottom-40 more link red tag__text underline" href="#more">
+			    		SHOW MORE
+				    </a>
+				{% endif %}
 			{% endif %}
 			{% if related_experience %}
 			    <p class="tag__text">
