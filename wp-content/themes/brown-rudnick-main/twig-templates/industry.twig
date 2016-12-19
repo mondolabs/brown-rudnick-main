@@ -26,7 +26,6 @@
 			    <p class="tag__text">
 			    	{{ 'headlines'|upper }}
 			    </p>
-
 			    {% for item in headlines %}
 		        	{% set headline =  item|first %}	        		
 		        		{% if headline.has_external_link %}
@@ -44,6 +43,9 @@
 		        		{% endif %}
 		        	<br class="{% if loop.index > 3 %}hidden hidden_headline hidden__exp{% endif %}">
 			    {% endfor %}
+			    <a id="showMoreHeadlines" class="padding-bottom-40 more link red tag__text underline" href="#more">
+		    		SHOW MORE
+			    </a>
 			{% endif %}
 			{% if related_experience %}
 			    <p class="tag__text">
