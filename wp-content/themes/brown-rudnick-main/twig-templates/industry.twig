@@ -153,7 +153,7 @@
 				</div>
 			{% endif %}
 
-			{% if related_people|length > 0 %}	
+				{% if related_people|length > 0 %}	
 				<div class="columns medium-12 large-12 small-12">
 					<div class="columns medium-12 large-12 small-12">
 						<div class="padding__wrapper sides__only">	
@@ -170,18 +170,7 @@
 									</a>
 								</div>
 							{% endfor %}
-				<div class="small-12 medium-12 large-12 float__left">
-					<p class="title__text responsive__text medium">
-						Related People
-					</p>
-					{% for person in related_people %}
-						{% set person = person|first %}
-						<div class="columns medium-6 large-6 small-12 person end">						
-							<a class="body__text red link margin-bottom--10" href="{{ TimberPost(person).link }}">
-								{{ person.first_name }} {% if person.middle_initial %}{{ person.middle_initial }}. {% endif %} {{ person.last_name }}
-							</a>
-						</div>	
-					{% endfor %}
+						</div>
 					</div>	
 				</div>	
 			{% endif %}
