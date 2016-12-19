@@ -787,15 +787,15 @@ img.people__details {
 	}
 
 	&.person {
-		max-width: 300px;
-		width: 300px;
+		max-width: 250px;
+		width: 250px;
 		@media screen and (max-width: 1140px){
 			max-width: 225px;
 			width: 225px;
 		}
 		@media screen and (max-width: 1024px){
-			max-width: 300px;
-			width: 300px;
+			max-width: 250px;
+			width: 250px;
 		}
 		@media screen and (max-width: 768px){
 			max-width: 180px;

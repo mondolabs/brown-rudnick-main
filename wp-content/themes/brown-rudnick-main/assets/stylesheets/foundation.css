@@ -845,16 +845,16 @@ img.people__details {
     img.people__details {
       max-width: 200px; } }
   img.people__details.person {
-    max-width: 300px;
-    width: 300px; }
+    max-width: 250px;
+    width: 250px; }
     @media screen and (max-width: 1140px) {
       img.people__details.person {
         max-width: 225px;
         width: 225px; } }
     @media screen and (max-width: 1024px) {
       img.people__details.person {
-        max-width: 300px;
-        width: 300px; } }
+        max-width: 250px;
+        width: 250px; } }
     @media screen and (max-width: 768px) {
       img.people__details.person {
         max-width: 180px;
