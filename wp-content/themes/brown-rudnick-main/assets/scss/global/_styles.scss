@@ -1,10 +1,10 @@
 #page-full-width-homepage a, a {
     transition: color .3s ease-in-out;
     color: $primary-red;
+    text-decoration: none;
     &:hover,
     &:focus {
     	color: $primary-red;
-    	text-decoration: underline; 
     }
     &.no__underline {
     	&:hover,
@@ -20,17 +20,61 @@
 	    	color: $black;
 	    	text-decoration: none; 
 	    }
-
     }
-}
-
-a.sidebar__link {
-	color: $black;
-	&:hover,
-    &:focus {
-    	color: $primary-red;
-    	text-decoration: none; 
-    }
+    &.sidebar__link {
+		color: $black;
+		&:hover,
+	    &:focus {
+	    	color: $primary-red;
+	    	text-decoration: none; 
+	    }
+	    &.red {
+    		color: $primary-red;
+	    }
+	}
+	&.list__header {
+		color: $black;
+		&:hover,
+	    &:focus {
+	    	color: $primary-red;
+	    	text-decoration: none; 
+	    }
+	}
+	&.title__text {
+		color: $black;
+		&:hover,
+	    &:focus {
+	    	color: $primary-red;
+	    	text-decoration: none; 
+	    }
+	}
+	&.breadcrumb__link {
+		color: $black;
+		&:hover,
+	    &:focus {
+	    	color: $primary-red;
+	    	text-decoration: none; 
+	    }
+	    &.white {
+    		color: $white;
+	    }
+	}
+	&.sites-button {
+		color: $white;
+		&:hover,
+	    &:focus {
+	    	color: $primary-red;
+	    	text-decoration: none; 
+	    }
+	    &.inverse {
+	    	color: $primary-red;
+			&:hover,
+		    &:focus {
+				color: $white;
+		    	text-decoration: none; 
+		    }
+	    }
+	}
 }
 
 .logo--print--only {
@@ -2571,4 +2615,8 @@ li strong {
 
 .body__text p strong {
 	font-family: $brgaramond;
+}
+
+td.job__openings__title {
+	padding: 10px 0 !important;
 }

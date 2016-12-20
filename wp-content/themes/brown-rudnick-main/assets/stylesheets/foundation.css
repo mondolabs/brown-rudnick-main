@@ -263,10 +263,10 @@ p.wp-caption-text {
 #page-full-width-homepage a, a {
   -webkit-transition: color .3s ease-in-out;
   transition: color .3s ease-in-out;
-  color: #b91628; }
+  color: #b91628;
+  text-decoration: none; }
   #page-full-width-homepage a:hover, #page-full-width-homepage a:focus, a:hover, a:focus {
-    color: #b91628;
-    text-decoration: underline; }
+    color: #b91628; }
   #page-full-width-homepage a.no__underline:hover, #page-full-width-homepage a.no__underline:focus, a.no__underline:hover, a.no__underline:focus {
     color: #b91628;
     text-decoration: none; }
@@ -275,12 +275,40 @@ p.wp-caption-text {
     #page-full-width-homepage a.hover__black:hover, #page-full-width-homepage a.hover__black:focus, a.hover__black:hover, a.hover__black:focus {
       color: #0a0a0a;
       text-decoration: none; }
-
-a.sidebar__link {
-  color: #0a0a0a; }
-  a.sidebar__link:hover, a.sidebar__link:focus {
-    color: #b91628;
-    text-decoration: none; }
+  #page-full-width-homepage a.sidebar__link, a.sidebar__link {
+    color: #0a0a0a; }
+    #page-full-width-homepage a.sidebar__link:hover, #page-full-width-homepage a.sidebar__link:focus, a.sidebar__link:hover, a.sidebar__link:focus {
+      color: #b91628;
+      text-decoration: none; }
+    #page-full-width-homepage a.sidebar__link.red, a.sidebar__link.red {
+      color: #b91628; }
+  #page-full-width-homepage a.list__header, a.list__header {
+    color: #0a0a0a; }
+    #page-full-width-homepage a.list__header:hover, #page-full-width-homepage a.list__header:focus, a.list__header:hover, a.list__header:focus {
+      color: #b91628;
+      text-decoration: none; }
+  #page-full-width-homepage a.title__text, a.title__text {
+    color: #0a0a0a; }
+    #page-full-width-homepage a.title__text:hover, #page-full-width-homepage a.title__text:focus, a.title__text:hover, a.title__text:focus {
+      color: #b91628;
+      text-decoration: none; }
+  #page-full-width-homepage a.breadcrumb__link, a.breadcrumb__link {
+    color: #0a0a0a; }
+    #page-full-width-homepage a.breadcrumb__link:hover, #page-full-width-homepage a.breadcrumb__link:focus, a.breadcrumb__link:hover, a.breadcrumb__link:focus {
+      color: #b91628;
+      text-decoration: none; }
+    #page-full-width-homepage a.breadcrumb__link.white, a.breadcrumb__link.white {
+      color: #fefefe; }
+  #page-full-width-homepage a.sites-button, a.sites-button {
+    color: #fefefe; }
+    #page-full-width-homepage a.sites-button:hover, #page-full-width-homepage a.sites-button:focus, a.sites-button:hover, a.sites-button:focus {
+      color: #b91628;
+      text-decoration: none; }
+    #page-full-width-homepage a.sites-button.inverse, a.sites-button.inverse {
+      color: #b91628; }
+      #page-full-width-homepage a.sites-button.inverse:hover, #page-full-width-homepage a.sites-button.inverse:focus, a.sites-button.inverse:hover, a.sites-button.inverse:focus {
+        color: #fefefe;
+        text-decoration: none; }
 
 .logo--print--only {
   display: none; }
@@ -2367,6 +2395,9 @@ li strong {
 
 .body__text p strong {
   font-family: "adobe-garamond-pro", serif; }
+
+td.job__openings__title {
+  padding: 10px 0 !important; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome

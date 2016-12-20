@@ -37,6 +37,12 @@ foreach ( $job_opening_posts as $post ) {
   array_push($ids, $post->ID);
 }
 $data['locations'] = wp_get_object_terms( $ids, 'locations' );
+
+$parent = get_page($post->post_parent);
+$parent_name = $parent->post_name;
+$data['parent_link'] = get_permalink( $post->post_parent );
+
+
 ?>
 
 <html>

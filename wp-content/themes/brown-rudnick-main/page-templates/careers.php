@@ -40,6 +40,11 @@ $data['featured_image_url'] = $data['featured_image_url'][0];
 $slug = basename(get_permalink());
 $data['slug'] = $slug;
 
+$parent = get_page($post->post_parent);
+$parent_name = $parent->post_name;
+$data['parent_link'] = get_permalink( $post->post_parent );
+
+
 ?>
 
 <html>
