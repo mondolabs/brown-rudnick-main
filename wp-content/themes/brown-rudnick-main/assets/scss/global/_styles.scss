@@ -2557,5 +2557,8 @@ li strong {
 	font-family: $brgaramond;
 	color: $black;
  	transition: color .3s ease-in-out;
-	font-size: 24px;
+}
+
+.body__text p strong {
+	font-family: $brgaramond;
 }

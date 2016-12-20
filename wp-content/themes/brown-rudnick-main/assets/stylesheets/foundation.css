@@ -2357,8 +2357,10 @@ li strong {
   font-family: "adobe-garamond-pro", serif;
   color: #0a0a0a;
   -webkit-transition: color .3s ease-in-out;
-  transition: color .3s ease-in-out;
-  font-size: 24px; }
+  transition: color .3s ease-in-out; }
+
+.body__text p strong {
+  font-family: "adobe-garamond-pro", serif; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
