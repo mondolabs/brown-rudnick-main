@@ -2410,6 +2410,10 @@ li strong {
 td.job__openings__title, .accordion-trigger {
   padding: 10px 0 !important; }
 
+.career-text {
+  font-size: 14px;
+  margin: 0; }
+
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
