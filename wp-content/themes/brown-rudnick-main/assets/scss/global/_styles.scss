@@ -13,7 +13,8 @@
 	    	text-decoration: none; 
 	    }
     }
-    &.black {
+    &.black, 
+    &.experience__link {
     	color: $black;
 	    &:hover,
 	    &:focus {
