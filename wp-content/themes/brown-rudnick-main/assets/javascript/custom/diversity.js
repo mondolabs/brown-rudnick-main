@@ -7,12 +7,9 @@ var BR = {
 			var triggerId = $(this).data('trigger-target');
 			var accordion = $('#'+triggerId);
 			$(accordion).slideToggle(400);
-
 		})
-
 		$('#diversityModalTrigger').click(function(event) {
-			BR_COOKIES.visitDiversity();
-			BR_COOKIES.showDiversityModal();
+			$('.modal__background').removeClass('hidden').fadeIn('slow');
 		});
 	}
 }

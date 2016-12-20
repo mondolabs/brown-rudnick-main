@@ -53,7 +53,7 @@ $data['slug'] = $slug;
               <div class="diversity__modal--outer-wrapper table__wrapper relative">
                 <div class="diversity__modal--inner-wrapper table__innner">
                   <div class="diversity__modal--text-wrapper">
-                    <button class="close__modal cancel">
+                    <button id="diversity--modal--close" class="close__modal cancel">
                       
                     </button>
                     <p class="title__text text-align__center">
