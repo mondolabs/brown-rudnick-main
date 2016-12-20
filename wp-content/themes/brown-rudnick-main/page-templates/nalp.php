@@ -3,15 +3,8 @@
 Template Name: NALP Report
 */
 $data = Timber::get_context();
-$practice_posts_args = array(
-    'post_type' =>  'practice',
-    'orderby' => 'title',
-    'order' => 'ASC',
-    'posts_per_page'=>-1
-);
 $post = new TimberPost();
 $data['post'] = $post;
-
 $data['header_text'] =  get_field('header_text');
 $data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
