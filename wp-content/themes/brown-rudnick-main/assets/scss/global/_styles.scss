@@ -2499,5 +2499,9 @@ tr {
 
 .white__background {
 	background-color: $white;
+}
 
+.search-everything-highlight-color {
+	color: $white !important;
+	background-color: $primary-red !important;
 }

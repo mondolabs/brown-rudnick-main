@@ -2312,6 +2312,10 @@ tr {
 .white__background {
   background-color: #fefefe; }
 
+.search-everything-highlight-color {
+  color: #fefefe !important;
+  background-color: #b91628 !important; }
+
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
