@@ -848,16 +848,16 @@ img.people__details {
     img.people__details {
       max-width: 200px; } }
   img.people__details.person {
-    max-width: 300px;
-    width: 300px; }
+    max-width: 250px;
+    width: 250px; }
     @media screen and (max-width: 1140px) {
       img.people__details.person {
         max-width: 225px;
         width: 225px; } }
     @media screen and (max-width: 1024px) {
       img.people__details.person {
-        max-width: 300px;
-        width: 300px; } }
+        max-width: 250px;
+        width: 250px; } }
     @media screen and (max-width: 768px) {
       img.people__details.person {
         max-width: 180px;
@@ -898,15 +898,6 @@ img.insight__details {
 
 .upper {
   text-transform: uppercase; }
-
-.lawyers-bullet {
-  float: none !important;
-  display: inline-block !important;
-  width: 49% !important;
-  min-width: 400px !important; }
-  .lawyers-bullet p {
-    padding-right: 2% !important;
-    padding-left: 2% !important; }
 
 .underline {
   text-decoration: underline; }
@@ -1137,7 +1128,7 @@ img.insights {
   .person__details--expander.top__menu {
     background-color: #b91628;
     right: 15px;
-    top: 20px; }
+    top: 17.5px; }
 
 @-moz-document url-prefix() {
   .experience_expander.top__menu,
@@ -1146,14 +1137,6 @@ img.insights {
   .mobile__sidebar--expander.top__menu,
   .person__details--expander.top__menu {
     top: 10px; } }
-    @media screen and (max-width: 768px) {
-      .experience_expander.top__menu,
-      .job_expander.top__menu,
-      .accordion_expander.top__menu,
-      .mobile__sidebar--expander.top__menu,
-      .person__details--expander.top__menu {
-        top: 3px;
-        margin-top: -7px; } }
     .experience_expander.top__menu:before,
     .job_expander.top__menu:before,
     .accordion_expander.top__menu:before,
@@ -1306,13 +1289,18 @@ img.insights {
   padding: 40px !important;
   background-color: #fefefe; }
 
+#diversity--modal--close {
+  right: 8px !important; }
+
 .modal__background {
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  z-index: 9999; }
+  z-index: 9999;
+  overflow-y: scroll;
+  -ms-overflow-style: auto; }
   .modal__background.black--vellum {
     background-color: rgba(0, 0, 0, 0.7); }
 
@@ -2216,9 +2204,33 @@ textarea#comment {
 .bottom--banner--image--wrapper {
   height: 325px !important; }
 
+@media screen and (max-width: 767px) {
+  .single-people .featured-image__header--text-wrapper {
+    display: block !important; } }
+
+@media screen and (min-width: 461px) and (max-width: 768px) {
+  .single-people .featured-image__header--text-inner-wrapper.person {
+    display: block !important; } }
+
+@media screen and (max-width: 768px) {
+  .single-people .featured-image__header--image-wrapper.person {
+    height: 600px !important; } }
+
+@media screen and (max-height: 420px) {
+  .single-people .featured-image__header--image-wrapper.person {
+    height: 400px !important; } }
+
+@media screen and (max-width: 768px) and (min-height: 1023px) {
+  .single-people .featured-image__header--image-wrapper.person {
+    height: 400px !important; } }
+
+@media screen and (min-width: 452px) and (max-width: 768px) {
+  .single-people .featured-image__header--image-wrapper.person {
+    height: 425px !important; } }
+
 @media screen and (min-width: 461px) and (max-width: 768px) {
   .single-people .featured-image__header--image-wrapper {
-    height: 600px !important; } }
+    height: 450px !important; } }
 
 @media screen and (min-width: 48.0625em) {
   .single-people .featured-image__header--text-inner-wrapper {
@@ -2320,6 +2332,10 @@ tr {
 
 .white__background {
   background-color: #fefefe; }
+
+.search-everything-highlight-color {
+  color: #fefefe !important;
+  background-color: #b91628 !important; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome

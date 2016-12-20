@@ -11,7 +11,7 @@
 			<div class="featured-image__header--text-inner-wrapper person">
 				<div class="people__details--outer-wrapper person">
 					<div class="people__details--inner-wrapper">
-						<div class="columns medium-12 large-12 small-12 relative">
+						<div id="my-test-div" class="columns medium-12 large-12 small-12 relative">
 							<div id="first--inline--wrapper" class="inline__wrapper person padding__right--50-desktop">
 								<div class="table__wrapper person__wrapper">
 									<div class="table__inner">
@@ -189,7 +189,7 @@
 
 {% if person.education|length > 0 or person.bar_admission|length > 0 %}	
 	<div class="grey__background experience__wrapper columns small-12 medium-12 large-12">
-		<div class="row padding__wrapper top-and-bottom sixty">
+		<div class="row padding__wrapper padding-top-20">
 			<div class="padding-top-20 padding-bottom-20 large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">
 				{% if person.education|length > 0 %}
 					<div class="columns small-12 medium-6 large-6">
@@ -221,17 +221,8 @@
 						{% endfor %}
 					</div>	
 				{% endif %}
-			</div>
-		</div>
-	</div>
-{% endif %}
-
-
-{% if person.languages|length > 0 %}	
-	<div class="grey__background experience__wrapper columns small-12 medium-12 large-12">
-		<div class="row padding__wrapper top-and-bottom sixty">
-			<div class="padding-top-20 padding-bottom-20 large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">		
-					<div class="columns small-12 medium-6 large-6">
+				{% if person.languages|length > 0 %}		
+					<div class="columns small-12 medium-6 large-6 float__none">
 						<p class="title__text">
 							{{ "Languages" }}
 						</p>	
@@ -244,10 +235,14 @@
 							</div>
 						{% endfor %}
 				</div>
+			{% endif %}
 			</div>
 		</div>
 	</div>
 {% endif %}
+
+
+
 
 {% if person.publications|length > 0 and person.publications|first != 0 %}	
 	<div class="columns small-12 medium-12 large-12">

@@ -791,15 +791,15 @@ img.people__details {
 	}
 
 	&.person {
-		max-width: 300px;
-		width: 300px;
+		max-width: 250px;
+		width: 250px;
 		@media screen and (max-width: 1140px){
 			max-width: 225px;
 			width: 225px;
 		}
 		@media screen and (max-width: 1024px){
-			max-width: 300px;
-			width: 300px;
+			max-width: 250px;
+			width: 250px;
 		}
 		@media screen and (max-width: 768px){
 			max-width: 180px;
@@ -847,19 +847,6 @@ img.insight__details {
 .upper {
 	text-transform: uppercase;
 }
-
-.lawyers-bullet { 
-		float: none !important;
-		display: inline-block !important;
-		width: 49% !important;
-		min-width: 400px!important;
-		p {
-			padding-right: 2% !important;
-			padding-left: 2% !important;
-		}
-	}
-
-
 .underline {
 	text-decoration: underline;
 }
@@ -1135,13 +1122,9 @@ img.insights {
 	&.top__menu {
 		background-color: $primary-red;
 		right: 15px;
-		top: 20px;
+		top: 17.5px;
 		@-moz-document url-prefix() {
 			top: 10px;
-		}
-		@media screen and(max-width:768px) {
-    	top: 3px;
-    	margin-top: -7px;
 		}
 		&:before {
 			top: 7px;
@@ -1288,6 +1271,10 @@ img.insights {
 	}
 }
 
+#diversity--modal--close {
+	right: 8px !important;
+}
+
 .modal__background {
     position: fixed;
     top: 0;
@@ -1295,6 +1282,8 @@ img.insights {
     height: 100%;
     width: 100%;
     z-index: 9999;
+    overflow-y: scroll;
+    -ms-overflow-style: auto;
 	&.black--vellum {
     	background-color: rgba(0,0,0,.7);
 	}
@@ -2365,9 +2354,37 @@ textarea#comment {
 
 
 .single-people {
+	@media screen and (max-width: 767px){
+		.featured-image__header--text-wrapper {
+			display: block !important;
+		}
+	}
+
+	
+	@media screen and (min-width: 461px) and (max-width: 768px){
+		.featured-image__header--text-inner-wrapper {
+			&.person { 
+				display: block !important;
+			}
+		}
+	}
 	.featured-image__header--image-wrapper {
-		@media screen and (min-width: 461px) and (max-width: 768px){
-			height: 600px !important
+		&.person {
+			@media screen and (max-width: 768px){
+				height: 600px !important;
+			}
+			@media screen and (max-height: 420px){
+				height: 400px !important;
+			}
+			@media screen and (max-width: 768px) and (min-height: 1023px){
+				height: 400px !important;
+			}
+			@media screen and (min-width: 452px) and (max-width:768px){
+				height: 425px !important;
+			}
+		}	
+		@media screen and (min-width: 461px) and (max-width: 768px) {
+			height: 450px !important
 		}
 	}
 	.featured-image__header--text-inner-wrapper {
@@ -2510,5 +2527,9 @@ tr {
 
 .white__background {
 	background-color: $white;
+}
 
+.search-everything-highlight-color {
+	color: $white !important;
+	background-color: $primary-red !important;
 }
