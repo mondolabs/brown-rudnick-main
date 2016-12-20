@@ -260,21 +260,27 @@ p.wp-caption-text {
   .long__arrow.red {
     stroke: #b91628; }
 
-a {
+#page-full-width-homepage a, a {
   -webkit-transition: color .3s ease-in-out;
   transition: color .3s ease-in-out;
   color: #b91628; }
-  a:hover, a:focus {
+  #page-full-width-homepage a:hover, #page-full-width-homepage a:focus, a:hover, a:focus {
     color: #b91628;
     text-decoration: underline; }
-  a.no__underline:hover, a.no__underline:focus {
+  #page-full-width-homepage a.no__underline:hover, #page-full-width-homepage a.no__underline:focus, a.no__underline:hover, a.no__underline:focus {
     color: #b91628;
     text-decoration: none; }
-  a.hover__black {
+  #page-full-width-homepage a.hover__black, a.hover__black {
     color: #0a0a0a; }
-    a.hover__black:hover, a.hover__black:focus {
+    #page-full-width-homepage a.hover__black:hover, #page-full-width-homepage a.hover__black:focus, a.hover__black:hover, a.hover__black:focus {
       color: #0a0a0a;
       text-decoration: none; }
+
+a.sidebar__link {
+  color: #0a0a0a; }
+  a.sidebar__link:hover, a.sidebar__link:focus {
+    color: #b91628;
+    text-decoration: none; }
 
 .logo--print--only {
   display: none; }

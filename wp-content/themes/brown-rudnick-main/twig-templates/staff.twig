@@ -161,7 +161,6 @@
 				</div>	
 			</div>
 		{% endif %}	
-
 		{# this table APPEARS IF THERE IS A SEARCH QUERY #}
 		{% if location %}
 				<div class="columns small-12 medium-12 large-12 relative">
@@ -172,7 +171,7 @@
 								{% set job_openings_list = job_opening.get_field('locations') %}
 								{% for job_location in job_openings_list %}
 									{# CONDITIONAL CHECK MADE TO ADAPT TO WASHINGTON, DC STRING PARSING #}
-									{% if location|replace({'-': ' '}) in job_location.location|upper or location|replace({'-': ', ', 'DC':'D.C.'}) in job_location.location|upper %}
+									{% if location|replace({'-': ' '}) in job_location.location.location_name|upper or location.location_name|replace({'-': ', ', 'DC':'D.C.'}) in job_location.location.location_name|upper %}
 										<tr class="job__opening">
 											<td class="job__openings__title title__text smaller black">
 												{{ job_opening.position }}

@@ -1,4 +1,4 @@
-a {
+#page-full-width-homepage a, a {
     transition: color .3s ease-in-out;
     color: $primary-red;
     &:hover,
@@ -23,6 +23,16 @@ a {
 
     }
 }
+
+a.sidebar__link {
+	color: $black;
+	&:hover,
+    &:focus {
+    	color: $primary-red;
+    	text-decoration: none; 
+    }
+}
+
 .logo--print--only {
 	display: none;
 }
