@@ -421,6 +421,9 @@ insights__title {
     float: left;
     margin: 15px; } }
 
+.subscribe__insights .subscribe__content--block {
+  float: none !important; }
+
 .sidebar__color-block--outer-wrapper {
   height: 60px;
   background-color: #f0f0f0;
@@ -1033,6 +1036,12 @@ img.insights {
   @media (max-width: 768px) {
     .inline__wrapper.mobile__centered {
       width: 100%; } }
+
+.insights__search {
+  float: none !important; }
+  @media screen and (min-width: 1024px) {
+    .insights__search {
+      float: right !important; } }
 
 .float__none {
   float: none !important; }

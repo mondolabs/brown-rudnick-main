@@ -18,14 +18,7 @@
 	<div class="experience__wrapper row body__wrapper columns small-12 medium-12 large-12">
 		{% include '/twig-templates/insights-sidebar.twig' with sidebar %}
 		<div class="columns show-for-medium-up medium-9 large-9 small-12 mobile-margin-top-20">
-			<div class="no__pad columns small-12 medium-12 large-12 x-large-12">
-				<p class="title__text insights__landing">
-					Subscribe to our email list
-				</p>
-				<div class="subscribe__content--wrapper">
-					{{ post.post_content|shortcodes }}
-				</div>
-			</div>
+
 			<div class="columns small-12 medium-12 large-12 no__pad margin-top-60 desktop-only">
 				<div class="no__pad">
 					<div class="columns small-12 medium-12 large-3 x-large-6 no__pad">
@@ -87,7 +80,7 @@
 						</div>
 					{% endif %}	
 					{% if practices and practices|length >= 1 %}	
-						<div class="columns large-2 no__pad padding-left-5 margin__1 float__none">
+						<div class="columns large-2 no__pad padding-left-5 margin__1 text-align__center insights__search">
 							<select id="practiceSelect" name="practice_query" class="clean___border insight inline__text grey__bold__text smaller">
 								<option value="">
 									PRACTICES
@@ -181,14 +174,14 @@
 <div class="grey__background columns small-12 padding__wrapper twenty show-for-small-only">
 	<div class="insights__bottom--mobile-wrapper">
 		<div class="table__wrapper margin__auto">
-			<div class="table__inner">
+			<div class="table__inner text-align__center">
 				<h4 class="title__text smaller insights margin-bottom--0">
-					Subscribe
+					Subscribe to our Email List
 				</h4>
-				{% set sidebar = sidebar|first %}
-				{{ sidebar.post_content|shortcodes }}
-				<span class="list-divider mobile mobile__centered smaller"></span>
-				<div class="text-align__center">
+				<div class="subscribe__content--wrapper subscribe__insights">
+					{{ post.post_content|shortcodes }}
+				</div>
+				<div class="text-align__center padding-top-60">
 					<h4 class="title__text smaller insights margin-bottom--0">
 						{{ contact_name }}
 					</h4>
@@ -199,8 +192,8 @@
 					<p class="body__text insights">
 						{{ contact_phone_number }}
 					</p>
-					<a class="body__text insights link red" href="mailto:{{contact_email}}"> 
-						<p class="link body__text insights">
+					<a class="body__text insights link red email--people--link" href="mailto:{{contact_email}}"> 
+						<p class="link body__text insights email--people--link">
 							{{ contact_email }}
 						</p>
 					</a>
