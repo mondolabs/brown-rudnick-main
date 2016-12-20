@@ -13,6 +13,14 @@
 	    	text-decoration: none; 
 	    }
     }
+    &.black {
+    	color: $black;
+	    &:hover,
+	    &:focus {
+	    	color: $primary-red;
+	    	text-decoration: none; 
+	    }
+    }
     &.hover__black {
     	color: $black;
 	    &:hover,

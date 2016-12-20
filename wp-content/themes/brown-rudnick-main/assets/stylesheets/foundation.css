@@ -270,6 +270,11 @@ p.wp-caption-text {
   #page-full-width-homepage a.no__underline:hover, #page-full-width-homepage a.no__underline:focus, a.no__underline:hover, a.no__underline:focus {
     color: #b91628;
     text-decoration: none; }
+  #page-full-width-homepage a.black, a.black {
+    color: #0a0a0a; }
+    #page-full-width-homepage a.black:hover, #page-full-width-homepage a.black:focus, a.black:hover, a.black:focus {
+      color: #b91628;
+      text-decoration: none; }
   #page-full-width-homepage a.hover__black, a.hover__black {
     color: #0a0a0a; }
     #page-full-width-homepage a.hover__black:hover, #page-full-width-homepage a.hover__black:focus, a.hover__black:hover, a.hover__black:focus {
