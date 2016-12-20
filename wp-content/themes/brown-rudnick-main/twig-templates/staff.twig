@@ -72,22 +72,24 @@
 				</p>
 			{% endif %}	
 
-			<div class="row">
-				<div class="columns small-12 medium-12 large-12 relative">
-					<div class="small-6 medium-3 large-3 float--right">
-						<select id="locationSelect" name="location_query" class="inline__text document__link black">
-							<option class="document__link" value="">
-								OFFICE
-							</option>
-							{% for location in job_locations %}
-								<option  value="{{ location.slug|upper }}">
-									{{ location.name|upper }}
+			{% if job_locations %}
+				<div class="row">
+					<div class="columns small-12 medium-12 large-12 relative">
+						<div class="small-6 medium-3 large-3 float--right">
+							<select id="locationSelect" name="location_query" class="inline__text document__link black">
+								<option class="document__link" value="">
+									OFFICE
 								</option>
-							{% endfor %}
-						</select>
+								{% for location in job_locations %}
+									<option  value="{{ location.slug|upper }}">
+										{{ location.name|upper }}
+									</option>
+								{% endfor %}
+							</select>
+						</div>
 					</div>
 				</div>
-			</div>
+			{% endif %}	
 			
 			{# this table APPEARS IF THERE IS NOT A SEARCH QUERY #}
 			{% if not location %}

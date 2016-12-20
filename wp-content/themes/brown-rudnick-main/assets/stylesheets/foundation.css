@@ -310,6 +310,12 @@ p.wp-caption-text {
         color: #fefefe;
         text-decoration: none; }
 
+#page-full-width-homepage .footer-links a {
+  color: #0a0a0a; }
+  #page-full-width-homepage .footer-links a:hover, #page-full-width-homepage .footer-links a:focus {
+    color: #b91628;
+    text-decoration: none; }
+
 .logo--print--only {
   display: none; }
 

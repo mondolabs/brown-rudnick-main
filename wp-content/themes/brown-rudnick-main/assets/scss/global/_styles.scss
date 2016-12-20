@@ -77,6 +77,19 @@
 	}
 }
 
+
+#page-full-width-homepage .footer-links {
+	a {
+		color: $black;
+		&:hover,
+	    &:focus {
+	    	color: $primary-red;
+	    	text-decoration: none; 
+	    }
+	}
+}
+
+
 .logo--print--only {
 	display: none;
 }
