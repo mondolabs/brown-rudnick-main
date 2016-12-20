@@ -67,7 +67,7 @@
 					<div class="sidebar__color-block--outer-outer-wrapper">	
 						<div class="sidebar__color-block--outer-wrapper {% if loop.index > 4 %}hidden hidden__exp{% endif %}">
 							<div class="sidebar__color-block--wrapper">
-					        	<a href="{{ experience.guid }}" class="link margin__0 tag__text text-align__center">
+					        	<a href="{{ TimberPost(experience).link }}" class="link margin__0 tag__text text-align__center">
 				    	    		{{ experience.post_title|upper }}
 				        		</a>
 				        	</div>
@@ -80,7 +80,7 @@
 				    </a>
 			    	<span class="expander"></span>
 				{% endif %}    
-			{% endif %}    
+			{% endif %}     
 		</div>
 		<div class="columns small-12 medium-9 large-10">
 			<div class="padding__wrapper forty sides__only">
