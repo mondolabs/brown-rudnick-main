@@ -57,7 +57,7 @@
 		        	{% set experience =  item|first %}
 					<div class="sidebar__color-block--outer-wrapper {% if loop.index > 5%}hidden hidden__exp{% endif %}">
 						<div class="sidebar__color-block--wrapper">
-				        	<a href="{{TimberPost(experience).link}}" class="link margin__0 tag__text text-align__center">
+				        	<a href="{{TimberPost(experience).link}}" class="black link margin__0 tag__text text-align__center">
 			    	    		{{ experience.post_title|upper }}
 			        		</a>
 			        	</div>
@@ -210,7 +210,7 @@
 					{% for service in services %}
 						{% set service = service|first %}
 						<div class="columns medium-12 large-12 small-12 service">
-							<div class="body__text service__text padding-bottom-20">
+							<div class="body__text service__text">
 								{{service}}
 							</div>
 						</div>	
