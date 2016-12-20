@@ -2337,7 +2337,7 @@ tr {
   color: #fefefe !important;
   background-color: #b91628 !important; }
 
-.body__text h2 {
+.body__text h2, .body__text h2 a {
   font-family: "adobe-garamond-pro", serif;
   font-size: 30px;
   margin-bottom: 20px;
