@@ -1128,7 +1128,7 @@ img.insights {
   .person__details--expander.top__menu {
     background-color: #b91628;
     right: 15px;
-    top: 20px; }
+    top: 17.5px; }
 
 @-moz-document url-prefix() {
   .experience_expander.top__menu,
@@ -1137,14 +1137,6 @@ img.insights {
   .mobile__sidebar--expander.top__menu,
   .person__details--expander.top__menu {
     top: 10px; } }
-    @media screen and (max-width: 768px) {
-      .experience_expander.top__menu,
-      .job_expander.top__menu,
-      .accordion_expander.top__menu,
-      .mobile__sidebar--expander.top__menu,
-      .person__details--expander.top__menu {
-        top: 3px;
-        margin-top: -7px; } }
     .experience_expander.top__menu:before,
     .job_expander.top__menu:before,
     .accordion_expander.top__menu:before,
@@ -2207,9 +2199,33 @@ textarea#comment {
 .bottom--banner--image--wrapper {
   height: 325px !important; }
 
+@media screen and (max-width: 767px) {
+  .single-people .featured-image__header--text-wrapper {
+    display: block !important; } }
+
+@media screen and (min-width: 461px) and (max-width: 768px) {
+  .single-people .featured-image__header--text-inner-wrapper.person {
+    display: block !important; } }
+
+@media screen and (max-width: 768px) {
+  .single-people .featured-image__header--image-wrapper.person {
+    height: 600px !important; } }
+
+@media screen and (max-height: 420px) {
+  .single-people .featured-image__header--image-wrapper.person {
+    height: 400px !important; } }
+
+@media screen and (max-width: 768px) and (min-height: 1023px) {
+  .single-people .featured-image__header--image-wrapper.person {
+    height: 400px !important; } }
+
+@media screen and (min-width: 452px) and (max-width: 768px) {
+  .single-people .featured-image__header--image-wrapper.person {
+    height: 425px !important; } }
+
 @media screen and (min-width: 461px) and (max-width: 768px) {
   .single-people .featured-image__header--image-wrapper {
-    height: 600px !important; } }
+    height: 450px !important; } }
 
 @media screen and (min-width: 48.0625em) {
   .single-people .featured-image__header--text-inner-wrapper {

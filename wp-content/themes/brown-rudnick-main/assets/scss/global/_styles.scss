@@ -1124,13 +1124,9 @@ img.insights {
 	&.top__menu {
 		background-color: $primary-red;
 		right: 15px;
-		top: 20px;
+		top: 17.5px;
 		@-moz-document url-prefix() {
 			top: 10px;
-		}
-		@media screen and(max-width:768px) {
-    	top: 3px;
-    	margin-top: -7px;
 		}
 		&:before {
 			top: 7px;
@@ -2354,9 +2350,38 @@ textarea#comment {
 
 
 .single-people {
+	@media screen and (max-width: 767px){
+		.featured-image__header--text-wrapper {
+			display: block !important;
+		}
+	}
+
+	
+	@media screen and (min-width: 461px) and (max-width: 768px){
+		.featured-image__header--text-inner-wrapper {
+			&.person { 
+				display: block !important;
+			}
+		}
+	}
 	.featured-image__header--image-wrapper {
-		@media screen and (min-width: 461px) and (max-width: 768px){
-			height: 600px !important
+		&.person {
+
+			@media screen and (max-width: 768px){
+				height: 600px !important;
+			}
+			@media screen and (max-height: 420px){
+				height: 400px !important;
+			}
+			@media screen and (max-width: 768px) and (min-height: 1023px){
+				height: 400px !important;
+			}
+			@media screen and (min-width: 452px) and (max-width:768px){
+				height: 425px !important;
+			}
+		}	
+		@media screen and (min-width: 461px) and (max-width: 768px) {
+			height: 450px !important
 		}
 	}
 	.featured-image__header--text-inner-wrapper {
