@@ -1280,6 +1280,8 @@ img.insights {
     height: 100%;
     width: 100%;
     z-index: 9999;
+    overflow-y: scroll;
+    -ms-overflow-style: auto;
 	&.black--vellum {
     	background-color: rgba(0,0,0,.7);
 	}
