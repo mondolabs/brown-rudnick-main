@@ -43,7 +43,7 @@
 		        		{% endif %}
 		        	<br class="{% if loop.index > 3 %}hidden hidden_headline hidden__exp{% endif %}">
 			    {% endfor %}
-				{% if loop.length > 3 %} 
+				{% if loop.length > 3 %}
 				    <a id="showMoreHeadlines" class="padding-bottom-40 more link red tag__text underline" href="#more">
 			    		SHOW MORE
 				    </a>
@@ -63,6 +63,11 @@
 			        	</div>
 					</div>
 			    {% endfor %}
+				{% if loop.length > 3 %}
+				    <a id="showMoreRelatedExperiences" class="more link red tag__text underline" href="#more">
+				    	SHOW MORE
+				    </a>
+				{% endif %} 
 			{% endif %}    
 		</div>
 		<div class="columns small-12 medium-9 large-10 margin-top-20">

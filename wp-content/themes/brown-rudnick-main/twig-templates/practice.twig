@@ -64,9 +64,11 @@
 			        	</div>
 					</div>
 			    {% endfor %}
-			    <a id="showMoreRelatedExperiences" class="black more link red tag__text underline" href="#more">
-			    	SHOW MORE
-			    </a>
+				{% if loop.length > 3 %}
+				    <a id="showMoreRelatedExperiences" class="more link red tag__text underline" href="#more">
+				    	SHOW MORE
+				    </a>
+				{% endif %}    
 			    <span class="expander"></span>
 			{% endif %}    
 		</div>
