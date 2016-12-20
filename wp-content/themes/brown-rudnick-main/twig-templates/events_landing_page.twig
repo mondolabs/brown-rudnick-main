@@ -124,49 +124,52 @@
 				{% endfor %}
 			</div>	
 		{% else %}
-			<div class="columns small-12 medium-12 large-12 no__pad desktop-only margin-top-neg-20">
-				<div class="no__pad">
-					<div class="columns small-12 medium-12 large-3 x-large-6 no__pad">
-						<p class="title__text smaller margin-top-16">
-							Upcoming
-						</p>
+			{% set upcoming_events = post.get_field('upcoming_events') %}
+
+			{% if upcoming_events|length > 0 %}
+				<div class="columns small-12 medium-12 large-12 no__pad desktop-only margin-top-neg-20">
+					<div class="no__pad">
+						<div class="columns small-12 medium-12 large-3 x-large-6 no__pad">
+							<p class="title__text smaller margin-top-16">
+								Upcoming
+							</p>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="columns small-12 medium-12 large-12 no__pad">
-				<div class="margin-top-20 columns small-12 medium-12 large-12 no__pad">
-					{% set upcoming_events = post.get_field('upcoming_events') %}
-					{% for event in upcoming_events %}
-						{% set event = event|first %}
-						<table class="no__border">
-							<tbody class="no__border">
-								<tr class="arrow__hover--trigger">
-									<td class="no__pad full__width">
-										<a class="hover__black black" href="{{ event.permalink }}">
-											{{ event.title }}<br>
-										</a> 
-										<p class="tag__text grey margin-top-20">
-											{{ event.date|upper }}
-										</p>
-									</td>
-									<td class="no__pad">
-										<div class="link__arrow--wrapper news">
-											<a href="{{ event.permalink }}">
-												<svg class="long__arrow--svg news" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
-													<title>long arrow</title>
-													<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
-													<polyline class="long__arrow red" points="48 1 56 9 48 17"/>
-												</svg>
-											</a>	
-										</div>
-									</td>
-								</tr>
-							</tbody>	
-						</table>
-						{% if not loop.last %}<span class="insights list-divider"></span>{% endif %}
-					{% endfor %}
-				</div>	
-			</div>
+				<div class="columns small-12 medium-12 large-12 no__pad">
+					<div class="margin-top-20 columns small-12 medium-12 large-12 no__pad">
+						{% for event in upcoming_events %}
+							{% set event = event|first %}
+							<table class="no__border">
+								<tbody class="no__border">
+									<tr class="arrow__hover--trigger">
+										<td class="no__pad full__width">
+											<a class="hover__black black" href="{{ event.permalink }}">
+												{{ event.title }}<br>
+											</a> 
+											<p class="tag__text grey margin-top-20">
+												{{ event.date|upper }}
+											</p>
+										</td>
+										<td class="no__pad">
+											<div class="link__arrow--wrapper news">
+												<a href="{{ event.permalink }}">
+													<svg class="long__arrow--svg news" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 18">
+														<title>long arrow</title>
+														<line class="long__arrow red" x1="1" y1="9" x2="56" y2="9"/>
+														<polyline class="long__arrow red" points="48 1 56 9 48 17"/>
+													</svg>
+												</a>	
+											</div>
+										</td>
+									</tr>
+								</tbody>	
+							</table>
+							{% if not loop.last %}<span class="insights list-divider"></span>{% endif %}
+						{% endfor %}
+					</div>	
+				</div>
+			{% endif %}	
 			<div class="columns small-12 medium-12 large-12 no__pad desktop-only margin-top-20">
 				<div class="no__pad">
 					<div class="columns small-12 medium-12 large-3 x-large-6 no__pad">

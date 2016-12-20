@@ -124,7 +124,7 @@ insights__title {
 	font-size: 30px;
 	margin-bottom: 20px;
 	color: $black;
- transition: color .3s ease-in-out;
+ 	transition: color .3s ease-in-out;
 	&.insights__landing {
 		@media screen and (max-width: 768px){
 			font-size: 22px;
@@ -2533,3 +2533,22 @@ tr {
 	color: $white !important;
 	background-color: $primary-red !important;
 }
+
+.body__text {
+	
+	h2 {
+		font-family: $brgaramond;
+		font-size: 30px;
+		margin-bottom: 20px;
+		color: $black;
+	 	transition: color .3s ease-in-out;
+	}
+
+	h4 {
+		font-family: $brgaramond;
+		margin-bottom: 20px;
+		color: $black;
+	 	transition: color .3s ease-in-out;
+		font-size: 24px;
+	}
+}	
