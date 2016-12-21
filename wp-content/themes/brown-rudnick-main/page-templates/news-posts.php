@@ -3,9 +3,9 @@
 Template Name: News Posts
 */
 global $paged;
-  if (!isset($paged) || !$paged){
-      $paged = 1;
-  }
+if (!isset($paged) || !$paged){
+    $paged = 1;
+}
 
 $data = Timber::get_context();
 $post = new TimberPost();
