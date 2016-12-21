@@ -88,6 +88,13 @@
 }
 
 
+.page-number {
+	&.current {
+		color: $white;
+	}
+}
+
+
 #page-full-width-homepage .footer-links {
 	a {
 		color: $black;
