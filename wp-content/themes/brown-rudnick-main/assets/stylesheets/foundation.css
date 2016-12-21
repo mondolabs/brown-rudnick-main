@@ -2432,6 +2432,10 @@ td.job__openings__title, .accordion-trigger {
   .bottom-banner-text {
     max-width: 85% !important; } }
 
+.wpcf7-response-output {
+  position: absolute !important;
+  top: 0 !important; }
+
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
