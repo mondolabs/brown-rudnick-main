@@ -2104,10 +2104,6 @@ tbody {
   color: #b91628 !important;
   text-decoration: none !important; }
 
-@media screen and (max-width: 768px) {
-  .email__modal .modal__text {
-    font-size: 10px; } }
-
 .email-buttons {
   text-align: center;
   margin: 0 auto; }

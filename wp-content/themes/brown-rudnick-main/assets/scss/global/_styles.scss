@@ -2257,14 +2257,6 @@ tbody {
 	}
 }
 
-
-.email__modal {
-	.modal__text {
-		@media screen and (max-width: 768px){
-			font-size: 10px;
-		}
-	}
-}
 .email-buttons{
 	text-align: center; 
 	@include breakpoint(medium){
