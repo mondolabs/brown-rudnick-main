@@ -27,7 +27,7 @@
 				
 				<a class="link title__text" href="{{member.permalink}}">
 					<p>
-						{{ member.first_name}} {{ member.middle_initial }} {{member.last_name}}{% if member.is_hiring_committee_chair == true %}, Chair {% endif %}
+						{{ member.first_name}} {% if member.middle_initial %}{{ member.middle_initial }}. {% endif %} {{member.last_name}}{% if member.is_hiring_committee_chair == true %}, Chair {% endif %}
 					</p>
 				</a>
 				<p class="bold__wide__spacing">
