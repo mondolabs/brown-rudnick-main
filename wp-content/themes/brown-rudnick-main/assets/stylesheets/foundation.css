@@ -260,6 +260,12 @@ p.wp-caption-text {
   .long__arrow.red {
     stroke: #b91628; }
 
+#page-full-width-homepage .letter__link--inner-wrapper.letter--active a.letter__link {
+  color: #fefefe; }
+  #page-full-width-homepage .letter__link--inner-wrapper.letter--active a.letter__link:hover, #page-full-width-homepage .letter__link--inner-wrapper.letter--active a.letter__link:focus {
+    color: #fefefe;
+    text-decoration: none; }
+
 #page-full-width-homepage a, a {
   -webkit-transition: color .3s ease-in-out;
   transition: color .3s ease-in-out;
