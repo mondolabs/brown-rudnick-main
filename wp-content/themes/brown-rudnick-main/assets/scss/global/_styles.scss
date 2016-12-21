@@ -2663,3 +2663,9 @@ td.job__openings__title, .accordion-trigger {
 	font-size: 14px;
 	margin: 0;
 }
+
+.bottom-banner-text {
+	@media screen and (max-width: 568px){
+		max-width: 85% !important;
+	}
+}

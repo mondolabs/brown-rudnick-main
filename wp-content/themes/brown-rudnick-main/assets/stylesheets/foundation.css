@@ -2422,6 +2422,10 @@ td.job__openings__title, .accordion-trigger {
   font-size: 14px;
   margin: 0; }
 
+@media screen and (max-width: 568px) {
+  .bottom-banner-text {
+    max-width: 85% !important; } }
+
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
