@@ -663,7 +663,9 @@ h3.title {
 .margin-top-80 {
 	margin-top: 80px;
 }
-
+.margin-bottom-80 {
+	margin-bottom: 80px;
+}
 .margin-bottom-60 {
 	margin-bottom: 60px;	
 }
@@ -1955,7 +1957,6 @@ select.clean___border {
 	margin-top: 20px !important;
 	padding: 0.5rem;
 }
-
 
 input.input-custom-search::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color: $br-black;
