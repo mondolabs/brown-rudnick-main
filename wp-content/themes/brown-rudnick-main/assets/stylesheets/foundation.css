@@ -2176,9 +2176,11 @@ tbody {
   svg, #mobile-menu, ul, .breadcrumb__link, #related-experience-heading, #people-sidebar, #search__icon__mobile, #mobile__logo__container, .sites-button, footer, .menu, .dropdown .desktop-menu, .menu a, .logo__wrapper a, .link a, .icons__container, .padding__right--50-desktop {
     display: none !important; }
   #featuredImage {
-    height: 300px !important; }
+    height: 300px !important;
+    margin-top: 20px !important; }
   .logo__wrapper {
-    display: block; }
+    display: block;
+    margin-bottom: 20px !important; }
   .inline__wrapper, .table__wrapper, #first--inline--wrapper {
     display: block !important;
     height: auto !important; }

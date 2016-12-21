@@ -184,7 +184,6 @@
 						<table border ="0" class="table__white">
 							{% for job_opening in job_openings %}
 								{% set job_opening = job_opening|first %}
-									{{ job_opening }}
 								{% set job_openings_list = job_opening.get_field('locations') %}
 								{% for job_location in job_openings_list %}
 									{# CONDITIONAL CHECK MADE TO ADAPT TO WASHINGTON, DC STRING PARSING #}
