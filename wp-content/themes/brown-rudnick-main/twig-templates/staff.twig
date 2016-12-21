@@ -142,7 +142,7 @@
 										</p>
 										{{ opportunity.department }}
 									{% endif %}
-									<p class="show-for-small-onlyfont-weight__bold wide-spacing body__text smaller margin-top-20 upper">
+									<p class="show-for-small-only font-weight__bold wide-spacing body__text smaller margin-top-20 upper">
 										{{"Locations"|upper}}
 									</p>
 									<div class="show-for-small-only">
@@ -180,14 +180,20 @@
 		{% endif %}	
 		{# this table APPEARS IF THERE IS A SEARCH QUERY #}
 		{% if location %}
+			{{ location }}
 				<div class="columns small-12 medium-12 large-12 relative">
 						{% set job_openings = post.get_field('job_openings') %}
 						<table border ="0" class="table__white">
 							{% for job_opening in job_openings %}
 								{% set job_opening = job_opening|first %}
+									{{ job_opening }}
 								{% set job_openings_list = job_opening.get_field('locations') %}
 								{% for job_location in job_openings_list %}
+
+									{{job_location.location.location_name}}
 									{# CONDITIONAL CHECK MADE TO ADAPT TO WASHINGTON, DC STRING PARSING #}
+									{{ location|replace({'-': ' '}) }}
+									{{ job_location.location.location_name|upper }}
 									{% if location|replace({'-': ' '}) in job_location.location.location_name|upper or location.location_name|replace({'-': ', ', 'DC':'D.C.'}) in job_location.location.location_name|upper %}
 										<tr class="job__opening">
 											<td class="job__openings__title accordion-trigger title__text smaller responsive__text ">
