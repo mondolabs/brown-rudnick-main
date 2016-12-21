@@ -1796,6 +1796,9 @@ button.close__modal {
 	width: 49%;
 	padding-top: 20px;
 	padding-bottom: 40px;
+	@media screen and (max-height: 320px){
+		padding-bottom: 30px;
+	}
 	text-align: center;
 	&.left{
 		border-right: 1px solid $darker-grey-two;
