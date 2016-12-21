@@ -81,13 +81,5 @@
 		{% if banner_image|length > 0 %}
 			$('#featuredImage').backstretch("{{ banner_image }}");
 		{% endif %}
-		
-		// originally designed to show modal only if user has not been to site, that is, their 'visitedDiversity' cookie == false. Behavior was changed to trigger modal click event. See application.js
-
-		// var visitedDiversity = BR_COOKIES.readCookie("visitedDiversity");
-		// if ( visitedDiversity !== "true" ) {
-		// 	BR_COOKIES.visitDiversity();
-		// 	BR_COOKIES.showDiversityModal();
-		// }
 	})
 </script>

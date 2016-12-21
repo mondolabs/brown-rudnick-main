@@ -39,6 +39,3 @@ $alphabet = range('A', 'Z');
       </div>
   </body>
 </html>
-
-
-

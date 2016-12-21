@@ -56,8 +56,6 @@ $data['location'] = get_query_var('job_location_query', "");
 $parent = get_page($post->post_parent);
 $parent_name = $parent->post_name;
 $data['parent_link'] = get_permalink( $post->post_parent );
-
-
 ?>
 
 <html>

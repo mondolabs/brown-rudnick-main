@@ -157,7 +157,6 @@ usort($data['insights'], "sort_objects_by_date");
 $data['insights'] = array_slice($data['insights'], 0, 5 );
 $data['insights'] = array_reverse($data['insights']);
 $data['pagination'] = Timber::get_pagination();
-
 ?>
 
 <html>

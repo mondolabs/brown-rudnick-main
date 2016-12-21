@@ -1,4 +1,4 @@
-// publication request modal
+// publication request and contact us modal
 
 var emailContact = {
 	revealNotice: function(event){

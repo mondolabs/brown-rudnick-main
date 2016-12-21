@@ -117,7 +117,7 @@
 					<p class="body__text insights">
 						{{ contact_phone_number }}
 					</p>
-					<a class="body__text insights link red" href="mailto:{{contact_email}}"> 
+					<a class="body__text insights link red email--people—link" href="mailto:{{contact_email}}"> 
 						<p class="link body__text insights">
 							{{ contact_email }}
 						</p>
@@ -127,6 +127,8 @@
 		</div>
 	</div>	
 </div>
+
+{% include '/template-parts/email-notice.twig' %}
 
 <script type="text/javascript">
 	{% if featured_image_url %}
