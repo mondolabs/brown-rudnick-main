@@ -63,9 +63,7 @@ var INSIGHTS = {
 					queryString = queryString + "&" + paramName + "=" + paramValue;
 				}
 			}
-
 			var keyword = keyword.replace(' ', '-')
-
 			if ( queryString.length > 0 ){
 				if ( keyword.length > 0 ) {
 					queryString = queryString + "&keyword=" + keyword;

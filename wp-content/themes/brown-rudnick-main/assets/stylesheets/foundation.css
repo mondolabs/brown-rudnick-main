@@ -1641,7 +1641,7 @@ button.close__modal {
     margin: 1%; }
     @media screen and (min-height: 450px) {
       #menu-mobile-menu li {
-        margin: 7.5%; } }
+        margin: 3%; } }
     #menu-mobile-menu li a {
       font-size: 18px;
       letter-spacing: 3px; }

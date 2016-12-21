@@ -233,6 +233,7 @@ $(document).ready(function(){
 			} 	
 	}	
 	// prevent submit on enter for advanced search
+	// this is a custom search, differentiated from regular WP search
 	if ( $('body').hasClass('page-template-people') || $('body').hasClass('search-results') || $('body').hasClass('search') || $('body').hasClass('page-template-insights')  ){
 		$(window).keydown(function(e){
 			if (e.keyCode == 13){
