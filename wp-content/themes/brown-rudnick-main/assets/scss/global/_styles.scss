@@ -32,6 +32,13 @@
 	    	text-decoration: none; 
 	    }
     }
+    &.letter__link {
+		&:hover,
+	    &:focus {
+	    	color:$white;
+	    	text-decoration: none; 
+	    }
+    }
     &.hover__black {
     	color: $black;
 	    &:hover,
