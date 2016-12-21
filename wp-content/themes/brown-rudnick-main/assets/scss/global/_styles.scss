@@ -1,3 +1,12 @@
+#page-full-width-homepage .letter__link--inner-wrapper.letter--active a.letter__link{
+	color: $white;
+	&:hover,
+    &:focus {
+    	color:$white;
+    	text-decoration: none; 
+    }
+}
+
 #page-full-width-homepage a, a {
     transition: color .3s ease-in-out;
     color: $primary-red;
@@ -20,6 +29,13 @@
 	    &:hover,
 	    &:focus {
 	    	color: $primary-red;
+	    	text-decoration: none; 
+	    }
+    }
+    &.letter__link {
+		&:hover,
+	    &:focus {
+	    	color:$white;
 	    	text-decoration: none; 
 	    }
     }
