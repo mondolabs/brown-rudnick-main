@@ -756,6 +756,10 @@ h3.title {
 .featured-image__header--image-wrapper {
   background-color: #f0f0f0;
   height: 215px; }
+  @media screen and (max-width: 768px) {
+    .featured-image__header--image-wrapper.no--image--to--wrap {
+      height: 400px !important;
+      padding: 20px !important; } }
   .featured-image__header--image-wrapper.person, .featured-image__header--image-wrapper.insight {
     height: 380px; }
     @media screen and (max-width: 768px) {

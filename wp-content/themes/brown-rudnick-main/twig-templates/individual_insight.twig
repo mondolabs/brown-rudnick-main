@@ -1,5 +1,4 @@
-<div id="featuredImage" class ="insight featured-image__header--image-wrapper">
-
+<div id="featuredImage" class ="insight featured-image__header--image-wrapper {% if not featured_image_url %} no--image--to--wrap	{% endif %}">
 	{% set header_text_color = "black" %}
 	{# hero header #}
 	<div class="featured-image__header--text-outer-wrapper row relative">
@@ -26,6 +25,9 @@
 									<div class="table__inner">
 										<p class="title__text insight mobile__centered">
 											{{ post.title }}
+										</p>
+										<p class="body__text tag__text insight mobile__centered">
+											{{ 'Published On:'|upper}} {{ post.post_date|date("m/d/Y") }}
 										</p>
 										{% if post.br_authors %}	
 										<span class="insight__details list-divider red mobile__centered"></span>
