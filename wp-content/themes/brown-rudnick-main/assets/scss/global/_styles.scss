@@ -14,7 +14,8 @@
 	    }
     }
     &.black, 
-    &.experience__link {
+    &.experience__link,
+    &.letter__link {
     	color: $black;
 	    &:hover,
 	    &:focus {
@@ -1315,7 +1316,7 @@ img.insights {
 	&.letter--active,
 	&:hover {
 		background-color: $primary-red;
-		.letter__link {
+		a.letter__link {
 			color: $white;
 			&.offcanvas--letter--link {
 				&:hover{

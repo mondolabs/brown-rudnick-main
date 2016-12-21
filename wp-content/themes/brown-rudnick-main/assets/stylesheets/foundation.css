@@ -270,9 +270,9 @@ p.wp-caption-text {
   #page-full-width-homepage a.no__underline:hover, #page-full-width-homepage a.no__underline:focus, a.no__underline:hover, a.no__underline:focus {
     color: #b91628;
     text-decoration: none; }
-  #page-full-width-homepage a.black, #page-full-width-homepage a.experience__link, a.black, a.experience__link {
+  #page-full-width-homepage a.black, #page-full-width-homepage a.experience__link, #page-full-width-homepage a.letter__link, a.black, a.experience__link, a.letter__link {
     color: #0a0a0a; }
-    #page-full-width-homepage a.black:hover, #page-full-width-homepage a.black:focus, #page-full-width-homepage a.experience__link:hover, #page-full-width-homepage a.experience__link:focus, a.black:hover, a.black:focus, a.experience__link:hover, a.experience__link:focus {
+    #page-full-width-homepage a.black:hover, #page-full-width-homepage a.black:focus, #page-full-width-homepage a.experience__link:hover, #page-full-width-homepage a.experience__link:focus, #page-full-width-homepage a.letter__link:hover, #page-full-width-homepage a.letter__link:focus, a.black:hover, a.black:focus, a.experience__link:hover, a.experience__link:focus, a.letter__link:hover, a.letter__link:focus {
       color: #b91628;
       text-decoration: none; }
   #page-full-width-homepage a.hover__black, a.hover__black {
@@ -1312,9 +1312,9 @@ img.insights {
     background-color: #fefefe; }
   .letter__link--inner-wrapper.letter--active, .letter__link--inner-wrapper:hover {
     background-color: #b91628; }
-    .letter__link--inner-wrapper.letter--active .letter__link, .letter__link--inner-wrapper:hover .letter__link {
+    .letter__link--inner-wrapper.letter--active a.letter__link, .letter__link--inner-wrapper:hover a.letter__link {
       color: #fefefe; }
-      .letter__link--inner-wrapper.letter--active .letter__link.offcanvas--letter--link:hover, .letter__link--inner-wrapper:hover .letter__link.offcanvas--letter--link:hover {
+      .letter__link--inner-wrapper.letter--active a.letter__link.offcanvas--letter--link:hover, .letter__link--inner-wrapper:hover a.letter__link.offcanvas--letter--link:hover {
         color: #b91628; }
 
 .letter__link,
