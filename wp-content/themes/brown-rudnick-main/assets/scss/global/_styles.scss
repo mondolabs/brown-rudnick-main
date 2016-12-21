@@ -1316,7 +1316,7 @@ img.insights {
 	&.letter--active,
 	&:hover {
 		background-color: $primary-red;
-		a.letter__link {
+		&.letter__link {
 			color: $white;
 			&.offcanvas--letter--link {
 				&:hover{

@@ -1312,9 +1312,9 @@ img.insights {
     background-color: #fefefe; }
   .letter__link--inner-wrapper.letter--active, .letter__link--inner-wrapper:hover {
     background-color: #b91628; }
-    .letter__link--inner-wrapper.letter--active a.letter__link, .letter__link--inner-wrapper:hover a.letter__link {
+    .letter__link--inner-wrapper.letter--active.letter__link, .letter__link--inner-wrapper:hover.letter__link {
       color: #fefefe; }
-      .letter__link--inner-wrapper.letter--active a.letter__link.offcanvas--letter--link:hover, .letter__link--inner-wrapper:hover a.letter__link.offcanvas--letter--link:hover {
+      .letter__link--inner-wrapper.letter--active.letter__link.offcanvas--letter--link:hover, .letter__link--inner-wrapper:hover.letter__link.offcanvas--letter--link:hover {
         color: #b91628; }
 
 .letter__link,
