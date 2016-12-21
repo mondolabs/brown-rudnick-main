@@ -1691,7 +1691,7 @@ button.close__modal {
   text-align: center; }
   @media screen and (max-height: 320px) {
     .one__half {
-      padding-bottom: 30px; } }
+      padding-bottom: 15px; } }
   .one__half.left {
     border-right: 1px solid #c9c9c9; }
   .one__half a:hover, .one__half a :focus {
