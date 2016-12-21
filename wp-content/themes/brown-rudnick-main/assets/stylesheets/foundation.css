@@ -325,7 +325,7 @@ p.wp-caption-text {
         text-decoration: none; }
 
 .page-number.current {
-  color: #fefefe; }
+  color: #fefefe !important; }
 
 #page-full-width-homepage .footer-links a {
   color: #0a0a0a; }
