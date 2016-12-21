@@ -33,7 +33,7 @@ $data['slug'] = $slug;
 $data['parent_link'] = get_permalink( $post->post_parent );
 
 $post_type_args = array(
-  'post_type' => 'news_posts',
+  'post_type' => 'news_post',
   'numberposts' => -1,
   'posts_per_page' => 5,
   'paged'=> $paged

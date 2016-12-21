@@ -51,7 +51,7 @@
 			                {% endfor %}
 		            	</select>
 					</div> 
-					{% if geographies and geographies|length >= 1 %}	
+					{# {% if geographies  %}	 #}
 						<div class="columns large-2 no__pad padding-left-5 margin__1 text-align__center">
 							<select id="geographySelect" name="geography_query" class="clean___border insight inline__text grey__bold__text smaller">
 								<option value="">
@@ -64,7 +64,7 @@
 							{% endfor %}
 							</select>
 						</div>
-					{% endif %}
+					{# {% endif %} #}
 					{% if industries and industries|length >= 1 %}	
 						<div class="columns large-2 no__pad padding-left-5 margin__1 text-align__center">
 							<select id="industrySelect" name="industry_query" class="clean___border insight inline__text grey__bold__text smaller">

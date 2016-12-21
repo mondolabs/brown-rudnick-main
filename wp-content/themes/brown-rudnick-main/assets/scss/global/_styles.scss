@@ -103,14 +103,6 @@
 	}
 }
 
-
-.page-number {
-	&.current {
-		color: $white !important;
-	}
-}
-
-
 #page-full-width-homepage .footer-links {
 	a {
 		color: $black;
@@ -119,6 +111,13 @@
 	    	color: $primary-red;
 	    	text-decoration: none; 
 	    }
+	}
+}
+
+.page-numbers {
+	color: $black !important;
+	&.current {
+		color: $white !important;
 	}
 }
 
