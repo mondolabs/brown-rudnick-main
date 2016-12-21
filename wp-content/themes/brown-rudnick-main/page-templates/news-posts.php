@@ -157,6 +157,10 @@ usort($data['insights'], "sort_objects_by_date");
 $data['insights'] = array_slice($data['insights'], 0, 5 );
 $data['insights'] = array_reverse($data['insights']);
 $data['pagination'] = Timber::get_pagination();
+
+$query = new WP_Query($insights_args);
+$data['total_results'] = $query->found_posts;
+
 ?>
 
 <html>
