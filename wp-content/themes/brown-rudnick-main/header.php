@@ -63,8 +63,9 @@
 		
 		<?php do_action( 'foundationpress_layout_start' ); ?>
 		
-		<header id="masthead" class="site-header show-for-large " role="banner">
-			<div class="menu__wrapper--desktop row">
+		
+			<div class="menu__wrapper--desktop row show-for-large">
+				<header id="masthead" class="site-header" role="banner">
 				<div class="logo__wrapper columns large-4 medium-3">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 						<img class="header-logo--mobile" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/BR-logo-for-nav.png">
@@ -74,8 +75,9 @@
 				<div class="menu__inner-wrapper--desktop columns large-8 medium-9 desktop__menu__wrapper">
 					<?php desktop_menu(); ?>
 				</div>
+				</header>
 			</div>
-		</header>
+		
 
 		<div class="menu__outer-wrapper--desktop-on-scroll show-for-large">	
 			<header id="mastheadOnScroll" class="site-header" role="banner">

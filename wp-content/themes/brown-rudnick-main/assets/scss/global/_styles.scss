@@ -7,32 +7,9 @@
     }
 }
 
-
-// @media screen and (max-width: 922px) {  
-// 	#masthead { 
-//  		display: none !important; 
-// 	}
-// }
-@media screen and (min-width:64em){
-	.hide-for-large {
-		display:none !important;
-	}
-}
-
 // @media screen and (max-width:1024px){
-// 	.show-for-xlarge { 
-// 		display:none!important
-// 	}
-// }
-// @include breakpoint(medium){
-// 	#masthead { 
-// 		display: none !important; 
-// 	}
-// }
-
-// @include breakpoint(large){
-// 	#masthead { 
-// 		display: none !important; 
+// 	.hide-for-large {
+// 		display: block !important;
 // 	}
 // }
 

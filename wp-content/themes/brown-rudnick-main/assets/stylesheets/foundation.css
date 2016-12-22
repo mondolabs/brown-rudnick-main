@@ -266,10 +266,6 @@ p.wp-caption-text {
     color: #fefefe;
     text-decoration: none; }
 
-@media screen and (min-width: 64em) {
-  .hide-for-large {
-    display: none !important; } }
-
 #page-full-width-homepage a, a {
   -webkit-transition: color .3s ease-in-out;
   transition: color .3s ease-in-out;
