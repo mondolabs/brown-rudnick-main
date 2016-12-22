@@ -54,21 +54,22 @@
 						</p>
 					</div>
 				</div>	
+				{% if job_opportunities%}
+					<div class="row">
+						<div class="columns small-12 medium-12 large-12 relative">
+							<div class="page__divider grey"></div>
+						</div>
+						<div class="columns small-12 medium-12 large-12 relative">
+							<p class="title__text">
+								{{ middle_text_header }}
+							</p>
 
-				<div class="row">
-					<div class="columns small-12 medium-12 large-12 relative">
-						<div class="page__divider grey"></div>
+							<p class="body__text">
+								{{ middle_text_content }}
+							</p>			
+						</div>
 					</div>
-					<div class="columns small-12 medium-12 large-12 relative">
-						<p class="title__text">
-							{{ middle_text_header }}
-						</p>
-
-						<p class="body__text">
-							{{ middle_text_content }}
-						</p>			
-					</div>
-				</div>	
+				{% endif %}		
 
 				{% if location %}
 					<p class="title__text">
