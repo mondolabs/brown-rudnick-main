@@ -63,7 +63,7 @@
 		
 		<?php do_action( 'foundationpress_layout_start' ); ?>
 		
-		<header id="masthead" class="site-header show-for-large" role="banner">
+		<header id="masthead" class="site-header show-for-large " role="banner">
 			<div class="menu__wrapper--desktop row">
 				<div class="logo__wrapper columns large-4 medium-3">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">

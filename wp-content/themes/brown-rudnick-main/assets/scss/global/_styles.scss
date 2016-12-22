@@ -8,11 +8,24 @@
 }
 
 
-@media (max-width: 921px) {  
+@media screen and (max-width: 921px) {  
 	.menu__wrapper--desktop { 
 		display: none !important; 
 	}
 }
+
+
+// @include breakpoint(medium){
+// 	#masthead { 
+// 		display: none !important; 
+// 	}
+// }
+
+// @include breakpoint(large){
+// 	#masthead { 
+// 		display: none !important; 
+// 	}
+// }
 
 #page-full-width-homepage a, a {
     transition: color .3s ease-in-out;
