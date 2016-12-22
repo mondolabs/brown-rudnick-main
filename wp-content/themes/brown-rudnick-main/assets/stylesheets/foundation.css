@@ -266,8 +266,8 @@ p.wp-caption-text {
     color: #fefefe;
     text-decoration: none; }
 
-@media screen and (max-width: 922px) {
-  #masthead {
+@media screen and (min-width: 64em) {
+  .hide-for-large {
     display: none !important; } }
 
 #page-full-width-homepage a, a {
