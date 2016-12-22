@@ -316,11 +316,11 @@ insights__title {
 }
 
 .sidebar__color-block--outer-outer-wrapper {
-	@media (max-width: 768px) {
-	    display: inline-block;
-    	width: calc(50% - 30px);
+	@media (max-width: 769px) {
+	    display: block;
+    	width: 100%;
     	float: left;
-    	margin: 15px;
+    	margin: 0 auto;
 	}
 }
 .subscribe__insights{

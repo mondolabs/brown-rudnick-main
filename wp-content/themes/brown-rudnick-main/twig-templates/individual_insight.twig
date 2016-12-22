@@ -23,7 +23,7 @@
 							<div class="inline__wrapper insight">
 								<div class="table__wrapper insight">
 									<div class="table__inner">
-										<p class="title__text insight mobile__centered">
+										<p class="title__text insight mobile__centered responsive__text medium">
 											{{ post.title }}
 										</p>
 										<p class="body__text tag__text insight mobile__centered">
@@ -43,7 +43,6 @@
 										{% if post.digital_file %}
 											{% set digital_file = post.get_field('digital_file')%}
 											<button class="mobile__full--width sites-button" type="submit" onclick="window.open('{{digital_file}}')">Download</button>
-
 										{% endif %}
 									</div>	
 								</div>	
@@ -58,7 +57,7 @@
 	{# body - with sidebar #}
 <div class="row">
 	<div class="experience__wrapper row body__wrapper columns small-12 medium-12 large-12">
-		<div class="medium-3 large-2 small-12 columns">
+		<div class="medium-3 large-2 small-12 columns ">
 			{% if related_experiences|length > 0 %}
 			    <p class="tag__text">
 			    	{{ 'related experience'|upper }}
@@ -67,7 +66,7 @@
 		        	{% set experience = item|first %}
 					<div class="sidebar__color-block--outer-outer-wrapper">	
 						<div class="sidebar__color-block--outer-wrapper {% if loop.index > 4 %}hidden hidden__exp{% endif %}">
-							<div class="sidebar__color-block--wrapper">
+							<div class="sidebar__color-block--wrapper padding__forty mobile">
 					        	<a href="{{ TimberPost(experience).link }}" class="link margin__0 tag__text text-align__center black">
 				    	    		{{ experience.post_title|upper }}
 				        		</a>
