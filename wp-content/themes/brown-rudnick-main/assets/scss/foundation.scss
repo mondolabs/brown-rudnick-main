@@ -20,6 +20,8 @@
 @import "global/svgs";
 @import "global/styles";
 
+
+
 // Third-party libraries
 @import 'font-awesome';
 @import 'motion-ui';
@@ -30,7 +32,7 @@
 
 // Individual foundation components
 @include foundation-grid;
-@include foundation-flex-grid;
+// @include foundation-flex-grid;
 @include foundation-typography;
 @include foundation-button;
 @include foundation-forms;
@@ -68,7 +70,7 @@
 @include foundation-visibility-classes;
 @include foundation-float-classes;
 @include foundation-menu-icon;
-@include foundation-flex-classes;
+// @include foundation-flex-classes;
 
 // Motion UI
 @include motion-ui-transitions;

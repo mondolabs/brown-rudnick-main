@@ -1,6 +1,3 @@
-
-@include show-for(large);
-
 #page-full-width-homepage .letter__link--inner-wrapper.letter--active a.letter__link{
 	color: $white;
 	&:hover,
@@ -1770,12 +1767,6 @@ button.close__modal {
 	}
 }
 
-// .menu__wrapper--desktop {
-// 	@media screen and (max-width: 921px){
-// 		display: none !important;
-// 	}
-// }
-
 .mobile__menu__wrapper{
 	position: relative;
 }
@@ -1801,13 +1792,14 @@ button.close__modal {
 .mobile__button__container {
 	background-color: white;
 	position: absolute;
-  right: 20px;
-  top: 30px;
-  width: 25px;
-  height: 30px;
-  &.mobile-container-open {
-  	z-index: 999999 !important;
-  } 
+    right: 20px;
+    top: 30px;
+    width: 25px;
+    height: 30px;
+    &.mobile-container-open {
+    	z-index: 999999 !important;
+    }
+    
 }
 
 .contact__us__mobile, .locations__mobile {
