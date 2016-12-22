@@ -14,8 +14,9 @@
 	</div>
 </div>
 
+
 {# body - with sidebar #}
-<div class="row white-row relative z-index__1 ">
+<div class="columns row white-row relative z-index__1">
 	<div class="row careers__wrapper body__wrapper columns small-12 medium-12 large-12">
 		{% include '/twig-templates/sidebar.twig' with sidebar %}
 		<div class="columns small-12 medium-9 large-10 float--right relative">
@@ -26,66 +27,93 @@
 
 				<p class="body__text">
 					{{ top_text_content }}
-				</p>
-			</div>
-			<div class="columns small-12 medium-12 large-12 relative">
-				<div class="page__divider grey"></div>
-			</div>
-			<div class="columns small-12 medium-12 large-12 relative">
-				<p class="title__text">
-					{{ middle_text_header }}
-				</p>
+				</p>	
 
 				<p class="body__text">
-					{{ middle_text_content }}
-				</p>			
-			</div>
-
-			{% if location %}
-				<p class="title__text">
-					Showing results for your search "{{ location|replace({'-': ' '}) }}"
+					{{career_track_header}}
 				</p>
-			{% endif %}	
 
-			{% if job_locations %}
-				<div class="columns small-12 medium-12 large-12 relative">
-					<div class="small-6 medium-3 large-3 float--right">
-						<select id="locationSelect" name="location_query" class="inline__text document__link career--select black">
-							<option class="document__link" value="">
-								OFFICE
-							</option>
-							{% for location in locations %}
-								<option  value="{{ location.slug|upper }}">
-									{{ location.name|upper }}
-								</option>
-							{% endfor %}
-						</select>
-					</div>
+				<div class="bullets inline__text">
+					{% for item in career_track_items %}
+						<div class="bullet bullet__full-width">
+							<div class="body__text bullet__text">
+								{{item.track}}
+							</div>
+						</div>	
+					{% endfor %}
 				</div>
-			{% endif %}	
-			
+
+				<div class="row">
+					<div class="columns small-12 medium-12 large-12 relative">
+						{{ features_bottom_text }}
+						<p class="body__text roman">
+							{{ bullet_section_bottom_content }}
+						</p>
+						<p class="body__text smaller italic">
+							{{ bullet_section_notice }}
+						</p>
+					</div>
+				</div>	
+
+				<div class="columns small-12 medium-12 large-12 relative">
+					<div class="page__divider grey"></div>
+				</div>
+				<div class="columns small-12 medium-12 large-12 relative">
+					<p class="title__text">
+						{{ middle_text_header }}
+					</p>
+
+					<p class="body__text">
+						{{ middle_text_content }}
+					</p>			
+				</div>
+
+				{% if location %}
+					<p class="title__text">
+						Showing results for your search "{{ location|replace({'-': ' '}) }}"
+					</p>
+				{% endif %}	
+
+				{% if job_locations %}
+					<div class="row">
+						<div class="columns small-12 medium-12 large-12 relative">
+							<div class="small-6 medium-3 large-3 float--right">
+								<select id="locationSelect" name="location_query" class="inline__text document__link black">
+									<option class="document__link" value="">
+										OFFICE
+									</option>
+									{% for location in job_locations %}
+										<option  value="{{ location.slug|upper }}">
+											{{ location.name|upper }}
+										</option>
+									{% endfor %}
+								</select>
+							</div>
+						</div>
+					</div>
+				{% endif %}	
 			{# this table APPEARS IF THERE IS NOT A SEARCH QUERY #}
 			{% if not location %}
 				{% if job_opportunities|length > 0 %}
-				<div class="small-12 medium-12 large-12 relative">
-					<table border ="0" class="table__white no__pad">
-						<tr class="job__opening table__legend">
-									<td class="document__link black">
-										position
-									</td>
-									<td class="document__link black hide-for-small-only">
-										date
-									</td class="document__link">
-									<td class="document__link black hide-for-small-only">
-									    office
-									</td>
-									<td>
+					<div class="small-12 medium-12 large-12 relative">
+						<table border ="0" class="table__white no__pad">
+							<tr class="job__opening table__legend">
+								<td class="document__link black">
+									position
+								</td>
+								<td class="document__link black hide-for-small-only">
+									date
+								</td class="document__link">
+								<td class="document__link black hide-for-small-only">
+								    office
+								</td>
+								<td>
 
-									</td>
+								</td>
 							</tr>
-						{% endif %}
-						{% for opportunity in job_opportunities %}
-							<tr class="job__opening">
+							{% endif %}
+							{% for opportunity in job_opportunities %}
+								<tr class="job__opening">
 									<td class="job__openings__title accordion-trigger title__text smaller responsive__text ">
 										{{ opportunity.position }}
 									</td>
@@ -93,25 +121,41 @@
 										{{ opportunity.start_date|date("m/d/Y") }}
 									</td>
 									<td class="font-weight__bold wide-spacing body__text smaller responsive__text hide-for-small-only">
-											{% set offices = opportunity.get_field('locations') %}
-											{% for x in offices %}
-												<a class="black link inline__link" href="{{TimberPost(x.location).link}}" target="_blank">{{ x.location|upper }}</a>
-											{% endfor %}	
+										{% set offices = opportunity.get_field('locations') %}
+										{% for x in offices %}
+											{% set office = TimberPost(x.location) %}
+											<p class="career-text">
+												<a class="black link inline__link show-for-small-only font-weight__bold wide-spacing" href="{{office.link}}" target="_blank">
+													{{ office.location_name|upper }}
+												</a>
+											</p>	
+										{% endfor %}		
 									</td>
 									<td>
 										<span class="job_expander top__menu job_opening" data-show-target="jobOpeningAdditionalDetails" ></span>
 									</td>
-							</tr>
-							<tr class="hidden__job--description">
+								</tr>
+								<tr class="hidden__job--description">
 									<td class="hidden job__description__body responsive__text smallest" colspan="4">
 									{% if opportunity.department %}							
-										<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Department</p>
+										<p class="font-weight__bold wide-spacing body__text smaller margin-top-20 upper">
+											{{"Department"|upper}}
+										</p>
 										{{ opportunity.department }}
 									{% endif %}
-									<p class="show-for-small-only font-weight__bold wide-spacing body__text">Locations:</p>
-									{% for x in offices %}
-										<a class="link inline__link show-for-small-only font-weight__bold wide-spacing body__text" href="{{TimberPost(x.location).link}}" target="_blank">{{ x.location|upper }}</a></p>
-									{% endfor %}	
+									<p class="show-for-small-onlyfont-weight__bold wide-spacing body__text smaller margin-top-20 upper">
+										{{"Locations"|upper}}
+									</p>
+									<div class="show-for-small-only">
+										{% for x in offices %}
+											{% set office = TimberPost(x.location) %}
+											<p class="career-text">
+												<a class="black link inline__link show-for-small-only font-weight__bold wide-spacing" href="{{office.link}}" target="_blank">
+													{{ office.location_name|upper }}
+												</a>
+											</p>	
+										{% endfor %}		
+									</div>	
 
 									<p class="show-for-small-only font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Start date: {{ opportunity.start_date|date("m/d/Y") }}</p>
 									{% if opportunity.position_description %}							
@@ -124,87 +168,122 @@
 									{% endif %}
 									{% if opportunity.job_description_file %}
 										{% set description_url = opportunity.get_field('job_description_file') %}
-										<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Details</p>
 										<a class="document__link" href="{{ description_url }}" target="_blank">View pdf</a>
 									{% endif %}
 										<p class="margin-bottom--20 margin-top-20">{{bottom_banner_text}}</p>
 									</td>
 								</tr>
-							<br>
-						{% endfor %}
-					</table>
-			</div>
-		{% endif %}	
-
-		{# this table APPEARS IF THERE IS A SEARCH QUERY #}
-		{% if location %}
+								<br>
+							{% endfor %}
+						</table>
+					</div>	
+				</div>
+			{% endif %}	
+			{# this table APPEARS IF THERE IS A SEARCH QUERY #}
+			{% if location %}
 				<div class="columns small-12 medium-12 large-12 relative">
-						{% set job_openings = post.get_field('lawyers_job_openings') %}
-						<table border ="0" class="table__white">
-							{% for job_opening in job_openings %}
-								{% set job_opening = job_opening|first %}
-								{% set job_openings_list = job_opening.get_field('locations') %}					
-								{% for job_location in job_openings_list %}
-									{# CONDITIONAL CHECK MADE TO ADAPT TO WASHINGTON, DC STRING PARSING #}
-									{% if location|replace({'-': ' '}) in job_location.location|upper or location|replace({'-': ', ', 'DC':'D.C.'}) in job_location.location|upper %}
-										<tr class="job__opening table__legend">
-											<td class="job__openings__title title__text smaller">
-												{{ job_opening.position }}
-											</td>
-											<td class="font-weight__bold wide-spacing body__text smaller hide-for-small-only">
-												{{ job_opening.start_date|date("m/d/Y") }}
-											</td>
-											<td class="font-weight__bold wide-spacing body__text smaller hide-for-small-only">
-												{% set offices = job_opening.get_field('locations') %}
-												{% for x in offices %}
-													<a class="link inline__link" href="{{TimberPost(x.location).link}}" target="_blank">{{ x.location|upper }}</a>
-												{% endfor %}
-											</td>
-											<td>
-												<span class="job_expander top__menu job_opening" data-show-target="jobOpeningAdditionalDetails" ></span>
-											</td>
-										</tr>
-										<tr class="hidden__job--description">
-											<td class="hidden job__description__body" colspan="4">
-											{% if job_opening.department %}
-												<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Department</p>
-												{{ job_opening.department }}
-											{% endif %}
-											<p class="show-for-small-only font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Start date: {{ opportunity.start_date|date("m/d/Y") }}</p>
-											<p class="show-for-small-only font-weight__bold wide-spacing body__text">Locations:</p>
-											{% for x in offices %}
-													<a class="link inline__link show-for-small-only font-weight__bold wide-spacing body__text" href="{{TimberPost(x.location).link}}" target="_blank">{{ x.location|upper }}</a></p>
-											{% endfor %}	
-											{% if job_opening.position_description %}	
-												<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Position</p>
-												{{ job_opening.position_description }}
-											{% endif %}
-											{% if job_opening.qualifications_description %}	
-												<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Qualifications</p>
-												{{ job_opening.qualifications_description }}
-											{% endif %}
-										
-											{% if job_opening.job_description_file %}
+					{% set job_openings = post.get_field('job_openings') %}
+					<table border ="0" class="table__white">
+						{% for job_opening in job_openings %}
+							{% set job_opening = job_opening|first %}
+							{% set office_list = job_opening.get_field('locations') %}
+							{% for office in office_list %}
+							{# CONDITIONAL CHECK MADE TO ADAPT TO WASHINGTON, DC STRING PARSING #}
+							{% if office|first|upper == "NEW YORK" %}
+								{% set office = "NEWYORK" %}
+							{% elseif office|first|upper == "ORANGE COUNTY" %}
+								{% set office = "ORANGE COUNTY" %}
+							{% elseif office|first|upper == "WASHINGTON, DC" %}
+								{% set office = "WASHINGTONDC" %}
+							{% else %}
+								{% set office = office|first|upper|trim %}
+							{% endif %}
+							{# office: {{ office }} <br> #}
 
-												{% set description_url = job_opening.get_field('job_description_file') %}
-												<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Download Description</p>
-												<a class="document__link" target="_blank" href="{{ description_url }}">View pdf</a>
-											{% endif %}
-												<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">{{bottom_banner_text}}</p>
-											</td>
-										</tr>
-									{% endif %}
-								{% endfor %}							
+							{% if location|upper == "NEW-YORK" %}
+								{% set location = "NEWYORK" %}
+							{% elseif location|upper == "ORANGE-COUNTY" %}
+								{% set location = "ORANGECOUNTY" %}
+							{% elseif location|upper == "WASHINGTON-DC" %}
+								{% set location = "WASHINGTONDC" %}
+							{% else %}
+								{% set location = location|upper|trim %}
+							{% endif %}
+							{# location from params: {{ location }} <br> #}
+
+							{% if location == office %}
+								<tr class="job__opening">
+									<td class="job__openings__title accordion-trigger title__text smaller responsive__text ">
+										{{ job_opening.position }}
+									</td>
+									<td class="font-weight__bold wide-spacing body__text smaller cresponsive__text hide-for-small-only">
+										{{ job_opening.start_date|date("m/d/Y") }}
+									</td>
+									<td class="font-weight__bold wide-spacing body__text smaller responsive__text hide-for-small-only">
+										{% set offices = job_opening.get_field('locations') %}
+										{% for x in offices %}
+											{% set office = TimberPost(x.location) %}
+											<p class="career-text">
+												<a class="black link inline__link show-for-small-only font-weight__bold wide-spacing" href="{{office.link}}" target="_blank">
+													{{ office.location_name|upper }}
+												</a>
+											</p>	
+										{% endfor %}		
+									</td>
+									<td>
+										<span class="job_expander top__menu job_opening" data-show-target="jobOpeningAdditionalDetails" ></span>
+									</td>
+								</tr>
+								<tr class="hidden__job--description">
+									<td class="hidden job__description__body responsive__text smallest" colspan="4">
+										{% if job_opening.department %}							
+											<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Department</p>
+											{{ job_opening.department }}
+										{% endif %}
+										<p class="show-for-small-only font-weight__bold wide-spacing body__text">Locations:</p>
+										<div class="show-for-small-only">
+											{% for x in offices %}
+												{% set office = TimberPost(x.location) %}
+												<p class="career-text">
+													<a class="black link inline__link show-for-small-only font-weight__bold wide-spacing" href="{{office.link}}" target="_blank">
+														{{ office.location_name|upper }}
+													</a>
+												</p>	
+											{% endfor %}		
+										</div>	
+
+										<p class="show-for-small-only font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Start date: {{ job_opening.start_date|date("m/d/Y") }}</p>
+										{% if job_opening.position_description %}							
+											<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Position</p>
+											{{ job_opening.position_description }}
+										{% endif %}
+										{% if job_opening.qualifications_description %}							
+											<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Qualifications</p>
+											{{ job_opening.qualifications_description }}
+										{% endif %}
+										{% if job_opening.job_description_file %}
+											{% set description_url = job_opening.get_field('job_description_file') %}
+											<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Details</p>
+											<a class="document__link" href="{{ description_url }}" target="_blank">View pdf</a>
+										{% endif %}
+											<p class="margin-bottom--20 margin-top-20">{{bottom_banner_text}}</p>
+										</td>
+									</tr>
+								{% endif %}
+							{% endfor %}							
 						{% endfor %}
 					</table>
 				</div>
-		{% endif %}
+			{% endif %}
 		</div>
+
+		{% set url = job_opening.get_field('job_description_file') %}
 
 		<div class="experience__wrapper columns small-12 medium-12 large-12">
 			<div class="row padding__wrapper top-and-bottom">
-				<div class="large-offset-2 medium-offset-3 columns large-10 medium-8 small-12">
-					<div class="color__block--outer-wrapper white__bg columns padding-top-20">
+				<div class="large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">
+					<div class="color__block--outer-wrapper white__bg">
+						<div class="color__block--inner-wrapper">
 							<p class="title__text">
 								{{ features_header }}
 							</p>
@@ -227,35 +306,9 @@
 						</div>
 					</div>
 				</div>
-		</div>
-
-		<div class="experience__wrapper columns small-12 medium-12 large-12">
-			<div class="row padding__wrapper top-and-bottom">
-				<div class="large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">
-					<div class="color__block--outer-wrapper white__bg columns padding-top-20">
-							<p class="title__text">
-								{{ benefits_header }}
-							</p>
-							<div class="bullets inline__text">
-								{% for benefit in lawyers_benefits %}
-									<div class="bullet small-12 medium-12 large-12 ">
-										<div class="body__text bullet__text">
-											{{benefit.benefit}}
-										</div>
-									</div>	
-								{% endfor %}
-							</div>	
-							<p class="body__text roman">
-								{{ bullet_section_bottom_content }}
-							</p>
-							<p class="body__text smaller italic">
-								{{ bullet_section_notice }}
-							</p>
-						</div>
-					</div>
-				</div>
 			</div>
 		</div>
+	</div>
 </div>
 
 <div id="lawyersBannerImage" class="scroll-stopper bottom--banner--image--wrapper">
@@ -264,13 +317,14 @@
 		    <div class="table__inner pro-bono__banner">
 		        <div class="color-block__wrapper large-7 medium-8 small-12 float--right">
 		          <div class="color__block white relative lawyers__text title__text smaller">
-		            		<p class=>{{bottom_banner_text}}</p>
+		            	<p>{{bottom_banner_text}}</p>
 		          </div>  
 		        </div>
 	        </div>
 		</div>
 	</div>	
 </div>	
+
 
 <div id="emailModal" class="vellum black--vellum modal__background diversity hidden">
     <div class="row">
@@ -300,14 +354,13 @@
     </div>  
 </div>
 
-
 <script type="text/javascript">
 	{% if featured_image_url %}
 		$(document).ready(function(){
 			$('#featuredImage').backstretch("{{featured_image_url}}");
 		})
 	{% endif %}
-	{% if featured_image_url|length > 0 %}
+	{% if bottom_banner_image|length > 0 %}
 		$(document).ready(function(){
 			$('#lawyersBannerImage').backstretch("{{ bottom_banner_image }}");
 		})

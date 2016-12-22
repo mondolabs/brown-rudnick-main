@@ -53,7 +53,9 @@
 							{{ bullet_section_notice }}
 						</p>
 					</div>
+				</div>	
 
+				<div class="row">
 					<div class="columns small-12 medium-12 large-12 relative">
 						<div class="page__divider grey"></div>
 					</div>
@@ -67,7 +69,6 @@
 						</p>			
 					</div>
 				</div>	
-					
 
 				{% if location %}
 					<p class="title__text">
@@ -144,15 +145,15 @@
 										</p>
 										{{ opportunity.department }}
 									{% endif %}
-									<p class="font-weight__bold wide-spacing body__text smaller margin-top-20 upper">
+									<p class="show-for-small-onlyfont-weight__bold wide-spacing body__text smaller margin-top-20 upper">
 										{{"Locations"|upper}}
 									</p>
 									<div class="show-for-small-only">
 										{% for x in offices %}
 											{% set office = TimberPost(x.location) %}
 											<p class="career-text">
-												<a class="link inline__link show-for-small-only red" href="{{office.link}}" target="_blank">
-													{{ office.location_name }}
+												<a class="black link inline__link show-for-small-only font-weight__bold wide-spacing" href="{{office.link}}" target="_blank">
+													{{ office.location_name|upper }}
 												</a>
 											</p>	
 										{% endfor %}		
@@ -311,7 +312,21 @@
 		</div>
 	</div>
 </div>
-
+{% if bottom_banner_image %}
+	<div id="lawyersBannerImage" class="scroll-stopper bottom--banner--image--wrapper">
+		<div class="row">
+			<div class="table__wrapper pro-bono__banner">
+			    <div class="table__inner pro-bono__banner">
+			        <div class="color-block__wrapper large-7 medium-8 small-12 float--right">
+			          <div class="color__block white relative lawyers__text title__text smaller">
+			            	<p>{{bottom_banner_text}}</p>
+			          </div>  
+			        </div>
+		        </div>
+			</div>
+		</div>	
+	</div>	
+{% endif %}	
 <div id="emailModal" class="vellum black--vellum modal__background diversity hidden">
     <div class="row">
      	<div class="diversity__modal--outer-wrapper table__wrapper relative">
@@ -346,7 +361,7 @@
 			$('#featuredImage').backstretch("{{featured_image_url}}");
 		})
 	{% endif %}
-	{% if bottom_banner_image|length > 0 %}
+	{% if bottom_banner_image %}
 		$(document).ready(function(){
 			$('#lawyersBannerImage').backstretch("{{ bottom_banner_image }}");
 		})
