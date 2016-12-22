@@ -239,37 +239,50 @@
 								</tr>
 								<tr class="hidden__job--description">
 									<td class="hidden job__description__body responsive__text smallest" colspan="4">
-										{% if job_opening.department %}							
 											<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Department</p>
 											{{ job_opening.department }}
 										{% endif %}
-										<p class="show-for-small-only font-weight__bold wide-spacing body__text">Locations:</p>
-										<div class="show-for-small-only">
-											{% for x in offices %}
-												{% set office = TimberPost(x.location) %}
-												<p class="career-text">
-													<a class="black link inline__link show-for-small-only font-weight__bold wide-spacing" href="{{office.link}}" target="_blank">
-														{{ office.location_name|upper }}
-													</a>
-												</p>	
-											{% endfor %}		
-										</div>	
+											<p class="show-for-small-only font-weight__bold wide-spacing body__text">
+												Locations:
+											</p>
+											<div class="show-for-small-only">
+												{% for x in offices %}
+													{% set office = TimberPost(x.location) %}
+													<p class="career-text">
+														<a class="black link inline__link show-for-small-only font-weight__bold wide-spacing" href="{{office.link}}" target="_blank">
+															{{ office.location_name|upper }}
+														</a>
+													</p>	
+												{% endfor %}		
+											</div>	
 
-										<p class="show-for-small-only font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Start date: {{ job_opening.start_date|date("m/d/Y") }}</p>
-										{% if job_opening.position_description %}							
-											<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Position</p>
-											{{ job_opening.position_description }}
-										{% endif %}
-										{% if job_opening.qualifications_description %}							
-											<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Qualifications</p>
-											{{ job_opening.qualifications_description }}
-										{% endif %}
-										{% if job_opening.job_description_file %}
-											{% set description_url = job_opening.get_field('job_description_file') %}
-											<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Details</p>
-											<a class="document__link" href="{{ description_url }}" target="_blank">View pdf</a>
-										{% endif %}
-											<p class="margin-bottom--20 margin-top-20">{{bottom_banner_text}}</p>
+											<p class="show-for-small-only font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">
+												Start date: {{ job_opening.start_date|date("m/d/Y") }}
+											</p>
+											{% if job_opening.position_description %}							
+												<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">
+													Position
+												</p>
+												{{ job_opening.position_description }}
+											{% endif %}
+											{% if job_opening.qualifications_description %}							
+												<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">
+													Qualifications
+												</p>
+												{{ job_opening.qualifications_description }}
+											{% endif %}
+											{% if job_opening.job_description_file %}
+												{% set description_url = job_opening.get_field('job_description_file') %}
+												<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">
+													Details
+												</p>
+												<a class="document__link" href="{{ description_url }}" target="_blank">
+													View pdf
+												</a>
+											{% endif %}
+											<p class="margin-bottom--20 margin-top-20">
+												{{bottom_banner_text}}
+											</p>
 										</td>
 									</tr>
 								{% endif %}

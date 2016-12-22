@@ -23,7 +23,6 @@ $data['top_text_content'] = get_field('top_text_content');
 $data['middle_text_header'] = get_field('middle_text_header');
 $data['middle_text_content'] = get_field('middle_text_content');
 $data['features_header'] = get_field('features_header');
-$data['lawyers_features'] = get_field('lawyers_features');
 $data['features_bottom_text'] = get_field('features_bottom_text');
 $data['benefits_header'] = get_field('benefits_header');
 $data['benefits'] = get_field('benefits');
