@@ -74,7 +74,7 @@ $(document).ready(function(){
 			NAV.scrollEvents();
 		})
 
-	if ( $(window).scrollTop() >= NAV.desktopMenu.height() && $(document).width() >= 768) {
+	if ( $(window).scrollTop() >= NAV.desktopMenu.height() && $(document).width() >= 769) {
 		// differentiate between page load and user scroll
 		// otherwise regular menu is always hidden on page load at scroll location :P
 		var userScroll = false;     
