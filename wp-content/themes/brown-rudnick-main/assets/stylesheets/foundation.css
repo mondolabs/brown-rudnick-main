@@ -267,7 +267,7 @@ p.wp-caption-text {
     text-decoration: none; }
 
 @media screen and (max-width: 921px) {
-  .menu__wrapper--desktop {
+  #masthead {
     display: none !important; } }
 
 #page-full-width-homepage a, a {

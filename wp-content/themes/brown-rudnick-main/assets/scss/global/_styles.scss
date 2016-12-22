@@ -9,11 +9,10 @@
 
 
 @media screen and (max-width: 921px) {  
-	.menu__wrapper--desktop { 
-		display: none !important; 
+	#masthead { 
+ 		display: none !important; 
 	}
 }
-
 
 // @include breakpoint(medium){
 // 	#masthead { 
