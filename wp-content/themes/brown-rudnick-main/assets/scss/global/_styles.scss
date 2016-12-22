@@ -1,3 +1,6 @@
+
+@include show-for(large);
+
 #page-full-width-homepage .letter__link--inner-wrapper.letter--active a.letter__link{
 	color: $white;
 	&:hover,
@@ -1764,6 +1767,12 @@ button.close__modal {
 			}
 		}
 
+	}
+}
+
+.menu__wrapper--desktop {
+	@media screen and (max-width: 921px){
+		display: none !important;
 	}
 }
 
