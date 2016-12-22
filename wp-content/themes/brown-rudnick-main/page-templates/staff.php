@@ -6,6 +6,11 @@ Template Name: Career Landing
 $data = Timber::get_context();
 $data['post'] = new TimberPost();
 
+
+$parent = get_page($post->post_parent);
+$parent_name = $parent->post_name;
+$data['parent_link'] = get_permalink( $post->post_parent );
+
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
 $data['featured_image_url'] = $data['featured_image_url'][0];
 $data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
@@ -51,9 +56,7 @@ $data['job_locations'] = wp_get_object_terms( $ids, 'locations' );
 // filter the location when we reload the page
 $data['location'] = get_query_var('job_location_query', "");
 
-$parent = get_page($post->post_parent);
-$parent_name = $parent->post_name;
-$data['parent_link'] = get_permalink( $post->post_parent );
+
 
 ?>
 
