@@ -1,5 +1,4 @@
 <div id="featuredImage" class ="featured-image__header--image-wrapper">
-
 	{% set header_text_color = "black" %}
 	{# hero header #}
 	<div class="featured-image__header--text-outer-wrapper row relative">
@@ -18,7 +17,8 @@
 		</div>	
 	</div>
 </div>	
-	{# body - with sidebar #}
+
+{# body - with sidebar #}
 <div class="row">
 	<div class="experience__wrapper row body__wrapper columns small-12 medium-12 large-12">
 		<div class="columns show-for-medium-up medium-3 large-2">
@@ -84,7 +84,6 @@
 			<div class="padding__wrapper forty sides__only">
 				<span class="page__divider grey"></span>
 			</div>
-
 
 			<div class="padding__wrapper forty sides__only">
 				{% if geography_group_leaders %}
@@ -173,54 +172,52 @@
 					</div>	
 				</div>	
 			{% endif %}
-
-			{% if services|length > 0 %}	
-				<div class="columns medium-12 large-12 small-12">
-					<div class="columns medium-12 large-12 small-12">
-						<div class="padding__wrapper sides__only">	
-							<div class="columns medium-12 large-12 small-12">
-								<p class="title__text">
-									Related People
-								</p>
-							</div>	
-							{% for item in news_and_resources %}
-								{% set item = item|first %}
-								<div class="columns medium-6 large-6 small-12 person end">						
-									<a class="body__text red link margin-bottom--10" href="{{ TimberPost(item).link }}">
-										{{ item.geography_related_news_and_resources_post }}
-									</a>
-								</div>	
-							{% endfor %}
-						</div>	
-					</div>	
-				</div>
-			{% endif %}
-			
 		</div>
 	</div>
 </div>
+
+{% if services|length > 0%}	
+	<div class="grey__background experience__wrapper columns small-12 medium-12 large-12">
+		<div class="row padding__wrapper top-and-bottom sixty">
+			<div class="large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">
+				<div class="padding__wrapper forty sides__only">
+					<p class="title__text responsive__text medium">
+						{{ services_header }}
+					</p>
+					{% for service in services %}
+						{% set service = service|first %}
+						<div class="columns medium-12 large-12 small-12 service">
+							<div class="body__text service__text">
+								{{service}}
+							</div>
+						</div>	
+					{% endfor %}
+				</div>	
+			</div>
+		</div>
+	</div>
+{% endif %}
 
 {% if news_and_resources|length > 0 %}
-
-<div class="grey__background experience__wrapper columns small-12 medium-12 large-12">
-	<div class="row padding__wrapper top-and-bottom sixty">
-		<div class="large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">
-			<div class="padding__wrapper forty sides__only">
-				<p class="title__text responsive__text medium">
-					{{ services_header }}
-				</p>
-				{% for service in services %}
-					{% set service = service|first %}
-					<div class="columns medium-12 large-12 small-12 service">
-						<div class="body__text service__text">
-							{{service}}
-						</div>
-					</div>	
-				{% endfor %}
-			</div>	
+	<div class="grey__background experience__wrapper columns small-12 medium-12 large-12">
+		<div class="row padding__wrapper top-and-bottom sixty">
+			<div class="large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">
+				<div class="padding__wrapper forty sides__only">
+					<p class="title__text responsive__text medium">
+						{{ services_header }}
+					</p>
+					{% for service in services %}
+						{% set service = service|first %}
+						<div class="columns medium-12 large-12 small-12 service">
+							<div class="body__text service__text">
+								{{service}}
+							</div>
+						</div>	
+					{% endfor %}
+				</div>	
+			</div>
 		</div>
 	</div>
-</div>
 {% endif %}
 
 {% include '/template-parts/email-notice.twig' %}
