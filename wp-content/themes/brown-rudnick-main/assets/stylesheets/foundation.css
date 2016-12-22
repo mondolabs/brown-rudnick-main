@@ -2462,6 +2462,10 @@ td.job__openings__title, .accordion-trigger {
   position: absolute !important;
   top: 0 !important; }
 
+.no__pad--sides {
+  padding-left: 0;
+  padding-right: 0; }
+
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
