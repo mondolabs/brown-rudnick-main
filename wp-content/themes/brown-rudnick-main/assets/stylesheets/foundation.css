@@ -473,6 +473,11 @@ insights__title {
       text-align: center;
       width: 100%; } }
 
+@media screen and (max-width: 768px) {
+  .padding__mobile.forty {
+    padding-right: 40px;
+    padding-left: 40px; } }
+
 @media (max-width: 769px) {
   .sidebar__color-block--outer-outer-wrapper {
     display: block;
