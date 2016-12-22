@@ -6,6 +6,11 @@ Template Name: Career Landing
 $data = Timber::get_context();
 $data['post'] = new TimberPost();
 
+
+$parent = get_page($post->post_parent);
+$parent_name = $parent->post_name;
+$data['parent_link'] = get_permalink( $post->post_parent );
+
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
 $data['featured_image_url'] = $data['featured_image_url'][0];
 $data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
@@ -22,12 +27,8 @@ $data['top_text_header'] = get_field('top_text_header');
 $data['top_text_content'] = get_field('top_text_content');
 $data['middle_text_header'] = get_field('middle_text_header');
 $data['middle_text_content'] = get_field('middle_text_content');
-$data['features_header'] = get_field('features_header');
-$data['lawyers_features'] = get_field('lawyers_features');
-$data['features_bottom_text'] = get_field('features_bottom_text');
 $data['benefits_header'] = get_field('benefits_header');
-$data['lawyers_benefits'] = get_field('benefits');
-
+$data['benefits'] = get_field('benefits');
 $data['bottom_banner_text'] = get_field('bottom_banner_text');
 $data['bottom_banner_image'] = get_field('bottom_banner_image');
 
@@ -55,9 +56,7 @@ $data['job_locations'] = wp_get_object_terms( $ids, 'locations' );
 // filter the location when we reload the page
 $data['location'] = get_query_var('job_location_query', "");
 
-$parent = get_page($post->post_parent);
-$parent_name = $parent->post_name;
-$data['parent_link'] = get_permalink( $post->post_parent );
+
 
 ?>
 
