@@ -45,7 +45,7 @@ $alphabet = range('A', 'Z');
                        <div class="experience__wrapper row body__wrapper columns small-12 medium-12 large-12">
                           <?php get_template_part('template-parts/primary-search')?>
                           <div class ="columns small-12 medium-12 large-12">
-                            git <?php get_template_part( 'template-parts/content', 'none' ); ?>
+                            <?php get_template_part( 'template-parts/content', 'none' ); ?>
                           </div>
                       </div>
                   <?php endif;?>
