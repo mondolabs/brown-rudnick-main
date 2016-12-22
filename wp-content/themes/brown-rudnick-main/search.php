@@ -44,7 +44,9 @@ $alphabet = range('A', 'Z');
                     <?php else : ?>
                        <div class="experience__wrapper row body__wrapper columns small-12 medium-12 large-12">
                           <?php get_template_part('template-parts/primary-search')?>
-                          <?php get_template_part( 'template-parts/content', 'none' ); ?>
+                          <div class ="columns small-12 medium-12 large-12">
+                            git <?php get_template_part( 'template-parts/content', 'none' ); ?>
+                          </div>
                       </div>
                   <?php endif;?>
                   <?php do_action( 'foundationpress_before_pagination' ); ?>
