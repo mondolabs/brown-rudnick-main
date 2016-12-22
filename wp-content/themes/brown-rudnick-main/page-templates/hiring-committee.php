@@ -10,6 +10,7 @@ $data['featured_image_url'] = $data['featured_image_url'][0];
 $data['header_text'] = get_field('header_text');
 $data['breadcrumb_color'] = get_field('breadcrumb_color');
 
+// query people's committee memberships for Hiring Committee
 $args = array(
     'post_type' =>  'people',
     'posts_per_page'=>-1,
@@ -21,7 +22,7 @@ $args = array(
         	'field'=> 'slug',
         	'terms'=>'Hiring'
     	),
-      ),
+    ),
 );
 // pass results to twig template
 $data['hiring_committee_members'] = Timber::get_posts($args);

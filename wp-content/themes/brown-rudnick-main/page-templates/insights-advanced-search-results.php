@@ -73,7 +73,7 @@ foreach ( $custom_posts as $post ) {
 
 // begin generate options for advanced search fields
 $all_posts_args = array(
-  'post_type' => array('article', 'event', 'alert'),
+  'post_type' => array('article', 'event', 'alert', 'news_post', 'press_release' ),
   'numberposts' => -1,
   'posts_per_page' => -1,
   'orderby' => 'date',
@@ -155,7 +155,9 @@ if( ($geography !== "GEOGRAPHIES") || ( $industry !== "INDUSTRIES") || ($practic
     $practice_term_query_array = array('taxonomy' => 'practice', 'field' => 'slug', 'terms' => array( $practice));
     array_push($insights_args['tax_query'], $practice_term_query_array );
   }
-  if ( $keyword !== "" ) {
+  if ( $keyword !== "" ) {   
+    $post_type_arrays = array('article', 'event', 'alert', 'news_post', 'press_release' );
+    $insights_args['post_type'] = $post_type_arrays;
     $insights_args['s'] = $keyword;
   }
 }

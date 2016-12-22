@@ -2,8 +2,6 @@
 /*
 Template Name: Search Page
 */
-
-
 $data = Timber::get_context();
 $search_query = get_search_query();
 $search_args = array(

@@ -3,9 +3,9 @@
 Template Name: News Posts
 */
 global $paged;
-  if (!isset($paged) || !$paged){
-      $paged = 1;
-  }
+if (!isset($paged) || !$paged){
+    $paged = 1;
+}
 
 $data = Timber::get_context();
 $post = new TimberPost();
@@ -33,7 +33,7 @@ $data['slug'] = $slug;
 $data['parent_link'] = get_permalink( $post->post_parent );
 
 $post_type_args = array(
-  'post_type' => 'news_posts',
+  'post_type' => 'news_post',
   'numberposts' => -1,
   'posts_per_page' => 5,
   'paged'=> $paged
@@ -157,6 +157,9 @@ usort($data['insights'], "sort_objects_by_date");
 $data['insights'] = array_slice($data['insights'], 0, 5 );
 $data['insights'] = array_reverse($data['insights']);
 $data['pagination'] = Timber::get_pagination();
+
+$query = new WP_Query($insights_args);
+$data['total_results'] = $query->found_posts;
 
 ?>
 

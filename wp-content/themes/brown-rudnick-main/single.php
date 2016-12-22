@@ -7,6 +7,11 @@
  */
 $data = Timber::get_context();
 $data['post'] = new TimberPost();
+
+global $wp;
+$current_url = home_url(add_query_arg(array(),$wp->request));
+$data['link_url'] = $current_url;
+
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
 $data['featured_image_url'] = $data['featured_image_url'][0];
 $data['header_text'] = get_field('header_text');
@@ -17,6 +22,8 @@ $data['parent_page_name'] = 'insights';
 $comments = get_comments($post); 
 $data['comments'] = $comments;
 ?>
+
+
 
 
 <html>

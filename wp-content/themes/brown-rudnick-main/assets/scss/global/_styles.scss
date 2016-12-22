@@ -103,7 +103,6 @@
 	}
 }
 
-
 #page-full-width-homepage .footer-links {
 	a {
 		color: $black;
@@ -112,6 +111,13 @@
 	    	color: $primary-red;
 	    	text-decoration: none; 
 	    }
+	}
+}
+
+.page-numbers {
+	color: $black !important;
+	&.current {
+		color: $white !important;
 	}
 }
 
@@ -310,11 +316,11 @@ insights__title {
 }
 
 .sidebar__color-block--outer-outer-wrapper {
-	@media (max-width: 768px) {
-	    display: inline-block;
-    	width: calc(50% - 30px);
+	@media (max-width: 769px) {
+	    display: block;
+    	width: 100%;
     	float: left;
-    	margin: 15px;
+    	margin: 0 auto;
 	}
 }
 .subscribe__insights{
@@ -654,6 +660,12 @@ h3.title {
 		}
 	}
 }
+.margin-top-80 {
+	margin-top: 80px;
+}
+.margin-bottom-80 {
+	margin-bottom: 80px;
+}
 .margin-bottom-60 {
 	margin-bottom: 60px;	
 }
@@ -687,6 +699,12 @@ h3.title {
 
 
 .featured-image__header--image-wrapper {
+&.no--image--to--wrap {
+	@media screen and (max-width: 768px) {
+		height: 400px !important;
+		padding: 20px !important;
+	}
+}
 	background-color: $primary-grey;
 	height: 215px;
 	&.person,
@@ -696,7 +714,7 @@ h3.title {
 			height: 750px;
 			padding: 20px;
 		}
-
+	
 	}
 }
 .padding---left--twenty {
@@ -1722,7 +1740,7 @@ button.close__modal {
 	
 	li {
 		@media screen and (min-height: 450px){
-			margin: 7.5%;
+			margin: 3%;
 		}
 			margin: 1%;
 		a {
@@ -1787,7 +1805,11 @@ button.close__modal {
 .one__half {
 	display: inline-block;
 	width: 49%;
+	padding-top: 20px;
 	padding-bottom: 40px;
+	@media screen and (max-height: 320px){
+		padding-bottom: 15px;
+	}
 	text-align: center;
 	&.left{
 		border-right: 1px solid $darker-grey-two;
@@ -1933,8 +1955,8 @@ select.clean___border {
 	font-weight: 800;
 	font-size: 10px !important;
 	margin-top: 20px !important;
+	padding: 0.5rem;
 }
-
 
 input.input-custom-search::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color: $br-black;
@@ -2250,14 +2272,6 @@ tbody {
 	}
 }
 
-
-.email__modal {
-	.modal__text {
-		@media screen and (max-width: 768px){
-			font-size: 10px;
-		}
-	}
-}
 .email-buttons{
 	text-align: center; 
 	@include breakpoint(medium){
@@ -2323,9 +2337,11 @@ tbody {
 	}
 	#featuredImage {
 		height: 300px !important;
+		margin-top: 20px !important;
 	}
 	.logo__wrapper {
 		display: block;
+		margin-bottom: 20px !important;
 	}
 	.inline__wrapper, .table__wrapper, #first--inline--wrapper  {
 		display: block !important;
@@ -2605,7 +2621,7 @@ tr {
 	}
 	&.smallest {
 		@media screen and (max-width: 450px){
-			font-size: 13.5px !important;
+			font-size: 12.5px !important;
 			letter-spacing: 0.25px !important;
 		}
 	}
@@ -2663,4 +2679,14 @@ td.job__openings__title, .accordion-trigger {
 .career-text {
 	font-size: 14px;
 	margin: 0;
+}
+
+.bottom-banner-text {
+	@media screen and (max-width: 568px){
+		max-width: 85% !important;
+	}
+}
+.wpcf7-response-output {
+	position: absolute !important;
+	top: 0 !important;
 }

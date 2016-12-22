@@ -69,7 +69,3 @@ $data['parent_link'] = get_permalink( $post->post_parent );
     </div>
   </body>
 </html>
-
-
-
-

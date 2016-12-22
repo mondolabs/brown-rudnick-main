@@ -55,10 +55,8 @@ $data['all_geographies'] = wp_get_object_terms( $all_ids, 'geography' );
 $data['all_industries'] = wp_get_object_terms( $all_ids, 'industry' );
 $data['all_practices'] = wp_get_object_terms( $all_ids, 'practice' );
 // end generate options for advanced search fields
-
 $slug = basename(get_permalink());
 $data['slug'] = $slug;
-
 ?>
 <html>
   <head>

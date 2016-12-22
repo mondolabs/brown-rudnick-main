@@ -68,8 +68,6 @@ $data['geographies'] = wp_get_object_terms( $ids, 'geography' );
 $data['industries'] = wp_get_object_terms( $ids, 'industry' );
 $data['practices'] = wp_get_object_terms( $ids, 'practice' );
 
-
-
 // begin generate options for advanced search fields
 $all_posts_args = array(
   'post_type' => array('article', 'event', 'alert', 'press_release'),

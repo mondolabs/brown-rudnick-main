@@ -2,7 +2,6 @@
 /*
 Template Name: Contact Us Page
 */
-
 $data = Timber::get_context();
 $post = new TimberPost();
 $data['post'] = $post;

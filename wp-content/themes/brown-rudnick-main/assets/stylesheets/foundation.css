@@ -330,6 +330,11 @@ p.wp-caption-text {
     color: #b91628;
     text-decoration: none; }
 
+.page-numbers {
+  color: #0a0a0a !important; }
+  .page-numbers.current {
+    color: #fefefe !important; }
+
 .logo--print--only {
   display: none; }
 
@@ -468,12 +473,12 @@ insights__title {
       text-align: center;
       width: 100%; } }
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
   .sidebar__color-block--outer-outer-wrapper {
-    display: inline-block;
-    width: calc(50% - 30px);
+    display: block;
+    width: 100%;
     float: left;
-    margin: 15px; } }
+    margin: 0 auto; } }
 
 .subscribe__insights .subscribe__content--block {
   float: none !important; }
@@ -720,6 +725,12 @@ h3.title {
     .margin-top-60.desktop-only {
       margin-top: 0; } }
 
+.margin-top-80 {
+  margin-top: 80px; }
+
+.margin-bottom-80 {
+  margin-bottom: 80px; }
+
 .margin-bottom-60 {
   margin-bottom: 60px; }
 
@@ -748,6 +759,10 @@ h3.title {
 .featured-image__header--image-wrapper {
   background-color: #f0f0f0;
   height: 215px; }
+  @media screen and (max-width: 768px) {
+    .featured-image__header--image-wrapper.no--image--to--wrap {
+      height: 400px !important;
+      padding: 20px !important; } }
   .featured-image__header--image-wrapper.person, .featured-image__header--image-wrapper.insight {
     height: 380px; }
     @media screen and (max-width: 768px) {
@@ -1626,7 +1641,7 @@ button.close__modal {
     margin: 1%; }
     @media screen and (min-height: 450px) {
       #menu-mobile-menu li {
-        margin: 7.5%; } }
+        margin: 3%; } }
     #menu-mobile-menu li a {
       font-size: 18px;
       letter-spacing: 3px; }
@@ -1683,8 +1698,12 @@ button.close__modal {
 .one__half {
   display: inline-block;
   width: 49%;
+  padding-top: 20px;
   padding-bottom: 40px;
   text-align: center; }
+  @media screen and (max-height: 320px) {
+    .one__half {
+      padding-bottom: 15px; } }
   .one__half.left {
     border-right: 1px solid #c9c9c9; }
   .one__half a:hover, .one__half a :focus {
@@ -1795,7 +1814,8 @@ select.clean___border {
   letter-spacing: 3px;
   font-weight: 800;
   font-size: 10px !important;
-  margin-top: 20px !important; }
+  margin-top: 20px !important;
+  padding: 0.5rem; }
 
 input.input-custom-search::-webkit-input-placeholder {
   /* WebKit, Blink, Edge */
@@ -2101,10 +2121,6 @@ tbody {
   color: #b91628 !important;
   text-decoration: none !important; }
 
-@media screen and (max-width: 768px) {
-  .email__modal .modal__text {
-    font-size: 10px; } }
-
 .email-buttons {
   text-align: center;
   margin: 0 auto; }
@@ -2160,9 +2176,11 @@ tbody {
   svg, #mobile-menu, ul, .breadcrumb__link, #related-experience-heading, #people-sidebar, #search__icon__mobile, #mobile__logo__container, .sites-button, footer, .menu, .dropdown .desktop-menu, .menu a, .logo__wrapper a, .link a, .icons__container, .padding__right--50-desktop {
     display: none !important; }
   #featuredImage {
-    height: 300px !important; }
+    height: 300px !important;
+    margin-top: 20px !important; }
   .logo__wrapper {
-    display: block; }
+    display: block;
+    margin-bottom: 20px !important; }
   .inline__wrapper, .table__wrapper, #first--inline--wrapper {
     display: block !important;
     height: auto !important; }
@@ -2377,7 +2395,7 @@ tr {
 
 @media screen and (max-width: 450px) {
   .responsive__text.smallest {
-    font-size: 13.5px !important;
+    font-size: 12.5px !important;
     letter-spacing: 0.25px !important; } }
 
 @media screen and (max-width: 320px) {
@@ -2422,6 +2440,14 @@ td.job__openings__title, .accordion-trigger {
 .career-text {
   font-size: 14px;
   margin: 0; }
+
+@media screen and (max-width: 568px) {
+  .bottom-banner-text {
+    max-width: 85% !important; } }
+
+.wpcf7-response-output {
+  position: absolute !important;
+  top: 0 !important; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -10018,6 +10044,9 @@ a {
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
   border: 2px solid #b91628; }
+  @media screen and (max-width: 640px) {
+    .sites-button.modal-button {
+      padding: 5px !important; } }
   @media screen and (max-width: 768px) {
     .sites-button.people-page-button {
       padding: 5px !important; } }
