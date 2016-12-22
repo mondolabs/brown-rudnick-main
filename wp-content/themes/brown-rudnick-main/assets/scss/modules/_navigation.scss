@@ -126,6 +126,9 @@
   @include breakpoint(medium){
     width: 160vw;
   }
+  a {
+    padding-right: 1rem !important;
+  }
   width: 150vw;
   li {
     //padding: 3%;
