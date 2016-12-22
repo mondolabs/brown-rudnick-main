@@ -1810,13 +1810,6 @@ button.close__modal {
   } 
 }
 
-
-#header-desktop {
-	@media screen and (max-width: 921px){
-		display: none !important;
-	}
-}
-
 .contact__us__mobile, .locations__mobile {
 	height: 80px;
 	background-color: $white;

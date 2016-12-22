@@ -68,7 +68,7 @@
 		<?php do_action( 'foundationpress_layout_start' ); ?>
 		
 		<header id="masthead" class="site-header show-for-large" role="banner">
-			<div id="header-desktop" class="menu__wrapper--desktop row sr">
+			<div class="menu__wrapper--desktop row sr">
 				<div class="logo__wrapper columns large-4 medium-3">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 						<img class="header-logo--mobile" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/BR-logo-for-nav.png">
