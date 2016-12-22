@@ -102,16 +102,14 @@
 						<div class="margin-bottom--20 columns small-12 medium-12 large-12 relative">
 							<table border ="0" class="table__white">
 									<tr class="job__opening table__legend">
-										<td class="document__link black">
+										<td class="document__link black no__pad--sides">
 											position
 										</td>
-										<td class="document__link black hide-for-small-only">
-											date
-										</td class="document__link">
+										</td class="document__link no__pad--sides">
 										<td class="document__link black hide-for-small-only">
 										    office
 										</td>
-										<td>
+										<td class="no__pad--sides">
 
 										</td>
 									</tr>
@@ -120,9 +118,6 @@
 										<tr class="job__opening">
 											<td class="job__openings__title accordion-trigger title__text smaller responsive__text ">
 												{{ opportunity.position }}
-											</td>
-											<td class="font-weight__bold wide-spacing body__text smaller cresponsive__text hide-for-small-only">
-												{{ opportunity.start_date|date("m/d/Y") }}
 											</td>
 											<td class="font-weight__bold wide-spacing body__text smaller responsive__text hide-for-small-only">
 												{% set offices = opportunity.get_field('locations') %}
@@ -158,14 +153,8 @@
 															{{ office.location_name|upper }}
 														</a>
 													</p>	
-												{% endfor %}		
+												{% endfor %}
 											</div>	
-
-											<p class="show-for-small-only font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Start date: {{ opportunity.start_date|date("m/d/Y") }}</p>
-											{% if opportunity.position_description %}							
-												<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Position</p>
-												{{ opportunity.position_description }}
-											{% endif %}
 											{% if opportunity.qualifications_description %}							
 												<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Qualifications</p>
 												{{ opportunity.qualifications_description }}
@@ -216,12 +205,21 @@
 							{# location from params: {{ location }} <br> #}
 
 							{% if location == office %}
+								<tr class="job__opening table__legend">
+									<td class="document__link black no__pad--sides">
+										position
+									</td>
+									</td class="document__link no__pad--sides">
+									<td class="document__link black hide-for-small-only">
+									    office
+									</td>
+									<td class="no__pad--sides">
+
+									</td>
+								</tr>
 								<tr class="job__opening">
 									<td class="job__openings__title accordion-trigger title__text smaller responsive__text ">
 										{{ job_opening.position }}
-									</td>
-									<td class="font-weight__bold wide-spacing body__text smaller cresponsive__text hide-for-small-only">
-										{{ job_opening.start_date|date("m/d/Y") }}
 									</td>
 									<td class="font-weight__bold wide-spacing body__text smaller responsive__text hide-for-small-only">
 										{% set offices = job_opening.get_field('locations') %}
@@ -255,10 +253,6 @@
 													</p>	
 												{% endfor %}		
 											</div>	
-
-											<p class="show-for-small-only font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">
-												Start date: {{ job_opening.start_date|date("m/d/Y") }}
-											</p>
 											{% if job_opening.position_description %}							
 												<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">
 													Position
