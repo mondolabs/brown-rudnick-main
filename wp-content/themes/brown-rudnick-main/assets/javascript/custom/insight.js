@@ -133,6 +133,26 @@ var INSIGHTS = {
 	},
 	revealAdvancedSearchModal: function() {
 		console.log('Show advanced search modal for insights.');
+		INSIGHTS.engageEnterDownForModalFormSubmission();
+	},
+	cancelEnterDown: function(){
+		if ( $('body').hasClass('page-template-people') || $('body').hasClass('page-template-insights')  ){
+			console.log("enter disengaged!");
+			$(window).off( "keydown" );
+			$(window).keydown(function(e){
+				if (e.keyCode == 13){
+					e.preventDefault();
+					e.stopPropagation();
+					return false;
+				}
+			});
+		}
+	},
+	engageEnterDownForModalFormSubmission: function(){
+		console.log("enter engaged!");
+		$(window).keydown(function(e){
+			$('button#advancedSearchSubmit').click();
+		});
 	}
 }
 
