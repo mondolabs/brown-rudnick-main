@@ -271,6 +271,8 @@ p.wp-caption-text {
   transition: color .3s ease-in-out;
   color: #b91628;
   text-decoration: none; }
+  #page-full-width-homepage a.pagination, a.pagination {
+    color: #0a0a0a; }
   #page-full-width-homepage a:hover, #page-full-width-homepage a:focus, a:hover, a:focus {
     color: #b91628; }
   #page-full-width-homepage a.no__underline:hover, #page-full-width-homepage a.no__underline:focus, a.no__underline:hover, a.no__underline:focus {
@@ -472,6 +474,11 @@ insights__title {
     .tag__text.mobile__centered {
       text-align: center;
       width: 100%; } }
+
+@media screen and (max-width: 768px) {
+  .padding__mobile.forty {
+    padding-right: 40px;
+    padding-left: 40px; } }
 
 @media (max-width: 769px) {
   .sidebar__color-block--outer-outer-wrapper {
@@ -698,6 +705,7 @@ h3.title {
   margin-bottom: 40px; }
 
 .results__container {
+  margin-top: 20px;
   min-height: 400px; }
 
 .margin-top-20 {
@@ -2230,7 +2238,12 @@ tbody {
 .pagination {
   text-align: center; }
   .pagination li {
-    display: inline-block !important; }
+    display: inline-block !important;
+    color: #0a0a0a !important; }
+  .pagination a {
+    color: #0a0a0a !important; }
+    .pagination a.prev, .pagination a.next {
+      color: #fefefe !important; }
 
 .title__text a {
   color: #0a0a0a; }

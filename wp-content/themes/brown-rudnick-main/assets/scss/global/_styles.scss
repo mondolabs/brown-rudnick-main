@@ -11,6 +11,9 @@
     transition: color .3s ease-in-out;
     color: $primary-red;
     text-decoration: none;
+    &.pagination {
+			color: $black;
+		}
     &:hover,
     &:focus {
     	color: $primary-red;
@@ -311,6 +314,15 @@ insights__title {
 		@media (max-width: 768px) {
 			text-align: center;
 			width: 100%;
+		}
+	}
+}
+
+.padding__mobile {
+	&.forty {
+		@media screen and (max-width: 768px){
+			padding-right: 40px;
+			padding-left: 40px;
 		}
 	}
 }
@@ -624,6 +636,7 @@ h3.title {
 }
 
 .results__container {
+	margin-top: 20px;
 	min-height: 400px;
 }
 
@@ -2327,6 +2340,7 @@ tbody {
 } 
 
 
+
 // print stylesheet
 @media print {
 	 svg, #mobile-menu, ul, .breadcrumb__link, #related-experience-heading, #people-sidebar, #search__icon__mobile, #mobile__logo__container, .sites-button, footer, .menu, .dropdown .desktop-menu, .menu a, .logo__wrapper a, .link a, .icons__container, .padding__right--50-desktop, {
@@ -2363,6 +2377,10 @@ tbody {
 		top: 5px;
 	}
 }
+
+
+
+
 
 #download--vcard {
 	@media screen and (max-width: 768px){
@@ -2402,7 +2420,16 @@ tbody {
 	text-align: center;
 	li {
 		display: inline-block !important;
+		color: $black !important;
 	}
+	a {
+		color: $black !important;
+		&.prev,
+		&.next {
+			color: $white !important;
+		}
+	}
+
 }
 .title__text {
 	a {

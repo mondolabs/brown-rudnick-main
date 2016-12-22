@@ -35,11 +35,19 @@ $alphabet = range('A', 'Z');
                 <?php Timber::render('/twig-templates/search-results.twig', $data); ?>
                 <div class ="results__container">
                   <?php if ( have_posts() ) : ?>
-                    <?php while ( have_posts() ) : the_post(); ?>
-                        <?php get_template_part( 'template-parts/content', get_post_format() ); ?>
-                    <?php endwhile; ?>
+                    <div class="experience__wrapper row columns small-12 medium-12 large-12">
+                      <?php get_template_part('template-parts/primary-search')?>
+                      <?php while ( have_posts() ) : the_post(); ?>
+                            <?php get_template_part( 'template-parts/content', get_post_format() ); ?>                      
+                      <?php endwhile; ?>
+                    </div>
                     <?php else : ?>
-                      <?php get_template_part( 'template-parts/content', 'none' ); ?>
+                       <div class="experience__wrapper row body__wrapper columns small-12 medium-12 large-12">
+                          <?php get_template_part('template-parts/primary-search')?>
+                          <div class ="columns small-12 medium-12 large-12">
+                            <?php get_template_part( 'template-parts/content', 'none' ); ?>
+                          </div>
+                      </div>
                   <?php endif;?>
                   <?php do_action( 'foundationpress_before_pagination' ); ?>
                   <?php if ( function_exists( 'foundationpress_pagination' ) ) { foundationpress_pagination(); } else if ( is_paged() ) { ?>

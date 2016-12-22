@@ -255,10 +255,6 @@ $(document).ready(function(){
 				elementToStick.stick_in_parent({ offset_top: headerHeight });
 			} 	
 	}	
-	// prevent submit on enter for advanced search
-	// this is a custom search, differentiated from regular WP search
-
-
 	// find closest element with marker letter and assigns class to it
 	$(document).bind('scroll', function(){
 		PEOPLE.closestLetter();
