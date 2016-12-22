@@ -36,6 +36,14 @@ foreach ( $job_opening_posts as $post ) {
 }
 $data['job_opportunities'] = Timber::get_posts($post_type_args);
 
+$data['job_locations'] = wp_get_object_terms( $ids, 'locations' );
+// filter the location when we reload the page
+$data['location'] = get_query_var('job_location_query', "");
+
+$parent = get_page($post->post_parent);
+$parent_name = $parent->post_name;
+$data['parent_link'] = get_permalink( $post->post_parent );
+
 ?>
 
 <html>
@@ -45,7 +53,7 @@ $data['job_opportunities'] = Timber::get_posts($post_type_args);
   <body>
     <?php get_template_part('template-parts/off-canvas-search')?>
           <div id="page-full-width-homepage" class ="full-width" role="main">
-            <?php Timber::render('/twig-templates/paralegals.twig', $data); ?> 
+            <?php Timber::render('/twig-templates/career_landing.twig', $data); ?>     
             <?php do_action( 'foundationpress_after_content' ); ?>
             <?php get_footer(); ?>
           </div> 
