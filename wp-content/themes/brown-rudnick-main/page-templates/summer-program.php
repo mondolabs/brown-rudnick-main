@@ -52,12 +52,18 @@ $data['summer_committee_members'] = array_unique($data['summer_committee_members
     <?php wp_head()?>
   </head>
   <body>
+    <div class="animsition"
+        data-animsition-in-class="fade-in"
+        data-animsition-in-duration="800"
+        data-animsition-out-class="fade-out"
+        data-animsition-out-duration="800" >
     <?php get_template_part('template-parts/off-canvas-search')?>
     <?php get_template_part('template-parts/summer-schedule')?>
           <div id="page-full-width-homepage" class =" full-width" role="main">
             <?php Timber::render('/twig-templates/summer_program.twig', $data); ?>      
             <?php do_action( 'foundationpress_after_content' ); ?>
             <?php get_footer(); ?>
+          </div>
           </div>
         </div>
       </div>

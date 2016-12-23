@@ -288,8 +288,14 @@ $data['people'] = array_unique($data['people']);
     <?php wp_head()?>
   </head>
   <body>
-    <div id="page-full-width-homepage" class ="full-width" role="main">
-      <?php Timber::render('/twig-templates/people.twig', $data); ?>
+    <div class="animsition"
+        data-animsition-in-class="fade-in"
+        data-animsition-in-duration="800"
+        data-animsition-out-class="fade-out"
+        data-animsition-out-duration="800" >
+      <div id="page-full-width-homepage" class ="full-width" role="main">
+        <?php Timber::render('/twig-templates/people.twig', $data); ?>
+      </div>  
     </div>  
     <?php do_action( 'foundationpress_after_content' ); ?>
     <?php get_footer(); ?>

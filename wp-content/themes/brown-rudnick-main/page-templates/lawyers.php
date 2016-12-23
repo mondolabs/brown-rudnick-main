@@ -51,11 +51,6 @@ $data['job_opportunities'] = Timber::get_posts($post_type_args);
 $data['job_locations'] = wp_get_object_terms( $ids, 'locations' );
 // filter the location when we reload the page
 $data['location'] = get_query_var('job_location_query', "");
-
-
-
-
-
 ?>
 
 <html>
@@ -63,6 +58,11 @@ $data['location'] = get_query_var('job_location_query', "");
     <?php wp_head()?>
   </head>
   <body>
+    <div class="animsition"
+        data-animsition-in-class="fade-in"
+        data-animsition-in-duration="800"
+        data-animsition-out-class="fade-out"
+        data-animsition-out-duration="800" >
     <?php get_template_part('template-parts/off-canvas-search')?>
           <div id="page-full-width-homepage" class ="full-width" role="main">
             <?php Timber::render('/twig-templates/career_landing.twig', $data); ?>  
@@ -71,6 +71,7 @@ $data['location'] = get_query_var('job_location_query', "");
           </div>
         </div>
       </div>
+       </div>
     </div>
   </body>
 </html>
