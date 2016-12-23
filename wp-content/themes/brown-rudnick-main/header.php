@@ -11,10 +11,12 @@
 <!doctype html>
 
 <html class="no-js" <?php language_attributes(); ?> >
-	<!--[if lt IE 7]> <span class="lt-ie9 lt-ie8 lt-ie7"></span> <![endif]-->
-	<!--[if IE 7]>    <span class="lt-ie9 lt-ie8"></span> <![endif]-->
-	<!--[if IE 8]>    <span class="lt-ie9"></span> <![endif]-->
-	<!--[if gt IE 8]><!--> <span class="greater"></span> <!--<![endif]-->
+	<!--[if lt IE 7]> <span class="lt-ie9 lt-ie8 lt-ie7">less than 7</span> <![endif]-->
+	<!--[if IE 7]>    <span class="lt-ie9 lt-ie8">7</span> <![endif]-->
+	<!--[if IE 8]>    <span class="lt-ie9"></span>8<![endif]-->
+	<!--[if IE 9]>    <span class="lt-ie9"></span>9<![endif]-->
+
+	<!--[if gt IE 8]><!--> <span class="greater">9+</span> <!--<![endif]-->
 	<head>
 		  <!-- start:favicon image -->
 		  
