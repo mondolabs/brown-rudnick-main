@@ -19,14 +19,21 @@
 		background-color: #b91628;
 	"
 	class="lt-ie9">
-		<p style="color: #fff;">
-			This version of Internet Explorer is no longer supported. Please upgrade to a
-			<a style="
+		<p style="
+				color: #fff;
 				display: block;
 				font-size: 24px;
 				color: #fff;
+				text-align: center;"
+		>
+			This version of Internet Explorer is no longer supported. Please upgrade to a
+			<a style="
+				display: inline;
+				font-size: 24px;
+				color: #fff;
 				text-align: center;" 
-				href="https://support.microsoft.com/en-us/help/17621/internet-explorer-downloads">
+				href="https://support.microsoft.com/en-us/help/17621/internet-explorer-downloads"
+			>
 				supported browser.
 			</a>
 		</p>
