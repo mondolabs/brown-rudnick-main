@@ -2180,14 +2180,74 @@ tbody {
 .line-height-1 {
   line-height: 1; }
 
+#copyright--print--only {
+  display: none !important; }
+
 @media print {
-  svg, #mobile-menu, ul, .breadcrumb__link, #related-experience-heading, #people-sidebar, #search__icon__mobile, #mobile__logo__container, .sites-button, footer, .menu, .dropdown .desktop-menu, .menu a, .logo__wrapper a, .link a, .icons__container, .padding__right--50-desktop {
+  .table__wrapper, .table__inner {
+    display: block !important; }
+  #people--title {
+    color: #b91628 !important;
+    font-size: 30px !important;
+    margin-top: 20px !important; }
+  #people--title, #person-specialization {
+    border-bottom: none !important; }
+  #person-specialization {
+    padding-top: 20px !important; }
+  #copyright--print--only {
+    display: block !important;
+    margin-top: 20px;
+    margin-left: 15px; }
+  #person-specialization {
+    margin-top: 20px !important; }
+  body {
+    padding-right: 20px !important;
+    padding-left: 20px !important; }
+  .title__text {
+    font-size: 25px !important;
+    padding-top: 5px !important; }
+  .page__divider {
+    margin: 7.5px auto !important;
+    height: 1px !important;
+    color: #b91628 !important; }
+  .table__inner {
+    padding-left: 15px !important; }
+  .body__text, .bullet {
+    page-break-inside: avoid !important;
+    margin-top: 2px !important; }
+  .bullet__text, .bullet__primary, .representation {
+    page-break-inside: avoid !important; }
+  .body__text.bullet__text {
+    margin-left: 0 !important;
+    margin-bottom: 0 !important; }
+  .body__wrapper {
+    margin: 35px 0 !important; }
+  .gray__underline, .title__text {
+    border-bottom: 1px solid #b91628 !important; }
+  #person-biography {
+    display: block !important; }
+  svg, #mobile-menu, ul, .breadcrumb__link, #related-experience-heading, #people-sidebar, #search__icon__mobile, #mobile__logo__container, .sites-button, footer, .menu, .dropdown .desktop-menu, .menu a, .logo__wrapper a, .link a, .icons__container, .padding__right--50-desktop, .tag__text {
     display: none !important; }
+  .padding-top-10, .padding-bottom-20, .padding-top-20 {
+    padding: 0 !important; }
+  .bullet {
+    display: list-item !important;
+    list-style-type: circle !important;
+    color: #b91628;
+    margin-left: 15px !important;
+    margin-right: 15px !important; }
+    .bullet:before {
+      content: " " !important;
+      height: 8px !important;
+      width: 8px !important;
+      width: 8px !important;
+      position: absolute !important;
+      color: #b91628 !important; }
   #featuredImage {
     height: 300px !important;
     margin-top: 20px !important; }
   .logo__wrapper {
-    display: block;
+    display: block !important;
     margin-bottom: 20px !important; }
   .inline__wrapper, .table__wrapper, #first--inline--wrapper {
     display: block !important;
@@ -2202,7 +2262,12 @@ tbody {
     display: table-row; }
   .logo--print--only {
     position: absolute;
-    top: 5px; } }
+    top: 5px;
+    left: 17.5px; }
+  a[href]:after {
+    content: none !important; }
+  a:after {
+    content: none !important; } }
 
 @media screen and (max-width: 768px) {
   #download--vcard {
@@ -9818,6 +9883,8 @@ a::after {
   @media screen and (min-width: 48.0625em) {
     .is-dropdown-submenu {
       width: 160vw; } }
+  .is-dropdown-submenu a {
+    padding-right: 1rem !important; }
   @media screen and (min-width: 640px) {
     .is-dropdown-submenu li {
       width: 7.5%; }
@@ -9913,10 +9980,6 @@ a::after {
   @media screen and (min-width: 1024px) {
     #menu-nested-pages-1.scrolled {
       padding-right: 7%; } }
-
-@media screen and (max-width: 1200px) {
-  .menu__inner-wrapper--desktop {
-    padding-right: 10px !important; } }
 
 #footer {
   -webkit-box-shadow: 0 -5px 5px -5px rgba(0, 0, 0, 0.2);
@@ -11057,14 +11120,14 @@ button.slick-arrow {
 ul.menu li a {
   color: #0a0a0a;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 800;
   text-transform: uppercase;
   -webkit-transition: width 2s, height 2s, background-color 2s, -webkit-transform 2s;
   transition: width 2s, height 2s, background-color 2s, -webkit-transform 2s;
   transition: width 2s, height 2s, background-color 2s, transform 2s;
   transition: width 2s, height 2s, background-color 2s, transform 2s, -webkit-transform 2s;
-  letter-spacing: 2.85px; }
+  letter-spacing: 1.85px; }
   ul.menu li a:after {
     border: none !important; }
   ul.menu li a:hover {
@@ -11072,9 +11135,6 @@ ul.menu li a {
 
 .mobile-menu {
   border-bottom: none; }
-
-.menu__wrapper--desktop-on-scroll {
-  padding: 10px 0 10px; }
 
 ul.desktop__menu--icons-list {
   margin: 0;

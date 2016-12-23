@@ -40,10 +40,6 @@
         <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-
-
-
 		
 		<!--[if lt IE]>
 			<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/assets/stylesheets/ie.css" type="text/css" media="screen"/>
@@ -60,18 +56,17 @@
 		</div>
 
 		<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) == 'topbar' ) : ?>		
-		<div class="mobile__menu__wrapper">	
+		<div class="mobile__menu__wrapper hide-for-large">	
 			<?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
 		</div>
 		<?php endif; ?>
 		
 		<?php do_action( 'foundationpress_layout_start' ); ?>
-
-
 		
-		<header id="masthead" class="site-header show-for-large" role="banner">
-			<div class="menu__wrapper--desktop row sr">
-				<div class="logo__wrapper columns large-4 medium-3 ">
+						<header id="masthead" class="site-header" role="banner">
+
+			<div class="menu__wrapper--desktop row show-for-large">
+				<div class="logo__wrapper columns large-4 medium-3">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 						<img class="header-logo--mobile" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/BR-logo-for-nav.png">
 					</a>
@@ -80,6 +75,7 @@
 				<div class="menu__inner-wrapper--desktop columns large-8 medium-9 desktop__menu__wrapper">
 					<?php desktop_menu(); ?>
 				</div>
+				
 			</div>
 		</header>
 

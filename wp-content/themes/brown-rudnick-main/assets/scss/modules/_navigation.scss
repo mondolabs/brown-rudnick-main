@@ -126,6 +126,9 @@
   @include breakpoint(medium){
     width: 160vw;
   }
+  a {
+    padding-right: 1rem !important;
+  }
   width: 150vw;
   li {
     //padding: 3%;
@@ -210,11 +213,11 @@
   }
 }
 
-.menu__inner-wrapper--desktop{
-  @media screen and (max-width: 1200px){
-    padding-right: 10px !important;
-  }
-}
+// .menu__inner-wrapper--desktop{
+//   @media screen and (max-width: 1200px){
+//     padding-right: 10px !important;
+//   }
+// }
 
 
 
