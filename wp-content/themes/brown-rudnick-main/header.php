@@ -12,17 +12,33 @@
 
 <html class="no-js" <?php language_attributes(); ?> >
 
-	<!--[if lt IE 10]>    <span 
+	<!--[if lt IE 10]>    <div 
 	style="
 		width: 100%;
 		height: 24px;
 		background-color: #b91628;
-		text-align: center;
 	"
-	class="lt-ie9"></span>
-		This version of Internet Explorer is no longer supported. Please upgrade to a<a href="https://support.microsoft.com/en-us/help/17621/internet-explorer-downloads">
-			supported browser.
-		</a><![endif]-->
+	class="lt-ie9">
+		<p style="
+				color: #fff;
+				display: block;
+				font-size: 24px;
+				color: #fff;
+				text-align: center;"
+		>
+			This version of Internet Explorer is no longer supported. Please upgrade to a
+			<a style="
+				display: inline;
+				font-size: 24px;
+				color: #fff;
+				text-align: center;
+				text-decoration: underline;" 
+				href="https://support.microsoft.com/en-us/help/17621/internet-explorer-downloads"
+			>
+				supported browser.
+			</a>
+		</p>
+	</div><![endif]-->
 	<head>
 		  <!-- start:favicon image -->
 		  
