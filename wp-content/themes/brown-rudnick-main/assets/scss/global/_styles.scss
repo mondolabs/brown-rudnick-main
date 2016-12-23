@@ -7,6 +7,15 @@
     }
 }
 
+#page-full-width-homepage .list-item__sidebar-ul li.list-item__sidebar a {
+	color: $black;
+	text-align: center;
+    &:hover,
+    &:focus {
+    	color: $primary-red;
+    }
+}
+
 #page-full-width-homepage a, a {
     transition: color .3s ease-in-out;
     color: $primary-red;
@@ -4772,3 +4781,19 @@ td.job__openings__title, .accordion-trigger {
   -webkit-animation-name: overlay-slide-out-right;
           animation-name: overlay-slide-out-right;
 }
+
+
+.sidebar__wrapper {
+	.wpcf7-response-output {
+		position: relative !important;
+	}
+} 
+
+.medium-3 {
+	.social-share {
+		margin-top: 20px;	
+	}
+	.social-icons a {
+		padding: 0 10px 0 0;
+	}
+}	

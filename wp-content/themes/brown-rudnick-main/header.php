@@ -9,7 +9,10 @@
  */
 ?>
 <!doctype html>
+
 <html class="no-js" <?php language_attributes(); ?> >
+
+	<!--[if lt IE 10]>    <span class="lt-ie9"></span>Please update your browser<![endif]-->
 	<head>
 		  <!-- start:favicon image -->
 		  
@@ -35,15 +38,6 @@
     <link rel="apple-touch-icon" sizes="152x152" href="<?php bloginfo('template_url'); ?>/assets/images/favicons/152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo('template_url'); ?>/assets/images/favicons/180x180.png">
     <!-- end:favicon touch image -->
-
-    <!--[if lt IE 9]>
-        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-		
-		<!--[if lt IE]>
-			<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/assets/stylesheets/ie.css" type="text/css" media="screen"/>
-		<![endif]-->
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?> >

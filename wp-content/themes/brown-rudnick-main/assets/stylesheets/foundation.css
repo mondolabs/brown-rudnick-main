@@ -266,6 +266,12 @@ p.wp-caption-text {
     color: #fefefe;
     text-decoration: none; }
 
+#page-full-width-homepage .list-item__sidebar-ul li.list-item__sidebar a {
+  color: #0a0a0a;
+  text-align: center; }
+  #page-full-width-homepage .list-item__sidebar-ul li.list-item__sidebar a:hover, #page-full-width-homepage .list-item__sidebar-ul li.list-item__sidebar a:focus {
+    color: #b91628; }
+
 #page-full-width-homepage a, a {
   -webkit-transition: color .3s ease-in-out;
   transition: color .3s ease-in-out;
@@ -3999,6 +4005,15 @@ td.job__openings__title, .accordion-trigger {
   width: 100%;
   -webkit-animation-name: overlay-slide-out-right;
   animation-name: overlay-slide-out-right; }
+
+.sidebar__wrapper .wpcf7-response-output {
+  position: relative !important; }
+
+.medium-3 .social-share {
+  margin-top: 20px; }
+
+.medium-3 .social-icons a {
+  padding: 0 10px 0 0; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
