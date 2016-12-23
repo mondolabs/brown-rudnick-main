@@ -31,7 +31,8 @@
 				display: inline;
 				font-size: 24px;
 				color: #fff;
-				text-align: center;" 
+				text-align: center;
+				text-decoration: underline;" 
 				href="https://support.microsoft.com/en-us/help/17621/internet-explorer-downloads"
 			>
 				supported browser.
