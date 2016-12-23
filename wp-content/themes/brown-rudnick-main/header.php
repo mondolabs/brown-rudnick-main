@@ -12,7 +12,17 @@
 
 <html class="no-js" <?php language_attributes(); ?> >
 
-	<!--[if lt IE 10]>    <span class="lt-ie9"></span>Please update your browser<![endif]-->
+	<!--[if lt IE 10]>    <span 
+	style="
+		width: 100%;
+		height: 24px;
+		background-color: #b91628;
+		text-align: center;
+	"
+	class="lt-ie9"></span>
+		This version of Internet Explorer is no longer supported. Please upgrade to a<a href="https://support.microsoft.com/en-us/help/17621/internet-explorer-downloads">
+			supported browser.
+		</a><![endif]-->
 	<head>
 		  <!-- start:favicon image -->
 		  
