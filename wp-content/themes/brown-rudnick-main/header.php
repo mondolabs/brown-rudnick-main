@@ -18,15 +18,19 @@
 		height: 24px;
 		background-color: #b91628;
 	"
-	class="lt-ie9"></div>
-		This version of Internet Explorer is no longer supported. Please upgrade to a<a style="
-		display: block;
-		font-size: 24px;
-		color: #fff;
-		text-align: center;
-	" href="https://support.microsoft.com/en-us/help/17621/internet-explorer-downloads">
-			supported browser.
-		</a><![endif]-->
+	class="lt-ie9">
+		<p style="color: #fff;">
+			This version of Internet Explorer is no longer supported. Please upgrade to a
+			<a style="
+				display: block;
+				font-size: 24px;
+				color: #fff;
+				text-align: center;" 
+				href="https://support.microsoft.com/en-us/help/17621/internet-explorer-downloads">
+				supported browser.
+			</a>
+		</p>
+	</div><![endif]-->
 	<head>
 		  <!-- start:favicon image -->
 		  
