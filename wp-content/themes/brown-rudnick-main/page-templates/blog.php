@@ -25,12 +25,12 @@ $blog_title_category_obj = get_category_by_slug($blog_name);
 $data['blog_title_category_id'] = $blog_title_category_obj->term_id;
 
 $blog_posts_args = array(
-                    'category_name' => $blog_name, 
-                    'numberposts' => -1,
-                    'posts_per_page' => 5,
-                    'paged'=> $paged,
-                    'orderby' => 'date', 
-                  );
+  'category_name' => $blog_name, 
+  'numberposts' => -1,
+  'posts_per_page' => 5,
+  'paged'=> $paged,
+  'orderby' => 'date', 
+);
 
 // for pagination
 query_posts($blog_posts_args);
@@ -54,7 +54,14 @@ $data['unfiltered'] = true;
 $all_tags_for_blog_posts = [];
 $all_dates_for_blog_posts = [];
 
-foreach ($data['blog_posts'] as $key => $value) {
+$all_blog_posts_args = array(
+  'category_name' => $blog_name, 
+  'numberposts' => -1,
+);
+
+$all_blog_posts = Timber::get_posts($all_blog_posts_args);
+
+foreach ($all_blog_posts as $key => $value) {
   array_push($all_dates_for_blog_posts, strtotime(($value->date)));
   $tags  = get_the_tags($value->ID);  
   foreach ((array)$tags as $k => $v) {
