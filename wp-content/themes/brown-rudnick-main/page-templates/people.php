@@ -257,11 +257,6 @@ $tax_people = [];
 $people = Timber::get_posts($people_args);
 $tax_people = Timber::get_posts($tax_people_args);
 
-var_dump("merge count:".count($merged));
-var_dump("people count:".count($people));
-var_dump("tax_people count:".count($tax_people));
-
-
 if (count($people) == 0 AND count($tax_people) != 0 ) {
   $data['people'] = $tax_people;
 } elseif ( count($people) != 0 AND count($tax_people) == 0 ) {
