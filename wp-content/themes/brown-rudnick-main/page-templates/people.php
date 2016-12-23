@@ -2,7 +2,7 @@
 /*
 Template Name: People Landing Page
 */
-get_header();
+
 $data = Timber::get_context();
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
 $data['featured_image_url'] = $data['featured_image_url'][0];
@@ -277,12 +277,9 @@ if( ($geography !== "") || ( $industry !== "") || ($practice !== "") || ($langua
     array_push($people_args['tax_query'], $education_term_query_array );
   }
 }
-
 $data['people'] = Timber::get_posts($people_args);
 $data['people'] = array_unique($data['people']);
-
 ?>
-
 <html>
   <head>
     <?php wp_head()?>
@@ -292,12 +289,14 @@ $data['people'] = array_unique($data['people']);
         data-animsition-in-class="fade-in"
         data-animsition-in-duration="800"
         data-animsition-out-class="fade-out"
-        data-animsition-out-duration="800" >
+        data-animsition-out-duration="800">
+          <?php get_header();?>
       <div id="page-full-width-homepage" class ="full-width" role="main">
         <?php Timber::render('/twig-templates/people.twig', $data); ?>
-      </div>  
-    </div>  
-    <?php do_action( 'foundationpress_after_content' ); ?>
-    <?php get_footer(); ?>
+        <?php do_action( 'foundationpress_after_content' ); ?>
+        <?php get_footer(); ?>
+    </div>
+    </div>
+    </div>     
   </body>
 </html>
