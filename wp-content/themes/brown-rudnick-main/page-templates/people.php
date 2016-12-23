@@ -78,7 +78,9 @@ $data['education'] = ucwords(strtolower($data['education']));
 
 $keywords = explode(" ", $data['keyword']);
 
-if ( count($keywords) >= 0 ) {
+$keywords = array_filter( $keywords, function($value) { return $value !== ''; });
+
+if ( count($keywords) > 0 ) {
   $people_args = array( 
     'post_type' =>  'people',
     'orderby' => 'meta_value',
@@ -244,7 +246,7 @@ if ( count($keywords) >= 0 ) {
   );
 }
 
-if( ($geography !== "") || ( $industry !== "") || ($practice !== "") || ($language !== "") || ($location !== "") || ($admission !== "") || ($education !== "")  ) {
+if( ($geography !== "") || ( $industry !== "") || ($practice !== "") || ($language !== "") || ($location !== "") || ($admission !== "") || ($education !== "") || count($keywords) > 0  ) {
   $people_args["tax_query"] = array( 'relation' => 'AND' );
   if ( $geography !== "" ) {
     $geography_term_query_array = array('taxonomy' => 'geography', 'field' => 'slug', 'terms' => array( $geography));
@@ -278,6 +280,7 @@ if( ($geography !== "") || ( $industry !== "") || ($practice !== "") || ($langua
 
 $data['people'] = Timber::get_posts($people_args);
 $data['people'] = array_unique($data['people']);
+
 ?>
 
 <html>

@@ -225,7 +225,13 @@ var PEOPLE = {
 	engageEnterDownForModalFormSubmission: function(){
 		console.log("enter engaged!");
 		$(window).keydown(function(e){
-			$('#peopleAdvancedSearchButton').click();
+			if (e.keyCode == 13){
+				e.preventDefault();
+				e.stopPropagation();
+				$('#peopleAdvancedSearchButton').click();
+			} else {
+				console.log('not enter');
+			}
 		});
 	}
 };

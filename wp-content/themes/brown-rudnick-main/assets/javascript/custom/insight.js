@@ -151,7 +151,13 @@ var INSIGHTS = {
 	engageEnterDownForModalFormSubmission: function(){
 		console.log("enter engaged!");
 		$(window).keydown(function(e){
-			$('button#advancedSearchSubmit').click();
+			if (e.keyCode == 13){
+				e.preventDefault();
+				e.stopPropagation();
+				$('button#advancedSearchSubmit').click();
+			} else {
+				console.log("not enter");
+			}
 		});
 	}
 }
