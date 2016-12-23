@@ -287,7 +287,7 @@ $data['people'] = array_unique($data['people']);
   <body>
     <div class="animsition"
         data-animsition-in-class="fade-in"
-        data-animsition-in-duration="800"
+        data-animsition-in-duration="500"
         data-animsition-out-class="fade-out"
         data-animsition-out-duration="800">
           <?php get_header();?>

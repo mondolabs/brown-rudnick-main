@@ -1,8 +1,10 @@
+// smooth loading for pages
+
 $(document).ready(function() {
   $(".animsition").animsition({
     inClass: 'fade-in',
     outClass: 'fade-out',
-    inDuration: 800,
+    inDuration: 500,
     outDuration: 800,
     loading: true,
     loadingParentElement: 'body', //animsition wrapper element
