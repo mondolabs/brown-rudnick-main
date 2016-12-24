@@ -9784,7 +9784,7 @@ table.hover tr:nth-of-type(even):hover {
     #menu-mobile-menu li a {
       font-size: 18px;
       letter-spacing: 3px; }
-      @media screen and (max-height: 320px) {
+      @media screen and (max-height: 450px) {
         #menu-mobile-menu li a {
           line-height: .2em; } }
 
@@ -9847,7 +9847,7 @@ table.hover tr:nth-of-type(even):hover {
   right: 60px;
   top: 30px;
   width: 20px;
-  z-index: 9999; }
+  z-index: 99; }
 
 #open-mobile-menu.open {
   position: fixed;
@@ -10055,9 +10055,16 @@ a::after {
 
 #menu-nested-pages-1.scrolled {
   padding-top: 28px; }
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    #menu-nested-pages-1.scrolled {
+      /* IE10+ CSS styles go here */
+      padding-top: 0 !important; } }
   @media screen and (min-width: 1024px) {
     #menu-nested-pages-1.scrolled {
       padding-left: 20px; } }
+
+.menu__inner-wrapper--desktop {
+  position: relative !important; }
 
 #footer-container {
   margin: 0 auto; }
