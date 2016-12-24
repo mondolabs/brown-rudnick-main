@@ -63,7 +63,7 @@
 					</a>
 		</div>
 		{% for homepage_post in remaining %}
-			<div class="no__pad medium-6 large-4 columns homepage-grid-element relative">
+			<div class="no__pad {% if not loop.last %} medium-6 {% else %} medium-6 float__left {% endif %} large-4 columns homepage-grid-element relative">
 				{% if homepage_post.thumbnail %}
 					<div class="hide-for-medium-down large-12 columns homepage-post__image--wrapper" style="background:url({{homepage_post.thumbnail.src}})no-repeat center;">
 					</div>	
@@ -100,9 +100,9 @@
 						</a>
 						<p>
 							{% if homepage_post.post_excerpt %}
-								{{ homepage_post.post_excerpt|truncate(12)|striptags ~ '' }}
+								{{ homepage_post.post_excerpt|truncate(9)|striptags ~ '' }}
 							{% else %}
-								{{ homepage_post.post_content|truncate(12)|striptags ~ '' }}
+								{{ homepage_post.post_content|truncate(9)|striptags ~ '' }}
 							{% endif %}	
 						</p>
 					</div>
