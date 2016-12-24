@@ -80,7 +80,7 @@ $keywords = explode(" ", $data['keyword']);
 
 $keywords = array_filter( $keywords, function($value) { return $value !== ''; });
 
-var_dump(count($keywords) > 0);
+// var_dump(count($keywords) > 0);
 
 if ( count($keywords) > 0 ) {
   $tax_people_args = array( 

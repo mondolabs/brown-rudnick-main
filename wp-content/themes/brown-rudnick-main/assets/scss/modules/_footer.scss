@@ -1,13 +1,11 @@
-#footer {
-	box-shadow: 0 -5px 5px -5px rgba(0, 0, 0, .2);
-}
+
 
 #footer-container {
-	max-width: 100%;
-	width: 100%;
+	//max-width: 100%;
+	//width: 100%;
 	margin: 0 auto;
 	//border-top: 1px solid #ccc;
-	margin-top: rem-calc(60);
+	//margin-top: rem-calc(60);
 }
 
 .footer-message {
@@ -26,9 +24,18 @@
 }
 
 .footer-logo {
-	@media screen and (max-width: 768px) {
-		padding-top: 70px;
+      //margin-top: 40px;
+      // display: inline-block;
+      //@extend %footerMobile;
+       width: 85px;
+	@media screen and (max-width: 769px) {
+	   padding-top: 70px;
+          margin: 0 auto;
+          display: block;
 	}
+    @media screen and (min-width: 769px) { 
+        float: left
+      }
 }
 
 .footer-logo > a, .footer-links > a {
@@ -37,17 +44,12 @@
 
 .footer-links > a { 
   letter-spacing: $letter-spacing-global;
-  @media screen and (max-width: 768px){
-    padding-left: 0;
-  }
+  // @media screen and (max-width: 768px){
+  //   padding-left: 0;
+  // }
 }
 
-.footer-logo {
-  margin-top: 40px;
-  display: inline-block;
-  @extend %footerMobile;
-  width: 85px;
-}
+
 #footer-container {
   background-color: $white;
   margin-top: 0;
@@ -61,14 +63,21 @@
 }
 #footer {
   width: 100%;
+  padding-top: 60px;
   max-width : inherit !important;
-  padding-bottom: 10%;
-  text-align: center !important;
+  padding-bottom:  60px;
+  box-shadow: 0 -5px 5px -5px rgba(0, 0, 0, .2);
 }
 .footer-links {
-  display: inline-block;
-  width: 66.6%;
-  margin: 0 auto;
+  //display: inline-block;
+  //width: 66.6%;
+  @media screen and (max-width: 769px){
+    margin: 0 auto;
+  }
+  @media screen and (min-width: 769px){
+    margin: 0 auto;
+    //margin-left: 30px;
+  }
   padding: 20px;
   text-align: center;
   vertical-align: middle;
@@ -105,7 +114,11 @@
 	a {
 		padding-left:10px;
 	}
-	@media screen and (max-width: 768px){
+      @media screen and (min-width: 769px){
+        float: right;
+        padding-top: 30px;
+      }
+	@media screen and (max-width: 769px){
 		display: table;
 		margin: 0 auto;
 		width: 300px;
