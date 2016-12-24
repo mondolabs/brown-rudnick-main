@@ -1,7 +1,59 @@
+<!-- TO DO: conditional for tax and meta field arrays -->
+
+
+
+
 <?php
 /*
 Template Name: People Landing Page
 */
+
+function array_flatten(array $array, $max_depth = -1, $_depth = 0) {
+  $result = array();
+
+  foreach ($array as $key => $value) {
+    if (is_array($value) && ($max_depth < 0 || $_depth < $max_depth)) {
+      $flat = array_flatten($value, $max_depth, $_depth + 1);
+      if (is_string($key)) {
+        $duplicate_keys = array_keys(array_intersect_key($array, $flat));
+        foreach ($duplicate_keys as $k) {
+          $flat["$key.$k"] = $flat[$k];
+          unset($flat[$k]);
+        }
+      }
+      $result = array_merge($result, $flat);
+    }
+    else {
+      if (is_string($key)) {
+        $result[$key] = $value;
+      }
+      else {
+        $result[] = $value;
+      }
+    }
+  }
+
+  return $result;
+}
+
+function array_filter_recursive($array) {
+  foreach ($array as $key => &$value) {
+    if (empty($value)) {
+       unset($array[$key]);
+    }
+    else {
+      if (is_array($value)) {
+          $value = array_filter_recursive($value);
+        if (empty($value)) {
+          unset($array[$key]);
+        }
+      }
+    }
+  }
+  return $array;
+}
+
+
 
 $data = Timber::get_context();
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
@@ -80,9 +132,12 @@ $keywords = explode(" ", $data['keyword']);
 
 $keywords = array_filter( $keywords, function($value) { return $value !== ''; });
 
-var_dump(count($keywords) > 0);
-
+$tax_index = 0;
+$keyword_index = 0;
+$all_people_by_taxonomies_array = [];
+$all_people_by_meta_fields_array = [];
 if ( count($keywords) > 0 ) {
+  foreach ($keywords as $keyword) {
   $tax_people_args = array( 
     'post_type' =>  'people',
     'posts_per_page'=>-1,
@@ -90,14 +145,13 @@ if ( count($keywords) > 0 ) {
       'relation' => 'OR',
     )
   );
-  $people_args = array( 
+  $meta_people_args = array( 
     'post_type' =>  'people',
     'posts_per_page'=>-1,
     'meta_query' => array(
       'relation' => 'OR',
     )
   );
-  foreach ($keywords as $keyword) {
     if ( $keyword !== "" ) {
       $geography_term_query_array = array('taxonomy' => 'geography', 'field' => 'slug', 'terms' => array($keyword));
       array_push($tax_people_args['tax_query'], $geography_term_query_array );
@@ -132,82 +186,138 @@ if ( count($keywords) > 0 ) {
       'value' => $keyword,
       'compare' => 'LIKE',
     );
-    array_push($people_args['meta_query'], $first_name_query );
+    array_push($meta_people_args['meta_query'], $first_name_query );
     $last_name_query = array(
       'key' => 'last_name',
       'value' => $keyword,
       'compare' => 'LIKE',
     );
-    array_push($people_args['meta_query'], $last_name_query );
+    array_push($meta_people_args['meta_query'], $last_name_query );
     $job_title_query = array(
       'key' => 'job_title',
       'value' => $keyword,
       'compare' => 'LIKE',
     );
-    array_push($people_args['meta_query'], $job_title_query );
+    array_push($meta_people_args['meta_query'], $job_title_query );
 
     $specialization_query = array(
       'key' => 'specialization',
       'value' => $keyword,
       'compare' => 'LIKE',
     );
-    array_push($people_args['meta_query'], $specialization_query );
+    array_push($meta_people_args['meta_query'], $specialization_query );
 
     $primary_city_query = array(
       'key' => 'primary_city',
       'value' => $keyword,
       'compare' => 'LIKE',
     );
-    array_push($people_args['meta_query'], $primary_city_query );
+    array_push($meta_people_args['meta_query'], $primary_city_query );
 
     $primary_state_query = array(
       'key' => 'primary_state',
       'value' => $keyword,
       'compare' => 'LIKE',
     );
-    array_push($people_args['meta_query'], $primary_state_query );
+    array_push($meta_people_args['meta_query'], $primary_state_query );
 
     $secondary_city_query = array(
       'key' => 'secondary_city',
       'value' => $keyword,
       'compare' => 'LIKE',
     );
-    array_push($people_args['meta_query'], $secondary_city_query );
+    array_push($meta_people_args['meta_query'], $secondary_city_query );
 
     $secondary_state_query = array(
       'key' => 'secondary_state',
       'value' => $keyword,
       'compare' => 'LIKE',
     );
-    array_push($people_args['meta_query'], $secondary_state_query );
+    array_push($meta_people_args['meta_query'], $secondary_state_query );
 
     $email_query = array(
       'key' => 'email',
       'value' => $keyword,
       'compare' => 'LIKE',
     );
-    array_push($people_args['meta_query'], $email_query );
+    array_push($meta_people_args['meta_query'], $email_query );
 
     $education_query = array(
       'key' => 'education',
       'value' => $keyword,
       'compare' => 'LIKE',
     );
-    array_push($people_args['meta_query'], $education_query );
+    array_push($meta_people_args['meta_query'], $education_query );
 
     $language_query = array(
       'key' => 'language',
       'value' => $keyword,
       'compare' => 'LIKE',
     );
-    array_push($people_args['meta_query'], $language_query );
+    array_push($meta_people_args['meta_query'], $language_query );
     $related_experience_query = array(
       'key' => 'related_experience',
       'value' => $keyword,
       'compare' => 'LIKE',
     );
-    array_push($people_args['meta_query'], $related_experience_query );
+    array_push($meta_people_args['meta_query'], $related_experience_query );
+    // taxonomies
+    $tax_people_keyword_query = Timber::get_posts($tax_people_args);
+    array_push( $all_people_by_taxonomies_array, $tax_people_keyword_query );
+    // var_dump("total number of people matching by tax for ".$keyword.": ".count($tax_people_keyword_query));
+    // Meta Fields
+    $meta_people_keyword_query = Timber::get_posts($meta_people_args);
+    array_push( $all_people_by_meta_fields_array, $meta_people_keyword_query );
+// counter
+    $tax_index++;
+    $keyword_index++;
   };
+  // tax
+
+  $all_people_by_taxonomies_array = array_filter_recursive($all_people_by_taxonomies_array);
+  $tax_people_by_keyword = call_user_func_array('array_intersect', $all_people_by_taxonomies_array);
+
+  // meta
+  $all_people_by_meta_fields_array = array_filter_recursive($all_people_by_meta_fields_array);
+  $meta_people_by_keyword = call_user_func_array('array_intersect', $all_people_by_meta_fields_array);
+
+
+  // var_dump(array_filter_recursive($all_people_by_taxonomies_array));
+
+  // var_dump(count($all_people_by_taxonomies_array));
+  // var_dump(count($all_people_by_taxonomies_array[1]));
+  // var_dump(count($all_people_by_taxonomies_array[2]));
+
+  // var_dump(count($all_people_by_taxonomies_array));
+  // var_dump(count($all_people_by_meta_fields_array));
+
+
+ 
+
+  // var_dump($all_people_by_meta_fields_array[0][0]);
+  // var_dump($all_people_by_meta_fields_array[1][0]);
+  // var_dump($all_people_by_meta_fields_array[2][0]);
+
+
+  // var_dump(count($tax_people_by_keyword));
+  // var_dump(count($meta_people_by_keyword));
+
+
+
+  if (count($meta_people_by_keyword) >= 1 && count($tax_people_by_keyword) >= 1)  {
+    $keyword_matches = array_intersect($meta_people_by_keyword, $tax_people_by_keyword);
+  } elseif ( count($meta_people_by_keyword) == 0 && count($tax_people_by_keyword) >= 1 ) {
+    $keyword_matches = $tax_people_by_keyword;
+  } elseif ( count($meta_people_by_keyword) >= 1  && count($tax_people_by_keyword) == 0 ) {
+    $keyword_matches = $meta_people_by_keyword;
+  } else {
+    $keyword_matches = [];
+  }
+  
+  // var_dump("tax fields matches: ".count($tax_people_by_keyword));
+  // var_dump("meta fields matches: ".count($meta_people_by_keyword));
+
+
 } else {
   $people_args = array(
     'post_type' =>  'people',
@@ -219,56 +329,66 @@ if ( count($keywords) > 0 ) {
 }
 
 if( ($geography !== "") || ( $industry !== "") || ($practice !== "") || ($language !== "") || ($location !== "") || ($admission !== "") || ($education !== "")  ) {
-  $people_args["tax_query"] = array( 'relation' => 'AND' );
+  $filter_meta_people_args = array( 
+    'post_type' =>  'people',
+    'posts_per_page'=>-1,
+    'meta_query' => array(
+      'relation' => 'OR',
+    )
+  );
+  $filter_meta_people_args["tax_query"] = array( 'relation' => 'AND' );
   if ( $geography !== "" ) {
     $geography_term_query_array = array('taxonomy' => 'geography', 'field' => 'slug', 'terms' => array( $geography));
-    array_push($people_args['tax_query'], $geography_term_query_array );
+    array_push($filter_meta_people_args['tax_query'], $geography_term_query_array );
   }
   if ( $industry !== "" ) {
     $industry_term_query_array = array('taxonomy' => 'industry', 'field' => 'slug', 'terms' => array( $industry));
-    array_push($people_args['tax_query'], $industry_term_query_array );
+    array_push($filter_meta_people_args['tax_query'], $industry_term_query_array );
   }
   if ( $practice !== "" ) {
     $practice_term_query_array = array('taxonomy' => 'practice', 'field' => 'slug', 'terms' => array( $practice));
-    array_push($people_args['tax_query'], $practice_term_query_array );
+    array_push($filter_meta_people_args['tax_query'], $practice_term_query_array );
   }
   if ( $language !== "" ) {
     $language_term_query_array = array('taxonomy' => 'languages', 'field' => 'slug', 'terms' => array( $language));
-    array_push($people_args['tax_query'], $language_term_query_array );
+    array_push($filter_meta_people_args['tax_query'], $language_term_query_array );
   }
   if ( $location !== "" ) {
     $location_term_query_array = array('taxonomy' => 'locations', 'field' => 'slug', 'terms' => array( $location));
-    array_push($people_args['tax_query'], $location_term_query_array );
+    array_push($filter_meta_people_args['tax_query'], $location_term_query_array );
   }
   if ( $admission !== "" ) {
     $admission_term_query_array = array('taxonomy' => 'admissions', 'field' => 'slug', 'terms' => array( $admission));
-    array_push($people_args['tax_query'], $admission_term_query_array );
+    array_push($filter_meta_people_args['tax_query'], $admission_term_query_array );
   }
   if ( $education !== "" ) {
     $education_term_query_array = array('taxonomy' => 'educations', 'field' => 'slug', 'terms' => array( $education));
-    array_push($people_args['tax_query'], $education_term_query_array );
+    array_push($filter_meta_people_args['tax_query'], $education_term_query_array );
   }
+  $filter_matches = Timber::get_posts($filter_meta_people_args);
 }
 
 $data['people'] = [];
 $people = [];
 $tax_people = [];
 
-$people = Timber::get_posts($people_args);
-$tax_people = Timber::get_posts($tax_people_args);
 
-if (count($people) == 0 AND count($tax_people) != 0 ) {
-  $data['people'] = $tax_people;
-} elseif ( count($people) != 0 AND count($tax_people) == 0 ) {
-  $data['people'] = $people;
-} elseif (count($people) != 0 AND count($tax_people) != 0 ) {
-  $data['people'] = array_merge($people + $tax_people);
+if ( count($keywords) >= 1 || (($geography !== "") || ( $industry !== "") || ($practice !== "") || ($language !== "") || ($location !== "") || ($admission !== "") || ($education !== "")) ) {
+  if ( count($keyword_matches) >= 1 AND count($filter_matches) >= 1 ) {
+    $data['people'] = array_intersect($keyword_matches, $filter_matches);
+  } elseif ( count($keyword_matches) >= 1 AND count($filter_matches) == 0 ) {
+    $data['people'] = $keyword_matches;
+  } elseif (count($keyword_matches) == 0 AND count($filter_matches) >= 1) {
+    $data['people'] = $filter_matches;
+  }
 } else {
-  $data['people'] = [];
+  $all_people_args = array( 
+    'post_type' =>  'people',
+    'posts_per_page'=>-1,
+  );
+  $data['people'] = Timber::get_posts($all_people_args);
 }
-
 $data['people'] = array_unique( $data['people'] );
-
 
 ?>
 <html>
