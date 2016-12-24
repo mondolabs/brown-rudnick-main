@@ -273,14 +273,18 @@ if ( count($keywords) > 0 ) {
     $keyword_index++;
   };
   // tax
+  if ( count($all_people_by_taxonomies_array) >= 1 ) {
+    $all_people_by_taxonomies_array = array_filter_recursive($all_people_by_taxonomies_array);
 
-  $all_people_by_taxonomies_array = array_filter_recursive($all_people_by_taxonomies_array);
-
-  $tax_people_by_keyword = call_user_func_array('array_intersect', $all_people_by_taxonomies_array[0]);
+    $tax_people_by_keyword = call_user_func_array('array_intersect', $all_people_by_taxonomies_array);
+  } 
 
   // meta
-  $all_people_by_meta_fields_array = array_filter_recursive($all_people_by_meta_fields_array);
-  $meta_people_by_keyword = call_user_func_array('array_intersect', $all_people_by_meta_fields_array[0]);
+  if ( count($all_people_by_meta_fields_array) >= 1 ) {
+
+    $all_people_by_meta_fields_array = array_filter_recursive($all_people_by_meta_fields_array);
+    $meta_people_by_keyword = call_user_func_array('array_intersect', $all_people_by_meta_fields_array);
+  }
 
 
 
