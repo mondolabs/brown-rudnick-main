@@ -275,11 +275,13 @@ if ( count($keywords) > 0 ) {
   // tax
 
   $all_people_by_taxonomies_array = array_filter_recursive($all_people_by_taxonomies_array);
-  $tax_people_by_keyword = call_user_func_array('array_intersect', $all_people_by_taxonomies_array);
+
+  $tax_people_by_keyword = call_user_func_array('array_intersect', $all_people_by_taxonomies_array[0]);
 
   // meta
   $all_people_by_meta_fields_array = array_filter_recursive($all_people_by_meta_fields_array);
-  $meta_people_by_keyword = call_user_func_array('array_intersect', $all_people_by_meta_fields_array);
+  $meta_people_by_keyword = call_user_func_array('array_intersect', $all_people_by_meta_fields_array[0]);
+
 
 
   // var_dump(array_filter_recursive($all_people_by_taxonomies_array));
