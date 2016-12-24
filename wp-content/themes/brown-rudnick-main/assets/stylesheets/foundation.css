@@ -9768,6 +9768,9 @@ table.hover tr:nth-of-type(even):hover {
   font-size: 1rem;
   color: #B9B9B9; }
 
+.logo__wrapper {
+  padding-top: 10px; }
+
 #menu-mobile-menu {
   display: none;
   height: 100vh !important;
