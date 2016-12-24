@@ -322,11 +322,12 @@
 #menu-nested-pages-1 {
   &.scrolled {
     //float: right;
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+   
+    padding-top: 28px;
+     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
      /* IE10+ CSS styles go here */
       padding-top: 0 !important;
     }
-    padding-top: 28px;
     @media screen and (min-width: 1024px){
     padding-left: 20px;
     }
