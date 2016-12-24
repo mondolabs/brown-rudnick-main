@@ -1,7 +1,3 @@
-
-
-
-
 <?php
 /*
 Template Name: People Landing Page
@@ -9,7 +5,6 @@ Template Name: People Landing Page
 
 function array_flatten(array $array, $max_depth = -1, $_depth = 0) {
   $result = array();
-
   foreach ($array as $key => $value) {
     if (is_array($value) && ($max_depth < 0 || $_depth < $max_depth)) {
       $flat = array_flatten($value, $max_depth, $_depth + 1);
@@ -31,7 +26,6 @@ function array_flatten(array $array, $max_depth = -1, $_depth = 0) {
       }
     }
   }
-
   return $result;
 }
 
@@ -51,8 +45,6 @@ function array_filter_recursive($array) {
   }
   return $array;
 }
-
-
 
 $data = Timber::get_context();
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
@@ -109,7 +101,6 @@ $location =  str_replace("-slash-", " / ", $location);
 $admission =  str_replace("-slash-", " / ", $admission);
 $education =  str_replace("-slash-", " / ", $education);
 
-
 $data['geography'] = str_replace("-AND-", " & ", $geography);
 $data['industry'] = str_replace("-AND-", " & ", $industry);
 $data['practice'] = str_replace("-AND-", " & ", $practice);
@@ -131,17 +122,19 @@ $keywords = explode(" ", $data['keyword']);
 
 $keywords = array_filter( $keywords, function($value) { return $value !== ''; });
 
-
 $tax_index = 0;
 $keyword_index = 0;
 $all_people_by_taxonomies_array = [];
 $all_people_by_meta_fields_array = [];
-
 if ( count($keywords) > 0 ) {
   foreach ($keywords as $keyword) {
   $tax_people_args = array( 
     'post_type' =>  'people',
     'posts_per_page'=>-1,
+    'orderby' => 'meta_value',
+    'meta_key'  => 'last_name',
+    'posts_per_page'=>-1,
+    'order' => 'ASC',
     'tax_query' => array(
       'relation' => 'OR',
     )
@@ -149,6 +142,10 @@ if ( count($keywords) > 0 ) {
   $meta_people_args = array( 
     'post_type' =>  'people',
     'posts_per_page'=>-1,
+    'orderby' => 'meta_value',
+    'meta_key'  => 'last_name',
+    'posts_per_page'=>-1,
+    'order' => 'ASC',
     'meta_query' => array(
       'relation' => 'OR',
     )
@@ -274,16 +271,24 @@ if ( count($keywords) > 0 ) {
     $keyword_index++;
   };
   // tax
-  if ( count($all_people_by_taxonomies_array) >= 1 ) {
+  if ( count($all_people_by_taxonomies_array) >= 2 ) {
     $all_people_by_taxonomies_array = array_filter_recursive($all_people_by_taxonomies_array);
-
     $tax_people_by_keyword = call_user_func_array('array_intersect', $all_people_by_taxonomies_array);
+  } elseif ( count($all_people_by_taxonomies_array) == 1 ) {
+    $tax_people_by_keyword = $all_people_by_taxonomies_array;
+  } else {
+    $tax_people_by_keyword = [];
+  }
+
 
   // meta
-  if ( count($all_people_by_meta_fields_array) >= 1 ) {
-
+  if ( count($all_people_by_meta_fields_array) >= 2 ) {
     $all_people_by_meta_fields_array = array_filter_recursive($all_people_by_meta_fields_array);
     $meta_people_by_keyword = call_user_func_array('array_intersect', $all_people_by_meta_fields_array);
+  } elseif (count($all_people_by_meta_fields_array) == 1) {
+    $meta_people_by_keyword = $all_people_by_meta_fields_array;
+  } else {
+    $meta_people_by_keyword = [];
   }
 
 
@@ -338,6 +343,10 @@ if( ($geography !== "") || ( $industry !== "") || ($practice !== "") || ($langua
   $filter_meta_people_args = array( 
     'post_type' =>  'people',
     'posts_per_page'=>-1,
+    'orderby' => 'meta_value',
+    'meta_key'  => 'last_name',
+    'posts_per_page'=>-1,
+    'order' => 'ASC',
     'meta_query' => array(
       'relation' => 'OR',
     )
@@ -378,6 +387,7 @@ $data['people'] = [];
 $people = [];
 $tax_people = [];
 
+$keyword_matches = array_flatten($keyword_matches, 1);
 
 if ( count($keywords) >= 1 || (($geography !== "") || ( $industry !== "") || ($practice !== "") || ($language !== "") || ($location !== "") || ($admission !== "") || ($education !== "")) ) {
   if ( count($keyword_matches) >= 1 AND count($filter_matches) >= 1 ) {
@@ -386,11 +396,16 @@ if ( count($keywords) >= 1 || (($geography !== "") || ( $industry !== "") || ($p
     $data['people'] = $keyword_matches;
   } elseif (count($keyword_matches) == 0 AND count($filter_matches) >= 1) {
     $data['people'] = $filter_matches;
+
   }
 } else {
   $all_people_args = array( 
     'post_type' =>  'people',
     'posts_per_page'=>-1,
+    'orderby' => 'meta_value',
+    'meta_key'  => 'last_name',
+    'posts_per_page'=>-1,
+    'order' => 'ASC',
   );
   $data['people'] = Timber::get_posts($all_people_args);
 }
@@ -404,7 +419,7 @@ $data['people'] = array_unique( $data['people'] );
   <body>
     <div class="animsition"
         data-animsition-in-class="fade-in"
-        data-animsition-in-duration="500"
+        data-animsition-in-duration="800"
         data-animsition-out-class="fade-out"
         data-animsition-out-duration="800">
           <?php get_header();?>
