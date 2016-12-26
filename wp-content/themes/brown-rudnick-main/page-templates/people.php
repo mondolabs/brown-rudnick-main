@@ -266,7 +266,7 @@ if ( count($keywords) > 0 ) {
     // Meta Fields
     $meta_people_keyword_query = Timber::get_posts($meta_people_args);
     array_push( $all_people_by_meta_fields_array, $meta_people_keyword_query );
-// counter
+    // counter
     $tax_index++;
     $keyword_index++;
   };
@@ -291,30 +291,6 @@ if ( count($keywords) > 0 ) {
     $meta_people_by_keyword = [];
   }
 
-
-
-  // var_dump(array_filter_recursive($all_people_by_taxonomies_array));
-
-  // var_dump(count($all_people_by_taxonomies_array));
-  // var_dump(count($all_people_by_taxonomies_array[1]));
-  // var_dump(count($all_people_by_taxonomies_array[2]));
-
-  // var_dump(count($all_people_by_taxonomies_array));
-  // var_dump(count($all_people_by_meta_fields_array));
-
-
- 
-
-  // var_dump($all_people_by_meta_fields_array[0][0]);
-  // var_dump($all_people_by_meta_fields_array[1][0]);
-  // var_dump($all_people_by_meta_fields_array[2][0]);
-
-
-  // var_dump(count($tax_people_by_keyword));
-  // var_dump(count($meta_people_by_keyword));
-
-
-
   if (count($meta_people_by_keyword) >= 1 && count($tax_people_by_keyword) >= 1)  {
     $keyword_matches = array_intersect($meta_people_by_keyword, $tax_people_by_keyword);
   } elseif ( count($meta_people_by_keyword) == 0 && count($tax_people_by_keyword) >= 1 ) {
@@ -324,10 +300,6 @@ if ( count($keywords) > 0 ) {
   } else {
     $keyword_matches = [];
   }
-  
-  // var_dump("tax fields matches: ".count($tax_people_by_keyword));
-  // var_dump("meta fields matches: ".count($meta_people_by_keyword));
-
 
 } else {
   $people_args = array(
@@ -387,7 +359,10 @@ $data['people'] = [];
 $people = [];
 $tax_people = [];
 
-$keyword_matches = array_flatten($keyword_matches, 1);
+if ($keyword_matches){
+  $keyword_matches = array_flatten($keyword_matches, 1); 
+}
+
 
 if ( count($keywords) >= 1 || (($geography !== "") || ( $industry !== "") || ($practice !== "") || ($language !== "") || ($location !== "") || ($admission !== "") || ($education !== "")) ) {
   if ( count($keyword_matches) >= 1 AND count($filter_matches) >= 1 ) {
@@ -409,6 +384,7 @@ if ( count($keywords) >= 1 || (($geography !== "") || ( $industry !== "") || ($p
   );
   $data['people'] = Timber::get_posts($all_people_args);
 }
+
 $data['people'] = array_unique( $data['people'] );
 
 ?>
