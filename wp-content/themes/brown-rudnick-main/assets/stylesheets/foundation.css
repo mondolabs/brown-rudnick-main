@@ -1204,6 +1204,12 @@ img.insights {
   cursor: pointer;
   float: right;
   margin-top: -32px; }
+  .experience_expander.mobile__top,
+  .job_expander.mobile__top,
+  .accordion_expander.mobile__top,
+  .mobile__sidebar--expander.mobile__top,
+  .person__details--expander.mobile__top {
+    top: 7.5px; }
   .experience_expander.top__menu,
   .job_expander.top__menu,
   .accordion_expander.top__menu,

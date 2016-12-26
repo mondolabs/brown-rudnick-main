@@ -1252,6 +1252,9 @@ img.insights {
     cursor: pointer;
     float: right;
     margin-top: -32px;
+  &.mobile__top {
+		top: 7.5px;
+	}
 	&.top__menu {
 		background-color: $primary-red;
 		right: 15px;
@@ -1268,7 +1271,6 @@ img.insights {
 			top: 3px;
 			left: 7px;
 			background-color: $white;
-
 		}
 	}
     &:hover {
