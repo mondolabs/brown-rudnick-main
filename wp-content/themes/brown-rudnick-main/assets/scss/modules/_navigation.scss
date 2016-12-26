@@ -46,10 +46,16 @@
       font-size: 18px;
       letter-spacing: $letter-spacing-global;
       @include breakpoint(landscape){
-        line-height: .2em;
+        line-height: .2em !important;
       }
     }
 
+  }
+}
+
+@include breakpoint(landscape){
+  .one__half {
+    padding-top: 10px !important;
   }
 }
 
