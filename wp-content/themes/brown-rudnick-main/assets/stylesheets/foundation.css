@@ -1209,7 +1209,7 @@ img.insights {
   .accordion_expander.mobile__top,
   .mobile__sidebar--expander.mobile__top,
   .person__details--expander.mobile__top {
-    top: 7.5px; }
+    top: 7.5px !important; }
   .experience_expander.top__menu,
   .job_expander.top__menu,
   .accordion_expander.top__menu,

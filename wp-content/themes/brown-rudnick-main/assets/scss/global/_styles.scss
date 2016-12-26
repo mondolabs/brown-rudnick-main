@@ -1253,7 +1253,7 @@ img.insights {
     float: right;
     margin-top: -32px;
   &.mobile__top {
-		top: 7.5px;
+		top: 7.5px !important;
 	}
 	&.top__menu {
 		background-color: $primary-red;
