@@ -46,7 +46,7 @@
       font-size: 18px;
       letter-spacing: $letter-spacing-global;
       @include breakpoint(landscape){
-        line-height: .2em !important;
+        line-height: .1em !important;
       }
     }
 

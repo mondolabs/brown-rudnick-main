@@ -9789,7 +9789,7 @@ table.hover tr:nth-of-type(even):hover {
       letter-spacing: 3px; }
       @media screen and (orientation: landscape) {
         #menu-mobile-menu li a {
-          line-height: .2em !important; } }
+          line-height: .1em !important; } }
 
 @media screen and (orientation: landscape) {
   .one__half {
