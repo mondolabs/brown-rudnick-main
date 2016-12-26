@@ -2108,7 +2108,7 @@ tbody {
   display: none !important; }
 
 @media print {
-  .table__wrapper, .table__inner {
+  .hidden__person-publication--details, .table__wrapper, .table__inner {
     display: block !important; }
   #people--title {
     color: #b91628 !important;
@@ -9787,7 +9787,7 @@ table.hover tr:nth-of-type(even):hover {
     #menu-mobile-menu li a {
       font-size: 18px;
       letter-spacing: 3px; }
-      @media screen and (max-height: 450px) {
+      @media screen and (orientation: landscape) {
         #menu-mobile-menu li a {
           line-height: .2em; } }
 

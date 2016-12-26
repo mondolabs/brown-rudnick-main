@@ -45,7 +45,7 @@
     a {
       font-size: 18px;
       letter-spacing: $letter-spacing-global;
-      @media screen and (max-height: 450px){
+      @include breakpoint(landscape){
         line-height: .2em;
       }
     }

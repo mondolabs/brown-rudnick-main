@@ -2279,7 +2279,7 @@ tbody {
 // print stylesheet
 @media print {
 
-	.table__wrapper, .table__inner {
+	.hidden__person-publication--details, .table__wrapper, .table__inner {
 		display: block !important;
 	}
   #people--title {
