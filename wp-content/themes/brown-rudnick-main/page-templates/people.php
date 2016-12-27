@@ -280,7 +280,6 @@ if ( count($keywords) > 0 ) {
     $tax_people_by_keyword = [];
   }
 
-
   // meta
   if ( count($all_people_by_meta_fields_array) >= 2 ) {
     $all_people_by_meta_fields_array = array_filter_recursive($all_people_by_meta_fields_array);
