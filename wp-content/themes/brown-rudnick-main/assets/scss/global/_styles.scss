@@ -2751,10 +2751,15 @@ td.job__openings__title, .accordion-trigger {
 	}
 }	
 
+
+
 .people-award-images {
 	@media screen and (max-width: 1024px){
-		margin: 0 auto;
-		clear: both;
-		float: none !important;
+		margin: 0 auto !important;
+		clear: both !important;	
+		&.float-left {
+			float: none !important;
+		}
 	}
+
 }

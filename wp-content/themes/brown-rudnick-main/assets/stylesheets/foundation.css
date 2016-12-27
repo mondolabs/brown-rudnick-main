@@ -2454,9 +2454,10 @@ td.job__openings__title, .accordion-trigger {
 
 @media screen and (max-width: 1024px) {
   .people-award-images {
-    margin: 0 auto;
-    clear: both;
-    float: none !important; } }
+    margin: 0 auto !important;
+    clear: both !important; }
+    .people-award-images.float-left {
+      float: none !important; } }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
