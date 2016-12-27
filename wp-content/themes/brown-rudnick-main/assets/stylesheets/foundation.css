@@ -924,9 +924,9 @@ a.experience__link {
 
 img.people__details {
   max-width: 180px; }
-  @media screen and (max-width: 1140px) {
+  @media screen and (min-width: 1024px) {
     img.people__details {
-      max-width: 155px; } }
+      max-width: 150px; } }
   img.people__details.person {
     max-width: 250px;
     width: 250px; }

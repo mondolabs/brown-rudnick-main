@@ -300,12 +300,12 @@
 									{% if letter|upper == first_letter_of_last|upper %}
 										{% set letter_counter = letter_counter + 1 %}
 										<div data-letter="{{letter}}" class="person__wrapper columns medium-12 large-6 small-12 min--height__225 end">
-											<div class="columns medium-6 large-6 small-12">
+											<div class="columns medium-6 large-4 small-12">
 												<div class="people__image__container">
 													<img class="people__details" src="{{ TimberImage(person.image).src }}" />
 												</div>
 											</div>
-											<div class="columns medium-6 large-6 small-12">
+											<div class="columns medium-6 large-7 small-12">
 												<div class="people__details--outer-wrapper">
 													<div class="people__details--inner-wrapper">
 														<a href="{{ person._permalink }}" class="people__details title__text smaller">
@@ -333,7 +333,7 @@
 														<p class="people__details body__text">
 															{% if person.primary_country_code and person.primary_country_code != '1' %}+{{ person.primary_country_code}}{% else %}+1{% endif %}.{{ person.primary_phone_number }}
 														</p>
-														<a href="mailto:{{person.email}}" class="email--people--link red link inline__link body__text people__details">
+														<a href="mailto:{{person.email}}" class="email--people--link red link inline__link" style="font-size: 13px;">
 															{{ person.email }}
 														</a>
 													</div>

@@ -210,7 +210,7 @@ var PEOPLE = {
 		}
 	},
 	cancelEnterDown: function(){
-		if ( $('body').hasClass('page-template-people') || $('body').hasClass('page-template-insights')  ){
+		if ( $('body').hasClass('page-template-people') || $('body').hasClass('page-template-insights') || $('body').hasClass('single-press_release') ||  $('body').hasClass('blog') || $('body').hasClass('page-template-events')){
 			console.log("enter disengaged!");
 			$(window).off( "keydown" );
 			$(window).keydown(function(e){
