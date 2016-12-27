@@ -282,7 +282,7 @@ if ( count($keywords) > 0 ) {
 
   // meta
   if ( count($all_people_by_meta_fields_array) >= 2 ) {
-    $all_people_by_meta_fields_array = array_filter_recursive($all_people_by_meta_fields_array);
+    // $all_people_by_meta_fields_array = array_filter_recursive($all_people_by_meta_fields_array);
     $meta_people_by_keyword = call_user_func_array('array_intersect', $all_people_by_meta_fields_array);
   } elseif (count($all_people_by_meta_fields_array) == 1) {
     $meta_people_by_keyword = $all_people_by_meta_fields_array;
