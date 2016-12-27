@@ -82,6 +82,7 @@ var PATHS = {
     'assets/javascript/vendor/jquery-nearest/*.js',
     'assets/javascript/vendor/md5/*.js',
     'assets/javascript/vendor/cookies/*.js',
+    'assets/javascript/vendor/disablescroll/*.js',
   ],
   phpcs: [
     '**/*.php',

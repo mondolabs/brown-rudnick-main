@@ -55,19 +55,20 @@
 			    </p>
 			    {% for item in related_experience %}
 		        	{% set experience =  item|first %}
-					<div class="sidebar__color-block--outer-wrapper">
+					<div class="sidebar__color-block--outer-wrapper {% if loop.index > 5%}hidden hidden__exp{% endif %}">
 						<div class="sidebar__color-block--wrapper">
-				        	<a href="{{TimberPost(experience).link}}" class="black link margin__0 tag__text text-align__center">
-			    	    		{{ experience.post_title|upper }}
-			        		</a>
-			        	</div>
+		        	<a href="{{TimberPost(experience).link}}" class="black link margin__0 tag__text text-align__center">
+	    	    		{{ experience.post_title|upper }}
+	        		</a>
+	        	</div>
 					</div>
 			    {% endfor %}
-				{% if related_experience|length > 3 %}
+				{% if related_experience|length > 5 %}
 				    <a id="showMoreRelatedExperiences" class="more link red tag__text underline" href="#more">
 				    	SHOW MORE
 				    </a>
 				{% endif %} 
+				<span class="expander"></span>
 			{% endif %}    
 		</div>
 		<div class="columns small-12 medium-9 large-10 margin-top-20">

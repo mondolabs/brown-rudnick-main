@@ -305,6 +305,11 @@ ul.desktop__menu--icons-list {
 	float: right;
 	list-style: none;
 	padding-top: 28px;
+// fixing IE11 Bug :D
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+   /* IE10+ CSS styles go here */
+    padding-top: 0 !important;
+  }
 	position: relative;
 	.tag__text {
 		text-transform: uppercase;
