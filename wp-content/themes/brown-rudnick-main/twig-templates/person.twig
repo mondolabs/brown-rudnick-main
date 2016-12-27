@@ -123,7 +123,7 @@
 					</p>
 					<div class="row text-align__center">
 						{% for award_image in person.get_field('award_images') %}
-							<div class="columns small-6 medium-6 large-3 {% if not loop.last %} float-left {% else %} float__none  {% endif %} ">
+							<div class="columns small-6 medium-12 large-4 people-award-images {% if loop.last and loop.index>3 %} float__none {% endif %} ">
 								{% set award_image = award_image|first %}
 								<img src="{{ award_image }}" class="margin-top-20">
 							</div>

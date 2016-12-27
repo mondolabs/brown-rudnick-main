@@ -2452,6 +2452,12 @@ td.job__openings__title, .accordion-trigger {
 .medium-3 .social-icons a {
   padding: 0 10px 0 0; }
 
+@media screen and (max-width: 1024px) {
+  .people-award-images {
+    margin: 0 auto;
+    clear: both;
+    float: none !important; } }
+
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)

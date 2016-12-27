@@ -16,6 +16,7 @@
     }
 }
 
+
 #page-full-width-homepage a, a {
     transition: color .3s ease-in-out;
     color: $primary-red;
@@ -2749,3 +2750,11 @@ td.job__openings__title, .accordion-trigger {
 		padding: 0 10px 0 0;
 	}
 }	
+
+.people-award-images {
+	@media screen and (max-width: 1024px){
+		margin: 0 auto;
+		clear: both;
+		float: none !important;
+	}
+}
