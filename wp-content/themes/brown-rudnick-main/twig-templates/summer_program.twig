@@ -30,7 +30,7 @@
 	</div>
 
 	<div class="columns padding-top-20 padding-bottom-20">
-		<div class="row columns margin-top-60 margin-bottom-60 grey-block-full">
+		<div class="row columns padding__wrapper top-and-bottom--20 margin-top-40 margin-bottom-40 grey-block-full">
 			<div class="columns">
 			<p class="title__text">{{ summer_recruitment_committee_title }}</p>
 			{% for member in summer_committee_members %}
@@ -126,21 +126,20 @@
 			</div>
 		</div>
 	</div>
-</div>	
 
-<div id="summerImage" class="scroll-stopper bottom--banner--image--wrapper">
-	<div class="row">
-		<div class="table__wrapper pro-bono__banner">
-	    <div class="table__inner pro-bono__banner">
-        <div class="color-block__wrapper large-7 medium-8 small-12 float--right">
-          <div class="color__block white relative lawyers__text title__text smaller">
-            		<p class="bottom-banner-text">{{ trainee_bottom_banner_text }}</p>
-          </div>  
-        </div>
-      </div>
-		</div>
-	</div>	
-</div>
+	<div id="summerImage" class="scroll-stopper bottom--banner--image--wrapper">
+		<div class="row">
+			<div class="table__wrapper pro-bono__banner">
+		    <div class="table__inner pro-bono__banner">
+	        <div class="color-block__wrapper large-7 medium-8 small-12 float--right">
+	          <div class="color__block white relative lawyers__text title__text smaller">
+	            		<p class="bottom-banner-text">{{ trainee_bottom_banner_text }}</p>
+	          </div>  
+	        </div>
+	      </div>
+			</div>
+		</div>	
+	</div>
 
 	{% include '/template-parts/email-notice.twig' %}
 </div>

@@ -420,6 +420,10 @@ insights__title {
 	&.top-and-bottom__only--20 {
 		padding: 20px 0;
 	}
+	&.top-and-bottom--20 {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
 }
 
 &.padding__left--ten {
