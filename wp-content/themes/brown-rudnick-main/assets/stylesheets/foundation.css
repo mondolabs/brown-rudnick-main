@@ -818,7 +818,7 @@ h3.title {
 
 .experience-tile__outer-wrapper {
   height: 240px;
-  border: solid 18px #fefefe;
+  border: solid 7.5px #fefefe;
   -webkit-box-shadow: inset 0px 0px 0px 14px #f0f0f0;
   box-shadow: inset 0px 0px 0px 14px #f0f0f0; }
   @media screen and (min-width: 1025px) {
