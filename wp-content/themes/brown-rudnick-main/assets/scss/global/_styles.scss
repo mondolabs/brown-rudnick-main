@@ -382,6 +382,9 @@ insights__title {
 .padding__wrapper {
     display: block;
     position: relative;
+    &.twenty {
+    	padding: 20px;
+    }
     &.ten {
     	padding: 10px;
     }
