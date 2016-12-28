@@ -818,7 +818,7 @@ h3.title {
 
 .experience-tile__outer-wrapper {
   height: 240px;
-  border: solid 18px #fefefe;
+  border: solid 7.5px #fefefe;
   -webkit-box-shadow: inset 0px 0px 0px 14px #f0f0f0;
   box-shadow: inset 0px 0px 0px 14px #f0f0f0; }
   @media screen and (min-width: 1025px) {
@@ -2451,6 +2451,13 @@ td.job__openings__title, .accordion-trigger {
 
 .medium-3 .social-icons a {
   padding: 0 10px 0 0; }
+
+@media screen and (max-width: 1024px) {
+  .people-award-images {
+    margin: 0 auto !important;
+    clear: both !important; }
+    .people-award-images.float-left {
+      float: none !important; } }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome

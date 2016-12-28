@@ -16,6 +16,7 @@
     }
 }
 
+
 #page-full-width-homepage a, a {
     transition: color .3s ease-in-out;
     color: $primary-red;
@@ -780,7 +781,7 @@ h3.title {
 
 .experience-tile__outer-wrapper {
 	height: 240px;
-    border: solid 18px $white;
+    border: solid 7.5px $white;
     -webkit-box-shadow:inset 0px 0px 0px 14px $primary-grey;
     -moz-box-shadow:inset 0px 0px 0px 14px $primary-grey;
     box-shadow:inset 0px 0px 0px 14px $primary-grey;
@@ -2749,3 +2750,16 @@ td.job__openings__title, .accordion-trigger {
 		padding: 0 10px 0 0;
 	}
 }	
+
+
+
+.people-award-images {
+	@media screen and (max-width: 1024px){
+		margin: 0 auto !important;
+		clear: both !important;	
+		&.float-left {
+			float: none !important;
+		}
+	}
+
+}
