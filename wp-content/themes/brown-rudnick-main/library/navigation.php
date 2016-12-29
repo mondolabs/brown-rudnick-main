@@ -11,7 +11,8 @@ register_nav_menus(array(
 	'top-bar-r'  => 'Right Top Bar',
 	'mobile-nav' => 'Mobile',
 	'custom-menu' => 'Desktop Menu',
-	'custom-topmenu' => 'Desktop Topmenu'
+	'custom-topmenu' => 'Desktop Topmenu',
+	'footer-menu' => 'Footer Menu'
 ));
 
 /**
@@ -46,6 +47,25 @@ if ( ! function_exists( 'desktop_topmenu' ) ) {
 			'menu_class'     => 'dropdown topmenu',
 			'items_wrap'     => '<ul id="%1$s" class="%2$s desktop-menu" data-dropdown-menu>%3$s</ul>',
 			'theme_location' => 'custom-topmenu',
+			'depth'          => 3,
+			'fallback_cb'    => false,
+			'walker'         => new Foundationpress_Top_Bar_Walker(),
+		));
+	}
+}
+
+/**
+ * Custom Footer
+ *
+ * @link http://codex.wordpress.org/Function_Reference/wp_nav_menu
+ */
+if ( ! function_exists( 'footer_menu' ) ) {
+	function footer_menu() {
+		wp_nav_menu( array(
+			'container'      => false,
+			'menu_class'     => 'dropdown topmenu',
+			'items_wrap'     => '<ul id="%1$s" class="%2$s footer-links" data-dropdown-menu>%3$s</ul>',
+			'theme_location' => 'footer-menu',
 			'depth'          => 3,
 			'fallback_cb'    => false,
 			'walker'         => new Foundationpress_Top_Bar_Walker(),

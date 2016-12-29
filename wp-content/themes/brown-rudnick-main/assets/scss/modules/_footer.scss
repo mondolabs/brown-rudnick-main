@@ -24,12 +24,12 @@
 }
 
 .footer-logo {
-      //margin-top: 40px;
+      margin-right: 40px;
       // display: inline-block;
       //@extend %footerMobile;
        width: 85px;
 	@media screen and (max-width: 769px) {
-	   padding-top: 70px;
+	   //padding-top: 70px;
           margin: 0 auto;
           display: block;
 	}
@@ -42,6 +42,22 @@
   @extend %footerMobile;
 }
 
+#menu-footer-menu {
+  margin-top: 20px;
+  list-style-type: none;
+  li {
+    display: inline-block;
+    margin-right: 1%;
+    margin-left: 1%;
+  }
+  @media screen and (max-width: 769px){
+    margin-top: 40px;
+    margin-bottom: 40px;
+    li  {
+      display: block;
+    }
+  }
+}
 .footer-links > a { 
   letter-spacing: $letter-spacing-global;
   // @media screen and (max-width: 768px){
@@ -78,16 +94,15 @@
     margin: 0 auto;
     //margin-left: 30px;
   }
-  padding: 20px;
+  //padding: 20px;
   text-align: center;
-  vertical-align: middle;
+  //vertical-align: middle;
 
   a { 
     color: $black; 
     letter-spacing: $letter-spacing-global;
     font-weight: 800;
     text-transform: uppercase;
-    padding: 2%;
     font-size: 11px;
     line-height: 4em;
 
