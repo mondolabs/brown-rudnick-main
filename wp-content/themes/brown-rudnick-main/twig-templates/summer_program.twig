@@ -28,11 +28,13 @@
 	</div>
 </div>
 		
-<div class="row">
-	<div class="row columns padding__wrapper twenty margin-top-40 margin-bottom-40 grey-block-full">
+<div class="padding__wrapper twenty margin-top-40 margin-bottom-40 grey-block-full">
+	<div class="row">
 		<div class="columns">
 			<p class="title__text">{{ summer_recruitment_committee_title }}</p>
 		</div>	
+	</div>
+	<div class="row">
 		{% for member in summer_committee_members %}
 			<div class="medium-unstack small-12 medium-4 large-4 columns margin-top-20 margin-bottom--20 float-left">
 			<a class="link" href="{{TimberPost(member).link}}">
@@ -60,12 +62,14 @@
 		{% endfor %}
 	</div>
 	<span class="list-divider white full__width clear__both"></span>
-	{% for sub_member in committee_sub_members %}	
-	<div class="medium-unstack small-12 medium-4 large-4 columns margin-top-20 margin-bottom--20 float-left">
-		<p class="title__text">{{ sub_member.member_name}}</p>
-		<p class="bold__wide__spacing">{{ sub_member.member_title}}</p>
-	</div>
-	{% endfor %}
+	<div class="row">
+		{% for sub_member in committee_sub_members %}	
+		<div class="medium-unstack small-12 medium-4 large-4 columns margin-top-20 margin-bottom--20 float-left">
+			<p class="title__text">{{ sub_member.member_name}}</p>
+			<p class="bold__wide__spacing">{{ sub_member.member_title}}</p>
+		</div>
+		{% endfor %}
+	</div>	
 </div>
 
 <div class="row padding-top-20 padding-bottom-20 row margin-top-60 z-index__1">
@@ -104,7 +108,10 @@
 			</div>
 		{% endfor %}
 	</div>
-	<div class="columns full-width-grey">
+</div>	
+
+<div class="full-width-grey padding__wrapper twenty">
+	<div class="row">
 		<div class="columns">
 			<p class="title__text">{{ after_hours_title }}</p>
 			<p class="body__text">{{ after_hours_text }}</p>
@@ -135,7 +142,11 @@
 		</div>
 	</div>	
 </div>
-
+<div class="row">
+	<div class="columns">
+		{% include '/twig-templates/summer-schedule.twig' %}
+	</div>
+</div>
 {% include '/template-parts/email-notice.twig' %}
 
 <script type="text/javascript">

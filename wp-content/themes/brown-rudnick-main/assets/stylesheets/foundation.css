@@ -523,6 +523,8 @@ insights__title {
 .padding__wrapper {
   display: block;
   position: relative; }
+  .padding__wrapper.twenty {
+    padding: 20px; }
   .padding__wrapper.ten {
     padding: 10px; }
   @media screen and (max-width: 450px) {
@@ -548,6 +550,9 @@ insights__title {
     padding: 20px; }
   .padding__wrapper.top-and-bottom__only--20 {
     padding: 20px 0; }
+  .padding__wrapper.top-and-bottom--20 {
+    padding-top: 20px;
+    padding-bottom: 20px; }
 
 .padding__left--ten {
   padding-left: 10px; }
