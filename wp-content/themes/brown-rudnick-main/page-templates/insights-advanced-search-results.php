@@ -33,7 +33,7 @@ $data['slug'] = $slug;
 $data['parent_link'] = get_permalink( $post->post_parent );
 
 $post_type_args = array(
-  'post_type' => 'alert',
+  'post_type' => array('article', 'event', 'alert', 'press-releases', 'news-posts', 'post'),
   'numberposts' => -1,
   'posts_per_page' => 5,
   'paged'=> $paged
@@ -44,7 +44,7 @@ $date = get_query_var('date_query', "");
 $year = substr($date, -4 );
 $month = substr($date, 0, 2 );
 $posts_args = array(
-  'post_type' => 'alert',
+  'post_type' => array('article', 'event', 'alert', 'press-releases', 'news-posts', 'post'),
   'numberposts' => -1,
   'posts_per_page' => -1,
   'orderby' => 'date',
@@ -156,7 +156,7 @@ if( ($geography !== "GEOGRAPHIES") || ( $industry !== "INDUSTRIES") || ($practic
     array_push($insights_args['tax_query'], $practice_term_query_array );
   }
   if ( $keyword !== "" ) {   
-    $post_type_arrays = array('article', 'event', 'alert', 'news_post', 'press_release' );
+    $post_type_arrays = array('article', 'event', 'alert', 'news_post', 'press_release', 'post' );
     $insights_args['post_type'] = $post_type_arrays;
     $insights_args['s'] = $keyword;
   }
