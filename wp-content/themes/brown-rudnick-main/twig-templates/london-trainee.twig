@@ -50,21 +50,19 @@
 
 
 
-<div class="row columns relative z-index__1">
-	<div class="row careers__wrapper body__wrapper columns small-12 medium-12 large-12">
+<div class="row relative z-index__1">
+	<div class="careers__wrapper columns small-12 medium-12 large-12">
 		<div class="columns margin-bottom-60">		
-			<div class="columns">
-				<p class="title__text">Meet our trainees</p>
-				<p class="body__text">{{trainee_testimonials}}
-					{% for x in post.get_field('trainee_lawyers') %}
-						{% set y = x|first %}
-							<a class="link inline__link red" target="_blank" href="{{TimberPost(y).link}}">{{y}}</a>{% if not loop.last and loop.index > 0 %},{% endif %}
-					{% endfor %}
-				</p>
-			</div>
+			<p class="title__text">Meet our trainees</p>
+			<p class="body__text">{{trainee_testimonials}}
+				{% for x in post.get_field('trainee_lawyers') %}
+					{% set y = x|first %}
+						<a class="link inline__link red" target="_blank" href="{{TimberPost(y).link}}">{{y}}</a>{% if not loop.last and loop.index > 0 %},{% endif %}
+				{% endfor %}
+			</p>
 			{% for a in trainee_info %}
-				<div class="columns margin-bottom-60">
-					<img class="people__details" src="{{a.trainee_image}}">
+				<div class="{% if not loop.last %} margin-bottom-60 {% endif %}">
+					<img class="margin-bottom-20 margin-top-20 people__details" src="{{a.trainee_image}}">
 					<p class="title__text smaller">{{a.trainee_name}}</p>
 					<p class="body__text">{{a.trainee_background}}</p>
 					<p class="body__text">{{a.trainee_experience}}</p>
@@ -90,33 +88,7 @@
 </div>
 
 
-<div id="emailModal" class="vellum black--vellum modal__background diversity hidden">
-    <div class="row">
-     	<div class="diversity__modal--outer-wrapper table__wrapper relative">
-        	<div class="diversity__modal--inner-wrapper table__innner">
-          		<div class="diversity__modal--text-wrapper email__modal">
-		            <p class="title__text text-align__center">
-		              Notice
-		            </p>
-		            <p class="modal__text">
-		              You understand and agree that transmitting information to Brown Rudnick by e-mail does not establish an attorney-client relationship. By clicking the "Agree" link below, you acknowledge that (i) Brown Rudnick has no obligation to maintain the confidentiality of any information you submit to Brown Rudnick unless Brown Rudnick already represents you or Brown Rudnick later agrees to represent you; thus, if you are not a client, information you submit to Brown Rudnick by e-mail may be disclosed to others and (ii) you have read and understand the Brown Rudnick Terms of Use and Privacy Policy and that you agree to be bound by the terms and conditions of such Terms of Use and Privacy Policy.
-		            </p>
-		            <p class="modal__text">
-		            	If you would like to discuss becoming a client, please contact one of Brown Rudnick's attorneys to arrange for a meeting or telephone conference. Thank you for your interest in Brown Rudnick.
-		            </p>
-		            <div class="email-buttons">
-			            <div class="div__half">
-			            	<a id="email-modal-close"><p class="sites-button">agree</p></a>
-			          	</div>
-			            <div class="div__half ">
-			            	<a id="no-email-modal-close"><p class="sites-button inverse">disagree</p></a>
-			            </div>
-		          	</div>
-         		</div>
-        	</div>  
-     	</div>
-    </div>  
-</div>
+{% include '/template-parts/email-notice.twig' %}
 
 
 <script type="text/javascript">

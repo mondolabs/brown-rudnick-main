@@ -10,7 +10,7 @@
 
 ?>
 <?php do_action( 'foundationpress_before_footer' ); ?>
-		<div id="footer-container">
+		<div id="footer-container" class="row columns">
 			<footer id="footer">
 				<?php get_template_part( 'template-parts/custom-footer' ); ?>
 			</footer>

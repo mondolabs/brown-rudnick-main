@@ -2,7 +2,50 @@
 /*
 Template Name: People Landing Page
 */
-get_header();
+
+function array_flatten(array $array, $max_depth = -1, $_depth = 0) {
+  $result = array();
+  foreach ($array as $key => $value) {
+    if (is_array($value) && ($max_depth < 0 || $_depth < $max_depth)) {
+      $flat = array_flatten($value, $max_depth, $_depth + 1);
+      if (is_string($key)) {
+        $duplicate_keys = array_keys(array_intersect_key($array, $flat));
+        foreach ($duplicate_keys as $k) {
+          $flat["$key.$k"] = $flat[$k];
+          unset($flat[$k]);
+        }
+      }
+      $result = array_merge($result, $flat);
+    }
+    else {
+      if (is_string($key)) {
+        $result[$key] = $value;
+      }
+      else {
+        $result[] = $value;
+      }
+    }
+  }
+  return $result;
+}
+
+function array_filter_recursive($array) {
+  foreach ($array as $key => &$value) {
+    if (empty($value)) {
+       unset($array[$key]);
+    }
+    else {
+      if (is_array($value)) {
+          $value = array_filter_recursive($value);
+        if (empty($value)) {
+          unset($array[$key]);
+        }
+      }
+    }
+  }
+  return $array;
+}
+
 $data = Timber::get_context();
 $data['featured_image_url'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size = 'post-thumbnail' );
 $data['featured_image_url'] = $data['featured_image_url'][0];
@@ -58,7 +101,6 @@ $location =  str_replace("-slash-", " / ", $location);
 $admission =  str_replace("-slash-", " / ", $admission);
 $education =  str_replace("-slash-", " / ", $education);
 
-
 $data['geography'] = str_replace("-AND-", " & ", $geography);
 $data['industry'] = str_replace("-AND-", " & ", $industry);
 $data['practice'] = str_replace("-AND-", " & ", $practice);
@@ -78,162 +120,186 @@ $data['education'] = ucwords(strtolower($data['education']));
 
 $keywords = explode(" ", $data['keyword']);
 
-if ( count($keywords) >= 0 ) {
-  $people_args = array( 
+$keywords = array_filter( $keywords, function($value) { return $value !== ''; });
+
+$tax_index = 0;
+$keyword_index = 0;
+$all_people_by_taxonomies_array = [];
+$all_people_by_meta_fields_array = [];
+if ( count($keywords) > 0 ) {
+  foreach ($keywords as $keyword) {
+  $tax_people_args = array( 
     'post_type' =>  'people',
+    'posts_per_page'=>-1,
+    'orderby' => 'meta_value',
+    'meta_key'  => 'last_name',
+    'posts_per_page'=>-1,
+    'order' => 'ASC',
+    'tax_query' => array(
+      'relation' => 'OR',
+    )
+  );
+  $meta_people_args = array( 
+    'post_type' =>  'people',
+    'posts_per_page'=>-1,
     'orderby' => 'meta_value',
     'meta_key'  => 'last_name',
     'posts_per_page'=>-1,
     'order' => 'ASC',
     'meta_query' => array(
       'relation' => 'OR',
-      array(
-        'key' => 'first_name ',
-        'value' => $keywords,
-        'compare' => 'IN',
-      ),  
-      array(
-        'key' => 'last_name',
-        'value' => $keywords,
-        'compare' => 'IN',
-      ),
-      array(
-        'key' => 'middle_initial',
-        'value' => $keywords,
-        'compare' => 'IN',
-      ),  
-      array(
-        'key' => 'title',
-        'value' => $keywords,
-        'compare' => 'IN',
-      ),  
-      array(
-        'key' => 'job_title',
-        'value' => $keywords,
-        'compare' => 'IN',
-      ),  
-      array(
-        'key' => 'specialization',
-        'value' => $keywords,
-        'compare' => 'IN',
-      ),  
-      array(
-        'key' => 'primary_city',
-        'value' => $keywords,
-        'compare' => 'IN',
-      ),  
-      array(
-        'key' => 'primary_state',
-        'value' => $keywords,
-        'compare' => 'IN',
-      ),  
-      array(
-        'key' => 'secondary_city',
-        'value' => $keywords,
-        'compare' => 'IN',
-      ),  
-      array(
-        'key' => 'secondary_state',
-        'value' => $keywords,
-        'compare' => 'IN',
-      ),  
-      array(
-        'key' => 'primary_phone_number',
-        'value' => $keywords,
-        'compare' => 'IN',
-      ),  
-      array(
-        'key' => 'secondary_phone_number',
-        'value' => $keywords,
-        'compare' => 'IN',
-      ),  
-      array(
-        'key' => 'fax_number',
-        'value' => $keywords,
-        'compare' => 'IN',
-      ),  
-      array(
-        'key' => 'primary_country_code',
-        'value' => $keywords,
-        'compare' => 'IN',
-      ),  
-      array(
-        'key' => 'secondary_country_code',
-        'value' => $keywords,
-        'compare' => 'IN',
-      ),  
-      array(
-        'key' => 'fax_country_code',
-        'value' => $keywords,
-        'compare' => 'IN',
-      ),  
-      array(
-        'key' => 'email',
-        'value' => $keywords,
-        'compare' => 'IN',
-      ),  
-      array(
-        'key' => 'education',
-        'value' => $keywords,
-        'compare' => 'IN',
-      ),  
-      array(
-        'key' => 'language',
-        'value' => $keywords,
-        'compare' => 'IN',
-      ),  
-      array(
-        'key' => 'related_experience',
-        'value' => $keywords,
-        'compare' => 'IN',
-      ),  
-      array(
-        'key' => 'cases',
-        'value' => $keywords,
-        'compare' => 'IN',
-      ),  
-      array(
-        'key' => 'publication',
-        'value' => $keywords,
-        'compare' => 'IN',
-      ),  
-      array(
-        'key' => 'engagement',
-        'value' => $keywords,
-        'compare' => 'IN',
-      ),  
-      array(
-        'key' => 'affiliation',
-        'value' => $keywords,
-        'compare' => 'IN',
-      ),  
-      array(
-        'key' => 'professional_memberships',
-        'value' => $keywords,
-        'compare' => 'IN',
-      ),  
-      array(
-        'key' => 'involvement',
-        'value' => $keywords,
-        'compare' => 'IN',
-      ),  
-      array(
-        'key' => 'firm_activities',
-        'value' => $keywords,
-        'compare' => 'IN',
-      ),  
-      array(
-        'key' => 'bar',
-        'value' => $keywords,
-        'compare' => 'IN',
-      ),  
-      array(
-        'key' => 'honor',
-        'value' => $keywords,
-        'compare' => 'IN',
-      ),  
     )
   );
+    if ( $keyword !== "" ) {
+      $geography_term_query_array = array('taxonomy' => 'geography', 'field' => 'slug', 'terms' => array($keyword));
+      array_push($tax_people_args['tax_query'], $geography_term_query_array );
+    }
+    if ( $keyword !== "" ) {
+      $industry_term_query_array = array('taxonomy' => 'industry', 'field' => 'slug', 'terms' => array($keyword));
+      array_push($tax_people_args['tax_query'], $industry_term_query_array );
+    }
+    if ( $keyword !== "" ) {
+      $practice_term_query_array = array('taxonomy' => 'practice', 'field' => 'slug', 'terms' => array($keyword));
+      array_push($tax_people_args['tax_query'], $practice_term_query_array );
+    }
+    if ( $keyword !== "" ) {
+      $language_term_query_array = array('taxonomy' => 'languages', 'field' => 'slug', 'terms' => array($keyword));
+      array_push($tax_people_args['tax_query'], $language_term_query_array );
+    }
+    if ( $keyword !== "" ) {
+      $location_term_query_array = array('taxonomy' => 'locations', 'field' => 'slug', 'terms' => array($keyword));
+      array_push($tax_people_args['tax_query'], $location_term_query_array );
+    }
+    if ( $keyword !== "" ) {
+      $admission_term_query_array = array('taxonomy' => 'admissions', 'field' => 'slug', 'terms' => array($keyword));
+      array_push($tax_people_args['tax_query'], $admission_term_query_array );
+    }
+    if ( $keyword !== "" ) {
+      $education_term_query_array = array('taxonomy' => 'educations', 'field' => 'slug', 'terms' => array($keyword));
+      array_push($tax_people_args['tax_query'], $education_term_query_array );
+    }
+
+    $first_name_query = array(
+      'key' => 'first_name',
+      'value' => $keyword,
+      'compare' => 'LIKE',
+    );
+    array_push($meta_people_args['meta_query'], $first_name_query );
+    $last_name_query = array(
+      'key' => 'last_name',
+      'value' => $keyword,
+      'compare' => 'LIKE',
+    );
+    array_push($meta_people_args['meta_query'], $last_name_query );
+    $job_title_query = array(
+      'key' => 'job_title',
+      'value' => $keyword,
+      'compare' => 'LIKE',
+    );
+    array_push($meta_people_args['meta_query'], $job_title_query );
+
+    $specialization_query = array(
+      'key' => 'specialization',
+      'value' => $keyword,
+      'compare' => 'LIKE',
+    );
+    array_push($meta_people_args['meta_query'], $specialization_query );
+
+    $primary_city_query = array(
+      'key' => 'primary_city',
+      'value' => $keyword,
+      'compare' => 'LIKE',
+    );
+    array_push($meta_people_args['meta_query'], $primary_city_query );
+
+    $primary_state_query = array(
+      'key' => 'primary_state',
+      'value' => $keyword,
+      'compare' => 'LIKE',
+    );
+    array_push($meta_people_args['meta_query'], $primary_state_query );
+
+    $secondary_city_query = array(
+      'key' => 'secondary_city',
+      'value' => $keyword,
+      'compare' => 'LIKE',
+    );
+    array_push($meta_people_args['meta_query'], $secondary_city_query );
+
+    $secondary_state_query = array(
+      'key' => 'secondary_state',
+      'value' => $keyword,
+      'compare' => 'LIKE',
+    );
+    array_push($meta_people_args['meta_query'], $secondary_state_query );
+
+    $email_query = array(
+      'key' => 'email',
+      'value' => $keyword,
+      'compare' => 'LIKE',
+    );
+    array_push($meta_people_args['meta_query'], $email_query );
+
+    $education_query = array(
+      'key' => 'education',
+      'value' => $keyword,
+      'compare' => 'LIKE',
+    );
+    array_push($meta_people_args['meta_query'], $education_query );
+
+    $language_query = array(
+      'key' => 'language',
+      'value' => $keyword,
+      'compare' => 'LIKE',
+    );
+    array_push($meta_people_args['meta_query'], $language_query );
+    $related_experience_query = array(
+      'key' => 'related_experience',
+      'value' => $keyword,
+      'compare' => 'LIKE',
+    );
+    array_push($meta_people_args['meta_query'], $related_experience_query );
+    // taxonomies
+    $tax_people_keyword_query = Timber::get_posts($tax_people_args);
+    array_push( $all_people_by_taxonomies_array, $tax_people_keyword_query );
+    // var_dump("total number of people matching by tax for ".$keyword.": ".count($tax_people_keyword_query));
+    // Meta Fields
+    $meta_people_keyword_query = Timber::get_posts($meta_people_args);
+    array_push( $all_people_by_meta_fields_array, $meta_people_keyword_query );
+    // counter
+    $tax_index++;
+    $keyword_index++;
+  };
+  // tax
+  if ( count($all_people_by_taxonomies_array) >= 2 ) {
+    // $all_people_by_taxonomies_array = array_filter_recursive($all_people_by_taxonomies_array);
+    $tax_people_by_keyword = call_user_func_array('array_intersect', $all_people_by_taxonomies_array);
+  } elseif ( count($all_people_by_taxonomies_array) == 1 ) {
+    $tax_people_by_keyword = $all_people_by_taxonomies_array;
+  } else {
+    $tax_people_by_keyword = [];
+  }
+
+  // meta
+  if ( count($all_people_by_meta_fields_array) >= 2 ) {
+    // $all_people_by_meta_fields_array = array_filter_recursive($all_people_by_meta_fields_array);
+    $meta_people_by_keyword = call_user_func_array('array_intersect', $all_people_by_meta_fields_array);
+  } elseif (count($all_people_by_meta_fields_array) == 1) {
+    $meta_people_by_keyword = $all_people_by_meta_fields_array;
+  } else {
+    $meta_people_by_keyword = [];
+  }
+
+  if (count($meta_people_by_keyword) >= 1 && count($tax_people_by_keyword) >= 1)  {
+    $keyword_matches = array_intersect($meta_people_by_keyword, $tax_people_by_keyword);
+  } elseif ( count($meta_people_by_keyword) == 0 && count($tax_people_by_keyword) >= 1 ) {
+    $keyword_matches = $tax_people_by_keyword;
+  } elseif ( count($meta_people_by_keyword) >= 1  && count($tax_people_by_keyword) == 0 ) {
+    $keyword_matches = $meta_people_by_keyword;
+  } else {
+    $keyword_matches = [];
+  }
+
 } else {
   $people_args = array(
     'post_type' =>  'people',
@@ -245,52 +311,99 @@ if ( count($keywords) >= 0 ) {
 }
 
 if( ($geography !== "") || ( $industry !== "") || ($practice !== "") || ($language !== "") || ($location !== "") || ($admission !== "") || ($education !== "")  ) {
-  $people_args["tax_query"] = array( 'relation' => 'AND' );
+  $filter_meta_people_args = array( 
+    'post_type' =>  'people',
+    'posts_per_page'=>-1,
+    'orderby' => 'meta_value',
+    'meta_key'  => 'last_name',
+    'posts_per_page'=>-1,
+    'order' => 'ASC',
+    'meta_query' => array(
+      'relation' => 'OR',
+    )
+  );
+  $filter_meta_people_args["tax_query"] = array( 'relation' => 'AND' );
   if ( $geography !== "" ) {
     $geography_term_query_array = array('taxonomy' => 'geography', 'field' => 'slug', 'terms' => array( $geography));
-    array_push($people_args['tax_query'], $geography_term_query_array );
+    array_push($filter_meta_people_args['tax_query'], $geography_term_query_array );
   }
   if ( $industry !== "" ) {
     $industry_term_query_array = array('taxonomy' => 'industry', 'field' => 'slug', 'terms' => array( $industry));
-    array_push($people_args['tax_query'], $industry_term_query_array );
+    array_push($filter_meta_people_args['tax_query'], $industry_term_query_array );
   }
   if ( $practice !== "" ) {
     $practice_term_query_array = array('taxonomy' => 'practice', 'field' => 'slug', 'terms' => array( $practice));
-    array_push($people_args['tax_query'], $practice_term_query_array );
+    array_push($filter_meta_people_args['tax_query'], $practice_term_query_array );
   }
   if ( $language !== "" ) {
     $language_term_query_array = array('taxonomy' => 'languages', 'field' => 'slug', 'terms' => array( $language));
-    array_push($people_args['tax_query'], $language_term_query_array );
+    array_push($filter_meta_people_args['tax_query'], $language_term_query_array );
   }
   if ( $location !== "" ) {
     $location_term_query_array = array('taxonomy' => 'locations', 'field' => 'slug', 'terms' => array( $location));
-    array_push($people_args['tax_query'], $location_term_query_array );
+    array_push($filter_meta_people_args['tax_query'], $location_term_query_array );
   }
   if ( $admission !== "" ) {
     $admission_term_query_array = array('taxonomy' => 'admissions', 'field' => 'slug', 'terms' => array( $admission));
-    array_push($people_args['tax_query'], $admission_term_query_array );
+    array_push($filter_meta_people_args['tax_query'], $admission_term_query_array );
   }
   if ( $education !== "" ) {
     $education_term_query_array = array('taxonomy' => 'educations', 'field' => 'slug', 'terms' => array( $education));
-    array_push($people_args['tax_query'], $education_term_query_array );
+    array_push($filter_meta_people_args['tax_query'], $education_term_query_array );
   }
+  $filter_matches = Timber::get_posts($filter_meta_people_args);
 }
 
-$data['people'] = Timber::get_posts($people_args);
-$data['people'] = array_unique($data['people']);
+$data['people'] = [];
+$people = [];
+$tax_people = [];
 
+if ($keyword_matches){
+  $keyword_matches = array_flatten($keyword_matches, 1); 
+}
+
+
+if ( count($keywords) >= 1 || (($geography !== "") || ( $industry !== "") || ($practice !== "") || ($language !== "") || ($location !== "") || ($admission !== "") || ($education !== "")) ) {
+  if ( count($keyword_matches) >= 1 AND count($filter_matches) >= 1 ) {
+    $data['people'] = array_intersect($keyword_matches, $filter_matches);
+  } elseif ( count($keyword_matches) >= 1 AND count($filter_matches) == 0 ) {
+    $data['people'] = $keyword_matches;
+  } elseif (count($keyword_matches) == 0 AND count($filter_matches) >= 1) {
+    $data['people'] = $filter_matches;
+
+  }
+} else {
+  $all_people_args = array( 
+    'post_type' =>  'people',
+    'posts_per_page'=>-1,
+    'orderby' => 'meta_value',
+    'meta_key'  => 'last_name',
+    'posts_per_page'=>-1,
+    'order' => 'ASC',
+  );
+  $data['people'] = Timber::get_posts($all_people_args);
+}
+
+$data['people'] = array_unique( $data['people'] );
 
 ?>
-
 <html>
   <head>
     <?php wp_head()?>
   </head>
   <body>
-    <div id="page-full-width-homepage" class ="full-width" role="main">
-      <?php Timber::render('/twig-templates/people.twig', $data); ?>
-    </div>  
-    <?php do_action( 'foundationpress_after_content' ); ?>
-    <?php get_footer(); ?>
+    <div class="animsition"
+        data-animsition-in-class="fade-in"
+        data-animsition-in-duration="800"
+        data-animsition-out-class="fade-out"
+        data-animsition-out-duration="800">
+          <?php get_header();?>
+      <div id="page-full-width-homepage" class ="full-width" role="main">
+        <?php Timber::render('/twig-templates/people.twig', $data); ?>
+        <?php do_action( 'foundationpress_after_content' ); ?>
+        <?php get_footer(); ?>
+    </div>
+    </div>
+    </div>     
   </body>
 </html>

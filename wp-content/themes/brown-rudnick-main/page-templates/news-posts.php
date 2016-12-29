@@ -3,9 +3,9 @@
 Template Name: News Posts
 */
 global $paged;
-  if (!isset($paged) || !$paged){
-      $paged = 1;
-  }
+if (!isset($paged) || !$paged){
+    $paged = 1;
+}
 
 $data = Timber::get_context();
 $post = new TimberPost();
@@ -33,7 +33,7 @@ $data['slug'] = $slug;
 $data['parent_link'] = get_permalink( $post->post_parent );
 
 $post_type_args = array(
-  'post_type' => 'news_posts',
+  'post_type' => 'news_post',
   'numberposts' => -1,
   'posts_per_page' => 5,
   'paged'=> $paged
@@ -158,6 +158,9 @@ $data['insights'] = array_slice($data['insights'], 0, 5 );
 $data['insights'] = array_reverse($data['insights']);
 $data['pagination'] = Timber::get_pagination();
 
+$query = new WP_Query($insights_args);
+$data['total_results'] = $query->found_posts;
+
 ?>
 
 <html>
@@ -165,6 +168,11 @@ $data['pagination'] = Timber::get_pagination();
     <?php wp_head()?>
   </head>
   <body>
+    <div class="animsition"
+        data-animsition-in-class="fade-in"
+        data-animsition-in-duration="800"
+        data-animsition-out-class="fade-out"
+        data-animsition-out-duration="800" >
         <?php get_template_part('template-parts/off-canvas-search')?>
             <div id="page-full-width-homepage" class ="full-width" role="main">
               <?php Timber::render('/twig-templates/insight_landing.twig', $data); ?>
@@ -172,6 +180,7 @@ $data['pagination'] = Timber::get_pagination();
             <?php get_footer(); ?>
             </div> 
           </div>
+        </div>
         </div>
       </div> 
     </body>

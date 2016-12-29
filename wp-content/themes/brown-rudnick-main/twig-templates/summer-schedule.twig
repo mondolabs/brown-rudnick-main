@@ -1,0 +1,43 @@
+<div id="summer-hiring-schedule" class="vellum black--vellum modal__background diversity hidden">
+  <div class="diversity__modal--outer-wrapper table__wrapper relative">
+    <div class="diversity__modal--inner-wrapper table__innner">
+      <div class="diversity__modal--text-wrapper">
+        <button class="close__modal cancel">
+          
+        </button>
+        <div class="columns">
+          <p class="title__text text-align__center padding-top-20">
+            2015 Schedule
+          </p>
+          <p class="body__text text-align__center">
+            As part of our fall recruiting outreach, we visit a select group of schools and engage in on-campus interviews with top candidates.
+          </p>
+        </div>  
+        <table class="summer-schedule">
+          <tr class="document__link">
+            <td class="document__link">
+              school
+            </p>
+            <td class="document__link text-align__center">
+              oci date
+            </td>
+          </div>
+          {% for hiring_date in post.get_field('hiring_schedule') %}
+            <tr>
+              <td class="title__text smaller">
+                <p>
+                   {{ hiring_date.hiring_school}}
+                </p>
+              </td>
+              <td class="bold__wide__spacing">
+                <p class="text-align__center">
+                  {{ hiring_date.hiring_date|date("m/d") }}
+                </p>  
+              </td>
+            </tr>
+          {% endfor %}
+        </table>           
+      </div>
+    </div>  
+  </div>
+</div>  

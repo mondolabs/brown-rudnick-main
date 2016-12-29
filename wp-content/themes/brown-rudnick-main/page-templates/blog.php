@@ -25,12 +25,12 @@ $blog_title_category_obj = get_category_by_slug($blog_name);
 $data['blog_title_category_id'] = $blog_title_category_obj->term_id;
 
 $blog_posts_args = array(
-                    'category_name' => $blog_name, 
-                    'numberposts' => -1,
-                    'posts_per_page' => 5,
-                    'paged'=> $paged,
-                    'orderby' => 'date', 
-                  );
+  'category_name' => $blog_name, 
+  'numberposts' => -1,
+  'posts_per_page' => 5,
+  'paged'=> $paged,
+  'orderby' => 'date', 
+);
 
 // for pagination
 query_posts($blog_posts_args);
@@ -54,7 +54,14 @@ $data['unfiltered'] = true;
 $all_tags_for_blog_posts = [];
 $all_dates_for_blog_posts = [];
 
-foreach ($data['blog_posts'] as $key => $value) {
+$all_blog_posts_args = array(
+  'category_name' => $blog_name, 
+  'numberposts' => -1,
+);
+
+$all_blog_posts = Timber::get_posts($all_blog_posts_args);
+
+foreach ($all_blog_posts as $key => $value) {
   array_push($all_dates_for_blog_posts, strtotime(($value->date)));
   $tags  = get_the_tags($value->ID);  
   foreach ((array)$tags as $k => $v) {
@@ -87,66 +94,6 @@ foreach ( $custom_posts as $post ) {
   array_push($ids, $post->ID);
 }
 
-// // begin generate options for advanced search fields
-// $all_posts_args = array(
-//   'post_type' => array('article', 'event', 'alert'),
-//   'numberposts' => -1,
-//   'posts_per_page' => -1,
-//   'orderby' => 'date',
-//   'post_status' => array( 'publish', 'future')
-// );
-
-// $all_dates = [];
-// $all_posts = get_posts($all_posts_args);
-// $all_ids = [];
-
-// foreach ( $all_posts as $all_post ) {
-//   array_push( $all_dates, strtotime($all_post->post_date));
-//   array_push( $all_ids, $all_post->ID);
-// };
-
-// $data['all_dates'] = array_unique($all_dates);
-// $data['all_geographies'] = wp_get_object_terms( $all_ids, 'geography' );
-// $data['all_industries'] = wp_get_object_terms( $all_ids, 'industry' );
-// $data['all_practices'] = wp_get_object_terms( $all_ids, 'practice' );
-
-// // end generate options for advanced search fields
-
-// $data['geographies'] = wp_get_object_terms( $ids, 'geography' );
-// $data['industries'] = wp_get_object_terms( $ids, 'industry' );
-// $data['practices'] = wp_get_object_terms( $ids, 'practice' );
-
-// $date_query_term = get_query_var('date_query', "DATE");
-// $geography = get_query_var('geography_query', "GEOGRAPHIES");
-// $industry = get_query_var('industry_query', "INDUSTRIES");
-// $practice = get_query_var('practice_query', "PRACTICES");
-
-// $geography =  str_replace("-and-", " & ", $geography);
-// $industry =  str_replace("-and-", " & ", $industry);
-// $practice =  str_replace("-and-", " & ", $practice);
-
-// $geography =  str_replace("-slash-", " / ", $geography);
-// $industry =  str_replace("-slash-", " / ", $industry);
-// $practice =  str_replace("-slash-", " / ", $practice);
-
-// for pagination
-// query_posts($posts_args);
-
-
-// $results = Timber::get_posts($posts_args);
-// $data['insights'] = $results;
-// $data['insights'] = array_unique($data['insights']);
-
-// function sort_objects_by_date($a, $b) {
-//   if($a->date == $b->date){
-//     return 0;
-//   }
-//   return ($a->date < $b->date) ? -1 : 1;
-// }
-
-
-
-
 ?>
 
 <html>
@@ -154,15 +101,20 @@ foreach ( $custom_posts as $post ) {
     <?php wp_head()?>
   </head>
   <body>
+     <div class="animsition"
+        data-animsition-in-class="fade-in"
+        data-animsition-in-duration="800"
+        data-animsition-out-class="fade-out"
+        data-animsition-out-duration="800" >
         <?php get_template_part('template-parts/off-canvas-search')?>
           <div id="page-full-width-homepage" class ="full-width" role="main">
-            <?php Timber::render('/twig-templates/blogs_landing.twig', $data); ?>
-          
-          <?php do_action( 'foundationpress_after_content' ); ?>
-          <?php get_footer(); ?>
+            <?php Timber::render('/twig-templates/blogs_landing.twig', $data); ?>         
+            <?php do_action( 'foundationpress_after_content' ); ?>
+            <?php get_footer(); ?>
           </div>  
         </div>  
-      </div>  
+      </div> 
+      </div> 
     </div>  
   </body>
 </html>

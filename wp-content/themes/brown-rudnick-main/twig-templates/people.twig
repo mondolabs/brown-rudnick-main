@@ -300,12 +300,12 @@
 									{% if letter|upper == first_letter_of_last|upper %}
 										{% set letter_counter = letter_counter + 1 %}
 										<div data-letter="{{letter}}" class="person__wrapper columns medium-12 large-6 small-12 min--height__225 end">
-											<div class="columns medium-6 large-6 small-12">
+											<div class="columns medium-6 large-4 small-12">
 												<div class="people__image__container">
 													<img class="people__details" src="{{ TimberImage(person.image).src }}" />
 												</div>
 											</div>
-											<div class="columns medium-6 large-6 small-12">
+											<div class="columns medium-6 large-7 small-12">
 												<div class="people__details--outer-wrapper">
 													<div class="people__details--inner-wrapper">
 														<a href="{{ person._permalink }}" class="people__details title__text smaller">
@@ -333,7 +333,7 @@
 														<p class="people__details body__text">
 															{% if person.primary_country_code and person.primary_country_code != '1' %}+{{ person.primary_country_code}}{% else %}+1{% endif %}.{{ person.primary_phone_number }}
 														</p>
-														<a href="mailto:{{person.email}}" class="email--people--link red link inline__link body__text people__details">
+														<a href="mailto:{{person.email}}" class="email--people--link red link inline__link" style="font-size: 13px;">
 															{{ person.email }}
 														</a>
 													</div>
@@ -355,39 +355,7 @@
 	</div>
 </div>
 
-
-
-
-
-<div id="emailModal" class="vellum black--vellum modal__background diversity hidden">
-    <div class="row">
-     	<div class="diversity__modal--outer-wrapper table__wrapper relative">
-        	<div class="diversity__modal--inner-wrapper table__innner">
-          		<div class="diversity__modal--text-wrapper email__modal">
-		            <p class="title__text text-align__center">
-		              Notice
-		            </p>
-		            <p class="modal__text">
-		              You understand and agree that transmitting information to Brown Rudnick by e-mail does not establish an attorney-client relationship. By clicking the "Agree" link below, you acknowledge that (i) Brown Rudnick has no obligation to maintain the confidentiality of any information you submit to Brown Rudnick unless Brown Rudnick already represents you or Brown Rudnick later agrees to represent you; thus, if you are not a client, information you submit to Brown Rudnick by e-mail may be disclosed to others and (ii) you have read and understand the Brown Rudnick Terms of Use and Privacy Policy and that you agree to be bound by the terms and conditions of such Terms of Use and Privacy Policy.
-		            </p>
-		            <p class="modal__text">
-		            	If you would like to discuss becoming a client, please contact one of Brown Rudnick's attorneys to arrange for a meeting or telephone conference. Thank you for your interest in Brown Rudnick.
-		            </p>
-		            <div class="email-buttons">
-			            <div class="div__half">
-			            	<a id="email-modal-close"><p class="sites-button people-page-button">agree</p></a>
-			          	</div>
-			            <div class="div__half ">
-			            	<a id="no-email-modal-close"><p class="sites-button inverse people-page-button">disagree</p></a>
-			            </div>
-		          	</div>
-         		</div>
-        	</div>  
-     	</div>
-    </div>  
-</div>
-
-
+{% include '/template-parts/email-notice.twig' %}
 
 <script type="text/javascript">
 	{% if featured_image_url %}

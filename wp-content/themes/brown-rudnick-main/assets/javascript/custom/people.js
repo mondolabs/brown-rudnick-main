@@ -145,19 +145,22 @@ var PEOPLE = {
 	stickySideBar: $('.sidebar__on-scroll--fixed'),
 	revealAdvancedSearch: function(){
 		$('#advancedSearchModal').removeClass('hidden').fadeIn('slow');
+		PEOPLE.engageEnterDownForModalFormSubmission();
 	},
 	hideAdvancedSearch: function(){
 		$('#advancedSearchModal').addClass('hidden').fadeOut('slow');
+		console.log("closing modal")
+		PEOPLE.cancelEnterDown();
 	},
 	// back to top of page
 	scrollBackToTop: function(){
 		$('.back__to__top').click(function(event){
 			$('html,body').animate({
-        scrollTop: $('.letter__links_wrapper').offset().top - 200
-      }, 1000);
-      if ($(this).is(":visible")) {
-				$(this).slideToggle();
-      }
+        	scrollTop: $('.letter__links_wrapper').offset().top - 200
+      	}, 1000);
+	      if ($(this).is(":visible")) {
+			$(this).slideToggle();
+	      }
 		});
 	},
 
@@ -205,6 +208,31 @@ var PEOPLE = {
 				$(elem).parent().addClass('letter--active');
 			}
 		}
+	},
+	cancelEnterDown: function(){
+		if ( $('body').hasClass('page-template-people') || $('body').hasClass('page-template-insights') || $('body').hasClass('single-press_release') ||  $('body').hasClass('blog') || $('body').hasClass('page-template-events') || $('body').hasClass('search-results') ){
+			console.log("enter disengaged!");
+			$(window).off( "keydown" );
+			$(window).keydown(function(e){
+				if (e.keyCode == 13){
+					e.preventDefault();
+					e.stopPropagation();
+					return false;
+				}
+			});
+		}
+	},
+	engageEnterDownForModalFormSubmission: function(){
+		console.log("enter engaged!");
+		$(window).keydown(function(e){
+			if (e.keyCode == 13){
+				e.preventDefault();
+				e.stopPropagation();
+				$('#peopleAdvancedSearchButton').click();
+			} else {
+				console.log('not enter');
+			}
+		});
 	}
 };
 
@@ -214,9 +242,10 @@ $(document).ready(function(){
 	PEOPLE.scrollToLocationHash();
 	PEOPLE.printPage();
 	PEOPLE.inactiveLetter();
+	PEOPLE.cancelEnterDown();
 	// sticky elements -- unstuck on resize of browser / device
 	$(window).on('resize', function(event) {		
-		var headerHeight = $('#mastheadOnScroll').height() + 160;
+		var headerHeight = $('#mastheadOnScroll').height() + 60;
 		var elementToStick = PEOPLE.stickySideBar;
 		if ( $('.sidebar__on-scroll--fixed').length > 0 && $(document).width() > 769 ){
 			elementToStick.stick_in_parent({ offset_top: headerHeight });
@@ -225,23 +254,13 @@ $(document).ready(function(){
 		}	
 	});
 
-	var headerHeight = $('#mastheadOnScroll').height() + 160;
+	var headerHeight = $('#mastheadOnScroll').height() + 60;
 	var elementToStick = $('.sidebar__on-scroll--fixed');
 		if ( PEOPLE.stickySideBar.length > 0){
 			if ($(document).width() > 769) {
 				elementToStick.stick_in_parent({ offset_top: headerHeight });
 			} 	
 	}	
-	// prevent submit on enter for advanced search
-	if ( $('body').hasClass('page-template-people') || $('body').hasClass('search-results') || $('body').hasClass('search')  ){
-		$(window).keydown(function(e){
-			if (e.keyCode == 13){
-				e.preventDefault();
-				return false;
-			}
-		});
-	}
-
 	// find closest element with marker letter and assigns class to it
 	$(document).bind('scroll', function(){
 		PEOPLE.closestLetter();

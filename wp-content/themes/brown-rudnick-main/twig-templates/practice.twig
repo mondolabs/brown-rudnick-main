@@ -27,28 +27,28 @@
 			    <p class="tag__text">
 			    	{{ 'headlines'|upper }}
 			    </p>
-			    {% for headline in headlines %}
-	        		{% if headline.has_external_link %}
-			        	<a href="{{ headline.external_link}}" class="red link tag__text">
-			        		{{ headline.external_title|upper }}
-			        	</a>
-			        	<br>
-        			{% else %}
-		        		{% set headline =  headline|first %}
-			        	<a href="{{TimberPost(headline).link}}" class="red link tag__text">
-			        		{{ headline.post_title|upper }}
-			        	</a>
-			        	<br>
-	        		{% endif %}
+			    {% for item in headlines %}
+		        	{% set headline =  item|first %}	        		
+		        		{% if headline.has_external_link %}
+					        <div class="{% if loop.index > 3 %}hidden hidden_headline hidden__exp{% endif %}">
+					        	<a href="{{ headline.external_link}}" class="link tag__text">
+					        		{{ headline.post_title|upper }}
+					        	</a>
+					        </div>	
+	        			{% else %}
+	        				<div class="{% if loop.index > 3 %}hidden hidden_headline hidden__exp{% endif %}">
+					        	<a href="{{TimberPost(headline).link}}" class="red link tag__text">
+					        		{{ headline.post_title|upper }}
+					        	</a>
+					        </div>	
+		        		{% endif %}
+		        	<br class="{% if loop.index > 3 %}hidden hidden_headline hidden__exp{% endif %}">
 			    {% endfor %}
-			{% endif %}
-			{% if headline_files|length >= 1 %}
-			    {% for headline in headline_files %}
-		        	<a target="_blank" href="{{ headline.headline_file_link }}" class="red link tag__text link tag__text">
-		        		{{ headline.headline_file_title|upper }}
-		        	</a>
-		        	<br>
-			    {% endfor %}
+				{% if loop.length > 3 %}    
+				    <a id="showMoreHeadlines" class="padding-bottom-40 more link red tag__text underline" href="#more">
+			    		SHOW MORE
+				    </a>
+				{% endif %}
 			{% endif %}
 			{% if related_experience %}
 			    <p class="tag__text">
@@ -58,21 +58,23 @@
 		        	{% set experience =  item|first %}
 					<div class="sidebar__color-block--outer-wrapper {% if loop.index > 5%}hidden hidden__exp{% endif %}">
 						<div class="sidebar__color-block--wrapper">
-				        	<a href="{{TimberPost(experience).link}}" class="link margin__0 tag__text text-align__center">
+				        	<a href="{{TimberPost(experience).link}}" class="black link margin__0 tag__text text-align__center">
 			    	    		{{ experience.post_title|upper }}
 			        		</a>
 			        	</div>
 					</div>
 			    {% endfor %}
-			    <a id="showMoreRelatedExperiences" class="more link red tag__text underline" href="#more">
-			    	SHOW MORE
-			    </a>
+				{% if related_experience|length > 5 %}
+				    <a id="showMoreRelatedExperiences" class="more link red tag__text underline" href="#more">
+				    	SHOW MORE
+				    </a>
+				{% endif %}    
 			    <span class="expander"></span>
 			{% endif %}    
 		</div>
-		<div class="columns small-12 medium-9 large-10 margin-top-20">
+		<div class="columns small-12 medium-9 large-10">
 			<div class="padding__wrapper forty sides__only">
-				<div class="title__text responsive__text medium">
+				<div class="title__text ">
 					{{ text_content_top }}
 				</div>
 			</div>
@@ -84,20 +86,18 @@
 			<div class="padding__wrapper forty sides__only">
 				<span class="page__divider grey"></span>
 			</div>
-			<div class="paddforty sides__only">
+			<div class="padding__wrapper forty sides__only">
 				{% if practice_group_leaders %}
-					<div class="title__text responsive__text medium">
+					<div class="title__text ">
 						{{ practice_header_text }} Group Leaders
 					</div>
 			    	{% for leader in practice_group_leaders %}
 			    		{% set leader = leader|first %}
-						<div class="columns medium-12 large-6 small-12 margin-bottom--20 end {% if practice_group_leaders|length == 1 %} float__none {% endif %}">
-							<div class="columns medium-6 large-6 small-12">
-								<div class ="people__image__container">
-									<img class="people__details" src="{{ TimberImage(leader.image).src }}" />
-								</div>
+						<div class="medium-12 large-6 small-12 margin-bottom--20 end {% if practice_group_leaders|length == 1 %} float__none {% endif %}">
+							<div class="columns medium-6 large-6 small-12 people__image__container">
+								<img class="people__details" src="{{ TimberImage(leader.image).src }}" />
 							</div>
-							<div class="columns medium-6 large-6 small-12">
+							<div class="medium-6 large-6 small-12">
 								<div class="people__details--outer-wrapper">
 									<div class="people__details--inner-wrapper">
 										<a class="link" href="{{TimberPost(leader).link}}">
@@ -132,36 +132,72 @@
 					{% endfor %}					
 				{% endif %}
 			</div>
+
 			{% if contact_us|length > 0 %}	
-				<div style="padding: 0 40px; clear: both;">
-					<p class="title__text responsive__text medium">
-						Contact Us
-					</p>
-					{% for contact in contact_us %}
-						{% set contact = contact|first %}
-						<div class="columns medium-6 large-6 small-12 person end">						
-							<a class="body__text red link margin-bottom--10" href="{{ TimberPost(contact).link }}">
-								{{ contact.first_name }} {% if contact.middle_initial %}{{ contact.middle_initial }}. {% endif %} {{ contact.last_name }}
-							</a>
+				<div class="columns medium-12 large-12 small-12">
+					<div class="columns medium-12 large-12 small-12">
+						<div class="padding__wrapper sides__only">	
+							<div class="columns medium-12 large-12 small-12">
+								<p class="title__text">
+									Contact Us
+								</p>
+							</div>	
+							{% for contact in contact_us %}
+								{% set contact = contact|first %}
+								<div class="columns medium-6 large-6 small-12 person end">						
+									<a class="body__text red link margin-bottom--10" href="{{ TimberPost(contact).link }}">
+										{{ contact.first_name }} {% if contact.middle_initial %}{{ contact.middle_initial }}. {% endif %} {{ contact.last_name }}
+									</a>
+								</div>
+							{% endfor %}
 						</div>	
-					{% endfor %}
+					</div>	
 				</div>
-			{% endif %}	
+			{% endif %}
+
 			{% if related_people|length > 0 %}	
-				<div style="padding: 0 40px; clear: both;">
-					<p class="title__text responsive__text medium">
-						Related People
-					</p>
-					{% for person in related_people %}
-						{% set person = person|first %}
-						<div class="columns medium-6 large-6 small-12 person end">						
-							<a class="body__text red link margin-bottom--10" href="{{ TimberPost(person).link }}">
-								{{ person.first_name }} {% if person.middle_initial %}{{ person.middle_initial }}. {% endif %} {{ person.last_name }}
-							</a>
+				<div class="columns medium-12 large-12 small-12">
+					<div class="columns medium-12 large-12 small-12">
+						<div class="padding__wrapper sides__only">	
+							<div class="columns medium-12 large-12 small-12">
+								<p class="title__text">
+									Related People
+								</p>
+							</div>	
+							{% for person in related_people %}
+								{% set person = person|first %}
+								<div class="columns medium-6 large-6 small-12 person end">
+									<a class="body__text red link margin-bottom--10" href="{{ TimberPost(person).link }}">
+										{{ person.first_name }} {% if person.middle_initial %}{{ person.middle_initial }}. {% endif %} {{ person.last_name }}
+									</a>
+								</div>
+							{% endfor %}
 						</div>	
-					{% endfor %}
+					</div>	
+				</div>	
+			{% endif %}
+
+			{% if news_and_resources|length > 0 %}	
+				<div class="columns medium-12 large-12 small-12">
+					<div class="columns medium-12 large-12 small-12">
+						<div class="padding__wrapper sides__only">	
+							<div class="columns medium-12 large-12 small-12">
+								<p class="title__text">
+									Related People
+								</p>
+							</div>	
+							{% for item in news_and_resources %}
+								{% set item = item|first %}
+								<div class="columns medium-6 large-6 small-12 person end">						
+									<a class="body__text red link margin-bottom--10" href="{{ TimberPost(item).link }}">
+										{{ item.geography_related_news_and_resources_post }}
+									</a>
+								</div>	
+							{% endfor %}
+						</div>	
+					</div>	
 				</div>
-			{% endif %}	
+			{% endif %}
 		</div>
 	</div>
 </div>	
@@ -170,12 +206,12 @@
 		<div class="row padding__wrapper top-and-bottom sixty">
 			<div class="large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">
 				<div class="padding__wrapper forty sides__only">
-					<p class="title__text responsive__text medium">
+					<p class="title__text">
 						{{ services_header }}
 					</p>
 					{% for service in services %}
 						{% set service = service|first %}
-						<div class="columns medium-6 large-12 small-12 service">
+						<div class="columns medium-12 large-12 small-12 service">
 							<div class="body__text service__text">
 								{{service}}
 							</div>
@@ -187,36 +223,7 @@
 	</div>
 {% endif %}
 
-
-
-<div id="emailModal" class="vellum black--vellum modal__background diversity hidden">
-    <div class="row">
-     	<div class="diversity__modal--outer-wrapper table__wrapper relative">
-        	<div class="diversity__modal--inner-wrapper table__innner">
-          		<div class="diversity__modal--text-wrapper email__modal">
-		            <p class="title__text text-align__center responsive__text medium">
-		              Notice
-		            </p>
-		            <p class="modal__text">
-		              You understand and agree that transmitting information to Brown Rudnick by e-mail does not establish an attorney-client relationship. By clicking the "Agree" link below, you acknowledge that (i) Brown Rudnick has no obligation to maintain the confidentiality of any information you submit to Brown Rudnick unless Brown Rudnick already represents you or Brown Rudnick later agrees to represent you; thus, if you are not a client, information you submit to Brown Rudnick by e-mail may be disclosed to others and (ii) you have read and understand the Brown Rudnick Terms of Use and Privacy Policy and that you agree to be bound by the terms and conditions of such Terms of Use and Privacy Policy.
-		            </p>
-		            <p class="modal__text">
-		            	If you would like to discuss becoming a client, please contact one of Brown Rudnick's attorneys to arrange for a meeting or telephone conference. Thank you for your interest in Brown Rudnick.
-		            </p>
-		            <div class="email-buttons">
-			            <div class="div__half">
-			            	<a id="email-modal-close"><p class="sites-button">agree</p></a>
-			          	</div>
-			            <div class="div__half ">
-			            	<a id="no-email-modal-close"><p class="sites-button inverse">disagree</p></a>
-			            </div>
-		          	</div>
-         		</div>
-        	</div>  
-     	</div>
-    </div>  
-</div>
-
+{% include '/template-parts/email-notice.twig' %}
 
 <script type="text/javascript">
 	{% if featured_image_url %}

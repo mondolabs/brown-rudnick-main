@@ -19,114 +19,117 @@
 	<div class="row careers__wrapper body__wrapper columns small-12 medium-12 large-12">
 		{% include '/twig-templates/sidebar.twig' with sidebar %}
 		<div class="columns small-12 medium-9 large-10 float--right relative">
-			<div class="columns small-12 medium-12 large-12 relative">
-				<p class="title__text">
-					{{ top_text_header }}
-				</p>
-
-				<p class="body__text">
-					{{ top_text_content }}
-				</p>
-			</div>
-			<div class="columns small-12 medium-12 large-12 relative">
-				<div class="page__divider grey"></div>
-			</div>
-			<div class="columns small-12 medium-12 large-12 relative">
-				<p class="title__text">
-					{{ middle_text_header }}
-				</p>
-
-				<p class="body__text">
-					{{ middle_text_content }}
-				</p>			
-			</div>
-
-			{% if location %}
-				<p class="title__text">
-					Showing results for your search "{{ location|replace({'-': ' '}) }}"
-				</p>
-			{% endif %}	
-
-			<div class="columns small-12 medium-12 large-12 relative">
-				<div class="small-6 medium-3 large-3 float--right">
-					<select id="locationSelect" name="location_query" class="inline__text document__link career--select black">
-						<option class="document__link" value="">
-							OFFICE
-						</option>
-						{% for location in locations %}
-							<option  value="{{ location.slug|upper }}">
-								{{ location.name|upper }}
-							</option>
-						{% endfor %}
-					</select>
+				<div class="columns small-12 medium-12 large-12 relative">
+					<p class="title__text">
+						{{ top_text_header }}
+					</p>
+					<p class="body__text">
+						{{ top_text_content }}
+					</p>
 				</div>
-			</div>
+				<div class="columns small-12 medium-12 large-12 relative">
+					<div class="page__divider grey"></div>
+				</div>
+				<div class="columns small-12 medium-12 large-12 relative">
+					<p class="title__text">
+						{{ middle_text_header }}
+					</p>
+					<p class="body__text">
+						{{ middle_text_content }}
+					</p>			
+				</div>
+
+				{% if location %}
+					<p class="title__text">
+						Showing results for your search "{{ location|replace({'-': ' '}) }}"
+					</p>
+				{% endif %}	
+
+				{% if job_locations %}
+					<div class="columns small-12 medium-12 large-12 relative">
+						<div class="small-6 medium-3 large-3 float--right">
+							<select id="locationSelect" name="location_query" class="inline__text document__link career--select black">
+								<option class="document__link" value="">
+									OFFICE
+								</option>
+								{% for location in locations %}
+									<option  value="{{ location.slug|upper }}">
+										{{ location.name|upper }}
+									</option>
+								{% endfor %}
+							</select>
+						</div>
+					</div>
+				{% endif %}	
 			
 			{# this table APPEARS IF THERE IS NOT A SEARCH QUERY #}
 			{% if not location %}
-				{% if job_opportunities|length > 0 %}
-				<div class="columns small-12 medium-12 large-12 relative">
-					<table border ="0" class="table__white">
-						<tr class="job__opening table__legend">
-								<td class="document__link black">
-									position
-								</td>
-								<td class="document__link black">
-									date
-								</td class="document__link">
-								<td class="document__link black">
-								    office
-								</td>
-								<td>
-
-								</td>
-							</tr>
+					{% if job_opportunities|length > 0 %}
+					<div class="small-12 medium-12 large-12 relative">
+						<table border ="0" class="table__white no__pad">
+							<tr class="job__opening table__legend">
+										<td class="document__link black">
+											position
+										</td>
+										<td class="document__link black hide-for-small-only">
+											date
+										</td class="document__link">
+										<td class="document__link black hide-for-small-only">
+										    office
+										</td>
+										<td>
+										</td>
+								</tr>
 						{% endif %}
 						{% for opportunity in job_opportunities %}
-							<tr class="job__opening">
-								<td class="accordion-trigger title__text smaller job__expander__title">
-									{{ opportunity.position }}
-								</td>
-								<td class="font-weight__bold wide-spacing body__text smaller">
-									{{ opportunity.start_date|date("m/d/Y") }}
-								</td>
-								<td class="font-weight__bold wide-spacing body__text smaller">
-								    {% set offices = opportunity.get_field('locations') %}
+								<tr class="job__opening">
+										<td class="job__openings__title accordion-trigger title__text smaller responsive__text ">
+											{{ opportunity.position }}
+										</td>
+										<td class="font-weight__bold wide-spacing body__text smaller cresponsive__text hide-for-small-only">
+											{{ opportunity.start_date|date("m/d/Y") }}
+										</td>
+										<td class="font-weight__bold wide-spacing body__text smaller responsive__text hide-for-small-only">
+												{% set offices = opportunity.get_field('locations') %}
 												{% for x in offices %}
-													<a class="link inline__link" href="{{TimberPost(x.location).link}}" target="_blank">{{ x.location|upper }}</a>
-												{% endfor %}
-								</td>
-								<td>
-									<span class="job_expander top__menu job_opening" data-show-target="jobOpeningAdditionalDetails" ></span>
-								</td>
-							</tr>
-							<tr class="hidden__job--description ">
-								<td class="hidden job__description__body" colspan="5">
-								{% if opportunity.department %}							
-									<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Department</p>
-									{{ opportunity.department }}
-								{% endif %}
-								{% if opportunity.position_description %}							
-									<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Position</p>
-									{{ opportunity.position_description }}
-								{% endif %}
-								{% if opportunity.qualifications_description %}							
-									<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Qualifications</p>
-									{{ opportunity.qualifications_description }}
-								{% endif %}
-								{% if opportunity.job_description_file %}
-									{% set description_url = opportunity.get_field('job_description_file') %}
-									<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Qualifications</p>
-									<a class="document__link" target="_blank" href="{{ job_opening.get_field('job_description_file') }}">View pdf</a>
-								{% endif %}
-									<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">{{bottom_banner_text}}</p>
-								</td>
+													<a class="black link inline__link" href="{{TimberPost(x.location).link}}" target="_blank">{{ x.location|upper }}</a>
+												{% endfor %}	
+										</td>
+										<td>
+											<span class="job_expander top__menu job_opening" data-show-target="jobOpeningAdditionalDetails" ></span>
+										</td>
 								</tr>
-							<br>
-						{% endfor %}
+								<tr class="hidden__job--description">
+										<td class="hidden job__description__body responsive__text smallest" colspan="4">
+										{% if opportunity.department %}							
+											<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Department</p>
+											{{ opportunity.department }}
+										{% endif %}
+										<p class="show-for-small-only font-weight__bold wide-spacing body__text">Locations:</p>
+										{% for x in offices %}
+											<a class="link inline__link show-for-small-only font-weight__bold wide-spacing body__text" href="{{TimberPost(x.location).link}}" target="_blank">{{ x.location|upper }}</a></p>
+										{% endfor %}	
+										<p class="show-for-small-only font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Start date: {{ opportunity.start_date|date("m/d/Y") }}</p>
+										{% if opportunity.position_description %}							
+											<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Position</p>
+											{{ opportunity.position_description }}
+										{% endif %}
+										{% if opportunity.qualifications_description %}							
+											<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Qualifications</p>
+											{{ opportunity.qualifications_description }}
+										{% endif %}
+										{% if opportunity.job_description_file %}
+											{% set description_url = opportunity.get_field('job_description_file') %}
+											<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Details</p>
+											<a class="document__link" href="{{ description_url }}" target="_blank">View pdf</a>
+										{% endif %}
+											<p class="margin-bottom--20 margin-top-20">{{bottom_banner_text}}</p>
+										</td>
+									</tr>
+						`{% endfor %}
 					</table>
-			</div>
-		{% endif %}	
+				</div>
+			{% endif %}	
 
 		{# this table APPEARS IF THERE IS A SEARCH QUERY #}
 		{% if location %}
@@ -143,10 +146,10 @@
 											<td class="job__openings__title title__text smaller">
 												{{ job_opening.position }}
 											</td>
-											<td class="font-weight__bold wide-spacing body__text smaller">
+											<td class="font-weight__bold wide-spacing body__text smaller hide-for-small-only">
 												{{ job_opening.start_date|date("m/d/Y") }}
 											</td>
-											<td class="font-weight__bold wide-spacing body__text smaller">
+											<td class="font-weight__bold wide-spacing body__text smaller hide-for-small-only">
 												{% set offices = job_opening.get_field('locations') %}
 												{% for x in offices %}
 													<a class="link inline__link" href="{{TimberPost(x.location).link}}" target="_blank">{{ x.location|upper }}</a>
@@ -157,11 +160,16 @@
 											</td>
 										</tr>
 										<tr class="hidden__job--description">
-											<td class="hidden job__description__body" colspan="5">
+											<td class="hidden job__description__body" colspan="4">
 											{% if job_opening.department %}
 												<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Department</p>
 												{{ job_opening.department }}
 											{% endif %}
+											<p class="show-for-small-only font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Start date: {{ opportunity.start_date|date("m/d/Y") }}</p>
+											<p class="show-for-small-only font-weight__bold wide-spacing body__text">Locations:</p>
+											{% for x in offices %}
+													<a class="link inline__link show-for-small-only font-weight__bold wide-spacing body__text" href="{{TimberPost(x.location).link}}" target="_blank">{{ x.location|upper }}</a></p>
+											{% endfor %}	
 											{% if job_opening.position_description %}	
 												<p class="font-weight__bold wide-spacing body__text smaller margin-bottom--20 margin-top-20 upper">Position</p>
 												{{ job_opening.position_description }}
@@ -184,67 +192,66 @@
 								{% endfor %}							
 						{% endfor %}
 					</table>
-				</div>
-		{% endif %}
-		</div>
+					</div>
+			{% endif %}
 
-		<div class="experience__wrapper columns small-12 medium-12 large-12">
-			<div class="row padding__wrapper top-and-bottom">
-				<div class="large-offset-2 medium-offset-3 columns large-10 medium-8 small-12">
-					<div class="color__block--outer-wrapper white__bg columns padding-top-20">
-							<p class="title__text">
-								{{ features_header }}
-							</p>
-							<div class="bullets inline__text">
-								{% for feature in lawyers_features %}
-									<div class="bullet bullet__full-width">
-										<div class="body__text bullet__text">
-											{{feature.feature}}
-										</div>
-									</div>	
-								{% endfor %}
-							</div>	
-							{{ features_bottom_text }}
-							<p class="body__text roman">
-								{{ bullet_section_bottom_content }}
-							</p>
-							<p class="body__text smaller italic">
-								{{ bullet_section_notice }}
-							</p>
+			<div class="experience__wrapper columns small-12 medium-12 large-12">
+				<div class="row padding__wrapper top-and-bottom">
+					<div class="large-offset-2 medium-offset-3 columns large-10 medium-8 small-12">
+						<div class="color__block--outer-wrapper white__bg columns padding-top-20">
+								<p class="title__text">
+									{{ features_header }}
+								</p>
+								<div class="bullets inline__text">
+									{% for feature in lawyers_features %}
+										<div class="bullet bullet__full-width">
+											<div class="body__text bullet__text">
+												{{feature.feature}}
+											</div>
+										</div>	
+									{% endfor %}
+								</div>	
+								{{ features_bottom_text }}
+								<p class="body__text roman">
+									{{ bullet_section_bottom_content }}
+								</p>
+								<p class="body__text smaller italic">
+									{{ bullet_section_notice }}
+								</p>
+							</div>
 						</div>
 					</div>
-				</div>
-		</div>
+			</div>
 
-		<div class="experience__wrapper columns small-12 medium-12 large-12">
-			<div class="row padding__wrapper top-and-bottom">
-				<div class="large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">
-					<div class="color__block--outer-wrapper white__bg columns padding-top-20">
-							<p class="title__text">
-								{{ benefits_header }}
-							</p>
-							<div class="bullets inline__text">
-								{% for benefit in lawyers_benefits %}
-									<div class="bullet lawyers-bullet ">
-										<div class="body__text bullet__text">
-											{{benefit.benefit}}
-										</div>
-									</div>	
-								{% endfor %}
-							</div>	
-							<p class="body__text roman">
-								{{ bullet_section_bottom_content }}
-							</p>
-							<p class="body__text smaller italic">
-								{{ bullet_section_notice }}
-							</p>
+			<div class="experience__wrapper columns small-12 medium-12 large-12">
+				<div class="row padding__wrapper top-and-bottom">
+					<div class="large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">
+						<div class="color__block--outer-wrapper white__bg columns padding-top-20">
+								<p class="title__text">
+									{{ benefits_header }}
+								</p>
+								<div class="bullets inline__text">
+									{% for benefit in lawyers_benefits %}
+										<div class="bullet small-12 medium-12 large-12 ">
+											<div class="body__text bullet__text">
+												{{benefit.benefit}}
+											</div>
+										</div>	
+									{% endfor %}
+								</div>	
+								<p class="body__text roman">
+									{{ bullet_section_bottom_content }}
+								</p>
+								<p class="body__text smaller italic">
+									{{ bullet_section_notice }}
+								</p>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-</div>
 
+</div>
 <div id="lawyersBannerImage" class="scroll-stopper bottom--banner--image--wrapper">
 	<div class="row">
 		<div class="table__wrapper pro-bono__banner">
@@ -259,34 +266,7 @@
 	</div>	
 </div>	
 
-<div id="emailModal" class="vellum black--vellum modal__background diversity hidden">
-    <div class="row">
-     	<div class="diversity__modal--outer-wrapper table__wrapper relative">
-        	<div class="diversity__modal--inner-wrapper table__innner">
-          		<div class="diversity__modal--text-wrapper email__modal">
-		            <p class="title__text text-align__center">
-		              Notice
-		            </p>
-		            <p class="modal__text">
-		              You understand and agree that transmitting information to Brown Rudnick by e-mail does not establish an attorney-client relationship. By clicking the "Agree" link below, you acknowledge that (i) Brown Rudnick has no obligation to maintain the confidentiality of any information you submit to Brown Rudnick unless Brown Rudnick already represents you or Brown Rudnick later agrees to represent you; thus, if you are not a client, information you submit to Brown Rudnick by e-mail may be disclosed to others and (ii) you have read and understand the Brown Rudnick Terms of Use and Privacy Policy and that you agree to be bound by the terms and conditions of such Terms of Use and Privacy Policy.
-		            </p>
-		            <p class="modal__text">
-		            	If you would like to discuss becoming a client, please contact one of Brown Rudnick's attorneys to arrange for a meeting or telephone conference. Thank you for your interest in Brown Rudnick.
-		            </p>
-		            <div class="email-buttons">
-			            <div class="div__half">
-			            	<a id="email-modal-close"><p class="sites-button">agree</p></a>
-			          	</div>
-			            <div class="div__half ">
-			            	<a id="no-email-modal-close"><p class="sites-button inverse">disagree</p></a>
-			            </div>
-		          	</div>
-         		</div>
-        	</div>  
-     	</div>
-    </div>  
-</div>
-
+{% include '/template-parts/email-notice.twig' %}
 
 <script type="text/javascript">
 	{% if featured_image_url %}

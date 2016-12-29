@@ -88,9 +88,4 @@ function custom_jobs_query_vars( $vars ) {
   return $vars;
 }
 
-// Make all posts commentable
-add_filter('comments_open', '__return_true');
-
-add_theme_support( 'title-tag' );
-
-  
+add_theme_support( 'title-tag' );  

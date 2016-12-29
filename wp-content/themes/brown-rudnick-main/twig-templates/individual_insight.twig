@@ -1,5 +1,4 @@
-<div id="featuredImage" class ="insight featured-image__header--image-wrapper">
-
+<div id="featuredImage" class ="insight featured-image__header--image-wrapper {% if not featured_image_url %} no--image--to--wrap	{% endif %}">
 	{% set header_text_color = "black" %}
 	{# hero header #}
 	<div class="featured-image__header--text-outer-wrapper row relative">
@@ -24,8 +23,11 @@
 							<div class="inline__wrapper insight">
 								<div class="table__wrapper insight">
 									<div class="table__inner">
-										<p class="people__details title__text insight mobile__centered">
+										<p class="title__text insight mobile__centered responsive__text medium">
 											{{ post.title }}
+										</p>
+										<p class="body__text tag__text insight mobile__centered">
+											{{ 'Published On:'|upper}} {{ post.post_date|date("m/d/Y") }}
 										</p>
 										{% if post.br_authors %}	
 										<span class="insight__details list-divider red mobile__centered"></span>
@@ -41,7 +43,6 @@
 										{% if post.digital_file %}
 											{% set digital_file = post.get_field('digital_file')%}
 											<button class="mobile__full--width sites-button" type="submit" onclick="window.open('{{digital_file}}')">Download</button>
-
 										{% endif %}
 									</div>	
 								</div>	
@@ -56,7 +57,7 @@
 	{# body - with sidebar #}
 <div class="row">
 	<div class="experience__wrapper row body__wrapper columns small-12 medium-12 large-12">
-		<div class="medium-3 large-2 small-12 columns no__pad">
+		<div class="medium-3 large-2 small-12 columns padding__mobile forty">
 			{% if related_experiences|length > 0 %}
 			    <p class="tag__text">
 			    	{{ 'related experience'|upper }}
@@ -66,7 +67,7 @@
 					<div class="sidebar__color-block--outer-outer-wrapper">	
 						<div class="sidebar__color-block--outer-wrapper {% if loop.index > 4 %}hidden hidden__exp{% endif %}">
 							<div class="sidebar__color-block--wrapper">
-					        	<a href="{{ TimberPost(experience).link }}" class="link margin__0 tag__text text-align__center">
+					        	<a href="{{ TimberPost(experience).link }}" class="link margin__0 tag__text text-align__center black">
 				    	    		{{ experience.post_title|upper }}
 				        		</a>
 				        	</div>
@@ -165,30 +166,4 @@
 	</div>
 </div>
 
-<div id="emailModal" class="vellum black--vellum modal__background diversity hidden">
-    <div class="row">
-     	<div class="diversity__modal--outer-wrapper table__wrapper relative">
-        	<div class="diversity__modal--inner-wrapper table__innner">
-          		<div class="diversity__modal--text-wrapper email__modal">
-		            <p class="title__text text-align__center">
-		              Notice
-		            </p>
-		            <p class="modal__text">
-		              You understand and agree that transmitting information to Brown Rudnick by e-mail does not establish an attorney-client relationship. By clicking the "Agree" link below, you acknowledge that (i) Brown Rudnick has no obligation to maintain the confidentiality of any information you submit to Brown Rudnick unless Brown Rudnick already represents you or Brown Rudnick later agrees to represent you; thus, if you are not a client, information you submit to Brown Rudnick by e-mail may be disclosed to others and (ii) you have read and understand the Brown Rudnick Terms of Use and Privacy Policy and that you agree to be bound by the terms and conditions of such Terms of Use and Privacy Policy.
-		            </p>
-		            <p class="modal__text">
-		            	If you would like to discuss becoming a client, please contact one of Brown Rudnick's attorneys to arrange for a meeting or telephone conference. Thank you for your interest in Brown Rudnick.
-		            </p>
-		            <div class="email-buttons">
-			            <div class="div__half">
-			            	<a id="email-modal-close"><p class="sites-button">agree</p></a>
-			          	</div>
-			            <div class="div__half ">
-			            	<a id="no-email-modal-close"><p class="sites-button inverse">disagree</p></a>
-			            </div>
-		          	</div>
-         		</div>
-        	</div>  
-     	</div>
-    </div>  
-</div>
+{% include '/template-parts/email-notice.twig' %}

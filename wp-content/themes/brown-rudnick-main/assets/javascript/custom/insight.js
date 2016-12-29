@@ -63,9 +63,7 @@ var INSIGHTS = {
 					queryString = queryString + "&" + paramName + "=" + paramValue;
 				}
 			}
-
 			var keyword = keyword.replace(' ', '-')
-
 			if ( queryString.length > 0 ){
 				if ( keyword.length > 0 ) {
 					queryString = queryString + "&keyword=" + keyword;
@@ -135,6 +133,32 @@ var INSIGHTS = {
 	},
 	revealAdvancedSearchModal: function() {
 		console.log('Show advanced search modal for insights.');
+		INSIGHTS.engageEnterDownForModalFormSubmission();
+	},
+	cancelEnterDown: function(){
+		if ( $('body').hasClass('page-template-people') || $('body').hasClass('page-template-insights')  ){
+			console.log("enter disengaged!");
+			$(window).off( "keydown" );
+			$(window).keydown(function(e){
+				if (e.keyCode == 13){
+					e.preventDefault();
+					e.stopPropagation();
+					return false;
+				}
+			});
+		}
+	},
+	engageEnterDownForModalFormSubmission: function(){
+		console.log("enter engaged!");
+		$(window).keydown(function(e){
+			if (e.keyCode == 13){
+				e.preventDefault();
+				e.stopPropagation();
+				$('button#advancedSearchSubmit').click();
+			} else {
+				console.log("not enter");
+			}
+		});
 	}
 }
 

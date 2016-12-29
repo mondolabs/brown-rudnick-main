@@ -67,7 +67,7 @@
 					<div class="sidebar__color-block--outer-outer-wrapper">	
 						<div class="sidebar__color-block--outer-wrapper {% if loop.index > 4 %}hidden hidden__exp{% endif %}">
 							<div class="sidebar__color-block--wrapper">
-					        	<a href="{{ experience.guid }}" class="link margin__0 tag__text text-align__center">
+					        	<a href="{{ TimberPost(experience).link }}" class="link margin__0 tag__text text-align__center">
 				    	    		{{ experience.post_title|upper }}
 				        		</a>
 				        	</div>
@@ -80,7 +80,7 @@
 				    </a>
 			    	<span class="expander"></span>
 				{% endif %}    
-			{% endif %}    
+			{% endif %}     
 		</div>
 		<div class="columns small-12 medium-9 large-10">
 			<div class="padding__wrapper forty sides__only">
@@ -171,30 +171,4 @@
 	</div>
 </div>
 
-<div id="emailModal" class="vellum black--vellum modal__background diversity hidden">
-    <div class="row">
-     	<div class="diversity__modal--outer-wrapper table__wrapper relative">
-        	<div class="diversity__modal--inner-wrapper table__innner">
-          		<div class="diversity__modal--text-wrapper email__modal">
-		            <p class="title__text text-align__center">
-		              Notice
-		            </p>
-		            <p class="modal__text">
-		              You understand and agree that transmitting information to Brown Rudnick by e-mail does not establish an attorney-client relationship. By clicking the "Agree" link below, you acknowledge that (i) Brown Rudnick has no obligation to maintain the confidentiality of any information you submit to Brown Rudnick unless Brown Rudnick already represents you or Brown Rudnick later agrees to represent you; thus, if you are not a client, information you submit to Brown Rudnick by e-mail may be disclosed to others and (ii) you have read and understand the Brown Rudnick Terms of Use and Privacy Policy and that you agree to be bound by the terms and conditions of such Terms of Use and Privacy Policy.
-		            </p>
-		            <p class="modal__text">
-		            	If you would like to discuss becoming a client, please contact one of Brown Rudnick's attorneys to arrange for a meeting or telephone conference. Thank you for your interst in Brown Rudnick.
-		            </p>
-		            <div class="email-buttons">
-			            <div class="div__half">
-			            	<a id="email-modal-close"><p class="sites-button">agree</p></a>
-			          	</div>
-			            <div class="div__half ">
-			            	<a id="no-email-modal-close"><p class="sites-button inverse">disagree</p></a>
-			            </div>
-		          	</div>
-         		</div>
-        	</div>  
-     	</div>
-    </div>  
-</div>
+{% include '/template-parts/email-notice.twig' %}

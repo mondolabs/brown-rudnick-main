@@ -11,7 +11,7 @@
 			<div class="featured-image__header--text-inner-wrapper person">
 				<div class="people__details--outer-wrapper person">
 					<div class="people__details--inner-wrapper">
-						<div class="columns medium-12 large-12 small-12 relative">
+						<div id="my-test-div" class="columns medium-12 large-12 small-12 relative">
 							<div id="first--inline--wrapper" class="inline__wrapper person padding__right--50-desktop">
 								<div class="table__wrapper person__wrapper">
 									<div class="table__inner">
@@ -22,7 +22,7 @@
 							<div id="second--inline--wrapper" class="inline__wrapper person">
 								<div class="table__wrapper">
 									<div class="table__inner">
-										<p class="people__details title__text smaller">
+										<p id="people--title" class="people__details title__text smaller">
 											{{ person.first_name }} {% if person.middle_initial %}{{ person.middle_initial }}. {% endif %} {{ person.last_name }}
 										</p>
 										{% if person.job_title %}	
@@ -81,7 +81,7 @@
 				    <p class="tag__text">
 				    	{{ 'Area of Practice'|upper }}
 				    </p>
-				    <p class="title__text smaller margin-bottom--20">
+				    <p id="person-specialization" class="title__text smaller margin-bottom--20">
 						{{ specialization }}
 				    </p>
 				{% endif %}
@@ -94,7 +94,7 @@
 			        	{% set experience = item|first %}
 						<div id="people-sidebar"  class="sidebar__color-block--outer-wrapper {% if loop.index > 4 %}hidden hidden__exp{% endif %}">
 							<div class="sidebar__color-block--wrapper">
-					        	<a href="{{TimberPost(experience).link}}" class="link margin__0 tag__text text-align__center">
+					        	<a href="{{TimberPost(experience).link}}" class="link black margin__0 tag__text text-align__center">
 				    	    		{{ experience.post_title|upper }}
 				        		</a>
 				        	</div>
@@ -113,7 +113,7 @@
 					{{ "Biography" }}
 				</div>
 				<div class="body__text ">
-					{{ person.post_content }}
+					<p id="person-biography">{{ person.post_content }}</p>
 				</div>	
 				<span class="page__divider grey"></span>
 				{# Awards images #}
@@ -121,11 +121,11 @@
 					<p class="title__text">
 						Awards
 					</p>
-					<div class="row">
+					<div class="row text-align__center">
 						{% for award_image in person.get_field('award_images') %}
-							<div class="columns small-4 medium-3 large-3 float-left">
+							<div class="columns small-6 medium-6 large-4 people-award-images {% if loop.last and loop.index > 3%} float__none {% else %}  float-left  {% endif %} ">
 								{% set award_image = award_image|first %}
-								<img src="{{ award_image }}">
+								<img src="{{ award_image }}" class="margin-top-20">
 							</div>
 						{% endfor %}
 					</div>	
@@ -189,7 +189,7 @@
 
 {% if person.education|length > 0 or person.bar_admission|length > 0 %}	
 	<div class="grey__background experience__wrapper columns small-12 medium-12 large-12">
-		<div class="row padding__wrapper top-and-bottom sixty">
+		<div class="row padding__wrapper padding-top-20">
 			<div class="padding-top-20 padding-bottom-20 large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">
 				{% if person.education|length > 0 %}
 					<div class="columns small-12 medium-6 large-6">
@@ -221,17 +221,8 @@
 						{% endfor %}
 					</div>	
 				{% endif %}
-			</div>
-		</div>
-	</div>
-{% endif %}
-
-
-{% if person.languages|length > 0 %}	
-	<div class="grey__background experience__wrapper columns small-12 medium-12 large-12">
-		<div class="row padding__wrapper top-and-bottom sixty">
-			<div class="padding-top-20 padding-bottom-20 large-offset-2 medium-offset-3 columns large-10 medium-9 small-12">		
-					<div class="columns small-12 medium-6 large-6">
+				{% if person.languages|length > 0 %}		
+					<div class="columns small-12 medium-6 large-6 float__none">
 						<p class="title__text">
 							{{ "Languages" }}
 						</p>	
@@ -244,10 +235,14 @@
 							</div>
 						{% endfor %}
 				</div>
+			{% endif %}
 			</div>
 		</div>
 	</div>
 {% endif %}
+
+
+
 
 {% if person.publications|length > 0 and person.publications|first != 0 %}	
 	<div class="columns small-12 medium-12 large-12">
@@ -523,36 +518,10 @@
 
 
 
-<div id="emailModal" class="vellum black--vellum modal__background diversity hidden">
-    <div class="row">
-     	<div class="diversity__modal--outer-wrapper table__wrapper relative">
-        	<div class="diversity__modal--inner-wrapper table__innner">
-          		<div class="diversity__modal--text-wrapper email__modal">
-		            <p class="title__text text-align__center">
-		              Notice
-		            </p>
-		            <p class="modal__text">
-		              You understand and agree that transmitting information to Brown Rudnick by e-mail does not establish an attorney-client relationship. By clicking the "Agree" link below, you acknowledge that (i) Brown Rudnick has no obligation to maintain the confidentiality of any information you submit to Brown Rudnick unless Brown Rudnick already represents you or Brown Rudnick later agrees to represent you; thus, if you are not a client, information you submit to Brown Rudnick by e-mail may be disclosed to others and (ii) you have read and understand the Brown Rudnick Terms of Use and Privacy Policy and that you agree to be bound by the terms and conditions of such Terms of Use and Privacy Policy.
-		            </p>
-		            <p class="modal__text">
-		            	If you would like to discuss becoming a client, please contact one of Brown Rudnick's attorneys to arrange for a meeting or telephone conference. Thank you for your interst in Brown Rudnick.
-		            </p>
-		            <div class="email-buttons">
-			            <div class="div__half">
-			            	<a id="email-modal-close"><p class="sites-button">agree</p></a>
-			          	</div>
-			            <div class="div__half ">
-			            	<a id="no-email-modal-close"><p class="sites-button inverse">disagree</p></a>
-			            </div>
-		          	</div>
-         		</div>
-        	</div>  
-     	</div>
-    </div>  
-</div>
+{% include '/template-parts/email-notice.twig' %}
 
 <img class="logo--print--only" src="{{print_logo_url}}">
-
+<p id="copyright--print--only">&copy; 2016 Brown Rudnick LLP. Attorney Advertising</p>
 
 <script type="text/javascript">
 	{% if featured_image_url %}

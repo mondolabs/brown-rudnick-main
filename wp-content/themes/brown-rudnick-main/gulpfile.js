@@ -72,6 +72,7 @@ var PATHS = {
 
     // Vendor
     'assets/javascript/vendor/*',
+    'assets/javascript/vendor/animsition/*.js',
     'assets/javascript/vendor/autogrow/*.js',
     'assets/javascript/vendor/backstretch/backstretch.min.js',
     'assets/javascript/vendor/slick/*.js',
@@ -81,6 +82,7 @@ var PATHS = {
     'assets/javascript/vendor/jquery-nearest/*.js',
     'assets/javascript/vendor/md5/*.js',
     'assets/javascript/vendor/cookies/*.js',
+    'assets/javascript/vendor/disablescroll/*.js',
   ],
   phpcs: [
     '**/*.php',

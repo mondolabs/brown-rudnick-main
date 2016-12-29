@@ -1,13 +1,20 @@
 var BLOG = {
 	addListeners: function(){
-		console.log('Blog JS Loaded');
+		// change filters based on selected category
 		$('#blogTagSelect').change(function(event) {
 			var selectedTag = $(this);
+			var slugs = location.pathname;
 			var selectedTagValue = $(selectedTag).val();
+			var splitUrl = new String;
+			// building URL on basis of selected tags
 			if ($(selectedTag).hasClass('unfiltered') && $()) {
 				var tag = selectedTagValue.toLowerCase();
 				var url = $.url();
-				var splitUrl = (url.attr('source')+"filtered-by-category?tag= ").split('=');
+				if (slugs.split('/').length >= 6) {
+					splitUrl = (url.attr('source').slice(0, url.attr('source').length-7) +"filtered-by-category?tag= ").split('=');
+				} else {
+					splitUrl = (url.attr('source')+"filtered-by-category?tag= ").split('=');
+				}
 				splitUrl[1] = tag.replace(/\s+/g, '-').toLowerCase();
 				var newUrl = splitUrl.join('=');
 			} else if ( $(this).hasClass('monthly-archive') ) {
@@ -21,21 +28,29 @@ var BLOG = {
 				var splitUrl = url.attr('source').split('=');
 				splitUrl[1] = tag.replace(/\s+/g, '-');
 				var newUrl = splitUrl.join('=');
-				console.log(newUrl);
 			}
 			if ( newUrl !== url.attr('source') ){
+				// remove pagination on page refresh by parsing out /page/pageNumber
 				window.location.replace(newUrl);
 			} else {
 				return false;
 			}
 		});
+
+		// refresh page on the basis of selected date ranges
 		$('#blogDateSelect, #blogDateSelectCenterContent').change(function(event) {
 			var selectedTag = $(this);
+			var slugs = location.pathname;
 			var selectedTagValue = $(selectedTag).val();
+			var splitUrl = new String;
 			if ($(selectedTag).hasClass('unfiltered')) {
 				var date = selectedTagValue.toLowerCase();
 				var url = $.url();
-				var splitUrl = (url.attr('source')+"monthly-archive?date_query= ").split('=');
+				if (slugs.split('/').length >= 6) {
+					splitUrl = (url.attr('source').slice(0, url.attr('source').length-7) +"filtered-by-category?tag= ").split('=');
+				} else { 
+					splitUrl = (url.attr('source')+"monthly-archive?date_query= ").split('=');
+				}
 				splitUrl[1] = date.replace(/\s+/g, '-').toLowerCase();
 				var newUrl = splitUrl.join('=');
 			} else if ( $(this).hasClass('filtered-by-category') ) {
@@ -49,7 +64,6 @@ var BLOG = {
 				var splitUrl = url.attr('source').split('=');
 				splitUrl[1] = date.replace(/\s+/g, '-');
 				var newUrl = splitUrl.join('=');
-				console.log(newUrl);
 			}
 			if ( newUrl !== url.attr('source') ){
 				window.location.replace(newUrl);

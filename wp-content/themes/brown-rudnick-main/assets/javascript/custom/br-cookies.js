@@ -34,5 +34,5 @@ $(document).ready(function(){
     $('#set-cookies').click(function(event){
         BR_COOKIES.setCookies();
     });
-	BR_COOKIES.checkCookies();
+    BR_COOKIES.checkCookies();
 })

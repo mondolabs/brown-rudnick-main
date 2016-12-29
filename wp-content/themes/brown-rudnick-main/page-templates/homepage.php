@@ -27,16 +27,23 @@ $data['homepage_section_3_header'] = get_field('homepage_section_3_header');
     <?php wp_head()?>
   </head>
     <body>
-     <?php get_template_part('template-parts/off-canvas-search')?>
+    <div class="animsition"
+        data-animsition-in-class="fade-in"
+        data-animsition-in-duration="500"
+        data-animsition-out-class="fade-out"
+        data-animsition-out-duration="800" >
+     <?php get_template_part('template-parts/off-canvas-search')?>     
           <div id="page-full-width-homepage" class ="full-width" role="main">
             <?php Timber::render('/twig-templates/slider.twig', $data); ?>
             <?php Timber::render('/twig-templates/blog-tiles.twig', $data); ?>
             <?php Timber::render('/twig-templates/homepage-section-3.twig', $data); ?>
             <?php do_action( 'foundationpress_after_content' ); ?>
             <?php get_footer(); ?>
+            </div>
           </div>
         </div>
       </div>
+    </div>
     </div>
   </body>
 </html>

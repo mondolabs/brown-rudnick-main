@@ -1,21 +1,21 @@
 <div id="featuredImage" class ="featured-image__header--image-wrapper" >
-
 	{% set header_text_color = "black" %}
 	{# hero header #}
 	<div class="featured-image__header--text-outer-wrapper row">
 		<div class="breadcrumb__wrapper {{ breadcrumb_color }}">
 			<a class="breadcrumb__link {{ breadcrumb_color }}" href="/careers">{{ "careers"|upper }}</a> / <a class="breadcrumb__link {{ breadcrumb_color }}" href="/law-students">{{ "law-students"|upper }}</a>
 		</div>
-	<div class="featured-image__header--text-outer-wrapper row">
-		<div class="featured-image__header--text-wrapper">
-			<div class="featured-image__header--text-inner-wrapper">
-				<div class="color__block vellum">
-					<h1 class="page__header {{ header_text_color }}">
-						{{ header_text }}
-					</h1>
+		<div class="featured-image__header--text-outer-wrapper row">
+			<div class="featured-image__header--text-wrapper">
+				<div class="featured-image__header--text-inner-wrapper">
+					<div class="color__block vellum">
+						<h1 class="page__header {{ header_text_color }}">
+							{{ header_text }}
+						</h1>
+					</div>
 				</div>
-			</div>
-		</div>	
+			</div>	
+		</div>
 	</div>
 </div>
 
@@ -55,9 +55,6 @@
 		</div>
 	</div>	
 </div>
-
-
-
 
 <script type="text/javascript">
 	{% if featured_image_url %}

@@ -20,6 +20,130 @@
     color: #B9B9B9;
   }
 }
+.logo__wrapper {
+  padding-top: 3px;
+}
+
+// mobile menu stylesheet
+
+#menu-mobile-menu {
+  display: none;
+  height: 100vh !important;
+  //overflow: hidden;
+  z-index: 9999;
+  text-align: center;
+
+  @media screen and (max-width: 450px){
+    padding-top: 25px;
+  }
+  
+  li {
+    @media screen and (min-height: 450px){
+      margin: 3%;
+    }
+      margin: 1%;
+    a {
+      font-size: 18px;
+      letter-spacing: $letter-spacing-global;
+      @include breakpoint(landscape){
+        line-height: .1em !important;
+      }
+    }
+
+  }
+}
+
+@include breakpoint(landscape){
+  .one__half {
+    padding-top: 10px !important;
+  }
+}
+
+.mobile__menu__wrapper{
+  position: relative;
+}
+
+.mobile__menu__bottom {
+  display: none;
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  background-color:$very-light-grey;
+}
+.right-menu-icon{
+  height: 20px;
+  width: 20px;
+}
+.mobile-active{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('../../assets/images/br-hamburger-bg.png');
+  height: 20px;
+  width: 20px;
+}
+.mobile__button__container {
+  background-color: white;
+  position: absolute;
+    right: 20px;
+    top: 30px;
+    width: 25px;
+    height: 30px;
+    &.mobile-container-open {
+      z-index: 999999 !important;
+    }
+    
+}
+
+.contact__us__mobile, .locations__mobile {
+  height: 80px;
+  background-color: $white;
+  background-size: 25%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.contact__us__mobile {
+  background-image: url('../../assets/images/contact-us-mobile.png');
+}
+.locations__mobile {
+  background-image: url('../../assets/images/locations-mobile.png');
+}
+
+#mobile__logo__container {
+  width: 225px;
+  @media screen and (max-width:768px){
+    padding: 5%;
+  }
+  padding: 2%;
+  cursor: pointer;
+}
+
+
+#search__icon__mobile{
+  position: absolute;
+  right: 60px;
+  top: 30px;
+  width: 20px;
+  z-index: 99;
+}
+
+
+#open-mobile-menu {
+  &.open {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+  }
+}
+#mobile-menu {
+  &.open {
+        position: fixed !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        width: 100% !important;
+        background-color: $white !important;
+        z-index: 99999 !important;
+  }
+}
 
 /* Tablet and desktop menu */
 .top-bar {
@@ -114,27 +238,29 @@
     display: inline-block !important;
 }
 
-.is-dropdown-submenu{
+.is-dropdown-submenu {
   border: none;
   z-index: 999999;
   @media screen and (max-width: 1024px){
     left: 0 !important;
   }
-}
-
-.is-dropdown-submenu {
   top: 50px  !important;
   text-align: center !important;
   background-color: $primary-grey;
   @include breakpoint(medium){
     width: 160vw;
   }
+  a {
+    padding-right: 1rem !important;
+  }
   width: 150vw;
   li {
     //padding: 3%;
     @media screen and (min-width: 640px){
       width: 7.5%;
-
+      a {
+        padding-right: 1.25rem !important;
+      }
     }
     @media screen and (min-width: 1024px){
         width: 10%!important;
@@ -159,7 +285,7 @@
   @media screen and (max-width: 1025px){
     transform: translateX(-67%);
   }
-  transform: translateX(-63%);
+  transform: translateX(-61%);
 }
 
 .first-submenu-item-scroll {
@@ -203,18 +329,17 @@
 }
 #menu-nested-pages-1 {
   &.scrolled {
-    //float: right;
+    //float: right; 
     padding-top: 28px;
     @media screen and (min-width: 1024px){
-      padding-right: 7%;
+      padding-left: 20px;
     }
   }
 }
 
 .menu__inner-wrapper--desktop{
-  @media screen and (max-width: 1200px){
-    padding-right: 10px !important;
-  }
+  // clickable on IE ---
+  position: relative !important;
 }
 
 

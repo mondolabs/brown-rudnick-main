@@ -9,7 +9,36 @@
  */
 ?>
 <!doctype html>
+
 <html class="no-js" <?php language_attributes(); ?> >
+
+	<!--[if lt IE 10]>    <div 
+	style="
+		width: 100%;
+		height: 24px;
+		background-color: #b91628;
+	"
+	class="lt-ie9">
+		<p style="
+				color: #fff;
+				display: block;
+				font-size: 24px;
+				color: #fff;
+				text-align: center;"
+		>
+			This version of Internet Explorer is no longer supported. Please upgrade to a
+			<a style="
+				display: inline;
+				font-size: 24px;
+				color: #fff;
+				text-align: center;
+				text-decoration: underline;" 
+				href="https://support.microsoft.com/en-us/help/17621/internet-explorer-downloads"
+			>
+				supported browser.
+			</a>
+		</p>
+	</div><![endif]-->
 	<head>
 		  <!-- start:favicon image -->
 		  
@@ -35,19 +64,6 @@
     <link rel="apple-touch-icon" sizes="152x152" href="<?php bloginfo('template_url'); ?>/assets/images/favicons/152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo('template_url'); ?>/assets/images/favicons/180x180.png">
     <!-- end:favicon touch image -->
-
-    <!--[if lt IE 9]>
-        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-
-
-
-		
-		<!--[if lt IE]>
-			<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/assets/stylesheets/ie.css" type="text/css" media="screen"/>
-		<![endif]-->
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?> >
@@ -60,18 +76,17 @@
 		</div>
 
 		<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) == 'topbar' ) : ?>		
-		<div class="mobile__menu__wrapper">	
+		<div class="mobile__menu__wrapper hide-for-large">	
 			<?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
 		</div>
 		<?php endif; ?>
 		
 		<?php do_action( 'foundationpress_layout_start' ); ?>
-
-
 		
-		<header id="masthead" class="site-header show-for-large" role="banner">
-			<div class="menu__wrapper--desktop row sr">
-				<div class="logo__wrapper columns large-4 medium-3 ">
+						<header id="masthead" class="site-header" role="banner">
+
+			<div class="menu__wrapper--desktop row show-for-large">
+				<div class="logo__wrapper columns large-4 medium-3">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 						<img class="header-logo--mobile" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/BR-logo-for-nav.png">
 					</a>
@@ -80,6 +95,7 @@
 				<div class="menu__inner-wrapper--desktop columns large-8 medium-9 desktop__menu__wrapper">
 					<?php desktop_menu(); ?>
 				</div>
+				
 			</div>
 		</header>
 

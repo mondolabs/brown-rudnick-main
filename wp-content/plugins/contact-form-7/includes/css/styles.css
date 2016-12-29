@@ -4,6 +4,8 @@ div.wpcf7 {
 }
 
 div.wpcf7-response-output {
+	position: absolute;
+	top: 0;
 	margin: 2em 0.5em 1em;
 	padding: 0.2em 1em;
 }

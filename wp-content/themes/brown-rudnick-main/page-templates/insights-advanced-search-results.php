@@ -33,7 +33,7 @@ $data['slug'] = $slug;
 $data['parent_link'] = get_permalink( $post->post_parent );
 
 $post_type_args = array(
-  'post_type' => 'alert',
+  'post_type' => array('article', 'event', 'alert', 'press-releases', 'news-posts', 'post'),
   'numberposts' => -1,
   'posts_per_page' => 5,
   'paged'=> $paged
@@ -44,7 +44,7 @@ $date = get_query_var('date_query', "");
 $year = substr($date, -4 );
 $month = substr($date, 0, 2 );
 $posts_args = array(
-  'post_type' => 'alert',
+  'post_type' => array('article', 'event', 'alert', 'press-releases', 'news-posts', 'post'),
   'numberposts' => -1,
   'posts_per_page' => -1,
   'orderby' => 'date',
@@ -73,7 +73,7 @@ foreach ( $custom_posts as $post ) {
 
 // begin generate options for advanced search fields
 $all_posts_args = array(
-  'post_type' => array('article', 'event', 'alert'),
+  'post_type' => array('article', 'event', 'alert', 'news_post', 'press_release' ),
   'numberposts' => -1,
   'posts_per_page' => -1,
   'orderby' => 'date',
@@ -155,7 +155,9 @@ if( ($geography !== "GEOGRAPHIES") || ( $industry !== "INDUSTRIES") || ($practic
     $practice_term_query_array = array('taxonomy' => 'practice', 'field' => 'slug', 'terms' => array( $practice));
     array_push($insights_args['tax_query'], $practice_term_query_array );
   }
-  if ( $keyword !== "" ) {
+  if ( $keyword !== "" ) {   
+    $post_type_arrays = array('article', 'event', 'alert', 'news_post', 'press_release', 'post' );
+    $insights_args['post_type'] = $post_type_arrays;
     $insights_args['s'] = $keyword;
   }
 }
@@ -187,6 +189,11 @@ $data['insights'] = array_reverse($data['insights']);
     <?php wp_head()?>
   </head>
   <body>
+    <div class="animsition"
+        data-animsition-in-class="fade-in"
+        data-animsition-in-duration="800"
+        data-animsition-out-class="fade-out"
+        data-animsition-out-duration="800" >
     <?php get_template_part('template-parts/off-canvas-search')?>
           <div id="page-full-width-homepage" class ="full-width" role="main">
             <?php Timber::render('/twig-templates/insights-advanced-search-results.twig', $data); ?>     
@@ -195,6 +202,7 @@ $data['insights'] = array_reverse($data['insights']);
           </div> 
         </div> 
       </div> 
-    </div> 
+    </div>
+     </div> 
   </body>
 </html>

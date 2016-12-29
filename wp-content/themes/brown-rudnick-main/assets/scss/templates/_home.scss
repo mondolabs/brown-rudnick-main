@@ -268,17 +268,22 @@ button.slick-arrow  {
 #menu-nested-pages {
 	display: table !important;
 	width: 100% !important;
+	li > a {
+		@media screen and (max-width:1035px){
+			padding-right: 1.25rem !important;
+		}		
+	}
 }
 
 ul.menu li a{
 	color: $black;
 	font-family: $brfont;
-	font-size: 12px;
+	font-size: 11.5px;
 	font-weight: 800;
 	text-transform: uppercase;
     -webkit-transition: width 2s, height 2s, background-color 2s, -webkit-transform 2s;
 	transition: width 2s, height 2s, background-color 2s, transform 2s;
-	letter-spacing: 2.85px;
+	letter-spacing: 1.85px;
 	&:after {
 		border: none !important;
 	}
@@ -291,15 +296,20 @@ ul.menu li a{
 	border-bottom: none;
 }
 
-.menu__wrapper--desktop-on-scroll {
-	padding: 10px 0 10px;
-}
+// .menu__wrapper--desktop-on-scroll {
+// 	padding: 10px 0 10px;
+// }
 
 ul.desktop__menu--icons-list {
 	margin: 0;
 	float: right;
 	list-style: none;
 	padding-top: 28px;
+// fixing IE11 Bug :D
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+   /* IE10+ CSS styles go here */
+    padding-top: 0 !important;
+  }
 	position: relative;
 	.tag__text {
 		text-transform: uppercase;

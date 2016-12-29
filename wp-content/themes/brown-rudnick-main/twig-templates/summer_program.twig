@@ -16,29 +16,35 @@
 		</div>	
 	</div>
 </div>
-<div class="row columns full-width white-row margin-top-60 margin-bottom-60 small-12 medium-12 large-12 body__wrapper">
+
+		
+<div class="row">
 	<div class="columns">
-		<p class="body__text">{{ summer_first_paragraph}}</p>
-		<p class="title__text margin-bottom-20 margin-top-40">{{ summer_recruitment_title }}</p>
+		<p class="body__text margin-top-40">{{ summer_first_paragraph}}</p>
+		<p class="title__text margin-bottom-20 ">{{ summer_recruitment_title }}</p>
 		<p class="body__text">{{ summer_committee_description_first }}</p>
 		<p class="body__text">{{ summer_committee_description_second }}</p>
 		<a id="recruitingModal" class="bold__wide__spacing link red underline">View Fall Recruiting Schedule</a>
 	</div>
-
-	<div class="columns padding-top-20 padding-bottom-20">
-		<div class="row columns margin-top-60 margin-bottom-60 grey-block-full">
-			<div class="columns">
+</div>
+		
+<div class="padding__wrapper twenty margin-top-40 margin-bottom-40 grey-block-full">
+	<div class="row">
+		<div class="columns">
 			<p class="title__text">{{ summer_recruitment_committee_title }}</p>
-			{% for member in summer_committee_members %}
-				<div class="medium-unstack small-12 medium-4 large-4 columns margin-top-20 margin-bottom--20 float-left">
-				<a class="link" href="{{TimberPost(member).link}}">
-					<p class="title__text link">
-						{{ member.first_name}} {% if member.middle_initial %} {{ member.middle_initial }}. {% endif %} {{member.last_name}}{% if member.is_hiring_committee_chair == true %}, Chair {% endif %}</p>
-				</a>
-				<p class="bold__wide__spacing">
-					{{ member.specialization }}
-				</p>
-				<div class="hiring-divider margin-bottom--20"></div>
+		</div>	
+	</div>
+	<div class="row">
+		{% for member in summer_committee_members %}
+			<div class="medium-unstack small-12 medium-4 large-4 columns margin-top-20 margin-bottom--20 float-left">
+			<a class="link" href="{{TimberPost(member).link}}">
+				<p class="title__text link">
+					{{ member.first_name}} {% if member.middle_initial %} {{ member.middle_initial }}. {% endif %} {{member.last_name}}{% if member.is_hiring_committee_chair == true %}, Chair {% endif %}</p>
+			</a>
+			<p class="bold__wide__spacing">
+				{{ member.specialization }}
+			</p>
+			<div class="hiring-divider margin-bottom--20"></div>
 				{% if  member.primary_phone_number %}
 					<p class="body__text">
 						P: {% if member.primary_country_code and member.primary_country_code != '1' %}+{{ member.primary_country_code}}{% else %}+1{% endif %}.{{ member.primary_phone_number }}
@@ -52,24 +58,22 @@
 				<a class="red inline__link link email--people--link">
 					{{member.email}}
 				</a>
-				</div>
-			{% endfor %}
-		</div>
-		<span class="list-divider white full__width clear__both"></span>
-			{% for sub_member in committee_sub_members %}	
-			<div class="medium-unstack small-12 medium-4 large-4 columns margin-top-20 margin-bottom--20 float-left">
-				<p class="title__text">{{ sub_member.member_name}}</p>
-				<p class="bold__wide__spacing">{{ sub_member.member_title}}</p>
 			</div>
-			{% endfor %}
-		</div>
-	
+		{% endfor %}
 	</div>
+	<span class="list-divider white full__width clear__both"></span>
+	<div class="row">
+		{% for sub_member in committee_sub_members %}	
+		<div class="medium-unstack small-12 medium-4 large-4 columns margin-top-20 margin-bottom--20 float-left">
+			<p class="title__text">{{ sub_member.member_name}}</p>
+			<p class="bold__wide__spacing">{{ sub_member.member_title}}</p>
+		</div>
+		{% endfor %}
+	</div>	
+</div>
 
-
-
-	<div class="row columns padding-top-20 padding-bottom-20 white-row row margin-top-60 z-index__1">
-		<div class="columns">
+<div class="row padding-top-20 padding-bottom-20 row margin-top-60 z-index__1">
+	<div class="columns">
 		<p class="title__text">{{ summer_committee_questions_title }}?</p>
 		<table class="table__white">
 			{% for x in summer_committee_questions %}
@@ -81,91 +85,69 @@
 					<span class="job_expander top__menu job_opening" ></span>				
 				</td>
 			</tr>
-			<tr >
+			<tr>
 				<td class="hidden job--description padding-bottom-20 padding-top-20">
 					{{  x.answer }}
 				</td>
 			</tr>
 			{% endfor %}
 		</table>
+	</div>	
+</div>
+
+<div class="row">
+	<div class="columns white-row">
+		<p class="body__text">{{ tile_paragraph_one}}</p>
+		<p class="body__text">{{ tile_paragraph_two }}</p>
+		{% for tile in summer_committee_tiles %}
+			<div class="medium-unstack small-12 medium-4 large-4 columns margin-top-20 margin-bottom--20 centered-tile">
+				<img src="{{ TimberImage(tile.image).src }}">
+				<p class="title__text"> {{ tile.title }}</p>
+				<p class="body__text">{{ tile.description }}</p>
+				<br>
+			</div>
+		{% endfor %}
 	</div>
+</div>	
+
+<div class="full-width-grey padding__wrapper twenty">
+	<div class="row">
+		<div class="columns">
+			<p class="title__text">{{ after_hours_title }}</p>
+			<p class="body__text">{{ after_hours_text }}</p>
+			<p class="body__text">{{ after_hours_text_second}}</p>
+			<div class="bullets inline__text">
+				{% for item in after_hours_items %}
+					<div class="bullet small-12 medium-12 large-6">
+						<div class="body__text bullet__text">
+							{{ item.after_hours_item }}
+						</div>
+					</div>	
+				{% endfor %}
+			</div>	
+		</div>
+	</div>
+</div>	
+
+<div id="summerImage" class="scroll-stopper bottom--banner--image--wrapper">
+	<div class="row">
+		<div class="table__wrapper pro-bono__banner">
+	    	<div class="table__inner pro-bono__banner">
+        		<div class="color-block__wrapper large-7 medium-8 small-12 float--right">
+          			<div class="color__block white relative lawyers__text title__text smaller">
+            			<p class="bottom-banner-text">{{ trainee_bottom_banner_text }}</p>
+      				</div>  
+        		</div>
+      		</div>
+		</div>
+	</div>	
 </div>
 <div class="row">
-	<div class="columns white-row row padding-top-60 padding-bottom-60">
-		<div class="columns">
-			<p class="body__text">{{ tile_paragraph_one}}</p>
-			<p class="body__text">{{ tile_paragraph_two }}</p>
-			{% for tile in summer_committee_tiles %}
-				<div class="medium-unstack small-12 medium-4 large-4 columns margin-top-20 margin-bottom--20 centered-tile">
-					<img src="{{ TimberImage(tile.image).src }}">
-					<p class="title__text"> {{ tile.title }}</p>
-					<p class="body__text">{{ tile.description }}</p>
-					<br>
-				</div>
-			{% endfor %}
-		</div>
-		<div class="columns full-width-grey padding-top-60 padding-bottom-60">
-			<div class="columns">
-				<p class="title__text">{{ after_hours_title }}</p>
-				<p class="body__text">{{ after_hours_text }}</p>
-				<p class="body__text">{{ after_hours_text_second}}</p>
-				<div class="bullets inline__text">
-					{% for item in after_hours_items %}
-						<div class="bullet lawyers-bullet ">
-							<div class="body__text bullet__text">
-								{{ item.after_hours_item }}
-							</div>
-						</div>	
-					{% endfor %}
-				</div>	
-			</div>
-		</div>
+	<div class="columns">
+		{% include '/twig-templates/summer-schedule.twig' %}
 	</div>
 </div>
-
-</div>
-	<div id="summerImage" class="scroll-stopper bottom--banner--image--wrapper">
-		<div class="row">
-			<div class="table__wrapper pro-bono__banner">
-			    <div class="table__inner pro-bono__banner">
-			        <div class="color-block__wrapper large-7 medium-8 small-12 float--right">
-			          <div class="color__block white relative lawyers__text title__text smaller">
-			            		<p>{{ trainee_bottom_banner_text }}</p>
-			          </div>  
-			        </div>
-		        </div>
-			</div>
-		</div>	
-	</div>
-
-<div id="emailModal" class="vellum black--vellum modal__background diversity hidden">
-    <div class="row">
-     	<div class="diversity__modal--outer-wrapper table__wrapper relative">
-        	<div class="diversity__modal--inner-wrapper table__inner">
-          		<div class="diversity__modal--text-wrapper email__modal">
-		            <p class="title__text text-align__center">
-		              Notice
-		            </p>
-		            <p class="modal__text">
-		              You understand and agree that transmitting information to Brown Rudnick by e-mail does not establish an attorney-client relationship. By clicking the "Agree" link below, you acknowledge that (i) Brown Rudnick has no obligation to maintain the confidentiality of any information you submit to Brown Rudnick unless Brown Rudnick already represents you or Brown Rudnick later agrees to represent you; thus, if you are not a client, information you submit to Brown Rudnick by e-mail may be disclosed to others and (ii) you have read and understand the Brown Rudnick Terms of Use and Privacy Policy and that you agree to be bound by the terms and conditions of such Terms of Use and Privacy Policy.
-		            </p>
-		            <p class="modal__text">
-		            	If you would like to discuss becoming a client, please contact one of Brown Rudnick's attorneys to arrange for a meeting or telephone conference. Thank you for your interest in Brown Rudnick.
-		            </p>
-		            <div class="email-buttons">
-			            <div class="div__half">
-			            	<a id="email-modal-close"><p class="sites-button">agree</p></a>
-			          	</div>
-			            <div class="div__half ">
-			            	<a id="no-email-modal-close"><p class="sites-button inverse">disagree</p></a>
-			            </div>
-		          	</div>
-         		</div>
-        	</div>  
-     	</div>
-    </div>  
-</div>
-
+{% include '/template-parts/email-notice.twig' %}
 
 <script type="text/javascript">
 	{% if featured_image_url %}

@@ -25,9 +25,7 @@ $data['sidebar'] = get_posts($args);
 $data['hover_arrow'] = get_template_directory_uri() . "/assets/images/hover-arrow.png";
 $slug = basename(get_permalink());
 $data['slug'] = $slug;
-
 $data['parent_link'] = get_permalink( $post->post_parent );
-
 ?>
 
 <html>
@@ -35,6 +33,11 @@ $data['parent_link'] = get_permalink( $post->post_parent );
     <?php wp_head()?>
   </head>
   <body>
+   <div class="animsition"
+        data-animsition-in-class="fade-in"
+        data-animsition-in-duration="800"
+        data-animsition-out-class="fade-out"
+        data-animsition-out-duration="800" >
     <?php get_template_part('template-parts/off-canvas-search')?>
           <div id="page-full-width-homepage" class ="full-width" role="main">
             <?php Timber::render('/twig-templates/experience_landing.twig', $data); ?>     
@@ -43,6 +46,7 @@ $data['parent_link'] = get_permalink( $post->post_parent );
           </div>
         </div>
       </div>
+    </div>
     </div>
   </body>
 </html>

@@ -23,23 +23,30 @@ $alphabet = range('A', 'Z');
   <head>
     <?php wp_head()?>
   </head>
-  <body>
-
-<html>
-  <head>
-    <?php wp_head()?>
-  </head>
     <body>
+      <div class="animsition"
+        data-animsition-in-class="fade-in"
+        data-animsition-in-duration="800"
+        data-animsition-out-class="fade-out"
+        data-animsition-out-duration="800" >
       <?php get_template_part('template-parts/off-canvas-search')?>
               <div id="page-full-width-homepage" class ="full-width" role="main">
                 <?php Timber::render('/twig-templates/search-results.twig', $data); ?>
                 <div class ="results__container">
                   <?php if ( have_posts() ) : ?>
-                    <?php while ( have_posts() ) : the_post(); ?>
-                        <?php get_template_part( 'template-parts/content', get_post_format() ); ?>
-                    <?php endwhile; ?>
+                    <div class="experience__wrapper row columns small-12 medium-12 large-12">
+                      <?php get_template_part('template-parts/primary-search')?>
+                      <?php while ( have_posts() ) : the_post(); ?>
+                            <?php get_template_part( 'template-parts/content', get_post_format() ); ?>                      
+                      <?php endwhile; ?>
+                    </div>
                     <?php else : ?>
-                      <?php get_template_part( 'template-parts/content', 'none' ); ?>
+                       <div class="experience__wrapper row body__wrapper columns small-12 medium-12 large-12">
+                          <?php get_template_part('template-parts/primary-search')?>
+                          <div class ="columns small-12 medium-12 large-12">
+                            <?php get_template_part( 'template-parts/content', 'none' ); ?>
+                          </div>
+                      </div>
                   <?php endif;?>
                   <?php do_action( 'foundationpress_before_pagination' ); ?>
                   <?php if ( function_exists( 'foundationpress_pagination' ) ) { foundationpress_pagination(); } else if ( is_paged() ) { ?>
@@ -53,6 +60,7 @@ $alphabet = range('A', 'Z');
               </div>
             </div>  
           </div>
+      </div>
       </div>
     </div>
   </body>
