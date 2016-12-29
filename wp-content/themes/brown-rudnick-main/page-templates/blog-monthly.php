@@ -21,16 +21,6 @@ $year = substr($date, -4 );
 $month = substr($date, 0, 2 );
 $data['date_query'] = $date;
 
-$data['posts_by_date_args'] = array(
-  'date_query' => array(
-    array(
-      'column' => "date",
-      'year'  => $year,
-      'month' => $month,
-    ),
-  )
-);
-
 $parent = get_page($post->post_parent);
 $parent_name = $parent->post_name;
 
@@ -40,12 +30,31 @@ $data['parent_link'] = get_permalink( $post->post_parent );
 $blog_name = str_replace("-", "_", $parent_name);
 $blog_title_category_obj = get_category_by_slug($blog_name);
 $data['blog_title_category_id'] = $blog_title_category_obj->term_id;
-$blog_posts_args = array('category_name' => $blog_name, 'numberposts' => -1 );
-$data['blog_posts'] = Timber::get_posts($blog_posts_args);
+
+$blog_posts_by_date_args = array(
+  'category_name' => $blog_name,
+  'numberposts' => -1,
+  'date_query' => array(
+    array(
+      'column' => "date",
+      'year'  => $year,
+      'month' => $month,
+    ),
+  )
+);
+
+$blog_posts_for_sidebar_args = array(
+  'category_name' => $blog_name,
+  'numberposts' => -1,
+);
+
+$data['blog_posts'] = Timber::get_posts($blog_posts_by_date_args);
+$data['blog_posts_for_sidebar'] = Timber::get_posts($blog_posts_for_sidebar_args);
+
 $all_tags_for_blog_posts = [];
 $all_dates_for_blog_posts = [];
 
-foreach ($data['blog_posts'] as $k => $v) {
+foreach ($data['blog_posts_for_sidebar'] as $k => $v) {
   $tags  = get_the_tags($v->ID);  
   array_push($all_dates_for_blog_posts, strtotime(($v->date)));
   foreach ((array)$tags as $k => $v) {
