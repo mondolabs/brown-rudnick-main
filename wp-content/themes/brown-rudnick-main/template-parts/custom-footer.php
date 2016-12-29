@@ -25,13 +25,7 @@
  </a>
 </div>
 
-<div class="footer-links">
-	<a target="_blank" href="/contact-us/">Contact us</a>
-	<a target="_blank" href="http://alumni-brownrudnick.com">Candidate Portal</a>
-	<a target="_blank" href="/terms-of-use/">Terms of Use</a>
-	<a target="_blank" href="/privacy-policy/">Privacy</a>
-	<a target="_blank" href="/sitemap/">Sitemap</a>
-</div>
+<?php footer_menu(); ?>
 
 <div class="social-icons show-for-small-only">
  <a href="https://www.facebook.com/Brown-Rudnick-LLP-283665665070333/" target="_blank">
