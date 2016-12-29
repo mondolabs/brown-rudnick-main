@@ -60,7 +60,7 @@ if ( ! function_exists( 'desktop_topmenu' ) ) {
  * @link http://codex.wordpress.org/Function_Reference/wp_nav_menu
  */
 if ( ! function_exists( 'footer_menu' ) ) {
-	function desktop_topmenu() {
+	function footer_menu() {
 		wp_nav_menu( array(
 			'container'      => false,
 			'menu_class'     => 'dropdown topmenu',
